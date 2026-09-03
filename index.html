@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nombres & Espaces</title>
-<meta name="description" content="Révisions Analyse 3 et Algèbre 3 — ING2, semestre 1 : cours illustré, notions clés, formules, exos types, quiz et planning.">
+<title>Champs & Intégrales</title>
+<meta name="description" content="Révisions Analyse 3 ING2 semestre 1 : fonctions de plusieurs variables, opérateurs vectoriels, intégrales multiples et curvilignes, optimisation.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#4b3e8f" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1128" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="Nombres & Espaces">
-<meta property="og:description" content="Révisions maths ING2 S1 : Analyse 3 et Algèbre 3.">
+<meta property="og:title" content="Champs & Intégrales">
+<meta property="og:description" content="Révisions Analyse 3 ING2 S1 : calcul vectoriel, intégrales multiples, optimisation.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,8 @@
 <div class="topbar">
   <div class="topbar-in">
     <button class="brand" data-go="home" aria-label="Accueil">
-      <span class="chip-logo">∑</span>
-      Nombres &amp; Espaces
+      <span class="chip-logo">∇</span>
+      Champs &amp; Intégrales
     </button>
     <nav class="nav" id="nav">
       <button data-go="home" class="active">Accueil</button>
@@ -50,28 +50,30 @@
     <div class="hero-grid"></div>
     <div class="hero-in">
       <div>
-        <span class="eyebrow">ING2 · Mathématiques · Semestre 1</span>
-        <h1>Nombres <em>&amp;</em> Espaces.</h1>
-        <p class="lead">Tout Analyse 3 (séries numériques, séries de Fourier) et tout Algèbre 3 (matrices, déterminants, espaces vectoriels, applications linéaires) — réexpliqué en cours structuré, avec théorèmes, méthodes et exemples.</p>
+        <span class="eyebrow">ING2 · Analyse 3 · Semestre 1</span>
+        <h1>Champs <em>&amp;</em> Intégrales.</h1>
+        <p class="lead">Tout Analyse 3 en un site : fonctions de plusieurs variables, opérateurs vectoriels (grad, div, rot), courbes et surfaces, intégrales doubles/triples/curvilignes/surface, et optimisation. Théorèmes, méthodes et exemples pour tenir le DS et le partiel.</p>
         <div class="hero-cta">
           <button class="btn btn-primary" data-go="cours">Commencer le cours →</button>
           <button class="btn btn-ghost" data-go="express">⚡ Formules express</button>
         </div>
         <div class="hero-meta">
-          <div><div class="n">7</div><div class="l">Chapitres</div></div>
-          <div><div class="n">60+</div><div class="l">Théorèmes</div></div>
-          <div><div class="n">?</div><div class="l">DS · Partiel</div></div>
+          <div><div class="n">8</div><div class="l">Chapitres</div></div>
+          <div><div class="n">40+</div><div class="l">Théorèmes</div></div>
+          <div><div class="n">S1</div><div class="l">Semestre 1</div></div>
         </div>
       </div>
       <div class="panel">
         <span class="eyebrow">Ce que couvre le site</span>
-        <div style="font-family:var(--f-disp);font-style:italic;font-size:24px;color:var(--accent);margin:10px 0 4px">Analyse 3</div>
-        <div style="font-size:13.5px;color:var(--muted);font-family:var(--f-mono)">Séries numériques · Séries de Fourier</div>
-        <div style="font-family:var(--f-disp);font-style:italic;font-size:24px;color:var(--accent2);margin:16px 0 4px">Algèbre 3</div>
-        <div style="font-size:13.5px;color:var(--muted);font-family:var(--f-mono)">Matrices · Déterminants · Espaces vectoriels · Applications linéaires · Révisions géométrie</div>
+        <div style="font-family:var(--f-disp);font-style:italic;font-size:22px;color:var(--accent);margin:10px 0 4px">Calcul différentiel</div>
+        <div style="font-size:13.5px;color:var(--muted);font-family:var(--f-mono)">Fonctions R<sup>n</sup>→R · gradient · matrice jacobienne</div>
+        <div style="font-family:var(--f-disp);font-style:italic;font-size:22px;color:var(--accent);margin:16px 0 4px">Analyse vectorielle</div>
+        <div style="font-size:13.5px;color:var(--muted);font-family:var(--f-mono)">∇ · div · rot · Green · Stokes · Ostrogradski</div>
+        <div style="font-family:var(--f-disp);font-style:italic;font-size:22px;color:var(--accent2);margin:16px 0 4px">Intégration &amp; optim.</div>
+        <div style="font-size:13.5px;color:var(--muted);font-family:var(--f-mono)">Doubles · triples · courbes · surfaces · extrema</div>
         <div class="ring-wrap">
           <div class="ring" id="progRing"><b id="progPct">0%</b></div>
-          <div class="rt">Progression du cours<br><b id="progTxt">0 / 7 chapitres validés</b></div>
+          <div class="rt">Progression du cours<br><b id="progTxt">0 / 8 chapitres validés</b></div>
         </div>
       </div>
     </div>
@@ -84,7 +86,7 @@
       <p>Un cours structuré, des fiches de synthèse, deux fiches de formules, les exos types, un quiz et un planning.</p>
     </div>
     <div class="card-grid">
-      <button class="card" data-go="cours"><div class="ic">§</div><h3>Cours complet</h3><p>7 chapitres — définitions, théorèmes, méthodes et exemples.</p><span class="tag">Analyse + Algèbre →</span></button>
+      <button class="card" data-go="cours"><div class="ic">§</div><h3>Cours complet</h3><p>8 chapitres — définitions, théorèmes, méthodes et exemples.</p><span class="tag">Analyse 3 →</span></button>
       <button class="card" data-go="notions"><div class="ic">✓</div><h3>Notions clés</h3><p>Une fiche par chapitre : uniquement l'essentiel du DS/partiel.</p><span class="tag">Essentiel →</span></button>
       <button class="card" data-go="formules"><div class="ic">∫</div><h3>Formules détaillées</h3><p>Toutes les formules avec conditions et cas particuliers.</p><span class="tag">Référence →</span></button>
       <button class="card" data-go="express"><div class="ic">⚡</div><h3>Formules express</h3><p>Anti-sèche brut, une colonne par chapitre.</p><span class="tag">Rapide →</span></button>
@@ -94,7 +96,7 @@
 
     <div class="section-head">
       <span class="eyebrow">Programme</span>
-      <h2>Les 7 chapitres</h2>
+      <h2>Les 8 chapitres</h2>
     </div>
     <div id="homeChapters"></div>
   </div>
@@ -105,400 +107,415 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">📚 Le cours complet</span>
-      <h2>Analyse 3 &amp; Algèbre 3</h2>
-      <p>Sept chapitres structurés — définitions, théorèmes, méthodes et exemples courts. Cochez chaque chapitre validé pour suivre votre progression.</p>
+      <h2>Analyse 3 · calcul différentiel &amp; intégral</h2>
+      <p>Huit chapitres structurés — définitions, théorèmes, méthodes et exemples courts. Cochez chaque chapitre validé pour suivre votre progression.</p>
     </div>
     <div class="course-layout">
       <aside class="toc" id="toc">
-        <div class="toc-mat">Algèbre 3</div>
-        <a href="#ch-alg-geo" data-ch>0 · Révisions géométrie</a>
-        <a href="#ch-alg-mat" data-ch>1 · Matrices</a>
-        <a href="#ch-alg-det" data-ch>2 · Déterminants</a>
-        <a href="#ch-alg-ev" data-ch>3 · Espaces vectoriels</a>
-        <a href="#ch-alg-lin" data-ch>4 · Applications linéaires</a>
-        <div class="toc-mat">Analyse 3</div>
-        <a href="#ch-ana-ser" data-ch>5 · Séries numériques</a>
-        <a href="#ch-ana-fou" data-ch>6 · Séries de Fourier</a>
+        <div class="toc-title">Chapitres</div>
+        <a href="#ch0" data-ch>0 · Révisions géométrie</a>
+        <a href="#ch1" data-ch>1 · Fonctions de plusieurs variables</a>
+        <a href="#ch2" data-ch>2 · Opérateurs vectoriels</a>
+        <a href="#ch3" data-ch>3 · Courbes, surfaces, solides</a>
+        <a href="#ch4" data-ch>4 · Intégrales multiples</a>
+        <a href="#ch5" data-ch>5 · Intégrales curvilignes</a>
+        <a href="#ch6" data-ch>6 · Intégrales de surface</a>
+        <a href="#ch7" data-ch>7 · Optimisation</a>
       </aside>
       <div class="course-content">
 
-<!-- ============ CH ALG 0 : GÉOMÉTRIE ============ -->
-<article class="chapter" id="ch-alg-geo">
+<!-- ============ CH 0 : GÉOMÉTRIE ============ -->
+<article class="chapter" id="ch0">
   <div class="chapter-hd">
-    <span class="cn">CH 0</span><span class="mat">Algèbre</span>
+    <span class="cn">CH 0</span>
     <h2>Révisions géométrie du plan et de l'espace</h2>
     <label class="chap-check"><input type="checkbox" data-chk="0"> validé</label>
   </div>
   <div class="prose">
-    <p>Ce chapitre remet en place les outils vectoriels indispensables : produit scalaire, produit vectoriel, équations de droites et de plans. Rien de nouveau, tout devra être opérationnel.</p>
+    <p>Ce chapitre remet en place les outils vectoriels qui structurent tout le semestre : produit scalaire, vectoriel, mixte, équations de droites et de plans. Rien de nouveau, mais tout doit être immédiat.</p>
 
     <h3>Vecteurs et produit scalaire</h3>
-    <div class="box def"><div class="bt">◆ Définition</div><p>Le <span class="term">produit scalaire</span> de deux vecteurs <b>u</b> et <b>v</b> est le réel <b>u</b>·<b>v</b> = ‖<b>u</b>‖·‖<b>v</b>‖·cos θ, où θ est l'angle entre eux. En coordonnées (base orthonormée) : <b>u</b>·<b>v</b> = x·x' + y·y' + z·z'.</p></div>
+    <div class="box def"><div class="bt">◆ Définition</div><p>Le <span class="term">produit scalaire</span> de deux vecteurs <b>u</b> et <b>v</b> est le réel <b>u</b>·<b>v</b> = ‖<b>u</b>‖·‖<b>v</b>‖·cos θ, où θ est l'angle entre eux. En base orthonormée : <b>u</b>·<b>v</b> = xx' + yy' + zz'.</p></div>
     <div class="eq">‖u‖ = √(u·u) = √(x² + y² + z²)<span class="lbl">norme euclidienne</span></div>
-    <p>Propriétés à retenir : bilinéarité, symétrie, positivité (‖<b>u</b>‖ = 0 ⟺ <b>u</b> = <b>0</b>). Deux vecteurs sont <span class="term">orthogonaux</span> si et seulement si leur produit scalaire est nul.</p>
+    <p><strong>Propriétés à connaître</strong> : bilinéarité, symétrie, positivité (‖<b>u</b>‖ = 0 ⟺ <b>u</b> = <b>0</b>). Deux vecteurs sont <span class="term">orthogonaux</span> si et seulement si leur produit scalaire est nul.</p>
 
     <h3>Produit vectoriel (dans ℝ³)</h3>
-    <div class="box def"><div class="bt">◆ Définition</div><p>Le <span class="term">produit vectoriel</span> <b>u</b>∧<b>v</b> (ou <b>u</b>×<b>v</b>) est l'unique vecteur tel que ‖<b>u</b>∧<b>v</b>‖ = ‖<b>u</b>‖·‖<b>v</b>‖·|sin θ|, orthogonal à <b>u</b> et à <b>v</b>, avec (<b>u</b>, <b>v</b>, <b>u</b>∧<b>v</b>) formant un trièdre direct.</p></div>
-    <div class="eq">u∧v = <span class="mat">y·z' − z·y' ; z·x' − x·z' ; x·y' − y·x'</span><span class="lbl">expression en coordonnées</span></div>
-    <p><strong>Propriétés</strong> : bilinéaire, <em>antisymétrique</em> (<b>v</b>∧<b>u</b> = −<b>u</b>∧<b>v</b>), <b>u</b>∧<b>v</b> = <b>0</b> ⟺ <b>u</b> et <b>v</b> colinéaires. L'aire du parallélogramme construit sur <b>u</b>, <b>v</b> vaut ‖<b>u</b>∧<b>v</b>‖.</p>
+    <div class="box def"><div class="bt">◆ Définition</div><p>Le <span class="term">produit vectoriel</span> <b>u</b> ∧ <b>v</b> est l'unique vecteur : orthogonal à <b>u</b> et à <b>v</b>, de norme ‖<b>u</b>‖·‖<b>v</b>‖·|sin θ|, tel que (<b>u</b>, <b>v</b>, <b>u</b> ∧ <b>v</b>) forme un trièdre direct.</p></div>
+    <div class="eq">u ∧ v = (yz' − zy', zx' − xz', xy' − yx')<span class="lbl">expression en coordonnées</span></div>
+    <p><strong>Propriétés</strong> : bilinéaire, <em>antisymétrique</em> (<b>v</b> ∧ <b>u</b> = −<b>u</b> ∧ <b>v</b>), <b>u</b> ∧ <b>v</b> = <b>0</b> ⟺ <b>u</b> et <b>v</b> colinéaires. L'aire du parallélogramme construit sur <b>u</b>, <b>v</b> vaut ‖<b>u</b> ∧ <b>v</b>‖.</p>
 
     <h3>Produit mixte et volumes</h3>
-    <div class="eq">[u, v, w] = (u∧v)·w = det(u, v, w)<span class="lbl">produit mixte = déterminant</span></div>
+    <div class="eq">[u, v, w] = (u ∧ v) · w = det(u, v, w)<span class="lbl">produit mixte = déterminant</span></div>
     <p>Le volume du parallélépipède construit sur <b>u</b>, <b>v</b>, <b>w</b> vaut |[<b>u</b>, <b>v</b>, <b>w</b>]|. Les trois vecteurs sont coplanaires si et seulement si [<b>u</b>, <b>v</b>, <b>w</b>] = 0.</p>
 
     <h3>Droites et plans</h3>
-    <p>Une <span class="term">droite</span> est déterminée par un point A et un vecteur directeur <b>u</b> : représentation paramétrique M = A + t·<b>u</b>. Un <span class="term">plan</span> est déterminé par un point A et un vecteur normal <b>n</b> : équation cartésienne <b>n</b>·(<b>AM</b>) = 0, soit ax + by + cz + d = 0.</p>
-    <div class="box method"><div class="bt">▹ Méthode — droite ∩ plan</div><p>Écrire M sur la droite : (x,y,z) = A + t·<b>u</b>. Injecter dans l'équation du plan. Résoudre pour t. Reporter pour obtenir M.</p></div>
+    <p>Une <span class="term">droite</span> est déterminée par un point A et un vecteur directeur <b>u</b> : représentation paramétrique M = A + t·<b>u</b>. Un <span class="term">plan</span> est déterminé par un point A et un vecteur normal <b>n</b> : équation cartésienne <b>n</b>·<b>AM</b> = 0, soit ax + by + cz + d = 0.</p>
+    <div class="box method"><div class="bt">▹ Méthode — droite ∩ plan</div><p>Écrire M sur la droite : (x,y,z) = A + t·<b>u</b>. Injecter dans l'équation du plan, résoudre pour t, reporter pour obtenir M.</p></div>
+    <div class="box method"><div class="bt">▹ Distance point-plan</div><p>Si le plan a pour équation ax + by + cz + d = 0 et M = (x<sub>0</sub>, y<sub>0</sub>, z<sub>0</sub>) : d(M, P) = |ax<sub>0</sub> + by<sub>0</sub> + cz<sub>0</sub> + d| / √(a² + b² + c²).</p></div>
   </div>
 </article>
 
-<!-- ============ CH ALG 1 : MATRICES ============ -->
-<article class="chapter" id="ch-alg-mat">
+<!-- ============ CH 1 : FONCTIONS PLUSIEURS VARIABLES ============ -->
+<article class="chapter" id="ch1">
   <div class="chapter-hd">
-    <span class="cn">CH 1</span><span class="mat">Algèbre</span>
-    <h2>Matrices</h2>
+    <span class="cn">CH 1</span>
+    <h2>Fonctions de plusieurs variables</h2>
     <label class="chap-check"><input type="checkbox" data-chk="1"> validé</label>
   </div>
   <div class="prose">
-    <p>Une matrice est un tableau rectangulaire de nombres — mais surtout un outil pour manipuler simultanément plusieurs équations et représenter des applications linéaires (chapitre 4). Tout le semestre s'appuie dessus.</p>
+    <p>On passe des fonctions d'une variable f : ℝ → ℝ aux fonctions f : ℝ<sup>n</sup> → ℝ (surfaces au-dessus d'un domaine). Le cœur : la <em>dérivée partielle</em>, qui étend la dérivée classique en fixant toutes les variables sauf une.</p>
 
-    <h3>Définitions et matrices particulières</h3>
-    <div class="box def"><div class="bt">◆ Définition</div><p>Une <span class="term">matrice</span> A de taille m × n est un tableau à m lignes et n colonnes de coefficients dans un corps K (ici K = ℝ ou ℂ). On note A = (a<sub>ij</sub>), où i indique la ligne et j la colonne, et l'ensemble des matrices m × n à coefficients dans K est noté ℳ<sub>m,n</sub>(K).</p></div>
-    <div class="tbl-wrap"><table>
-      <tr><th>Nom</th><th>Condition</th><th>Exemple</th></tr>
-      <tr><td>Carrée</td><td>m = n</td><td>ℳ<sub>n</sub>(K)</td></tr>
-      <tr><td>Triangulaire sup.</td><td>a<sub>ij</sub> = 0 si i &gt; j</td><td>diagonale + au-dessus</td></tr>
-      <tr><td>Diagonale</td><td>a<sub>ij</sub> = 0 si i ≠ j</td><td>diag(d<sub>1</sub>,…,d<sub>n</sub>)</td></tr>
-      <tr><td>Identité I<sub>n</sub></td><td>diagonale avec des 1</td><td>élément neutre du produit</td></tr>
-      <tr><td>Ligne / colonne</td><td>m = 1 / n = 1</td><td>vecteurs</td></tr>
-      <tr><td>Nulle O<sub>m,n</sub></td><td>tous coeffs = 0</td><td>élément neutre de +</td></tr>
-    </table></div>
+    <h3>Ouverts et fonctions</h3>
+    <div class="box def"><div class="bt">◆ Ouvert</div><p>Un <span class="term">disque ouvert</span> de ℝ² centré en M<sub>0</sub> et de rayon r est D(M<sub>0</sub>, r) = {M ∈ ℝ², ‖M − M<sub>0</sub>‖ &lt; r}. Une partie U ⊂ ℝ² est <span class="term">ouverte</span> si pour tout M<sub>0</sub> ∈ U il existe r &gt; 0 tel que D(M<sub>0</sub>, r) ⊂ U. Idem dans ℝ³ avec des boules ouvertes.</p></div>
+    <p>Exemples d'ouverts : ℝ², ∅, un disque ouvert, un pavé ouvert ]a,b[×]c,d[. Pas ouverts : les fermés (disque fermé, [a,b]×[c,d]).</p>
+    <p>Une <span class="term">fonction réelle de plusieurs variables</span> a la forme f : D ⊂ ℝ<sup>n</sup> → ℝ. Une <span class="term">fonction vectorielle</span> va vers ℝ<sup>p</sup> : f = (f<sub>1</sub>, …, f<sub>p</sub>).</p>
 
-    <h3>Addition et multiplication scalaire</h3>
-    <p>Deux matrices se somment <em>si et seulement si elles ont la même taille</em> : (A+B)<sub>ij</sub> = a<sub>ij</sub> + b<sub>ij</sub>. La multiplication par un scalaire λ donne (λA)<sub>ij</sub> = λ·a<sub>ij</sub>. L'ensemble (ℳ<sub>m,n</sub>(K), +, ·) est un K-espace vectoriel (chapitre 3).</p>
+    <h3>Limites et continuité</h3>
+    <p>La limite de f en un point M<sub>0</sub> existe s'il n'y a <em>qu'une seule valeur</em>, indépendante du chemin par lequel on approche M<sub>0</sub>. C'est là que réside la difficulté par rapport à une variable — il y a une infinité de chemins.</p>
+    <div class="box method"><div class="bt">▹ Méthode — montrer qu'une limite n'existe pas</div><p>Approcher M<sub>0</sub> par deux chemins différents (par ex. la droite y = 0 et la droite y = x, ou une parabole y = x²). Si les deux valeurs diffèrent, la limite n'existe pas.</p></div>
+    <p>f est <span class="term">continue en M<sub>0</sub></span> si lim<sub>M → M<sub>0</sub></sub> f(M) = f(M<sub>0</sub>). Les fonctions usuelles (polynomiales, rationnelles, cos, sin, exp) sont continues sur leur domaine.</p>
 
-    <h3>Produit matriciel</h3>
-    <div class="box def"><div class="bt">◆ Définition</div><p>Si A ∈ ℳ<sub>m,n</sub>(K) et B ∈ ℳ<sub>n,p</sub>(K), leur produit AB ∈ ℳ<sub>m,p</sub>(K) est défini par (AB)<sub>ij</sub> = ∑<sub>k=1</sub><sup>n</sup> a<sub>ik</sub>·b<sub>kj</sub>.</p></div>
-    <div class="box warn"><div class="bt">⚠ Pièges</div><p>Le produit AB n'est défini que si le <b>nombre de colonnes de A</b> égale le <b>nombre de lignes de B</b>. AB ≠ BA en général (non-commutativité). AB = 0 n'implique <em>pas</em> A = 0 ou B = 0. AB = AC n'implique <em>pas</em> B = C.</p></div>
-    <p><strong>Règles vraies</strong> : associativité A(BC) = (AB)C, distributivité A(B+C) = AB + AC, λ(AB) = (λA)B = A(λB), I·A = A·I = A (avec les bonnes tailles).</p>
+    <h3>Dérivées partielles</h3>
+    <div class="box def"><div class="bt">◆ Dérivée partielle</div>
+      <p>La <span class="term">dérivée partielle</span> de f par rapport à x en (x<sub>0</sub>, y<sub>0</sub>) est</p>
+      <div class="eq">∂f/∂x (x<sub>0</sub>, y<sub>0</sub>) = lim<sub>h → 0</sub> (f(x<sub>0</sub>+h, y<sub>0</sub>) − f(x<sub>0</sub>, y<sub>0</sub>)) / h</div>
+      <p>En pratique : dériver comme d'habitude en <em>fixant l'autre variable comme une constante</em>. Notation alternative : f<sub>x</sub> ou ∂<sub>x</sub>f.</p></div>
+    <div class="box ex"><div class="bt">▹ Exemple</div><p>Pour f(x, y) = x²y + sin(xy) : ∂f/∂x = 2xy + y·cos(xy), ∂f/∂y = x² + x·cos(xy).</p></div>
 
-    <h3>Transposée</h3>
-    <div class="box def"><div class="bt">◆ Définition</div><p>La <span class="term">transposée</span> de A ∈ ℳ<sub>m,n</sub>(K), notée <sup>t</sup>A (ou A<sup>T</sup>), est la matrice de ℳ<sub>n,m</sub>(K) obtenue en échangeant lignes et colonnes : (<sup>t</sup>A)<sub>ij</sub> = a<sub>ji</sub>.</p></div>
-    <div class="eq"><sup>t</sup>(A+B) = <sup>t</sup>A + <sup>t</sup>B  ·  <sup>t</sup>(λA) = λ·<sup>t</sup>A  ·  <sup>t</sup>(<sup>t</sup>A) = A  ·  <sup>t</sup>(AB) = <sup>t</sup>B·<sup>t</sup>A<span class="lbl">attention à l'inversion</span></div>
-    <p>Une matrice carrée est dite <span class="term">symétrique</span> si <sup>t</sup>A = A, <span class="term">antisymétrique</span> si <sup>t</sup>A = −A.</p>
+    <h3>Dérivées d'ordre supérieur — Schwarz</h3>
+    <p>On peut redériver : ∂²f/∂x² (deux fois par rapport à x), ∂²f/∂y², et les <em>croisées</em> ∂²f/∂x∂y et ∂²f/∂y∂x.</p>
+    <div class="box thm"><div class="bt">■ Théorème de Schwarz</div><p>Si f est de classe C² (dérivées partielles secondes continues), alors ∂²f/∂x∂y = ∂²f/∂y∂x : <em>l'ordre de dérivation ne compte pas</em>.</p></div>
 
-    <h3>Échelonnage par opérations élémentaires</h3>
-    <p>Trois <span class="term">opérations élémentaires</span> sur les lignes préservent l'ensemble des solutions d'un système :</p>
-    <div class="tbl-wrap"><table>
-      <tr><th>Notation</th><th>Effet</th></tr>
-      <tr><td class="mono">L<sub>i</sub> ↔ L<sub>j</sub></td><td>échange de deux lignes</td></tr>
-      <tr><td class="mono">L<sub>i</sub> ← λ·L<sub>i</sub> (λ ≠ 0)</td><td>multiplication d'une ligne par un scalaire non nul</td></tr>
-      <tr><td class="mono">L<sub>i</sub> ← L<sub>i</sub> + λ·L<sub>j</sub></td><td>ajout d'un multiple d'une autre ligne</td></tr>
-    </table></div>
-    <div class="box method"><div class="bt">▹ Méthode — mettre A sous forme échelonnée</div><ol>
-      <li>Choisir un pivot dans la 1ʳᵉ colonne (première ligne non nulle sur cette colonne). L'amener en haut par un échange si besoin.</li>
-      <li>Utiliser L<sub>i</sub> ← L<sub>i</sub> + λL<sub>1</sub> pour annuler tous les coefficients sous le pivot.</li>
-      <li>Passer à la sous-matrice restante (ligne 2 et suivantes, colonne 2 et suivantes) et recommencer.</li>
-    </ol></div>
-    <p>Le nombre de pivots obtenus est le <span class="term">rang</span> de A — invariant, indépendant du chemin choisi.</p>
+    <h3>Différentiabilité et matrice jacobienne</h3>
+    <p>f est <span class="term">différentiable</span> en M<sub>0</sub> s'il existe une application linéaire df(M<sub>0</sub>) telle que f(M<sub>0</sub> + h) = f(M<sub>0</sub>) + df(M<sub>0</sub>)(h) + o(‖h‖). En pratique : f est différentiable dès qu'elle est de classe C¹ (les dérivées partielles existent et sont continues).</p>
+    <div class="box def"><div class="bt">◆ Matrice jacobienne</div><p>Pour f : ℝ<sup>n</sup> → ℝ<sup>p</sup> différentiable, sa <span class="term">jacobienne</span> J<sub>f</sub> est la matrice p × n des dérivées partielles :</p>
+      <div class="eq">(J<sub>f</sub>)<sub>ij</sub> = ∂f<sub>i</sub> / ∂x<sub>j</sub></div></div>
+    <p>Cas particulier : si p = 1, J<sub>f</sub> est le vecteur ligne des dérivées partielles — c'est le <span class="term">gradient</span> transposé.</p>
 
-    <h3>Inverse d'une matrice carrée</h3>
-    <div class="box def"><div class="bt">◆ Définition</div><p>A ∈ ℳ<sub>n</sub>(K) est <span class="term">inversible</span> s'il existe B ∈ ℳ<sub>n</sub>(K) telle que AB = BA = I<sub>n</sub>. On note B = A<sup>−1</sup>.</p></div>
-    <div class="box method"><div class="bt">▹ Méthode Gauss-Jordan — calcul de A<sup>−1</sup></div><p>Écrire la matrice augmentée [A | I<sub>n</sub>]. Appliquer des opérations élémentaires jusqu'à obtenir [I<sub>n</sub> | B]. Alors B = A<sup>−1</sup>. Si un pivot manque, A n'est pas inversible.</p></div>
-    <p><strong>Propriétés</strong> : (AB)<sup>−1</sup> = B<sup>−1</sup>·A<sup>−1</sup> (attention à l'ordre !), (<sup>t</sup>A)<sup>−1</sup> = <sup>t</sup>(A<sup>−1</sup>), (λA)<sup>−1</sup> = (1/λ)·A<sup>−1</sup>.</p>
+    <h3>Composition — règle de la chaîne</h3>
+    <div class="box thm"><div class="bt">■ Théorème</div><p>Si g : ℝ<sup>n</sup> → ℝ<sup>p</sup> et f : ℝ<sup>p</sup> → ℝ<sup>q</sup> sont différentiables, alors f ∘ g l'est, et sa jacobienne est le produit matriciel : J<sub>f∘g</sub>(x) = J<sub>f</sub>(g(x)) · J<sub>g</sub>(x).</p></div>
+
+    <h3>Formule de Taylor à l'ordre 2</h3>
+    <p>Autour d'un point (a, b), pour f de classe C² :</p>
+    <div class="eq">f(a+h, b+k) = f(a,b) + h·f<sub>x</sub> + k·f<sub>y</sub> + ½(h²·f<sub>xx</sub> + 2hk·f<sub>xy</sub> + k²·f<sub>yy</sub>) + o(h²+k²)</div>
+    <p>Cette formule sera essentielle au chapitre 7 (optimisation) pour identifier la nature d'un point critique.</p>
   </div>
 </article>
 
-<!-- ============ CH ALG 2 : DÉTERMINANTS ============ -->
-<article class="chapter" id="ch-alg-det">
+<!-- ============ CH 2 : OPÉRATEURS VECTORIELS ============ -->
+<article class="chapter" id="ch2">
   <div class="chapter-hd">
-    <span class="cn">CH 2</span><span class="mat">Algèbre</span>
-    <h2>Déterminants</h2>
+    <span class="cn">CH 2</span>
+    <h2>Opérateurs vectoriels : grad, div, rot</h2>
     <label class="chap-check"><input type="checkbox" data-chk="2"> validé</label>
   </div>
   <div class="prose">
-    <p>Un scalaire attaché à toute matrice carrée, qui répond en une seule question : « la matrice est-elle inversible ? ». C'est aussi un outil pour résoudre les systèmes (Cramer) et calculer des aires/volumes (chapitre 0).</p>
+    <p>Le chapitre le plus important : trois opérateurs différentiels (<b>gradient</b>, <b>divergence</b>, <b>rotationnel</b>) qui décrivent complètement le comportement d'un champ dans l'espace, plus le <b>laplacien</b>. Fondamental pour les intégrales curvilignes (ch. 5) et de surface (ch. 6) : Green, Stokes, Ostrogradski.</p>
 
-    <h3>Petites dimensions</h3>
-    <div class="eq">det <span class="mat">a &nbsp; b ; c &nbsp; d</span> = ad − bc<span class="lbl">n = 2</span></div>
-    <div class="box method"><div class="bt">▹ Règle de Sarrus (n = 3 seulement)</div><p>Recopier les deux premières colonnes à droite. Sommer les 3 diagonales descendantes, retrancher les 3 diagonales montantes.</p></div>
-    <p><strong>Attention</strong> : Sarrus ne marche <em>que</em> pour n = 3. À partir de n = 4, on utilise le développement.</p>
+    <h3>Champs scalaires et champs vectoriels</h3>
+    <div class="box def"><div class="bt">◆ Deux types de champs</div>
+      <ul>
+        <li>Un <span class="term">champ scalaire</span> associe à chaque point de l'espace un <em>nombre</em> : f : D ⊂ ℝ³ → ℝ. Exemple physique : la température T(x, y, z).</li>
+        <li>Un <span class="term">champ vectoriel</span> associe à chaque point un <em>vecteur</em> : <b>f</b> : D ⊂ ℝ³ → ℝ³, <b>f</b>(x,y,z) = (f<sub>1</sub>, f<sub>2</sub>, f<sub>3</sub>). Exemple : le champ de vitesses d'un fluide, un champ électrique.</li>
+      </ul></div>
 
-    <h3>Cas général : développement</h3>
-    <div class="box def"><div class="bt">◆ Cofacteur</div><p>Le <span class="term">cofacteur</span> C<sub>ij</sub> d'un coefficient a<sub>ij</sub> est (−1)<sup>i+j</sup> × det(M<sub>ij</sub>), où M<sub>ij</sub> est la matrice obtenue en supprimant la ligne i et la colonne j de A.</p></div>
-    <div class="box thm"><div class="bt">■ Théorème — développement par ligne/colonne</div>
-      <p>Pour tout indice i (fixé), det(A) = ∑<sub>j=1</sub><sup>n</sup> a<sub>ij</sub>·C<sub>ij</sub>. De même par colonne : pour tout j fixé, det(A) = ∑<sub>i=1</sub><sup>n</sup> a<sub>ij</sub>·C<sub>ij</sub>.</p></div>
-    <div class="box method"><div class="bt">▹ Astuce</div><p>Développer par la ligne ou la colonne qui contient le plus de zéros — chaque zéro tue un sous-déterminant à calculer.</p></div>
+    <h3>L'opérateur nabla ∇</h3>
+    <p>Symbole formel qui unifie l'écriture des trois opérateurs. En coordonnées cartésiennes :</p>
+    <div class="eq">∇ = (∂/∂x, ∂/∂y, ∂/∂z)<span class="lbl">« vecteur » de dérivées partielles</span></div>
 
-    <h3>Propriétés du déterminant</h3>
+    <h3>Le gradient : ∇f</h3>
+    <div class="box def"><div class="bt">◆ Gradient</div><p>Pour un champ <em>scalaire</em> f de classe C¹, le <span class="term">gradient</span> est le champ <em>vectoriel</em> :</p>
+      <div class="eq">∇f = grad f = (∂f/∂x, ∂f/∂y, ∂f/∂z)</div>
+      <p>Propriété-clé : ∇f(X) est <b>normal à la surface</b> d'équation f = constante passant par X (et pointe dans le sens des f croissants).</p></div>
+
+    <h3>La divergence : ∇·f</h3>
+    <div class="box def"><div class="bt">◆ Divergence</div><p>Pour un champ <em>vectoriel</em> <b>f</b> = (f<sub>1</sub>, f<sub>2</sub>, f<sub>3</sub>) de classe C¹, la <span class="term">divergence</span> est le champ <em>scalaire</em> :</p>
+      <div class="eq">div <b>f</b> = ∇ · <b>f</b> = ∂f<sub>1</sub>/∂x + ∂f<sub>2</sub>/∂y + ∂f<sub>3</sub>/∂z</div>
+      <p>Interprétation physique : mesure locale du « débit » sortant d'un point (source si div &gt; 0, puits si &lt; 0, incompressible si = 0).</p></div>
+
+    <h3>Le rotationnel : ∇ ∧ f</h3>
+    <div class="box def"><div class="bt">◆ Rotationnel</div><p>Pour un champ vectoriel <b>f</b> de classe C¹, le <span class="term">rotationnel</span> est le champ <em>vectoriel</em> :</p>
+      <div class="eq">rot <b>f</b> = ∇ ∧ <b>f</b> = (∂f<sub>3</sub>/∂y − ∂f<sub>2</sub>/∂z, ∂f<sub>1</sub>/∂z − ∂f<sub>3</sub>/∂x, ∂f<sub>2</sub>/∂x − ∂f<sub>1</sub>/∂y)</div>
+      <p>Interprétation : mesure la tendance à « tourbillonner » autour d'un point. rot <b>f</b> = <b>0</b> ⟹ le champ est « à circulation locale nulle ».</p></div>
+
+    <h3>Le laplacien : Δ = ∇²</h3>
+    <div class="box def"><div class="bt">◆ Laplacien</div>
+      <div class="eq">Δf = div(grad f) = ∇²f = ∂²f/∂x² + ∂²f/∂y² + ∂²f/∂z²</div>
+      <p>Somme des dérivées partielles secondes pures. Une fonction telle que Δf = 0 est dite <span class="term">harmonique</span>.</p></div>
+
+    <h3>Théorèmes de primitivation</h3>
+    <div class="box thm"><div class="bt">■ Identités remarquables</div>
+      <ul>
+        <li><b>rot(grad f) = 0</b> pour tout champ scalaire f de classe C² : un champ de gradient est toujours à rotationnel nul.</li>
+        <li><b>div(rot <b>f</b>) = 0</b> pour tout champ vectoriel <b>f</b> de classe C² : un champ « rotationnel » est toujours à divergence nulle.</li>
+      </ul></div>
+    <div class="box thm"><div class="bt">■ Réciproques (sur un ouvert simple)</div>
+      <ul>
+        <li>Si <b>rot f = 0</b>, alors localement il existe un potentiel scalaire φ tel que <b>f</b> = ∇φ. On dit que <b>f</b> <em>dérive d'un potentiel</em>.</li>
+        <li>Si <b>div f = 0</b>, alors localement il existe un potentiel vecteur <b>g</b> tel que <b>f</b> = rot <b>g</b>.</li>
+      </ul>
+      <p>Ces réciproques sont l'usage principal : chercher un potentiel φ dont f est le gradient est un exercice classique.</p></div>
+
+    <h3>Propriétés algébriques utiles</h3>
     <ul>
-      <li>Le det est <strong>multilinéaire</strong> par ligne (ou par colonne) : linéaire en chaque ligne, les autres étant fixées.</li>
-      <li><strong>Antisymétrique</strong> : échanger deux lignes ou deux colonnes change le signe.</li>
-      <li>det(A) = 0 si deux lignes (ou colonnes) sont identiques, ou si une ligne (ou colonne) est nulle, ou si les lignes sont liées.</li>
-      <li>L<sub>i</sub> ← L<sub>i</sub> + λL<sub>j</sub> <em>ne change pas</em> le déterminant (utile pour simplifier).</li>
-      <li>Multiplier une ligne par λ multiplie le det par λ ; donc det(λA) = λ<sup>n</sup>·det(A) pour A ∈ ℳ<sub>n</sub>.</li>
+      <li>Linéarité : grad, div, rot sont linéaires.</li>
+      <li>grad(fg) = f · grad g + g · grad f (règle du produit).</li>
+      <li>div(f · <b>v</b>) = f · div <b>v</b> + <b>v</b> · grad f.</li>
+      <li>rot(f · <b>v</b>) = f · rot <b>v</b> + grad f ∧ <b>v</b>.</li>
     </ul>
-    <div class="box thm"><div class="bt">■ Formules-clés</div>
-      <div class="eq">det(AB) = det(A)·det(B)  ·  det(<sup>t</sup>A) = det(A)  ·  det(A<sup>−1</sup>) = 1/det(A)</div>
-      <p>Cas particulier : pour une matrice <em>triangulaire</em> (sup. ou inf.), det = produit des coefficients diagonaux.</p></div>
-
-    <h3>Inversibilité et rang</h3>
-    <div class="box thm"><div class="bt">■ Critère fondamental</div><p>A ∈ ℳ<sub>n</sub>(K) est inversible ⟺ det(A) ≠ 0. Dans ce cas, rg(A) = n.</p></div>
-
-    <h3>Inverse par la comatrice</h3>
-    <div class="eq">A<sup>−1</sup> = <span class="frac"><span class="num">1</span><span class="den">det(A)</span></span> · <sup>t</sup>com(A)<span class="lbl">com(A)_ij = cofacteur C_ij</span></div>
-    <p>Coûteux à la main pour n ≥ 4 — on préfère Gauss-Jordan. Mais formule utile en théorie.</p>
-
-    <h3>Méthode de Cramer</h3>
-    <div class="box method"><div class="bt">▹ Résoudre A·X = B avec A inversible</div>
-      <p>Pour chaque inconnue x<sub>i</sub> : x<sub>i</sub> = det(A<sub>i</sub>) / det(A), où A<sub>i</sub> est la matrice A dont on a remplacé la i-ème colonne par le second membre B.</p></div>
-    <p>Efficace pour n = 2 ou 3. Au-delà, préférer le pivot de Gauss.</p>
   </div>
 </article>
 
-<!-- ============ CH ALG 3 : ESPACES VECTORIELS ============ -->
-<article class="chapter" id="ch-alg-ev">
+<!-- ============ CH 3 : COURBES, SURFACES, SOLIDES ============ -->
+<article class="chapter" id="ch3">
   <div class="chapter-hd">
-    <span class="cn">CH 3</span><span class="mat">Algèbre</span>
-    <h2>Espaces vectoriels</h2>
+    <span class="cn">CH 3</span>
+    <h2>Courbes, surfaces et solides — paramétrisations</h2>
     <label class="chap-check"><input type="checkbox" data-chk="3"> validé</label>
   </div>
   <div class="prose">
-    <p>Le cadre abstrait dans lequel vivent les vecteurs, les matrices, les polynômes, les fonctions. Toute la puissance du calcul matriciel s'y étend.</p>
+    <p>Un chapitre « géométrique » indispensable pour la suite : dès qu'on veut intégrer sur une courbe (ch. 5), une surface (ch. 6) ou un solide (ch. 4), on doit d'abord les <em>paramétrer</em>. Trois familles de coordonnées à connaître par cœur : polaires, cylindriques, sphériques.</p>
 
-    <h3>K-espace vectoriel</h3>
-    <div class="box def"><div class="bt">◆ Définition</div>
-      <p>Un <span class="term">K-espace vectoriel</span> (K = ℝ ou ℂ) est un ensemble E muni de deux opérations : une addition <em>interne</em> E × E → E et une multiplication <em>externe</em> K × E → E, vérifiant : associativité et commutativité de +, existence d'un neutre <b>0</b><sub>E</sub>, existence d'opposés, distributivités, associativité de la multiplication scalaire, 1·<b>u</b> = <b>u</b>.</p></div>
-    <p><strong>Exemples fondamentaux</strong> : ℝ<sup>n</sup>, ℂ<sup>n</sup>, ℳ<sub>m,n</sub>(K), l'espace K[X] des polynômes, K<sub>n</sub>[X] (polynômes de degré ≤ n), l'espace 𝓕(ℝ, ℝ) des fonctions.</p>
+    <h3>Courbe paramétrée du plan</h3>
+    <div class="box def"><div class="bt">◆ Définition</div><p>Une <span class="term">courbe paramétrée</span> du plan est donnée par γ(t) = (x(t), y(t)) pour t ∈ I ⊂ ℝ. Le vecteur tangent est γ'(t) = (x'(t), y'(t)).</p></div>
+    <p><strong>Exemples</strong> :</p>
+    <ul>
+      <li>Segment [AB] : γ(t) = A + t(B − A), t ∈ [0, 1].</li>
+      <li>Cercle de centre O, rayon R : γ(t) = (R cos t, R sin t), t ∈ [0, 2π].</li>
+      <li>Ellipse : γ(t) = (a cos t, b sin t).</li>
+      <li>Parabole y = x² : γ(t) = (t, t²).</li>
+    </ul>
 
-    <h3>Sous-espaces vectoriels (sev)</h3>
-    <div class="box def"><div class="bt">◆ Caractérisation d'un sev</div>
-      <p>F ⊂ E est un sev de E si et seulement si :</p>
-      <ol><li>F ≠ ∅ (en pratique : montrer que <b>0</b><sub>E</sub> ∈ F)</li>
-      <li>∀ <b>u</b>, <b>v</b> ∈ F, ∀ λ ∈ K : <b>λu + v</b> ∈ F (stabilité par combinaison linéaire)</li></ol>
-      <p>La deuxième condition suffit à englober addition et multiplication scalaire.</p></div>
-    <p>L'intersection de deux sev est un sev. La réunion, en général, non — sauf si l'un contient l'autre.</p>
+    <h3>Coordonnées polaires</h3>
+    <div class="eq">x = r cos θ&nbsp;·&nbsp;y = r sin θ<span class="lbl">avec r ≥ 0, θ ∈ [0, 2π[</span></div>
+    <p>Utiles quand le problème a une <em>symétrie centrale</em>. L'élément d'aire devient dxdy = r dr dθ (jacobien = r, ch. 4).</p>
 
-    <h3>Combinaisons linéaires et sev engendré</h3>
-    <div class="box def"><div class="bt">◆ Vect(…)</div><p>Soient <b>v</b><sub>1</sub>, …, <b>v</b><sub>p</sub> des vecteurs de E. L'ensemble des <span class="term">combinaisons linéaires</span> λ<sub>1</sub><b>v</b><sub>1</sub> + … + λ<sub>p</sub><b>v</b><sub>p</sub> forme un sev de E, appelé <span class="term">sev engendré</span> par ces vecteurs et noté Vect(<b>v</b><sub>1</sub>, …, <b>v</b><sub>p</sub>).</p></div>
-    <p>C'est le <em>plus petit</em> sev de E contenant les <b>v</b><sub>i</sub>.</p>
+    <h3>Surface paramétrée</h3>
+    <p>Une surface du plan (un domaine 2D) peut être paramétrée par deux variables : (u, v) → (x(u, v), y(u, v)). Une surface de l'espace : (u, v) → (x(u, v), y(u, v), z(u, v)).</p>
+    <p><strong>Exemples de surfaces</strong> :</p>
+    <ul>
+      <li>Un rectangle [a,b]×[c,d] : (u, v) → (u, v).</li>
+      <li>Un disque : (r, θ) → (r cos θ, r sin θ), (r, θ) ∈ [0, R] × [0, 2π].</li>
+      <li>Sphère de rayon R : (θ, φ) → (R sin φ cos θ, R sin φ sin θ, R cos φ).</li>
+      <li>Cylindre : (θ, z) → (R cos θ, R sin θ, z).</li>
+    </ul>
 
-    <h3>Familles libres, liées, génératrices</h3>
-    <div class="box def"><div class="bt">◆ Trois définitions à connaître</div>
+    <h3>Courbe de l'espace</h3>
+    <p>γ(t) = (x(t), y(t), z(t)), t ∈ I. Exemple emblématique : l'<span class="term">hélice</span> γ(t) = (R cos t, R sin t, ht).</p>
+
+    <h3>Solide et coordonnées de l'espace</h3>
+    <p>Un solide est un domaine 3D. Trois paramétrisations à connaître :</p>
+    <div class="box def"><div class="bt">◆ Cartésiennes → cylindriques → sphériques</div>
+      <div class="eq"><b>Cylindriques</b> : x = r cos θ, y = r sin θ, z = z&nbsp;&nbsp;·&nbsp;&nbsp;jacobien = r</div>
+      <div class="eq"><b>Sphériques</b> : x = r sin φ cos θ, y = r sin φ sin θ, z = r cos φ&nbsp;·&nbsp;jacobien = r² sin φ</div>
+      <p>φ ∈ [0, π] (angle depuis l'axe Oz), θ ∈ [0, 2π[ (angle dans le plan Oxy).</p></div>
+    <div class="box method"><div class="bt">▹ Quand choisir quoi ?</div>
       <ul>
-        <li><b>Génératrice</b> : (<b>v</b><sub>1</sub>, …, <b>v</b><sub>p</sub>) engendre E si Vect(<b>v</b><sub>1</sub>, …, <b>v</b><sub>p</sub>) = E — tout vecteur s'écrit comme combinaison linéaire.</li>
-        <li><b>Libre</b> : λ<sub>1</sub><b>v</b><sub>1</sub> + … + λ<sub>p</sub><b>v</b><sub>p</sub> = <b>0</b> ⟹ tous les λ<sub>i</sub> = 0.</li>
-        <li><b>Liée</b> : négation de libre — il existe une combinaison linéaire non triviale qui donne <b>0</b>. Équivalent : au moins un vecteur s'exprime comme combinaison des autres.</li>
+        <li><b>Cartésiennes</b> : pavés, domaines rectangulaires.</li>
+        <li><b>Cylindriques</b> : symétrie autour d'un axe (cylindre, cône).</li>
+        <li><b>Sphériques</b> : symétrie centrale (boule, coquille).</li>
       </ul></div>
-
-    <h3>Base et dimension</h3>
-    <div class="box def"><div class="bt">◆ Base</div><p>Une <span class="term">base</span> de E est une famille à la fois libre et génératrice. Autrement dit : tout <b>x</b> ∈ E s'écrit de manière <em>unique</em> comme combinaison linéaire des vecteurs de la base — les coefficients sont les <b>coordonnées</b> de <b>x</b> dans cette base.</p></div>
-    <div class="box thm"><div class="bt">■ Théorème de la dimension</div><p>Si E admet une base finie, alors toutes ses bases ont le même nombre d'éléments. Ce nombre s'appelle la <span class="term">dimension</span> de E, notée dim(E).</p></div>
-    <p>Exemples : dim(ℝ<sup>n</sup>) = n ; dim(ℳ<sub>m,n</sub>(K)) = m·n ; dim(K<sub>n</sub>[X]) = n + 1 (base canonique 1, X, X², …, X<sup>n</sup>).</p>
-
-    <div class="box thm"><div class="bt">■ Théorèmes de la base incomplète / extraite</div>
-      <p>En dimension finie : toute famille libre peut être <em>complétée</em> en une base. Toute famille génératrice peut être <em>réduite</em> en une base (extraction).</p></div>
-
-    <h3>Rang d'une famille de vecteurs</h3>
-    <div class="box def"><div class="bt">◆ Rang</div><p>Le <span class="term">rang</span> d'une famille (<b>v</b><sub>1</sub>, …, <b>v</b><sub>p</sub>) est la dimension du sev qu'elle engendre : rg(<b>v</b><sub>1</sub>, …, <b>v</b><sub>p</sub>) = dim Vect(<b>v</b><sub>1</sub>, …, <b>v</b><sub>p</sub>).</p></div>
-    <div class="box method"><div class="bt">▹ Méthode — calcul du rang</div><p>Empiler les vecteurs comme lignes (ou colonnes) d'une matrice, échelonner : le rang est le nombre de pivots.</p></div>
-
-    <h3>Somme et somme directe</h3>
-    <p>Si F et G sont deux sev de E : F + G = {<b>u</b> + <b>v</b>, <b>u</b> ∈ F, <b>v</b> ∈ G} est encore un sev. On dit que la somme est <span class="term">directe</span> (notée F ⊕ G) si F ∩ G = {<b>0</b>} — dans ce cas la décomposition est unique. Et dim(F + G) = dim F + dim G − dim(F ∩ G) (formule de Grassmann).</p>
   </div>
 </article>
 
-<!-- ============ CH ALG 4 : APPLICATIONS LINÉAIRES ============ -->
-<article class="chapter" id="ch-alg-lin">
+<!-- ============ CH 4 : INTÉGRALES MULTIPLES ============ -->
+<article class="chapter" id="ch4">
   <div class="chapter-hd">
-    <span class="cn">CH 4</span><span class="mat">Algèbre</span>
-    <h2>Applications linéaires</h2>
+    <span class="cn">CH 4</span>
+    <h2>Intégrales multiples (doubles &amp; triples)</h2>
     <label class="chap-check"><input type="checkbox" data-chk="4"> validé</label>
   </div>
   <div class="prose">
-    <p>Le pont entre matrices et espaces vectoriels : une matrice devient l'expression concrète d'une application linéaire dans des bases fixées.</p>
+    <p>Étendre l'intégration à ℝ² et ℝ³ : aires, volumes, masses, centres de gravité. La clé technique est le <span class="term">théorème de Fubini</span> (intégrales successives) et le <span class="term">changement de variables</span> (avec jacobien).</p>
 
-    <h3>Définition</h3>
-    <div class="box def"><div class="bt">◆ Application linéaire</div>
-      <p>Soient E et F deux K-ev. Une application f : E → F est <span class="term">linéaire</span> si, pour tous <b>u</b>, <b>v</b> ∈ E et λ ∈ K :</p>
-      <div class="eq">f(u + v) = f(u) + f(v)  ·  f(λ·u) = λ·f(u)</div>
-      <p>Équivalent : f(λ<b>u</b> + <b>v</b>) = λf(<b>u</b>) + f(<b>v</b>). On note ℒ(E, F) l'ensemble des applications linéaires de E dans F.</p></div>
-    <p><strong>Vocabulaire</strong> : un <span class="term">endomorphisme</span> est un f : E → E ; un <span class="term">isomorphisme</span> est une application linéaire bijective ; un <span class="term">automorphisme</span> est un endomorphisme bijectif ; une <span class="term">forme linéaire</span> est un f : E → K.</p>
+    <h3>Intégrale double — interprétation</h3>
+    <p>Si f ≥ 0 est continue sur un domaine D ⊂ ℝ², alors ∬<sub>D</sub> f dxdy représente le <span class="term">volume</span> compris entre le plan Oxy et la surface z = f(x, y), au-dessus de D. Cas particulier : ∬<sub>D</sub> 1 dxdy = aire(D).</p>
 
-    <h3>Noyau, image, rang</h3>
-    <div class="box def"><div class="bt">◆ Noyau et image</div>
+    <h3>Cas d'un rectangle : Fubini</h3>
+    <div class="box thm"><div class="bt">■ Théorème de Fubini (rectangle)</div>
+      <p>Si f est continue sur D = [a, b] × [c, d], alors :</p>
+      <div class="eq">∬<sub>D</sub> f dxdy = ∫<sub>c</sub><sup>d</sup> (∫<sub>a</sub><sup>b</sup> f(x, y) dx) dy = ∫<sub>a</sub><sup>b</sup> (∫<sub>c</sub><sup>d</sup> f(x, y) dy) dx</div>
+      <p>Les deux ordres donnent le même résultat.</p></div>
+    <div class="box ex"><div class="bt">▹ Astuce d'ordre</div><p>Choisir l'ordre qui simplifie le plus la première intégrale (souvent celle où la variable apparaît le moins « emmêlée »).</p></div>
+
+    <h3>Domaine général « de type 1 » ou « de type 2 »</h3>
+    <p>Si D = {(x, y), a ≤ x ≤ b, φ(x) ≤ y ≤ ψ(x)} (type 1) :</p>
+    <div class="eq">∬<sub>D</sub> f dxdy = ∫<sub>a</sub><sup>b</sup> (∫<sub>φ(x)</sub><sup>ψ(x)</sup> f(x, y) dy) dx</div>
+    <p>Le principe est le même en type 2, en fixant y et en variant x entre deux fonctions de y.</p>
+
+    <h3>Changement de variables — le jacobien</h3>
+    <div class="box thm"><div class="bt">■ Formule du changement de variables (2D)</div>
+      <p>Soit φ : (u, v) → (x, y) un difféomorphisme entre Δ et D. Alors :</p>
+      <div class="eq">∬<sub>D</sub> f(x, y) dxdy = ∬<sub>Δ</sub> f(x(u,v), y(u,v)) · |J<sub>φ</sub>(u,v)| dudv</div>
+      <p>où le <span class="term">jacobien</span> est J<sub>φ</sub> = det(∂x/∂u, ∂x/∂v ; ∂y/∂u, ∂y/∂v). On prend la valeur absolue.</p></div>
+    <div class="box ex"><div class="bt">▹ Cas polaire</div><p>x = r cos θ, y = r sin θ. Jacobien : |J| = r. D'où dxdy = r dr dθ. Très utile dès qu'un disque, un anneau ou un secteur apparaît.</p></div>
+
+    <h3>Intégrale triple</h3>
+    <div class="eq">∭<sub>V</sub> f(x, y, z) dxdydz</div>
+    <p>Fubini à trois niveaux : intégrer trois fois de suite, en respectant les bornes qui dépendent des variables « déjà intégrées ». Cas particulier : ∭<sub>V</sub> 1 dxdydz = volume(V).</p>
+
+    <h3>Changements de variables classiques 3D</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Système</th><th>Formules</th><th>Jacobien</th></tr>
+      <tr><td>Cylindriques</td><td class="mono">x=r cos θ, y=r sin θ, z=z</td><td class="mono">|J| = r</td></tr>
+      <tr><td>Sphériques</td><td class="mono">x=r sin φ cos θ, y=r sin φ sin θ, z=r cos φ</td><td class="mono">|J| = r² sin φ</td></tr>
+    </table></div>
+    <div class="box method"><div class="bt">▹ Applications</div>
       <ul>
-        <li>Ker f = { <b>u</b> ∈ E : f(<b>u</b>) = <b>0</b><sub>F</sub> } — <em>sev de E</em></li>
-        <li>Im f = { f(<b>u</b>) : <b>u</b> ∈ E } — <em>sev de F</em></li>
-        <li>rg(f) = dim(Im f) — appelé <em>rang</em> de f</li>
+        <li><b>Aire</b> d'un domaine plan D = ∬<sub>D</sub> 1 dxdy.</li>
+        <li><b>Volume</b> d'un solide V = ∭<sub>V</sub> 1 dxdydz.</li>
+        <li><b>Masse</b> d'un solide de densité ρ : M = ∭<sub>V</sub> ρ(x, y, z) dxdydz.</li>
+        <li><b>Centre de gravité</b> (x̄, ȳ, z̄) : moyenne pondérée par ρ.</li>
       </ul></div>
-    <div class="box thm"><div class="bt">■ Théorème du rang</div>
-      <p>Si E est de dimension finie et f : E → F linéaire, alors :</p>
-      <div class="eq">dim E = dim(Ker f) + rg(f)</div>
-      <p>C'est <em>le</em> théorème du chapitre. Il relie la « quantité » qui « disparaît » (Ker) et celle qui « survit » (Im).</p></div>
-
-    <h3>Injectivité, surjectivité, bijectivité</h3>
-    <div class="box thm"><div class="bt">■ Caractérisations</div>
-      <ul>
-        <li>f injective ⟺ <b>Ker f = {0}</b> (spécifique aux applications linéaires)</li>
-        <li>f surjective ⟺ Im f = F ⟺ rg(f) = dim F</li>
-        <li>Si dim E = dim F (fini) : f bijective ⟺ injective ⟺ surjective</li>
-      </ul></div>
-
-    <h3>Matrice d'une application linéaire</h3>
-    <div class="box def"><div class="bt">◆ Matrice dans des bases</div>
-      <p>Soient ℬ = (<b>e</b><sub>1</sub>, …, <b>e</b><sub>n</sub>) base de E et ℬ' = (<b>f</b><sub>1</sub>, …, <b>f</b><sub>m</sub>) base de F. La <span class="term">matrice de f</span> dans ces bases, notée Mat<sub>ℬ,ℬ'</sub>(f), est la matrice m × n dont la j-ième colonne contient les coordonnées de f(<b>e</b><sub>j</sub>) dans ℬ'.</p></div>
-    <p>Alors, pour tout <b>x</b> ∈ E : si X est le vecteur colonne des coordonnées de <b>x</b> dans ℬ, celui de f(<b>x</b>) dans ℬ' est A·X. <strong>Composition et produit</strong> : Mat(g ∘ f) = Mat(g) · Mat(f).</p>
-
-    <h3>Isomorphismes et rang matriciel</h3>
-    <div class="box thm"><div class="bt">■ Deux résultats</div>
-      <ul>
-        <li>Deux K-ev de dimension finie sont <b>isomorphes</b> si et seulement s'ils ont la même dimension.</li>
-        <li>Le rang de f est égal au rang de sa matrice dans <em>n'importe quelle</em> paire de bases : rg(f) = rg(A).</li>
-      </ul></div>
-    <p>Conséquence pratique : le rang d'une matrice se calcule par <b>échelonnage</b> (Ch 1). f est un isomorphisme ⟺ sa matrice est carrée et inversible ⟺ son déterminant est non nul.</p>
-
-    <h3>Changement de base</h3>
-    <p>Si P est la <span class="term">matrice de passage</span> de ℬ à ℬ' (colonnes = coordonnées des nouveaux vecteurs dans l'ancienne base), alors pour un vecteur <b>x</b> : X<sub>ℬ</sub> = P · X<sub>ℬ'</sub>. Pour un endomorphisme f : Mat<sub>ℬ'</sub>(f) = P<sup>−1</sup> · Mat<sub>ℬ</sub>(f) · P.</p>
-    <div class="box method"><div class="bt">▹ Méthode — vérifier que f est linéaire</div><ol>
-      <li>Prendre deux vecteurs quelconques <b>u</b>, <b>v</b>, un scalaire λ.</li>
-      <li>Calculer f(λ<b>u</b> + <b>v</b>) et vérifier qu'il vaut λ·f(<b>u</b>) + f(<b>v</b>).</li>
-    </ol></div>
   </div>
 </article>
 
-<!-- ============ CH ANA 1 : SÉRIES NUMÉRIQUES ============ -->
-<article class="chapter" id="ch-ana-ser">
+<!-- ============ CH 5 : INTÉGRALES CURVILIGNES ============ -->
+<article class="chapter" id="ch5">
   <div class="chapter-hd">
-    <span class="cn">CH 5</span><span class="mat" style="background:var(--amber-soft);color:var(--warn)">Analyse</span>
-    <h2>Séries numériques</h2>
+    <span class="cn">CH 5</span>
+    <h2>Intégrales curvilignes &amp; Green-Riemann</h2>
     <label class="chap-check"><input type="checkbox" data-chk="5"> validé</label>
   </div>
   <div class="prose">
-    <p>Quand une somme infinie a-t-elle un sens ? Ce chapitre donne <em>tous les critères</em> pour décider — et rien de plus important en analyse.</p>
+    <p>Intégrer <em>le long d'une courbe</em>. Deux variantes : sur un champ scalaire (longueur pondérée) et sur un champ vectoriel (<span class="term">circulation</span>). Le théorème de Green-Riemann fait le lien entre une intégrale curviligne et une intégrale double.</p>
 
-    <h3>Somme partielle et convergence</h3>
-    <div class="box def"><div class="bt">◆ Série et convergence</div>
-      <p>Soit (u<sub>n</sub>) une suite. La <span class="term">série de terme général u<sub>n</sub></span>, notée ∑ u<sub>n</sub>, est la suite des <em>sommes partielles</em> S<sub>n</sub> = u<sub>0</sub> + u<sub>1</sub> + … + u<sub>n</sub>. On dit qu'elle <b>converge</b> si (S<sub>n</sub>) admet une limite finie S — appelée alors la <em>somme</em> de la série, et on écrit S = ∑<sub>n=0</sub><sup>∞</sup> u<sub>n</sub>. Sinon la série <b>diverge</b>.</p></div>
-    <div class="box thm"><div class="bt">■ Condition nécessaire</div><p>Si ∑ u<sub>n</sub> converge, alors u<sub>n</sub> → 0. <em>La réciproque est fausse</em> — contre-exemple emblématique : la série harmonique ∑ 1/n diverge alors que 1/n → 0.</p></div>
+    <h3>Intégrale curviligne d'un champ scalaire</h3>
+    <div class="box def"><div class="bt">◆ Définition</div><p>Soit γ : t ∈ [a, b] → (x(t), y(t)) une courbe C¹ et f un champ scalaire continu :</p>
+      <div class="eq">∫<sub>γ</sub> f ds = ∫<sub>a</sub><sup>b</sup> f(x(t), y(t)) · ‖γ'(t)‖ dt</div>
+      <p>Cas particulier : ∫<sub>γ</sub> 1 ds = <b>longueur</b> de γ.</p></div>
 
-    <h3>Séries de référence</h3>
-    <div class="tbl-wrap"><table>
-      <tr><th>Série</th><th>Nature</th><th>Somme si CV</th></tr>
-      <tr><td class="mono">Géométrique ∑ q<sup>n</sup></td><td>CV ⟺ |q| &lt; 1</td><td class="mono">1/(1−q)</td></tr>
-      <tr><td class="mono">Riemann ∑ 1/n<sup>α</sup></td><td>CV ⟺ α &gt; 1</td><td>—</td></tr>
-      <tr><td class="mono">Harmonique ∑ 1/n</td><td>DV</td><td>—</td></tr>
-      <tr><td class="mono">Alternée ∑ (−1)<sup>n</sup>/n</td><td>CV (semi)</td><td class="mono">−ln 2</td></tr>
-      <tr><td class="mono">Bertrand ∑ 1/(n<sup>α</sup> ln<sup>β</sup> n)</td><td>CV ⟺ α &gt; 1, ou α = 1 et β &gt; 1</td><td>—</td></tr>
-    </table></div>
+    <h3>Intégrale curviligne d'un champ vectoriel — circulation</h3>
+    <div class="box def"><div class="bt">◆ Circulation</div><p>Soit γ une courbe orientée et <b>F</b> = (P, Q) un champ vectoriel :</p>
+      <div class="eq">∫<sub>γ</sub> <b>F</b> · d<b>l</b> = ∫<sub>γ</sub> P dx + Q dy = ∫<sub>a</sub><sup>b</sup> [P(γ(t))·x'(t) + Q(γ(t))·y'(t)] dt</div>
+      <p><strong>Interprétation physique</strong> : c'est le <em>travail</em> de la force <b>F</b> le long du trajet γ.</p></div>
 
-    <h3>Séries à termes positifs</h3>
-    <p>Pour ∑ u<sub>n</sub> avec u<sub>n</sub> ≥ 0 : la convergence équivaut à la <em>bornitude</em> des sommes partielles (car (S<sub>n</sub>) est croissante).</p>
+    <h3>Formes différentielles exactes</h3>
+    <p>Si <b>F</b> = ∇φ (dérive d'un potentiel), alors la circulation ne dépend que des extrémités :</p>
+    <div class="eq">∫<sub>γ</sub> ∇φ · d<b>l</b> = φ(γ(b)) − φ(γ(a))</div>
+    <p>En particulier, la circulation sur une courbe <em>fermée</em> est nulle. C'est pourquoi on cherche souvent à savoir si <b>F</b> dérive d'un potentiel — critère : rot <b>F</b> = 0 (ch. 2), sur un domaine simplement connexe.</p>
 
-    <div class="box thm"><div class="bt">■ Comparaison</div>
-      <p>Si 0 ≤ u<sub>n</sub> ≤ v<sub>n</sub> à partir d'un certain rang :</p>
+    <h3>Théorème de Green-Riemann</h3>
+    <div class="box thm"><div class="bt">■ Green-Riemann</div>
+      <p>Soit D un domaine borné du plan, de bord ∂D orienté positivement (dans le sens direct, D à gauche), et P, Q deux fonctions C¹ sur D. Alors :</p>
+      <div class="eq">∮<sub>∂D</sub> P dx + Q dy = ∬<sub>D</sub> (∂Q/∂x − ∂P/∂y) dxdy</div>
+      <p>Autrement dit : une circulation le long du bord = une intégrale double sur l'intérieur.</p></div>
+    <div class="box method"><div class="bt">▹ Comment l'utiliser</div>
+      <p>Green-Riemann sert dans les deux sens :</p>
       <ul>
-        <li>∑ v<sub>n</sub> converge ⟹ ∑ u<sub>n</sub> converge</li>
-        <li>∑ u<sub>n</sub> diverge ⟹ ∑ v<sub>n</sub> diverge</li>
+        <li>Transformer une <em>circulation compliquée</em> en une intégrale double sur un domaine simple.</li>
+        <li>Ou l'inverse : évaluer une intégrale double via le calcul d'une seule intégrale curviligne (souvent plus court sur un bord polygonal).</li>
+        <li>Calculer une <b>aire</b> par une intégrale sur le bord : aire(D) = ∮<sub>∂D</sub> x dy = −∮<sub>∂D</sub> y dx = ½ ∮<sub>∂D</sub> (x dy − y dx).</li>
       </ul></div>
-
-    <div class="box thm"><div class="bt">■ Équivalence</div>
-      <p>Si u<sub>n</sub> ~ v<sub>n</sub> et v<sub>n</sub> ≥ 0 à partir d'un certain rang, alors ∑ u<sub>n</sub> et ∑ v<sub>n</sub> ont la <em>même nature</em>. C'est le critère le plus efficace — à combiner avec les séries de référence.</p></div>
-
-    <div class="box thm"><div class="bt">■ Règle de D'Alembert</div>
-      <p>Si u<sub>n</sub> &gt; 0 et si <b>u<sub>n+1</sub> / u<sub>n</sub> → ℓ</b>, alors :</p>
-      <ul>
-        <li>ℓ &lt; 1 : la série converge</li>
-        <li>ℓ &gt; 1 : la série diverge (grossièrement, u<sub>n</sub> ↛ 0)</li>
-        <li>ℓ = 1 : le critère ne conclut pas — chercher un autre outil</li>
-      </ul></div>
-
-    <div class="box thm"><div class="bt">■ Règle de Cauchy</div>
-      <p>Si u<sub>n</sub> ≥ 0 et si <b>(u<sub>n</sub>)<sup>1/n</sup> → ℓ</b>, même verdict :</p>
-      <ul>
-        <li>ℓ &lt; 1 : CV — ℓ &gt; 1 : DV — ℓ = 1 : indéterminé</li>
-      </ul>
-      <p>Cauchy est plus puissant que D'Alembert en théorie, mais souvent moins commode en pratique.</p></div>
-
-    <div class="box thm"><div class="bt">■ Comparaison à une intégrale</div>
-      <p>Si f : [1, +∞[ → ℝ<sup>+</sup> est <em>continue, décroissante, positive</em>, alors la série ∑ f(n) et l'intégrale ∫<sub>1</sub><sup>+∞</sup> f(t) dt ont la même nature. C'est ainsi que se démontre le critère de Riemann.</p></div>
-
-    <h3>Séries à termes quelconques</h3>
-    <div class="box def"><div class="bt">◆ Convergence absolue</div>
-      <p>La série ∑ u<sub>n</sub> <span class="term">converge absolument</span> si ∑ |u<sub>n</sub>| converge. On a alors : convergence absolue ⟹ convergence (mais la réciproque est fausse). Utilité : pour étudier une série à termes quelconques, on tente d'abord la convergence absolue via les critères positifs ci-dessus.</p></div>
-
-    <div class="box thm"><div class="bt">■ Théorème des séries alternées (Leibniz)</div>
-      <p>Si (a<sub>n</sub>) est une suite <em>positive, décroissante, tendant vers 0</em>, alors la série alternée ∑ (−1)<sup>n</sup> a<sub>n</sub> converge. De plus le reste est majoré : |R<sub>n</sub>| ≤ a<sub>n+1</sub>.</p></div>
-
-    <div class="box thm"><div class="bt">■ Théorème d'Abel</div>
-      <p>Si (a<sub>n</sub>) est une suite dont les sommes partielles ∑<sub>k=0</sub><sup>n</sup> a<sub>k</sub> sont bornées, et si (b<sub>n</sub>) est une suite positive, décroissante, tendant vers 0, alors ∑ a<sub>n</sub>·b<sub>n</sub> converge. Généralise le critère des séries alternées.</p></div>
-
-    <div class="box method"><div class="bt">▹ Méthode générale — nature d'une série ∑ u<sub>n</sub></div>
-      <ol>
-        <li>Vérifier u<sub>n</sub> → 0. Sinon → <b>divergence grossière</b>.</li>
-        <li>Étudier |u<sub>n</sub>| : essayer un équivalent avec une série de référence (Riemann, géométrique).</li>
-        <li>Si D'Alembert ou Cauchy donne ℓ ≠ 1 : conclure directement.</li>
-        <li>Sinon comparaison à une intégrale, ou comparaison avec une série connue.</li>
-        <li>Terme alterné avec |u<sub>n</sub>| ↓ 0 : Leibniz.</li>
-      </ol></div>
   </div>
 </article>
 
-<!-- ============ CH ANA 2 : SÉRIES DE FOURIER ============ -->
-<article class="chapter" id="ch-ana-fou">
+<!-- ============ CH 6 : INTÉGRALES DE SURFACE ============ -->
+<article class="chapter" id="ch6">
   <div class="chapter-hd">
-    <span class="cn">CH 6</span><span class="mat" style="background:var(--amber-soft);color:var(--warn)">Analyse</span>
-    <h2>Séries de Fourier</h2>
+    <span class="cn">CH 6</span>
+    <h2>Intégrales de surface · Stokes · Ostrogradski</h2>
     <label class="chap-check"><input type="checkbox" data-chk="6"> validé</label>
   </div>
   <div class="prose">
-    <p>Toute fonction périodique « raisonnable » se décompose en somme d'ondes sinusoïdales — c'est le miracle Fourier. Aussi le fondement du traitement du signal, très utile en électronique (l'autre semestre !).</p>
+    <p>Intégrer <em>sur une surface</em>. Deux théorèmes cathédrale : <span class="term">Stokes</span> (relie circulation sur le bord et flux du rotationnel) et <span class="term">Green-Ostrogradski</span> (relie flux à travers la surface fermée et intégrale de la divergence dans le volume). Ces deux théorèmes généralisent Green-Riemann en 3D.</p>
 
-    <h3>Coefficients de Fourier</h3>
-    <div class="box def"><div class="bt">◆ Cas des fonctions 2π-périodiques</div>
-      <p>Soit f : ℝ → ℝ, 2π-périodique et continue par morceaux. Ses <span class="term">coefficients de Fourier réels</span> sont :</p>
-      <div class="eq">a<sub>n</sub> = <span class="frac"><span class="num">1</span><span class="den">π</span></span> ∫<sub>−π</sub><sup>π</sup> f(t)·cos(n·t) dt&nbsp;&nbsp;·&nbsp;&nbsp;b<sub>n</sub> = <span class="frac"><span class="num">1</span><span class="den">π</span></span> ∫<sub>−π</sub><sup>π</sup> f(t)·sin(n·t) dt</div>
-      <p>Cas particuliers : a<sub>0</sub> = (1/π) ∫<sub>−π</sub><sup>π</sup> f(t) dt (double de la moyenne). La <span class="term">série de Fourier</span> de f est :</p>
-      <div class="eq">S(x) = <span class="frac"><span class="num">a<sub>0</sub></span><span class="den">2</span></span> + ∑<sub>n=1</sub><sup>∞</sup> [a<sub>n</sub>·cos(n·x) + b<sub>n</sub>·sin(n·x)]</div>
-    </div>
+    <h3>Vecteurs tangents et vecteur normal</h3>
+    <p>Une surface S paramétrée par (u, v) → M(u, v) admet deux vecteurs tangents : ∂M/∂u et ∂M/∂v. Un <span class="term">vecteur normal</span> à S est leur produit vectoriel :</p>
+    <div class="eq"><b>N</b>(u, v) = ∂M/∂u ∧ ∂M/∂v</div>
+    <p>L'<span class="term">élément d'aire</span> est dS = ‖<b>N</b>‖ dudv.</p>
 
-    <h3>Symétries</h3>
-    <div class="tbl-wrap"><table>
-      <tr><th>Si f est…</th><th>Alors</th><th>Intégrale se simplifie</th></tr>
-      <tr><td>paire</td><td>b<sub>n</sub> = 0 pour tout n</td><td>a<sub>n</sub> = (2/π) ∫<sub>0</sub><sup>π</sup> f(t) cos(nt) dt</td></tr>
-      <tr><td>impaire</td><td>a<sub>n</sub> = 0 pour tout n</td><td>b<sub>n</sub> = (2/π) ∫<sub>0</sub><sup>π</sup> f(t) sin(nt) dt</td></tr>
-    </table></div>
-    <p>Astuce : intégrer sur [0, π] au lieu de [−π, π] divise le travail par deux et évite des erreurs de signe.</p>
+    <h3>Intégrale de surface d'un champ scalaire</h3>
+    <div class="eq">∬<sub>S</sub> f dS = ∬<sub>Δ</sub> f(M(u,v)) · ‖<b>N</b>(u,v)‖ dudv</div>
+    <p>Cas particulier f = 1 : on récupère l'<b>aire de la surface</b>.</p>
 
-    <h3>Cas d'une période T quelconque</h3>
-    <p>Si f est T-périodique, on pose ω = 2π/T (<span class="term">pulsation</span>) et :</p>
-    <div class="eq">a<sub>n</sub> = <span class="frac"><span class="num">2</span><span class="den">T</span></span> ∫<sub>−T/2</sub><sup>T/2</sup> f(t)·cos(nωt) dt&nbsp;&nbsp;·&nbsp;&nbsp;b<sub>n</sub> = <span class="frac"><span class="num">2</span><span class="den">T</span></span> ∫<sub>−T/2</sub><sup>T/2</sup> f(t)·sin(nωt) dt</div>
+    <h3>Intégrale de surface d'un champ vectoriel — flux</h3>
+    <div class="box def"><div class="bt">◆ Flux</div><p>Le <span class="term">flux</span> d'un champ vectoriel <b>F</b> à travers une surface S orientée par la normale <b>n</b> :</p>
+      <div class="eq">Φ = ∬<sub>S</sub> <b>F</b> · <b>n</b> dS = ∬<sub>Δ</sub> <b>F</b>(M(u,v)) · <b>N</b>(u,v) dudv</div>
+      <p><strong>Interprétation physique</strong> : quantité de <b>F</b> (fluide, champ électrique…) qui « traverse » la surface par unité de temps.</p></div>
 
-    <h3>Forme complexe</h3>
-    <div class="box def"><div class="bt">◆ Coefficients complexes</div>
-      <div class="eq">c<sub>n</sub> = <span class="frac"><span class="num">1</span><span class="den">2π</span></span> ∫<sub>−π</sub><sup>π</sup> f(t)·e<sup>−int</sup> dt&nbsp;·&nbsp;S(x) = ∑<sub>n=−∞</sub><sup>∞</sup> c<sub>n</sub>·e<sup>inx</sup></div>
-      <p>Liens réel ↔ complexe : c<sub>0</sub> = a<sub>0</sub>/2 ; c<sub>n</sub> = (a<sub>n</sub> − i·b<sub>n</sub>)/2 pour n ≥ 1 ; c<sub>−n</sub> = <span style="text-decoration:overline">c<sub>n</sub></span>.</p></div>
+    <h3>Théorème de Stokes</h3>
+    <div class="box thm"><div class="bt">■ Stokes</div>
+      <p>Soit S une surface orientée du bord ∂S (courbe fermée, orientée compatiblement avec <b>n</b>), et <b>F</b> un champ vectoriel C¹ :</p>
+      <div class="eq">∮<sub>∂S</sub> <b>F</b> · d<b>l</b> = ∬<sub>S</sub> rot <b>F</b> · <b>n</b> dS</div>
+      <p><em>Circulation sur le bord</em> = <em>flux du rotationnel à travers la surface</em>. C'est la version 3D de Green-Riemann.</p></div>
 
-    <h3>Convergence : théorème de Dirichlet</h3>
-    <div class="box thm"><div class="bt">■ Théorème de Dirichlet</div>
-      <p>Soit f 2π-périodique, <em>continue par morceaux</em> et <em>de classe C<sup>1</sup> par morceaux</em>. Alors la série de Fourier de f converge en tout point x :</p>
-      <div class="eq">S(x) = <span class="frac"><span class="num">f(x<sup>+</sup>) + f(x<sup>−</sup>)</span><span class="den">2</span></span></div>
-      <p>En particulier, si f est continue en x, alors S(x) = f(x). Aux points de discontinuité, on tombe sur la <em>moyenne</em> des limites à gauche et à droite.</p></div>
+    <h3>Théorème de Green-Ostrogradski (divergence)</h3>
+    <div class="box thm"><div class="bt">■ Ostrogradski</div>
+      <p>Soit V un volume borné de ℝ³ dont le bord ∂V est une surface fermée orientée par la normale sortante, et <b>F</b> un champ vectoriel C¹ :</p>
+      <div class="eq">∯<sub>∂V</sub> <b>F</b> · <b>n</b> dS = ∭<sub>V</sub> div <b>F</b> dxdydz</div>
+      <p><em>Flux sortant à travers la surface fermée</em> = <em>intégrale de la divergence dans le volume</em>. Loi de conservation par excellence — c'est de là que sort la loi de Gauss en électromagnétisme.</p></div>
 
-    <h3>Formule (identité) de Parseval</h3>
-    <div class="box thm"><div class="bt">■ Parseval — énergie</div>
-      <div class="eq"><span class="frac"><span class="num">1</span><span class="den">π</span></span> ∫<sub>−π</sub><sup>π</sup> f(t)² dt = <span class="frac"><span class="num">a<sub>0</sub>²</span><span class="den">2</span></span> + ∑<sub>n=1</sub><sup>∞</sup> (a<sub>n</sub>² + b<sub>n</sub>²)</div>
-      <p>Interprétation physique : l'<em>énergie</em> du signal est la somme des énergies de ses harmoniques. Application classique : en évaluant Parseval pour une fonction particulière (créneau, triangle), on obtient la valeur exacte de séries comme ∑ 1/n<sup>2</sup> = π²/6 ou ∑ 1/n<sup>4</sup> = π<sup>4</sup>/90.</p></div>
+    <div class="box method"><div class="bt">▹ Comment choisir entre Stokes et Ostrogradski ?</div>
+      <ul>
+        <li>Si la surface est <b>fermée</b> et qu'on cherche un <b>flux</b> : Ostrogradski (transforme en intégrale triple).</li>
+        <li>Si la surface est <b>ouverte</b> et qu'on cherche une <b>circulation</b> sur son bord : Stokes.</li>
+        <li>Objectif commun : passer d'une intégrale surfacique difficile à une intégrale (triple ou curviligne) plus simple.</li>
+      </ul></div>
+  </div>
+</article>
 
-    <h3>Méthode-type d'un exercice</h3>
-    <div class="box method"><div class="bt">▹ Développer f en série de Fourier</div>
+<!-- ============ CH 7 : OPTIMISATION ============ -->
+<article class="chapter" id="ch7">
+  <div class="chapter-hd">
+    <span class="cn">CH 7</span>
+    <h2>Optimisation — extrema libres et sous contraintes</h2>
+    <label class="chap-check"><input type="checkbox" data-chk="7"> validé</label>
+  </div>
+  <div class="prose">
+    <p>Chercher les minima et maxima d'une fonction — d'abord d'une variable (rappels), puis de deux variables (nouveau), puis sous contraintes (Lagrange). Deux étapes canoniques : (1) trouver les <span class="term">points critiques</span>, (2) déterminer leur <span class="term">nature</span>.</p>
+
+    <h3>Vocabulaire</h3>
+    <div class="box def"><div class="bt">◆ Extrema</div>
+      <ul>
+        <li><b>Maximum global</b> en a : f(x) ≤ f(a) pour tout x ∈ U.</li>
+        <li><b>Minimum global</b> en a : f(x) ≥ f(a) pour tout x ∈ U.</li>
+        <li><b>Maximum local</b> en a : f(x) ≤ f(a) sur un voisinage V de a.</li>
+        <li><b>Minimum local</b> en a : idem avec ≥.</li>
+      </ul></div>
+
+    <h3>Une variable — rappels</h3>
+    <div class="box thm"><div class="bt">■ Théorème de Fermat</div><p>Si f est dérivable en c ∈ I ouvert et si f admet un extremum local en c, alors f'(c) = 0. C'est une <em>condition nécessaire</em>.</p></div>
+    <p>Un <span class="term">point critique</span> est un point où f'(c) = 0.</p>
+    <div class="box thm"><div class="bt">■ Condition suffisante — dérivée seconde</div>
+      <p>Si f est C² et c est un point critique :</p>
+      <ul>
+        <li>f''(c) &gt; 0 ⟹ <b>minimum local</b> en c</li>
+        <li>f''(c) &lt; 0 ⟹ <b>maximum local</b> en c</li>
+        <li>f''(c) = 0 ⟹ <em>indéterminé</em> — étudier plus finement (point d'inflexion possible)</li>
+      </ul></div>
+
+    <h3>Deux variables — condition nécessaire</h3>
+    <div class="box thm"><div class="bt">■ Point critique</div><p>Si f admet un extremum local en (a, b), point intérieur de U, et si f est différentiable en (a, b), alors <b>∇f(a, b) = <b>0</b></b>. Autrement dit : ∂f/∂x = 0 <em>et</em> ∂f/∂y = 0.</p></div>
+    <p>On appelle <b>points critiques</b> les solutions du système ∂f/∂x = ∂f/∂y = 0. Ce sont les seuls candidats aux extrema à l'intérieur du domaine.</p>
+
+    <h3>Deux variables — nature (Hessienne)</h3>
+    <p>Soit (a, b) un point critique. On calcule la <span class="term">matrice hessienne</span> :</p>
+    <div class="eq">H = <span class="mat">f<sub>xx</sub> &nbsp; f<sub>xy</sub> ; f<sub>xy</sub> &nbsp; f<sub>yy</sub></span> évaluée en (a, b)</div>
+    <p>et le <span class="term">discriminant</span> Δ = f<sub>xx</sub> · f<sub>yy</sub> − (f<sub>xy</sub>)² = det(H).</p>
+    <div class="box thm"><div class="bt">■ Nature d'un point critique (test de Monge)</div>
+      <ul>
+        <li><b>Δ &gt; 0 et f<sub>xx</sub> &gt; 0</b> : <span class="pill on">minimum local</span></li>
+        <li><b>Δ &gt; 0 et f<sub>xx</sub> &lt; 0</b> : <span class="pill on">maximum local</span></li>
+        <li><b>Δ &lt; 0</b> : <span class="pill off">point selle</span> (ni max, ni min)</li>
+        <li><b>Δ = 0</b> : <span class="pill mid">indéterminé</span> — analyse au cas par cas</li>
+      </ul></div>
+    <div class="box ex"><div class="bt">▹ Exemple express</div><p>Pour f(x, y) = x² + y² : ∇f = (2x, 2y) s'annule seulement en (0, 0). H = diag(2, 2), Δ = 4 &gt; 0, f<sub>xx</sub> = 2 &gt; 0 : (0, 0) est un minimum (global ici : f est une paraboloïde).</p></div>
+
+    <h3>Extrema sur un compact — extrema globaux</h3>
+    <p>Sur un domaine <em>fermé et borné</em>, une fonction continue atteint son maximum et son minimum globaux (théorème de Weierstrass). Méthode :</p>
+    <div class="box method"><div class="bt">▹ Méthode</div>
       <ol>
-        <li>Déterminer la période T et vérifier les hypothèses de Dirichlet (C¹ par morceaux).</li>
-        <li>Repérer les symétries : paire → b<sub>n</sub> = 0 ; impaire → a<sub>n</sub> = 0.</li>
-        <li>Calculer a<sub>0</sub>, puis a<sub>n</sub> et b<sub>n</sub> — souvent avec une intégration par parties.</li>
-        <li>Écrire la série S(x) ; nommer les points de discontinuité éventuels.</li>
-        <li>Vérifier une valeur particulière : par exemple en x = 0 ou x = π, comparer S(x) et f(x) (ou sa moyenne aux sauts). C'est là qu'on récupère des sommes numériques célèbres.</li>
+        <li>Trouver les points critiques dans l'intérieur (∇f = 0).</li>
+        <li>Étudier séparément la restriction de f au bord (souvent en le paramétrant en une variable, ou en morceaux si polygonal).</li>
+        <li>Comparer toutes les valeurs de f obtenues : max et min globaux sont parmi elles.</li>
       </ol></div>
+
+    <h3>Extrema sous contrainte — multiplicateurs de Lagrange</h3>
+    <div class="box thm"><div class="bt">■ Lagrange</div>
+      <p>Pour optimiser f sous la contrainte g(x, y) = 0, on cherche les points (a, b) où <em>∇f et ∇g sont colinéaires</em> :</p>
+      <div class="eq">∇f(a, b) = λ · ∇g(a, b)&nbsp;&nbsp;et&nbsp;&nbsp;g(a, b) = 0</div>
+      <p>Le scalaire λ est le <span class="term">multiplicateur de Lagrange</span>. On résout ce système de 3 équations à 3 inconnues (x, y, λ), puis on identifie la nature en comparant les valeurs de f aux candidats.</p></div>
   </div>
 </article>
 
@@ -524,52 +541,62 @@
           <li>Plan : <b>n·AM = 0</b> ⟺ ax + by + cz + d = 0.</li>
         </ul>
       </div>
-      <div class="ncard"><div class="nh"><span class="nn">CH 1</span><h3>Matrices</h3></div>
+      <div class="ncard"><div class="nh"><span class="nn">CH 1</span><h3>Fonctions de plusieurs variables</h3></div>
         <ul>
-          <li>Produit AB : compatibilité <b>colonnes A = lignes B</b> ; <b>non commutatif</b>.</li>
-          <li>Transposée : <sup>t</sup>(AB) = <sup>t</sup>B·<sup>t</sup>A (inversion).</li>
-          <li>Trois <b>opérations élémentaires</b> ; échelonnage ⟹ rang.</li>
-          <li>A inversible ⟺ échelonnage ⟹ I ; méthode [A|I] → [I|A<sup>-1</sup>].</li>
+          <li>Ouvert : boule ouverte dans chaque point.</li>
+          <li><b>Limite</b> : montrer qu'elle n'existe pas via 2 chemins différents.</li>
+          <li><b>Dérivée partielle</b> ∂f/∂x : dériver en fixant les autres variables.</li>
+          <li><b>Schwarz</b> (C²) : ∂²f/∂x∂y = ∂²f/∂y∂x.</li>
+          <li><b>Jacobienne</b> J<sub>f</sub> : matrice p × n des ∂f<sub>i</sub>/∂x<sub>j</sub>.</li>
         </ul>
       </div>
-      <div class="ncard"><div class="nh"><span class="nn">CH 2</span><h3>Déterminants</h3></div>
+      <div class="ncard"><div class="nh"><span class="nn">CH 2</span><h3>Opérateurs vectoriels</h3></div>
         <ul>
-          <li>2×2 = ad − bc ; 3×3 : <b>Sarrus</b>. Au-delà : développement par cofacteurs.</li>
-          <li>det(AB) = det(A)·det(B) ; det(<sup>t</sup>A) = det(A).</li>
-          <li><b>Triangulaire</b> ⟹ det = produit des diagonaux.</li>
-          <li>A inversible ⟺ det(A) ≠ 0 ; <b>Cramer</b> : x<sub>i</sub> = det(A<sub>i</sub>)/det(A).</li>
+          <li><b>Grad</b> f (scalaire→vectoriel) : (∂<sub>x</sub>f, ∂<sub>y</sub>f, ∂<sub>z</sub>f). Normal à f=cste.</li>
+          <li><b>Div</b> F (vect→scal) : ∂<sub>x</sub>F₁+∂<sub>y</sub>F₂+∂<sub>z</sub>F₃.</li>
+          <li><b>Rot</b> F (vect→vect) : ∇∧F.</li>
+          <li><b>Laplacien</b> Δf = div(grad f).</li>
+          <li>rot(grad) = 0 ; div(rot) = 0.</li>
         </ul>
       </div>
-      <div class="ncard"><div class="nh"><span class="nn">CH 3</span><h3>Espaces vectoriels</h3></div>
+      <div class="ncard"><div class="nh"><span class="nn">CH 3</span><h3>Courbes & surfaces</h3></div>
         <ul>
-          <li>Sev : <b>0 ∈ F</b> et stabilité par λu + v.</li>
-          <li>Base = famille libre + génératrice ; <b>dimension</b> = cardinal.</li>
-          <li>dim ℝ<sup>n</sup>=n ; dim K<sub>n</sub>[X] = n+1 ; dim ℳ<sub>m,n</sub> = mn.</li>
-          <li>Grassmann : dim(F+G) = dimF + dimG − dim(F∩G).</li>
+          <li><b>Polaires</b> : x=r cos θ, y=r sin θ.</li>
+          <li><b>Cylindriques</b> : + z ; jacobien r.</li>
+          <li><b>Sphériques</b> : x=r sin φ cos θ … ; jacobien r² sin φ.</li>
+          <li>Paramétrer : segment, cercle, sphère, cylindre.</li>
         </ul>
       </div>
-      <div class="ncard"><div class="nh"><span class="nn">CH 4</span><h3>Applications linéaires</h3></div>
+      <div class="ncard"><div class="nh"><span class="nn">CH 4</span><h3>Intégrales multiples</h3></div>
         <ul>
-          <li>f linéaire ⟺ f(λu + v) = λf(u) + f(v).</li>
-          <li><b>Théorème du rang</b> : dim E = dim(Ker f) + rg(f).</li>
-          <li>f injective ⟺ Ker f = {0} (spécifique linéaire).</li>
-          <li>Matrice : colonne j = coords de f(e<sub>j</sub>) dans base d'arrivée.</li>
+          <li><b>Fubini</b> : intégrer variable par variable.</li>
+          <li>Changt var : ∬f dxdy = ∬f∘φ · <b>|J|</b> dudv.</li>
+          <li>Polaires : dxdy = <b>r dr dθ</b>.</li>
+          <li>Volume = ∭ 1 ; masse = ∭ ρ.</li>
         </ul>
       </div>
-      <div class="ncard ana"><div class="nh"><span class="nn">CH 5</span><h3>Séries numériques</h3></div>
+      <div class="ncard"><div class="nh"><span class="nn">CH 5</span><h3>Intégrales curvilignes</h3></div>
         <ul>
-          <li>CN : u<sub>n</sub> → 0 (sinon divergence grossière).</li>
-          <li><b>Riemann</b> : ∑ 1/n<sup>α</sup> CV ⟺ α &gt; 1.</li>
-          <li><b>D'Alembert</b> : u<sub>n+1</sub>/u<sub>n</sub> → ℓ &lt; 1 ⟹ CV.</li>
-          <li>Séries alternées + décroissance vers 0 : <b>Leibniz</b>.</li>
+          <li>Longueur : ∫<sub>γ</sub> ‖γ'(t)‖ dt.</li>
+          <li><b>Circulation</b> : ∫<sub>γ</sub> F·dl = ∫ P dx + Q dy.</li>
+          <li>Champ de gradient ⟹ circulation ne dépend que des extrémités.</li>
+          <li><b>Green-Riemann</b> : ∮ P dx+Q dy = ∬ (∂<sub>x</sub>Q − ∂<sub>y</sub>P) dxdy.</li>
         </ul>
       </div>
-      <div class="ncard ana"><div class="nh"><span class="nn">CH 6</span><h3>Séries de Fourier</h3></div>
+      <div class="ncard"><div class="nh"><span class="nn">CH 6</span><h3>Intégrales de surface</h3></div>
         <ul>
-          <li>Coefficients a<sub>n</sub>, b<sub>n</sub> : intégrales sur une période.</li>
-          <li>f <b>paire</b> ⟹ b<sub>n</sub> = 0 ; f <b>impaire</b> ⟹ a<sub>n</sub> = 0.</li>
-          <li><b>Dirichlet</b> : S(x) = (f(x<sup>+</sup>)+f(x<sup>−</sup>))/2.</li>
-          <li><b>Parseval</b> : ∫f² = a<sub>0</sub>²/2 + ∑(a<sub>n</sub>² + b<sub>n</sub>²).</li>
+          <li>Vecteur normal <b>N</b> = ∂<sub>u</sub>M ∧ ∂<sub>v</sub>M ; dS = ‖N‖ dudv.</li>
+          <li><b>Flux</b> = ∬ F·n dS.</li>
+          <li><b>Stokes</b> : ∮ F·dl = ∬ rot F · n dS.</li>
+          <li><b>Ostrogradski</b> : ∯ F·n dS = ∭ div F dV (surface fermée).</li>
+        </ul>
+      </div>
+      <div class="ncard"><div class="nh"><span class="nn">CH 7</span><h3>Optimisation</h3></div>
+        <ul>
+          <li>Point critique : ∇f = 0.</li>
+          <li><b>Hessienne</b> H ; Δ = f<sub>xx</sub>f<sub>yy</sub> − f<sub>xy</sub>².</li>
+          <li>Δ&gt;0 & f<sub>xx</sub>&gt;0 : min ; Δ&gt;0 & f<sub>xx</sub>&lt;0 : max ; Δ&lt;0 : selle.</li>
+          <li><b>Lagrange</b> : ∇f = λ∇g avec g = 0.</li>
         </ul>
       </div>
     </div>
@@ -588,30 +615,31 @@
     <details class="refbox" open>
       <summary>🔤 Notations &amp; conventions</summary>
       <div class="refbody">
-        <h4>Ensembles</h4>
+        <h4>Ensembles et fonctions</h4>
         <div class="tbl-wrap"><table>
           <tr><th>Notation</th><th>Signification</th></tr>
-          <tr><td class="mono">ℕ, ℤ, ℚ, ℝ, ℂ</td><td>Naturels, entiers, rationnels, réels, complexes</td></tr>
-          <tr><td class="mono">K</td><td>Un corps — dans le cours : ℝ ou ℂ</td></tr>
-          <tr><td class="mono">ℳ<sub>m,n</sub>(K)</td><td>Matrices de taille m × n à coefficients dans K</td></tr>
-          <tr><td class="mono">ℳ<sub>n</sub>(K)</td><td>Matrices <em>carrées</em> de taille n × n</td></tr>
-          <tr><td class="mono">K[X]</td><td>Polynômes à coefficients dans K</td></tr>
-          <tr><td class="mono">K<sub>n</sub>[X]</td><td>Polynômes de degré ≤ n</td></tr>
-          <tr><td class="mono">ℒ(E, F)</td><td>Applications linéaires de E dans F</td></tr>
-          <tr><td class="mono">Vect(v<sub>1</sub>, …, v<sub>p</sub>)</td><td>Sev engendré (combinaisons linéaires)</td></tr>
+          <tr><td class="mono">ℝ<sup>n</sup></td><td>Espace de dimension n (points à n coordonnées réelles)</td></tr>
+          <tr><td class="mono">D ⊂ ℝ<sup>n</sup></td><td>Domaine (souvent ouvert) sur lequel une fonction est définie</td></tr>
+          <tr><td class="mono">D(M<sub>0</sub>, r)</td><td>Disque (ou boule) ouvert(e) de centre M<sub>0</sub>, rayon r</td></tr>
+          <tr><td class="mono">C¹, C², C<sup>k</sup></td><td>Classe de régularité : dérivées partielles jusqu'à l'ordre k, continues</td></tr>
+          <tr><td class="mono">f : ℝ<sup>n</sup> → ℝ</td><td>Fonction scalaire (« champ scalaire »)</td></tr>
+          <tr><td class="mono"><b>F</b> : ℝ<sup>n</sup> → ℝ<sup>p</sup></td><td>Fonction vectorielle (« champ vectoriel » si p = n)</td></tr>
         </table></div>
-        <h4>Symboles utiles</h4>
+        <h4>Opérateurs & symboles</h4>
         <div class="tbl-wrap"><table>
           <tr><th>Symbole</th><th>Signification</th></tr>
-          <tr><td class="mono">Ker f</td><td>Noyau d'une application linéaire</td></tr>
-          <tr><td class="mono">Im f</td><td>Image d'une application linéaire</td></tr>
-          <tr><td class="mono">rg(f), rg(A)</td><td>Rang</td></tr>
-          <tr><td class="mono">dim(E)</td><td>Dimension</td></tr>
-          <tr><td class="mono">det(A)</td><td>Déterminant</td></tr>
-          <tr><td class="mono">A<sup>−1</sup>, <sup>t</sup>A</td><td>Inverse, transposée</td></tr>
-          <tr><td class="mono">u<sub>n</sub> ~ v<sub>n</sub></td><td>u<sub>n</sub>/v<sub>n</sub> → 1 (équivalence de suites)</td></tr>
-          <tr><td class="mono">u<sub>n</sub> = o(v<sub>n</sub>)</td><td>u<sub>n</sub>/v<sub>n</sub> → 0 (« petit o »)</td></tr>
-          <tr><td class="mono">S<sub>n</sub></td><td>Somme partielle d'ordre n d'une série</td></tr>
+          <tr><td class="mono">∂f/∂x, f<sub>x</sub></td><td>Dérivée partielle de f par rapport à x</td></tr>
+          <tr><td class="mono">∇ (nabla)</td><td>Opérateur formel (∂/∂x, ∂/∂y, ∂/∂z)</td></tr>
+          <tr><td class="mono">∇f, grad f</td><td>Gradient (scalaire → vectoriel)</td></tr>
+          <tr><td class="mono">∇·F, div F</td><td>Divergence (vectoriel → scalaire)</td></tr>
+          <tr><td class="mono">∇∧F, rot F</td><td>Rotationnel (vectoriel → vectoriel)</td></tr>
+          <tr><td class="mono">Δ, ∇²</td><td>Laplacien : div(grad)</td></tr>
+          <tr><td class="mono">J<sub>f</sub></td><td>Matrice jacobienne</td></tr>
+          <tr><td class="mono">|J|</td><td>Valeur absolue du déterminant jacobien (changt var)</td></tr>
+          <tr><td class="mono">H</td><td>Matrice hessienne (dérivées secondes)</td></tr>
+          <tr><td class="mono">Δ (optim.)</td><td>Discriminant hessien f<sub>xx</sub>f<sub>yy</sub> − f<sub>xy</sub>²</td></tr>
+          <tr><td class="mono">∮</td><td>Intégrale sur courbe fermée</td></tr>
+          <tr><td class="mono">∯</td><td>Intégrale sur surface fermée</td></tr>
         </table></div>
       </div>
     </details>
@@ -619,78 +647,83 @@
     <div class="filterbar" id="fFilter">
       <button class="fchip active" data-f="all">Tout</button>
       <button class="fchip" data-f="g0">Ch.0 Géom</button>
-      <button class="fchip" data-f="g1">Ch.1 Matrices</button>
-      <button class="fchip" data-f="g2">Ch.2 Dét</button>
-      <button class="fchip" data-f="g3">Ch.3 EV</button>
-      <button class="fchip" data-f="g4">Ch.4 Appl.lin</button>
-      <button class="fchip" data-f="g5">Ch.5 Séries</button>
-      <button class="fchip" data-f="g6">Ch.6 Fourier</button>
+      <button class="fchip" data-f="g1">Ch.1 Fonctions</button>
+      <button class="fchip" data-f="g2">Ch.2 Vectoriels</button>
+      <button class="fchip" data-f="g3">Ch.3 Courbes</button>
+      <button class="fchip" data-f="g4">Ch.4 Int. mult.</button>
+      <button class="fchip" data-f="g5">Ch.5 Curvilignes</button>
+      <button class="fchip" data-f="g6">Ch.6 Surface</button>
+      <button class="fchip" data-f="g7">Ch.7 Optim</button>
     </div>
 
     <div class="fgroup" data-fg="g0"><h3>Ch. 0 — Géométrie <span>Vecteurs</span></h3>
-      <div class="frow"><div class="fx">u·v = xx' + yy' + zz'</div><div class="fd"><span class="nm">Produit scalaire</span> en base orthonormée. <b>u</b>, <b>v</b> vecteurs. <span class="cond">base orthonormée</span></div></div>
+      <div class="frow"><div class="fx">u·v = xx' + yy' + zz'</div><div class="fd"><span class="nm">Produit scalaire</span> en base orthonormée.</div></div>
       <div class="frow"><div class="fx">‖u‖ = √(x² + y² + z²)</div><div class="fd"><span class="nm">Norme euclidienne</span>.</div></div>
-      <div class="frow"><div class="fx">u·v = 0 ⟺ u ⊥ v</div><div class="fd"><span class="nm">Orthogonalité</span>. Attention : vaut pour vecteurs non nuls.</div></div>
       <div class="frow"><div class="fx">‖u∧v‖ = ‖u‖·‖v‖·|sin θ|</div><div class="fd"><span class="nm">Norme du produit vectoriel</span> = aire du parallélogramme.</div></div>
       <div class="frow"><div class="fx">[u,v,w] = det(u,v,w)</div><div class="fd"><span class="nm">Produit mixte</span>. Volume du parallélépipède = |[u,v,w]|.</div></div>
+      <div class="frow"><div class="fx">d(M, P) = |ax<sub>0</sub>+by<sub>0</sub>+cz<sub>0</sub>+d| / √(a²+b²+c²)</div><div class="fd"><span class="nm">Distance point-plan</span>. <span class="cond">plan d'équation ax+by+cz+d=0</span></div></div>
     </div>
 
-    <div class="fgroup" data-fg="g1"><h3>Ch. 1 — Matrices <span>Opérations</span></h3>
-      <div class="frow"><div class="fx">(AB)<sub>ij</sub> = ∑<sub>k</sub> a<sub>ik</sub>·b<sub>kj</sub></div><div class="fd"><span class="nm">Produit matriciel</span>. <span class="cond">A ∈ ℳ<sub>m,n</sub>, B ∈ ℳ<sub>n,p</sub></span></div></div>
-      <div class="frow"><div class="fx"><sup>t</sup>(AB) = <sup>t</sup>B·<sup>t</sup>A</div><div class="fd"><span class="nm">Transposée d'un produit</span> — <b>ordre inversé</b>.</div></div>
-      <div class="frow"><div class="fx">(AB)<sup>−1</sup> = B<sup>−1</sup>·A<sup>−1</sup></div><div class="fd"><span class="nm">Inverse d'un produit</span>. <span class="cond">A, B ∈ ℳ<sub>n</sub>(K) inversibles</span></div></div>
-      <div class="frow"><div class="fx">(<sup>t</sup>A)<sup>−1</sup> = <sup>t</sup>(A<sup>−1</sup>)</div><div class="fd"><span class="nm">Transposée et inverse commutent</span>.</div></div>
-      <div class="frow"><div class="fx">A·A<sup>−1</sup> = A<sup>−1</sup>·A = I<sub>n</sub></div><div class="fd"><span class="nm">Définition de l'inverse</span> — dans les deux sens.</div></div>
+    <div class="fgroup" data-fg="g1"><h3>Ch. 1 — Fonctions de plusieurs variables <span>Dérivation</span></h3>
+      <div class="frow"><div class="fx">∂f/∂x (x<sub>0</sub>, y<sub>0</sub>) = lim<sub>h→0</sub> (f(x<sub>0</sub>+h, y<sub>0</sub>) − f(x<sub>0</sub>, y<sub>0</sub>))/h</div><div class="fd"><span class="nm">Dérivée partielle</span> — dériver en fixant l'autre variable.</div></div>
+      <div class="frow"><div class="fx">∂²f/∂x∂y = ∂²f/∂y∂x</div><div class="fd"><span class="nm">Théorème de Schwarz</span>. <span class="cond">f de classe C²</span></div></div>
+      <div class="frow"><div class="fx">(J<sub>f</sub>)<sub>ij</sub> = ∂f<sub>i</sub>/∂x<sub>j</sub></div><div class="fd"><span class="nm">Matrice jacobienne</span> (p lignes, n colonnes).</div></div>
+      <div class="frow"><div class="fx">J<sub>f∘g</sub>(x) = J<sub>f</sub>(g(x)) · J<sub>g</sub>(x)</div><div class="fd"><span class="nm">Règle de la chaîne</span> — produit des jacobiennes.</div></div>
+      <div class="frow"><div class="fx">f(a+h,b+k) = f(a,b) + h·f<sub>x</sub> + k·f<sub>y</sub> + ½(h²f<sub>xx</sub>+2hk f<sub>xy</sub>+k²f<sub>yy</sub>) + o(h²+k²)</div><div class="fd"><span class="nm">Taylor à l'ordre 2</span> autour de (a,b). Base du chapitre 7.</div></div>
     </div>
 
-    <div class="fgroup" data-fg="g2"><h3>Ch. 2 — Déterminants <span>Calcul et propriétés</span></h3>
-      <div class="frow"><div class="fx">det <span class="mat">a b ; c d</span> = ad − bc</div><div class="fd"><span class="nm">Cas 2×2</span>.</div></div>
-      <div class="frow"><div class="fx">det(A) = ∑<sub>j</sub> a<sub>ij</sub>·C<sub>ij</sub></div><div class="fd"><span class="nm">Développement</span> par la ligne i, ou par la colonne j. C<sub>ij</sub> = (−1)<sup>i+j</sup>·det(M<sub>ij</sub>).</div></div>
-      <div class="frow"><div class="fx">det(AB) = det(A)·det(B)</div><div class="fd"><span class="nm">Multiplicativité</span>.</div></div>
-      <div class="frow"><div class="fx">det(<sup>t</sup>A) = det(A)</div><div class="fd"><span class="nm">Invariance par transposition</span> : les propriétés lignes = les propriétés colonnes.</div></div>
-      <div class="frow"><div class="fx">det(λA) = λ<sup>n</sup>·det(A)</div><div class="fd"><span class="nm">Effet du scalaire</span>. <span class="cond">A ∈ ℳ<sub>n</sub></span></div></div>
-      <div class="frow"><div class="fx">A<sup>−1</sup> = (1/det(A))·<sup>t</sup>com(A)</div><div class="fd"><span class="nm">Formule par comatrice</span>. Utile en théorie ; en pratique n ≥ 4 : préférer Gauss.</div></div>
-      <div class="frow"><div class="fx">x<sub>i</sub> = det(A<sub>i</sub>)/det(A)</div><div class="fd"><span class="nm">Méthode de Cramer</span>. A<sub>i</sub> = A dont on remplace la col. i par B. <span class="cond">det(A) ≠ 0</span></div></div>
+    <div class="fgroup" data-fg="g2"><h3>Ch. 2 — Opérateurs vectoriels <span>∇ · div · rot</span></h3>
+      <div class="frow"><div class="fx">∇f = (∂<sub>x</sub>f, ∂<sub>y</sub>f, ∂<sub>z</sub>f)</div><div class="fd"><span class="nm">Gradient</span> d'un champ scalaire → champ vectoriel. Normal aux surfaces f = cste.</div></div>
+      <div class="frow"><div class="fx">div F = ∂<sub>x</sub>F<sub>1</sub> + ∂<sub>y</sub>F<sub>2</sub> + ∂<sub>z</sub>F<sub>3</sub></div><div class="fd"><span class="nm">Divergence</span> — champ vectoriel → scalaire. Mesure les sources/puits.</div></div>
+      <div class="frow"><div class="fx">rot F = (∂<sub>y</sub>F<sub>3</sub>−∂<sub>z</sub>F<sub>2</sub>, ∂<sub>z</sub>F<sub>1</sub>−∂<sub>x</sub>F<sub>3</sub>, ∂<sub>x</sub>F<sub>2</sub>−∂<sub>y</sub>F<sub>1</sub>)</div><div class="fd"><span class="nm">Rotationnel</span> — champ vectoriel → vectoriel. Mesure la « rotation » locale.</div></div>
+      <div class="frow"><div class="fx">Δf = ∂<sub>x</sub>²f + ∂<sub>y</sub>²f + ∂<sub>z</sub>²f</div><div class="fd"><span class="nm">Laplacien</span> = div(grad). Fonctions harmoniques : Δf = 0.</div></div>
+      <div class="frow"><div class="fx">rot(grad f) = 0</div><div class="fd"><span class="nm">Identité</span>. <span class="cond">f de classe C²</span> ⟹ rotationnel du gradient nul.</div></div>
+      <div class="frow"><div class="fx">div(rot F) = 0</div><div class="fd"><span class="nm">Identité</span>. <span class="cond">F de classe C²</span> ⟹ divergence du rotationnel nulle.</div></div>
+      <div class="frow"><div class="fx">grad(fg) = f·grad g + g·grad f</div><div class="fd"><span class="nm">Règle du produit</span>.</div></div>
     </div>
 
-    <div class="fgroup" data-fg="g3"><h3>Ch. 3 — Espaces vectoriels <span>Dimension et rang</span></h3>
-      <div class="frow"><div class="fx">dim ℝ<sup>n</sup> = n</div><div class="fd"><span class="nm">Base canonique</span> (e<sub>1</sub>, …, e<sub>n</sub>).</div></div>
-      <div class="frow"><div class="fx">dim ℳ<sub>m,n</sub>(K) = m·n</div><div class="fd"><span class="nm">Base canonique</span> : matrices E<sub>ij</sub>.</div></div>
-      <div class="frow"><div class="fx">dim K<sub>n</sub>[X] = n + 1</div><div class="fd"><span class="nm">Base canonique</span> : 1, X, X², …, X<sup>n</sup>.</div></div>
-      <div class="frow"><div class="fx">dim(F + G) = dim F + dim G − dim(F ∩ G)</div><div class="fd"><span class="nm">Formule de Grassmann</span>.</div></div>
-      <div class="frow"><div class="fx">F ⊕ G ⟺ F ∩ G = {0}</div><div class="fd"><span class="nm">Somme directe</span> — décomposition unique.</div></div>
-      <div class="frow"><div class="fx">rg(v<sub>1</sub>, …, v<sub>p</sub>) = dim Vect(v<sub>1</sub>, …, v<sub>p</sub>)</div><div class="fd"><span class="nm">Rang</span> = nombre de pivots après échelonnage.</div></div>
+    <div class="fgroup" data-fg="g3"><h3>Ch. 3 — Courbes, surfaces, solides <span>Paramétrisations</span></h3>
+      <div class="frow"><div class="fx">γ(t) = (x(t), y(t)) ; γ'(t) = (x'(t), y'(t))</div><div class="fd"><span class="nm">Courbe plane</span> paramétrée, vecteur tangent.</div></div>
+      <div class="frow"><div class="fx">x = r cos θ, y = r sin θ</div><div class="fd"><span class="nm">Polaires</span>. r ≥ 0, θ ∈ [0, 2π[.</div></div>
+      <div class="frow"><div class="fx">x = r cos θ, y = r sin θ, z = z</div><div class="fd"><span class="nm">Cylindriques</span>. Utile en cas de symétrie autour de Oz.</div></div>
+      <div class="frow"><div class="fx">x = r sin φ cos θ, y = r sin φ sin θ, z = r cos φ</div><div class="fd"><span class="nm">Sphériques</span>. φ ∈ [0, π], θ ∈ [0, 2π[.</div></div>
+      <div class="frow"><div class="fx">Cercle : γ(t) = (R cos t, R sin t)</div><div class="fd"><span class="nm">Paramétrisations classiques</span> à connaître.</div></div>
+      <div class="frow"><div class="fx">Sphère : (θ, φ) → (R sin φ cos θ, R sin φ sin θ, R cos φ)</div><div class="fd"><span class="nm">Sphère de rayon R</span>.</div></div>
     </div>
 
-    <div class="fgroup" data-fg="g4"><h3>Ch. 4 — Applications linéaires <span>Rang et matrice</span></h3>
-      <div class="frow"><div class="fx">dim E = dim(Ker f) + rg(f)</div><div class="fd"><span class="nm">Théorème du rang</span>. <span class="cond">E de dimension finie</span></div></div>
-      <div class="frow"><div class="fx">f injective ⟺ Ker f = {0}</div><div class="fd"><span class="nm">Caractérisation</span> spécifique aux applications linéaires.</div></div>
-      <div class="frow"><div class="fx">rg(f) = rg(A)</div><div class="fd"><span class="nm">Rang de f</span> = rang de sa matrice (dans n'importe quelle base).</div></div>
-      <div class="frow"><div class="fx">Mat(g ∘ f) = Mat(g) · Mat(f)</div><div class="fd"><span class="nm">Matrice d'une composée</span> = produit matriciel.</div></div>
-      <div class="frow"><div class="fx">X<sub>ℬ</sub> = P·X<sub>ℬ'</sub></div><div class="fd"><span class="nm">Changement de base pour un vecteur</span>. P = matrice de passage ℬ → ℬ'.</div></div>
-      <div class="frow"><div class="fx">Mat<sub>ℬ'</sub>(f) = P<sup>−1</sup>·Mat<sub>ℬ</sub>(f)·P</div><div class="fd"><span class="nm">Changement de base pour un endomorphisme</span>.</div></div>
+    <div class="fgroup" data-fg="g4"><h3>Ch. 4 — Intégrales multiples <span>Fubini &amp; jacobien</span></h3>
+      <div class="frow"><div class="fx">∬<sub>[a,b]×[c,d]</sub> f = ∫<sub>c</sub><sup>d</sup>(∫<sub>a</sub><sup>b</sup> f dx) dy</div><div class="fd"><span class="nm">Fubini sur rectangle</span>. Les deux ordres donnent le même résultat.</div></div>
+      <div class="frow"><div class="fx">∬<sub>D</sub> f = ∫<sub>a</sub><sup>b</sup>(∫<sub>φ(x)</sub><sup>ψ(x)</sup> f dy) dx</div><div class="fd"><span class="nm">Domaine de type 1</span> : y varie entre deux fonctions de x.</div></div>
+      <div class="frow"><div class="fx">∬<sub>D</sub> f dxdy = ∬<sub>Δ</sub> f∘φ · |J<sub>φ</sub>| dudv</div><div class="fd"><span class="nm">Changement de variables 2D</span>. <span class="cond">φ difféomorphisme</span></div></div>
+      <div class="frow"><div class="fx">Polaires : dxdy = r dr dθ</div><div class="fd"><span class="nm">Cas polaire</span>. Jacobien = r.</div></div>
+      <div class="frow"><div class="fx">Cylindriques : dxdydz = r dr dθ dz</div><div class="fd"><span class="nm">Cas cylindrique</span> (3D).</div></div>
+      <div class="frow"><div class="fx">Sphériques : dxdydz = r² sin φ dr dφ dθ</div><div class="fd"><span class="nm">Cas sphérique</span> (3D). Jacobien = r² sin φ.</div></div>
+      <div class="frow"><div class="fx">Volume(V) = ∭<sub>V</sub> 1 dxdydz ; Aire(D) = ∬<sub>D</sub> 1 dxdy</div><div class="fd"><span class="nm">Cas f = 1</span>.</div></div>
     </div>
 
-    <div class="fgroup" data-fg="g5"><h3>Ch. 5 — Séries numériques <span>Critères de convergence</span></h3>
-      <div class="frow"><div class="fx">∑ q<sup>n</sup> CV ⟺ |q| &lt; 1 ; somme = 1/(1−q)</div><div class="fd"><span class="nm">Série géométrique</span>. Départ n = 0.</div></div>
-      <div class="frow"><div class="fx">∑ 1/n<sup>α</sup> CV ⟺ α &gt; 1</div><div class="fd"><span class="nm">Riemann</span>. La série harmonique (α=1) diverge.</div></div>
-      <div class="frow"><div class="fx">u<sub>n+1</sub>/u<sub>n</sub> → ℓ  ⟹  { ℓ&lt;1 CV, ℓ&gt;1 DV }</div><div class="fd"><span class="nm">D'Alembert</span>. <span class="cond">u<sub>n</sub> &gt; 0 ; ℓ = 1 indéterminé</span></div></div>
-      <div class="frow"><div class="fx">(u<sub>n</sub>)<sup>1/n</sup> → ℓ  ⟹  { idem }</div><div class="fd"><span class="nm">Cauchy</span>. Idem que D'Alembert. <span class="cond">u<sub>n</sub> ≥ 0</span></div></div>
-      <div class="frow"><div class="fx">u<sub>n</sub> ~ v<sub>n</sub> ⟹ ∑u<sub>n</sub> ~<sub>nature</sub> ∑v<sub>n</sub></div><div class="fd"><span class="nm">Équivalence</span>. <span class="cond">signe constant</span></div></div>
-      <div class="frow"><div class="fx">∑ f(n) et ∫f  ↔  même nature</div><div class="fd"><span class="nm">Comparaison à une intégrale</span>. <span class="cond">f positive, continue, décroissante</span></div></div>
-      <div class="frow"><div class="fx">∑ (−1)<sup>n</sup> a<sub>n</sub> CV ; |R<sub>n</sub>| ≤ a<sub>n+1</sub></div><div class="fd"><span class="nm">Séries alternées (Leibniz)</span>. <span class="cond">(a<sub>n</sub>) positive, décroissante, → 0</span></div></div>
-      <div class="frow"><div class="fx">∑ |u<sub>n</sub>| CV ⟹ ∑ u<sub>n</sub> CV</div><div class="fd"><span class="nm">Convergence absolue</span> ⟹ convergence.</div></div>
+    <div class="fgroup" data-fg="g5"><h3>Ch. 5 — Intégrales curvilignes <span>Circulation &amp; Green</span></h3>
+      <div class="frow"><div class="fx">∫<sub>γ</sub> f ds = ∫<sub>a</sub><sup>b</sup> f(γ(t))·‖γ'(t)‖ dt</div><div class="fd"><span class="nm">Intégrale scalaire</span>. Cas f=1 : longueur.</div></div>
+      <div class="frow"><div class="fx">∫<sub>γ</sub> F·dl = ∫ P dx + Q dy = ∫<sub>a</sub><sup>b</sup> (P·x' + Q·y') dt</div><div class="fd"><span class="nm">Circulation</span> — travail d'une force.</div></div>
+      <div class="frow"><div class="fx">∫<sub>γ</sub> ∇φ·dl = φ(γ(b)) − φ(γ(a))</div><div class="fd"><span class="nm">Champ de gradient</span> : dépend seulement des extrémités.</div></div>
+      <div class="frow"><div class="fx">∮<sub>∂D</sub> P dx + Q dy = ∬<sub>D</sub> (∂<sub>x</sub>Q − ∂<sub>y</sub>P) dxdy</div><div class="fd"><span class="nm">Green-Riemann</span>. <span class="cond">∂D orienté positivement (direct)</span></div></div>
+      <div class="frow"><div class="fx">Aire(D) = ½ ∮<sub>∂D</sub> (x dy − y dx)</div><div class="fd"><span class="nm">Aire par intégrale de bord</span> — corollaire de Green.</div></div>
     </div>
 
-    <div class="fgroup" data-fg="g6"><h3>Ch. 6 — Séries de Fourier <span>Coefficients et convergence</span></h3>
-      <div class="frow"><div class="fx">a<sub>n</sub> = (1/π) ∫<sub>−π</sub><sup>π</sup> f(t) cos(nt) dt</div><div class="fd"><span class="nm">Coefficient a<sub>n</sub></span> (période 2π). Si f impaire : a<sub>n</sub> = 0.</div></div>
-      <div class="frow"><div class="fx">b<sub>n</sub> = (1/π) ∫<sub>−π</sub><sup>π</sup> f(t) sin(nt) dt</div><div class="fd"><span class="nm">Coefficient b<sub>n</sub></span>. Si f paire : b<sub>n</sub> = 0.</div></div>
-      <div class="frow"><div class="fx">a<sub>0</sub> = (1/π) ∫<sub>−π</sub><sup>π</sup> f(t) dt</div><div class="fd"><span class="nm">Coefficient a<sub>0</sub></span>. Apparaît divisé par 2 dans la série.</div></div>
-      <div class="frow"><div class="fx">S(x) = a<sub>0</sub>/2 + ∑ [a<sub>n</sub>·cos(nx) + b<sub>n</sub>·sin(nx)]</div><div class="fd"><span class="nm">Série de Fourier réelle</span>.</div></div>
-      <div class="frow"><div class="fx">c<sub>n</sub> = (1/2π) ∫<sub>−π</sub><sup>π</sup> f(t) e<sup>−int</sup> dt</div><div class="fd"><span class="nm">Coefficient complexe</span>. Lien : c<sub>n</sub> = (a<sub>n</sub> − ib<sub>n</sub>)/2.</div></div>
-      <div class="frow"><div class="fx">S(x) = (f(x<sup>+</sup>) + f(x<sup>−</sup>))/2</div><div class="fd"><span class="nm">Dirichlet</span>. <span class="cond">f C¹ par morceaux</span></div></div>
-      <div class="frow"><div class="fx">(1/π) ∫f² = a<sub>0</sub>²/2 + ∑(a<sub>n</sub>²+b<sub>n</sub>²)</div><div class="fd"><span class="nm">Parseval</span>. Donne des sommes remarquables (ex : π²/6).</div></div>
-      <div class="frow"><div class="fx">ω = 2π/T ; a<sub>n</sub> = (2/T) ∫f cos(nωt)dt</div><div class="fd"><span class="nm">Généralisation période T</span>.</div></div>
+    <div class="fgroup" data-fg="g6"><h3>Ch. 6 — Intégrales de surface <span>Stokes &amp; Ostrogradski</span></h3>
+      <div class="frow"><div class="fx"><b>N</b> = ∂<sub>u</sub>M ∧ ∂<sub>v</sub>M ; dS = ‖<b>N</b>‖ dudv</div><div class="fd"><span class="nm">Vecteur normal &amp; élément d'aire</span>.</div></div>
+      <div class="frow"><div class="fx">∬<sub>S</sub> f dS = ∬<sub>Δ</sub> f(M(u,v))·‖<b>N</b>‖ dudv</div><div class="fd"><span class="nm">Intégrale scalaire sur surface</span>. Cas f=1 : aire.</div></div>
+      <div class="frow"><div class="fx">Φ = ∬<sub>S</sub> F·n dS = ∬<sub>Δ</sub> F·<b>N</b> dudv</div><div class="fd"><span class="nm">Flux</span> d'un champ vectoriel.</div></div>
+      <div class="frow"><div class="fx">∮<sub>∂S</sub> F·dl = ∬<sub>S</sub> rot F · n dS</div><div class="fd"><span class="nm">Théorème de Stokes</span>. <span class="cond">S orientée, ∂S orienté compatiblement</span></div></div>
+      <div class="frow"><div class="fx">∯<sub>∂V</sub> F·n dS = ∭<sub>V</sub> div F dV</div><div class="fd"><span class="nm">Green-Ostrogradski</span>. <span class="cond">V borné, ∂V fermée, n sortante</span></div></div>
+    </div>
+
+    <div class="fgroup" data-fg="g7"><h3>Ch. 7 — Optimisation <span>Extrema</span></h3>
+      <div class="frow"><div class="fx">f'(c) = 0 (une variable)</div><div class="fd"><span class="nm">Fermat</span> : condition nécessaire d'extremum local.</div></div>
+      <div class="frow"><div class="fx">f''(c) &gt; 0 min ; f''(c) &lt; 0 max ; f''(c) = 0 indéterminé</div><div class="fd"><span class="nm">Nature (1 variable)</span> — dérivée seconde.</div></div>
+      <div class="frow"><div class="fx">∇f(a, b) = 0</div><div class="fd"><span class="nm">Point critique</span> (2 variables). Système ∂<sub>x</sub>f = ∂<sub>y</sub>f = 0.</div></div>
+      <div class="frow"><div class="fx">Δ = f<sub>xx</sub>·f<sub>yy</sub> − (f<sub>xy</sub>)²</div><div class="fd"><span class="nm">Discriminant hessien</span>. C'est det(H).</div></div>
+      <div class="frow"><div class="fx">Δ&gt;0 &amp; f<sub>xx</sub>&gt;0 min ; Δ&gt;0 &amp; f<sub>xx</sub>&lt;0 max ; Δ&lt;0 selle ; Δ=0 ?</div><div class="fd"><span class="nm">Nature (2 variables)</span> — test de Monge.</div></div>
+      <div class="frow"><div class="fx">∇f = λ ∇g ; g = 0</div><div class="fd"><span class="nm">Lagrange</span> — optimisation sous contrainte.</div></div>
     </div>
   </div>
 </section>
@@ -705,64 +738,66 @@
     </div>
     <div class="express">
       <div class="eg"><h4>Géométrie</h4>
-        <div class="ei"><span class="nm">Produit scalaire</span><span class="vl">xx' + yy' + zz'</span></div>
+        <div class="ei"><span class="nm">u·v</span><span class="vl">xx'+yy'+zz'</span></div>
         <div class="ei"><span class="nm">Norme</span><span class="vl">√(u·u)</span></div>
         <div class="ei"><span class="nm">u∧v</span><span class="vl">(yz'−zy', zx'−xz', xy'−yx')</span></div>
-        <div class="ei"><span class="nm">Aire ‖.‖</span><span class="vl">‖u∧v‖</span></div>
+        <div class="ei"><span class="nm">Aire</span><span class="vl">‖u∧v‖</span></div>
         <div class="ei"><span class="nm">Volume</span><span class="vl">|[u,v,w]|</span></div>
         <div class="ei"><span class="nm">Plan</span><span class="vl">ax+by+cz+d=0</span></div>
+        <div class="ei"><span class="nm">d(M,P)</span><span class="vl">|ax₀+by₀+cz₀+d|/√(a²+b²+c²)</span></div>
       </div>
-      <div class="eg"><h4>Matrices</h4>
-        <div class="ei"><span class="nm">Produit</span><span class="vl">(m×n)(n×p)=(m×p)</span></div>
-        <div class="ei"><span class="nm"><sup>t</sup>(AB)</span><span class="vl"><sup>t</sup>B·<sup>t</sup>A</span></div>
-        <div class="ei"><span class="nm">(AB)<sup>-1</sup></span><span class="vl">B<sup>-1</sup>A<sup>-1</sup></span></div>
-        <div class="ei"><span class="nm">Inverse</span><span class="vl">[A|I] → [I|A<sup>-1</sup>]</span></div>
-        <div class="ei"><span class="nm">Ops élém.</span><span class="vl">L↔L, λL, L+λL'</span></div>
+      <div class="eg"><h4>Fonctions plusieurs var.</h4>
+        <div class="ei"><span class="nm">∂f/∂x</span><span class="vl">y fixé, dériver en x</span></div>
+        <div class="ei"><span class="nm">Schwarz (C²)</span><span class="vl">∂<sub>xy</sub> = ∂<sub>yx</sub></span></div>
+        <div class="ei"><span class="nm">Jacobienne</span><span class="vl">(J)<sub>ij</sub> = ∂f<sub>i</sub>/∂x<sub>j</sub></span></div>
+        <div class="ei"><span class="nm">Chaîne</span><span class="vl">J(f∘g) = J(f)·J(g)</span></div>
+        <div class="ei"><span class="nm">Taylor 2</span><span class="vl">f + h·f<sub>x</sub> + k·f<sub>y</sub> + ½(h²f<sub>xx</sub>+2hkf<sub>xy</sub>+k²f<sub>yy</sub>)</span></div>
       </div>
-      <div class="eg"><h4>Déterminants</h4>
-        <div class="ei"><span class="nm">2×2</span><span class="vl">ad − bc</span></div>
-        <div class="ei"><span class="nm">3×3</span><span class="vl">Sarrus</span></div>
-        <div class="ei"><span class="nm">n×n</span><span class="vl">développement cofacteurs</span></div>
-        <div class="ei"><span class="nm">det(AB)</span><span class="vl">det A · det B</span></div>
-        <div class="ei"><span class="nm">det(<sup>t</sup>A)</span><span class="vl">det A</span></div>
-        <div class="ei"><span class="nm">det(λA)</span><span class="vl">λ<sup>n</sup> det A</span></div>
-        <div class="ei"><span class="nm">Triang.</span><span class="vl">∏ diagonaux</span></div>
-        <div class="ei"><span class="nm">Cramer</span><span class="vl">x<sub>i</sub>=det(A<sub>i</sub>)/det(A)</span></div>
+      <div class="eg"><h4>Opérateurs vect.</h4>
+        <div class="ei"><span class="nm">grad f</span><span class="vl">(∂<sub>x</sub>f, ∂<sub>y</sub>f, ∂<sub>z</sub>f)</span></div>
+        <div class="ei"><span class="nm">div F</span><span class="vl">∂<sub>x</sub>F₁+∂<sub>y</sub>F₂+∂<sub>z</sub>F₃</span></div>
+        <div class="ei"><span class="nm">rot F</span><span class="vl">(∂<sub>y</sub>F₃−∂<sub>z</sub>F₂, ∂<sub>z</sub>F₁−∂<sub>x</sub>F₃, ∂<sub>x</sub>F₂−∂<sub>y</sub>F₁)</span></div>
+        <div class="ei"><span class="nm">Δf</span><span class="vl">∂<sub>x</sub>²f+∂<sub>y</sub>²f+∂<sub>z</sub>²f</span></div>
+        <div class="ei"><span class="nm">rot(grad)</span><span class="vl">0</span></div>
+        <div class="ei"><span class="nm">div(rot)</span><span class="vl">0</span></div>
       </div>
-      <div class="eg"><h4>Espaces vect.</h4>
-        <div class="ei"><span class="nm">Sev</span><span class="vl">0∈F ; λu+v∈F</span></div>
-        <div class="ei"><span class="nm">dim ℝ<sup>n</sup></span><span class="vl">n</span></div>
-        <div class="ei"><span class="nm">dim ℳ<sub>m,n</sub></span><span class="vl">mn</span></div>
-        <div class="ei"><span class="nm">dim K<sub>n</sub>[X]</span><span class="vl">n+1</span></div>
-        <div class="ei"><span class="nm">Grassmann</span><span class="vl">dim(F+G)=dimF+dimG−dim(F∩G)</span></div>
-        <div class="ei"><span class="nm">Rang</span><span class="vl">dim Vect(.) = nb pivots</span></div>
+      <div class="eg"><h4>Coordonnées</h4>
+        <div class="ei"><span class="nm">Polaires</span><span class="vl">r cos θ, r sin θ</span></div>
+        <div class="ei"><span class="nm">dS polaire</span><span class="vl">r dr dθ</span></div>
+        <div class="ei"><span class="nm">Cylindriques</span><span class="vl">r cos θ, r sin θ, z</span></div>
+        <div class="ei"><span class="nm">dV cyl.</span><span class="vl">r dr dθ dz</span></div>
+        <div class="ei"><span class="nm">Sphériques</span><span class="vl">r sin φ cos θ, r sin φ sin θ, r cos φ</span></div>
+        <div class="ei"><span class="nm">dV sph.</span><span class="vl">r² sin φ dr dφ dθ</span></div>
       </div>
-      <div class="eg"><h4>Applications lin.</h4>
-        <div class="ei"><span class="nm">Th. rang</span><span class="vl">dim E = dim Ker + rg</span></div>
-        <div class="ei"><span class="nm">Inject.</span><span class="vl">Ker f = {0}</span></div>
-        <div class="ei"><span class="nm">Surj.</span><span class="vl">rg(f) = dim F</span></div>
-        <div class="ei"><span class="nm">rg(f)</span><span class="vl">rg(A) — n'importe quelle base</span></div>
-        <div class="ei"><span class="nm">Compos.</span><span class="vl">Mat(g∘f) = Mat(g)·Mat(f)</span></div>
-        <div class="ei"><span class="nm">Changt base</span><span class="vl">P<sup>-1</sup>·M·P</span></div>
+      <div class="eg"><h4>Int. multiples</h4>
+        <div class="ei"><span class="nm">Fubini</span><span class="vl">∬ = ∫(∫ f dx)dy</span></div>
+        <div class="ei"><span class="nm">Chgt var</span><span class="vl">∬f dxdy = ∬f∘φ ·|J| dudv</span></div>
+        <div class="ei"><span class="nm">Aire</span><span class="vl">∬<sub>D</sub> 1 dxdy</span></div>
+        <div class="ei"><span class="nm">Volume</span><span class="vl">∭<sub>V</sub> 1 dxdydz</span></div>
+        <div class="ei"><span class="nm">Masse</span><span class="vl">∭<sub>V</sub> ρ dxdydz</span></div>
       </div>
-      <div class="eg"><h4>Séries numériques</h4>
-        <div class="ei"><span class="nm">CN</span><span class="vl">u<sub>n</sub> → 0</span></div>
-        <div class="ei"><span class="nm">Géom</span><span class="vl">CV ⟺ |q|&lt;1 ; ∑=1/(1−q)</span></div>
-        <div class="ei"><span class="nm">Riemann</span><span class="vl">CV ⟺ α&gt;1</span></div>
-        <div class="ei"><span class="nm">Bertrand</span><span class="vl">CV ⟺ α&gt;1, ou α=1 &amp; β&gt;1</span></div>
-        <div class="ei"><span class="nm">D'Alembert</span><span class="vl">u<sub>n+1</sub>/u<sub>n</sub> → ℓ &lt; 1</span></div>
-        <div class="ei"><span class="nm">Cauchy</span><span class="vl">(u<sub>n</sub>)<sup>1/n</sup> → ℓ &lt; 1</span></div>
-        <div class="ei"><span class="nm">Leibniz</span><span class="vl">alt + décr → 0</span></div>
-        <div class="ei"><span class="nm">|R<sub>n</sub>|</span><span class="vl">≤ a<sub>n+1</sub></span></div>
+      <div class="eg"><h4>Curvilignes / Green</h4>
+        <div class="ei"><span class="nm">Longueur</span><span class="vl">∫‖γ'(t)‖ dt</span></div>
+        <div class="ei"><span class="nm">Circulation</span><span class="vl">∫ P dx + Q dy</span></div>
+        <div class="ei"><span class="nm">Gradient</span><span class="vl">∫∇φ·dl = φ(b) − φ(a)</span></div>
+        <div class="ei"><span class="nm">Green-Riemann</span><span class="vl">∮ P dx+Q dy = ∬ (∂<sub>x</sub>Q−∂<sub>y</sub>P) dxdy</span></div>
+        <div class="ei"><span class="nm">Aire (bord)</span><span class="vl">½∮(x dy − y dx)</span></div>
       </div>
-      <div class="eg"><h4>Séries de Fourier</h4>
-        <div class="ei"><span class="nm">a<sub>n</sub></span><span class="vl">(1/π)∫f·cos(nt)</span></div>
-        <div class="ei"><span class="nm">b<sub>n</sub></span><span class="vl">(1/π)∫f·sin(nt)</span></div>
-        <div class="ei"><span class="nm">c<sub>n</sub></span><span class="vl">(1/2π)∫f·e<sup>−int</sup></span></div>
-        <div class="ei"><span class="nm">f paire</span><span class="vl">b<sub>n</sub>=0</span></div>
-        <div class="ei"><span class="nm">f impaire</span><span class="vl">a<sub>n</sub>=0</span></div>
-        <div class="ei"><span class="nm">Dirichlet</span><span class="vl">(f(x⁺)+f(x⁻))/2</span></div>
-        <div class="ei"><span class="nm">Parseval</span><span class="vl">(1/π)∫f²=a<sub>0</sub>²/2+∑(a<sub>n</sub>²+b<sub>n</sub>²)</span></div>
+      <div class="eg"><h4>Surface / Stokes / Ostro.</h4>
+        <div class="ei"><span class="nm">N</span><span class="vl">∂<sub>u</sub>M ∧ ∂<sub>v</sub>M</span></div>
+        <div class="ei"><span class="nm">dS</span><span class="vl">‖N‖ dudv</span></div>
+        <div class="ei"><span class="nm">Flux</span><span class="vl">∬<sub>S</sub> F·n dS = ∬<sub>Δ</sub> F·N dudv</span></div>
+        <div class="ei"><span class="nm">Stokes</span><span class="vl">∮<sub>∂S</sub> F·dl = ∬<sub>S</sub> rot F·n dS</span></div>
+        <div class="ei"><span class="nm">Ostrogradski</span><span class="vl">∯ F·n dS = ∭ div F dV</span></div>
+      </div>
+      <div class="eg"><h4>Optimisation</h4>
+        <div class="ei"><span class="nm">Fermat</span><span class="vl">f'(c) = 0</span></div>
+        <div class="ei"><span class="nm">Pt critique 2 var</span><span class="vl">∇f = 0</span></div>
+        <div class="ei"><span class="nm">Δ (hessien)</span><span class="vl">f<sub>xx</sub>f<sub>yy</sub> − f<sub>xy</sub>²</span></div>
+        <div class="ei"><span class="nm">min</span><span class="vl">Δ&gt;0, f<sub>xx</sub>&gt;0</span></div>
+        <div class="ei"><span class="nm">max</span><span class="vl">Δ&gt;0, f<sub>xx</sub>&lt;0</span></div>
+        <div class="ei"><span class="nm">selle</span><span class="vl">Δ&lt;0</span></div>
+        <div class="ei"><span class="nm">Lagrange</span><span class="vl">∇f = λ∇g, g = 0</span></div>
       </div>
     </div>
   </div>
@@ -774,43 +809,47 @@
     <div class="section-head">
       <span class="eyebrow">🎯 Exos types à savoir faire</span>
       <h2>Ce qui tombe au DS</h2>
-      <p>Chapitre par chapitre : les exercices classiques et la méthode pas-à-pas. Calibrés sur la feuille d'exos Analyse 3 2026-2027 et les annales.</p>
+      <p>Chapitre par chapitre : les exercices classiques et la méthode pas-à-pas. Calibrés sur la feuille d'exos 2026-2027.</p>
     </div>
     <div class="exo-grid">
       <div class="exocard"><div class="eh"><span class="en">CH 0</span><h3>Géométrie</h3></div>
-        <div class="exo-item"><div class="q">Calculer une distance d'un point à un plan</div><div class="m"><b>Méthode :</b> équation cartésienne ax+by+cz+d=0, distance = |ax<sub>M</sub>+by<sub>M</sub>+cz<sub>M</sub>+d|/√(a²+b²+c²).</div></div>
-        <div class="exo-item"><div class="q">Trouver l'intersection droite ∩ plan</div><div class="m"><b>Méthode :</b> substituer la représentation paramétrique de la droite dans l'équation du plan, résoudre pour t.</div></div>
-        <div class="exo-item"><div class="q">Aire / volume avec vecteurs</div><div class="m"><b>Méthode :</b> aire = ‖u∧v‖, volume = |[u,v,w]| = |det|. Coordonnées orthonormées.</div></div>
+        <div class="exo-item"><div class="q">Distance d'un point à un plan</div><div class="m"><b>Méthode :</b> équation ax+by+cz+d=0, d = |ax<sub>M</sub>+by<sub>M</sub>+cz<sub>M</sub>+d|/√(a²+b²+c²).</div></div>
+        <div class="exo-item"><div class="q">Intersection droite ∩ plan</div><div class="m"><b>Méthode :</b> substituer la paramétrisation de la droite dans l'équation du plan, résoudre pour t.</div></div>
+        <div class="exo-item"><div class="q">Aire / volume avec vecteurs</div><div class="m"><b>Méthode :</b> aire = ‖u∧v‖ ; volume = |[u,v,w]| = |det|.</div></div>
       </div>
-      <div class="exocard"><div class="eh"><span class="en">CH 1</span><h3>Matrices</h3></div>
-        <div class="exo-item"><div class="q">Calculer A<sup>n</sup> pour n grand</div><div class="m"><b>Méthode :</b> diagonalisation (si possible), ou récurrence si A a une structure simple, ou binôme si A = I + N nilpotente.</div></div>
-        <div class="exo-item"><div class="q">Trouver A<sup>-1</sup> par Gauss-Jordan</div><div class="m"><b>Méthode :</b> écrire [A | I], opérations élémentaires jusqu'à [I | B]. Si un pivot manque : A non inversible.</div></div>
-        <div class="exo-item"><div class="q">Rang d'une matrice</div><div class="m"><b>Méthode :</b> échelonner par lignes, compter les pivots non nuls.</div></div>
+      <div class="exocard"><div class="eh"><span class="en">CH 1</span><h3>Fonctions plusieurs var.</h3></div>
+        <div class="exo-item"><div class="q">Domaine de définition</div><div class="m"><b>Méthode :</b> conditions d'existence (√ ≥ 0, ln &gt; 0, dénominateur ≠ 0). Dessiner dans ℝ².</div></div>
+        <div class="exo-item"><div class="q">Étudier la continuité en (0, 0)</div><div class="m"><b>Méthode :</b> tester 2 chemins (y=0 puis y=x). Si limites différentes : pas de limite ⟹ pas continue. Sinon : passer en polaires.</div></div>
+        <div class="exo-item"><div class="q">Calculer ∇f, matrice jacobienne</div><div class="m"><b>Méthode :</b> dériver f par rapport à chaque variable en fixant les autres. Empiler en colonne (gradient) ou en matrice.</div></div>
       </div>
-      <div class="exocard"><div class="eh"><span class="en">CH 2</span><h3>Déterminants</h3></div>
-        <div class="exo-item"><div class="q">Calculer un det. n=4 (ou plus)</div><div class="m"><b>Méthode :</b> opérations L<sub>i</sub> ← L<sub>i</sub> + λL<sub>j</sub> pour faire apparaître des zéros, puis développer selon la ligne/colonne la plus creuse.</div></div>
-        <div class="exo-item"><div class="q">Résoudre un système par Cramer</div><div class="m"><b>Méthode :</b> vérifier det(A)≠0, puis x<sub>i</sub> = det(A<sub>i</sub>)/det(A). A<sub>i</sub> = A avec colonne i remplacée par B.</div></div>
-        <div class="exo-item"><div class="q">Déterminant avec un paramètre m</div><div class="m"><b>Méthode :</b> exprimer det en fonction de m, discuter selon les valeurs de m qui l'annulent (matrice non inversible).</div></div>
+      <div class="exocard"><div class="eh"><span class="en">CH 2</span><h3>Opérateurs vectoriels</h3></div>
+        <div class="exo-item"><div class="q">Calculer grad, div, rot d'un champ donné</div><div class="m"><b>Méthode :</b> appliquer les formules (∂<sub>x</sub>, ∂<sub>y</sub>, ∂<sub>z</sub>). Attention au signe de chaque composante du rotationnel.</div></div>
+        <div class="exo-item"><div class="q">F dérive-t-il d'un potentiel ? Trouver φ</div><div class="m"><b>Méthode :</b> vérifier rot F = 0. Si oui : intégrer F<sub>1</sub> en x → φ = ... + C(y, z), puis ∂φ/∂y = F<sub>2</sub> donne C, etc.</div></div>
+        <div class="exo-item"><div class="q">Vérifier une identité vectorielle</div><div class="m"><b>Méthode :</b> écrire les composantes brutalement puis simplifier. rot(grad f) = 0 = Schwarz.</div></div>
       </div>
-      <div class="exocard"><div class="eh"><span class="en">CH 3</span><h3>Espaces vectoriels</h3></div>
-        <div class="exo-item"><div class="q">Montrer que F est un sev de E</div><div class="m"><b>Méthode :</b> (1) <b>0</b><sub>E</sub> ∈ F. (2) Prendre <b>u</b>, <b>v</b> quelconques dans F et λ ∈ K, montrer λ<b>u</b> + <b>v</b> ∈ F.</div></div>
-        <div class="exo-item"><div class="q">Trouver une base de Vect(v<sub>1</sub>, …, v<sub>p</sub>)</div><div class="m"><b>Méthode :</b> mettre les v<sub>i</sub> en colonnes, échelonner : les vecteurs pivots forment une base ; dim = rang.</div></div>
-        <div class="exo-item"><div class="q">Prouver qu'une famille est libre</div><div class="m"><b>Méthode :</b> écrire ∑ λ<sub>i</sub>v<sub>i</sub> = <b>0</b>, en tirer un système en λ<sub>i</sub>, montrer que la seule solution est λ<sub>i</sub> = 0 pour tout i.</div></div>
+      <div class="exocard"><div class="eh"><span class="en">CH 3</span><h3>Paramétrisations</h3></div>
+        <div class="exo-item"><div class="q">Paramétrer une courbe / surface donnée</div><div class="m"><b>Méthode :</b> reconnaître la forme (cercle, ellipse, sphère…) et écrire directement. Sinon (x, f(x)) pour un graphe.</div></div>
+        <div class="exo-item"><div class="q">Choisir un système de coordonnées</div><div class="m"><b>Méthode :</b> symétrie centrale → sphériques ; symétrie autour d'un axe → cylindriques ; sinon polaires ou cartésiennes.</div></div>
       </div>
-      <div class="exocard"><div class="eh"><span class="en">CH 4</span><h3>Applications linéaires</h3></div>
-        <div class="exo-item"><div class="q">Prouver que f est linéaire</div><div class="m"><b>Méthode :</b> vérifier f(λ<b>u</b> + <b>v</b>) = λf(<b>u</b>) + f(<b>v</b>) pour <b>u</b>, <b>v</b> ∈ E, λ ∈ K quelconques.</div></div>
-        <div class="exo-item"><div class="q">Déterminer Ker f et Im f</div><div class="m"><b>Méthode :</b> Ker : résoudre f(<b>x</b>) = <b>0</b>. Im : soit calcul direct (images des vecteurs de base), soit théorème du rang pour la dimension.</div></div>
-        <div class="exo-item"><div class="q">Écrire la matrice de f dans des bases</div><div class="m"><b>Méthode :</b> calculer f(<b>e</b><sub>j</sub>) pour chaque vecteur de la base de départ, exprimer dans la base d'arrivée — les coordonnées forment la j-ième colonne.</div></div>
+      <div class="exocard"><div class="eh"><span class="en">CH 4</span><h3>Intégrales multiples</h3></div>
+        <div class="exo-item"><div class="q">Intégrale double sur un rectangle</div><div class="m"><b>Méthode :</b> Fubini — intégrer une variable à la fois. Choisir l'ordre qui simplifie.</div></div>
+        <div class="exo-item"><div class="q">Domaine circulaire / annulaire</div><div class="m"><b>Méthode :</b> passer en polaires. dxdy = r drdθ ; bornes r ∈ [r<sub>min</sub>, r<sub>max</sub>], θ ∈ [0, 2π] ou secteur.</div></div>
+        <div class="exo-item"><div class="q">Volume d'un solide (boule, cône…)</div><div class="m"><b>Méthode :</b> V = ∭ 1 dxdydz. Sphérique pour une boule (r²sin φ), cylindrique pour un cylindre / cône (r).</div></div>
       </div>
-      <div class="exocard ana"><div class="eh"><span class="en">CH 5</span><h3>Séries numériques</h3></div>
-        <div class="exo-item"><div class="q">Étudier la nature d'une série ∑ u<sub>n</sub></div><div class="m"><b>Méthode :</b> (1) u<sub>n</sub>→0 ? (2) équivalent avec Riemann ou géométrique ; (3) sinon D'Alembert/Cauchy ; (4) alternée : Leibniz.</div></div>
-        <div class="exo-item"><div class="q">Calculer la somme d'une série télescopique</div><div class="m"><b>Méthode :</b> écrire u<sub>n</sub> = a<sub>n</sub> − a<sub>n+1</sub>, la somme partielle S<sub>n</sub> = a<sub>0</sub> − a<sub>n+1</sub>, passer à la limite.</div></div>
-        <div class="exo-item"><div class="q">Discussion d'un paramètre α</div><div class="m"><b>Méthode :</b> réduire u<sub>n</sub> à un équivalent en 1/n<sup>α</sup>, appliquer Riemann : CV ⟺ α &gt; 1.</div></div>
+      <div class="exocard"><div class="eh"><span class="en">CH 5</span><h3>Intégrales curvilignes</h3></div>
+        <div class="exo-item"><div class="q">Calculer une circulation ∫<sub>γ</sub> P dx + Q dy</div><div class="m"><b>Méthode :</b> paramétrer γ(t) = (x(t), y(t)). Remplacer dx = x'(t) dt, dy = y'(t) dt. Intégrer en t.</div></div>
+        <div class="exo-item"><div class="q">Utiliser Green-Riemann</div><div class="m"><b>Méthode :</b> vérifier D borné, ∂D orienté direct. Transformer l'intégrale de bord en intégrale double via ∂<sub>x</sub>Q − ∂<sub>y</sub>P.</div></div>
+        <div class="exo-item"><div class="q">Calculer une aire par intégrale de bord</div><div class="m"><b>Méthode :</b> aire = ½∮(x dy − y dx) sur le bord orienté positivement.</div></div>
       </div>
-      <div class="exocard ana"><div class="eh"><span class="en">CH 6</span><h3>Séries de Fourier</h3></div>
-        <div class="exo-item"><div class="q">Développer f en série de Fourier</div><div class="m"><b>Méthode :</b> repérer les symétries (pair/impair), calculer a<sub>n</sub>, b<sub>n</sub> (souvent IPP), écrire S(x).</div></div>
-        <div class="exo-item"><div class="q">Utiliser Dirichlet pour trouver une somme</div><div class="m"><b>Méthode :</b> évaluer S(x<sub>0</sub>) en un point x<sub>0</sub> bien choisi (souvent 0 ou π), comparer à f(x<sub>0</sub>) ou à la moyenne des limites.</div></div>
-        <div class="exo-item"><div class="q">Appliquer Parseval pour ∑ 1/n<sup>2</sup>, 1/n<sup>4</sup>…</div><div class="m"><b>Méthode :</b> calculer (1/π)∫f² d'un côté, la somme ∑(a<sub>n</sub>²+b<sub>n</sub>²) de l'autre. Identifier.</div></div>
+      <div class="exocard"><div class="eh"><span class="en">CH 6</span><h3>Intégrales de surface</h3></div>
+        <div class="exo-item"><div class="q">Calculer un flux ∬<sub>S</sub> F·n dS</div><div class="m"><b>Méthode :</b> paramétrer S par (u, v), calculer <b>N</b> = ∂<sub>u</sub>M ∧ ∂<sub>v</sub>M (orientation !), puis ∬<sub>Δ</sub> F·<b>N</b> dudv.</div></div>
+        <div class="exo-item"><div class="q">Appliquer Stokes</div><div class="m"><b>Méthode :</b> ∮<sub>∂S</sub> F·dl = ∬<sub>S</sub> rot F · n dS. Choisir la version qui simplifie (souvent l'intégrale sur S est plus rapide qu'un tour de bord compliqué).</div></div>
+        <div class="exo-item"><div class="q">Appliquer Ostrogradski (surface fermée)</div><div class="m"><b>Méthode :</b> ∯<sub>∂V</sub> F·n dS = ∭<sub>V</sub> div F dV. Si div F est simple, l'intégrale triple est un jeu d'enfant.</div></div>
+      </div>
+      <div class="exocard"><div class="eh"><span class="en">CH 7</span><h3>Optimisation</h3></div>
+        <div class="exo-item"><div class="q">Extrema d'une fonction f(x, y)</div><div class="m"><b>Méthode :</b> (1) résoudre ∇f = 0 (système). (2) Calculer H = hessienne. (3) Discriminant Δ = f<sub>xx</sub>f<sub>yy</sub> − f<sub>xy</sub>². (4) Nature par le test de Monge.</div></div>
+        <div class="exo-item"><div class="q">Extrema sous contrainte g(x, y) = 0</div><div class="m"><b>Méthode :</b> Lagrange. Résoudre ∇f = λ∇g et g = 0. Comparer les valeurs de f aux candidats.</div></div>
+        <div class="exo-item"><div class="q">Extrema sur un compact (bord inclus)</div><div class="m"><b>Méthode :</b> chercher les points critiques à l'intérieur, puis étudier f sur chaque partie du bord (paramétrer, dériver, comparer). Prendre les extrêmes de toutes les valeurs.</div></div>
       </div>
     </div>
   </div>
@@ -822,7 +861,7 @@
     <div class="section-head">
       <span class="eyebrow">🧠 Quiz &amp; Flashcards</span>
       <h2>Testez-vous</h2>
-      <p>Choisissez les chapitres, le format (QCM ou flashcards) et l'ordre. Les questions couvrent tous les chapitres (Algèbre + Analyse).</p>
+      <p>Choisissez les chapitres, le format (QCM ou flashcards) et l'ordre. Les questions couvrent tout le programme d'Analyse 3.</p>
     </div>
 
     <div class="quiz-setup" id="quizSetup">
@@ -878,13 +917,12 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">📅 Planning de révision</span>
-      <h2>Analyse 3 &amp; Algèbre 3 dans le semestre</h2>
-      <p>À caler avec le planning élec : les maths ont typiquement un DS en cours de semestre et un partiel final. À adapter aux dates exactes de votre année.</p>
+      <h2>Analyse 3 dans le semestre</h2>
+      <p>À caler avec le planning élec (partiel élec le 14 déc). L'Analyse 3 a typiquement un DS en cours de semestre + un partiel final.</p>
     </div>
 
     <div class="leg">
-      <span><i class="sub-alg"></i>Algèbre</span>
-      <span><i class="sub-ana"></i>Analyse</span>
+      <span><i class="sub-alg"></i>Analyse 3</span>
       <span><i class="sub-elec"></i>Élec</span>
       <span><i class="sub-info"></i>Info (Java)</span>
       <span><i class="sub-eng"></i>Anglais</span>
@@ -896,60 +934,56 @@
 
     <div class="wk">
       <div class="wk-hd"><span class="wn">PHASE 1</span><h3>Sept. · Fondations</h3><span class="phase">Semaines 1 → 4</span></div>
-      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Poser les outils : matrices (opérations, échelonnage) et séries numériques (critères). Ce sont les briques du reste.</p>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 0-1 : reprendre géométrie et attaquer les fonctions de plusieurs variables. Les dérivées partielles doivent devenir un réflexe.</p>
       <div class="days">
-        <div class="day"><div class="dn">Algèbre</div><div class="task sub-alg">Ch 0 géom + Ch 1 matrices : exercices calcul</div></div>
-        <div class="day"><div class="dn">Analyse</div><div class="task sub-ana">Ch 5 séries : références (Riemann, géom), critères</div></div>
+        <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 0 rappels + Ch 1 : ouverts, limites, ∂f/∂x, Schwarz</div></div>
         <div class="day"><div class="dn">Support</div><div class="task sub-elec">Élec en parallèle</div><div class="task sub-info">Java POO</div></div>
       </div>
     </div>
 
     <div class="wk">
-      <div class="wk-hd"><span class="wn">PHASE 2</span><h3>Oct. · Approfondir</h3><span class="phase">Semaines 5 → 8</span></div>
-      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Déterminants + espaces vectoriels (concepts abstraits) — le plus gros travail conceptuel. Beaucoup d'exercices de démonstration.</p>
+      <div class="wk-hd"><span class="wn">PHASE 2</span><h3>Oct. · Opérateurs &amp; paramétrisations</h3><span class="phase">Semaines 5 → 8</span></div>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 2-3 : l'artillerie lourde. Grad/div/rot doit devenir automatique, et les 3 systèmes de coordonnées doivent être connus par cœur (surtout les jacobiens).</p>
       <div class="days">
-        <div class="day"><div class="dn">Algèbre</div><div class="task sub-alg">Ch 2 déterminants (Cramer, comatrice)</div><div class="task sub-alg">Ch 3 EV : sev, familles, bases</div></div>
-        <div class="day"><div class="dn">Analyse</div><div class="task sub-ana">Ch 5 séries alternées, Abel, convergence absolue</div></div>
+        <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 2 grad, div, rot, laplacien</div><div class="task sub-alg">Ch 3 polaires, cylindriques, sphériques</div></div>
         <div class="day"><div class="dn">Support</div><div class="task sub-info">Test Java hebdo</div><div class="task sub-eng">Anglais</div></div>
       </div>
     </div>
 
     <div class="wk">
-      <div class="wk-hd"><span class="wn">PHASE 3</span><h3>Nov. · DS 1 &amp; applications lin.</h3><span class="phase exam">DS Analyse 3 (à confirmer)</span></div>
-      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Souvent un DS d'analyse en novembre (séries). Enchaîner sur les applications linéaires — chapitre pivot avec le théorème du rang.</p>
+      <div class="wk-hd"><span class="wn">PHASE 3</span><h3>Nov. · Intégrales &amp; théorèmes</h3><span class="phase exam">DS possible en novembre</span></div>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 4-5-6 : le triptyque intégral. Ce sont les chapitres qui rapportent le plus au DS. Beaucoup d'entraînement au calcul.</p>
       <div class="days">
-        <div class="day"><div class="dn">Algèbre</div><div class="task sub-alg">Ch 4 appl. lin. : Ker, Im, théorème du rang</div></div>
-        <div class="day"><div class="dn">Analyse</div><div class="task sub-ana">Révision séries + annales DS</div><div class="task sub-ana">Ch 6 Fourier : coefficients</div></div>
+        <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 4 doubles/triples + changement de variables</div><div class="task sub-alg">Ch 5 curvilignes + Green-Riemann</div><div class="task sub-alg">Ch 6 surface + Stokes + Ostrogradski</div></div>
         <div class="day"><div class="dn">Support</div><div class="task sub-elec">DS élec ~2 nov</div></div>
       </div>
     </div>
 
     <div class="wk">
-      <div class="wk-hd"><span class="wn">PHASE 4</span><h3>Déc. · Fourier + révisions finales</h3><span class="phase exam">Partiel maths (probable mi-déc)</span></div>
-      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Fourier (Dirichlet, Parseval), puis mode sprint annales pour tous les chapitres. Sans doute couplé au partiel élec le 14 déc.</p>
+      <div class="wk-hd"><span class="wn">PHASE 4</span><h3>Déc. · Optim + sprint annales</h3><span class="phase exam">Partiel maths (probable mi-déc)</span></div>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 7 optimisation (court mais tombe souvent), puis mode sprint annales. Sans doute couplé au partiel élec le 14 déc.</p>
       <div class="days">
-        <div class="day"><div class="dn">Analyse</div><div class="task sub-ana">Fourier : Dirichlet + Parseval + IPP</div></div>
-        <div class="day"><div class="dn">Algèbre</div><div class="task sub-alg">Reprise complète : matrices → applications linéaires</div></div>
-        <div class="day"><div class="dn">Sprint</div><div class="task sub-ana">Annales DS chronométrées</div><div class="task sub-alg">Annales chronométrées</div></div>
+        <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 7 : hessienne, Monge, Lagrange</div></div>
+        <div class="day"><div class="dn">Sprint</div><div class="task sub-alg">Reprise complète cours + refaire la feuille d'exos 2026-2027</div><div class="task sub-alg">Annales chronométrées</div></div>
       </div>
     </div>
 
     <div class="section-head" style="padding-top:36px"><span class="eyebrow">Méthode</span><h2 style="font-size:22px">Réussir en maths sans forcer</h2></div>
     <div class="tips">
-      <div class="tip"><div class="th">📝 Un cahier de démos</div><p>Chaque théorème du cours : sa démo au propre, une fois. Vous ne rebûcherez plus jamais la même démonstration deux fois.</p></div>
-      <div class="tip"><div class="th">🔁 Les exos-types en boucle</div><p>La feuille 2026 + les annales : refaire les exos <em>sans regarder le corrigé</em>. La vitesse vient de la répétition.</p></div>
-      <div class="tip"><div class="th">🧩 Cartes mentales par chapitre</div><p>Avant chaque examen : dessiner l'arbre des théorèmes du chapitre. Sortir de la mémoire linéaire.</p></div>
-      <div class="tip"><div class="th">🎯 Sélectivité</div><p>Le DS teste ce qui est écrit dans le cours. Pas de bonus ésotérique — donc <em>couvrir tout le cours</em> à un niveau moyen bat couvrir la moitié à fond.</p></div>
+      <div class="tip"><div class="th">🧮 Le geste des dérivées partielles</div><p>Chaque jour où vous croisez ∂f/∂x, vérifiez le calcul en fixant explicitement l'autre variable. En 15 jours, ça devient un automatisme et vous gagnez 20% de temps au DS.</p></div>
+      <div class="tip"><div class="th">🔁 Feuille d'exos officielle</div><p>La feuille 2026 est la matrice du DS. La refaire deux fois <em>sans le corrigé</em> vaut mieux que lire 10 chapitres passivement.</p></div>
+      <div class="tip"><div class="th">🗺 Cartographier les théorèmes</div><p>Green ↔ Stokes ↔ Ostrogradski : dessiner un schéma qui montre lequel s'applique dans quel contexte (2D vs 3D, surface fermée vs ouverte). Ça débloque l'intuition.</p></div>
+      <div class="tip"><div class="th">🎯 Coordonnées = 80% du calcul</div><p>Choisir les bonnes coordonnées (polaires/cylindriques/sphériques) transforme un calcul de 45 min en calcul de 10 min. À l'entraînement : toujours essayer plusieurs.</p></div>
     </div>
 
-    <div class="box warn" style="margin-top:30px"><div class="bt">✎ Personnaliser</div><p>Ce planning est un modèle. Pour l'ajuster aux vraies dates (DS Analyse 3, partiel, interrogations d'algèbre), collez votre emploi du temps dans le chat et je précise chaque semaine.</p></div>
+    <div class="box warn" style="margin-top:30px"><div class="bt">✎ Personnaliser</div><p>Ce planning est un modèle. Pour le caler aux vraies dates (DS, interro, partiel), collez votre emploi du temps dans le chat et je précise chaque semaine.</p></div>
   </div>
 </section>
 
 <div class="foot">
   <div class="wrap">
-    <span>Nombres &amp; Espaces · Analyse 3 &amp; Algèbre 3 · ING2 · 2026-2027</span>
-    <span id="footProg">Progression : 0 / 7</span>
+    <span>Champs &amp; Intégrales · Analyse 3 · ING2 · 2026-2027</span>
+    <span id="footProg">Progression : 0 / 8</span>
   </div>
 </div>
 

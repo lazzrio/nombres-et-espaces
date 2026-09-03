@@ -1,121 +1,134 @@
 (function(){
   "use strict";
-  var CHNAMES=["Géométrie","Matrices","Déterminants","Espaces vectoriels","Applications linéaires","Séries numériques","Séries de Fourier"];
-  var CHMAT  =["alg","alg","alg","alg","alg","ana","ana"];
+  var CHNAMES=[
+    "Géométrie",
+    "Fonctions plusieurs variables",
+    "Opérateurs vectoriels",
+    "Courbes & surfaces",
+    "Intégrales multiples",
+    "Intégrales curvilignes",
+    "Intégrales de surface",
+    "Optimisation"
+  ];
 
   /* ---- QCM bank ---- */
   var QCM=[
    /* Ch 0 — Géométrie */
-   {c:0,q:"Le produit scalaire de u=(1,2,3) et v=(4,-1,2) vaut :",o:["8","4","-2","12"],a:0,e:"u·v = 1·4 + 2·(-1) + 3·2 = 4 − 2 + 6 = 8."},
-   {c:0,q:"L'aire du parallélogramme construit sur u et v vaut :",o:["u·v","‖u‖·‖v‖·cosθ","‖u∧v‖","det(u,v,0)"],a:2,e:"L'aire est la norme du produit vectoriel : ‖u∧v‖ = ‖u‖·‖v‖·|sinθ|."},
-   {c:0,q:"Le produit mixte [u,v,w] égale :",o:["u·(v+w)","(u∧v)·w","u·v·w","u∧(v∧w)"],a:1,e:"[u,v,w] = (u∧v)·w = det(u,v,w). Son module donne le volume du parallélépipède."},
+   {c:0,q:"Le produit scalaire de u=(1,2,3) et v=(4,-1,2) vaut :",o:["8","4","-2","12"],a:0,e:"u·v = 1·4 + 2·(-1) + 3·2 = 4 - 2 + 6 = 8."},
+   {c:0,q:"L'aire du parallélogramme construit sur u et v vaut :",o:["u·v","‖u‖·‖v‖·cos θ","‖u∧v‖","det(u,v,0)"],a:2,e:"L'aire est la norme du produit vectoriel : ‖u∧v‖ = ‖u‖·‖v‖·|sin θ|."},
+   {c:0,q:"Le produit mixte [u,v,w] égale :",o:["u·(v+w)","(u∧v)·w","u·v·w","u∧(v∧w)"],a:1,e:"[u,v,w] = (u∧v)·w = det(u,v,w). Son module donne le volume."},
    {c:0,q:"Un plan d'équation 2x + y − z = 5 a pour vecteur normal :",o:["(2,1,-1)","(5,0,0)","(1,1,1)","(-2,-1,1)"],a:0,e:"Les coefficients (a,b,c) sont les composantes du vecteur normal."},
+   {c:0,q:"Distance du point (1,1,1) au plan x + y + z = 6 :",o:["3/√3 = √3","6/√3","1","0"],a:0,e:"d = |1+1+1-6|/√(1+1+1) = 3/√3 = √3."},
 
-   /* Ch 1 — Matrices */
-   {c:1,q:"Si A est de taille 3×5 et B de taille 5×2, le produit AB existe et est de taille :",o:["3×2","5×5","2×3","non défini"],a:0,e:"Les colonnes de A (5) égalent les lignes de B (5). Résultat : 3 lignes × 2 colonnes."},
-   {c:1,q:"On a toujours (AB)^T =",o:["A^T B^T","B^T A^T","(A B)^T","AB"],a:1,e:"La transposition d'un produit inverse l'ordre : ᵗ(AB) = ᵗB·ᵗA."},
-   {c:1,q:"L'inverse d'un produit AB (A et B inversibles) vaut :",o:["A⁻¹B⁻¹","B⁻¹A⁻¹","(BA)⁻¹","A B⁻¹"],a:1,e:"(AB)⁻¹ = B⁻¹A⁻¹ — même règle d'inversion d'ordre que pour la transposée."},
-   {c:1,q:"Le rang d'une matrice se lit après échelonnage comme :",o:["nombre de lignes","nombre de colonnes","nombre de pivots non nuls","déterminant"],a:2,e:"Le rang est le nombre de pivots (lignes non nulles) après échelonnement."},
-   {c:1,q:"Pour calculer A⁻¹ par Gauss-Jordan, on écrit :",o:["[A | 0] et on échelonne","[A | I] puis on échelonne jusqu'à [I | B]","det(A) puis <sup>t</sup>com(A)","det(A) · A"],a:1,e:"Méthode de la matrice augmentée : [A|I] → [I|A⁻¹]."},
-   {c:1,q:"Le produit matriciel est :",o:["commutatif","associatif mais non commutatif","non associatif","commutatif si carré"],a:1,e:"Associatif : A(BC)=(AB)C. En général AB ≠ BA."},
+   /* Ch 1 — Fonctions plusieurs variables */
+   {c:1,q:"Pour f(x, y) = x²y + y³, la dérivée partielle ∂f/∂x vaut :",o:["x² + 3y²","2xy","2xy + 3y²","2x + y³"],a:1,e:"On dérive en x en fixant y comme une constante : (x²)' · y = 2xy."},
+   {c:1,q:"Le théorème de Schwarz énonce que, pour f de classe C² :",o:["∂f/∂x = ∂f/∂y","∂²f/∂x∂y = ∂²f/∂y∂x","f est différentiable","∂f/∂x·y = 0"],a:1,e:"L'ordre des dérivations mixtes ne compte pas quand f est C²."},
+   {c:1,q:"La matrice jacobienne d'une fonction f : ℝ³ → ℝ² est de taille :",o:["2×3","3×2","3×3","2×2"],a:0,e:"J_f a p lignes et n colonnes : ici p=2, n=3, donc 2×3."},
+   {c:1,q:"Pour f : ℝ² → ℝ, le gradient est :",o:["un scalaire","un vecteur (2 composantes)","une matrice 2×2","toujours nul"],a:1,e:"∇f = (∂f/∂x, ∂f/∂y) — un vecteur à 2 composantes."},
+   {c:1,q:"Une méthode standard pour montrer qu'une limite de f(x,y) en (0,0) n'existe pas :",o:["passer en polaires","tester deux chemins différents","calculer les dérivées","appliquer Schwarz"],a:1,e:"Si deux chemins (par ex. y=0 et y=x) donnent des limites différentes, la limite n'existe pas."},
 
-   /* Ch 2 — Déterminants */
-   {c:2,q:"Le déterminant d'une matrice 2×2 [[a,b],[c,d]] vaut :",o:["ab − cd","ad − bc","ac − bd","a + d − b − c"],a:1,e:"det = ad − bc, formule à connaître."},
-   {c:2,q:"Pour une matrice carrée n×n : det(λA) vaut :",o:["λ·det(A)","λⁿ·det(A)","n·det(A)","det(A)"],a:1,e:"Chaque ligne est multipliée par λ, donc det est multiplié par λⁿ."},
-   {c:2,q:"A est inversible si et seulement si :",o:["det(A) = 0","det(A) ≠ 0","det(A) = 1","A est carrée"],a:1,e:"det(A) ≠ 0 ⟺ A inversible ⟺ rg(A) = n."},
-   {c:2,q:"det(AB) vaut :",o:["det(A) + det(B)","det(A)·det(B)","det(BA) toujours","det(A+B)"],a:1,e:"Multiplicativité : det(AB) = det(A)·det(B)."},
-   {c:2,q:"Pour une matrice triangulaire, le déterminant est :",o:["nul","le produit des coefficients diagonaux","la somme des diagonaux","1"],a:1,e:"det(triangulaire) = produit des coefficients diagonaux — d'où l'intérêt d'échelonner."},
-   {c:2,q:"Ajouter à une ligne un multiple d'une autre a pour effet sur le déterminant :",o:["il est multiplié par 2","aucun effet","il change de signe","il devient nul"],a:1,e:"L_i ← L_i + λL_j ne change pas le déterminant (utilisé pour créer des zéros)."},
-   {c:2,q:"La règle de Sarrus s'applique :",o:["à toute taille n","seulement à n=3","seulement à n=2","aux matrices triangulaires"],a:1,e:"Sarrus est SEULEMENT pour n=3. À partir de n=4 : développement par cofacteurs."},
+   /* Ch 2 — Opérateurs vectoriels */
+   {c:2,q:"Pour un champ scalaire f, ∇f est :",o:["un champ scalaire","un champ vectoriel","une matrice","un nombre"],a:1,e:"Le gradient d'un champ scalaire est un champ vectoriel."},
+   {c:2,q:"Pour un champ vectoriel F, div F est :",o:["un champ vectoriel","un champ scalaire","un nombre","le rotationnel"],a:1,e:"La divergence est un champ scalaire : somme des dérivées partielles diagonales."},
+   {c:2,q:"L'identité rot(grad f) vaut :",o:["grad f","f","0","∇f"],a:2,e:"rot(∇f) = 0 pour tout champ scalaire de classe C² — conséquence de Schwarz."},
+   {c:2,q:"L'identité div(rot F) vaut :",o:["div F","rot F","0","F"],a:2,e:"div(rot F) = 0 pour tout champ vectoriel C² — dualité avec rot(grad f) = 0."},
+   {c:2,q:"Le laplacien Δf est défini par :",o:["grad(div f)","div(grad f)","rot(grad f)","rot(rot f)"],a:1,e:"Δf = div(grad f) = ∂²f/∂x² + ∂²f/∂y² + ∂²f/∂z²."},
+   {c:2,q:"Si rot F = 0 sur un ouvert simplement connexe, alors F :",o:["est constant","dérive d'un potentiel scalaire","est nul","est irrotationnel mais pas de potentiel"],a:1,e:"F = ∇φ pour un certain champ scalaire φ. On dit que F est un champ de gradient."},
+   {c:2,q:"Le gradient de f est, en tout point, orienté :",o:["dans le sens des f décroissants","tangent aux lignes de niveau","normal aux surfaces f = cste","parallèle à Ox"],a:2,e:"∇f est perpendiculaire aux surfaces (lignes en 2D) où f est constant."},
 
-   /* Ch 3 — Espaces vectoriels */
-   {c:3,q:"Pour montrer que F est un sev de E, il suffit de :",o:["montrer que F ≠ ∅ seulement","0 ∈ F et stabilité par λu + v","que F est fini","que F contient E"],a:1,e:"Caractérisation à retenir : F non vide (0 dedans) + stable par combinaisons linéaires."},
-   {c:3,q:"La dimension de ℝⁿ est :",o:["1","n","2n","n²"],a:1,e:"Base canonique (e_1,...,e_n), donc dim ℝⁿ = n."},
-   {c:3,q:"La dimension de K_n[X] (polynômes de degré ≤ n) est :",o:["n","n+1","2n","∞"],a:1,e:"Base : 1, X, X², ..., Xⁿ, soit n+1 vecteurs."},
-   {c:3,q:"La dimension de ℳ_{m,n}(K) est :",o:["m + n","mn","m² + n²","max(m,n)"],a:1,e:"Base des matrices E_ij (un 1 en position i,j, des 0 ailleurs) : mn éléments."},
-   {c:3,q:"Une famille (v_1, ..., v_p) est libre si :",o:["elle engendre E","∑ λ_i v_i = 0 ⟹ tous λ_i = 0","p = dim E","v_1 ≠ 0"],a:1,e:"Définition de la liberté : la seule combinaison linéaire nulle est la triviale."},
-   {c:3,q:"Formule de Grassmann :",o:["dim(F+G) = dim F · dim G","dim(F+G) = dim F + dim G","dim(F+G) = dim F + dim G − dim(F∩G)","dim(F+G) = max(dim F, dim G)"],a:2,e:"Formule à connaître : dim(F+G) = dim F + dim G − dim(F∩G)."},
-   {c:3,q:"F ⊕ G (somme directe) est équivalent à :",o:["F ⊂ G","F ∩ G = {0}","F = G","F ∪ G = E"],a:1,e:"Somme directe = intersection réduite au vecteur nul (décomposition unique)."},
+   /* Ch 3 — Courbes & surfaces */
+   {c:3,q:"Les coordonnées polaires sont :",o:["x=r cos θ, y=r sin θ","x=r sin θ, y=r cos θ","x=θ cos r, y=θ sin r","x=r, y=θ"],a:0,e:"Polaires : x=r cos θ, y=r sin θ, avec r ≥ 0, θ ∈ [0, 2π[."},
+   {c:3,q:"Le jacobien du passage en coordonnées polaires est :",o:["1","r","r²","sin θ"],a:1,e:"|J| = r, donc dxdy = r dr dθ."},
+   {c:3,q:"Le jacobien du passage en coordonnées sphériques est :",o:["r","r²","r sin φ","r² sin φ"],a:3,e:"|J| = r² sin φ, donc dV = r² sin φ dr dφ dθ."},
+   {c:3,q:"Un cercle de rayon R centré en l'origine peut être paramétré par :",o:["(t, R−t), t ∈ [0, R]","(R cos t, R sin t), t ∈ [0, 2π]","(R, t), t ∈ [0, 2π]","(t², t), t ∈ ℝ"],a:1,e:"Paramétrisation classique du cercle : (R cos t, R sin t)."},
+   {c:3,q:"Une sphère de rayon R se paramètre par (θ, φ) → :",o:["(R, θ, φ)","(R cos θ, R sin θ, R)","(R sin φ cos θ, R sin φ sin θ, R cos φ)","(R θ, R φ, R)"],a:2,e:"Paramétrisation classique de la sphère avec φ ∈ [0,π], θ ∈ [0, 2π[."},
+   {c:3,q:"Pour une intégrale sur une boule, quel système est le plus adapté ?",o:["cartésien","polaire","cylindrique","sphérique"],a:3,e:"Symétrie centrale ⟹ sphériques. La boule devient r ∈ [0, R], φ ∈ [0, π], θ ∈ [0, 2π[."},
 
-   /* Ch 4 — Applications linéaires */
-   {c:4,q:"Le théorème du rang énonce :",o:["dim(Ker f) + dim(Im f) = dim F","dim E = dim(Ker f) + rg(f)","rg(f) = dim(Ker f)","dim(Im f) = dim(Ker f)"],a:1,e:"Théorème du rang : dim E = dim(Ker f) + rg(f). E = espace de départ !"},
-   {c:4,q:"f linéaire est injective ssi :",o:["f est bijective","Ker f = {0}","Im f = F","rg(f) > 0"],a:1,e:"Caractérisation spécifique aux applications linéaires : injectivité ⟺ noyau réduit à {0}."},
-   {c:4,q:"Si dim E = dim F (fini) et f : E → F linéaire, alors f bijective ⟺ :",o:["f injective seulement","f injective ou surjective","f surjective seulement","f nulle"],a:1,e:"En dim finie égale : injective ⟺ surjective ⟺ bijective."},
-   {c:4,q:"La matrice de f dans les bases ℬ, ℬ' a pour j-ième colonne :",o:["les coords de f dans ℬ","les coords de f(e_j) dans ℬ'","les coords de e_j dans ℬ'","les valeurs propres"],a:1,e:"Colonne j = image du j-ième vecteur de la base de départ, exprimée dans la base d'arrivée."},
-   {c:4,q:"La matrice d'une composée g ∘ f est :",o:["Mat(g) + Mat(f)","Mat(g) · Mat(f)","Mat(f) · Mat(g)","(Mat(f))⁻¹"],a:1,e:"Mat(g ∘ f) = Mat(g) · Mat(f) — attention à l'ordre (g agit après f)."},
-   {c:4,q:"f est un isomorphisme entre E et F (dim finie) ssi :",o:["dim E ≠ dim F","dim E = dim F et f linéaire","dim E = dim F et f bijective linéaire","f = identité"],a:2,e:"Isomorphisme = application linéaire bijective. En dim finie, exige dim E = dim F."},
-   {c:4,q:"Le rang d'une application linéaire f est :",o:["dim(Ker f)","dim(Im f)","dim E","dim F"],a:1,e:"rg(f) = dim(Im f) — la dimension de l'espace des images."},
+   /* Ch 4 — Intégrales multiples */
+   {c:4,q:"Le théorème de Fubini permet de calculer :",o:["une intégrale simple","une intégrale double en deux intégrales successives","une intégrale de surface","le jacobien"],a:1,e:"Fubini : ∬ f dxdy = ∫(∫ f dx)dy sous conditions raisonnables (rectangle, f continue)."},
+   {c:4,q:"Dans un changement de variables (x,y)→(u,v), on multiplie par :",o:["le déterminant du gradient","la valeur absolue du jacobien |J|","le laplacien","1"],a:1,e:"∬ f dxdy = ∬ f∘φ · |J_φ| dudv."},
+   {c:4,q:"Pour intégrer sur un disque, on passe en polaires. dxdy devient :",o:["dr dθ","r dr dθ","r² dr dθ","sin θ dr dθ"],a:1,e:"Le jacobien polaire est r : dxdy = r dr dθ."},
+   {c:4,q:"Pour un volume ∭ 1 dxdydz d'une boule de rayon R (sphériques) :",o:["∫₀^R ∫₀^π ∫₀^{2π} r² sin φ dθ dφ dr","∫₀^R ∫₀^{2π} ∫₀^π r sin φ dθ dφ dr","∫₀^R ∫₀^{2π} ∫₀^π 1 dθ dφ dr","∫₀^R 4πr² dr"],a:0,e:"Volume boule = ∫∫∫ r² sin φ dr dφ dθ = 4πR³/3."},
+   {c:4,q:"Pour calculer le volume d'un cylindre, le plus adapté est :",o:["cartésiennes","polaires","cylindriques","sphériques"],a:2,e:"Symétrie autour de Oz ⟹ cylindriques. dV = r dr dθ dz."},
 
-   /* Ch 5 — Séries numériques */
-   {c:5,q:"Une condition NÉCESSAIRE (mais pas suffisante) pour que ∑ u_n converge est :",o:["u_n < 1","u_n → 0","u_n > 0","(u_n) monotone"],a:1,e:"Contre-exemple classique : u_n = 1/n → 0 mais ∑ 1/n diverge."},
-   {c:5,q:"La série ∑ 1/n^α converge si et seulement si :",o:["α > 0","α > 1","α ≥ 1","α < 1"],a:1,e:"Critère de Riemann : ∑ 1/n^α CV ⟺ α > 1 (strict)."},
-   {c:5,q:"La série harmonique ∑ 1/n :",o:["converge","diverge","converge à 1","dépend"],a:1,e:"Diverge — cas limite α = 1 dans Riemann."},
-   {c:5,q:"Règle de D'Alembert : si u_{n+1}/u_n → ℓ, alors si ℓ = 1 :",o:["CV","DV","indéterminé","division impossible"],a:2,e:"ℓ = 1 : le critère ne conclut pas. Chercher un autre outil (équivalence, Riemann...)."},
-   {c:5,q:"La série ∑ q^n (n≥0) converge et vaut 1/(1-q) si :",o:["q > 0","|q| < 1","q < 0","q ≠ 1"],a:1,e:"Géométrique : CV ⟺ |q| < 1, somme 1/(1-q)."},
-   {c:5,q:"Le théorème de Leibniz s'applique à ∑ (-1)^n a_n si :",o:["a_n > 0","(a_n) décroit vers 0","a_n → +∞","(a_n) est bornée"],a:1,e:"Séries alternées : (a_n) positive, décroissante, → 0."},
-   {c:5,q:"« Convergence absolue » signifie :",o:["u_n > 0","∑ |u_n| converge","∑ u_n²  converge","(u_n) est bornée"],a:1,e:"∑ |u_n| converge. Impliquant : ∑ u_n converge."},
-   {c:5,q:"Deux suites u_n ~ v_n (équivalentes) impliquent, pour les séries à termes positifs :",o:["mêmes sommes","même nature (CV/DV)","∑ u_n < ∑ v_n","aucun lien"],a:1,e:"L'équivalence entraîne même nature (à termes de signe constant à partir d'un rang)."},
+   /* Ch 5 — Intégrales curvilignes */
+   {c:5,q:"La circulation d'un champ F=(P,Q) le long d'une courbe γ paramétrée par t est :",o:["∫ P dx + Q dy = ∫(P·x' + Q·y') dt","∫ P·Q dt","∫(P + Q) dt","∫ dt"],a:0,e:"∫_γ F·dl = ∫ P(γ(t))·x'(t) + Q(γ(t))·y'(t) dt."},
+   {c:5,q:"Green-Riemann relie une circulation sur ∂D à :",o:["une intégrale simple","une intégrale double sur D","un flux","une somme"],a:1,e:"∮_∂D P dx + Q dy = ∬_D (∂Q/∂x − ∂P/∂y) dxdy."},
+   {c:5,q:"Pour un champ de gradient F = ∇φ, la circulation entre A et B :",o:["est toujours nulle","dépend du chemin","vaut φ(B) − φ(A)","vaut φ(B) + φ(A)"],a:2,e:"∫_γ ∇φ·dl = φ(B) − φ(A). Ne dépend que des extrémités !"},
+   {c:5,q:"Sur une courbe fermée, la circulation d'un champ de gradient est :",o:["φ(A) + φ(A)","nulle","∞","φ(A)"],a:1,e:"A = B sur courbe fermée, donc φ(B) − φ(A) = 0."},
+   {c:5,q:"L'aire d'un domaine D via Green-Riemann s'écrit :",o:["∮ dx dy","½ ∮ (x dy − y dx)","∮ (x + y) dl","∮ ‖γ'‖ dt"],a:1,e:"Prendre P = −y/2 et Q = x/2 dans Green donne aire(D) = ½∮(x dy − y dx)."},
 
-   /* Ch 6 — Séries de Fourier */
-   {c:6,q:"Pour f 2π-périodique paire, on a :",o:["a_n = 0","b_n = 0","c_n = 0","aucune symétrie"],a:1,e:"Symétrie paire : b_n = 0 (sin est impair). Astuce : intégrer sur [0,π] ×2."},
-   {c:6,q:"Pour f 2π-périodique impaire, on a :",o:["a_n = 0","b_n = 0","f = 0","c_0 ≠ 0"],a:0,e:"Symétrie impaire : a_n = 0 (cos est pair). La série ne contient que des sinus."},
-   {c:6,q:"Théorème de Dirichlet : la série de Fourier converge en tout point x vers :",o:["f(x)","(f(x⁺) + f(x⁻))/2","f'(x)","∫ f"],a:1,e:"Dirichlet : moyenne des limites à gauche et à droite. Si f continue en x, on retrouve f(x)."},
-   {c:6,q:"Formule de Parseval :",o:["∫f = a_0 + ∑ a_n","(1/π)∫f² = a_0²/2 + ∑(a_n² + b_n²)","∫f² = a_0","∫f = 0"],a:1,e:"Parseval — égalité de l'énergie. Sert à calculer des sommes numériques (∑ 1/n² = π²/6...)."},
-   {c:6,q:"Le coefficient a_n de Fourier vaut (période 2π) :",o:["(1/2π)∫f","(1/π)∫f·cos(nt)dt","∫f·sin(nt)dt","f(nπ)"],a:1,e:"a_n = (1/π)∫_{-π}^{π} f(t)cos(nt) dt. Le facteur 1/π (et non 1/2π) est l'usage habituel."},
-   {c:6,q:"Le lien entre coefficients complexes et réels (n ≥ 1) est :",o:["c_n = a_n + b_n","c_n = (a_n − i b_n)/2","c_n = i a_n","c_n = a_n"],a:1,e:"c_n = (a_n − i b_n)/2, et c_{-n} = conjugué de c_n."},
-   {c:6,q:"L'hypothèse minimale de Dirichlet est que f soit :",o:["continue partout","C¹ par morceaux","polynomiale","périodique seulement"],a:1,e:"Continue par morceaux + C¹ par morceaux suffisent. Les discontinuités sont autorisées."}
+   /* Ch 6 — Intégrales de surface */
+   {c:6,q:"Le vecteur normal à une surface paramétrée par (u,v)→M(u,v) est :",o:["∂M/∂u + ∂M/∂v","∂M/∂u ∧ ∂M/∂v","∂M/∂u · ∂M/∂v","gradient de M"],a:1,e:"N = ∂M/∂u ∧ ∂M/∂v, et l'élément d'aire dS = ‖N‖ dudv."},
+   {c:6,q:"Le théorème de Stokes s'écrit :",o:["∮_∂S F·dl = ∬_S rot F · n dS","∬_S F dS = ∮ F·dl","∯_S F·n = ∭ div F","rot F = 0"],a:0,e:"Stokes : circulation sur le bord = flux du rotationnel à travers la surface."},
+   {c:6,q:"Le théorème de Green-Ostrogradski (divergence) énonce :",o:["∯_∂V F·n dS = ∭_V div F dV","∯ F = ∮ F","∬ rot F = ∯ F","div F = 0"],a:0,e:"Flux à travers surface fermée = intégrale de la divergence dans le volume."},
+   {c:6,q:"Le flux d'un champ vectoriel F à travers une surface S orientée par n vaut :",o:["∬_S F · n dS","∬_S ‖F‖ dS","∬_S rot F dS","∫_∂S F·dl"],a:0,e:"Définition du flux : Φ = ∬_S F·n dS."},
+   {c:6,q:"Pour une surface fermée, pour calculer un flux, on préfère souvent :",o:["Stokes","Ostrogradski (divergence)","Green-Riemann","calcul direct"],a:1,e:"Surface fermée ⟹ Ostrogradski transforme en intégrale triple, souvent plus simple."},
+
+   /* Ch 7 — Optimisation */
+   {c:7,q:"Un point critique d'une fonction f : ℝ² → ℝ est un point où :",o:["f = 0","∇f = 0","Δ = 0","H est nulle"],a:1,e:"Point critique = ∇f = 0. C'est une CN pour un extremum intérieur."},
+   {c:7,q:"Le discriminant hessien Δ d'une fonction à 2 variables vaut :",o:["f_xx + f_yy","f_xx · f_yy − f_xy²","f_xx − f_yy","f_xy² − f_xx·f_yy"],a:1,e:"Δ = det(H) = f_xx·f_yy − (f_xy)². Signe crucial pour la nature du point critique."},
+   {c:7,q:"Si Δ > 0 et f_xx > 0 en un point critique, c'est :",o:["un maximum","un minimum","un point selle","indéterminé"],a:1,e:"Test de Monge : Δ>0, f_xx>0 ⟹ minimum local."},
+   {c:7,q:"Si Δ < 0 en un point critique, c'est :",o:["un maximum","un minimum","un point selle","indéterminé"],a:2,e:"Δ<0 ⟹ point selle (col) : minimum dans une direction, maximum dans une autre."},
+   {c:7,q:"Si Δ = 0, on peut conclure :",o:["min si f_xx > 0","max si f_xx < 0","rien : cas indéterminé","toujours un selle"],a:2,e:"Δ = 0 : le test échoue, il faut une analyse plus fine (Taylor à un ordre supérieur, etc.)."},
+   {c:7,q:"Le multiplicateur de Lagrange sert à :",o:["calculer des dérivées","optimiser sous contrainte","calculer un jacobien","résoudre un système"],a:1,e:"Optimiser f sous la contrainte g = 0 : ∇f = λ∇g et g = 0."},
+   {c:7,q:"Le théorème de Fermat pour une fonction f d'une variable dit :",o:["f > 0 sur I","si extremum local en c, alors f'(c) = 0","f''(c) = 0","f est monotone"],a:1,e:"CN : en un extremum intérieur, la dérivée s'annule (tangente horizontale)."}
   ];
 
   /* ---- Flashcards ---- */
   var FLASH=[
-   {c:0,q:"Aire du parallélogramme construit sur u et v ?",a:"‖u∧v‖."},
-   {c:0,q:"Volume du parallélépipède construit sur u, v, w ?",a:"|[u,v,w]| = |det(u,v,w)|."},
-   {c:0,q:"Vecteur normal à un plan d'équation ax + by + cz + d = 0 ?",a:"(a, b, c)."},
-   {c:0,q:"u orthogonal à v ⟺ ... ?",a:"u · v = 0."},
+   {c:0,q:"Formule de l'aire du parallélogramme construit sur u et v ?",a:"‖u ∧ v‖."},
+   {c:0,q:"Formule du volume du parallélépipède sur u, v, w ?",a:"|[u,v,w]| = |det(u,v,w)|."},
+   {c:0,q:"Vecteur normal à un plan ax+by+cz+d=0 ?",a:"(a, b, c)."},
+   {c:0,q:"Distance d'un point M à un plan ax+by+cz+d=0 ?",a:"|ax_M + by_M + cz_M + d| / √(a² + b² + c²)."},
 
-   {c:1,q:"Condition pour que le produit AB existe ?",a:"colonnes de A = lignes de B."},
-   {c:1,q:"ᵗ(AB) = ?",a:"ᵗB · ᵗA (inversion de l'ordre)."},
-   {c:1,q:"(AB)⁻¹ = ?",a:"B⁻¹ · A⁻¹."},
-   {c:1,q:"Méthode de Gauss-Jordan pour A⁻¹ ?",a:"[A | I] → opérations élémentaires → [I | A⁻¹]."},
-   {c:1,q:"Trois opérations élémentaires sur les lignes ?",a:"L_i ↔ L_j ; L_i ← λL_i (λ≠0) ; L_i ← L_i + λL_j."},
+   {c:1,q:"Définition d'un ouvert de ℝ² ?",a:"Pour tout point, il existe un disque ouvert centré dedans qui est contenu dans l'ouvert."},
+   {c:1,q:"Comment prouver qu'une limite n'existe pas ?",a:"Trouver deux chemins vers le point qui donnent des limites différentes."},
+   {c:1,q:"Énoncé du théorème de Schwarz ?",a:"Si f est C², alors ∂²f/∂x∂y = ∂²f/∂y∂x (dérivées mixtes égales)."},
+   {c:1,q:"Taille de la jacobienne pour f : ℝⁿ → ℝᵖ ?",a:"p × n (p lignes, n colonnes)."},
+   {c:1,q:"Règle de la chaîne pour les jacobiennes ?",a:"J(f∘g)(x) = J(f)(g(x)) · J(g)(x)."},
+   {c:1,q:"Formule de Taylor à l'ordre 2 en 2 variables ?",a:"f(a+h,b+k) = f(a,b) + h·f_x + k·f_y + ½(h²f_xx + 2hk f_xy + k²f_yy) + o(h²+k²)."},
 
-   {c:2,q:"det 2×2 [[a,b],[c,d]] ?",a:"ad − bc."},
-   {c:2,q:"det(AB) ?",a:"det(A) · det(B)."},
-   {c:2,q:"det(λA) pour A ∈ ℳ_n ?",a:"λⁿ · det(A)."},
-   {c:2,q:"A inversible ⟺ ... ?",a:"det(A) ≠ 0."},
-   {c:2,q:"Méthode de Cramer : x_i = ?",a:"det(A_i) / det(A), où A_i = A avec col. i remplacée par B."},
-   {c:2,q:"det d'une matrice triangulaire ?",a:"Produit des coefficients diagonaux."},
+   {c:2,q:"Expression du gradient ∇f ?",a:"(∂f/∂x, ∂f/∂y, ∂f/∂z) — champ vectoriel normal aux surfaces f = cste."},
+   {c:2,q:"Expression de la divergence div F ?",a:"∂F₁/∂x + ∂F₂/∂y + ∂F₃/∂z — champ scalaire."},
+   {c:2,q:"Expression du rotationnel rot F ?",a:"(∂F₃/∂y − ∂F₂/∂z, ∂F₁/∂z − ∂F₃/∂x, ∂F₂/∂x − ∂F₁/∂y)."},
+   {c:2,q:"Expression du laplacien Δf ?",a:"∂²f/∂x² + ∂²f/∂y² + ∂²f/∂z² = div(grad f)."},
+   {c:2,q:"Identité rot(grad f) ?",a:"0 (pour f de classe C²)."},
+   {c:2,q:"Identité div(rot F) ?",a:"0 (pour F de classe C²)."},
+   {c:2,q:"Que dire d'un champ F tel que rot F = 0 ?",a:"F dérive localement d'un potentiel scalaire φ (F = ∇φ)."},
 
-   {c:3,q:"Caractérisation d'un sev F ?",a:"F ≠ ∅ (0 ∈ F) et ∀ u,v ∈ F, ∀ λ, λu + v ∈ F."},
-   {c:3,q:"dim ℝⁿ ?",a:"n."},
-   {c:3,q:"dim K_n[X] ?",a:"n + 1."},
-   {c:3,q:"dim ℳ_{m,n}(K) ?",a:"mn."},
-   {c:3,q:"Base = ... + ... ?",a:"Famille libre ET génératrice."},
-   {c:3,q:"Formule de Grassmann ?",a:"dim(F+G) = dim F + dim G − dim(F ∩ G)."},
+   {c:3,q:"Formules des coordonnées polaires ?",a:"x = r cos θ, y = r sin θ."},
+   {c:3,q:"Jacobien polaire ?",a:"|J| = r ⟹ dxdy = r dr dθ."},
+   {c:3,q:"Formules des coordonnées cylindriques ?",a:"x = r cos θ, y = r sin θ, z = z. |J| = r."},
+   {c:3,q:"Formules des coordonnées sphériques ?",a:"x = r sin φ cos θ, y = r sin φ sin θ, z = r cos φ. |J| = r² sin φ."},
+   {c:3,q:"Paramétrisation classique de la sphère de rayon R ?",a:"(θ, φ) → (R sin φ cos θ, R sin φ sin θ, R cos φ), φ ∈ [0, π], θ ∈ [0, 2π[."},
 
-   {c:4,q:"Énoncé du théorème du rang ?",a:"dim E = dim(Ker f) + rg(f)."},
-   {c:4,q:"f linéaire injective ⟺ ... ?",a:"Ker f = {0}."},
-   {c:4,q:"rg(f) = ... ?",a:"dim(Im f) = rg de la matrice de f."},
-   {c:4,q:"Matrice de f dans les bases ℬ, ℬ' : structure ?",a:"Colonne j = coordonnées de f(e_j) dans ℬ'."},
-   {c:4,q:"Mat(g ∘ f) = ?",a:"Mat(g) · Mat(f)."},
-   {c:4,q:"Changement de base pour un endomorphisme ?",a:"M' = P⁻¹ · M · P, avec P matrice de passage."},
+   {c:4,q:"Théorème de Fubini sur un rectangle ?",a:"∬ f dxdy = ∫(∫ f dx) dy = ∫(∫ f dy) dx — les deux ordres valides."},
+   {c:4,q:"Formule du changement de variables 2D ?",a:"∬ f dxdy = ∬ f∘φ · |J_φ| dudv (φ difféomorphisme)."},
+   {c:4,q:"Volume d'un solide en intégrale triple ?",a:"V = ∭_V 1 dxdydz. En sphériques : ∫∫∫ r² sin φ dr dφ dθ."},
+   {c:4,q:"Comment calculer une masse ?",a:"M = ∭_V ρ(x,y,z) dxdydz (densité fois volume)."},
 
-   {c:5,q:"Condition nécessaire de convergence ?",a:"u_n → 0. La réciproque est fausse !"},
-   {c:5,q:"Critère de Riemann : ∑ 1/n^α CV ⟺ ?",a:"α > 1 (strict)."},
-   {c:5,q:"Série géométrique ∑ q^n : CV et somme ?",a:"CV ⟺ |q| < 1 ; somme = 1/(1−q)."},
-   {c:5,q:"Règle de D'Alembert : cas ℓ = 1 ?",a:"Indéterminé — le critère ne conclut pas."},
-   {c:5,q:"Théorème des séries alternées (Leibniz) ?",a:"(a_n) positive, décroissante, → 0 ⟹ ∑ (−1)ⁿ a_n converge."},
-   {c:5,q:"Convergence absolue ⟹ ?",a:"Convergence simple. Réciproque fausse (semi-convergence)."},
+   {c:5,q:"Longueur d'une courbe γ ?",a:"L = ∫_a^b ‖γ'(t)‖ dt."},
+   {c:5,q:"Circulation d'un champ F le long de γ ?",a:"∫_γ F·dl = ∫_γ P dx + Q dy = ∫(P·x' + Q·y') dt."},
+   {c:5,q:"Théorème de Green-Riemann ?",a:"∮_∂D P dx + Q dy = ∬_D (∂Q/∂x − ∂P/∂y) dxdy (∂D orienté positivement)."},
+   {c:5,q:"Circulation d'un champ de gradient F = ∇φ ?",a:"φ(B) − φ(A). Ne dépend que des extrémités."},
+   {c:5,q:"Aire d'un domaine D par intégrale de bord ?",a:"aire(D) = ½∮_∂D (x dy − y dx)."},
 
-   {c:6,q:"Coefficient a_n (période 2π) ?",a:"a_n = (1/π) ∫_{-π}^{π} f(t)·cos(nt) dt."},
-   {c:6,q:"Coefficient b_n ?",a:"b_n = (1/π) ∫_{-π}^{π} f(t)·sin(nt) dt."},
-   {c:6,q:"f paire → ? ; f impaire → ?",a:"paire : b_n = 0 ; impaire : a_n = 0."},
-   {c:6,q:"Énoncé du théorème de Dirichlet ?",a:"f 2π-péri, C¹ par mcx ⟹ S(x) = (f(x⁺) + f(x⁻))/2."},
-   {c:6,q:"Formule (identité) de Parseval ?",a:"(1/π) ∫ f² = a_0²/2 + ∑ (a_n² + b_n²)."},
-   {c:6,q:"Coefficient complexe c_n ?",a:"c_n = (1/2π) ∫ f(t)·e^{-int} dt ; c_n = (a_n − i b_n)/2 pour n ≥ 1."}
+   {c:6,q:"Vecteur normal à une surface (u,v)→M(u,v) ?",a:"N = ∂M/∂u ∧ ∂M/∂v ; élément d'aire dS = ‖N‖ dudv."},
+   {c:6,q:"Définition du flux d'un champ F à travers S ?",a:"Φ = ∬_S F·n dS = ∬_Δ F·N dudv."},
+   {c:6,q:"Théorème de Stokes ?",a:"∮_∂S F·dl = ∬_S rot F · n dS (S orientée)."},
+   {c:6,q:"Théorème de Green-Ostrogradski (divergence) ?",a:"∯_∂V F·n dS = ∭_V div F dV (surface fermée, n sortante)."},
+   {c:6,q:"Quand utiliser Ostrogradski plutôt que le calcul direct ?",a:"Surface fermée ET div F simple ⟹ intégrale triple souvent plus facile."},
+
+   {c:7,q:"Théorème de Fermat (1 variable) ?",a:"Si f admet un extremum local intérieur en c, alors f'(c) = 0."},
+   {c:7,q:"Condition nécessaire d'un extremum de f : ℝ² → ℝ ?",a:"∇f(a, b) = 0 (point critique)."},
+   {c:7,q:"Discriminant hessien Δ ?",a:"Δ = f_xx · f_yy − (f_xy)² = det(H)."},
+   {c:7,q:"Test de Monge : nature d'un point critique ?",a:"Δ>0 & f_xx>0 : min ; Δ>0 & f_xx<0 : max ; Δ<0 : selle ; Δ=0 : indéterminé."},
+   {c:7,q:"Méthode de Lagrange (contrainte g = 0) ?",a:"∇f = λ∇g et g = 0. λ = multiplicateur de Lagrange."},
+   {c:7,q:"Méthode pour extrema sur un compact ?",a:"Combiner points critiques intérieurs + étude sur le bord (paramétrer), puis comparer toutes les valeurs."}
   ];
 
-  var sel=new Set([0,1,2,3,4,5,6]), fmt="qcm", ord="chap";
+  var sel=new Set([0,1,2,3,4,5,6,7]), fmt="qcm", ord="chap";
   var pool=[], idx=0, score=0, answered=false;
 
   var $=function(id){return document.getElementById(id);};
@@ -124,14 +137,14 @@
 
   CHNAMES.forEach(function(name,i){
     var b=document.createElement("button");
-    b.className="chapchip on" + (CHMAT[i]==="ana"?" ana":"");
+    b.className="chapchip on";
     b.textContent=i+" · "+name;
     b.addEventListener("click",function(){
       if(sel.has(i)){sel.delete(i);b.classList.remove("on");}else{sel.add(i);b.classList.add("on");}
     });
     chips.appendChild(b);
   });
-  $("chapAll").addEventListener("click",function(){sel=new Set([0,1,2,3,4,5,6]);chips.querySelectorAll(".chapchip").forEach(function(c){c.classList.add("on");});});
+  $("chapAll").addEventListener("click",function(){sel=new Set([0,1,2,3,4,5,6,7]);chips.querySelectorAll(".chapchip").forEach(function(c){c.classList.add("on");});});
   $("chapNone").addEventListener("click",function(){sel.clear();chips.querySelectorAll(".chapchip").forEach(function(c){c.classList.remove("on");});});
   function seg(id,cb){ $(id).querySelectorAll("button").forEach(function(b){ b.addEventListener("click",function(){
     $(id).querySelectorAll("button").forEach(function(x){x.classList.remove("on");}); b.classList.add("on"); cb(b);
