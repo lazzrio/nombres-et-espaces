@@ -28,6 +28,7 @@
     <nav class="nav" id="nav">
       <button data-go="home" class="active">Accueil</button>
       <button data-go="cours">📚 Cours</button>
+      <button data-go="methodes">🛠 Méthodes</button>
       <button data-go="notions">💡 Notions</button>
       <button data-go="formules">📘 Formules</button>
       <button data-go="express">⚡ Express</button>
@@ -87,6 +88,7 @@
     </div>
     <div class="card-grid">
       <button class="card" data-go="cours"><div class="ic">§</div><h3>Cours complet</h3><p>8 chapitres — définitions, théorèmes, méthodes et exemples.</p><span class="tag">Analyse 3 →</span></button>
+      <button class="card" data-go="methodes"><div class="ic">⚙</div><h3>Méthodes</h3><p>La boîte à outils par chapitre : gendarmes, polaires, DL, chemins, Green, Stokes, Lagrange…</p><span class="tag">Comment résoudre →</span></button>
       <button class="card" data-go="notions"><div class="ic">✓</div><h3>Notions clés</h3><p>Une fiche par chapitre : uniquement l'essentiel du DS/partiel.</p><span class="tag">Essentiel →</span></button>
       <button class="card" data-go="formules"><div class="ic">∫</div><h3>Formules détaillées</h3><p>Toutes les formules avec conditions et cas particuliers.</p><span class="tag">Référence →</span></button>
       <button class="card" data-go="express"><div class="ic">⚡</div><h3>Formules express</h3><p>Anti-sèche brut, une colonne par chapitre.</p><span class="tag">Rapide →</span></button>
@@ -520,6 +522,268 @@
 <details class="gallery" open><summary>🖼️ Galerie de figures du chapitre 7 <span>(6 extraits du cours)</span></summary><div class="ggrid"><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 7. OPTIMISATION" src="assets/img/ch7-p10.jpg"><figcaption>CHAPITRE 7. OPTIMISATION</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 7. OPTIMISATION" src="assets/img/ch7-p12.jpg"><figcaption>CHAPITRE 7. OPTIMISATION</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . FONCTIONS DE DEUX VARIABLES" src="assets/img/ch7-p15.jpg"><figcaption>. FONCTIONS DE DEUX VARIABLES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 7. OPTIMISATION" src="assets/img/ch7-p18.jpg"><figcaption>CHAPITRE 7. OPTIMISATION</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . OPTIMISATION SOUS CONTRAINTES" src="assets/img/ch7-p23.jpg"><figcaption>. OPTIMISATION SOUS CONTRAINTES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 7. OPTIMISATION" src="assets/img/ch7-p24.jpg"><figcaption>CHAPITRE 7. OPTIMISATION</figcaption></figure></div></details></article>
 
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÉTHODES ============ -->
+<section class="view" id="view-methodes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">🛠 Méthodes de résolution</span>
+      <h2>La boîte à outils par chapitre</h2>
+      <p>Pour chaque type de problème, <strong>les différentes techniques possibles</strong> — gendarmes, polaires, DL, chemins, théorèmes… avec le déclencheur (« quand l'utiliser »). C'est le vrai réflexe à avoir en DS : essayer plusieurs outils.</p>
+    </div>
+    <div class="exo-grid">
+
+      <div class="exocard"><div class="eh"><span class="en">CH 1</span><h3>Fonctions de plusieurs variables</h3></div>
+
+        <div class="method-grp"><h4>Prouver qu'une limite existe (et vaut ℓ)</h4>
+          <div class="m-item">
+            <div class="mt">Théorème des gendarmes (avec la norme)</div>
+            <div class="md">Encadrer <b>|f(x,y) − ℓ|</b> ≤ g(x,y) avec g(x,y) → 0. Idée classique : montrer <code>|f − ℓ| ≤ C·(x²+y²)<sup>k</sup></code> pour un k &gt; 0 : quand (x,y) → (0,0), on a x²+y² → 0. <em>Fonctionne dans 80 % des cas où la limite existe.</em></div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Passage en coordonnées polaires</div>
+            <div class="md">Poser <code>x = r cos θ, y = r sin θ</code> et calculer f(r cos θ, r sin θ). Si on obtient <b>|f − ℓ| ≤ h(r)</b> avec h(r) → 0 <em>indépendamment de θ</em>, alors la limite est ℓ. <em>Attention : si le résultat dépend de θ, la limite n'existe pas.</em></div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Développements limités (DL)</div>
+            <div class="md">Si f contient des fonctions usuelles (sin, cos, exp, ln, √), remplacer par leur DL. Ex : <code>sin(xy) = xy − (xy)³/6 + …</code>, donc <code>sin(xy)/(x²+y²) = xy/(x²+y²) + o(…)</code>. Utile quand le calcul direct semble bloqué.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Composition de fonctions continues</div>
+            <div class="md">Si f = g ∘ h avec g, h continues, alors f est continue. Les fonctions usuelles (polynômes, cos, sin, exp) le sont partout ; ln, √ le sont sur leur domaine.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Prouver qu'une limite n'existe PAS</h4>
+          <div class="m-item">
+            <div class="mt">Deux chemins qui donnent des limites différentes</div>
+            <div class="md">Essayer dans l'ordre : <b>y = 0</b>, <b>x = 0</b>, <b>y = x</b>, <b>y = x²</b>, <b>y = kx</b> (avec k paramètre). Si deux valeurs différentes → pas de limite. Souvent, y = kx donne un résultat en k ⟹ dépend du chemin.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Passage en polaires révélant une dépendance en θ</div>
+            <div class="md">Après polaires, si le résultat contient encore θ quand r → 0 (par ex. cos(2θ)), la limite dépend de la direction d'approche : elle n'existe pas.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Continuité et différentiabilité</h4>
+          <div class="m-item">
+            <div class="mt">Continuité par prolongement</div>
+            <div class="md">f est définie sur D privé d'un point M₀. Étudier lim<sub>M→M₀</sub> f. Si elle existe (méthodes ci-dessus), poser f(M₀) = ℓ pour prolonger continûment.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Critère C¹ ⟹ différentiable</div>
+            <div class="md">Si les dérivées partielles existent et sont <b>continues</b> sur un ouvert, alors f est différentiable. C'est le raccourci le plus utilisé (évite d'utiliser la définition avec o(‖h‖)).</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Différentiabilité par la définition</div>
+            <div class="md">Vérifier <code>f(a+h,b+k) = f(a,b) + h·f<sub>x</sub> + k·f<sub>y</sub> + o(√(h²+k²))</code>. À utiliser quand C¹ échoue (par ex. dérivées partielles pas continues au point douteux).</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Calculer une dérivée partielle / une jacobienne</h4>
+          <div class="m-item">
+            <div class="mt">Calcul direct</div>
+            <div class="md">Fixer les autres variables comme des constantes, dériver comme d'habitude. Attention aux <em>dérivées croisées</em> avec exp et sin.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Règle de la chaîne</div>
+            <div class="md">Pour f(u(x, y), v(x, y)) : <code>∂f/∂x = f<sub>u</sub>·∂u/∂x + f<sub>v</sub>·∂v/∂x</code>. Généralisation via produit de matrices jacobiennes <code>J(f∘g) = J(f)·J(g)</code>.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Dérivation implicite</div>
+            <div class="md">Si F(x, y, z) = 0 définit z implicitement : <code>∂z/∂x = −F<sub>x</sub>/F<sub>z</sub></code> (à condition F<sub>z</sub> ≠ 0). Très utile en optim sous contrainte.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exocard"><div class="eh"><span class="en">CH 2</span><h3>Opérateurs vectoriels</h3></div>
+
+        <div class="method-grp"><h4>Calculer grad, div, rot</h4>
+          <div class="m-item">
+            <div class="mt">Formules directes</div>
+            <div class="md">Appliquer sans se poser de question. <b>Attention aux signes du rotationnel</b> : cycle x → y → z → x, chaque composante a la forme <code>∂/∂suivante − ∂/∂précédente</code>.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Identités remarquables</div>
+            <div class="md"><code>rot(grad f) = 0</code> et <code>div(rot F) = 0</code> pour tout champ C². Utiles pour <em>simplifier</em> une expression avant de calculer.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Nabla « vecteur formel »</div>
+            <div class="md">Traiter ∇ comme un vecteur permet de deviner les identités : <code>grad(fg) = f∇g + g∇f</code>, <code>div(f·V) = f·div V + V·grad f</code>, etc.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Trouver un potentiel scalaire φ tel que F = ∇φ</h4>
+          <div class="m-item">
+            <div class="mt">Vérifier la condition</div>
+            <div class="md"><b>rot F = 0</b> sur un ouvert simplement connexe (typiquement ℝ² ou ℝ³ tout entier, ou un pavé). Sinon : pas de potentiel global.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Intégrations successives</div>
+            <div class="md">(1) Intégrer <code>F₁</code> par rapport à x : <code>φ(x,y,z) = ∫F₁ dx + C(y, z)</code>. (2) Dériver en y et identifier à F₂ pour trouver C(y, z) = ∫… + D(z). (3) Faire pareil avec F₃ pour finir. Contrôle : <code>∇φ = F</code>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exocard"><div class="eh"><span class="en">CH 3</span><h3>Courbes, surfaces, solides</h3></div>
+
+        <div class="method-grp"><h4>Choisir le bon système de coordonnées</h4>
+          <div class="m-item">
+            <div class="mt">Symétrie centrale (boule, sphère)</div>
+            <div class="md">⟹ <b>Sphériques</b>. Le domaine devient un pavé <code>[0,R] × [0,π] × [0,2π]</code>, souvent très simple.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Symétrie autour d'un axe (cylindre, cône)</div>
+            <div class="md">⟹ <b>Cylindriques</b>. Idéal quand z varie librement mais (x, y) est un disque.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Disque ou anneau dans le plan</div>
+            <div class="md">⟹ <b>Polaires</b>. Aussi utile en 3D pour éclaircir un domaine circulaire à z fixé.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Paramétriser</h4>
+          <div class="m-item">
+            <div class="mt">Reconnaître la forme classique</div>
+            <div class="md">Cercle <code>(R cos t, R sin t)</code>, ellipse <code>(a cos t, b sin t)</code>, hélice <code>(R cos t, R sin t, ht)</code>, sphère (θ, φ). Ces paramétrisations doivent être immédiates.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Paramétrer un graphe</div>
+            <div class="md">Courbe y = f(x) : <code>γ(t) = (t, f(t))</code>. Surface z = f(x, y) : <code>M(u, v) = (u, v, f(u, v))</code>. Simple et toujours valide.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exocard"><div class="eh"><span class="en">CH 4</span><h3>Intégrales multiples</h3></div>
+
+        <div class="method-grp"><h4>Choisir l'ordre d'intégration (Fubini)</h4>
+          <div class="m-item">
+            <div class="mt">Essayer les deux ordres</div>
+            <div class="md">Sur un rectangle, ∫∫ f dxdy = ∫(∫ f dx)dy = ∫(∫ f dy)dx. Prendre l'ordre qui donne l'intégrale intérieure la plus simple.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Découper un domaine complexe</div>
+            <div class="md">Un domaine non convexe se découpe en plusieurs morceaux de type 1 (y entre φ(x) et ψ(x)) ou de type 2. Sommer les intégrales.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Changement de variables</h4>
+          <div class="m-item">
+            <div class="mt">Polaires (2D)</div>
+            <div class="md">Déclencheur : disque, anneau, secteur. <code>dxdy = r dr dθ</code>. Une intégrale comme <code>∬ e<sup>−(x²+y²)</sup> dxdy</code> sur ℝ² se calcule ainsi (célèbre gaussienne).</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Cylindriques (3D)</div>
+            <div class="md">Déclencheur : cylindre, cône, symétrie autour de Oz. <code>dV = r dr dθ dz</code>.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Sphériques (3D)</div>
+            <div class="md">Déclencheur : boule, coquille. <code>dV = r² sin φ dr dφ dθ</code>. Ne pas oublier le <b>sin φ</b>.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Exploiter les symétries</h4>
+          <div class="m-item">
+            <div class="mt">Symétrie du domaine + parité de f</div>
+            <div class="md">Si D est symétrique par rapport à un axe et f est <em>impaire</em> en la variable correspondante, alors ∬<sub>D</sub> f = 0. Peut économiser tout le calcul.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exocard"><div class="eh"><span class="en">CH 5</span><h3>Intégrales curvilignes</h3></div>
+
+        <div class="method-grp"><h4>Calculer une circulation ∫<sub>γ</sub> P dx + Q dy</h4>
+          <div class="m-item">
+            <div class="mt">Calcul direct par paramétrisation</div>
+            <div class="md">Paramétrer γ(t) = (x(t), y(t)), remplacer dx = x'(t) dt et dy = y'(t) dt, intégrer en t. Toujours valide, mais peut être long.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Green-Riemann (courbe fermée)</div>
+            <div class="md">Si γ borde un domaine D orienté positivement : <code>∮ P dx + Q dy = ∬<sub>D</sub> (∂Q/∂x − ∂P/∂y) dxdy</code>. Souvent l'intégrale double est plus facile.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Champ de gradient (bonus)</div>
+            <div class="md">Vérifier <code>∂P/∂y = ∂Q/∂x</code> (⟺ rot = 0 en 2D). Si oui, chercher φ tel que ∇φ = (P, Q), et alors <code>∫<sub>γ</sub> F·dl = φ(B) − φ(A)</code> — chemin indifférent !</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Décomposition en morceaux</div>
+            <div class="md">Sur une courbe polygonale (segments + arcs), intégrer chaque morceau séparément puis sommer.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Calculer une aire</h4>
+          <div class="m-item">
+            <div class="mt">Formule du bord</div>
+            <div class="md">Corollaire de Green : <code>aire(D) = ½ ∮<sub>∂D</sub> (x dy − y dx)</code>. Très efficace pour une aire délimitée par une courbe paramétrée (ellipse, cardioïde…).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exocard"><div class="eh"><span class="en">CH 6</span><h3>Intégrales de surface</h3></div>
+
+        <div class="method-grp"><h4>Calculer un flux ∬<sub>S</sub> F · n dS</h4>
+          <div class="m-item">
+            <div class="mt">Calcul direct par paramétrisation</div>
+            <div class="md">Paramétrer S par (u, v) → M(u, v). Calculer <b>N</b> = ∂M/∂u ∧ ∂M/∂v (attention à l'orientation !). Alors <code>∬<sub>S</sub> F·n dS = ∬<sub>Δ</sub> F(M(u,v)) · N(u,v) dudv</code>.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Stokes (surface ouverte, bord ∂S)</div>
+            <div class="md"><code>∮<sub>∂S</sub> F·dl = ∬<sub>S</sub> rot F · n dS</code>. Si le rotationnel est simple ou si le bord ∂S est simple, on choisit le membre qui simplifie.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Ostrogradski (surface fermée)</div>
+            <div class="md"><b>Surface fermée uniquement !</b> <code>∯<sub>∂V</sub> F·n dS = ∭<sub>V</sub> div F dV</code>. Astuce : si div F est constante (ou très simple), l'intégrale triple se réduit à un volume.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Fermer la surface (astuce Ostro.)</div>
+            <div class="md">Si S est ouverte, l'agrémenter d'un « couvercle » S' pour la fermer. Alors flux(S) = ∭ div F − flux(S'). Utile quand le couvercle est trivial (disque plan, etc.).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exocard"><div class="eh"><span class="en">CH 7</span><h3>Optimisation</h3></div>
+
+        <div class="method-grp"><h4>Extrema sur un ouvert (2 variables)</h4>
+          <div class="m-item">
+            <div class="mt">Deux étapes canoniques</div>
+            <div class="md">(1) Résoudre <code>∇f = 0</code> ⟹ points critiques. (2) Calculer la hessienne H et Δ = f<sub>xx</sub>·f<sub>yy</sub> − f<sub>xy</sub>² en chaque point : test de Monge.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Cas Δ = 0 (indéterminé)</div>
+            <div class="md">Test de Monge inefficace. Étudier <em>directement</em> le signe de f(a+h, b+k) − f(a, b) pour (h, k) petit, ou pousser le DL de Taylor à l'ordre 3 ou plus.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Extrema sur un compact (bord inclus)</h4>
+          <div class="m-item">
+            <div class="mt">Intérieur + bord</div>
+            <div class="md">Points critiques dans l'ouvert intérieur, puis <em>séparément</em> étude sur le bord. Comparer toutes les valeurs de f : max et min globaux en sont extraits (Weierstrass).</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Paramétrer le bord</div>
+            <div class="md">Sur un cercle : (R cos t, R sin t). Sur un segment : combinaison affine. Après substitution, la restriction devient une fonction d'une variable — étudier avec f'(t) = 0.</div>
+          </div>
+        </div>
+
+        <div class="method-grp"><h4>Extrema sous contrainte g(x, y) = 0</h4>
+          <div class="m-item">
+            <div class="mt">Multiplicateur de Lagrange</div>
+            <div class="md">Résoudre le système <code>∇f = λ∇g ; g = 0</code>. 3 équations à 3 inconnues (x, y, λ). Comparer les valeurs de f aux candidats.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Substitution</div>
+            <div class="md">Si la contrainte permet d'exprimer y = h(x) explicitement, injecter dans f pour se ramener à une fonction d'<em>une seule</em> variable. Plus simple que Lagrange quand c'est faisable.</div>
+          </div>
+          <div class="m-item">
+            <div class="mt">Paramétrisation de la contrainte</div>
+            <div class="md">Ex : contrainte x² + y² = 1 ⟹ (cos t, sin t), t ∈ [0, 2π]. Puis étude en t. Efficace pour des contraintes coniques.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

@@ -312,6 +312,18 @@ td.mono,th.mono{font-family:var(--f-mono)}
 .exo-item .m{font-size:13.5px;color:var(--muted);margin-top:5px;padding-left:26px;border-left:2px solid var(--line2);margin-left:8px}
 .exo-item .m b{color:var(--ink)}
 
+/* méthodes */
+.method-grp{margin:18px 0}
+.method-grp>h4{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);
+  margin:16px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line2);font-style:normal;font-weight:600}
+.m-item{margin:11px 0}
+.m-item .mt{font-weight:600;font-size:14.5px;display:flex;gap:8px;line-height:1.35}
+.m-item .mt::before{content:"⚙";color:var(--accent);flex:none;margin-top:1px;font-size:13px}
+.m-item .md{font-size:13.5px;color:var(--muted);margin-top:5px;padding-left:22px;border-left:2px solid var(--line2);margin-left:6px}
+.m-item .md b{color:var(--ink)}
+.m-item .md em{color:var(--accent2);font-style:italic}
+.m-item .md code{font-family:var(--f-mono);font-size:.9em;background:var(--surface2);border:1px solid var(--line2);border-radius:4px;padding:.05em .35em}
+
 /* quiz */
 .quiz-setup{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);margin-top:24px;max-width:760px}
 .quiz-setup h3{font-size:17px;margin-bottom:4px;font-style:italic}
