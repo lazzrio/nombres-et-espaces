@@ -66,7 +66,7 @@ Le dépôt local est déjà initialisé.
 Depuis ce dossier :
 
 ```bash
-git remote add origin https://github.com/VOTRE-PSEUDO/champs-et-integrales.git
+git remote add origin https://github.com/lazzrio/nombres-et-espaces.git
 git push -u origin main
 ```
 
@@ -83,7 +83,7 @@ sur [github.com/settings/tokens](https://github.com/settings/tokens) →
 Branche **main**, dossier **/ (root)** → **Save**.
 
 Site en ligne sous 1-2 minutes à :
-`https://VOTRE-PSEUDO.github.io/champs-et-integrales/`
+`https://lazzrio.github.io/nombres-et-espaces/`
 
 ## Lancer en local
 
