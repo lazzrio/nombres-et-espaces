@@ -29,10 +29,12 @@
       <button data-go="home" class="active">Accueil</button>
       <button data-go="cours">📚 Cours</button>
       <button data-go="methodes">🛠 Méthodes</button>
+      <button data-go="deroules">🧭 Déroulés</button>
       <button data-go="notions">💡 Notions</button>
       <button data-go="formules">📘 Formules</button>
       <button data-go="express">⚡ Express</button>
       <button data-go="exos">🎯 Exos</button>
+      <button data-go="boite">🧰 À côté</button>
       <button data-go="quiz">🧠 Quiz</button>
       <button data-go="planning">📅 Planning</button>
     </nav>
@@ -61,6 +63,7 @@
         <div class="hero-meta">
           <div><div class="n">8</div><div class="l">Chapitres</div></div>
           <div><div class="n">40+</div><div class="l">Théorèmes</div></div>
+          <div><div class="n">15</div><div class="l">Déroulés pas à pas</div></div>
           <div><div class="n">S1</div><div class="l">Semestre 1</div></div>
         </div>
       </div>
@@ -83,16 +86,18 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Navigation</span>
-      <h2>Sept espaces pour réviser</h2>
-      <p>Un cours structuré, des fiches de synthèse, deux fiches de formules, les exos types, un quiz et un planning.</p>
+      <h2>Neuf espaces pour réviser</h2>
+      <p>Un cours structuré, la boîte à outils des méthodes, <strong>15 exos types déroulés pas à pas</strong>, des fiches de synthèse avec réflexes et pièges, deux fiches de formules, le kit « à connaître à côté », un quiz et un planning.</p>
     </div>
     <div class="card-grid">
       <button class="card" data-go="cours"><div class="ic">§</div><h3>Cours complet</h3><p>8 chapitres — définitions, théorèmes, méthodes et exemples.</p><span class="tag">Analyse 3 →</span></button>
       <button class="card" data-go="methodes"><div class="ic">⚙</div><h3>Méthodes</h3><p>La boîte à outils par chapitre : gendarmes, polaires, DL, chemins, Green, Stokes, Lagrange…</p><span class="tag">Comment résoudre →</span></button>
+      <button class="card" data-go="deroules"><div class="ic">🧭</div><h3>Déroulés d'exos</h3><p>Table de décision « je vois → je pense » + 15 exercices types résolus étape par étape, avec les calculs complets.</p><span class="tag">Pas à pas →</span></button>
       <button class="card" data-go="notions"><div class="ic">✓</div><h3>Notions clés</h3><p>Une fiche par chapitre : uniquement l'essentiel du DS/partiel.</p><span class="tag">Essentiel →</span></button>
       <button class="card" data-go="formules"><div class="ic">∫</div><h3>Formules détaillées</h3><p>Toutes les formules avec conditions et cas particuliers.</p><span class="tag">Référence →</span></button>
       <button class="card" data-go="express"><div class="ic">⚡</div><h3>Formules express</h3><p>Anti-sèche brut, une colonne par chapitre.</p><span class="tag">Rapide →</span></button>
       <button class="card" data-go="exos"><div class="ic">🎯</div><h3>Exos types</h3><p>Ce qui tombe en DS : la méthode pas-à-pas par exercice.</p><span class="tag">Savoir-faire →</span></button>
+      <button class="card" data-go="boite"><div class="ic">🧰</div><h3>À connaître à côté</h3><p>Primitives, trigo, DL, déterminants, pièges classiques par chapitre et règles de rédaction qui rapportent.</p><span class="tag">Prérequis →</span></button>
       <button class="card" data-go="quiz"><div class="ic">?</div><h3>Quiz &amp; Flashcards</h3><p>QCM et flashcards, chapitres au choix, ordre ou aléatoire.</p><span class="tag">S'entraîner →</span></button>
     </div>
 
@@ -788,80 +793,539 @@
   </div>
 </section>
 
+<!-- ============ DÉROULÉS ============ -->
+<section class="view" id="view-deroules">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">🧭 Déroulés d'exos types</span>
+      <h2>Comment on cherche, puis comment on rédige</h2>
+      <p>D'abord la <strong>table de décision</strong> (« je vois ça dans l'énoncé → je pense à ça »), puis <strong>15 exercices types résolus pas à pas</strong>, avec les calculs écrits en entier, la réponse attendue et le « pourquoi » de chaque étape. Ce sont les modèles à refaire seul, cahier fermé, la semaine du DS.</p>
+    </div>
+
+    <h3 class="subhead">🔎 Comment on cherche — la table de décision</h3>
+    <p class="sublead">Devant un énoncé, on ne « voit » pas la solution : on repère des <em>déclencheurs</em>. Voici les plus fréquents en Analyse 3.</p>
+    <div class="tbl-wrap"><table class="dtable">
+      <tr><th>Je vois dans l'énoncé…</th><th>… je pense à</th></tr>
+      <tr><td>« limite en (0,0) », fraction avec x²+y² au dénominateur</td><td><span class="arrow">→</span>Comparer les <b>degrés</b> : numérateur de même degré que le dénominateur ⟹ probablement <b>pas de limite</b> → tester y = 0, y = x, y = kx. Numérateur de degré strictement plus grand ⟹ probablement limite 0 → <b>polaires</b> + majoration par une puissance de r.</td></tr>
+      <tr><td>« prolonger par continuité », « f est-elle continue en (0,0) ? »</td><td><span class="arrow">→</span>C'est un calcul de limite déguisé. Si la limite ℓ existe : poser f(0,0) = ℓ.</td></tr>
+      <tr><td>« différentiable ? », « de classe C¹ ? »</td><td><span class="arrow">→</span>Calculer les dérivées partielles ; si elles sont <b>continues</b> (polynômes, exp, sin…), f est C¹ donc différentiable. Sinon revenir à la définition avec o(‖h‖).</td></tr>
+      <tr><td>« dérive d'un potentiel », « champ de gradient », « le travail ne dépend pas du chemin »</td><td><span class="arrow">→</span>Vérifier <b>rot F = 0</b> (en 2D : ∂Q/∂x = ∂P/∂y). Puis chercher φ par intégrations successives. Puis circulation = φ(B) − φ(A).</td></tr>
+      <tr><td>« disque », « anneau », « secteur », « x² + y² » dans l'intégrande ou dans le domaine</td><td><span class="arrow">→</span><b>Polaires</b> : dxdy = r dr dθ. Bornes : r entre les rayons, θ selon le secteur (demi-disque y ≥ 0 ⟹ θ ∈ [0, π]).</td></tr>
+      <tr><td>« boule », « sphère », « x² + y² + z² »</td><td><span class="arrow">→</span><b>Sphériques</b> : dV = r² sin φ dr dφ dθ, φ ∈ [0, π], θ ∈ [0, 2π].</td></tr>
+      <tr><td>« cylindre », « cône », « axe Oz », « x² + y² ≤ … et z entre… »</td><td><span class="arrow">→</span><b>Cylindriques</b> : dV = r dr dθ dz. Souvent z intégré en dernier (ou en premier si les bornes de z dépendent de r).</td></tr>
+      <tr><td>« triangle », « domaine limité par y = … et y = … »</td><td><span class="arrow">→</span><b>Dessiner</b> le domaine, l'écrire en type 1 (a ≤ x ≤ b, φ(x) ≤ y ≤ ψ(x)) ou type 2, puis Fubini.</td></tr>
+      <tr><td>« courbe fermée » + « circulation » / « ∮ »</td><td><span class="arrow">→</span><b>Green-Riemann</b> (2D) ou <b>Stokes</b> (3D). Comparer la difficulté des deux membres avant de se lancer.</td></tr>
+      <tr><td>« surface fermée » + « flux »</td><td><span class="arrow">→</span><b>Ostrogradski</b> : flux = ∭ div F. Si div F est constante, c'est juste div F × volume.</td></tr>
+      <tr><td>« surface ouverte » + « flux du rotationnel »</td><td><span class="arrow">→</span><b>Stokes</b> dans le sens surface → bord : ∬ rot F·n dS = ∮ F·dl.</td></tr>
+      <tr><td>« aire de la région délimitée par la courbe paramétrée »</td><td><span class="arrow">→</span><b>½∮(x dy − y dx)</b> : c'est fait pour ça (ellipse, cardioïde, astroïde…).</td></tr>
+      <tr><td>« extrema », « points critiques », « nature »</td><td><span class="arrow">→</span>∇f = 0 puis <b>Hessienne</b> (Δ = f<sub>xx</sub>f<sub>yy</sub> − f<sub>xy</sub>², signe de f<sub>xx</sub>).</td></tr>
+      <tr><td>« sous la contrainte g(x,y) = 0 », « sur le cercle », « avec x + y = 1 »</td><td><span class="arrow">→</span><b>Substitution</b> si on peut isoler une variable, sinon <b>Lagrange</b> ∇f = λ∇g. Contrainte circulaire ⟹ paramétrer (cos t, sin t).</td></tr>
+      <tr><td>« sur le disque fermé », « sur le carré [0,1]² », « fermé borné », « compact »</td><td><span class="arrow">→</span>Weierstrass : max et min <b>existent</b>. Étudier l'<b>intérieur</b> (∇f = 0) <em>puis</em> le <b>bord</b> (paramétrer), puis comparer toutes les valeurs.</td></tr>
+      <tr><td>« vérifier que rot(grad f) = 0 », « montrer l'identité… »</td><td><span class="arrow">→</span>Écrire brutalement les composantes et utiliser Schwarz (les dérivées croisées s'annulent deux à deux).</td></tr>
+    </table></div>
+
+    <div class="box method"><div class="bt">▹ Réflexe universel : les 4 questions avant de calculer</div>
+      <ol>
+        <li><b>Quelle est la nature de l'objet ?</b> Scalaire ou vectoriel ? Courbe, surface ou volume ? Fermé ou ouvert ?</li>
+        <li><b>Quelle symétrie ?</b> Centrale → sphériques, axiale → cylindriques/polaires, aucune → cartésiennes.</li>
+        <li><b>Quel théorème peut transformer le problème ?</b> Green, Stokes, Ostrogradski, gradient. Un théorème sert à remplacer une intégrale difficile par une facile — si l'autre membre n'est pas plus simple, calcul direct.</li>
+        <li><b>À quoi doit ressembler la réponse ?</b> Un volume est positif, une aire aussi, une circulation peut être négative, un potentiel est défini à une constante près. Ça permet de <em>se relire</em>.</li>
+      </ol>
+    </div>
+
+    <h3 class="subhead">📐 Les 15 déroulés</h3>
+    <p class="sublead">Chaque déroulé suit le même plan : énoncé → ce qu'on cherche → étapes numérotées → réponse encadrée → pourquoi ça marche. Les valeurs numériques sont volontairement simples pour que tu puisses vérifier de tête.</p>
+    <div class="jumpbar">
+      <a href="#d1">D1 Limite ✗</a><a href="#d2">D2 Limite ✓</a><a href="#d3">D3 Dérivées &amp; jacobienne</a><a href="#d4">D4 Potentiel</a><a href="#d5">D5 Double type 1</a><a href="#d6">D6 Polaires</a><a href="#d7">D7 Volume cône</a><a href="#d8">D8 Volume boule</a><a href="#d9">D9 Circulation &amp; Green</a><a href="#d10">D10 Gradient</a><a href="#d11">D11 Aire ellipse</a><a href="#d12">D12 Ostrogradski</a><a href="#d13">D13 Stokes</a><a href="#d14">D14 Extrema libres</a><a href="#d15">D15 Lagrange &amp; compact</a>
+    </div>
+    <div class="dgrid">
+
+      <!-- D1 -->
+      <article class="deroule" id="d1">
+        <div class="dh"><span class="dn">D1</span><span class="dch">Ch. 1 · Limite qui n'existe pas</span><h3>f(x, y) = xy / (x² + y²) admet-elle une limite en (0,0) ?</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Décider si la limite existe. Numérateur de degré 2, dénominateur de degré 2 : <em>même degré</em> ⟹ on soupçonne qu'elle n'existe pas ⟹ on cherche <b>deux chemins</b> qui donnent des valeurs différentes.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Chemin 1 : l'axe des abscisses, y = 0</div><div class="sd"><div class="calc">f(x, 0) = (x·0)/(x² + 0) = 0  ⟹  lim = 0</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Chemin 2 : la première bissectrice, y = x</div><div class="sd"><div class="calc">f(x, x) = x²/(x² + x²) = x²/(2x²) = 1/2  ⟹  lim = 1/2</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Conclure</div><div class="sd">Deux chemins vers (0,0) donnent 0 et 1/2. Si la limite existait, elle serait unique. Donc <b>f n'a pas de limite en (0,0)</b>, et ne peut pas être prolongée par continuité.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Bonus : le voir en polaires</div><div class="sd"><div class="calc">f(r cos θ, r sin θ) = r² cos θ sin θ / r² = cos θ sin θ = ½ sin 2θ</div>Le résultat <b>dépend de θ</b> et pas de r : la valeur dépend de la direction d'approche ⟹ pas de limite. Même conclusion, présentation plus élégante.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>Pas de limite en (0,0) : le long de y = 0 on trouve 0, le long de y = x on trouve ½.</div>
+        <div class="why"><b class="lab">Pourquoi ça marche</b>Une limite en deux variables doit être la même <em>quel que soit le chemin</em>. Il suffit d'<b>un</b> contre-exemple (deux chemins discordants) pour la réfuter. Rédaction attendue : les deux calculs + une phrase de conclusion.</div>
+      </article>
+
+      <!-- D2 -->
+      <article class="deroule" id="d2">
+        <div class="dh"><span class="dn">D2</span><span class="dch">Ch. 1 · Limite qui existe + prolongement</span><h3>g(x, y) = x²y / (x² + y²) — limite en (0,0) et prolongement par continuité</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Numérateur de degré 3, dénominateur de degré 2 : le numérateur « gagne » ⟹ on soupçonne une limite <b>0</b>. Pour le <em>prouver</em>, on majore |g| par quelque chose qui tend vers 0 : polaires ou gendarmes.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Passer en polaires</div><div class="sd"><div class="calc">x = r cos θ, y = r sin θ
+g = r² cos²θ · r sin θ / r² = r · cos²θ · sin θ</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Majorer indépendamment de θ</div><div class="sd"><div class="calc">|g| = r · |cos²θ| · |sin θ| ≤ r · 1 · 1 = r</div>Et r = √(x² + y²) → 0 quand (x, y) → (0,0). Donc |g| → 0 par le théorème des gendarmes.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Variante sans polaires (gendarmes direct)</div><div class="sd">Comme x² ≤ x² + y², on a |x²/(x²+y²)| ≤ 1, donc <code>|g| ≤ |y| → 0</code>. Encore plus court.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Prolonger</div><div class="sd">On pose g(0,0) = 0. La fonction ainsi prolongée est continue en (0,0) (et ailleurs comme quotient de fonctions continues à dénominateur non nul).</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>lim g = 0 ; on prolonge par g(0,0) = 0.</div>
+        <div class="why"><b class="lab">Le test rapide des degrés</b>Pour une fraction de polynômes en (0,0) : degré(num) &gt; degré(dénom) ⟹ souvent limite 0 (à prouver par majoration) ; degré(num) ≤ degré(dénom) ⟹ souvent pas de limite (à réfuter par deux chemins). C'est une <em>boussole</em>, pas une preuve.</div>
+      </article>
+
+      <!-- D3 -->
+      <article class="deroule" id="d3">
+        <div class="dh"><span class="dn">D3</span><span class="dch">Ch. 1 · Dérivées partielles, Schwarz, jacobienne</span><h3>f(x, y) = x²y + e<sup>xy</sup> puis F(x, y) = (x²y, sin(xy))</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>(a) ∇f et les dérivées secondes, vérifier Schwarz. (b) La matrice jacobienne de F : ℝ² → ℝ².</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Dérivées premières — on fige l'autre variable</div><div class="sd"><div class="calc">∂f/∂x = 2xy + y·e^(xy)        (y est une constante ; (e^(xy))'ₓ = y·e^(xy))
+∂f/∂y = x² + x·e^(xy)</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Dérivées secondes croisées</div><div class="sd"><div class="calc">∂²f/∂y∂x = ∂/∂y (2xy + y e^(xy)) = 2x + e^(xy) + xy·e^(xy)     (produit y·e^(xy) : dérivée = e^(xy) + y·x·e^(xy))
+∂²f/∂x∂y = ∂/∂x (x² + x e^(xy)) = 2x + e^(xy) + xy·e^(xy)</div>Elles sont égales : <b>Schwarz est vérifié</b>, ce qui est normal car f est C² (somme et produit de fonctions C<sup>∞</sup>).</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Jacobienne de F = (F₁, F₂) : une ligne par composante, une colonne par variable</div><div class="sd"><div class="calc">J_F = | ∂F₁/∂x  ∂F₁/∂y |   =   |  2xy        x²      |
+      | ∂F₂/∂x  ∂F₂/∂y |       | y·cos(xy)  x·cos(xy) |</div>Taille p × n = 2 × 2. Le déterminant vaut 2x²y cos(xy) − x²y cos(xy) = x²y cos(xy) : c'est le <em>jacobien</em> qu'on retrouvera au chapitre 4.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>∇f = (2xy + y e<sup>xy</sup>, x² + x e<sup>xy</sup>) ; f<sub>xy</sub> = f<sub>yx</sub> = 2x + (1 + xy)e<sup>xy</sup> ; J<sub>F</sub> comme ci-dessus.</div>
+        <div class="why"><b class="lab">Piège classique</b>Dériver y·e<sup>xy</sup> par rapport à y est un <b>produit</b> : (y)'·e<sup>xy</sup> + y·(e<sup>xy</sup>)'<sub>y</sub> = e<sup>xy</sup> + xy e<sup>xy</sup>. Oublier le premier terme est l'erreur n°1 sur ce type de calcul.</div>
+      </article>
+
+      <!-- D4 -->
+      <article class="deroule" id="d4">
+        <div class="dh"><span class="dn">D4</span><span class="dch">Ch. 2 · Potentiel scalaire</span><h3>F = (2xy + z, x² + 2yz, x + y²) dérive-t-il d'un potentiel ? Le trouver.</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Un champ scalaire φ tel que ∇φ = F. Condition nécessaire (et suffisante sur ℝ³) : <b>rot F = 0</b>. Puis on « remonte » les dérivées partielles une par une.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Vérifier rot F = 0 (composante par composante)</div><div class="sd"><div class="calc">(rot F)ₓ = ∂F₃/∂y − ∂F₂/∂z = 2y − 2y = 0
+(rot F)_y = ∂F₁/∂z − ∂F₃/∂x = 1 − 1 = 0
+(rot F)_z = ∂F₂/∂x − ∂F₁/∂y = 2x − 2x = 0   ✓</div>F est C¹ sur ℝ³ (simplement connexe) et irrotationnel ⟹ F dérive d'un potentiel.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Intégrer F₁ par rapport à x</div><div class="sd"><div class="calc">∂φ/∂x = 2xy + z  ⟹  φ = x²y + xz + C(y, z)</div>La « constante » d'intégration dépend des variables qu'on n'a pas intégrées : C(y, z).</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Dériver en y et identifier avec F₂</div><div class="sd"><div class="calc">∂φ/∂y = x² + ∂C/∂y  =  x² + 2yz   ⟹  ∂C/∂y = 2yz  ⟹  C = y²z + D(z)</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Dériver en z et identifier avec F₃</div><div class="sd"><div class="calc">φ = x²y + xz + y²z + D(z)
+∂φ/∂z = x + y² + D'(z)  =  x + y²   ⟹  D'(z) = 0  ⟹  D = cste</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Contrôler</div><div class="sd">∇(x²y + xz + y²z) = (2xy + z, x² + 2yz, x + y²) = F ✓. Ce contrôle prend 20 secondes et rapporte les points.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>φ(x, y, z) = x²y + xz + y²z + C, C ∈ ℝ.</div>
+        <div class="why"><b class="lab">Pourquoi cet ordre</b>Chaque étape ne peut ajouter qu'une fonction des variables <em>restantes</em>. Si à une étape tu trouves ∂C/∂y qui dépend encore de x, c'est que rot F ≠ 0 : reviens à l'étape 1, il y a une erreur.</div>
+      </article>
+
+      <!-- D5 -->
+      <article class="deroule" id="d5">
+        <div class="dh"><span class="dn">D5</span><span class="dch">Ch. 4 · Intégrale double sur un triangle</span><h3>I = ∬<sub>D</sub> xy dxdy, D le triangle de sommets (0,0), (1,0), (1,1)</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Décrire D avec des bornes (dessin obligatoire !), puis Fubini. On fera les deux ordres pour voir qu'ils donnent la même chose.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Dessiner et décrire D en type 1 (x d'abord, puis y entre deux fonctions de x)</div><div class="sd">Le triangle est sous la droite y = x, au-dessus de y = 0, entre x = 0 et x = 1 : <div class="calc">D = { 0 ≤ x ≤ 1 , 0 ≤ y ≤ x }</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Intégrer d'abord en y (la variable « intérieure », aux bornes variables)</div><div class="sd"><div class="calc">I = ∫₀¹ ( ∫₀ˣ xy dy ) dx = ∫₀¹ x · [y²/2]₀ˣ dx = ∫₀¹ x · x²/2 dx = ∫₀¹ x³/2 dx = [x⁴/8]₀¹ = 1/8</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Vérifier avec l'autre ordre (type 2 : y d'abord, puis x entre y et 1)</div><div class="sd"><div class="calc">D = { 0 ≤ y ≤ 1 , y ≤ x ≤ 1 }
+I = ∫₀¹ ( ∫_y¹ xy dx ) dy = ∫₀¹ y · [x²/2]_y¹ dy = ∫₀¹ y(1 − y²)/2 dy = ½ [y²/2 − y⁴/4]₀¹ = ½ · ¼ = 1/8  ✓</div></div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>I = 1/8.</div>
+        <div class="why"><b class="lab">Règle d'or des bornes</b>Les bornes de l'intégrale <b>intérieure</b> peuvent dépendre de la variable extérieure ; les bornes de l'intégrale <b>extérieure</b> sont toujours des <b>constantes</b>. Si tu obtiens un résultat qui contient encore x ou y, une borne est mal placée.</div>
+      </article>
+
+      <!-- D6 -->
+      <article class="deroule" id="d6">
+        <div class="dh"><span class="dn">D6</span><span class="dch">Ch. 4 · Passage en polaires</span><h3>I = ∬<sub>D</sub> (x² + y²) dxdy, D le disque de rayon R centré en O</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Disque + x² + y² dans l'intégrande : double déclencheur des <b>polaires</b>. On n'oublie pas le jacobien r.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Traduire le domaine et l'intégrande</div><div class="sd"><div class="calc">x = r cos θ, y = r sin θ,  x² + y² = r²,  dxdy = r dr dθ
+D : 0 ≤ r ≤ R, 0 ≤ θ ≤ 2π  (un pavé en (r, θ) — c'est tout l'intérêt)</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Séparer les variables (l'intégrande est un produit d'une fonction de r par une fonction de θ)</div><div class="sd"><div class="calc">I = ∫₀^{2π} ∫₀^R r² · r dr dθ = ( ∫₀^{2π} dθ ) · ( ∫₀^R r³ dr ) = 2π · R⁴/4 = πR⁴/2</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Variante : demi-disque supérieur (y ≥ 0)</div><div class="sd">Seule la borne en θ change : θ ∈ [0, π] ⟹ I = π · R⁴/4 = πR⁴/4. Quart de disque x, y ≥ 0 : θ ∈ [0, π/2] ⟹ πR⁴/8.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Variante : anneau r₁ ≤ r ≤ r₂</div><div class="sd">I = 2π (r₂⁴ − r₁⁴)/4 = π(r₂⁴ − r₁⁴)/2.</div></div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>I = πR⁴/2 (disque complet).</div>
+        <div class="why"><b class="lab">Contrôle d'homogénéité</b>x² + y² est une « longueur² », dxdy une « longueur² » ⟹ I doit être en R⁴. Si tu trouves R³ ou R⁵, tu as oublié (ou doublé) le jacobien r.</div>
+      </article>
+
+      <!-- D7 -->
+      <article class="deroule" id="d7">
+        <div class="dh"><span class="dn">D7</span><span class="dch">Ch. 4 · Cylindriques</span><h3>Volume du cône V = { x² + y² ≤ z², 0 ≤ z ≤ h }</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Un volume = ∭ 1 dV. Symétrie autour de Oz ⟹ <b>cylindriques</b>. À chaque hauteur z, la section est un disque de rayon z.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Écrire le domaine en (r, θ, z)</div><div class="sd"><div class="calc">x² + y² ≤ z²  ⟺  r ≤ z
+V : 0 ≤ z ≤ h,  0 ≤ r ≤ z,  0 ≤ θ ≤ 2π     et dV = r dr dθ dz</div>Ordre : θ (libre), puis r (dépend de z), puis z (constantes). La variable dont les bornes dépendent d'une autre s'intègre <em>avant</em> celle-ci.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Intégrer</div><div class="sd"><div class="calc">Vol = ∫₀^{2π} dθ ∫₀^h ( ∫₀^z r dr ) dz = 2π ∫₀^h z²/2 dz = 2π · h³/6 = πh³/3</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Contrôler avec la formule connue</div><div class="sd">Cône de rayon de base R = h et de hauteur h : πR²h/3 = πh³/3 ✓.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>Vol = πh³/3.</div>
+        <div class="why"><b class="lab">Astuce « tranches »</b>Intégrer θ puis r à z fixé revient à calculer l'aire de la tranche (πz²) puis ∫₀^h πz² dz. Penser en tranches aide à poser les bornes sans se tromper.</div>
+      </article>
+
+      <!-- D8 -->
+      <article class="deroule" id="d8">
+        <div class="dh"><span class="dn">D8</span><span class="dch">Ch. 4 · Sphériques</span><h3>Volume de la boule de rayon R, puis masse avec ρ(x,y,z) = √(x²+y²+z²)</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Symétrie centrale ⟹ <b>sphériques</b>, jacobien r² sin φ. La boule devient le pavé [0,R] × [0,π] × [0,2π].</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Volume</div><div class="sd"><div class="calc">Vol = ∫₀^{2π} dθ · ∫₀^π sin φ dφ · ∫₀^R r² dr = 2π · [−cos φ]₀^π · R³/3 = 2π · 2 · R³/3 = 4πR³/3</div>Retenir <b>∫₀^π sin φ dφ = 2</b> : il revient dans tous les calculs sphériques.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Masse avec densité ρ = r (la distance au centre)</div><div class="sd"><div class="calc">M = ∭ r · r² sin φ dr dφ dθ = 2π · 2 · ∫₀^R r³ dr = 4π · R⁴/4 = πR⁴</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Variante : demi-boule z ≥ 0</div><div class="sd">z = r cos φ ≥ 0 ⟺ φ ∈ [0, π/2] ; ∫₀^{π/2} sin φ dφ = 1 ⟹ volume 2πR³/3 (la moitié, logique).</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>Vol = 4πR³/3 ; M = πR⁴.</div>
+        <div class="why"><b class="lab">Erreur n°1</b>Prendre φ ∈ [0, 2π]. L'angle φ est mesuré depuis l'axe Oz et ne parcourt que [0, π] (du pôle nord au pôle sud). C'est θ qui fait le tour complet.</div>
+      </article>
+
+      <!-- D9 -->
+      <article class="deroule" id="d9">
+        <div class="dh"><span class="dn">D9</span><span class="dch">Ch. 5 · Circulation directe vs Green-Riemann</span><h3>C = ∮<sub>γ</sub> −y dx + x dy, γ le cercle de rayon R parcouru dans le sens direct</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Une circulation sur une courbe <b>fermée</b> : on peut soit paramétrer, soit utiliser Green-Riemann. On fait les deux pour comparer.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Méthode 1 — paramétrer</div><div class="sd"><div class="calc">x = R cos t, y = R sin t, t ∈ [0, 2π]     dx = −R sin t dt,  dy = R cos t dt
+C = ∫₀^{2π} [ −(R sin t)(−R sin t) + (R cos t)(R cos t) ] dt = ∫₀^{2π} R² (sin²t + cos²t) dt = 2πR²</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Méthode 2 — Green-Riemann avec P = −y, Q = x</div><div class="sd"><div class="calc">∂Q/∂x − ∂P/∂y = 1 − (−1) = 2
+C = ∬_D 2 dxdy = 2 · aire(D) = 2πR²   ✓</div>Hypothèses à citer : D borné, bord orienté dans le sens direct, P et Q de classe C¹.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Et si le cercle est parcouru dans le sens horaire ?</div><div class="sd">La circulation change de signe : −2πR². Green-Riemann ne s'applique <em>tel quel</em> que pour l'orientation directe (D à gauche quand on avance).</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>C = 2πR² (sens direct).</div>
+        <div class="why"><b class="lab">Quand préférer Green</b>Dès que ∂Q/∂x − ∂P/∂y est simple (constante, polynôme) et que l'aire de D est connue. Ici, Green tient en une ligne ; la paramétrisation en quatre.</div>
+      </article>
+
+      <!-- D10 -->
+      <article class="deroule" id="d10">
+        <div class="dh"><span class="dn">D10</span><span class="dch">Ch. 5 · Champ de gradient</span><h3>W = ∫<sub>γ</sub> 2xy dx + x² dy de A(0,0) à B(1,2), γ quelconque</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>« γ quelconque » : l'énoncé te souffle que le résultat ne dépend pas du chemin, donc que F = (2xy, x²) est un <b>champ de gradient</b>. On le vérifie, on trouve φ, on conclut.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Condition d'exactitude en 2D</div><div class="sd"><div class="calc">∂P/∂y = ∂(2xy)/∂y = 2x ;   ∂Q/∂x = ∂(x²)/∂x = 2x   ⟹ égales ✓  (et ℝ² est simplement connexe)</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Trouver φ</div><div class="sd"><div class="calc">φ = ∫ 2xy dx = x²y + C(y) ;  ∂φ/∂y = x² + C'(y) = x²  ⟹ C' = 0  ⟹ φ = x²y</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Conclure</div><div class="sd"><div class="calc">W = φ(B) − φ(A) = 1²·2 − 0 = 2</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Contrôle par un chemin explicite (le segment AB : x = t, y = 2t, t ∈ [0,1])</div><div class="sd"><div class="calc">W = ∫₀¹ [ 2·t·2t · 1 + t² · 2 ] dt = ∫₀¹ 6t² dt = 2  ✓</div></div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>W = 2, indépendant du chemin.</div>
+        <div class="why"><b class="lab">Contre-exemple à connaître</b>F = (−y, x)/(x² + y²) vérifie ∂P/∂y = ∂Q/∂x partout où il est défini, mais sa circulation sur le cercle unité vaut 2π ≠ 0. Le domaine ℝ² \ {0} n'est <em>pas</em> simplement connexe : la condition sur le domaine n'est pas décorative.</div>
+      </article>
+
+      <!-- D11 -->
+      <article class="deroule" id="d11">
+        <div class="dh"><span class="dn">D11</span><span class="dch">Ch. 5 · Aire par intégrale de bord</span><h3>Aire de l'ellipse x²/a² + y²/b² ≤ 1</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>L'aire d'une région délimitée par une courbe qu'on sait <b>paramétrer</b> : c'est le cas d'école de la formule ½∮(x dy − y dx).</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Paramétrer le bord dans le sens direct</div><div class="sd"><div class="calc">x = a cos t, y = b sin t, t ∈ [0, 2π]     dx = −a sin t dt, dy = b cos t dt</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Appliquer la formule</div><div class="sd"><div class="calc">Aire = ½ ∫₀^{2π} [ a cos t · b cos t − b sin t · (−a sin t) ] dt = ½ ∫₀^{2π} ab (cos²t + sin²t) dt = ½ · ab · 2π = πab</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Contrôle</div><div class="sd">a = b = R ⟹ πR² ✓.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>Aire = πab.</div>
+        <div class="why"><b class="lab">D'où vient la formule</b>Green-Riemann avec P = −y/2, Q = x/2 donne ∂Q/∂x − ∂P/∂y = 1, donc ∬ 1 = aire. Les variantes ∮ x dy et −∮ y dx marchent aussi (mêmes hypothèses).</div>
+      </article>
+
+      <!-- D12 -->
+      <article class="deroule" id="d12">
+        <div class="dh"><span class="dn">D12</span><span class="dch">Ch. 6 · Ostrogradski</span><h3>Flux de F = (x, y, z) sortant de la sphère de rayon R</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Surface <b>fermée</b> + flux ⟹ Ostrogradski. On vérifie ensuite par le calcul direct, qui est ici facile.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Divergence</div><div class="sd"><div class="calc">div F = ∂x/∂x + ∂y/∂y + ∂z/∂z = 1 + 1 + 1 = 3</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Théorème de la divergence</div><div class="sd"><div class="calc">Φ = ∭_boule div F dV = 3 · Vol(boule) = 3 · 4πR³/3 = 4πR³</div>Hypothèses : F de classe C¹, V borné, normale <b>sortante</b>.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Contrôle direct</div><div class="sd">Sur la sphère, la normale unitaire sortante est n = (x, y, z)/R, donc F·n = (x² + y² + z²)/R = R²/R = R. Φ = R · aire(sphère) = R · 4πR² = 4πR³ ✓.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Variante « couvercle » : flux à travers la demi-sphère z ≥ 0 seule (normale vers le haut)</div><div class="sd">Fermer avec le disque z = 0 (normale sortante = −e<sub>z</sub>) : flux(disque) = ∬ F·(−e<sub>z</sub>) dS = ∬ −z dS = 0 car z = 0 sur le disque. Donc flux(demi-sphère) = 3 · (2πR³/3) − 0 = 2πR³.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>Φ = 4πR³ (sphère complète), 2πR³ (demi-sphère supérieure).</div>
+        <div class="why"><b class="lab">Réflexe</b>Si div F est une <b>constante</b> c, le flux sortant d'une surface fermée vaut c × volume. Si div F = 0, le flux sortant est nul quel que soit le volume : très utile pour les champs « à divergence nulle » (rot d'un autre champ, par exemple).</div>
+      </article>
+
+      <!-- D13 -->
+      <article class="deroule" id="d13">
+        <div class="dh"><span class="dn">D13</span><span class="dch">Ch. 6 · Stokes</span><h3>F = (−y, x, z), S le disque x² + y² ≤ R² du plan z = 0, normale +e<sub>z</sub></h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Vérifier Stokes sur un cas simple : flux du rotationnel à travers S = circulation sur le bord ∂S (cercle de rayon R, sens direct vu de dessus).</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Rotationnel</div><div class="sd"><div class="calc">rot F = ( ∂F₃/∂y − ∂F₂/∂z , ∂F₁/∂z − ∂F₃/∂x , ∂F₂/∂x − ∂F₁/∂y ) = ( 0 − 0 , 0 − 0 , 1 − (−1) ) = (0, 0, 2)</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Flux du rotationnel à travers S</div><div class="sd"><div class="calc">rot F · n = (0,0,2)·(0,0,1) = 2  ⟹  ∬_S rot F·n dS = 2 · aire(S) = 2πR²</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Circulation sur le bord (on l'a déjà faite en D9 !)</div><div class="sd">∮ −y dx + x dy (+ z dz, mais z = 0) = 2πR² ✓. Stokes est vérifié.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Orientation compatible</div><div class="sd">Règle de la main droite : pouce le long de n (+e<sub>z</sub>), les doigts donnent le sens du bord (sens direct vu de dessus). Normale −e<sub>z</sub> ⟹ bord horaire ⟹ signe opposé.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>∬<sub>S</sub> rot F·n dS = ∮<sub>∂S</sub> F·dl = 2πR².</div>
+        <div class="why"><b class="lab">Usage malin de Stokes</b>Le flux de rot F ne dépend que du <b>bord</b> : deux surfaces de même bord (le disque, ou la demi-sphère posée dessus) donnent le même flux. On choisit toujours la surface la plus simple (souvent la surface plane).</div>
+      </article>
+
+      <!-- D14 -->
+      <article class="deroule" id="d14">
+        <div class="dh"><span class="dn">D14</span><span class="dch">Ch. 7 · Extrema libres</span><h3>Points critiques et nature de f(x, y) = x³ − 3x + y²</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>Les deux étapes canoniques : (1) ∇f = 0 ; (2) Hessienne + test de Monge en chaque point critique.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">Points critiques</div><div class="sd"><div class="calc">∂f/∂x = 3x² − 3 = 0  ⟹  x = ±1
+∂f/∂y = 2y = 0        ⟹  y = 0
+Points critiques : A(1, 0) et B(−1, 0)</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Dérivées secondes</div><div class="sd"><div class="calc">f_xx = 6x,  f_yy = 2,  f_xy = 0    ⟹   Δ = f_xx·f_yy − f_xy² = 12x</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Nature en A(1, 0)</div><div class="sd">Δ = 12 &gt; 0 et f<sub>xx</sub> = 6 &gt; 0 ⟹ <b>minimum local</b>, f(A) = 1 − 3 + 0 = −2.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Nature en B(−1, 0)</div><div class="sd">Δ = −12 &lt; 0 ⟹ <b>point selle</b> (ni max ni min), f(B) = 2.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Global ou local ?</div><div class="sd">f(x, 0) = x³ − 3x → −∞ quand x → −∞ : pas de minimum global. Le minimum en A est seulement <b>local</b>. Toujours répondre à cette question si l'énoncé dit « extremum » sans préciser.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>(1, 0) : minimum local (valeur −2). (−1, 0) : point selle. Pas d'extremum global.</div>
+        <div class="why"><b class="lab">Relire le tableau de Monge</b>Δ &gt; 0 ⟹ extremum (min si f<sub>xx</sub> &gt; 0, max si f<sub>xx</sub> &lt; 0) ; Δ &lt; 0 ⟹ selle ; Δ = 0 ⟹ on ne peut rien dire (regarder f(a+h, b+k) − f(a, b) à la main).</div>
+      </article>
+
+      <!-- D15 -->
+      <article class="deroule" id="d15">
+        <div class="dh"><span class="dn">D15</span><span class="dch">Ch. 7 · Lagrange puis compact</span><h3>(a) Extrema de f = xy sur le cercle x² + y² = 1. (b) Extrema de g = x² + y² − 2x sur le disque fermé x² + y² ≤ 4.</h3></div>
+        <div class="enonce"><b class="lab">Ce qu'on cherche</b>(a) une contrainte d'égalité ⟹ Lagrange (ou paramétrisation). (b) un compact ⟹ intérieur + bord + comparaison.</div>
+        <ol class="steps">
+          <li class="step"><span class="sn"></span><div><div class="st">(a) Système de Lagrange avec c(x, y) = x² + y² − 1</div><div class="sd"><div class="calc">∇f = λ∇c :   y = 2λx   (1)      x = 2λy   (2)      x² + y² = 1   (3)</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">(a) Résoudre par substitution</div><div class="sd"><div class="calc">(1) dans (2) : x = 2λ(2λx) = 4λ²x  ⟹  x(1 − 4λ²) = 0
+• x = 0 ⟹ (1) y = 0 ⟹ contredit (3). Rejeté.
+• λ = ½  ⟹ y = x ⟹ (3) 2x² = 1 ⟹ x = y = ±1/√2,  f = ½
+• λ = −½ ⟹ y = −x ⟹ x = ±1/√2, y = ∓1/√2,  f = −½</div>Le cercle est compact et f continue ⟹ max et min existent et sont parmi ces 4 candidats.</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">(a) Contrôle par paramétrisation</div><div class="sd">x = cos t, y = sin t ⟹ f = cos t sin t = ½ sin 2t ∈ [−½, ½] ✓. Souvent plus rapide que Lagrange pour un cercle !</div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">(b) Intérieur du disque : points critiques</div><div class="sd"><div class="calc">∇g = (2x − 2, 2y) = 0  ⟹  (1, 0),  g(1,0) = −1.   Hessienne diag(2, 2) : Δ = 4 &gt; 0, g_xx &gt; 0 ⟹ min local.</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">(b) Bord : paramétrer le cercle de rayon 2</div><div class="sd"><div class="calc">x = 2cos t, y = 2 sin t  ⟹  g = 4 − 4cos t,  t ∈ [0, 2π]
+min sur le bord : t = 0 → g = 0 en (2, 0) ;  max sur le bord : t = π → g = 8 en (−2, 0)</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">(b) Comparer toutes les valeurs</div><div class="sd">Candidats : −1 (intérieur), 0 et 8 (bord). <b>Min global −1 en (1, 0)</b>, <b>max global 8 en (−2, 0)</b>.</div></div></li>
+        </ol>
+        <div class="answer"><b class="lab">Réponse</b>(a) max ½ en ±(1/√2, 1/√2), min −½ en ±(1/√2, −1/√2). (b) min −1 en (1,0), max 8 en (−2,0).</div>
+        <div class="why"><b class="lab">Deux pièges qui coûtent cher</b>Diviser par x sans traiter le cas x = 0 (on perd ou on invente des solutions). Et oublier le bord sur un compact : le max global de (b) est <em>sur le bord</em>, là où ∇g ≠ 0 — le test de la hessienne ne l'aurait jamais trouvé.</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOÎTE À OUTILS « À CÔTÉ » ============ -->
+<section class="view" id="view-boite">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">🧰 À connaître à côté</span>
+      <h2>Ce qui n'est pas au programme mais qui fait perdre les points</h2>
+      <p>Le cours d'Analyse 3 suppose acquis les outils d'ING1 : primitives, trigonométrie, DL, déterminants. Ce sont eux qui bloquent en plein calcul. Tout est regroupé ici, avec les pièges classiques par chapitre et les règles de rédaction qui rapportent.</p>
+    </div>
+
+    <h3 class="subhead">📎 Prérequis de calcul</h3>
+    <div class="kit">
+      <div class="kcard"><h3>∂ Dérivées à connaître par cœur</h3>
+        <div class="tbl-wrap"><table>
+          <tr><th>f</th><th>f'</th><th>f</th><th>f'</th></tr>
+          <tr><td class="mono">x<sup>n</sup></td><td class="mono">n x<sup>n−1</sup></td><td class="mono">e<sup>u</sup></td><td class="mono">u' e<sup>u</sup></td></tr>
+          <tr><td class="mono">√x</td><td class="mono">1/(2√x)</td><td class="mono">ln u</td><td class="mono">u'/u</td></tr>
+          <tr><td class="mono">1/x</td><td class="mono">−1/x²</td><td class="mono">u<sup>n</sup></td><td class="mono">n u' u<sup>n−1</sup></td></tr>
+          <tr><td class="mono">sin x</td><td class="mono">cos x</td><td class="mono">sin u</td><td class="mono">u' cos u</td></tr>
+          <tr><td class="mono">cos x</td><td class="mono">−sin x</td><td class="mono">cos u</td><td class="mono">−u' sin u</td></tr>
+          <tr><td class="mono">tan x</td><td class="mono">1 + tan²x</td><td class="mono">arctan x</td><td class="mono">1/(1+x²)</td></tr>
+          <tr><td class="mono">uv</td><td class="mono">u'v + uv'</td><td class="mono">u/v</td><td class="mono">(u'v − uv')/v²</td></tr>
+        </table></div>
+        <p>En dérivée partielle, <code>u</code> peut être <code>xy</code>, <code>x²+y²</code>… : la règle de la chaîne d'une variable suffit.</p>
+      </div>
+
+      <div class="kcard"><h3>∫ Primitives usuelles</h3>
+        <ul class="mono">
+          <li>∫ x<sup>n</sup> = x<sup>n+1</sup>/(n+1) (n ≠ −1) ; ∫ 1/x = ln|x|</li>
+          <li>∫ e<sup>ax</sup> = e<sup>ax</sup>/a ; ∫ u' e<sup>u</sup> = e<sup>u</sup></li>
+          <li>∫ cos(at) = sin(at)/a ; ∫ sin(at) = −cos(at)/a</li>
+          <li>∫ u'/u = ln|u| ; ∫ u' u<sup>n</sup> = u<sup>n+1</sup>/(n+1)</li>
+          <li>∫ 1/(1+x²) = arctan x ; ∫ 1/√(1−x²) = arcsin x</li>
+          <li>∫ r e<sup>−r²</sup> dr = −½ e<sup>−r²</sup> (la gaussienne en polaires !)</li>
+        </ul>
+        <p><b>Intégration par parties</b> : ∫ u v' = [uv] − ∫ u' v. Choisir u = ce qui se simplifie en dérivant (polynôme, ln), v' = ce qui s'intègre facilement (exp, cos, sin).</p>
+      </div>
+
+      <div class="kcard"><h3>〰 Intégrales trigonométriques sur une période</h3>
+        <p>Elles tombent <em>à chaque</em> passage en polaires ou sphériques. À savoir sans calcul :</p>
+        <div class="tbl-wrap"><table>
+          <tr><th>Intégrale</th><th>Valeur</th></tr>
+          <tr><td class="mono">∫₀<sup>2π</sup> cos t dt = ∫₀<sup>2π</sup> sin t dt</td><td class="mono">0</td></tr>
+          <tr><td class="mono">∫₀<sup>2π</sup> cos²t dt = ∫₀<sup>2π</sup> sin²t dt</td><td class="mono">π</td></tr>
+          <tr><td class="mono">∫₀<sup>2π</sup> sin t cos t dt</td><td class="mono">0</td></tr>
+          <tr><td class="mono">∫₀<sup>2π</sup> cos³t dt = ∫₀<sup>2π</sup> sin³t dt</td><td class="mono">0</td></tr>
+          <tr><td class="mono">∫₀<sup>π</sup> sin φ dφ</td><td class="mono">2</td></tr>
+          <tr><td class="mono">∫₀<sup>π</sup> sin³φ dφ</td><td class="mono">4/3</td></tr>
+          <tr><td class="mono">∫₀<sup>π</sup> sin φ cos²φ dφ</td><td class="mono">2/3</td></tr>
+          <tr><td class="mono">∫₀<sup>π/2</sup> sin²t dt = ∫₀<sup>π/2</sup> cos²t dt</td><td class="mono">π/4</td></tr>
+        </table></div>
+        <p><b>Linéarisation</b> : cos²t = (1 + cos 2t)/2 ; sin²t = (1 − cos 2t)/2 ; sin t cos t = ½ sin 2t. <b>Puissance impaire</b> : garder un sin (ou cos) et écrire le reste avec cos² = 1 − sin², puis poser u = cos t.</p>
+      </div>
+
+      <div class="kcard"><h3>≈ Développements limités en 0</h3>
+        <ul class="mono">
+          <li>e<sup>x</sup> = 1 + x + x²/2 + x³/6 + …</li>
+          <li>sin x = x − x³/6 + … ; cos x = 1 − x²/2 + x⁴/24 − …</li>
+          <li>ln(1+x) = x − x²/2 + x³/3 − …</li>
+          <li>(1+x)<sup>α</sup> = 1 + αx + α(α−1)x²/2 + … ; √(1+x) ≈ 1 + x/2 − x²/8</li>
+          <li>1/(1−x) = 1 + x + x² + … ; tan x = x + x³/3 + …</li>
+        </ul>
+        <p>Usage en Analyse 3 : remplacer sin(xy) par xy − (xy)³/6 pour étudier une limite ; c'est aussi la base de la formule de Taylor à l'ordre 2 (ch. 1 et 7).</p>
+      </div>
+
+      <div class="kcard"><h3>| | Déterminants &amp; produit vectoriel</h3>
+        <div class="calc">| a b |
+| c d | = ad − bc
+
+| a₁ a₂ a₃ |
+| b₁ b₂ b₃ | = a₁(b₂c₃ − b₃c₂) − a₂(b₁c₃ − b₃c₁) + a₃(b₁c₂ − b₂c₁)
+| c₁ c₂ c₃ |</div>
+        <p><b>Produit vectoriel « en déterminant »</b> : u ∧ v = det(e<sub>x</sub>, e<sub>y</sub>, e<sub>z</sub> ; u ; v) développé selon la première ligne. Même mécanique pour rot F = ∇ ∧ F et pour la normale N = ∂<sub>u</sub>M ∧ ∂<sub>v</sub>M. Le jacobien d'un changement de variables est aussi un déterminant : ne pas oublier la <b>valeur absolue</b>.</p>
+      </div>
+
+      <div class="kcard"><h3>△ Valeurs remarquables</h3>
+        <div class="tbl-wrap"><table>
+          <tr><th>θ</th><th>0</th><th>π/6</th><th>π/4</th><th>π/3</th><th>π/2</th><th>π</th></tr>
+          <tr><td>cos</td><td class="mono">1</td><td class="mono">√3/2</td><td class="mono">√2/2</td><td class="mono">1/2</td><td class="mono">0</td><td class="mono">−1</td></tr>
+          <tr><td>sin</td><td class="mono">0</td><td class="mono">1/2</td><td class="mono">√2/2</td><td class="mono">√3/2</td><td class="mono">1</td><td class="mono">0</td></tr>
+          <tr><td>tan</td><td class="mono">0</td><td class="mono">1/√3</td><td class="mono">1</td><td class="mono">√3</td><td class="mono">∞</td><td class="mono">0</td></tr>
+        </table></div>
+        <p>Formules : cos(a±b) = cos a cos b ∓ sin a sin b ; sin(a±b) = sin a cos b ± cos a sin b ; cos 2a = 2cos²a − 1 = 1 − 2sin²a ; sin 2a = 2 sin a cos a.</p>
+      </div>
+
+      <div class="kcard"><h3>⚙ Résoudre un système non linéaire (points critiques, Lagrange)</h3>
+        <ul>
+          <li><b>Factoriser avant de diviser</b> : x(1 − 4λ²) = 0 donne deux cas ; diviser par x les ferait disparaître.</li>
+          <li><b>Chercher la symétrie</b> : si le système est invariant par x ↔ y, tester y = x et y = −x.</li>
+          <li><b>Éliminer λ</b> en faisant le rapport des deux premières équations (quand aucun dénominateur ne s'annule).</li>
+          <li><b>Compter</b> : n inconnues ⟹ n équations. Lagrange en 2D : 3 inconnues (x, y, λ), 3 équations.</li>
+          <li><b>Second degré</b> : ax² + bx + c = 0, Δ = b² − 4ac, x = (−b ± √Δ)/2a. Vérifier que les racines respectent les contraintes (r ≥ 0, φ ∈ [0, π]…).</li>
+        </ul>
+      </div>
+
+      <div class="kcard"><h3>↔ Symétries qui annulent un calcul</h3>
+        <ul>
+          <li>Domaine symétrique par rapport à Oy (x ↔ −x) et f <b>impaire en x</b> ⟹ ∬ f = 0. Ex : ∬<sub>disque</sub> x dxdy = 0, ∬<sub>disque</sub> x³y² = 0.</li>
+          <li>Idem en 3D : ∭<sub>boule</sub> z dV = 0, ∭<sub>boule</sub> xy dV = 0.</li>
+          <li>f <b>paire</b> sur un domaine symétrique ⟹ 2 × l'intégrale sur la moitié.</li>
+          <li>Sur une période, ∫ cos = ∫ sin = 0 : dès que l'intégrande en θ est un cos ou sin seul, la contribution est nulle.</li>
+          <li>Centre de gravité d'un solide symétrique : sur l'axe de symétrie (une coordonnée gratuite).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="subhead">⚠ Les pièges classiques, chapitre par chapitre</h3>
+    <p class="sublead">Ce sont les erreurs vues et revues en copie. Chacune coûte entre 0,5 et 2 points ; à relire la veille.</p>
+    <div class="trapgrid">
+      <div class="trapc"><b class="lab">Ch. 1 · limite</b>Tester seulement les droites y = kx et conclure que la limite existe. <span class="fix">✓ Une limite le long de toutes les droites ne suffit pas (contre-exemple x²y/(x⁴+y²) le long de y = x²). Pour <em>prouver</em> l'existence, il faut une majoration (polaires/gendarmes).</span></div>
+      <div class="trapc"><b class="lab">Ch. 1 · dérivée partielle</b>Oublier qu'un produit est un produit : ∂(y e<sup>xy</sup>)/∂y ≠ xy e<sup>xy</sup>. <span class="fix">✓ e<sup>xy</sup> + xy e<sup>xy</sup>.</span></div>
+      <div class="trapc"><b class="lab">Ch. 1 · différentiabilité</b>Écrire « les dérivées partielles existent donc f est différentiable ». <span class="fix">✓ Il faut qu'elles soient <b>continues</b> (C¹). L'existence seule ne suffit pas.</span></div>
+      <div class="trapc"><b class="lab">Ch. 2 · rotationnel</b>Se tromper de signe dans une composante. <span class="fix">✓ Cycle x → y → z → x : composante x = ∂<sub>y</sub>F₃ − ∂<sub>z</sub>F₂, puis on décale les indices. Écrire le déterminant formel si besoin.</span></div>
+      <div class="trapc"><b class="lab">Ch. 2 · potentiel</b>Oublier que φ est défini à une constante près, ou intégrer C(y, z) comme si c'était une constante. <span class="fix">✓ Après ∫ dx, la « constante » est une fonction des autres variables.</span></div>
+      <div class="trapc"><b class="lab">Ch. 3-4 · jacobien</b>Oublier r (polaires, cylindriques) ou r² sin φ (sphériques). <span class="fix">✓ Contrôle d'homogénéité : compter les puissances de R dans le résultat.</span></div>
+      <div class="trapc"><b class="lab">Ch. 4 · bornes en φ</b>Prendre φ ∈ [0, 2π] en sphériques. <span class="fix">✓ φ ∈ [0, π] (angle depuis Oz) ; θ ∈ [0, 2π].</span></div>
+      <div class="trapc"><b class="lab">Ch. 4 · bornes constantes</b>Mettre des bornes constantes sur un domaine qui n'est pas un rectangle (triangle, disque en cartésiennes). <span class="fix">✓ Dessiner, puis écrire le domaine en type 1 ou 2 avant Fubini.</span></div>
+      <div class="trapc"><b class="lab">Ch. 4 · demi-disque</b>Intégrer θ sur [0, 2π] pour un demi-disque ou un quart de disque. <span class="fix">✓ y ≥ 0 ⟹ θ ∈ [0, π] ; x, y ≥ 0 ⟹ θ ∈ [0, π/2].</span></div>
+      <div class="trapc"><b class="lab">Ch. 5 · orientation</b>Appliquer Green-Riemann avec un bord parcouru dans le sens horaire. <span class="fix">✓ Sens direct (D à gauche). Sinon changer le signe.</span></div>
+      <div class="trapc"><b class="lab">Ch. 5 · dx et dy</b>Écrire ∫ P dx + Q dy = ∫ (P + Q) dt. <span class="fix">✓ dx = x'(t) dt et dy = y'(t) dt : chaque terme a son facteur.</span></div>
+      <div class="trapc"><b class="lab">Ch. 5 · Green sur courbe ouverte</b>Utiliser Green-Riemann pour un arc qui ne se referme pas. <span class="fix">✓ Refermer par un segment simple, appliquer Green, puis retrancher la circulation sur le segment.</span></div>
+      <div class="trapc"><b class="lab">Ch. 6 · N vs ‖N‖</b>Mettre ‖N‖ dans un flux ou N dans une intégrale scalaire. <span class="fix">✓ Flux : F·N dudv (vecteur). Intégrale scalaire / aire : f‖N‖ dudv (norme).</span></div>
+      <div class="trapc"><b class="lab">Ch. 6 · Ostrogradski</b>L'appliquer à une surface ouverte (demi-sphère, paraboloïde tronqué). <span class="fix">✓ Surface <b>fermée</b> uniquement. Sinon fermer avec un couvercle et retrancher son flux.</span></div>
+      <div class="trapc"><b class="lab">Ch. 6 · normale</b>Prendre la normale entrante pour Ostrogradski, ou une normale non compatible avec le sens du bord pour Stokes. <span class="fix">✓ Ostrogradski : sortante. Stokes : règle de la main droite.</span></div>
+      <div class="trapc"><b class="lab">Ch. 7 · Δ = 0</b>Conclure « point selle » ou « minimum » quand Δ = 0. <span class="fix">✓ Le test ne dit rien. Étudier le signe de f(a+h, b+k) − f(a, b) directement.</span></div>
+      <div class="trapc"><b class="lab">Ch. 7 · compact</b>Ne chercher que les points critiques intérieurs. <span class="fix">✓ Le max global est souvent sur le bord (voir D15). Toujours paramétrer le bord.</span></div>
+      <div class="trapc"><b class="lab">Ch. 7 · Lagrange</b>Croire qu'un point de Lagrange est automatiquement un extremum. <span class="fix">✓ Ce sont des <em>candidats</em>. On conclut en comparant les valeurs de f (et en invoquant la compacité si la contrainte est bornée).</span></div>
+    </div>
+
+    <h3 class="subhead">✍ Rédiger une copie qui rapporte</h3>
+    <div class="kit">
+      <div class="kcard"><h3>1 · Annoncer les hypothèses</h3>
+        <ul>
+          <li>« f est de classe C¹ sur ℝ² comme fonction polynomiale » — une phrase qui débloque différentiabilité, Schwarz, Green, Stokes.</li>
+          <li>Nommer le théorème utilisé : « d'après le théorème de Green-Riemann, D étant borné et ∂D orienté dans le sens direct… ».</li>
+          <li>Pour un changement de variables : donner la transformation, le nouveau domaine <b>et</b> le jacobien.</li>
+        </ul>
+      </div>
+      <div class="kcard"><h3>2 · Un dessin vaut des points</h3>
+        <ul>
+          <li>Domaine d'intégration : dessiner et hachurer, marquer les bornes.</li>
+          <li>Courbe orientée : une flèche sur le dessin.</li>
+          <li>Surface : indiquer la normale choisie.</li>
+          <li>Extrema : placer les points critiques trouvés.</li>
+        </ul>
+      </div>
+      <div class="kcard"><h3>3 · Encadrer et contrôler</h3>
+        <ul>
+          <li>Encadrer le résultat final, avec son signe et sa forme (πR⁴/2, pas 1,57R⁴).</li>
+          <li>Contrôle rapide : volume &gt; 0, homogénéité en R, cas particulier connu (a = b ⟹ cercle).</li>
+          <li>Si un calcul est faux et que tu le vois, l'écrire : « incohérent (volume négatif), erreur probable dans le jacobien ». Ça montre que tu comprends.</li>
+        </ul>
+      </div>
+      <div class="kcard"><h3>4 · Gérer le temps du DS</h3>
+        <ul>
+          <li>5 min de lecture complète : repérer les exos « formule directe » (grad, div, jacobienne) et les faire d'abord.</li>
+          <li>Ne jamais rester bloqué plus de 10 min sur une question : passer, revenir à la fin.</li>
+          <li>Les questions s'enchaînent : si la question 2 demande d'« en déduire », utiliser le résultat de la 1 même si tu ne l'as pas prouvé (en le disant).</li>
+          <li>Garder 10 min pour relire les signes, les bornes, les jacobiens.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ NOTIONS CLÉS ============ -->
 <section class="view" id="view-notions">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">💡 Notions clés</span>
       <h2>L'essentiel, chapitre par chapitre</h2>
-      <p>Uniquement les concepts indispensables pour le DS et le partiel. À relire la veille de l'examen.</p>
+      <p>Uniquement les concepts indispensables pour le DS et le partiel, plus pour chaque chapitre les <strong>réflexes</strong> à avoir et le <strong>piège</strong> qui coûte des points. À relire la veille de l'examen.</p>
     </div>
-    <div class="notion-grid">
+        <div class="notion-grid">
       <div class="ncard"><div class="nh"><span class="nn">CH 0</span><h3>Géométrie</h3></div>
         <ul>
-          <li><b>u·v</b> = xx' + yy' + zz' ; ‖u‖ = √(u·u).</li>
-          <li><b>u∧v</b> orthogonal à u et v ; ‖u∧v‖ = aire parallélogramme.</li>
-          <li><b>Produit mixte</b> = déterminant = ± volume parallélépipède.</li>
-          <li>Plan : <b>n·AM = 0</b> ⟺ ax + by + cz + d = 0.</li>
+          <li><b>u·v</b> = xx' + yy' + zz' ; ‖u‖ = √(u·u) ; u ⊥ v ⟺ u·v = 0.</li>
+          <li><b>u∧v</b> orthogonal à u et v ; ‖u∧v‖ = aire du parallélogramme ; u∧v = 0 ⟺ colinéaires.</li>
+          <li><b>Produit mixte</b> [u,v,w] = det = ± volume ; nul ⟺ coplanaires.</li>
+          <li>Plan : <b>n·AM = 0</b> ⟺ ax + by + cz + d = 0, n = (a,b,c). Droite : A + t·u.</li>
         </ul>
+        <div class="reflex"><b class="lab">⚡ Réflexes</b>Vecteur normal d'un plan = lire les coefficients. Distance point-plan = |ax₀+by₀+cz₀+d|/√(a²+b²+c²). Produit vectoriel = déterminant formel (e<sub>x</sub>, e<sub>y</sub>, e<sub>z</sub> ; u ; v).</div>
+        <div class="piege"><b class="lab">⚠ Piège</b>u∧v est <em>antisymétrique</em> : v∧u = −u∧v. L'ordre change le signe (donc l'orientation de la normale au ch. 6).</div>
       </div>
       <div class="ncard"><div class="nh"><span class="nn">CH 1</span><h3>Fonctions de plusieurs variables</h3></div>
         <ul>
-          <li>Ouvert : boule ouverte dans chaque point.</li>
-          <li><b>Limite</b> : montrer qu'elle n'existe pas via 2 chemins différents.</li>
-          <li><b>Dérivée partielle</b> ∂f/∂x : dériver en fixant les autres variables.</li>
+          <li>Ouvert : chaque point a une boule autour de lui dans l'ensemble.</li>
+          <li><b>Limite</b> : unique quel que soit le chemin. Réfuter = 2 chemins ; prouver = majoration (polaires, gendarmes).</li>
+          <li><b>Dérivée partielle</b> ∂f/∂x : dériver en figeant les autres variables.</li>
           <li><b>Schwarz</b> (C²) : ∂²f/∂x∂y = ∂²f/∂y∂x.</li>
-          <li><b>Jacobienne</b> J<sub>f</sub> : matrice p × n des ∂f<sub>i</sub>/∂x<sub>j</sub>.</li>
+          <li><b>C¹ ⟹ différentiable</b>. <b>Jacobienne</b> J<sub>f</sub> : p × n, ligne = composante, colonne = variable.</li>
         </ul>
+        <div class="reflex"><b class="lab">⚡ Réflexes</b>Test des degrés (num vs dénom) pour deviner si la limite existe. Chemins à essayer dans l'ordre : y = 0, x = 0, y = x, y = kx, y = x². Majoration type : |f| ≤ C·r<sup>k</sup>, k &gt; 0.</div>
+        <div class="piege"><b class="lab">⚠ Piège</b>« Dérivées partielles existent » ≠ « différentiable ». Il faut la continuité des dérivées partielles (C¹).</div>
       </div>
       <div class="ncard"><div class="nh"><span class="nn">CH 2</span><h3>Opérateurs vectoriels</h3></div>
         <ul>
-          <li><b>Grad</b> f (scalaire→vectoriel) : (∂<sub>x</sub>f, ∂<sub>y</sub>f, ∂<sub>z</sub>f). Normal à f=cste.</li>
-          <li><b>Div</b> F (vect→scal) : ∂<sub>x</sub>F₁+∂<sub>y</sub>F₂+∂<sub>z</sub>F₃.</li>
-          <li><b>Rot</b> F (vect→vect) : ∇∧F.</li>
-          <li><b>Laplacien</b> Δf = div(grad f).</li>
-          <li>rot(grad) = 0 ; div(rot) = 0.</li>
+          <li><b>Grad</b> f (scalaire → vectoriel) : (∂<sub>x</sub>f, ∂<sub>y</sub>f, ∂<sub>z</sub>f). Normal aux surfaces f = cste, sens des f croissants.</li>
+          <li><b>Div</b> F (vect → scalaire) : ∂<sub>x</sub>F₁+∂<sub>y</sub>F₂+∂<sub>z</sub>F₃. Sources / puits.</li>
+          <li><b>Rot</b> F (vect → vect) : ∇∧F. Tourbillons.</li>
+          <li><b>Laplacien</b> Δf = div(grad f) ; harmonique si Δf = 0.</li>
+          <li>rot(grad) = 0 ; div(rot) = 0. Réciproques sur un ouvert simplement connexe.</li>
         </ul>
+        <div class="reflex"><b class="lab">⚡ Réflexes</b>« Dérive d'un potentiel » ⟹ vérifier rot F = 0 ⟹ intégrer F₁ en x, dériver en y, identifier, etc. Toujours <em>contrôler</em> ∇φ = F à la fin. En 2D, rot F = 0 ⟺ ∂Q/∂x = ∂P/∂y.</div>
+        <div class="piege"><b class="lab">⚠ Piège</b>Signes du rotationnel : composante x = ∂<sub>y</sub>F₃ − ∂<sub>z</sub>F₂ (cycle x→y→z→x). Et le potentiel est défini à une constante près.</div>
       </div>
       <div class="ncard"><div class="nh"><span class="nn">CH 3</span><h3>Courbes & surfaces</h3></div>
         <ul>
-          <li><b>Polaires</b> : x=r cos θ, y=r sin θ.</li>
+          <li><b>Polaires</b> : x = r cos θ, y = r sin θ ; jacobien r.</li>
           <li><b>Cylindriques</b> : + z ; jacobien r.</li>
-          <li><b>Sphériques</b> : x=r sin φ cos θ … ; jacobien r² sin φ.</li>
-          <li>Paramétrer : segment, cercle, sphère, cylindre.</li>
+          <li><b>Sphériques</b> : x = r sin φ cos θ, y = r sin φ sin θ, z = r cos φ ; jacobien r² sin φ ; φ ∈ [0, π].</li>
+          <li>Paramétrer : segment A + t(B−A), cercle (R cos t, R sin t), ellipse (a cos t, b sin t), hélice (R cos t, R sin t, ht), graphe (t, f(t)) ou (u, v, f(u,v)).</li>
         </ul>
+        <div class="reflex"><b class="lab">⚡ Réflexes</b>Symétrie centrale ⟹ sphériques. Axe ⟹ cylindriques. Disque ⟹ polaires. Vecteur tangent = γ'(t). Normale à une surface = ∂<sub>u</sub>M ∧ ∂<sub>v</sub>M.</div>
+        <div class="piege"><b class="lab">⚠ Piège</b>Demi-disque ⟹ θ ∈ [0, π] seulement. Sphère : φ ∈ [0, π], jamais [0, 2π].</div>
       </div>
       <div class="ncard"><div class="nh"><span class="nn">CH 4</span><h3>Intégrales multiples</h3></div>
         <ul>
-          <li><b>Fubini</b> : intégrer variable par variable.</li>
-          <li>Changt var : ∬f dxdy = ∬f∘φ · <b>|J|</b> dudv.</li>
-          <li>Polaires : dxdy = <b>r dr dθ</b>.</li>
-          <li>Volume = ∭ 1 ; masse = ∭ ρ.</li>
+          <li><b>Fubini</b> : intégrer variable par variable ; bornes intérieures variables, bornes extérieures constantes.</li>
+          <li>Changt var : ∬ f dxdy = ∬ f∘φ · <b>|J|</b> dudv.</li>
+          <li>Polaires : dxdy = <b>r dr dθ</b> ; cylindriques : r dr dθ dz ; sphériques : r² sin φ dr dφ dθ.</li>
+          <li>Aire = ∬ 1 ; volume = ∭ 1 ; masse = ∭ ρ ; centre de gravité = (1/M)∭ x ρ, etc.</li>
         </ul>
+        <div class="reflex"><b class="lab">⚡ Réflexes</b>Dessiner le domaine <em>avant</em> d'écrire les bornes. Séparer les variables quand l'intégrande est un produit. Symétrie + imparité ⟹ 0. Contrôle d'homogénéité en R.</div>
+        <div class="piege"><b class="lab">⚠ Piège</b>Oublier le jacobien, ou mettre des bornes constantes sur un triangle. ∫₀<sup>π</sup> sin φ dφ = 2, pas 0.</div>
       </div>
       <div class="ncard"><div class="nh"><span class="nn">CH 5</span><h3>Intégrales curvilignes</h3></div>
         <ul>
-          <li>Longueur : ∫<sub>γ</sub> ‖γ'(t)‖ dt.</li>
-          <li><b>Circulation</b> : ∫<sub>γ</sub> F·dl = ∫ P dx + Q dy.</li>
-          <li>Champ de gradient ⟹ circulation ne dépend que des extrémités.</li>
-          <li><b>Green-Riemann</b> : ∮ P dx+Q dy = ∬ (∂<sub>x</sub>Q − ∂<sub>y</sub>P) dxdy.</li>
+          <li>Longueur : ∫<sub>γ</sub> ‖γ'(t)‖ dt ; intégrale scalaire : ∫ f(γ(t)) ‖γ'(t)‖ dt.</li>
+          <li><b>Circulation</b> : ∫<sub>γ</sub> F·dl = ∫ P dx + Q dy = ∫ (P x' + Q y') dt.</li>
+          <li>Champ de gradient ⟹ circulation = φ(B) − φ(A) ; nulle sur une courbe fermée.</li>
+          <li><b>Green-Riemann</b> : ∮ P dx + Q dy = ∬ (∂<sub>x</sub>Q − ∂<sub>y</sub>P) dxdy (sens direct).</li>
+          <li>Aire = ½ ∮ (x dy − y dx).</li>
         </ul>
+        <div class="reflex"><b class="lab">⚡ Réflexes</b>Courbe fermée ⟹ penser Green avant de paramétrer. « Chemin quelconque » dans l'énoncé ⟹ champ de gradient. Courbe ouverte + Green ⟹ refermer par un segment et retrancher.</div>
+        <div class="piege"><b class="lab">⚠ Piège</b>Orientation : sens horaire ⟹ signe −. dx = x'(t) dt (pas dt tout court).</div>
       </div>
       <div class="ncard"><div class="nh"><span class="nn">CH 6</span><h3>Intégrales de surface</h3></div>
         <ul>
           <li>Vecteur normal <b>N</b> = ∂<sub>u</sub>M ∧ ∂<sub>v</sub>M ; dS = ‖N‖ dudv.</li>
-          <li><b>Flux</b> = ∬ F·n dS.</li>
-          <li><b>Stokes</b> : ∮ F·dl = ∬ rot F · n dS.</li>
-          <li><b>Ostrogradski</b> : ∯ F·n dS = ∭ div F dV (surface fermée).</li>
+          <li>Aire = ∬ ‖N‖ dudv ; <b>flux</b> = ∬ F·n dS = ∬ F·N dudv.</li>
+          <li><b>Stokes</b> : ∮<sub>∂S</sub> F·dl = ∬<sub>S</sub> rot F · n dS (surface ouverte, orientation main droite).</li>
+          <li><b>Ostrogradski</b> : ∯ F·n dS = ∭ div F dV (surface fermée, normale sortante).</li>
         </ul>
+        <div class="reflex"><b class="lab">⚡ Réflexes</b>Fermée + flux ⟹ Ostrogradski ; div constante ⟹ c × volume. Ouverte + rot ⟹ Stokes, choisir la surface la plus simple de même bord. Surface ouverte + Ostro ⟹ ajouter un couvercle.</div>
+        <div class="piege"><b class="lab">⚠ Piège</b>Flux avec ‖N‖ au lieu de N. Sphère : N = R² sin φ · (vecteur radial unitaire) — ne pas oublier le sin φ.</div>
       </div>
       <div class="ncard"><div class="nh"><span class="nn">CH 7</span><h3>Optimisation</h3></div>
         <ul>
-          <li>Point critique : ∇f = 0.</li>
+          <li>Point critique : <b>∇f = 0</b> (condition nécessaire, intérieur).</li>
           <li><b>Hessienne</b> H ; Δ = f<sub>xx</sub>f<sub>yy</sub> − f<sub>xy</sub>².</li>
-          <li>Δ&gt;0 & f<sub>xx</sub>&gt;0 : min ; Δ&gt;0 & f<sub>xx</sub>&lt;0 : max ; Δ&lt;0 : selle.</li>
-          <li><b>Lagrange</b> : ∇f = λ∇g avec g = 0.</li>
+          <li>Δ&gt;0 & f<sub>xx</sub>&gt;0 : min ; Δ&gt;0 & f<sub>xx</sub>&lt;0 : max ; Δ&lt;0 : selle ; Δ = 0 : ?</li>
+          <li>Compact : intérieur + bord (paramétré) + comparer. Weierstrass garantit l'existence.</li>
+          <li><b>Lagrange</b> : ∇f = λ∇g avec g = 0 (3 équations, 3 inconnues).</li>
         </ul>
+        <div class="reflex"><b class="lab">⚡ Réflexes</b>Contrainte isolable ⟹ substituer (1 variable). Contrainte circulaire ⟹ (cos t, sin t). Factoriser avant de diviser. Toujours dire si l'extremum est local ou global.</div>
+        <div class="piege"><b class="lab">⚠ Piège</b>Δ = 0 ne conclut rien. Sur un compact, le max est souvent sur le bord. Les points de Lagrange sont des candidats, pas des extrema garantis.</div>
       </div>
     </div>
   </div>
@@ -1206,8 +1670,8 @@
     </div>
 
     <div class="wk">
-      <div class="wk-hd"><span class="wn">PHASE 2</span><h3>Oct. · Opérateurs &amp; paramétrisations</h3><span class="phase">Semaines 5 → 8</span></div>
-      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 2-3 : l'artillerie lourde. Grad/div/rot doit devenir automatique, et les 3 systèmes de coordonnées doivent être connus par cœur (surtout les jacobiens).</p>
+      <div class="wk-hd"><span class="wn">PHASE 2</span><h3>Oct. · Opérateurs &amp; paramétrisations</h3><span class="phase exam">DS Analyse 3 · samedi 17 oct · 9h</span></div>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 6px"><b>Évaluation intermédiaire le samedi 17 octobre à 9h</b> (puis Électromagnétisme à 11h) : les chapitres 0 à 2 (et le début du 3) doivent être solides — refaire les déroulés D1 à D4 la semaine précédente. Ch 2-3 : l'artillerie lourde. Grad/div/rot doit devenir automatique, et les 3 systèmes de coordonnées doivent être connus par cœur (surtout les jacobiens).</p>
       <div class="days">
         <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 2 grad, div, rot, laplacien</div><div class="task sub-alg">Ch 3 polaires, cylindriques, sphériques</div></div>
         <div class="day"><div class="dn">Support</div><div class="task sub-info">Test Java hebdo</div><div class="task sub-eng">Anglais</div></div>
@@ -1215,11 +1679,11 @@
     </div>
 
     <div class="wk">
-      <div class="wk-hd"><span class="wn">PHASE 3</span><h3>Nov. · Intégrales &amp; théorèmes</h3><span class="phase exam">DS possible en novembre</span></div>
+      <div class="wk-hd"><span class="wn">PHASE 3</span><h3>Nov. · Intégrales &amp; théorèmes</h3><span class="phase">Semaines 9 → 12</span></div>
       <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 4-5-6 : le triptyque intégral. Ce sont les chapitres qui rapportent le plus au DS. Beaucoup d'entraînement au calcul.</p>
       <div class="days">
         <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 4 doubles/triples + changement de variables</div><div class="task sub-alg">Ch 5 curvilignes + Green-Riemann</div><div class="task sub-alg">Ch 6 surface + Stokes + Ostrogradski</div></div>
-        <div class="day"><div class="dn">Support</div><div class="task sub-elec">DS élec ~2 nov</div></div>
+        <div class="day"><div class="dn">Support</div><div class="task sub-elec">Éval. Électromagnétisme 17 oct · 11h</div></div>
       </div>
     </div>
 
@@ -1234,6 +1698,7 @@
 
     <div class="section-head" style="padding-top:36px"><span class="eyebrow">Méthode</span><h2 style="font-size:22px">Réussir en maths sans forcer</h2></div>
     <div class="tips">
+      <div class="tip"><div class="th">🧭 Un déroulé par soir</div><p>La semaine avant un DS : refaire un déroulé (onglet Déroulés) par soir, cahier fermé, puis comparer. 15 soirs = tout le programme revu en actes, pas en lecture.</p></div>
       <div class="tip"><div class="th">🧮 Le geste des dérivées partielles</div><p>Chaque jour où vous croisez ∂f/∂x, vérifiez le calcul en fixant explicitement l'autre variable. En 15 jours, ça devient un automatisme et vous gagnez 20% de temps au DS.</p></div>
       <div class="tip"><div class="th">🔁 Feuille d'exos officielle</div><p>La feuille 2026 est la matrice du DS. La refaire deux fois <em>sans le corrigé</em> vaut mieux que lire 10 chapitres passivement.</p></div>
       <div class="tip"><div class="th">🗺 Cartographier les théorèmes</div><p>Green ↔ Stokes ↔ Ostrogradski : dessiner un schéma qui montre lequel s'applique dans quel contexte (2D vs 3D, surface fermée vs ouverte). Ça débloque l'intuition.</p></div>

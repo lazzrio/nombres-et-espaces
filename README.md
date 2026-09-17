@@ -15,8 +15,10 @@ Statique, sans dépendance, hébergeable tel quel sur GitHub Pages.
 | 💡 **Notions clés** | Une fiche de synthèse par chapitre — l'essentiel pour le DS et le partiel |
 | 📘 **Formules détaillées** | Bloc notations + toutes les formules avec conditions et cas particuliers |
 | ⚡ **Formules express** | Aide-mémoire brut, une colonne par chapitre |
+| 🧭 **Déroulés** | Table de décision « je vois → je pense » + 15 exercices types résolus pas à pas (calculs complets, réponse, pourquoi) |
 | 🎯 **Exos types** | Les exercices classiques et leur méthode pas-à-pas |
-| 🧠 **Quiz & Flashcards** | 46 QCM + 40 flashcards, chapitres au choix, ordre ou aléatoire |
+| 🧰 **À côté** | Prérequis de calcul (primitives, trigo, DL, déterminants), pièges classiques par chapitre, règles de rédaction |
+| 🧠 **Quiz & Flashcards** | 60 QCM + 40 flashcards, chapitres au choix, ordre ou aléatoire |
 | 📅 **Planning** | Modèle de planning couplé au reste du semestre |
 
 **Fonctionnalités** : thème clair/sombre, suivi de progression (localStorage),
