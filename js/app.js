@@ -20,6 +20,7 @@
 
   /* ---------- NAVIGATION ---------- */
   var views=document.querySelectorAll(".view"), navBtns=document.querySelectorAll("#nav button");
+  function saut(el){ var h=document.documentElement, avant=h.style.scrollBehavior; h.style.scrollBehavior="auto"; el.scrollIntoView(true); h.style.scrollBehavior=avant; }
   var VIEWS=["home","cours","methodes","deroules","notions","formules","express","exos","boite","quiz","planning"];
   var current=null;
   function go(name,anchor,fromHash){
@@ -33,8 +34,8 @@
     navBtns.forEach(function(b){b.classList.toggle("active",b.getAttribute("data-go")===name);});
     document.getElementById("nav").classList.remove("open");
     if(anchor){ var el=document.getElementById(anchor);
-      if(el){ setTimeout(function(){el.scrollIntoView({behavior:"smooth",block:"start"});},60); return; } }
-    window.scrollTo({top:0,behavior:"smooth"});
+      if(el){ setTimeout(function(){ if(fromHash)saut(el); else el.scrollIntoView({behavior:"smooth",block:"start"}); },60); return; } }
+    if(fromHash)window.scrollTo(0,0); else window.scrollTo({top:0,behavior:"smooth"});
   }
   document.body.addEventListener("click",function(e){
     var t=e.target.closest("[data-go]"); if(!t)return;

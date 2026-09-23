@@ -137,7 +137,12 @@
       var c = el.querySelector("details.cx-corr");
       if (c) c.open = true;
     }
-    setTimeout(function () { el.scrollIntoView({ block: "start" }); }, 30);
+    setTimeout(function () {
+      var h = document.documentElement, avant = h.style.scrollBehavior;
+      h.style.scrollBehavior = "auto";
+      el.scrollIntoView(true);
+      h.style.scrollBehavior = avant;
+    }, 30);
   }
   window.addEventListener("hashchange", ouvrirAncre);
   ouvrirAncre();

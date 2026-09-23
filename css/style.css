@@ -621,3 +621,8 @@ a.card:hover{text-decoration:none}
   body{background:#fff;color:#000}
   .cx,.panel,.card,.kcard{box-shadow:none;break-inside:avoid}
 }
+
+/* ===================== LÉGENDES DE FIGURES ===================== */
+/* le display:flex d'origine découpait <b> et <sub> en blocs non sécables (légendes coupées sur téléphone) */
+.cfig figcaption{display:block}
+.cfig figcaption::before{display:inline-block;margin-right:8px}
