@@ -1,89 +1,81 @@
 # ∇ Champs & Intégrales
 
-Site de révision pour le cours d'**Analyse 3 — ING2 semestre 1** :
+Site de révision pour le cours d'**Analyse 3 — ING2 semestre 1 (ECE)** :
 fonctions de plusieurs variables, opérateurs vectoriels (grad, div, rot),
 courbes/surfaces/solides, intégrales multiples, curvilignes et de surface,
 optimisation.
 
-Statique, sans dépendance, hébergeable tel quel sur GitHub Pages.
+Statique, sans dépendance, hébergé tel quel sur GitHub Pages :
+<https://lazzrio.github.io/nombres-et-espaces/>
 
 ## Contenu
 
 | Section | Description |
 |---|---|
-| 📚 **Cours complet** | 8 chapitres structurés : définitions, théorèmes (Fermat, Schwarz, Green-Riemann, Stokes, Ostrogradski, Lagrange…), méthodes et exemples |
-| 💡 **Notions clés** | Une fiche de synthèse par chapitre — l'essentiel pour le DS et le partiel |
-| 📘 **Formules détaillées** | Bloc notations + toutes les formules avec conditions et cas particuliers |
-| ⚡ **Formules express** | Aide-mémoire brut, une colonne par chapitre |
-| 🧭 **Déroulés** | Table de décision « je vois → je pense » + 15 exercices types résolus pas à pas (calculs complets, réponse, pourquoi) |
-| 🎯 **Exos types** | Les exercices classiques et leur méthode pas-à-pas |
-| 🧰 **À côté** | Prérequis de calcul (primitives, trigo, DL, déterminants), pièges classiques par chapitre, règles de rédaction |
-| 🧠 **Quiz & Flashcards** | 60 QCM + 40 flashcards, chapitres au choix, ordre ou aléatoire |
-| 📅 **Planning** | Modèle de planning couplé au reste du semestre |
+| 📚 **Cours complet** | 8 chapitres : définitions, théorèmes (Fermat, Schwarz, Poincaré, Green-Riemann, Stokes, Ostrogradsky, Lagrange…), méthodes, exemples, plus les compléments utiles à un ingénieur (EDP simples, ouverts étoilés, coniques et quadriques, éléments de surface, Hessienne en dimension n, Lagrange à plusieurs contraintes) |
+| ✅ **Exercices corrigés** (`corriges.html`) | Les 70 exercices de la feuille 2026-2027 + les 4 exercices supplémentaires du chapitre 1 : méthode, correction détaillée pas à pas, pièges, contrôle du résultat. Recherche, filtre par thème, suivi « fait » |
+| 🛠 **Méthodes** | La boîte à outils par chapitre |
+| 🧭 **Déroulés** | Table de décision « je vois → je pense » + 15 exercices types résolus pas à pas |
+| 💡 **Notions clés** | Une fiche de synthèse par chapitre, avec réflexes et pièges |
+| 📘 **Formules détaillées** / ⚡ **Express** | Toutes les formules avec leurs conditions, et l'aide-mémoire brut |
+| 🎯 **Exos types** | Les exercices classiques et leur méthode |
+| 🧰 **À côté** | Prérequis de calcul, ∇ en cylindriques et sphériques, inégalités utiles, vérifier un calcul (SciPy, SymPy, WolframAlpha, GeoGebra), liens avec l'électromagnétisme et la mécanique, pièges classiques, rédaction |
+| 🧠 **Quiz & Flashcards** | 60 QCM + 40 flashcards, chapitres au choix |
+| 📅 **Planning** | Dates d'évaluation de l'emploi du temps et plan de révision |
 
-**Fonctionnalités** : thème clair/sombre, suivi de progression (localStorage),
-visionneuse plein écran, responsive mobile.
+Tous les résultats des corrigés ont été vérifiés numériquement (175 contrôles avec NumPy/SciPy).
+
+**Fonctionnalités** : thème clair/sombre, adresses directes vers chaque vue
+(`index.html#cours`, `index.html#ch3-quadriques`, `corriges.html#imu-3`),
+bouton « retour » du navigateur, suivi de progression (localStorage),
+utilisable hors ligne et installable sur téléphone (service worker + manifest),
+mise en page testée à 375, 768, 1024 et 1280 px, impression des corrigés dépliés.
 
 ## Programme couvert (feuille officielle 2026-2027)
 
 1. Révisions géométrie du plan et de l'espace
-2. Fonctions de plusieurs variables
-3. Opérateurs vectoriels (∇ · div · rot · laplacien)
-4. Courbes, surfaces et solides (paramétrisations)
+2. Fonctions de plusieurs variables (et EDP simples)
+3. Opérateurs vectoriels (∇ · div · rot · laplacien, potentiels)
+4. Courbes, surfaces et solides (paramétrisations, coniques, quadriques)
 5. Intégrales multiples (doubles et triples)
 6. Intégrales curvilignes (Green-Riemann)
-7. Intégrales de surface (Stokes, Ostrogradski)
-8. Optimisation (extrema libres et sous contraintes)
+7. Intégrales de surface (Stokes, Green-Ostrogradsky)
+8. Optimisation (extrema libres, sur un compact, sous contraintes)
 
 ## Structure
 
 ```
 nombres-et-espaces/
-├── index.html          # page unique (SPA)
-├── css/
-│   └── style.css       # design system, thèmes clair/sombre
+├── index.html            # page unique (vues : cours, méthodes, déroulés…)
+├── corriges.html         # la feuille d'exercices corrigée
+├── 404.html              # page d'erreur GitHub Pages
+├── manifest.webmanifest  # installation sur téléphone
+├── sw.js                 # hors ligne (réseau d'abord, cache ensuite)
+├── css/style.css         # design system, thèmes clair/sombre, responsive
 ├── js/
-│   ├── app.js          # navigation, thème, progression, filtres
-│   ├── quiz.js         # moteur de quiz + banque de questions
-│   └── lightbox.js     # visionneuse plein écran
+│   ├── app.js            # navigation, adresses, thème, progression, filtres
+│   ├── corriges.js       # recherche, filtres, suivi « fait » des corrigés
+│   ├── quiz.js           # moteur de quiz + banque de questions
+│   └── lightbox.js       # visionneuse plein écran
 ├── assets/
-│   ├── favicon.svg     # nabla ∇
-│   └── img/            # (vide pour l'instant)
+│   ├── favicon.svg, icon-192.png, icon-512.png
+│   └── img/              # figures extraites du poly
 ├── .nojekyll
 └── README.md
 ```
 
-## Publier sur GitHub Pages
+## Mettre en ligne
 
-### 1. Créer le dépôt
-
-Sur [github.com/new](https://github.com/new), créez un dépôt **vide**
-(ne cochez rien : ni README, ni .gitignore).
-
-### 2. Pousser le code
-
-Le dépôt local est déjà initialisé.
-Depuis ce dossier :
+Le dépôt est relié à `https://github.com/lazzrio/nombres-et-espaces.git`
+et GitHub Pages publie la branche **main** (dossier racine). Après un commit :
 
 ```bash
-git remote add origin https://github.com/lazzrio/nombres-et-espaces.git
-git push -u origin main
+git push
 ```
 
-Git demandera votre identifiant et un **jeton d'accès personnel** (à créer
-sur [github.com/settings/tokens](https://github.com/settings/tokens) →
-*Generate new token (classic)* → portée **`repo`**).
-
-> ⚠️ **N'utilisez pas le bouton « Upload files »** de l'interface web
-> (limite à 100 fichiers).
-
-### 3. Activer Pages
-
-**Settings** → **Pages** → *Source : Deploy from a branch* →
-Branche **main**, dossier **/ (root)** → **Save**.
-
-Site en ligne sous 1-2 minutes à :
-`https://lazzrio.github.io/nombres-et-espaces/`
+Le site est à jour sous 1-2 minutes. Si le téléphone affiche une ancienne
+version, recharger la page une fois (le service worker récupère toujours
+la version réseau en priorité).
 
 ## Lancer en local
 
@@ -95,11 +87,8 @@ Puis <http://localhost:8766>.
 
 ## Notes
 
-- Contenu = synthèse pédagogique tirée du polycopié Analyse 3 ING2
-  2026-2027 (dossier `analyse et algèbre`). Théorèmes standards
-  (Schwarz, Green-Riemann, Stokes, Ostrogradski, Fermat, Lagrange)
-  en formulation classique.
+- Contenu = synthèse pédagogique tirée du polycopié et de la feuille
+  d'exercices Analyse 3 ING2 2026-2027 (dossier `analyse et algèbre`).
+- Quand un énoncé est ambigu (orientation non précisée, rayon non donné…),
+  le corrigé le signale et traite les cas possibles.
 - Progression stockée en `localStorage` (propre à chaque appareil).
-- Nom du dossier historique : `nombres-et-espaces` — il pourra être
-  renommé en `champs-et-integrales` lors du push sur GitHub si vous
-  préférez que l'URL corresponde au nouveau nom.

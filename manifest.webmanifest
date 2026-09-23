@@ -1,0 +1,30 @@
+{
+  "name": "Champs & Intégrales — Analyse 3 (ECE ING2)",
+  "short_name": "Analyse 3",
+  "description": "Cours, méthodes, feuille d'exercices corrigée et quiz d'Analyse 3.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0e1128",
+  "theme_color": "#4b3e8f",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

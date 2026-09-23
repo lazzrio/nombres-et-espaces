@@ -4,11 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Champs & Intégrales</title>
-<meta name="description" content="Révisions Analyse 3 ING2 semestre 1 : fonctions de plusieurs variables, opérateurs vectoriels, intégrales multiples et curvilignes, optimisation.">
+<meta name="description" content="Révisions Analyse 3 ING2 semestre 1 (ECE) : cours, méthodes, feuille d'exercices 2026-2027 corrigée, quiz. Fonctions de plusieurs variables, opérateurs vectoriels, intégrales multiples, curvilignes et de surface, optimisation.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#4b3e8f" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1128" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta property="og:title" content="Champs & Intégrales">
 <meta property="og:description" content="Révisions Analyse 3 ING2 S1 : calcul vectoriel, intégrales multiples, optimisation.">
 <meta property="og:type" content="website">
@@ -27,21 +29,22 @@
     </button>
     <nav class="nav" id="nav">
       <button data-go="home" class="active">Accueil</button>
-      <button data-go="cours">📚 Cours</button>
-      <button data-go="methodes">🛠 Méthodes</button>
-      <button data-go="deroules">🧭 Déroulés</button>
-      <button data-go="notions">💡 Notions</button>
-      <button data-go="formules">📘 Formules</button>
-      <button data-go="express">⚡ Express</button>
-      <button data-go="exos">🎯 Exos</button>
-      <button data-go="boite">🧰 À côté</button>
-      <button data-go="quiz">🧠 Quiz</button>
-      <button data-go="planning">📅 Planning</button>
+      <button data-go="cours"><span class="ni">📚</span> Cours</button>
+      <button data-go="methodes"><span class="ni">🛠</span> Méthodes</button>
+      <button data-go="deroules"><span class="ni">🧭</span> Déroulés</button>
+      <a href="corriges.html" class="nav-corr"><span class="ni">✅</span> Corrigés</a>
+      <button data-go="notions"><span class="ni">💡</span> Notions</button>
+      <button data-go="formules"><span class="ni">📘</span> Formules</button>
+      <button data-go="express"><span class="ni">⚡</span> Express</button>
+      <button data-go="exos"><span class="ni">🎯</span> Exos</button>
+      <button data-go="boite"><span class="ni">🧰</span> À côté</button>
+      <button data-go="quiz"><span class="ni">🧠</span> Quiz</button>
+      <button data-go="planning"><span class="ni">📅</span> Planning</button>
     </nav>
     <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">
       <svg id="thIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
     </button>
-    <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
 </div>
 
@@ -58,13 +61,14 @@
         <p class="lead">Tout Analyse 3 en un site : fonctions de plusieurs variables, opérateurs vectoriels (grad, div, rot), courbes et surfaces, intégrales doubles/triples/curvilignes/surface, et optimisation. Théorèmes, méthodes et exemples pour tenir le DS et le partiel.</p>
         <div class="hero-cta">
           <button class="btn btn-primary" data-go="cours">Commencer le cours →</button>
+          <a class="btn btn-ghost" href="corriges.html">✅ Exercices corrigés</a>
           <button class="btn btn-ghost" data-go="express">⚡ Formules express</button>
         </div>
         <div class="hero-meta">
           <div><div class="n">8</div><div class="l">Chapitres</div></div>
           <div><div class="n">40+</div><div class="l">Théorèmes</div></div>
           <div><div class="n">15</div><div class="l">Déroulés pas à pas</div></div>
-          <div><div class="n">S1</div><div class="l">Semestre 1</div></div>
+          <div><div class="n">74</div><div class="l">Exos corrigés</div></div>
         </div>
       </div>
       <div class="panel">
@@ -86,11 +90,12 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Navigation</span>
-      <h2>Neuf espaces pour réviser</h2>
-      <p>Un cours structuré, la boîte à outils des méthodes, <strong>15 exos types déroulés pas à pas</strong>, des fiches de synthèse avec réflexes et pièges, deux fiches de formules, le kit « à connaître à côté », un quiz et un planning.</p>
+      <h2>Dix espaces pour réviser</h2>
+      <p>Un cours structuré, <strong>la feuille d'exercices 2026-2027 entièrement corrigée</strong>, la boîte à outils des méthodes, <strong>15 exos types déroulés pas à pas</strong>, des fiches de synthèse avec réflexes et pièges, deux fiches de formules, le kit « à connaître à côté », un quiz et un planning.</p>
     </div>
     <div class="card-grid">
       <button class="card" data-go="cours"><div class="ic">§</div><h3>Cours complet</h3><p>8 chapitres — définitions, théorèmes, méthodes et exemples.</p><span class="tag">Analyse 3 →</span></button>
+      <a class="card" href="corriges.html"><div class="ic">✅</div><h3>Exercices corrigés</h3><p>Les 74 exercices de la feuille 2026-2027 : méthode, correction détaillée pas à pas, pièges, suivi « fait ».</p><span class="tag">Corrigés →</span></a>
       <button class="card" data-go="methodes"><div class="ic">⚙</div><h3>Méthodes</h3><p>La boîte à outils par chapitre : gendarmes, polaires, DL, chemins, Green, Stokes, Lagrange…</p><span class="tag">Comment résoudre →</span></button>
       <button class="card" data-go="deroules"><div class="ic">🧭</div><h3>Déroulés d'exos</h3><p>Table de décision « je vois → je pense » + 15 exercices types résolus étape par étape, avec les calculs complets.</p><span class="tag">Pas à pas →</span></button>
       <button class="card" data-go="notions"><div class="ic">✓</div><h3>Notions clés</h3><p>Une fiche par chapitre : uniquement l'essentiel du DS/partiel.</p><span class="tag">Essentiel →</span></button>
@@ -159,6 +164,7 @@
     <p>Une <span class="term">droite</span> est déterminée par un point A et un vecteur directeur <b>u</b> : représentation paramétrique M = A + t·<b>u</b>. Un <span class="term">plan</span> est déterminé par un point A et un vecteur normal <b>n</b> : équation cartésienne <b>n</b>·<b>AM</b> = 0, soit ax + by + cz + d = 0.</p>
     <div class="box method"><div class="bt">▹ Méthode — droite ∩ plan</div><p>Écrire M sur la droite : (x,y,z) = A + t·<b>u</b>. Injecter dans l'équation du plan, résoudre pour t, reporter pour obtenir M.</p></div>
     <div class="box method"><div class="bt">▹ Distance point-plan</div><p>Si le plan a pour équation ax + by + cz + d = 0 et M = (x<sub>0</sub>, y<sub>0</sub>, z<sub>0</sub>) : d(M, P) = |ax<sub>0</sub> + by<sub>0</sub> + cz<sub>0</sub> + d| / √(a² + b² + c²).</p></div>
+    <div class="box ex corr-link"><div class="bt">✅ S'entraîner</div><p>Les 7 exercices de géométrie de la feuille 2026-2027 sont corrigés en détail : <a href="corriges.html#geo">voir les corrigés (géométrie)</a>.</p></div>
   </div>
 </article>
 
@@ -206,6 +212,34 @@
     <p>Autour d'un point (a, b), pour f de classe C² :</p>
     <div class="eq">f(a+h, b+k) = f(a,b) + h·f<sub>x</sub> + k·f<sub>y</sub> + ½(h²·f<sub>xx</sub> + 2hk·f<sub>xy</sub> + k²·f<sub>yy</sub>) + o(h²+k²)</div>
     <p>Cette formule sera essentielle au chapitre 7 (optimisation) pour identifier la nature d'un point critique.</p>
+
+    <h3>Dériver une composée en pratique</h3>
+    <div class="box method"><div class="bt">▹ Règle de la chaîne « à la main »</div>
+      <p>Si F(x, y) = f(u(x, y), v(x, y)), alors ∂F/∂x = f<sub>u</sub> · ∂u/∂x + f<sub>v</sub> · ∂v/∂x (et de même en y). Le long d'une courbe : d/dt f(x(t), y(t)) = f<sub>x</sub> · x'(t) + f<sub>y</sub> · y'(t).</p>
+      <p>Pour les dérivées secondes, <b>f<sub>u</sub> dépend encore de x et de y</b> : on la redérive avec la même règle, d'où les termes en f<sub>uu</sub>, f<sub>uv</sub>. L'oublier est l'erreur la plus fréquente sur ce type de question.</p></div>
+    <div class="box ex"><div class="bt">▹ Exemple — une seule variable intermédiaire</div><p>F(x, y) = f(y/x) : ∂F/∂x = −(y/x²) f'(y/x) et ∂F/∂y = (1/x) f'(y/x), puis ∂²F/∂y² = (1/x²) f''(y/x). <a href="corriges.html#edp-2">Corrigé complet (EDP, Ex 2)</a></p></div>
+
+    <h3 id="ch1-edp">Équations aux dérivées partielles (EDP) simples</h3>
+    <p>Une <span class="term">EDP</span> relie une fonction inconnue f(x, y, …) à ses dérivées partielles. Au programme : celles que l'on résout <em>à la main</em>, par intégrations successives ou grâce à un changement de variables.</p>
+    <div class="box thm"><div class="bt">■ Le principe de base</div><p>Sur un domaine « en tranches » (ℝ², un pavé, un disque, tout convexe) : <b>∂f/∂x = 0 ⟺ f(x, y) = C(y)</b>. La « constante » d'intégration est une <em>fonction arbitraire des autres variables</em>.</p></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>EDP</th><th>Solution générale</th><th>Idée</th></tr>
+      <tr><td class="mono">∂f/∂x = g(x, y)</td><td class="mono">f = G(x, y) + C(y)</td><td>G primitive de g par rapport à x</td></tr>
+      <tr><td class="mono">∂²f/∂x² = 0</td><td class="mono">f = A(y)·x + B(y)</td><td>deux intégrations en x</td></tr>
+      <tr><td class="mono">∂²f/∂x∂y = 0</td><td class="mono">f = F(x) + G(y)</td><td>intégrer en x, puis en y</td></tr>
+      <tr><td class="mono">a·f<sub>x</sub> + b·f<sub>y</sub> = 0</td><td class="mono">f = g(bx − ay)</td><td>f est constante le long des droites de direction (a, b)</td></tr>
+      <tr><td class="mono">f<sub>tt</sub> = c²·f<sub>xx</sub></td><td class="mono">f = F(x − ct) + G(x + ct)</td><td>u = x − ct, v = x + ct donne f<sub>uv</sub> = 0 (d'Alembert, équation des ondes)</td></tr>
+      <tr><td class="mono">x·f<sub>x</sub> + y·f<sub>y</sub> = 0</td><td class="mono">f ne dépend que de θ</td><td>en polaires, r·∂f/∂r = x f<sub>x</sub> + y f<sub>y</sub></td></tr>
+      <tr><td class="mono">x·f<sub>y</sub> − y·f<sub>x</sub> = 0</td><td class="mono">f = g(x² + y²)</td><td>en polaires, ∂f/∂θ = x f<sub>y</sub> − y f<sub>x</sub></td></tr>
+    </table></div>
+    <div class="box method"><div class="bt">▹ Méthode — changement de variables dans une EDP</div>
+      <ol>
+        <li>Poser les nouvelles variables (u, v) et écrire f(x, y) = g(u, v).</li>
+        <li>Exprimer f<sub>x</sub>, f<sub>y</sub> (et si besoin les dérivées secondes) en fonction de g<sub>u</sub>, g<sub>v</sub> par la règle de la chaîne.</li>
+        <li>Réinjecter : l'EDP en (u, v) doit devenir triviale (g<sub>u</sub> = 0, g<sub>uv</sub> = 0…). On l'intègre, puis on revient à x et y.</li>
+      </ol>
+      <p>Toujours vérifier la solution en la redérivant. <a href="corriges.html#edp">Les 4 EDP de la feuille, corrigées</a></p></div>
+    <div class="box ex corr-link"><div class="bt">✅ S'entraîner</div><p>Fonctions de plusieurs variables : <a href="corriges.html#fpv">6 exercices + 4 supplémentaires corrigés</a> · EDP : <a href="corriges.html#edp">4 exercices corrigés</a>.</p></div>
   </div>
 <details class="gallery" open><summary>🖼️ Galerie de figures du chapitre 1 <span>(3 extraits du cours)</span></summary><div class="ggrid"><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 1. FONCTIONS DE PLUSIEURS VARIABLES" src="assets/img/ch1-p10.jpg"><figcaption>CHAPITRE 1. FONCTIONS DE PLUSIEURS VARIABLES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 1. FONCTIONS DE PLUSIEURS VARIABLES" src="assets/img/ch1-p12.jpg"><figcaption>CHAPITRE 1. FONCTIONS DE PLUSIEURS VARIABLES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . FONCTIONS DE PLUSIEURS VARIABLES À VALEURS VECTORIELLES" src="assets/img/ch1-p13.jpg"><figcaption>. FONCTIONS DE PLUSIEURS VARIABLES À VALEURS VECTORIELLES</figcaption></figure></div></details></article>
 
@@ -270,6 +304,29 @@
       <li>div(f · <b>v</b>) = f · div <b>v</b> + <b>v</b> · grad f.</li>
       <li>rot(f · <b>v</b>) = f · rot <b>v</b> + grad f ∧ <b>v</b>.</li>
     </ul>
+
+    <h3 id="ch2-etoile">Ouvert étoilé : quand rot F = 0 suffit-il ?</h3>
+    <div class="box def"><div class="bt">◆ Ouvert étoilé</div><p>U est <span class="term">étoilé</span> s'il existe un point A ∈ U tel que, pour tout M ∈ U, le segment [AM] soit inclus dans U. Exemples : ℝ³, une boule, un pavé, tout convexe, un demi-espace. Contre-exemples : ℝ² privé de l'origine, ℝ³ privé de l'axe Oz, une couronne.</p></div>
+    <div class="box thm"><div class="bt">■ Théorème de Poincaré (primitivation)</div>
+      <ul>
+        <li><b>F</b> de classe C¹ sur U <b>étoilé</b> et rot <b>F</b> = <b>0</b> ⟹ il existe φ tel que <b>F</b> = ∇φ (potentiel scalaire).</li>
+        <li><b>F</b> de classe C¹ sur U étoilé et div <b>F</b> = 0 ⟹ il existe <b>G</b> tel que <b>F</b> = rot <b>G</b> (potentiel vecteur).</li>
+      </ul>
+      <p>Sans l'hypothèse « étoilé », c'est faux : sur ℝ² \ {0}, <b>F</b> = (−y, x)/(x² + y²) a un rotationnel nul mais n'est pas un gradient (sa circulation sur le cercle unité vaut 2π, pas 0). <a href="corriges.html#ope-7">Voir Opérateurs, Ex 7</a></p></div>
+    <div class="box method"><div class="bt">▹ Méthode — trouver un potentiel scalaire φ (F = ∇φ)</div>
+      <ol>
+        <li>Vérifier rot <b>F</b> = <b>0</b> sur un domaine étoilé (sinon, exhiber φ suffit à conclure).</li>
+        <li>Intégrer la première composante en x : φ = ∫ F<sub>1</sub> dx + C(y, z).</li>
+        <li>Dériver en y et comparer à F<sub>2</sub> : on obtient ∂C/∂y, on intègre, C = … + D(z).</li>
+        <li>Dériver en z, comparer à F<sub>3</sub> pour trouver D(z). Contrôler ∇φ = <b>F</b>.</li>
+      </ol></div>
+    <div class="box method"><div class="bt">▹ Méthode — trouver un potentiel vecteur G (F = rot G)</div>
+      <p>Vérifier div <b>F</b> = 0 (domaine étoilé). Chercher <b>G</b> = (X, Y, 0) : rot <b>G</b> = (−∂Y/∂z, ∂X/∂z, ∂Y/∂x − ∂X/∂y). Intégrer les deux premières équations en z (les « constantes » sont des fonctions de x et y), puis les ajuster pour satisfaire la troisième. <b>G</b> n'est pas unique : <b>G</b> + ∇ψ convient aussi. <a href="corriges.html#ope-10">Exemple corrigé</a></p></div>
+    <div class="box def"><div class="bt">◆ Identités du second ordre (hors poly, utilisées en électromagnétisme)</div>
+      <div class="eq">rot(rot <b>F</b>) = grad(div <b>F</b>) − Δ<b>F</b></div>
+      <div class="eq">div(<b>F</b> ∧ <b>G</b>) = <b>G</b> · rot <b>F</b> − <b>F</b> · rot <b>G</b></div>
+      <p>Δ<b>F</b> est le laplacien pris composante par composante (en cartésiennes). La première identité, appliquée aux équations de Maxwell dans le vide, donne l'équation des ondes électromagnétiques. Les expressions de grad, div, rot et Δ en <b>cylindriques et sphériques</b> sont dans l'onglet <a href="#boite" data-go="boite" data-anchor="kit-coord">À côté</a>.</p></div>
+    <div class="box ex corr-link"><div class="bt">✅ S'entraîner</div><p><a href="corriges.html#ope">Les exercices d'opérateurs vectoriels corrigés</a> : gradients, divergences, potentiels scalaires et vecteurs.</p></div>
   </div>
 </article>
 
@@ -322,6 +379,41 @@
         <li><b>Cylindriques</b> : symétrie autour d'un axe (cylindre, cône).</li>
         <li><b>Sphériques</b> : symétrie centrale (boule, coquille).</li>
       </ul></div>
+
+    <h3 id="ch3-quadriques">Coniques et quadriques — reconnaître une équation</h3>
+    <div class="box method"><div class="bt">▹ Méthode — compléter les carrés</div>
+      <p>x² + αx = (x + α/2)² − α²/4. On regroupe les termes par variable, on complète chaque carré, on passe les constantes à droite, puis on divise pour obtenir 1 (ou 0).</p>
+      <div class="eq">x² + y² + z² − 2x + 4y − 6z = 0 ⟺ (x − 1)² + (y + 2)² + (z − 3)² = 14<span class="lbl">sphère de centre (1, −2, 3), rayon √14</span></div>
+      <p>Si le membre de droite est négatif : ensemble vide ; s'il est nul : un seul point.</p></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Conique (plan)</th><th>Équation réduite</th><th>Paramétrage</th></tr>
+      <tr><td>Cercle</td><td class="mono">(x − a)² + (y − b)² = R²</td><td class="mono">(a + R cos t, b + R sin t)</td></tr>
+      <tr><td>Ellipse</td><td class="mono">x²/A² + y²/B² = 1</td><td class="mono">(A cos t, B sin t)</td></tr>
+      <tr><td>Hyperbole</td><td class="mono">x²/A² − y²/B² = 1</td><td class="mono">(±A cosh t, B sinh t)</td></tr>
+      <tr><td>Parabole</td><td class="mono">y = ax² + bx + c</td><td class="mono">(t, at² + bt + c)</td></tr>
+    </table></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Quadrique (espace)</th><th>Équation réduite</th><th>Paramétrage</th></tr>
+      <tr><td>Sphère</td><td class="mono">x² + y² + z² = R²</td><td class="mono">(R sin φ cos θ, R sin φ sin θ, R cos φ)</td></tr>
+      <tr><td>Ellipsoïde</td><td class="mono">x²/a² + y²/b² + z²/c² = 1</td><td class="mono">(a sin φ cos θ, b sin φ sin θ, c cos φ)</td></tr>
+      <tr><td>Cylindre</td><td class="mono">x² + y² = R² (z absent)</td><td class="mono">(R cos θ, R sin θ, z)</td></tr>
+      <tr><td>Cône</td><td class="mono">x² + y² = z²</td><td class="mono">(r cos θ, r sin θ, ±r)</td></tr>
+      <tr><td>Paraboloïde elliptique</td><td class="mono">z = x² + y²</td><td class="mono">(r cos θ, r sin θ, r²)</td></tr>
+      <tr><td>Paraboloïde hyperbolique (« selle »)</td><td class="mono">z = x² − y²</td><td class="mono">(x, y, x² − y²)</td></tr>
+      <tr><td>Hyperboloïde à une nappe</td><td class="mono">x² + y² − z² = 1</td><td class="mono">(cosh u cos θ, cosh u sin θ, sinh u)</td></tr>
+      <tr><td>Hyperboloïde à deux nappes</td><td class="mono">x² + y² − z² = −1</td><td class="mono">(sinh u cos θ, sinh u sin θ, ±cosh u)</td></tr>
+    </table></div>
+    <div class="box method"><div class="bt">▹ Reconnaître en 10 secondes</div>
+      <ul>
+        <li>Trois carrés de même signe, = 1 : <b>ellipsoïde</b> (sphère si mêmes coefficients).</li>
+        <li>Deux carrés « + », un « − » : = 1 → <b>hyperboloïde à une nappe</b> ; = −1 → <b>à deux nappes</b> ; = 0 → <b>cône</b>.</li>
+        <li>Une variable au premier degré seulement : <b>paraboloïde</b> (elliptique si les deux carrés ont le même signe, hyperbolique sinon).</li>
+        <li>Une variable absente : <b>cylindre</b> dont la base est la conique en les deux autres variables.</li>
+        <li>« = » décrit une <b>surface</b>, « ≤ » un <b>solide</b> (boule, cône plein…).</li>
+      </ul></div>
+    <div class="box def"><div class="bt">◆ Normale et plan tangent</div>
+      <p>Surface d'équation F(x, y, z) = 0 : ∇F(M) est normal à la surface en M, et le plan tangent a pour équation ∇F(M) · (X − M) = 0. Graphe z = g(x, y) : vecteur normal (−g<sub>x</sub>, −g<sub>y</sub>, 1), dirigé vers le haut. Sphère de centre O : normale sortante (x, y, z)/R. Ces normales servent directement au calcul des flux (ch. 6).</p></div>
+    <div class="box ex corr-link"><div class="bt">✅ S'entraîner</div><p><a href="corriges.html#csf">Les 7 exercices « courbes, surfaces, solides » corrigés</a> : contours orientés, coniques par complétion du carré, sphères, quadriques.</p></div>
   </div>
 <details class="gallery" open><summary>🖼️ Galerie de figures du chapitre 3 <span>(6 extraits du cours)</span></summary><div class="ggrid"><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 3. COURBES, SURFACES ET SOLIDES" src="assets/img/ch3-p10.jpg"><figcaption>CHAPITRE 3. COURBES, SURFACES ET SOLIDES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . PARAMÉTRISATION DES COURBES, SURFACES ET SOLIDES DE L’ESPACE." src="assets/img/ch3-p11.jpg"><figcaption>. PARAMÉTRISATION DES COURBES, SURFACES ET SOLIDES DE L’ESPACE.</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 3. COURBES, SURFACES ET SOLIDES" src="assets/img/ch3-p12.jpg"><figcaption>CHAPITRE 3. COURBES, SURFACES ET SOLIDES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . PARAMÉTRISATION DES COURBES, SURFACES ET SOLIDES DE L’ESPACE." src="assets/img/ch3-p13.jpg"><figcaption>. PARAMÉTRISATION DES COURBES, SURFACES ET SOLIDES DE L’ESPACE.</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . PARAMÉTRISATION DES COURBES, SURFACES ET SOLIDES DE L’ESPACE." src="assets/img/ch3-p15.jpg"><figcaption>. PARAMÉTRISATION DES COURBES, SURFACES ET SOLIDES DE L’ESPACE.</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 3. COURBES, SURFACES ET SOLIDES" src="assets/img/ch3-p16.jpg"><figcaption>CHAPITRE 3. COURBES, SURFACES ET SOLIDES</figcaption></figure></div></details></article>
 
@@ -374,6 +466,23 @@
         <li><b>Masse</b> d'un solide de densité ρ : M = ∭<sub>V</sub> ρ(x, y, z) dxdydz.</li>
         <li><b>Centre de gravité</b> (x̄, ȳ, z̄) : moyenne pondérée par ρ.</li>
       </ul></div>
+
+    <h3>Réflexes qui raccourcissent les calculs</h3>
+    <div class="box method"><div class="bt">▹ Avant de se lancer dans Fubini</div>
+      <ul>
+        <li><b>Variables séparées sur un pavé</b> : ∬<sub>[a,b]×[c,d]</sub> f(x) g(y) dxdy = (∫<sub>a</sub><sup>b</sup> f) · (∫<sub>c</sub><sup>d</sup> g).</li>
+        <li><b>Symétrie</b> : domaine symétrique par x ↦ −x et intégrande impaire en x ⟹ intégrale nulle.</li>
+        <li><b>Par tranches</b> : V = ∫ A(z) dz où A(z) est l'aire de la section à la hauteur z ; plus généralement ∭ g(z) dV = ∫ g(z) A(z) dz.</li>
+        <li><b>Ellipse</b> : x = a r cos θ, y = b r sin θ, |J| = abr, l'ellipse devient r ≤ 1. <b>Ellipsoïde</b> : (x, y, z) = (au, bv, cw), |J| = abc, on se ramène à la boule unité.</li>
+        <li><b>Disque décentré</b> x² + y² ≤ 2ax (a &gt; 0) : en polaires, r ≤ 2a cos θ avec θ ∈ [−π/2, π/2].</li>
+        <li><b>Cône</b> x² + y² ≤ z², z ≥ 0 : r ≤ z en cylindriques, φ ≤ π/4 en sphériques.</li>
+      </ul></div>
+    <div class="box def"><div class="bt">◆ Centre de gravité et moment d'inertie (hors poly, utiles en mécanique)</div>
+      <div class="eq">x̄ = (1/M) ∭<sub>V</sub> x ρ dV &nbsp;(idem ȳ, z̄)&nbsp;·&nbsp; J<sub>Δ</sub> = ∭<sub>V</sub> d(M, Δ)² ρ dV</div>
+      <p>À connaître : demi-disque homogène de rayon R, ȳ = 4R/(3π) ; boule homogène, J = (2/5) M R² ; cylindre plein autour de son axe, J = ½ M R².</p></div>
+    <div class="box ex"><div class="bt">▹ Un classique ECE : l'intégrale de Gauss</div>
+      <p>I = ∫<sub>ℝ</sub> e<sup>−x²</sup> dx. On passe au carré et en polaires : I² = ∬<sub>ℝ²</sub> e<sup>−(x²+y²)</sup> dxdy = ∫₀<sup>2π</sup> ∫₀<sup>∞</sup> e<sup>−r²</sup> r dr dθ = 2π · ½ = π, donc <b>I = √π</b>. Ce résultat sert en probabilités (loi normale) et en traitement du signal.</p></div>
+    <div class="box ex corr-link"><div class="bt">✅ S'entraîner</div><p><a href="corriges.html#imu">Les 10 exercices d'intégrales multiples corrigés</a> : 25 intégrales doubles et triples.</p></div>
   </div>
 <details class="gallery" open><summary>🖼️ Galerie de figures du chapitre 4 <span>(6 extraits du cours)</span></summary><div class="ggrid"><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . INTÉGRALES DOUBLES." src="assets/img/ch4-p5.jpg"><figcaption>. INTÉGRALES DOUBLES.</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 4. INTÉGRALES MULTIPLES" src="assets/img/ch4-p8.jpg"><figcaption>CHAPITRE 4. INTÉGRALES MULTIPLES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . INTÉGRALES DOUBLES." src="assets/img/ch4-p9.jpg"><figcaption>. INTÉGRALES DOUBLES.</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 4. INTÉGRALES MULTIPLES" src="assets/img/ch4-p10.jpg"><figcaption>CHAPITRE 4. INTÉGRALES MULTIPLES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . INTÉGRALES DOUBLES." src="assets/img/ch4-p11.jpg"><figcaption>. INTÉGRALES DOUBLES.</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 4. INTÉGRALES MULTIPLES" src="assets/img/ch4-p14.jpg"><figcaption>CHAPITRE 4. INTÉGRALES MULTIPLES</figcaption></figure></div></details></article>
 
@@ -414,6 +523,17 @@
         <li>Ou l'inverse : évaluer une intégrale double via le calcul d'une seule intégrale curviligne (souvent plus court sur un bord polygonal).</li>
         <li>Calculer une <b>aire</b> par une intégrale sur le bord : aire(D) = ∮<sub>∂D</sub> x dy = −∮<sub>∂D</sub> y dx = ½ ∮<sub>∂D</sub> (x dy − y dx).</li>
       </ul></div>
+
+    <div class="box method"><div class="bt">▹ Dans quel ordre attaquer ∫<sub>C</sub> P dx + Q dy ?</div>
+      <ol>
+        <li>Tester ∂P/∂y = ∂Q/∂x (forme <b>fermée</b>). Sur un domaine étoilé, fermée ⟹ exacte : chercher φ et calculer φ(B) − φ(A) (0 si C est fermée).</li>
+        <li>Courbe fermée, P et Q de classe C¹ sur tout le domaine intérieur : <b>Green-Riemann</b>.</li>
+        <li>Sinon, <b>paramétrer</b> morceau par morceau (relation de Chasles) en respectant le sens de parcours.</li>
+      </ol></div>
+    <div class="box warn"><div class="bt">⚠ Fermée n'implique pas exacte : la forme « angle »</div>
+      <p>ω = (x dy − y dx)/(x² + y²) est fermée sur ℝ² \ {0}, mais ∮ ω = 2π sur tout cercle qui entoure O. Ce n'est donc pas une différentielle exacte sur ℝ² \ {0} (qui n'est pas étoilé), et Green-Riemann ne s'applique pas à un domaine contenant O. Localement, ω = dθ. En physique, c'est le théorème d'Ampère autour d'un fil rectiligne. <a href="corriges.html#cur-3">Exercice 3 d) corrigé</a></p></div>
+    <div class="box def"><div class="bt">◆ Orientation</div><p>Sens direct = sens trigonométrique = le domaine reste à gauche quand on parcourt son bord. Changer de sens change le signe de la circulation (pas celui de ∫ f ds). Pour un domaine troué, le bord extérieur est parcouru dans le sens direct et le bord intérieur dans le sens indirect.</p></div>
+    <div class="box ex corr-link"><div class="bt">✅ S'entraîner</div><p><a href="corriges.html#cur">Les 4 exercices d'intégrales curvilignes corrigés</a> (13 circulations).</p></div>
   </div>
 </article>
 
@@ -459,6 +579,26 @@
         <li>Si la surface est <b>ouverte</b> et qu'on cherche une <b>circulation</b> sur son bord : Stokes.</li>
         <li>Objectif commun : passer d'une intégrale surfacique difficile à une intégrale (triple ou curviligne) plus simple.</li>
       </ul></div>
+
+    <h3>Les éléments de surface à connaître</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Surface</th><th>Paramétrage</th><th>Normale</th><th>dS</th></tr>
+      <tr><td>Graphe z = g(x, y)</td><td class="mono">(x, y, g(x, y))</td><td class="mono">(−g<sub>x</sub>, −g<sub>y</sub>, 1), vers le haut</td><td class="mono">√(1 + g<sub>x</sub>² + g<sub>y</sub>²) dxdy</td></tr>
+      <tr><td>Sphère de rayon R</td><td class="mono">(R sin φ cos θ, R sin φ sin θ, R cos φ)</td><td class="mono">(x, y, z)/R, sortante</td><td class="mono">R² sin φ dφ dθ</td></tr>
+      <tr><td>Cylindre x² + y² = R²</td><td class="mono">(R cos θ, R sin θ, z)</td><td class="mono">(x, y, 0)/R, sortante</td><td class="mono">R dθ dz</td></tr>
+      <tr><td>Cône z = √(x² + y²)</td><td class="mono">(r cos θ, r sin θ, r)</td><td class="mono">(−r cos θ, −r sin θ, r), vers le haut</td><td class="mono">√2 r dr dθ</td></tr>
+      <tr><td>Plan ax + by + cz = d</td><td class="mono">graphe si c ≠ 0</td><td class="mono">(a, b, c)/‖(a, b, c)‖</td><td class="mono">(‖(a, b, c)‖/|c|) dxdy</td></tr>
+    </table></div>
+    <div class="box def"><div class="bt">◆ Orientation compatible (règle du tire-bouchon)</div><p>On parcourt le bord ∂S de sorte que S reste à gauche, la tête du côté de <b>n</b>. Exemple : demi-sphère z ≥ 0 orientée vers le haut ⟹ son bord (le cercle du plan z = 0) est parcouru dans le sens direct vu d'en haut.</p></div>
+    <div class="box method"><div class="bt">▹ Astuces qui évitent de paramétrer</div>
+      <ul>
+        <li><b>Même bord, même flux du rotationnel</b> : ∬<sub>S</sub> rot <b>F</b> · d<b>S</b> ne dépend que du bord orienté. On remplace une demi-sphère par le disque plat de même bord (conséquence de div(rot <b>F</b>) = 0).</li>
+        <li><b>Fermer la surface</b> : pour le flux à travers une surface ouverte S, on ajoute un « couvercle » plat D : ∬<sub>S</sub> = ∭ div <b>F</b> − ∬<sub>D</sub> (avec les normales sortantes).</li>
+        <li><b>Calculer rot F ou div F en premier</b> : ils sont souvent nuls ou constants, et tout le calcul s'effondre.</li>
+        <li>Symétries du domaine et parité de l'intégrande, comme pour les intégrales multiples.</li>
+      </ul></div>
+    <div class="box ex"><div class="bt">▹ Pourquoi c'est au programme : l'électromagnétisme</div><p>Gauss : ∯ <b>E</b> · d<b>S</b> = Q<sub>int</sub>/ε₀ ⟺ div <b>E</b> = ρ/ε₀ (Ostrogradsky). Ampère : ∮ <b>B</b> · d<b>l</b> = μ₀ I<sub>enlacé</sub> ⟺ rot <b>B</b> = μ₀ <b>j</b> (Stokes). Faraday : ∮ <b>E</b> · d<b>l</b> = −dΦ<sub>B</sub>/dt ⟺ rot <b>E</b> = −∂<b>B</b>/∂t.</p></div>
+    <div class="box ex corr-link"><div class="bt">✅ S'entraîner</div><p><a href="corriges.html#sur">Les 12 exercices de flux, Stokes et Green-Ostrogradsky corrigés</a>.</p></div>
   </div>
 </article>
 
@@ -523,6 +663,33 @@
       <p>Pour optimiser f sous la contrainte g(x, y) = 0, on cherche les points (a, b) où <em>∇f et ∇g sont colinéaires</em> :</p>
       <div class="eq">∇f(a, b) = λ · ∇g(a, b)&nbsp;&nbsp;et&nbsp;&nbsp;g(a, b) = 0</div>
       <p>Le scalaire λ est le <span class="term">multiplicateur de Lagrange</span>. On résout ce système de 3 équations à 3 inconnues (x, y, λ), puis on identifie la nature en comparant les valeurs de f aux candidats.</p></div>
+
+    <h3>Quand Δ = 0 : l'étude directe</h3>
+    <div class="box method"><div class="bt">▹ Méthode</div>
+      <ul>
+        <li>Étudier le signe de f(a + h, b + k) − f(a, b) pour h et k petits.</li>
+        <li>Pour montrer que ce <b>n'est pas</b> un extremum : trouver deux chemins (droites, paraboles) le long desquels f − f(a, b) prend des signes opposés. Exemple : x³ + y³ le long de y = 0.</li>
+        <li>Pour montrer que <b>c'en est</b> un : minorer ou majorer. Exemple : x⁴ + y⁴ ≥ 0 = f(0, 0), minimum global.</li>
+      </ul></div>
+    <h3>n variables : Hessienne et valeurs propres</h3>
+    <div class="box thm"><div class="bt">■ Critère général (hors poly)</div>
+      <p>En un point critique de f : ℝ<sup>n</sup> → ℝ de classe C², la Hessienne H = (∂²f/∂x<sub>i</sub>∂x<sub>j</sub>) est symétrique, donc diagonalisable à valeurs propres réelles :</p>
+      <ul>
+        <li>toutes &gt; 0 : minimum local strict ; toutes &lt; 0 : maximum local strict ;</li>
+        <li>deux valeurs propres de signes opposés : point col ;</li>
+        <li>une valeur propre nulle, les autres de même signe : on ne peut pas conclure.</li>
+      </ul>
+      <p><b>Critère de Sylvester</b> : H est définie positive ⟺ tous ses mineurs principaux dominants sont &gt; 0. En dimension 2, on retrouve Monge : r &gt; 0 et rt − s² &gt; 0.</p></div>
+    <h3>Lagrange avec plusieurs contraintes</h3>
+    <div class="box thm"><div class="bt">■ Deux contraintes</div><p>Pour optimiser f(x, y, z) sous g<sub>1</sub> = 0 et g<sub>2</sub> = 0 (∇g<sub>1</sub>, ∇g<sub>2</sub> non colinéaires) : ∇f = λ∇g<sub>1</sub> + μ∇g<sub>2</sub>. Souvent plus simple : si une contrainte est linéaire, s'en servir pour <b>éliminer</b> une variable.</p></div>
+    <div class="box warn"><div class="bt">⚠ Lagrange donne des candidats, pas des extrema</div><p>Il faut un argument d'existence : un ensemble de contraintes compact (sphère, ellipse : max et min existent) ou une étude directe. Sur une hyperbole, qui n'est pas bornée, il peut n'y avoir aucun extremum. <a href="corriges.html#opt-6">Voir l'Ex 6</a></p></div>
+    <div class="box method"><div class="bt">▹ Optimiser sans dériver</div>
+      <ul>
+        <li><b>Compléter les carrés</b> : x² + y² − x − y − 1 = (x − ½)² + (y − ½)² − 3/2, minimum −3/2 immédiat.</li>
+        <li><b>Cauchy-Schwarz</b> : |<b>a</b> · <b>x</b>| ≤ ‖<b>a</b>‖ ‖<b>x</b>‖. Une fonction linéaire sur une sphère de rayon R a pour extrema ±‖<b>a</b>‖ R.</li>
+        <li><b>Inégalité arithmético-géométrique</b> : (a + b + c)/3 ≥ ∛(abc) pour a, b, c ≥ 0, avec égalité si et seulement si a = b = c. Idéal pour les problèmes de boîtes et de pavés.</li>
+      </ul></div>
+    <div class="box ex corr-link"><div class="bt">✅ S'entraîner</div><p><a href="corriges.html#opt">Les 10 exercices d'optimisation corrigés</a> : Taylor, Monge, compacts, Lagrange, problèmes concrets.</p></div>
   </div>
 <details class="gallery" open><summary>🖼️ Galerie de figures du chapitre 7 <span>(6 extraits du cours)</span></summary><div class="ggrid"><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 7. OPTIMISATION" src="assets/img/ch7-p10.jpg"><figcaption>CHAPITRE 7. OPTIMISATION</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 7. OPTIMISATION" src="assets/img/ch7-p12.jpg"><figcaption>CHAPITRE 7. OPTIMISATION</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . FONCTIONS DE DEUX VARIABLES" src="assets/img/ch7-p15.jpg"><figcaption>. FONCTIONS DE DEUX VARIABLES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 7. OPTIMISATION" src="assets/img/ch7-p18.jpg"><figcaption>CHAPITRE 7. OPTIMISATION</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : . OPTIMISATION SOUS CONTRAINTES" src="assets/img/ch7-p23.jpg"><figcaption>. OPTIMISATION SOUS CONTRAINTES</figcaption></figure><figure class="gfig"><img loading="lazy" width="760" height="984" alt="Diapo du cours : CHAPITRE 7. OPTIMISATION" src="assets/img/ch7-p24.jpg"><figcaption>CHAPITRE 7. OPTIMISATION</figcaption></figure></div></details></article>
 
@@ -801,6 +968,7 @@
       <h2>Comment on cherche, puis comment on rédige</h2>
       <p>D'abord la <strong>table de décision</strong> (« je vois ça dans l'énoncé → je pense à ça »), puis <strong>15 exercices types résolus pas à pas</strong>, avec les calculs écrits en entier, la réponse attendue et le « pourquoi » de chaque étape. Ce sont les modèles à refaire seul, cahier fermé, la semaine du DS.</p>
     </div>
+    <div class="box corr-link" style="margin-top:20px"><div class="bt">✅ Corrigés complets</div><p>Après les 15 déroulés, passez à la feuille officielle : les 74 exercices y sont corrigés avec le même niveau de détail. <a href="corriges.html">Ouvrir les exercices corrigés</a>.</p></div>
 
     <h3 class="subhead">🔎 Comment on cherche — la table de décision</h3>
     <p class="sublead">Devant un énoncé, on ne « voit » pas la solution : on repère des <em>déclencheurs</em>. Voici les plus fréquents en Analyse 3.</p>
@@ -926,7 +1094,7 @@ I = ∫₀¹ ( ∫_y¹ xy dx ) dy = ∫₀¹ y · [x²/2]_y¹ dy = ∫₀¹ y(1 
 D : 0 ≤ r ≤ R, 0 ≤ θ ≤ 2π  (un pavé en (r, θ) — c'est tout l'intérêt)</div></div></div></li>
           <li class="step"><span class="sn"></span><div><div class="st">Séparer les variables (l'intégrande est un produit d'une fonction de r par une fonction de θ)</div><div class="sd"><div class="calc">I = ∫₀^{2π} ∫₀^R r² · r dr dθ = ( ∫₀^{2π} dθ ) · ( ∫₀^R r³ dr ) = 2π · R⁴/4 = πR⁴/2</div></div></div></li>
           <li class="step"><span class="sn"></span><div><div class="st">Variante : demi-disque supérieur (y ≥ 0)</div><div class="sd">Seule la borne en θ change : θ ∈ [0, π] ⟹ I = π · R⁴/4 = πR⁴/4. Quart de disque x, y ≥ 0 : θ ∈ [0, π/2] ⟹ πR⁴/8.</div></div></li>
-          <li class="step"><span class="sn"></span><div><div class="st">Variante : anneau r₁ ≤ r ≤ r₂</div><div class="sd">I = 2π (r₂⁴ − r₁⁴)/4 = π(r₂⁴ − r₁⁴)/2.</div></div></div></li>
+          <li class="step"><span class="sn"></span><div><div class="st">Variante : anneau r₁ ≤ r ≤ r₂</div><div class="sd">I = 2π (r₂⁴ − r₁⁴)/4 = π(r₂⁴ − r₁⁴)/2.</div></div></li>
         </ol>
         <div class="answer"><b class="lab">Réponse</b>I = πR⁴/2 (disque complet).</div>
         <div class="why"><b class="lab">Contrôle d'homogénéité</b>x² + y² est une « longueur² », dxdy une « longueur² » ⟹ I doit être en R⁴. Si tu trouves R³ ou R⁵, tu as oublié (ou doublé) le jacobien r.</div>
@@ -1175,6 +1343,71 @@ min sur le bord : t = 0 → g = 0 en (2, 0) ;  max sur le bord : t = π → g = 
       </div>
     </div>
 
+    <h3 class="subhead">🔭 Hors programme, mais attendu d'un ingénieur ECE</h3>
+    <p class="sublead">Ce que le poly ne détaille pas et que les autres matières d'ING2 (électromagnétisme, mécanique, signal) utilisent sans prévenir, plus les outils pour vérifier ses calculs.</p>
+    <div class="kit">
+      <div class="kcard" id="kit-coord"><h3>∇ en cylindriques et sphériques</h3>
+        <p>Indispensable en électromagnétisme (fil, cylindre, sphère chargée). Notations du cours : φ = angle depuis Oz, θ = angle azimutal. <b>Attention</b> : en physique, les noms θ et φ sont souvent échangés.</p>
+        <div class="calc">CYLINDRIQUES (r, θ, z)
+grad f = ∂f/∂r e_r + (1/r) ∂f/∂θ e_θ + ∂f/∂z e_z
+div A  = (1/r) ∂(r A_r)/∂r + (1/r) ∂A_θ/∂θ + ∂A_z/∂z
+rot A  = [(1/r) ∂A_z/∂θ − ∂A_θ/∂z] e_r + [∂A_r/∂z − ∂A_z/∂r] e_θ
+         + (1/r)[∂(r A_θ)/∂r − ∂A_r/∂θ] e_z
+Δf     = (1/r) ∂/∂r(r ∂f/∂r) + (1/r²) ∂²f/∂θ² + ∂²f/∂z²
+
+SPHÉRIQUES (r, φ, θ)
+grad f = ∂f/∂r e_r + (1/r) ∂f/∂φ e_φ + 1/(r sin φ) ∂f/∂θ e_θ
+div A  = (1/r²) ∂(r² A_r)/∂r + 1/(r sin φ) ∂(sin φ A_φ)/∂φ
+         + 1/(r sin φ) ∂A_θ/∂θ
+Δf     = (1/r²) ∂/∂r(r² ∂f/∂r) + 1/(r² sin φ) ∂/∂φ(sin φ ∂f/∂φ)
+         + 1/(r² sin²φ) ∂²f/∂θ²</div>
+        <p>Contrôles : div(<b>e</b><sub>r</sub>/r²) = 0 hors de O (champ de Coulomb), Δ(1/r) = 0 hors de O, rot(<b>e</b><sub>θ</sub>/r) = 0 en cylindriques (champ d'un fil).</p>
+      </div>
+
+      <div class="kcard"><h3>🧮 Vérifier un calcul en une minute</h3>
+        <p><b>Python</b> avec SciPy (numérique) et SymPy (symbolique), installés avec Anaconda ou utilisables en ligne sur Google Colab :</p>
+        <div class="calc">from scipy.integrate import dblquad
+# ∬ (x² + y²) sur 0 ≤ x ≤ 10/3, 0 ≤ y ≤ (10 − 3x)/4
+# attention : f(y, x), bornes de x puis de y
+I, err = dblquad(lambda y, x: x**2 + y**2,
+                 0, 10/3, 0, lambda x: (10 - 3*x)/4)
+print(I, 15625/1296)       # 12.056… deux fois
+
+from sympy import symbols, integrate, Rational
+x, y = symbols("x y")
+integrate(x**2 + y**2, (y, 0, (10 - 3*x)/4), (x, 0, Rational(10, 3)))</div>
+        <p><b>WolframAlpha</b> : <code>curl (y, -x, z x^3 y^2)</code>, <code>integrate x^2 y dx dy, x=0..1, y=0..2</code>, <code>maximize x - y + z on x^2+y^2+z^2=2</code>. <b>GeoGebra 3D</b> : taper <code>x^2 + y^2 - z^2 = 1</code> pour voir la quadrique.</p>
+        <p>En DS, tout se fait à la main : ces outils servent à <b>contrôler</b> un entraînement, pas à le remplacer.</p>
+      </div>
+
+      <div class="kcard"><h3>≥ Trois inégalités qui optimisent sans dériver</h3>
+        <ul>
+          <li><b>Carré ≥ 0</b> : compléter les carrés donne le minimum d'un polynôme de degré 2 et son point.</li>
+          <li><b>Cauchy-Schwarz</b> : |<b>u</b> · <b>v</b>| ≤ ‖<b>u</b>‖ ‖<b>v</b>‖, égalité ⟺ colinéaires. Extrema d'une forme linéaire sur une sphère.</li>
+          <li><b>Arithmético-géométrique</b> : (a<sub>1</sub> + … + a<sub>n</sub>)/n ≥ (a<sub>1</sub>⋯a<sub>n</sub>)<sup>1/n</sup> pour a<sub>i</sub> ≥ 0, égalité ⟺ tous égaux. Boîtes, pavés, 4xy + 1/x + 1/y ≥ 3∛4.</li>
+        </ul>
+        <p>Rédaction : donner l'inégalité, puis le cas d'égalité (c'est lui qui prouve que la borne est <em>atteinte</em>).</p>
+      </div>
+
+      <div class="kcard"><h3>🔗 Où l'Analyse 3 ressert en ING2-ING3</h3>
+        <ul>
+          <li><b>Électromagnétisme</b> : Gauss (flux, Ostrogradsky), Ampère et Faraday (circulation, Stokes), potentiel V avec <b>E</b> = −grad V.</li>
+          <li><b>Mécanique</b> : centres de gravité, moments d'inertie (intégrales triples), travail d'une force (intégrale curviligne), énergie potentielle.</li>
+          <li><b>Mécanique des fluides / thermique</b> : débit = flux, fluide incompressible ⟺ div <b>v</b> = 0, équation de la chaleur ∂T/∂t = a ΔT.</li>
+          <li><b>Probabilités et signal</b> : densités jointes (∬ f = 1), intégrale de Gauss √π, transformée de Fourier 2D des images.</li>
+          <li><b>IA et optimisation numérique</b> : descente de gradient x<sub>k+1</sub> = x<sub>k</sub> − η ∇f(x<sub>k</sub>), Hessienne pour la méthode de Newton.</li>
+          <li><b>Robotique</b> : la jacobienne relie les vitesses articulaires à la vitesse de l'outil.</li>
+        </ul>
+      </div>
+
+      <div class="kcard"><h3>📐 Coniques et quadriques</h3>
+        <p>Compléter les carrés, puis lire la forme réduite : ellipse, hyperbole, parabole ; ellipsoïde, cône, cylindre, paraboloïdes, hyperboloïdes. Le tableau complet avec les paramétrages est dans le cours : <a href="#ch3-quadriques" data-go="cours" data-anchor="ch3-quadriques">ch. 3, coniques et quadriques</a>.</p>
+        <div class="calc">4x² + 9y² − 8x + 36y + 4 = 0
+⟺ 4(x − 1)² + 9(y + 2)² = 36
+⟺ (x − 1)²/9 + (y + 2)²/4 = 1   ellipse, centre (1, −2), a = 3, b = 2</div>
+      </div>
+    </div>
+
     <h3 class="subhead">⚠ Les pièges classiques, chapitre par chapitre</h3>
     <p class="sublead">Ce sont les erreurs vues et revues en copie. Chacune coûte entre 0,5 et 2 points ; à relire la veille.</p>
     <div class="trapgrid">
@@ -1196,6 +1429,10 @@ min sur le bord : t = 0 → g = 0 en (2, 0) ;  max sur le bord : t = π → g = 
       <div class="trapc"><b class="lab">Ch. 7 · Δ = 0</b>Conclure « point selle » ou « minimum » quand Δ = 0. <span class="fix">✓ Le test ne dit rien. Étudier le signe de f(a+h, b+k) − f(a, b) directement.</span></div>
       <div class="trapc"><b class="lab">Ch. 7 · compact</b>Ne chercher que les points critiques intérieurs. <span class="fix">✓ Le max global est souvent sur le bord (voir D15). Toujours paramétrer le bord.</span></div>
       <div class="trapc"><b class="lab">Ch. 7 · Lagrange</b>Croire qu'un point de Lagrange est automatiquement un extremum. <span class="fix">✓ Ce sont des <em>candidats</em>. On conclut en comparant les valeurs de f (et en invoquant la compacité si la contrainte est bornée).</span></div>
+      <div class="trapc"><b class="lab">Ch. 2 · potentiel</b>Conclure « rot F = 0 donc F est un gradient » sur ℝ² \ {0} ou hors d'un axe. <span class="fix">✓ Il faut un domaine <b>étoilé</b>. Sinon : exhiber le potentiel, ou calculer une circulation sur un lacet (si elle est non nulle, pas de potentiel).</span></div>
+      <div class="trapc"><b class="lab">Ch. 5 · Green et singularité</b>Appliquer Green-Riemann à (x dy − y dx)/(x² + y²) sur un contour qui entoure O. <span class="fix">✓ Le champ n'est pas C¹ en O : Green ne s'applique pas. La circulation vaut 2π par tour.</span></div>
+      <div class="trapc"><b class="lab">Ch. 6 · orientation d'un paramétrage</b>Prendre T<sub>u</sub> ∧ T<sub>v</sub> sans regarder où il pointe. <span class="fix">✓ Tester un point (signe de la composante z, ou produit scalaire avec le vecteur position) et changer le signe si l'orientation demandée est l'autre.</span></div>
+      <div class="trapc"><b class="lab">Ch. 7 · domaine</b>Chercher les points critiques de xy + 1/x + 1/y sans préciser x, y ≠ 0, puis parler de minimum global. <span class="fix">✓ Écrire le domaine d'abord ; une fonction qui tend vers −∞ au bord du domaine n'a pas de minimum global.</span></div>
     </div>
 
     <h3 class="subhead">✍ Rédiger une copie qui rapporte</h3>
@@ -1539,6 +1776,7 @@ min sur le bord : t = 0 → g = 0 en (2, 0) ;  max sur le bord : t = π → g = 
       <h2>Ce qui tombe au DS</h2>
       <p>Chapitre par chapitre : les exercices classiques et la méthode pas-à-pas. Calibrés sur la feuille d'exos 2026-2027.</p>
     </div>
+    <div class="box corr-link" style="margin-top:20px"><div class="bt">✅ Corrigés complets</div><p>Ici, la méthode seule. Chaque exercice de la feuille 2026-2027 est corrigé en détail (calculs, réponse, pièges) sur une page dédiée. <a href="corriges.html">Ouvrir les exercices corrigés</a>.</p></div>
     <div class="exo-grid">
       <div class="exocard"><div class="eh"><span class="en">CH 0</span><h3>Géométrie</h3></div>
         <div class="exo-item"><div class="q">Distance d'un point à un plan</div><div class="m"><b>Méthode :</b> équation ax+by+cz+d=0, d = |ax<sub>M</sub>+by<sub>M</sub>+cz<sub>M</sub>+d|/√(a²+b²+c²).</div></div>
@@ -1646,7 +1884,7 @@ min sur le bord : t = 0 → g = 0 en (2, 0) ;  max sur le bord : t = π → g = 
     <div class="section-head">
       <span class="eyebrow">📅 Planning de révision</span>
       <h2>Analyse 3 dans le semestre</h2>
-      <p>À caler avec le planning élec (partiel élec le 14 déc). L'Analyse 3 a typiquement un DS en cours de semestre + un partiel final.</p>
+      <p>Évaluations inscrites à l'emploi du temps : <b>Analyse 3 le samedi 17 octobre à 9h</b>, Électromagnétisme le même jour à 11h ; De l'atome à la puce (8h45) et POO Java (11h) le samedi 7 novembre. Partiels : semaine du 14 décembre.</p>
     </div>
 
     <div class="leg">
@@ -1674,7 +1912,7 @@ min sur le bord : t = 0 → g = 0 en (2, 0) ;  max sur le bord : t = π → g = 
       <p style="font-size:14px;color:var(--muted);margin:0 0 6px"><b>Évaluation intermédiaire le samedi 17 octobre à 9h</b> (puis Électromagnétisme à 11h) : les chapitres 0 à 2 (et le début du 3) doivent être solides — refaire les déroulés D1 à D4 la semaine précédente. Ch 2-3 : l'artillerie lourde. Grad/div/rot doit devenir automatique, et les 3 systèmes de coordonnées doivent être connus par cœur (surtout les jacobiens).</p>
       <div class="days">
         <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 2 grad, div, rot, laplacien</div><div class="task sub-alg">Ch 3 polaires, cylindriques, sphériques</div></div>
-        <div class="day"><div class="dn">Support</div><div class="task sub-info">Test Java hebdo</div><div class="task sub-eng">Anglais</div></div>
+        <div class="day"><div class="dn">Support</div><div class="task sub-elec">Électromagnétisme : éval. sam. 17 oct · 11h</div><div class="task sub-info">Test Java hebdo</div><div class="task sub-eng">Anglais</div></div>
       </div>
     </div>
 
@@ -1683,16 +1921,16 @@ min sur le bord : t = 0 → g = 0 en (2, 0) ;  max sur le bord : t = π → g = 
       <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 4-5-6 : le triptyque intégral. Ce sont les chapitres qui rapportent le plus au DS. Beaucoup d'entraînement au calcul.</p>
       <div class="days">
         <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 4 doubles/triples + changement de variables</div><div class="task sub-alg">Ch 5 curvilignes + Green-Riemann</div><div class="task sub-alg">Ch 6 surface + Stokes + Ostrogradski</div></div>
-        <div class="day"><div class="dn">Support</div><div class="task sub-elec">Éval. Électromagnétisme 17 oct · 11h</div></div>
+        <div class="day"><div class="dn">Support</div><div class="task sub-elec">Atome → puce : éval. sam. 7 nov · 8h45</div><div class="task sub-info">POO Java : éval. sam. 7 nov · 11h</div></div>
       </div>
     </div>
 
     <div class="wk">
-      <div class="wk-hd"><span class="wn">PHASE 4</span><h3>Déc. · Optim + sprint annales</h3><span class="phase exam">Partiel maths (probable mi-déc)</span></div>
-      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 7 optimisation (court mais tombe souvent), puis mode sprint annales. Sans doute couplé au partiel élec le 14 déc.</p>
+      <div class="wk-hd"><span class="wn">PHASE 4</span><h3>Déc. · Optim + sprint annales</h3><span class="phase exam">Partiels · semaine du 14 déc.</span></div>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 6px">Ch 7 optimisation (court mais tombe souvent), puis mode sprint annales. Les partiels ont lieu la semaine du 14 décembre.</p>
       <div class="days">
         <div class="day"><div class="dn">Analyse</div><div class="task sub-alg">Ch 7 : hessienne, Monge, Lagrange</div></div>
-        <div class="day"><div class="dn">Sprint</div><div class="task sub-alg">Reprise complète cours + refaire la feuille d'exos 2026-2027</div><div class="task sub-alg">Annales chronométrées</div></div>
+        <div class="day"><div class="dn">Sprint</div><div class="task sub-alg">Reprise complète cours + refaire la feuille d'exos 2026-2027 (onglet ✅ Corrigés)</div><div class="task sub-alg">Annales chronométrées</div></div>
       </div>
     </div>
 
@@ -1705,13 +1943,13 @@ min sur le bord : t = 0 → g = 0 en (2, 0) ;  max sur le bord : t = π → g = 
       <div class="tip"><div class="th">🎯 Coordonnées = 80% du calcul</div><p>Choisir les bonnes coordonnées (polaires/cylindriques/sphériques) transforme un calcul de 45 min en calcul de 10 min. À l'entraînement : toujours essayer plusieurs.</p></div>
     </div>
 
-    <div class="box warn" style="margin-top:30px"><div class="bt">✎ Personnaliser</div><p>Ce planning est un modèle. Pour le caler aux vraies dates (DS, interro, partiel), collez votre emploi du temps dans le chat et je précise chaque semaine.</p></div>
+    <div class="box method" style="margin-top:30px"><div class="bt">📌 Dates à vérifier</div><p>Les dates d'évaluation viennent de l'emploi du temps consulté le 23 septembre 2026. Vérifiez-les sur l'EDT officiel avant chaque échéance : horaires et salles peuvent changer.</p></div>
   </div>
 </section>
 
 <div class="foot">
   <div class="wrap">
-    <span>Champs &amp; Intégrales · Analyse 3 · ING2 · 2026-2027</span>
+    <span>Champs &amp; Intégrales · Analyse 3 · ING2 · 2026-2027 · <a href="corriges.html">Exercices corrigés</a></span>
     <span id="footProg">Progression : 0 / 8</span>
   </div>
 </div>

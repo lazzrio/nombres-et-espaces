@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercices corrigés — Champs &amp; Intégrales</title>
+<meta name="description" content="Analyse 3 ING2 ECE : les 74 exercices de la feuille 2026-2027 corrigés en détail, avec la méthode et les pièges.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#4b3e8f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1128" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:title" content="Analyse 3 — exercices corrigés">
+<meta property="og:description" content="La feuille d'exercices 2026-2027 corrigée pas à pas : méthodes, calculs, pièges.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="cx-page">
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" aria-label="Accueil du site">
+      <span class="chip-logo">∇</span>
+      Champs &amp; Intégrales
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#cours"><span class="ni">📚</span> Cours</a>
+      <a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
+      <a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
+      <a href="corriges.html" class="active" aria-current="page"><span class="ni">✅</span> Corrigés</a>
+      <a href="index.html#notions"><span class="ni">💡</span> Notions</a>
+      <a href="index.html#formules"><span class="ni">📘</span> Formules</a>
+      <a href="index.html#express"><span class="ni">⚡</span> Express</a>
+      <a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
+      <a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
+      <a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
+      <a href="index.html#planning"><span class="ni">📅</span> Planning</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">
+      <svg id="thIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</div>
+
+<main>
+<div class="hero hero-sm">
+  <div class="hero-grid"></div>
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">✅ Feuille d'exercices · Analyse 3 · 2026-2027</span>
+      <h1>Tous les exercices, <em>corrigés</em>.</h1>
+      <p class="lead">Les 70 exercices de la feuille officielle et les 4 exercices supplémentaires du chapitre 1. Pour chacun : la <b>méthode</b> à reconnaître, la <b>correction détaillée</b> étape par étape, les <b>pièges</b> et un contrôle du résultat.</p>
+      <div class="hero-meta">
+        <div><div class="n">74</div><div class="l">Exercices</div></div>
+        <div><div class="n">9</div><div class="l">Thèmes</div></div>
+        <div><div class="n">175</div><div class="l">Contrôles numériques</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cx-howto">
+    <div><b>1 · Chercher d'abord</b>Au moins 10 minutes sans rien ouvrir. Bloqué ? Relisez le cours du thème (lien en tête de chaque partie).</div>
+    <div><b>2 · Ouvrir la méthode</b>Le bloc 💡 donne l'idée clé sans le calcul. Reprenez l'exercice avec cette seule indication.</div>
+    <div><b>3 · Comparer</b>Le bloc ✅ détaille chaque étape. Repérez l'endroit exact où vous avez bloqué : c'est ce point-là qu'il faut retravailler.</div>
+    <div><b>4 · Refaire et cocher</b>Refaites l'exercice seul quelques jours plus tard, puis cliquez « Marquer fait ». La progression reste enregistrée sur cet appareil.</div>
+  </div>
+
+  <div class="section-head" style="padding-top:34px">
+    <span class="eyebrow">Sommaire</span>
+    <h2>Neuf thèmes, dans l'ordre de la feuille</h2>
+    <p>Tous les résultats ont été recalculés numériquement (intégrales, flux, extrema). Quand un énoncé est ambigu (orientation non précisée, rayon non donné…), la correction le signale et traite les cas.</p>
+  </div>
+  <nav class="cx-index" aria-label="Thèmes">
+    <a class="cx-card" href="#geo"><span class="n">Feuille p. 1-2 · 7 exos</span><span class="t">Géométrie</span><span class="d">Produits scalaire, vectoriel, mixte ; droites, plans ; valeurs absolues.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+    <a class="cx-card" href="#fpv"><span class="n">Feuille p. 3-4 · 6 + 4 exos</span><span class="t">Fonctions de plusieurs variables</span><span class="d">Limites, dérivées partielles, classe C¹, jacobiennes, composées, 4 exercices supplémentaires.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+    <a class="cx-card" href="#edp"><span class="n">Feuille p. 5 · 4 exos</span><span class="t">EDP</span><span class="d">Intégrations successives, changements de variables, polaires.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+    <a class="cx-card" href="#ope"><span class="n">Feuille p. 6-7 · 10 exos</span><span class="t">Opérateurs vectoriels</span><span class="d">grad, div, rot, laplacien ; potentiels scalaires et vecteurs.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+    <a class="cx-card" href="#csf"><span class="n">Feuille p. 8-9 · 7 exos</span><span class="t">Courbes, surfaces, solides</span><span class="d">Paramétrages, coniques, sphères, quadriques.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+    <a class="cx-card" href="#imu"><span class="n">Feuille p. 10-11 · 10 exos</span><span class="t">Intégrales multiples</span><span class="d">Fubini, symétries, polaires, cylindriques, sphériques, volumes.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+    <a class="cx-card" href="#cur"><span class="n">Feuille p. 12 · 4 exos</span><span class="t">Intégrales curvilignes</span><span class="d">Potentiels, Green-Riemann, forme angle.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+    <a class="cx-card" href="#sur"><span class="n">Feuille p. 13-14 · 12 exos</span><span class="t">Intégrales de surface</span><span class="d">Flux, Stokes, Green-Ostrogradsky.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+    <a class="cx-card" href="#opt"><span class="n">Feuille p. 15-16 · 10 exos</span><span class="t">Optimisation</span><span class="d">Taylor, Monge, compacts, Lagrange, problèmes concrets.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+  </nav>
+
+  <div class="cx-toolbar" role="search">
+    <input id="cxSearch" class="cx-search" type="search" placeholder="Rechercher : Green, polaires, Lagrange…" aria-label="Rechercher dans les corrigés">
+    <select id="cxCat" class="cx-select" aria-label="Filtrer par thème">
+        <option value="all">Tous les thèmes</option>
+        <option value="geo">Géométrie</option>
+        <option value="fpv">Fonctions</option>
+        <option value="edp">EDP</option>
+        <option value="ope">Opérateurs</option>
+        <option value="csf">Courbes & surfaces</option>
+        <option value="imu">Int. multiples</option>
+        <option value="cur">Curvilignes</option>
+        <option value="sur">Surfaces</option>
+        <option value="opt">Optimisation</option>
+    </select>
+    <button type="button" class="cx-btn" id="cxExpand">Tout déplier</button>
+    <button type="button" class="cx-btn" id="cxMeth">Méthodes seules</button>
+    <span class="cx-progress" id="cxProgress" aria-live="polite"></span>
+  </div>
+  <p class="cx-empty" id="cxEmpty" hidden>Aucun exercice ne correspond à cette recherche.</p>
+
+<section class="cx-chap" id="geo" data-cat="geo">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 1-2</span>
+    <h2>Géométrie du plan et de l'espace</h2>
+    <p>Outils utilisés : produit scalaire (orthogonalité, normes), produit vectoriel (normale, colinéarité, aire), produit mixte, équations de droites et de plans. <a href="index.html#ch0">Revoir le cours (ch. 0)</a></p>
+  </div>
+
+  <article class="cx" id="geo-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Produits scalaires de vecteurs orthogonaux</h3></header>
+    <div class="cx-enonce"><b>u</b>, <b>v</b> ∈ ℝ² orthogonaux, ‖<b>u</b>‖ = 4, ‖<b>v</b>‖ = 5. Calculer (<b>u</b>+<b>v</b>)², (<b>u</b>−<b>v</b>)², (<b>u</b>+<b>v</b>)·(<b>u</b>−<b>v</b>). Trouver x tel que a) (x<b>u</b>+<b>v</b>)·(<b>u</b>+<b>v</b>) = 13 ; b) (x<b>u</b>−<b>v</b>)·(x<b>u</b>−<b>v</b>) = 23.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Ne jamais chercher de coordonnées : <b>développer</b> par bilinéarité, puis remplacer <b>u</b>·<b>u</b> = ‖<b>u</b>‖² = 16, <b>v</b>·<b>v</b> = 25 et <b>u</b>·<b>v</b> = 0 (orthogonaux). La notation (<b>w</b>)² signifie <b>w</b>·<b>w</b> = ‖<b>w</b>‖².</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">Les trois produits</div><div class="sd"><div class="calc">(u+v)² = u·u + 2 u·v + v·v = 16 + 0 + 25 = 41
+(u−v)² = u·u − 2 u·v + v·v = 16 − 0 + 25 = 41
+(u+v)·(u−v) = u·u − v·v = 16 − 25 = −9</div>Les deux premiers sont égaux : c'est Pythagore (diagonales d'un rectangle de même longueur).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">a) Équation du premier degré</div><div class="sd"><div class="calc">(xu+v)·(u+v) = x u·u + x u·v + v·u + v·v = 16x + 25 = 13  ⟹  x = −12/16 = −3/4</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">b) Équation du second degré</div><div class="sd"><div class="calc">(xu−v)·(xu−v) = x² u·u − 2x u·v + v·v = 16x² + 25 = 23  ⟹  16x² = −2</div>Impossible dans ℝ. Interprétation : ‖x<b>u</b> − <b>v</b>‖² = ‖x<b>u</b>‖² + ‖<b>v</b>‖² ≥ 25 &gt; 23 (Pythagore).</div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Réponse</b>41 ; 41 ; −9. a) x = −3/4. b) aucun réel x ne convient.</div>
+      <div class="why"><b class="lab">Piège</b>Répondre « x = ±√(−2/16) » : une norme au carré est toujours ≥ 0, dire clairement « pas de solution réelle ».</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="geo-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Équations cartésiennes de droites du plan</h3></header>
+    <div class="cx-enonce">1. Équation de la droite D passant par A(3, 4) et B(6, −2). Le point C(2, 10/3) est-il sur D ? 2. Équation de la droite perpendiculaire à 2x + 3y − 1 = 0 passant par A(1, −1).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Une droite du plan ax + by + c = 0 a pour <b>vecteur normal</b> (a, b) et pour <b>vecteur directeur</b> (−b, a). On obtient donc l'équation à partir d'un vecteur directeur en « échangeant et changeant un signe », puis on trouve c avec un point.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. Vecteur directeur et normale</div><div class="sd"><div class="calc">AB = (6−3, −2−4) = (3, −6) ∝ (1, −2)   ⟹   normale n = (2, 1)
+D : 2x + y + c = 0, avec A : 6 + 4 + c = 0  ⟹  c = −10
+D : 2x + y − 10 = 0        (contrôle B : 12 − 2 − 10 = 0 ✓)</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">Le point C</div><div class="sd"><div class="calc">2·2 + 10/3 − 10 = −8/3 ≠ 0   ⟹   C ∉ D</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. Perpendiculaire à 2x + 3y − 1 = 0</div><div class="sd">La normale (2, 3) de la droite donnée devient le <b>vecteur directeur</b> de la perpendiculaire ; sa normale est donc (3, −2) :<div class="calc">Δ : 3x − 2y + c = 0, avec A(1, −1) : 3 + 2 + c = 0  ⟹  c = −5
+Δ : 3x − 2y − 5 = 0
+contrôle : direction de Δ = (2, 3), direction de la droite donnée = (3, −2) ; 2·3 + 3·(−2) = 0 ✓</div></div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Réponse</b>D : 2x + y − 10 = 0, C ∉ D. Perpendiculaire : 3x − 2y − 5 = 0.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="geo-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Ensembles définis avec des valeurs absolues</h3></header>
+    <div class="cx-enonce">Représenter l'ensemble des points M(x, y) tels que : 1. 2x + |y| − 1 = 0 ; 2. |x| + |y| = 1 ; 3. max(|x|, |y|) = 1.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Une valeur absolue = <b>deux cas</b> selon le signe. On découpe le plan par quadrants (ou demi-plans), on obtient des morceaux de droites, puis on exploite les <b>symétries</b> : |y| ne change pas si y → −y (symétrie par rapport à Ox), |x| ne change pas si x → −x (symétrie par rapport à Oy).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <figure class="cx-fig"><svg viewBox="0 0 540 190" role="img" aria-label="Trois ensembles : un chevron, un losange, un carré">
+        <g class="ax"><path d="M10 95h160M90 15v160"/><path d="M190 95h160M270 15v160"/><path d="M370 95h160M450 15v160"/></g>
+        <path class="cv" d="M75 15 L115 95 L75 175"/>
+        <path class="cv" d="M340 95 L270 25 L200 95 L270 165 Z"/>
+        <path class="cv" d="M380 25 H520 V165 H380 Z"/>
+        <g class="pt"><circle cx="115" cy="95" r="3"/><circle cx="90" cy="45" r="3"/><circle cx="90" cy="145" r="3"/></g>
+        <g class="lb"><text x="112" y="112">½</text><text x="95" y="42">1</text><text x="95" y="160">−1</text><text x="12" y="186">(1) 2x+|y|=1</text><text x="200" y="186">(2) |x|+|y|=1</text><text x="380" y="186">(3) max(|x|,|y|)=1</text><text x="344" y="112">1</text><text x="524" y="112">1</text></g>
+      </svg><figcaption>(1) chevron de sommet (½, 0) passant par (0, ±1) ; (2) losange de sommets (±1, 0), (0, ±1) ; (3) carré de sommets (±1, ±1).</figcaption></figure>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. 2x + |y| − 1 = 0 ⟺ |y| = 1 − 2x</div><div class="sd">Il faut 1 − 2x ≥ 0, soit x ≤ 1/2. Pour y ≥ 0 : y = 1 − 2x ; pour y ≤ 0 : y = 2x − 1. Ce sont <b>deux demi-droites</b> issues du point (1/2, 0), passant par (0, 1) et (0, −1) : un chevron « &lt; » symétrique par rapport à Ox.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. |x| + |y| = 1</div><div class="sd">Quadrant x, y ≥ 0 : x + y = 1 (segment de (1,0) à (0,1)). Par symétrie par rapport aux deux axes : les 4 segments −x + y = 1, −x − y = 1, x − y = 1. C'est un <b>carré « sur la pointe »</b> (losange) de sommets (±1, 0), (0, ±1).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. max(|x|, |y|) = 1</div><div class="sd">Soit |x| = 1 et |y| ≤ 1 (côtés verticaux x = ±1), soit |y| = 1 et |x| ≤ 1 (côtés horizontaux y = ±1) : le <b>carré</b> de sommets (±1, ±1), de côté 2.</div></div></li>
+      </ol>
+      <div class="why"><b class="lab">À savoir</b>|x| + |y| = 1 et max(|x|, |y|) = 1 sont les « cercles unités » des normes ‖·‖₁ et ‖·‖<sub>∞</sub> ; x² + y² = 1 est celui de la norme euclidienne ‖·‖₂.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="geo-4">
+    <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Produits scalaire et vectoriel, projections, orthogonalité, colinéarité</h3></header>
+    <div class="cx-enonce">Calculer <b>u</b>·<b>v</b> et <b>u</b>∧<b>v</b> pour : 1. <b>u</b>(4, 1, 3), <b>v</b>(−2, −1, 5) ; 2. <b>u</b>(1, 0, 3), <b>v</b>(−1, 4, −3), ainsi que les projetés <b>v</b><sub><b>u</b></sub> et <b>u</b><sub><b>v</b></sub> ; 3. <b>u</b>(a, a+1, 4), <b>v</b>(a+1, a, −1) : pour quels a sont-ils orthogonaux ? colinéaires ?</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div><b>u</b>∧<b>v</b> = (u₂v₃ − u₃v₂, u₃v₁ − u₁v₃, u₁v₂ − u₂v₁) (cycle 1→2→3). Projeté orthogonal de <b>v</b> sur <b>u</b> : <b>v</b><sub><b>u</b></sub> = (<b>u</b>·<b>v</b>/‖<b>u</b>‖²) <b>u</b>. Orthogonaux ⟺ <b>u</b>·<b>v</b> = 0 ; colinéaires ⟺ <b>u</b>∧<b>v</b> = <b>0</b> (les 3 composantes nulles <b>en même temps</b>).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1.</div><div class="sd"><div class="calc">u·v = 4·(−2) + 1·(−1) + 3·5 = −8 − 1 + 15 = 6
+u∧v = (1·5 − 3·(−1), 3·(−2) − 4·5, 4·(−1) − 1·(−2)) = (8, −26, −2)</div>Contrôle : (8, −26, −2)·<b>u</b> = 32 − 26 − 6 = 0 ✓ (le produit vectoriel est orthogonal à <b>u</b>).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2.</div><div class="sd"><div class="calc">u·v = −1 + 0 − 9 = −10        u∧v = (0·(−3) − 3·4, 3·(−1) − 1·(−3), 1·4 − 0) = (−12, 0, 4)
+‖u‖² = 10  ⟹  v_u = (−10/10) u = −u = (−1, 0, −3)
+‖v‖² = 26  ⟹  u_v = (−10/26) v = (5/13, −20/13, 15/13)</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. Orthogonalité</div><div class="sd"><div class="calc">u·v = a(a+1) + (a+1)a − 4 = 2a² + 2a − 4 = 2(a − 1)(a + 2) = 0  ⟺  a = 1 ou a = −2</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. Colinéarité</div><div class="sd"><div class="calc">u∧v = ((a+1)(−1) − 4a, 4(a+1) + a, a² − (a+1)²) = (−5a − 1, 5a + 4, −2a − 1)</div>La 3<sup>e</sup> composante s'annule seulement pour a = −1/2 ; la 1<sup>re</sup> vaut alors 3/2 ≠ 0. Les trois ne sont jamais nulles ensemble : <b>jamais colinéaires</b>.</div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Réponse</b>1. 6 ; (8, −26, −2). 2. −10 ; (−12, 0, 4) ; <b>v</b><sub><b>u</b></sub> = (−1, 0, −3), <b>u</b><sub><b>v</b></sub> = (5, −20, 15)/13. 3. orthogonaux pour a ∈ {1, −2} ; jamais colinéaires.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="geo-5">
+    <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Double produit vectoriel et produit mixte</h3></header>
+    <div class="cx-enonce"><b>A</b> = <b>e</b><sub>x</sub> + <b>e</b><sub>y</sub>, <b>B</b> = <b>e</b><sub>x</sub> + 2<b>e</b><sub>y</sub>, <b>C</b> = 2<b>e</b><sub>x</sub> + <b>e</b><sub>y</sub>. 1. Comparer (<b>A</b>∧<b>B</b>)∧<b>C</b> et <b>A</b>∧(<b>B</b>∧<b>C</b>). 2. Comparer <b>A</b>·(<b>B</b>∧<b>C</b>) et (<b>A</b>∧<b>B</b>)·<b>C</b>.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Calcul direct en coordonnées (A = (1,1,0), B = (1,2,0), C = (2,1,0)), puis contrôle par la formule du double produit vectoriel <b>a</b>∧(<b>b</b>∧<b>c</b>) = (<b>a</b>·<b>c</b>)<b>b</b> − (<b>a</b>·<b>b</b>)<b>c</b> (hors programme mais très utile en électromagnétisme).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">A∧B = (0, 0, 1·2 − 1·1) = (0, 0, 1)        (A∧B)∧C = (0,0,1)∧(2,1,0) = (−1, 2, 0)
+B∧C = (0, 0, 1·1 − 2·2) = (0, 0, −3)       A∧(B∧C) = (1,1,0)∧(0,0,−3) = (−3, 3, 0)</div>
+      <p>Les deux résultats diffèrent : le produit vectoriel <b>n'est pas associatif</b>. Contrôle : (<b>A</b>·<b>C</b>)<b>B</b> − (<b>A</b>·<b>B</b>)<b>C</b> = 3(1,2,0) − 3(2,1,0) = (−3, 3, 0) ✓.</p>
+      <div class="calc">A·(B∧C) = (1,1,0)·(0,0,−3) = 0        (A∧B)·C = (0,0,1)·(2,1,0) = 0</div>
+      <p>Égaux, comme toujours (c'est le produit mixte [<b>A</b>, <b>B</b>, <b>C</b>]), et <b>nuls</b> parce que les trois vecteurs sont dans le plan (xOy) : ils sont coplanaires, le parallélépipède est plat.</p>
+      <div class="answer"><b class="lab">Réponse</b>(−1, 2, 0) ≠ (−3, 3, 0) ; produits mixtes égaux à 0.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="geo-6">
+    <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Vecteur unitaire normal à deux vecteurs</h3></header>
+    <div class="cx-enonce">Trouver un vecteur unitaire normal à <b>u</b> et <b>v</b> : 1. <b>u</b>(4, 2, 1), <b>v</b>(−1, −1, 2) ; 2. <b>u</b>(1, 2, −3), <b>v</b>(0, 1, 4).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div><b>u</b>∧<b>v</b> est orthogonal aux deux ; on le divise par sa norme. Il y a toujours <b>deux</b> réponses (±).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1. u∧v = (2·2 − 1·(−1), 1·(−1) − 4·2, 4·(−1) − 2·(−1)) = (5, −9, −2),  ‖·‖ = √(25+81+4) = √110
+   n = ± (5, −9, −2)/√110
+2. u∧v = (2·4 − (−3)·1, (−3)·0 − 1·4, 1·1 − 2·0) = (11, −4, 1),  ‖·‖ = √138
+   n = ± (11, −4, 1)/√138</div>
+      <div class="why"><b class="lab">Contrôle en 10 s</b>(5, −9, −2)·(4, 2, 1) = 20 − 18 − 2 = 0 et (5, −9, −2)·(−1, −1, 2) = −5 + 9 − 4 = 0 ✓.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="geo-7">
+    <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Équations cartésiennes de plans</h3></header>
+    <div class="cx-enonce">1. Plan passant par A(3, 2, −1) et orthogonal à la droite de vecteur directeur <b>u</b> = <b>i</b> + 2<b>j</b> + 2<b>k</b>. 2. Plan passant par A(1, 2, 3), B(−1, 1, 2), C(0, 1, 1).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Un plan = un point + un <b>vecteur normal</b> <b>n</b> = (a, b, c) → ax + by + cz + d = 0. Plan orthogonal à une droite : <b>n</b> = vecteur directeur de la droite. Plan par 3 points : <b>n</b> = <b>AB</b> ∧ <b>AC</b>.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1. n = (1, 2, 2) : x + 2y + 2z + d = 0 et A : 3 + 4 − 2 + d = 0 ⟹ d = −5        P : x + 2y + 2z − 5 = 0
+2. AB = (−2, −1, −1), AC = (−1, −1, −2)
+   n = AB∧AC = ((−1)(−2) − (−1)(−1), (−1)(−1) − (−2)(−2), (−2)(−1) − (−1)(−1)) = (1, −3, 1)
+   x − 3y + z + d = 0 et A : 1 − 6 + 3 + d = 0 ⟹ d = 2                             P : x − 3y + z + 2 = 0</div>
+      <p>Contrôle : B → −1 − 3 + 2 + 2 = 0 ✓ ; C → 0 − 3 + 1 + 2 = 0 ✓.</p>
+      <div class="answer"><b class="lab">Réponse</b>1. x + 2y + 2z − 5 = 0. 2. x − 3y + z + 2 = 0.</div>
+    </div></details>
+  </article>
+</section>
+
+<section class="cx-chap" id="fpv" data-cat="fpv">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 3-4 + exercices supplémentaires</span>
+    <h2>Fonctions de plusieurs variables</h2>
+    <p>Outils : domaine de définition, limites (chemins, polaires, gendarmes, DL), dérivées partielles, classe C¹, Schwarz, jacobienne, composition. <a href="index.html#ch1">Revoir le cours (ch. 1)</a></p>
+  </div>
+
+  <article class="cx" id="fpv-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Domaines de définition et limites en (0, 0)</h3></header>
+    <div class="cx-enonce">1) f = xy/(x² + y² + 2) ; 2) f = (x − y)²/(x² + y²) ; 3) f = sin(xy)/(xy) ; 4) f = x²y²/(x² + y²).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>1) Si f est définie et continue en (0,0), la limite est f(0,0). 2) Sinon comparer les <b>degrés</b> : numérateur de même degré que le dénominateur → probablement pas de limite (deux chemins) ; degré plus grand → probablement 0 (majorer). 3) Une forme connue en une variable (sin t / t) : poser t = xy.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1) D = ℝ², limite 0</div><div class="sd">x² + y² + 2 ≥ 2 &gt; 0 : f est définie et continue sur ℝ² (quotient de fonctions continues à dénominateur non nul), donc lim = f(0,0) = 0/2 = <b>0</b>.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2) D = ℝ² \ {(0,0)}, pas de limite</div><div class="sd"><div class="calc">y = 0 : f(x, 0) = x²/x² = 1 → 1        y = x : f(x, x) = 0 → 0</div>Deux chemins, deux valeurs : pas de limite. (En polaires : f = (cos θ − sin θ)² = 1 − sin 2θ dépend de θ.)</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3) D = {(x, y) : xy ≠ 0} (le plan privé des deux axes), limite 1</div><div class="sd">Quand (x, y) → (0, 0), t = xy → 0, et sin t / t → 1. Plus rigoureusement : |sin t − t| ≤ |t|³/6 donne |f − 1| ≤ (xy)²/6 → 0. <b>Limite 1</b> (f se prolonge même par continuité à tous les axes par la valeur 1).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">4) D = ℝ² \ {(0,0)}, limite 0</div><div class="sd"><div class="calc">x² ≤ x² + y²  ⟹  |f| = y² · x²/(x² + y²) ≤ y² → 0</div>Théorème des gendarmes : <b>limite 0</b>. (Polaires : f = r² cos²θ sin²θ, |f| ≤ r².)</div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Réponse</b>1) ℝ², 0. 2) ℝ²*, pas de limite. 3) plan privé des axes, 1. 4) ℝ²*, 0.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="fpv-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Calcul de dérivées partielles</h3></header>
+    <div class="cx-enonce">1) xy ; 2) e<sup>xy</sup> ; 3) x cos x cos y ; 4) (x² + y²)/(x² − y²) ; 5) √(1 + x²y²) ; 6) (x² + y²) ln(x² + y²).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Pour ∂f/∂x : y est une <b>constante</b>, on applique les règles d'une variable (produit, quotient, composée). Toujours préciser le domaine où le calcul est valable.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) ℝ² :            ∂x f = y                                  ∂y f = x
+2) ℝ² :            ∂x f = y e^(xy)                           ∂y f = x e^(xy)
+3) ℝ² :            ∂x f = (cos x − x sin x) cos y            ∂y f = −x cos x sin y
+4) y ≠ ±x :        ∂x f = [2x(x²−y²) − (x²+y²)·2x]/(x²−y²)² = −4xy²/(x²−y²)²
+                   ∂y f = [2y(x²−y²) + (x²+y²)·2y]/(x²−y²)² =  4x²y/(x²−y²)²
+5) ℝ² (1 + x²y² ≥ 1) :   ∂x f = 2xy²/(2√(1+x²y²)) = xy²/√(1+x²y²)      ∂y f = x²y/√(1+x²y²)
+6) ℝ² \ {0} :      ∂x f = 2x ln(x²+y²) + (x²+y²)·2x/(x²+y²) = 2x(ln(x²+y²) + 1)
+                   ∂y f = 2y(ln(x²+y²) + 1)</div>
+      <div class="why"><b class="lab">Pièges</b>3) x cos x est un <b>produit</b> en x (on dérive les deux facteurs), mais une constante en y. 4) Attention au signe du quotient : (u/v)' = (u'v − uv')/v². 6) Dérivée de ln(u) = u'/u avec u = x² + y².</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="fpv-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Continuité, dérivées partielles, classe C¹ (fonctions prolongées en 0)</h3></header>
+    <div class="cx-enonce">1) f(x, y) = y³/√(x² + y⁴) si (x, y) ≠ (0, 0), f(0, 0) = 0. 2) f(x, y) = (x³ − y³)/(x² + y²) si (x, y) ≠ (0, 0), f(0, 0) = 0. Étudier la continuité de f, l'existence et la continuité des dérivées partielles. f est-elle C¹ sur ℝ² ?</div>
+    <details class="cx-meth"><summary>💡 Méthode (le plan en 4 temps, toujours le même)</summary><div>(a) Hors de (0,0) : f est C¹ comme quotient/composée de fonctions C¹ (dénominateur non nul). (b) Continuité en 0 : majorer |f − f(0,0)|. (c) Dérivées partielles <b>en 0 par la définition</b> (taux d'accroissement), jamais en dérivant la formule. (d) Continuité de ∂f/∂x en 0 : comparer la limite de la formule avec la valeur trouvée en (c) ; un chemin qui donne autre chose suffit pour conclure « non C¹ ».</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <h4>1) f = y³/√(x² + y⁴)</h4>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">Continuité en (0,0)</div><div class="sd">x² + y⁴ ≥ y⁴ donne √(x² + y⁴) ≥ y², donc pour y ≠ 0 : <div class="calc">|f| ≤ |y|³/y² = |y| → 0        (et f = 0 si y = 0)</div>f est continue en 0, donc sur ℝ².</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">Dérivées partielles en (0,0) par la définition</div><div class="sd"><div class="calc">∂x f(0,0) = lim (f(h,0) − 0)/h = lim 0/h = 0
+∂y f(0,0) = lim (f(0,k) − 0)/k = lim (k³/k²)/k = 1</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">Dérivées hors de (0,0)</div><div class="sd"><div class="calc">∂x f = −x y³/(x² + y⁴)^(3/2)        ∂y f = (3x²y² + y⁶)/(x² + y⁴)^(3/2)</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">Continuité des dérivées en 0 : le chemin x = y²</div><div class="sd"><div class="calc">∂x f(y², y) = −y⁵/(2y⁴)^(3/2) = −1/(2√2 |y|) · signe(y)   →  ±∞
+∂y f(y², y) = 4y⁶/(2√2 |y|⁶) = √2  ≠ 1 = ∂y f(0,0)</div>Aucune des deux dérivées partielles n'est continue en (0,0).</div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Conclusion 1)</b>f est continue sur ℝ², admet des dérivées partielles partout, mais n'est <b>pas C¹</b> sur ℝ² (seulement sur ℝ² \ {0}).</div>
+      <h4>2) f = (x³ − y³)/(x² + y²)</h4>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">Continuité en 0 (polaires)</div><div class="sd"><div class="calc">f = r (cos³θ − sin³θ),   |f| ≤ 2r → 0</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">Dérivées en 0</div><div class="sd"><div class="calc">∂x f(0,0) = lim (h³/h²)/h = 1        ∂y f(0,0) = lim (−k³/k²)/k = −1</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">Dérivées hors de 0 et continuité</div><div class="sd"><div class="calc">∂x f = (x⁴ + 3x²y² + 2xy³)/(x² + y²)²     ∂y f = −(y⁴ + 3x²y² + 2x³y)/(x² + y²)²
+polaires : ∂x f = cos⁴θ + 3cos²θ sin²θ + 2 cos θ sin³θ   (ne dépend que de θ)
+θ = 0 → 1 ;  θ = π/2 → 0</div>∂x f n'a pas de limite en 0 : elle n'est pas continue en (0,0).</div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Conclusion 2)</b>f continue sur ℝ², dérivées partielles partout (1 et −1 en 0), <b>pas C¹</b> sur ℝ².</div>
+      <div class="why"><b class="lab">Pour aller plus loin</b>2) f n'est même pas différentiable en 0 : f(h, k) − (h − k) = hk(h − k)/(h² + k²) et, divisé par √(h² + k²), ce reste vaut −1/√2 le long de k = −h au lieu de tendre vers 0. Leçon : dérivées partielles en un point ⇏ différentiable.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="fpv-4">
+    <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Dérivées partielles secondes (et troisièmes pour la 3)</h3></header>
+    <div class="cx-enonce">1) 2xy/(x² + y²)², (x, y) ≠ (0,0) ; 2) f(x, y, z) = e<sup>z</sup> + 1/x + x e<sup>−y</sup>, x ≠ 0 ; 3) cos(xy²) ; 4) 1/(cos²x + e<sup>−y</sup>).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Calculer proprement les dérivées premières et les <b>factoriser</b> avant de redériver. Grâce à Schwarz (fonctions C² sur leur domaine), une seule dérivée croisée suffit — mais la calculer des deux façons est un excellent contrôle.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <h4>1) f = 2xy D⁻² avec D = x² + y²</h4>
+      <div class="calc">∂x f = 2y D⁻² − 8x²y D⁻³ = 2y(y² − 3x²)/D³          ∂y f = 2x(x² − 3y²)/D³
+∂²f/∂x² =  24xy(x² − y²)/D⁴
+∂²f/∂y² = −24xy(x² − y²)/D⁴
+∂²f/∂x∂y = ∂²f/∂y∂x = −6(x⁴ − 6x²y² + y⁴)/D⁴</div>
+      <p>Remarque : ∂²f/∂x² + ∂²f/∂y² = 0, f est <b>harmonique</b>.</p>
+      <h4>2) f = e<sup>z</sup> + x⁻¹ + x e<sup>−y</sup></h4>
+      <div class="calc">∂x f = −1/x² + e^(−y)     ∂y f = −x e^(−y)     ∂z f = e^z
+∂²f/∂x² = 2/x³     ∂²f/∂y² = x e^(−y)     ∂²f/∂z² = e^z
+∂²f/∂x∂y = −e^(−y)     ∂²f/∂x∂z = 0     ∂²f/∂y∂z = 0</div>
+      <h4>3) f = cos(xy²)</h4>
+      <div class="calc">∂x f = −y² sin(xy²)                ∂y f = −2xy sin(xy²)
+∂²f/∂x² = −y⁴ cos(xy²)
+∂²f/∂y² = −2x sin(xy²) − 4x²y² cos(xy²)
+∂²f/∂x∂y = −2y sin(xy²) − 2xy³ cos(xy²)
+∂³f/∂x³ = y⁶ sin(xy²)
+∂³f/∂x²∂y = −4y³ cos(xy²) + 2xy⁵ sin(xy²)
+∂³f/∂x∂y² = −2 sin(xy²) − 10xy² cos(xy²) + 4x²y⁴ sin(xy²)
+∂³f/∂y³ = −12x²y cos(xy²) + 8x³y³ sin(xy²)</div>
+      <p>(Par Schwarz, toutes les dérivées troisièmes qui contiennent deux x et un y sont égales, idem pour un x et deux y.)</p>
+      <h4>4) f = 1/g avec g = cos²x + e<sup>−y</sup> &gt; 0</h4>
+      <div class="calc">∂x f = −g_x/g² = sin(2x)/g²            (g_x = −2 sin x cos x = −sin 2x)
+∂y f = −g_y/g² = e^(−y)/g²             (g_y = −e^(−y))
+∂²f/∂x² = [2 cos(2x) g + 2 sin²(2x)]/g³
+∂²f/∂y² = e^(−y) (e^(−y) − cos²x)/g³
+∂²f/∂x∂y = 2 e^(−y) sin(2x)/g³</div>
+      <div class="why"><b class="lab">Remarque</b>Dans 4), g ne s'annule jamais : f est définie sur tout ℝ² (la condition « x ≠ 0 » de l'énoncé est inutile). Toutes ces formules ont été vérifiées numériquement.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="fpv-5">
+    <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Matrices jacobiennes</h3></header>
+    <div class="cx-enonce">1) f(x, y) = (x, y) ; 2) f(x, y) = (x e<sup>y</sup> + cos y, x, x + e<sup>y</sup>) ; 3) f(x, y, z) = (x + e<sup>z</sup> + y, y x²).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Jacobienne de ℝⁿ → ℝᵖ : <b>p lignes</b> (une par composante), <b>n colonnes</b> (une par variable), terme (i, j) = ∂f<sub>i</sub>/∂x<sub>j</sub>.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1)  J = | 1  0 |     (identité, jacobien = 1)
+        | 0  1 |
+
+2)  J = | e^y   x e^y − sin y |     (3 × 2)
+        | 1     0             |
+        | 1     e^y           |
+
+3)  J = | 1     1    e^z |          (2 × 3)
+        | 2xy   x²   0   |</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="fpv-6">
+    <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Composée g ∘ f et ses dérivées partielles</h3></header>
+    <div class="cx-enonce">f : ℝ² → ℝ³, f(x, y) = (xy sin(xy), e<sup>−x−y</sup>, y cos x) et g(u, v, w) = uvw. 1. Calculer g ∘ f. 2. Ses dérivées partielles.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Soit on <b>substitue</b> puis on dérive (ici le plus simple), soit on applique la règle de la chaîne J<sub>g∘f</sub> = J<sub>g</sub>(f(x, y)) · J<sub>f</sub>(x, y) (utile quand g n'est pas explicite).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">h(x, y) = g(f(x, y)) = xy sin(xy) · e^(−x−y) · y cos x = x y² sin(xy) cos x e^(−x−y)</div>
+      <p>En x, h = y² × [x · sin(xy) · cos x · e<sup>−x−y</sup>] : produit de 4 facteurs dont on dérive chacun à tour de rôle :</p>
+      <div class="calc">∂h/∂x = y² e^(−x−y) [ sin(xy) cos x + xy cos(xy) cos x − x sin(xy) sin x − x sin(xy) cos x ]
+∂h/∂y = x y cos x e^(−x−y) [ 2 sin(xy) + xy cos(xy) − y sin(xy) ]</div>
+      <p><b>Contrôle par la chaîne</b> : ∂h/∂x = vw·∂f₁/∂x + uw·∂f₂/∂x + uv·∂f₃/∂x avec (u, v, w) = f(x, y), ∂f₁/∂x = y sin(xy) + xy² cos(xy), ∂f₂/∂x = −e<sup>−x−y</sup>, ∂f₃/∂x = −y sin x : on retrouve le même résultat.</p>
+    </div></details>
+  </article>
+
+  <!-- ================= SUPPLÉMENTAIRES ================= -->
+  <article class="cx" id="sup-1">
+    <header class="cx-hd"><span class="cx-num">Supp 1</span><h3>f = (x³y − xy³)/(x² + y²) : C¹ mais pas C² (contre-exemple de Schwarz)</h3></header>
+    <div class="cx-enonce">f(x, y) = (x³y − xy³)/(x² + y²) si (x, y) ≠ (0,0), f(0,0) = 0. 1. Continuité. 2. Existence et continuité des dérivées partielles premières. 3. f est-elle C¹ ? 4. f<sub>xy</sub>(0,0) et f<sub>yx</sub>(0,0). 5. Conclusion avec un théorème du cours.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Même plan que l'exercice 3, puis les dérivées croisées <b>en 0 par la définition</b> : on calcule ∂f/∂x sur l'axe x = 0 (une fonction de y), puis on la dérive en y en 0 ; et inversement.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. Continuité</div><div class="sd"><div class="calc">polaires : f = r² cos θ sin θ (cos²θ − sin²θ) = (r²/4) sin 4θ,   |f| ≤ r²/4 → 0</div>Continue en 0, donc sur ℝ².</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. Dérivées premières</div><div class="sd"><div class="calc">(x,y) ≠ 0 :  ∂x f = (x⁴y + 4x²y³ − y⁵)/(x² + y²)²       ∂y f = (x⁵ − 4x³y² − xy⁴)/(x² + y²)²
+en 0 :       ∂x f(0,0) = lim f(h,0)/h = 0                ∂y f(0,0) = 0
+|∂x f| ≤ (r⁵ + 4r⁵ + r⁵)/r⁴ = 6r → 0 = ∂x f(0,0)   (idem pour ∂y f)</div>Les dérivées partielles existent et sont continues sur ℝ².</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3.</div><div class="sd">Oui : f est <b>C¹ sur ℝ²</b>.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">4. Dérivées croisées en 0</div><div class="sd"><div class="calc">sur l'axe x = 0 :  ∂x f(0, y) = −y⁵/y⁴ = −y   ⟹  ∂/∂y (∂f/∂x)(0,0) = −1
+sur l'axe y = 0 :  ∂y f(x, 0) = x⁵/x⁴ = x     ⟹  ∂/∂x (∂f/∂y)(0,0) = +1</div>Selon la convention d'écriture, f<sub>xy</sub>(0,0) et f<sub>yx</sub>(0,0) valent −1 et 1 : elles sont <b>différentes</b>.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">5. Conclusion</div><div class="sd">Théorème de Schwarz : si f était C² en (0,0), les dérivées croisées y seraient égales. Elles ne le sont pas, donc f <b>n'est pas C²</b> en (0,0) (les dérivées secondes existent en 0 mais ne sont pas continues).</div></div></li>
+      </ol>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sup-2">
+    <header class="cx-hd"><span class="cx-num">Supp 2</span><h3>Limite en (3, −1) : deux chemins puis polaires</h3></header>
+    <div class="cx-enonce">Montrer que lim<sub>(x,y)→(3,−1)</sub> (xy − 3y + x − 3)/((x − 3)² + (y + 1)²) n'existe pas : 1. avec deux chemins ; 2. avec les coordonnées polaires.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Se ramener en (0,0) par le changement u = x − 3, v = y + 1, et <b>factoriser</b> le numérateur.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">xy − 3y + x − 3 = y(x − 3) + (x − 3) = (x − 3)(y + 1) = uv        f = uv/(u² + v²)
+1. v = 0 (y = −1) : f = 0 → 0 ;        u = v (y = x − 4) : f = u²/(2u²) = 1/2 → 1/2
+2. u = r cos θ, v = r sin θ : f = cos θ sin θ = ½ sin 2θ, qui dépend de θ</div>
+      <div class="answer"><b class="lab">Réponse</b>Deux limites différentes selon le chemin (0 et 1/2) : la limite n'existe pas.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sup-3">
+    <header class="cx-hd"><span class="cx-num">Supp 3</span><h3>Jacobiens des coordonnées cylindriques et sphériques</h3></header>
+    <div class="cx-enonce">1. f(r, θ, z) = (r cos θ, r sin θ, z). 2. f(r, θ, φ) = (r sin φ cos θ, r sin φ sin θ, r cos φ).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Écrire la jacobienne 3 × 3, développer le déterminant selon la ligne ou la colonne qui a le plus de zéros.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1)  J = | cos θ  −r sin θ  0 |
+        | sin θ   r cos θ  0 |      det = r cos²θ + r sin²θ = r
+        | 0       0        1 |
+
+2)  J = | sin φ cos θ   −r sin φ sin θ   r cos φ cos θ |
+        | sin φ sin θ    r sin φ cos θ   r cos φ sin θ |
+        | cos φ          0               −r sin φ      |
+    développement selon la 3e ligne :
+    det = cos φ·(−r² sin φ cos φ) + (−r sin φ)·(r sin²φ) = −r² sin φ (cos²φ + sin²φ) = −r² sin φ</div>
+      <p>Le signe « − » vient de l'ordre (r, θ, φ) des variables ; dans l'ordre (r, φ, θ) on obtient +r² sin φ. Dans une intégrale on prend la <b>valeur absolue</b> : dV = r² sin φ dr dθ dφ (et dV = r dr dθ dz en cylindriques).</p>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sup-4">
+    <header class="cx-hd"><span class="cx-num">Supp 4</span><h3>Équation de Laplace et équation des ondes</h3></header>
+    <div class="cx-enonce">1. u = 1/√(x² + y² + z²) vérifie u<sub>xx</sub> + u<sub>yy</sub> + u<sub>zz</sub> = 0. 2. u(x, t) = t/(t² − x²) vérifie u<sub>tt</sub> = u<sub>xx</sub>.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Écrire u avec une puissance (r⁻¹) pour dériver vite, puis utiliser la symétrie des rôles de x, y, z.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1)  r = √(x²+y²+z²), u = r⁻¹,  ∂r/∂x = x/r
+    u_x = −x r⁻³        u_xx = −r⁻³ + 3x² r⁻⁵
+    Δu = −3 r⁻³ + 3(x² + y² + z²) r⁻⁵ = −3 r⁻³ + 3 r⁻³ = 0   (pour r ≠ 0)
+
+2)  u_t = −(t² + x²)/(t² − x²)²          u_x = 2xt/(t² − x²)²
+    u_tt = (2t³ + 6tx²)/(t² − x²)³       u_xx = (2t³ + 6tx²)/(t² − x²)³   ⟹  u_tt = u_xx</div>
+      <div class="why"><b class="lab">Pourquoi ça marche</b>u = t/(t² − x²) = ½[1/(t − x) + 1/(t + x)] est de la forme F(t − x) + G(t + x) : c'est exactement la solution générale de l'équation des ondes (voir l'EDP 4). Et 1/r est le potentiel d'une charge ponctuelle : il est harmonique hors de la charge (cours d'électromagnétisme).</div>
+    </div></details>
+  </article>
+</section>
+
+<section class="cx-chap" id="edp" data-cat="edp">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 5</span>
+    <h2>Équations aux dérivées partielles (EDP)</h2>
+    <p>Idée unique : <b>intégrer une variable à la fois</b> (la « constante » dépend des autres variables), ou <b>changer de variables</b> pour se ramener à une EDP triviale. <a href="index.html#ch1-edp">Revoir la méthode (cours, ch. 1)</a></p>
+  </div>
+
+  <article class="cx" id="edp-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Intégrations successives</h3></header>
+    <div class="cx-enonce">Résoudre : 1) ∂²f/∂x² = 0 (f de x, y) ; 2) ∂²f/∂x∂y = 0 (f de x, y) ; 3) ∂³f/∂x∂y∂z = 0 (f de x, y, z).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>∂g/∂x = 0 sur un domaine « en tranches » (ℝ², un pavé…) ⟺ g ne dépend pas de x : g = C(y). On « remonte » ainsi dérivée par dérivée. Les constantes d'intégration sont des <b>fonctions arbitraires</b> des variables restantes.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) ∂/∂x(∂f/∂x) = 0  ⟹  ∂f/∂x = A(y)  ⟹  f(x, y) = A(y)·x + B(y)
+2) ∂/∂x(∂f/∂y) = 0  ⟹  ∂f/∂y = c(y)  ⟹  f(x, y) = G(y) + F(x)       (G primitive de c)
+3) ∂/∂x(∂²f/∂y∂z) = 0 ⟹ ∂²f/∂y∂z = φ(y, z)
+   ⟹ ∂f/∂z = Φ(y, z) + ψ(x, z)       (∂Φ/∂y = φ)
+   ⟹ f(x, y, z) = C(y, z) + B(x, z) + A(x, y)</div>
+      <div class="answer"><b class="lab">Réponse</b>1) f = A(y) x + B(y). 2) f = F(x) + G(y). 3) f = A(x, y) + B(x, z) + C(y, z), avec A, B, C, F, G quelconques (assez régulières).</div>
+      <div class="why"><b class="lab">Contrôle</b>Toujours redériver la solution : ∂²/∂x∂y [F(x) + G(y)] = ∂/∂x[G'(y)] = 0 ✓.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="edp-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>F(x, y) = f(y/x) : dérivées secondes et deux EDP</h3></header>
+    <div class="cx-enonce">f de classe C², u = y/x (x ≠ 0), F(x, y) = f(y/x). 1) Dérivées partielles secondes de F. 2) Trouver f telle que a) F<sub>xx</sub> + F<sub>yy</sub> = 0 ; b) F<sub>y</sub> F<sub>xx</sub> = F<sub>x</sub> F<sub>yy</sub>.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Règle de la chaîne : ∂F/∂x = f'(u)·∂u/∂x avec ∂u/∂x = −y/x², ∂u/∂y = 1/x. En redérivant, ne pas oublier que f'(u) dépend encore de x et y (→ f''(u)·∂u/∂·). Puis tout réécrire avec u = y/x : l'EDP devient une <b>équation différentielle ordinaire</b> en u.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1) Dérivées</div><div class="sd"><div class="calc">F_x = −(y/x²) f'(u)                  F_y = (1/x) f'(u)
+F_xx = (2y/x³) f'(u) + (y²/x⁴) f''(u)
+F_yy = (1/x²) f''(u)
+F_xy = F_yx = −(1/x²) f'(u) − (y/x³) f''(u)</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2a) F<sub>xx</sub> + F<sub>yy</sub> = 0</div><div class="sd">On multiplie par x² et on remplace y/x par u :<div class="calc">(1 + u²) f''(u) + 2u f'(u) = 0   ⟺   [(1 + u²) f'(u)]' = 0
+⟹ f'(u) = C/(1 + u²)  ⟹  f(u) = C arctan u + D</div>Donc F(x, y) = C arctan(y/x) + D : c'est C × (angle polaire θ) + D, la fonction harmonique « angle ».</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2b) F<sub>y</sub> F<sub>xx</sub> = F<sub>x</sub> F<sub>yy</sub></div><div class="sd"><div class="calc">(f'/x)[(2y/x³) f' + (y²/x⁴) f''] = −(y/x²) f' · (f''/x²)
+× x⁴ :  y f' [ 2 f' + (u + 1) f'' ] = 0</div>Soit f' ≡ 0 (f constante, qui convient), soit (1 + u) f'' + 2 f' = 0, c'est-à-dire [(1 + u)² f']' = 0 :<div class="calc">f'(u) = C/(1 + u)²   ⟹   f(u) = A/(1 + u) + D          (A = −C)
+F(x, y) = A x/(x + y) + D</div></div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Réponse</b>a) f(u) = C arctan u + D. b) f(u) = A/(1 + u) + D (les constantes comprises), soit F = Ax/(x + y) + D.</div>
+      <div class="why"><b class="lab">Contrôle de b)</b>F = x/(x + y) : F<sub>x</sub> = y/(x+y)², F<sub>y</sub> = −x/(x+y)², F<sub>xx</sub> = −2y/(x+y)³, F<sub>yy</sub> = 2x/(x+y)³ ; F<sub>y</sub>F<sub>xx</sub> = 2xy/(x+y)⁵ = F<sub>x</sub>F<sub>yy</sub> ✓.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="edp-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>EDP résolues en coordonnées polaires</h3></header>
+    <div class="cx-enonce">1) y ∂f/∂x − x ∂f/∂y = 0 ; 2) x ∂f/∂x + y ∂f/∂y = √(x² + y²).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Poser g(r, θ) = f(r cos θ, r sin θ). Deux identités à connaître : <b>∂g/∂θ = −y f<sub>x</sub> + x f<sub>y</sub></b> et <b>r ∂g/∂r = x f<sub>x</sub> + y f<sub>y</sub></b>. Les deux EDP deviennent triviales.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">∂g/∂r = f_x cos θ + f_y sin θ           ⟹  r ∂g/∂r = x f_x + y f_y
+∂g/∂θ = −r sin θ f_x + r cos θ f_y     ⟹  ∂g/∂θ = −y f_x + x f_y
+
+1)  y f_x − x f_y = −∂g/∂θ = 0  ⟹  g(r, θ) = φ(r)  ⟹  f(x, y) = φ(√(x² + y²))
+2)  r ∂g/∂r = r  ⟹  ∂g/∂r = 1  ⟹  g(r, θ) = r + ψ(θ)  ⟹  f(x, y) = √(x² + y²) + ψ(θ)</div>
+      <div class="answer"><b class="lab">Réponse</b>1) les fonctions <b>radiales</b> f = φ(x² + y²). 2) f = √(x² + y²) + ψ(θ), où ψ est une fonction quelconque de l'angle polaire (2π-périodique pour être définie sur ℝ² \ {0} ; sur x &gt; 0 on peut écrire ψ(θ) = h(y/x)).</div>
+      <div class="why"><b class="lab">Interprétation</b>y∂<sub>x</sub> − x∂<sub>y</sub> dérive « le long des cercles » : f est constante sur chaque cercle. x∂<sub>x</sub> + y∂<sub>y</sub> dérive « le long des rayons ».</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="edp-4">
+    <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Équation des ondes f<sub>xx</sub> = f<sub>yy</sub> (d'Alembert)</h3></header>
+    <div class="cx-enonce">Résoudre ∂²f/∂x² = ∂²f/∂y² avec le changement u = (x + y)/2, v = (x − y)/2.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Inverser le changement (x = u + v, y = u − v), poser g(u, v) = f(u + v, u − v), calculer g<sub>uv</sub> par la chaîne : l'EDP devient g<sub>uv</sub> = 0, déjà résolue à l'exercice 1.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">g(u, v) = f(u + v, u − v)
+g_u = f_x + f_y
+g_uv = ∂/∂v (f_x + f_y) = f_xx − f_xy + f_yx − f_yy = f_xx − f_yy        (Schwarz)
+f_xx = f_yy  ⟺  g_uv = 0  ⟺  g(u, v) = A(u) + B(v)
+f(x, y) = A((x + y)/2) + B((x − y)/2) = φ(x + y) + ψ(x − y)</div>
+      <div class="answer"><b class="lab">Réponse</b>f(x, y) = φ(x + y) + ψ(x − y), φ et ψ de classe C² quelconques : superposition de deux ondes qui se propagent en sens opposés.</div>
+    </div></details>
+  </article>
+</section>
+
+<section class="cx-chap" id="ope" data-cat="ope">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 6-7</span>
+    <h2>Opérateurs vectoriels</h2>
+    <p>Outils : grad, div, rot, laplacien, identités, <b>potentiel scalaire</b> (rot F = 0 sur un ouvert étoilé), <b>potentiel vecteur</b> (div F = 0). <a href="index.html#ch2">Revoir le cours (ch. 2)</a></p>
+  </div>
+
+  <article class="cx" id="ope-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Retrouver f à partir de son gradient</h3></header>
+    <div class="cx-enonce">1. ∇f = (y + ln(x + 1), x + 1 − e<sup>y</sup>) ; 2. ∇f = (4x³y² − 3y² + 8, 2x⁴y − 6xy − 1) ; 3. ∇f = ((1 − y)/(x + y + 1)², (2 + x)/(x + y + 1)²) ; 4. ∇f = (y²/(x + y)², x²/(x + y)²).</div>
+    <details class="cx-meth"><summary>💡 Méthode (4 temps)</summary><div>(1) Domaine et condition ∂P/∂y = ∂Q/∂x (sinon aucun f). (2) f = ∫P dx + C(y). (3) Dériver en y, identifier avec Q → C'(y) (qui ne doit plus dépendre de x). (4) Contrôler ∇f.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1. x > −1.  P_y = 1 = Q_x ✓
+   f = xy + (x+1) ln(x+1) − x + C(y)          (∫ ln(x+1) dx = (x+1)ln(x+1) − (x+1))
+   f_y = x + C'(y) = x + 1 − e^y  ⟹  C = y − e^y
+   f = xy + (x + 1) ln(x + 1) − x + y − e^y + K
+
+2. ℝ².  P_y = 8x³y − 6y = Q_x ✓
+   f = x⁴y² − 3xy² + 8x + C(y),   f_y = 2x⁴y − 6xy + C' ⟹ C' = −1
+   f = x⁴y² − 3xy² + 8x − y + K
+
+3. x + y + 1 ≠ 0 (deux demi-plans).  P_y = Q_x = (y − x − 3)/(x + y + 1)³ ✓
+   f = ∫ (1 − y)(x + y + 1)⁻² dx = (y − 1)/(x + y + 1) + C(y)
+   f_y = [(x + y + 1) − (y − 1)]/(x + y + 1)² + C' = (x + 2)/(x + y + 1)² + C'  ⟹ C' = 0
+   f = (y − 1)/(x + y + 1) + K
+
+4. x + y ≠ 0.  P_y = Q_x = 2xy/(x + y)³ ✓
+   f = −y²/(x + y) + C(y),  f_y = −(2xy + y²)/(x + y)² + C' = x²/(x + y)²  ⟹ C' = 1
+   f = y − y²/(x + y) + K = xy/(x + y) + K</div>
+      <div class="why"><b class="lab">Remarque</b>Pour 3 et 4, le domaine a deux composantes : la constante K peut être différente sur chacune.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="ope-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Divergences</h3></header>
+    <div class="cx-enonce">1. <b>A</b> = e<sup>−y</sup>(<b>e</b><sub>x</sub> − sin(x) <b>e</b><sub>y</sub>) ; 2. <b>A</b> = x²<b>e</b><sub>x</sub> + yz<b>e</b><sub>y</sub> + xy<b>e</b><sub>z</sub> ; 3. <b>A</b> = 5x² sin(πx/2) <b>e</b><sub>x</sub>, en x = 1.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1. A = (e^(−y), −sin x e^(−y), 0) :   div A = 0 + sin x e^(−y) = e^(−y) sin x
+2. div A = 2x + z + 0 = 2x + z
+3. div A = d/dx[5x² sin(πx/2)] = 10x sin(πx/2) + (5π/2) x² cos(πx/2)
+   en x = 1 : 10·1 + (5π/2)·0 = 10</div>
+      <div class="why"><b class="lab">Piège</b>div se lit « composante x dérivée en x + composante y dérivée en y + … » : ne jamais dériver la composante x par rapport à y.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="ope-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Un rotationnel</h3></header>
+    <div class="cx-enonce"><b>A</b> = y cos(ax) <b>e</b><sub>x</sub> + (y + e<sup>x</sup>) <b>e</b><sub>z</sub>. Calculer ∇ ∧ <b>A</b>.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">A = (y cos(ax), 0, y + e^x)
+rot A = (∂A_z/∂y − ∂A_y/∂z,  ∂A_x/∂z − ∂A_z/∂x,  ∂A_y/∂x − ∂A_x/∂y) = (1, −e^x, −cos(ax))</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="ope-4"><span id="ope-8"></span>
+    <header class="cx-hd"><span class="cx-num">Ex 4 = Ex 8</span><h3><b>F</b> = (x², y², z²) : divergence, rotationnel, champ de gradient</h3></header>
+    <div class="cx-enonce">Calculer div <b>F</b> et rot <b>F</b>, justifier que <b>F</b> est un champ de gradient. (L'exercice 8 de la feuille est identique.)</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">div F = 2x + 2y + 2z
+rot F = (∂(z²)/∂y − ∂(y²)/∂z, ∂(x²)/∂z − ∂(z²)/∂x, ∂(y²)/∂x − ∂(x²)/∂y) = (0, 0, 0)</div>
+      <p>F est C¹ sur ℝ³, ouvert <b>étoilé</b>, et rot F = 0 : F dérive d'un potentiel (théorème de primitivation). On le trouve à vue : <b>f = (x³ + y³ + z³)/3 + C</b> (contrôle ∇f = F ✓).</p>
+    </div></details>
+  </article>
+
+  <article class="cx" id="ope-5">
+    <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Φ = x²yz³ et <b>A</b> = (xz, −y², 2x²y) : 8 calculs + 4 identités</h3></header>
+    <div class="cx-enonce">1. a) grad Φ, b) div <b>A</b>, c) rot <b>A</b>, d) ΔΦ, e) div(Φ<b>A</b>), f) rot(Φ<b>A</b>), g) rot(grad Φ), h) div(rot <b>A</b>). 2. Vérifier : div(p<b>u</b>) = p div <b>u</b> + <b>u</b>·grad p ; rot(p<b>u</b>) = p rot <b>u</b> + grad p ∧ <b>u</b> ; rot(grad p) = 0 ; div(rot <b>u</b>) = 0.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Pour e) et f), deux chemins : calcul direct sur Φ<b>A</b> = (x³yz⁴, −x²y³z³, 2x⁴y²z³), ou formules du 2. Faire les deux = contrôle gratuit.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">a) grad Φ = (2xyz³, x²z³, 3x²yz²)
+b) div A = z − 2y
+c) rot A = (∂(2x²y)/∂y − ∂(−y²)/∂z, ∂(xz)/∂z − ∂(2x²y)/∂x, ∂(−y²)/∂x − ∂(xz)/∂y) = (2x², x − 4xy, 0)
+d) ΔΦ = 2yz³ + 0 + 6x²yz
+e) div(ΦA) = 3x²yz⁴ − 3x²y²z³ + 6x⁴y²z²
+   (= Φ div A + A·grad Φ = x²yz³(z − 2y) + 2x²yz⁴ − x²y²z³ + 6x⁴y²z² ✓)
+f) rot(ΦA) = (4x⁴yz³ + 3x²y³z², 4x³yz³ − 8x³y²z³, −2xy³z³ − x³z⁴)
+   (= Φ rot A + grad Φ ∧ A ✓)
+g) rot(grad Φ) = (3x²z² − 3x²z², 6xyz² − 6xyz², 2xz³ − 2xz³) = 0
+h) div(rot A) = ∂(2x²)/∂x + ∂(x − 4xy)/∂y + 0 = 4x − 4x = 0</div>
+      <h4>2. Preuves des identités (p, u de classe C²)</h4>
+      <div class="calc">div(p u) = Σ ∂(p u_i)/∂x_i = Σ (p ∂u_i/∂x_i + u_i ∂p/∂x_i) = p div u + u·grad p
+rot(p u)_x = ∂(p u₃)/∂y − ∂(p u₂)/∂z = p(∂u₃/∂y − ∂u₂/∂z) + (p_y u₃ − p_z u₂)
+           = p (rot u)_x + (grad p ∧ u)_x        (idem pour y et z par permutation)
+rot(grad p) = (p_zy − p_yz, p_xz − p_zx, p_yx − p_xy) = 0            (Schwarz)
+div(rot u) = ∂x(∂y u₃ − ∂z u₂) + ∂y(∂z u₁ − ∂x u₃) + ∂z(∂x u₂ − ∂y u₁) = 0   (Schwarz)</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="ope-6">
+    <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Champ de gradients avec des fractions</h3></header>
+    <div class="cx-enonce"><b>F</b> = (x + z/(x²y), y + z/(xy²), z − 1/(xy)). 1. rot <b>F</b>, en déduire que <b>F</b> est un champ de gradients. 2. Trouver f.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">Domaine : xy ≠ 0 (4 « quarts d'espace », chacun convexe donc étoilé)
+R_y = 1/(xy²) = Q_z ;   P_z = 1/(x²y) = R_x ;   Q_x = −z/(x²y²) = P_y    ⟹  rot F = 0
+f = ∫ P dx = x²/2 − z/(xy) + C(y, z)
+f_y = z/(xy²) + C_y = y + z/(xy²)  ⟹  C = y²/2 + D(z)
+f_z = −1/(xy) + D'(z) = z − 1/(xy)  ⟹  D = z²/2
+f = (x² + y² + z²)/2 − z/(xy) + K</div>
+      <div class="why"><b class="lab">Rédaction</b>Écrire « F est C¹ et rot F = 0 sur chacun des quarts d'espace, qui sont étoilés : F y dérive d'un potentiel ». Sans l'hypothèse « étoilé », rot F = 0 ne suffit pas (voir Ex 7).</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="ope-7">
+    <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Potentiel d'un champ défini hors de l'axe Oz</h3></header>
+    <div class="cx-enonce"><b>F</b> = (−2xz³/(x² + y²)², −2yz³/(x² + y²)², 1 + 3z²/(x² + y²)). Montrer que <b>F</b> est un champ de gradient et trouver un potentiel Φ.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Le domaine ℝ³ privé de l'axe Oz <b>n'est pas étoilé</b> : le théorème ne s'applique pas directement. On calcule rot <b>F</b> (condition nécessaire), puis on <b>construit</b> Φ : exhiber un potentiel prouve à lui seul que <b>F</b> est un gradient.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">R_y = −6yz²/(x²+y²)² = Q_z ;  P_z = −6xz²/(x²+y²)² = R_x ;  P_y = Q_x = 8xyz³/(x²+y²)³  ⟹ rot F = 0
+Φ = ∫ R dz = z + z³/(x² + y²) + C(x, y)
+Φ_x = −2xz³/(x²+y²)² + C_x = P  ⟹  C_x = 0 ; de même C_y = 0
+Φ(x, y, z) = z + z³/(x² + y²) + K</div>
+      <p>Commencer par <b>z</b> est plus simple ici (la 3<sup>e</sup> composante est la plus facile à primitiver).</p>
+    </div></details>
+  </article>
+
+  <article class="cx" id="ope-9">
+    <header class="cx-hd"><span class="cx-num">Ex 9</span><h3>Potentiel scalaire d'un champ polynomial</h3></header>
+    <div class="cx-enonce"><b>F</b> = (3x² + 3y − 1, z² + 3x, 2yz + 1). 1. Montrer que <b>F</b> dérive d'un potentiel. 2. Le trouver.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">rot F = (2z − 2z, 0 − 0, 3 − 3) = 0 sur ℝ³ (étoilé) ⟹ F = ∇f
+f = x³ + 3xy − x + C(y, z) ;   f_y = 3x + C_y = z² + 3x ⟹ C = yz² + D(z)
+f_z = 2yz + D' = 2yz + 1 ⟹ D = z
+f = x³ + 3xy − x + yz² + z + K</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="ope-10">
+    <header class="cx-hd"><span class="cx-num">Ex 10</span><h3>Potentiel vecteur : <b>F</b> = rot <b>G</b></h3></header>
+    <div class="cx-enonce"><b>F</b> = (yz, −xy, x² + xz). 1. Montrer que <b>F</b> est un champ de rotationnels. 2. Trouver <b>G</b> = (X, Y, 0) tel que <b>F</b> = rot <b>G</b>.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Condition : div <b>F</b> = 0 sur un ouvert étoilé. Avec <b>G</b> = (X, Y, 0) : rot <b>G</b> = (−∂Y/∂z, ∂X/∂z, ∂Y/∂x − ∂X/∂y). On intègre les deux premières équations en z, puis on règle la troisième avec les « constantes » (fonctions de x, y).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">div F = 0 + (−x) + x = 0 sur ℝ³ (étoilé) ⟹ F est un champ de rotationnels
+−∂Y/∂z = yz   ⟹  Y = −yz²/2 + a(x, y)
+ ∂X/∂z = −xy  ⟹  X = −xyz + b(x, y)
+∂Y/∂x − ∂X/∂y = a_x − (−xz + b_y) = x² + xz  ⟹  a_x − b_y = x²  → on choisit b = 0, a = x³/3
+G = (−xyz, x³/3 − yz²/2, 0)</div>
+      <p>Contrôle : rot <b>G</b> = (−(−yz), −xy, x² − (−xz)) = (yz, −xy, x² + xz) ✓. <b>G</b> n'est pas unique : on peut lui ajouter n'importe quel gradient.</p>
+    </div></details>
+  </article>
+</section>
+
+<section class="cx-chap" id="csf" data-cat="csf">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 8-9</span>
+    <h2>Courbes, surfaces, solides</h2>
+    <p>Outils : paramétrer segments et contours, droite intersection de deux plans, <b>complétion du carré</b> pour reconnaître coniques, sphères et quadriques. <a href="index.html#ch3">Revoir le cours (ch. 3)</a> · <a href="index.html#ch3-quadriques">Tableau des quadriques</a></p>
+  </div>
+
+  <article class="cx" id="csf-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Contour d'un rectangle orienté</h3></header>
+    <div class="cx-enonce">Paramétrer le contour du rectangle ABCD, sens direct : A(2, 1), B(−1, 1), C(−1, −1), D(2, −1).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Un contour polygonal = une paramétrisation <b>par segment</b> : [PQ] : t ↦ P + t(Q − P), t ∈ [0, 1]. Vérifier le sens : A (en haut à droite) → B (en haut à gauche) → C → D, c'est bien le sens inverse des aiguilles d'une montre.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">[AB] : (2 − 3t, 1)        t ∈ [0, 1]
+[BC] : (−1, 1 − 2t)
+[CD] : (−1 + 3t, −1)
+[DA] : (2, −1 + 2t)</div>
+      <p>Variante en un seul paramètre t ∈ [0, 4] : on enchaîne ces quatre formules en remplaçant t par t, t − 1, t − 2, t − 3 sur chaque intervalle. Le rectangle a pour côtés 3 et 2 (périmètre 10).</p>
+    </div></details>
+  </article>
+
+  <article class="cx" id="csf-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Droite, demi-droite, segment</h3></header>
+    <div class="cx-enonce">Ensemble des points (2 − 2t, −3 + t) pour 1. t ∈ ℝ ; 2. t ∈ ℝ₊ ; 3. t ∈ [−1, 2]. Représenter.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <p>Point M₀ = (2, −3) (t = 0) et vecteur directeur <b>d</b> = (−2, 1). En éliminant t = y + 3 : x = 2 − 2(y + 3), soit <b>x + 2y + 4 = 0</b>.</p>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">t ∈ ℝ</div><div class="sd">La <b>droite</b> x + 2y + 4 = 0 entière.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">t ≥ 0</div><div class="sd">La <b>demi-droite</b> d'origine (2, −3) dirigée par (−2, 1) (vers le haut à gauche).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">t ∈ [−1, 2]</div><div class="sd">Le <b>segment</b> de (4, −4) (t = −1) à (−2, −1) (t = 2).</div></div></li>
+      </ol>
+    </div></details>
+  </article>
+
+  <article class="cx" id="csf-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Droite intersection de deux plans</h3></header>
+    <div class="cx-enonce">Paramétrer l'intersection des plans 2x − y + z − 1 = 0 et x + y + z = 0.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Direction = produit vectoriel des deux normales ; un point = résoudre le système en fixant une coordonnée (par ex. z = 0). Autre méthode : poser z = t et résoudre en x, y.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">d = (2, −1, 1) ∧ (1, 1, 1) = (−1 − 1, 1 − 2, 2 + 1) = (−2, −1, 3)
+z = 0 : 2x − y = 1 et x + y = 0 ⟹ x = 1/3, y = −1/3
+D : (x, y, z) = (1/3 − 2t, −1/3 − t, 3t),  t ∈ ℝ</div>
+      <p>Avec z = t : x = (1 − 2t)/3, y = −(1 + t)/3 — même droite (paramètre différent).</p>
+    </div></details>
+  </article>
+
+  <article class="cx" id="csf-4">
+    <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Reconnaître une conique (complétion du carré)</h3></header>
+    <div class="cx-enonce">Nature, équation réduite, représentation et paramétrisation de : 1. 4x² + 9y² − 6x − 4y = 223/36 ; 2. 6x² + y² − x + 4y = 0.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div><b>Compléter les carrés</b> : ax² + bx = a(x + b/2a)² − b²/4a. Sans terme en xy : x² et y² de même signe → ellipse (ou cercle, point, vide) ; de signes opposés → hyperbole ; un seul carré → parabole. Puis diviser pour obtenir X²/α² + Y²/β² = 1 et paramétrer (x₀ + α cos t, y₀ + β sin t).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <h4>1.</h4>
+      <div class="calc">4x² − 6x = 4(x − 3/4)² − 9/4          9y² − 4y = 9(y − 2/9)² − 4/9
+4(x − 3/4)² + 9(y − 2/9)² = 223/36 + 9/4 + 4/9 = 223/36 + 97/36 = 80/9
+(x − 3/4)²/(20/9) + (y − 2/9)²/(80/81) = 1</div>
+      <p><b>Ellipse</b> de centre (3/4, 2/9), demi-axes a = √20/3 = 2√5/3 ≈ 1,49 (horizontal) et b = √80/9 = 4√5/9 ≈ 0,99 (vertical). Paramétrisation : (3/4 + (2√5/3) cos t, 2/9 + (4√5/9) sin t), t ∈ [0, 2π].</p>
+      <h4>2.</h4>
+      <div class="calc">6x² − x = 6(x − 1/12)² − 1/24          y² + 4y = (y + 2)² − 4
+6(x − 1/12)² + (y + 2)² = 4 + 1/24 = 97/24
+(x − 1/12)²/(97/144) + (y + 2)²/(97/24) = 1</div>
+      <p><b>Ellipse</b> de centre (1/12, −2), demi-axes √97/12 ≈ 0,82 (horizontal) et √(97/24) ≈ 2,01 (vertical, grand axe). Paramétrisation : (1/12 + (√97/12) cos t, −2 + √(97/24) sin t).</p>
+      <div class="why"><b class="lab">Contrôle</b>Les deux paramétrisations ont été réinjectées dans les équations de départ (vérification numérique ✓). Réflexe : la deuxième conique passe par l'origine (pas de terme constant).</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="csf-5">
+    <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Équations d'une sphère et d'une boule</h3></header>
+    <div class="cx-enonce">Sphère et boule de centre C(a, b, c), rayon R : 1. (2, −1, 0), R = 3 ; 2. (0, 1, 2), R = √5.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">Sphère : (x − a)² + (y − b)² + (z − c)² = R²        Boule (fermée) : … ≤ R²
+1. (x − 2)² + (y + 1)² + z² = 9      ⟺ x² + y² + z² − 4x + 2y − 4 = 0      (boule : ≤ 9)
+2. x² + (y − 1)² + (z − 2)² = 5      ⟺ x² + y² + z² − 2y − 4z = 0          (boule : ≤ 5)</div>
+      <p>La sphère 2 passe par l'origine (0 + 1 + 4 = 5).</p>
+    </div></details>
+  </article>
+
+  <article class="cx" id="csf-6">
+    <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Centre et rayon d'une sphère</h3></header>
+    <div class="cx-enonce">1. x² + y² + z² − 2x + 4y − 6z = 0 ; 2. 2x² + 2y² + 2z² + 4x + y + z + 2 = 0.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Diviser par le coefficient de x² (s'il n'est pas 1), compléter les trois carrés ; si le second membre est &gt; 0 c'est une sphère (= 0 : un point, &lt; 0 : vide).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1. (x − 1)² + (y + 2)² + (z − 3)² = 1 + 4 + 9 = 14
+   centre (1, −2, 3), rayon √14
+   param : (1 + √14 sin φ cos θ, −2 + √14 sin φ sin θ, 3 + √14 cos φ), θ ∈ [0, 2π], φ ∈ [0, π]
+
+2. ÷ 2 : x² + y² + z² + 2x + y/2 + z/2 + 1 = 0
+   (x + 1)² + (y + 1/4)² + (z + 1/4)² = 1 + 1/16 + 1/16 − 1 = 1/8
+   centre (−1, −1/4, −1/4), rayon 1/(2√2) = √2/4 ≈ 0,354</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="csf-7">
+    <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Identifier et paramétrer des quadriques</h3></header>
+    <div class="cx-enonce">1. 3(z − 2) = x² + y² ; 2. x² + y² + z² + 4x − 3y + z + 1 ≤ 0 ; 3. y² + z² + 2z = x ; 4. 3x² + 3z² = y − 1 ; 5. (x − 1)² + y² ≤ 3(z + 1)².</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Repérer la variable « à part » (celle qui n'est pas au carré ou qui joue le rôle de l'axe) : une somme de deux carrés = une <b>variable du premier degré</b> → paraboloïde ; = un <b>carré</b> → cône ; les trois carrés de même signe → sphère/ellipsoïde. Compléter les carrés pour trouver le sommet/centre, puis paramétrer en « cylindriques autour du bon axe ».</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. z = 2 + (x² + y²)/3</div><div class="sd"><b>Paraboloïde de révolution</b> d'axe Oz, sommet (0, 0, 2), ouvert vers le haut. Param : (r cos θ, r sin θ, 2 + r²/3), r ≥ 0, θ ∈ [0, 2π].</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. (x + 2)² + (y − 3/2)² + (z + 1/2)² ≤ 4 + 9/4 + 1/4 − 1 = 11/2</div><div class="sd"><b>Boule</b> de centre (−2, 3/2, −1/2) et de rayon √(11/2) ≈ 2,35. Param : (−2 + ρ sin φ cos θ, 3/2 + ρ sin φ sin θ, −1/2 + ρ cos φ), ρ ∈ [0, √(11/2)].</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. x + 1 = y² + (z + 1)²</div><div class="sd"><b>Paraboloïde de révolution</b> d'axe la droite (y = 0, z = −1), parallèle à Ox, sommet (−1, 0, −1), ouvert vers les x croissants. Param : (−1 + r², r cos θ, −1 + r sin θ).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">4. y = 1 + 3(x² + z²)</div><div class="sd"><b>Paraboloïde</b> d'axe Oy, sommet (0, 1, 0), ouvert vers les y croissants. Param : (r cos θ, 1 + 3r², r sin θ).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">5. √((x − 1)² + y²) ≤ √3 |z + 1|</div><div class="sd"><b>Cône plein</b> (deux nappes) d'axe la verticale x = 1, y = 0, de sommet (1, 0, −1), de demi-angle 60° (tan α = √3). Param : (1 + r cos θ, r sin θ, z) avec 0 ≤ r ≤ √3 |z + 1|, θ ∈ [0, 2π], z ∈ ℝ.</div></div></li>
+      </ol>
+    </div></details>
+  </article>
+</section>
+
+<section class="cx-chap" id="imu" data-cat="imu">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 10-11</span>
+    <h2>Intégrales multiples (doubles, triples)</h2>
+    <p>Outils : Fubini (bornes intérieures variables, extérieures constantes), séparation des variables, <b>symétries</b>, polaires (r dr dθ), cylindriques (r dr dθ dz), sphériques (r² sin φ dr dφ dθ), changement affine (ellipse, ellipsoïde). <a href="index.html#ch4">Revoir le cours (ch. 4)</a></p>
+  </div>
+
+  <article class="cx" id="imu-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Six intégrales sur le carré [0, 1]²</h3></header>
+    <div class="cx-enonce">1) ∬(x³ + y²) ; 2) ∬ y e<sup>xy</sup> ; 3) ∬ (xy)² cos x³ ; 4) ∬ ln[(x + 1)(y + 1)] ; 5) ∬ x<sup>m</sup> y<sup>n</sup> (m, n &gt; 0) ; 6) ∬ sin(x + y).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Sur un rectangle : si l'intégrande est un <b>produit</b> f(x)g(y), l'intégrale double est le produit des intégrales simples ; si c'est une <b>somme</b>, on sépare. Sinon choisir l'ordre qui rend la première primitive immédiate (2 : intégrer d'abord en x, car y e<sup>xy</sup> = ∂/∂x(e<sup>xy</sup>)).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) ∫∫ x³ + ∫∫ y² = 1/4 + 1/3 = 7/12
+2) ∫₀¹ ( ∫₀¹ y e^(xy) dx ) dy = ∫₀¹ [e^(xy)]ₓ₌₀¹ dy = ∫₀¹ (e^y − 1) dy = e − 2
+3) ∫₀¹ y² dy · ∫₀¹ x² cos(x³) dx = (1/3) · [sin(x³)/3]₀¹ = sin(1)/9
+4) ln[(x+1)(y+1)] = ln(x+1) + ln(y+1)  ⟹  2 ∫₀¹ ln(x+1) dx = 2[(x+1)ln(x+1) − (x+1)]₀¹ = 4 ln 2 − 2
+5) ∫₀¹ x^m dx · ∫₀¹ y^n dy = 1/((m+1)(n+1))
+6) ∫₀¹ [−cos(x+y)]ₓ₌₀¹ dy = ∫₀¹ (cos y − cos(y+1)) dy = [sin y − sin(y+1)]₀¹ = 2 sin 1 − sin 2</div>
+      <div class="answer"><b class="lab">Valeurs</b>7/12 ≈ 0,583 ; e − 2 ≈ 0,718 ; sin 1/9 ≈ 0,093 ; 4 ln 2 − 2 ≈ 0,773 ; 1/((m+1)(n+1)) ; 2 sin 1 − sin 2 ≈ 0,774.</div>
+      <div class="why"><b class="lab">Piège (2)</b>Commencer par y oblige à une intégration par parties : l'ordre d'intégration est un choix, pas une fatalité.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>∬(x² + y²) sur un triangle</h3></header>
+    <div class="cx-enonce">D : région bornée par les demi-axes positifs et la droite 3x + 4y = 10. Calculer ∬<sub>D</sub>(x² + y²) dxdy.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Dessiner : triangle de sommets (0, 0), (10/3, 0), (0, 5/2). Type 1 : 0 ≤ x ≤ 10/3, 0 ≤ y ≤ (10 − 3x)/4.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">∬ x² = ∫₀^(10/3) x² (10 − 3x)/4 dx = ¼ [10x³/3 − 3x⁴/4]₀^(10/3) = ¼ (10000/81 − 7500/81) = 625/81
+∬ y² = ∫₀^(10/3) ⅓ ((10 − 3x)/4)³ dx = (1/192) ∫₀^(10/3) (10 − 3x)³ dx = (1/576) ∫₀^10 w³ dw = 625/144
+I = 625/81 + 625/144 = 15625/1296 ≈ 12,06</div>
+      <div class="why"><b class="lab">Contrôle express</b>Pour un triangle rectangle de côtés a (sur Ox) et b (sur Oy) : ∬x² = a³b/12 et ∬y² = ab³/12. Avec a = 10/3, b = 5/2 on retrouve 625/81 et 625/144.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Demi-disque, disque décentré, quart de couronne</h3></header>
+    <div class="cx-enonce">1. f = y/(x² + 1) sur D = {x ≥ 0, x² + y² ≤ 1} ; 2. f = x²y sur D = {y ≥ 0, x² + y² − 2x ≤ 0} ; 3. f = xy/(x² + y²) sur D = {x ≥ 0, y ≥ 0, 1 ≤ x² + y² ≤ 4}.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>1. Regarder les <b>symétries avant de calculer</b>. 2. x² + y² ≤ 2x est le disque de centre (1, 0) et de rayon 1 ; en polaires (centrées en O) il s'écrit <b>r ≤ 2 cos θ</b>, θ ∈ [−π/2, π/2]. 3. Couronne → polaires.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. Symétrie : 0</div><div class="sd">D est symétrique par rapport à l'axe Ox (y ↦ −y) et f est impaire en y : <b>I = 0</b>.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. Polaires, r ≤ 2 cos θ, θ ∈ [0, π/2] (y ≥ 0)</div><div class="sd"><div class="calc">I = ∫₀^(π/2) ∫₀^(2cosθ) r²cos²θ · r sinθ · r dr dθ = ∫₀^(π/2) cos²θ sinθ · (2cosθ)⁵/5 dθ
+  = (32/5) ∫₀^(π/2) cos⁷θ sinθ dθ = (32/5) [−cos⁸θ/8]₀^(π/2) = 4/5</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. Polaires : f = cos θ sin θ</div><div class="sd"><div class="calc">I = ∫₀^(π/2) cosθ sinθ dθ · ∫₁² r dr = ½ · 3/2 = 3/4</div></div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Réponse</b>1) 0. 2) 4/5. 3) 3/4.</div>
+      <div class="why"><b class="lab">Piège (2)</b>Écrire r ≤ 1 en polaires centrées en O : faux, le disque n'est pas centré en O. Soit on écrit r ≤ 2 cos θ, soit on pose x = 1 + ρ cos θ, y = ρ sin θ.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-4">
+    <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Région entre deux paraboles</h3></header>
+    <div class="cx-enonce">∬<sub>D</sub> y² √x dxdy, D = {x &gt; 0, x² &lt; y &lt; 10 − x²}.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Les paraboles se coupent en x² = 10 − x², soit x = √5. Type 1 (x d'abord fixé, y entre les deux courbes) ; puis développer (10 − x²)³ et intégrer terme à terme les puissances de x.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">I = ∫₀^√5 √x [y³/3]_{x²}^{10−x²} dx = ⅓ ∫₀^√5 x^(1/2) (1000 − 300x² + 30x⁴ − 2x⁶) dx
+  = ⅓ [ (2000/3) x^(3/2) − (600/7) x^(7/2) + (60/11) x^(11/2) − (4/15) x^(15/2) ]₀^√5
+avec x^(3/2) = 5^(3/4) = s, x^(7/2) = 5s, x^(11/2) = 25s, x^(15/2) = 125s :
+I = (s/3)(2000/3 − 3000/7 + 1500/11 − 100/3) = (s/3) · 78800/231 = (78800/693) · 5^(3/4) ≈ 380,2</div>
+      <div class="why"><b class="lab">Organisation du calcul</b>Factoriser par s = 5<sup>3/4</sup> dès le départ évite les racines partout. Valeur vérifiée numériquement.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-5">
+    <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>∬ xy sur un triangle, un quart d'ellipse, une ellipse</h3></header>
+    <div class="cx-enonce">1) D = {x, y ≥ 0, x + y ≤ 1} ; 2) D = {x, y ≥ 0, x²/a² + y²/b² ≤ 1} ; 3) D = {x²/a² + y²/b² ≤ 1}.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Ellipse → <b>polaires « étirées »</b> : x = a r cos θ, y = b r sin θ, jacobien <b>a b r</b>, et l'ellipse devient r ≤ 1.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) ∫₀¹ x ∫₀^(1−x) y dy dx = ∫₀¹ x(1 − x)²/2 dx = ½ (1/2 − 2/3 + 1/4) = 1/24
+2) ∫₀^(π/2) ∫₀¹ (ar cosθ)(br sinθ) · ab r dr dθ = a²b² · ∫₀¹ r³ dr · ∫₀^(π/2) cosθ sinθ dθ = a²b² · ¼ · ½ = a²b²/8
+3) ellipse entière symétrique par x ↦ −x et xy impaire en x : 0</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-6">
+    <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Trois intégrales triples : cube, cylindre, cône</h3></header>
+    <div class="cx-enonce">1) x²y e<sup>xyz</sup> sur [0, 1]³ ; 2) z² sur {x² + y² ≤ 1, 0 ≤ z ≤ 1} ; 3) x²z sur {x² + y² ≤ z², 0 ≤ z ≤ 1}.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>1) Intégrer d'abord en <b>z</b> : x²y e<sup>xyz</sup> = x · ∂/∂z(e<sup>xyz</sup>). 2) Cylindre → l'intégrande ne dépend que de z : aire de la section × ∫ z². 3) Cône → cylindriques, r ≤ z.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) ∫₀¹ x²y e^(xyz) dz = x (e^(xy) − 1)
+   ∫₀¹ x (e^(xy) − 1) dy = (e^x − 1) − x
+   ∫₀¹ (e^x − 1 − x) dx = e − 1 − 1 − ½ = e − 5/2 ≈ 0,218
+2) ∭ z² = π (aire du disque) × ∫₀¹ z² dz = π/3
+3) ∫₀¹ ∫₀^(2π) ∫₀^z r² cos²θ · z · r dr dθ dz = ∫₀¹ z · π · z⁴/4 dz = π/24</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-7">
+    <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Boule, ellipsoïde, cornet de glace</h3></header>
+    <div class="cx-enonce">1) x + y + z sur la boule x² + y² + z² ≤ R² ; 2) (3x + 2y + z)² sur 9x² + 4y² + z² ≤ 1 ; 3) z sur {x² + y² ≤ z², x² + y² + z² ≤ 1, z ≥ 0}.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>1) Symétries. 2) Changement u = 3x, v = 2y, w = z qui envoie l'ellipsoïde sur la boule unité (dxdydz = dudvdw/6), puis symétries pour tuer les termes croisés. 3) Sphériques : le cône x² + y² ≤ z², z ≥ 0 est φ ≤ π/4.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) Boule symétrique par x ↦ −x, y ↦ −y, z ↦ −z : ∭ x = ∭ y = ∭ z = 0  ⟹  I = 0
+2) (u + v + w)² = u² + v² + w² + 2(uv + vw + wu) ; les termes croisés sont impairs ⟹ 0
+   I = (1/6) ∭_boule (u² + v² + w²) = (1/6) ∫₀¹ r² · 4πr² dr = (1/6)(4π/5) = 2π/15
+3) I = ∫₀^(2π) ∫₀^(π/4) ∫₀¹ (r cos φ) r² sin φ dr dφ dθ = 2π · ¼ · [sin²φ/2]₀^(π/4) = 2π · ¼ · ¼ = π/8</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-8">
+    <header class="cx-hd"><span class="cx-num">Ex 8</span><h3>Volume délimité par un paraboloïde</h3></header>
+    <div class="cx-enonce">Volume du solide délimité par z = x² + y², z = 0 et z = 10.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>L'énoncé est ambigu : solide <b>au-dessus</b> du paraboloïde (x² + y² ≤ z ≤ 10) ou <b>en dessous</b> (0 ≤ z ≤ x² + y², pour x² + y² ≤ 10). On traite les deux : même résultat !</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">Au-dessus (par tranches) : V = ∫₀^10 aire{r² ≤ z} dz = ∫₀^10 π z dz = 50π
+En dessous (polaires) : V = ∬_{r ≤ √10} r² · r dr dθ = 2π · [r⁴/4]₀^√10 = 50π</div>
+      <div class="answer"><b class="lab">Réponse</b>V = 50π ≈ 157,1. Les deux solides partagent le cylindre r ≤ √10, 0 ≤ z ≤ 10 de volume 100π en deux moitiés égales.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-9">
+    <header class="cx-hd"><span class="cx-num">Ex 9</span><h3>Calotte sphérique</h3></header>
+    <div class="cx-enonce">Volume de {x² + y² + z² ≤ 10, z ≥ 2}.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Par <b>tranches horizontales</b> : à la hauteur z, la section est un disque de rayon² 10 − z², pour z ∈ [2, √10].</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">V = ∫₂^√10 π(10 − z²) dz = π [10z − z³/3]₂^√10 = π (20√10/3 − 52/3) = (π/3)(20√10 − 52) ≈ 11,78</div>
+      <p>Contrôle avec la formule de la calotte πh²(3R − h)/3, R = √10, h = √10 − 2 : même valeur ✓.</p>
+    </div></details>
+  </article>
+
+  <article class="cx" id="imu-10">
+    <header class="cx-hd"><span class="cx-num">Ex 10</span><h3>Tétraèdres et quart de cylindre</h3></header>
+    <div class="cx-enonce">1) x² + y² + z² sur le tétraèdre x + y + z ≤ 1, x, y, z ≥ 0 ; 2) z sur le quart de cylindre {x² + y² ≤ 1, x, y ≥ 0, 0 ≤ z ≤ 1} ; 3) z sur {x, y, z ≥ 0, x + y + z ≤ a}.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Tétraèdre : les trois variables jouent le même rôle → ∭(x² + y² + z²) = 3∭x². Et « par tranches » : à x fixé, la section {y, z ≥ 0, y + z ≤ 1 − x} est un triangle d'aire (1 − x)²/2.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) ∭ x² = ∫₀¹ x² (1 − x)²/2 dx = ½ (1/3 − 1/2 + 1/5) = 1/60    ⟹  I = 3/60 = 1/20
+2) aire de la base π/4 × ∫₀¹ z dz = π/4 · ½ = π/8
+3) section à hauteur z : triangle d'aire (a − z)²/2
+   I = ∫₀^a z (a − z)²/2 dz = ½ (a⁴/2 − 2a⁴/3 + a⁴/4) = a⁴/24</div>
+    </div></details>
+  </article>
+</section>
+
+<section class="cx-chap" id="cur" data-cat="cur">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 12</span>
+    <h2>Intégrales curvilignes</h2>
+    <p>Trois réflexes, dans cet ordre : <b>1.</b> la forme est-elle <b>exacte</b> (∂P/∂y = ∂Q/∂x, on devine un potentiel) ? → différence de potentiel, 0 sur une courbe fermée ; <b>2.</b> courbe <b>fermée</b> et forme régulière à l'intérieur → <b>Green-Riemann</b> ; <b>3.</b> sinon, <b>paramétrer</b> : x = x(t), dx = x'(t) dt… <a href="index.html#ch5">Revoir le cours (ch. 5)</a></p>
+  </div>
+
+  <article class="cx" id="cur-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>x dx + y² dy + z³ dz le long de trois chemins</h3></header>
+    <div class="cx-enonce">1) c(t) = (t, t, t), t ∈ [0, 1] ; 2) c(t) = (cos t, sin t, 0), t ∈ [0, π] ; 3) c(t) = (t², 3t, 2t³), t ∈ [−1, 2].</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Les variables sont séparées : chaque terme est la différentielle d'une fonction d'une seule variable. La forme est <b>exacte</b>, de potentiel Φ = x²/2 + y³/3 + z⁴/4. Alors ∫<sub>C</sub> ω = Φ(arrivée) − Φ(départ) : on n'a même pas besoin de dériver la paramétrisation.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) de (0,0,0) à (1,1,1) :  Φ(1,1,1) − Φ(0,0,0) = 1/2 + 1/3 + 1/4 = 13/12
+2) de (1,0,0) à (−1,0,0) :  Φ = x²/2 prend la même valeur 1/2 aux deux bouts  ⟹  0
+3) c(−1) = (1, −3, −2), c(2) = (4, 6, 16)
+   Φ(4, 6, 16) = 8 + 72 + 16384 = 16464     Φ(1, −3, −2) = 1/2 − 9 + 4 = −9/2
+   ⟹  16464 + 9/2 = 32937/2 = 16468,5</div>
+      <div class="why"><b class="lab">Contrôle par paramétrage</b>(1) x = y = z = t : ∫₀¹ (t + t² + t³) dt = 1/2 + 1/3 + 1/4 ✓. (3) x dx = 2t³ dt, y² dy = 27t² dt, z³ dz = 48t¹¹ dt : ∫<sub>−1</sub><sup>2</sup> = 15/2 + 81 + 16380 = 32937/2 ✓. Même résultat, mais le potentiel évite les grosses puissances.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="cur-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>(x − y)dx + (x + y)dy sur le demi-cercle supérieur</h3></header>
+    <div class="cx-enonce">C : demi-cercle supérieur (centre O, rayon R ; R = 1 si non précisé) orienté dans le sens direct.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>∂P/∂y = −1 ≠ ∂Q/∂x = 1 : pas exacte. Courbe non fermée : on <b>paramètre</b> x = R cos t, y = R sin t, t de 0 à π (sens direct = de (R, 0) vers (−R, 0) par le haut).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">dx = −R sin t dt, dy = R cos t dt
+(x − y)dx + (x + y)dy = R²[ −(cos t − sin t) sin t + (cos t + sin t) cos t ] dt
+                      = R²[ sin²t + cos²t ] dt = R² dt
+∫_C ω = ∫₀^π R² dt = πR²      (= π pour le cercle unité)</div>
+      <div class="why"><b class="lab">Vérification avec Green</b>On ferme par le segment [−R, R] (y = 0, dy = 0 : ω = x dx, contribution ∫<sub>−R</sub><sup>R</sup> x dx = 0). Green : ∬(∂Q/∂x − ∂P/∂y) = ∬ 2 = 2 × πR²/2 = πR² ✓.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="cur-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Cinq circulations sur des courbes fermées</h3></header>
+    <div class="cx-enonce">a) ω = (x − y³)dx + x³dy, cercle unité sens positif ; b) ω = xy²dy − yx²dx, cercle x² + y² − 2y = 0 sens direct ; c) ω = x²dy + y²dx, demi-ellipse x² + 4y² = 4, y ≥ 0, sens <b>indirect</b> ; d) ω = [(x − y)dx + (x + y)dy]/(x² + y²), carré A(1,1) B(−1,1) C(−1,−1) D(1,−1) ; e) ω = y dx + 2x dy, bord de {x² + y² − 2x ≤ 0, x² + y² − 2y ≤ 0}.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div><b>Green-Riemann</b> : ∮<sub>∂D</sub> P dx + Q dy = ∬<sub>D</sub> (∂Q/∂x − ∂P/∂y) dxdy pour ∂D orienté dans le sens direct (le domaine à gauche). Sens indirect → changer le signe. <b>Hypothèse à vérifier</b> : P et Q de classe C¹ sur tout D (échoue en d) à cause de l'origine).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">a) ∂Q/∂x − ∂P/∂y = 3x² + 3y²</div><div class="sd"><div class="calc">∮ ω = ∬_{r≤1} 3r² · r dr dθ = 3 · 2π · 1/4 = 3π/2</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">b) ∂Q/∂x − ∂P/∂y = y² + x² ; D : disque de centre (0, 1), rayon 1</div><div class="sd">En polaires, x² + y² ≤ 2y ⟺ r ≤ 2 sin θ, θ ∈ [0, π] :<div class="calc">∮ ω = ∫₀^π ∫₀^(2sinθ) r³ dr dθ = ∫₀^π 4 sin⁴θ dθ = 4 · 3π/8 = 3π/2</div>Astuce : x² + y² = x² + (y − 1)² + 2y − 1, d'où ∬ = π/2 + 2π − π = 3π/2 (moment d'inertie du disque + ∬y = aire × ordonnée du centre).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">c) Sens indirect : −∬(∂Q/∂x − ∂P/∂y) = −∬(2x − 2y)</div><div class="sd">D = demi-ellipse, symétrique par x ↦ −x, donc ∬ 2x = 0.<div class="calc">∬_D y dxdy = ∫_{−2}^{2} ½ (1 − x²/4) dx = ½ (4 − 4/3) = 4/3
+∮_indirect ω = −(0 − 2 · 4/3) = 8/3</div>Contrôle direct : sur le segment y = 0, dy = 0, ω = 0. Sur l'arc x = 2cos t, y = sin t parcouru de t = π à 0 : ∫<sub>π</sub><sup>0</sup> (4cos³t − 2sin³t) dt = 0 + 2 · 4/3 = 8/3 ✓.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">d) Green interdit : ω n'est pas définie en O, qui est dans le carré</div><div class="sd">On reconnaît deux formes classiques :<div class="calc">(x dx + y dy)/(x² + y²) = d(ln r)                 (exacte sur ℝ² \ {0})
+(x dy − y dx)/(x² + y²) = dθ                       (« forme angle »)
+ω = d(ln r) + dθ</div>A → B → C → D tourne une fois autour de O dans le sens direct : ln r revient à sa valeur, θ augmente de 2π. <b>∮ ω = 2π</b>.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">e) ∂Q/∂x − ∂P/∂y = 2 − 1 = 1 : la circulation vaut l'aire du domaine</div><div class="sd">D = intersection des disques de rayon 1 centrés en (1, 0) et (0, 1) : une lentille coupée en deux par la droite y = x. Chaque moitié est un segment circulaire d'angle π/2 :<div class="calc">aire(segment) = secteur − triangle = π/4 − 1/2
+aire(D) = 2 (π/4 − 1/2) = π/2 − 1  ⟹  ∮ ω = π/2 − 1 ≈ 0,571   (sens direct)</div></div></div></li>
+      </ol>
+      <div class="answer"><b class="lab">Réponse</b>a) 3π/2 ; b) 3π/2 ; c) 8/3 ; d) 2π ; e) π/2 − 1.</div>
+      <div class="why"><b class="lab">Piège (d)</b>∂Q/∂x = ∂P/∂y hors de O, mais ℝ² \ {0} n'est pas étoilé : fermée ≠ exacte. Si Green s'appliquait, on trouverait 0, ce qui est faux. C'est l'exemple fondamental du cours d'électromagnétisme (circulation de B autour d'un fil : théorème d'Ampère).</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="cur-4">
+    <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Quatre intégrales dont trois sont nulles « sans calcul »</h3></header>
+    <div class="cx-enonce">1. ∫ x dy + xy² dx, c(t) = (cos t, sin t), t ∈ [0, 2π] ; 2. ∫ x dx + y dy, c(t) = (cos πt, sin πt), t ∈ [0, 2] ; 3. ∫ x dx + y dy, C formée des arcs y = x² et x = y² entre (0, 0) et (1, 1), sens direct ; 4. ∫ yz dx + xz dy + xy dz, C formée des segments (1,0,0) → (0,1,0) → (0,0,1) (→ (1,0,0)).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>x dx + y dy = d((x² + y²)/2) et yz dx + xz dy + xy dz = d(xyz) sont <b>exactes</b> : intégrale nulle sur toute courbe fermée, et Φ(B) − Φ(A) sinon. Seule la 1 demande un calcul.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) x dy = cos²t dt ;  xy² dx = −cos t sin³t dt
+   ∫₀^(2π) cos²t dt − [sin⁴t/4]₀^(2π) = π − 0 = π
+   (Green : ∬_{disque} (1 − 2xy) = π − 0 = π ✓)
+2) cercle unité parcouru une fois (t ∈ [0,2] ⟹ πt ∈ [0,2π]), forme exacte  ⟹  0
+3) les deux arcs forment une courbe fermée, forme exacte  ⟹  0
+4) xyz vaut 0 en (1,0,0), (0,1,0) et (0,0,1)  ⟹  0, que le chemin soit fermé ou non</div>
+      <div class="answer"><b class="lab">Réponse</b>π ; 0 ; 0 ; 0.</div>
+    </div></details>
+  </article>
+</section>
+
+<section class="cx-chap" id="sur" data-cat="sur">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 13-14</span>
+    <h2>Intégrales de surface, Stokes, Green-Ostrogradsky</h2>
+    <p>Arbre de décision : <b>surface fermée</b> → divergence (Ostrogradsky) ; flux d'un <b>rotationnel</b> → Stokes (circulation sur le bord) ou « même bord ⇒ même flux » ; sinon <b>paramétrer</b> : dS = (T<sub>u</sub> ∧ T<sub>v</sub>) du dv, et pour un graphe z = g(x, y), dS = (−g<sub>x</sub>, −g<sub>y</sub>, 1) dx dy (normale vers le haut). <a href="index.html#ch6">Revoir le cours (ch. 6)</a></p>
+  </div>
+
+  <article class="cx" id="sur-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Flux à travers un triangle de plan</h3></header>
+    <div class="cx-enonce">Σ = {z = 6 − 3x − 2y, x, y, z ≥ 0}, F = (0, z, z). Flux à travers Σ.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Σ est le graphe de g(x, y) = 6 − 3x − 2y au-dessus du triangle T = {x, y ≥ 0, 3x + 2y ≤ 6} (z ≥ 0). Normale non unitaire (−g<sub>x</sub>, −g<sub>y</sub>, 1) = (3, 2, 1), orientée vers le haut (l'énoncé ne précise pas : c'est le choix naturel).</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">F · N = 0·3 + z·2 + z·1 = 3z = 3(6 − 3x − 2y)
+Φ = ∬_T 3(6 − 3x − 2y) dxdy,   T de sommets (0,0), (2,0), (0,3), aire 3
+Moyenne d'une fonction affine sur un triangle = valeur au centre de gravité (2/3, 1) :
+6 − 2 − 2 = 2   ⟹   Φ = 3 × aire × 2 = 3 × 3 × 2 = 18</div>
+      <p>Par Fubini : ∫₀² ∫₀^(3 − 3x/2) 3(6 − 3x − 2y) dy dx = ∫₀² 3·(9/4)(2 − x)² dx = 18 ✓.</p>
+      <div class="answer"><b class="lab">Réponse</b>Φ = 18 (normale vers le haut ; −18 avec l'autre orientation).</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Flux à travers un cône</h3></header>
+    <div class="cx-enonce">F = (y, −x, x²), Σ = {z² = x² + y², 0 ≤ z ≤ 1}. Flux à travers Σ.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Paramétrage « naturel » du cône : (r, θ) ↦ (r cos θ, r sin θ, r), r ∈ [0, 1], θ ∈ [0, 2π]. Calculer T<sub>r</sub> ∧ T<sub>θ</sub> et <b>regarder où il pointe</b> (sa composante z) pour savoir quelle orientation on calcule.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">T_r = (cos θ, sin θ, 1),  T_θ = (−r sin θ, r cos θ, 0)
+T_r ∧ T_θ = (−r cos θ, −r sin θ, r)        (composante z > 0 : vers le haut, vers l'axe)
+F · N = r sin θ·(−r cos θ) + (−r cos θ)·(−r sin θ) + r² cos²θ · r = r³ cos²θ
+Φ = ∫₀^(2π) cos²θ dθ · ∫₀¹ r³ dr = π · 1/4 = π/4</div>
+      <div class="answer"><b class="lab">Réponse</b>π/4 avec la normale vers le haut (intérieure au cône plein) ; −π/4 avec la normale extérieure.</div>
+      <div class="why"><b class="lab">Remarque</b>La partie (y, −x, 0) de F est tangente au cône (rotation autour de Oz) : elle ne traverse pas la surface, seul x² compte.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Flux d'un rotationnel à travers un demi-ellipsoïde</h3></header>
+    <div class="cx-enonce">∬<sub>S</sub> rot F · dS, F = (y, −x, zx³y²), S : x² + y² + 3z² = 1, z ≤ 0, normale vers le haut.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div><b>Stokes</b> : ∬<sub>S</sub> rot F · dS = ∮<sub>∂S</sub> F · dr. Le bord est le cercle unité du plan z = 0. Normale vers le haut ⇒ bord parcouru dans le sens trigonométrique vu d'en haut (règle du tire-bouchon). Variante : div(rot F) = 0, donc le flux de rot F ne dépend <b>que du bord</b> ; on remplace S par le disque unité orienté par k.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">Sur z = 0 : F = (y, −x, 0) ; x = cos t, y = sin t, t ∈ [0, 2π]
+∮ y dx − x dy = ∫₀^(2π) (−sin²t − cos²t) dt = −2π
+Variante disque : rot F = (2zx³y, −3zx²y², −2), sur z = 0 : rot F · k = −2  ⟹  −2 × π = −2π</div>
+      <div class="answer"><b class="lab">Réponse</b>−2π.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-4">
+    <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Stokes sur une demi-sphère de rayon 4</h3></header>
+    <div class="cx-enonce">∬<sub>S</sub> rot F · dS, F = (x² + y − 4, 3xy, 2xz + z²), S : x² + y² + z² = 16, z ≥ 0, normale vers le haut.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Même stratégie : bord = cercle de rayon 4 dans z = 0, sens direct. Dans le plan z = 0, la circulation se calcule par <b>Green-Riemann</b> sur le disque.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">Sur z = 0 : P = x² + y − 4, Q = 3xy
+∮ P dx + Q dy = ∬_{r≤4} (∂Q/∂x − ∂P/∂y) = ∬ (3y − 1) dxdy = 3·0 − aire = −16π</div>
+      <div class="answer"><b class="lab">Réponse</b>−16π.</div>
+      <div class="why"><b class="lab">Contrôle</b>rot F = (0, −2z, 3y − 1) ; flux à travers le disque z = 0 (normale k) : ∬(3y − 1) = −16π ✓. Paramétrer la demi-sphère aurait été bien plus long.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-5">
+    <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Flux sortant de la sphère unité</h3></header>
+    <div class="cx-enonce">∬<sub>S</sub> F · dS, F = (3xy², 3x²y, z³), S sphère unité (normale extérieure).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Surface fermée → <b>Green-Ostrogradsky</b> : flux sortant = ∭<sub>boule</sub> div F. Puis sphériques : ∭ f(r) = ∫₀¹ f(r) 4πr² dr.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">div F = 3y² + 3x² + 3z² = 3r²
+Φ = ∫₀¹ 3r² · 4πr² dr = 12π/5</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-6">
+    <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Cylindre + demi-sphère : tout se joue sur le bord</h3></header>
+    <div class="cx-enonce">S = S<sub>1</sub> ∪ S<sub>2</sub> : S<sub>1</sub> cylindre x² + y² = 1, 0 ≤ z ≤ 1 ; S<sub>2</sub> : x² + y² + (z − 1)² = 1, z ≥ 1. F = (zx + z²y + x, z³yx + y, z⁴x²). Calculer ∬<sub>S</sub> rot F · dS.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>S est un « bocal retourné » : son seul bord est le cercle x² + y² = 1 dans le plan z = 0. Stokes : on n'a qu'à calculer F sur ce cercle — où tous les termes en z disparaissent.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">Sur z = 0 : F = (x, y, 0), et x dx + y dy = d((x² + y²)/2) est exacte
+⟹ ∮ F · dr = 0   ⟹   ∬_S rot F · dS = 0   (quelle que soit l'orientation)</div>
+      <div class="why"><b class="lab">Leçon</b>Un champ compliqué est souvent un signal : l'exercice veut que vous utilisiez un théorème, pas que vous calculiez rot F.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-7">
+    <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Demi-ellipsoïde, champ irrotationnel</h3></header>
+    <div class="cx-enonce">∬<sub>S</sub> rot F · dS, S : x² + y² + 2z² = 10, x ≥ 0 ; F = (x³, −y³, 0).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Calculer rot F avant tout : chaque composante ne dépend que de « sa » variable.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">rot F = (∂F₃/∂y − ∂F₂/∂z, ∂F₁/∂z − ∂F₃/∂x, ∂F₂/∂x − ∂F₁/∂y) = (0, 0, 0)  ⟹  0
+Via Stokes : bord = ellipse {x = 0, y² + 2z² = 10}, où F = (0, −y³, 0) : ∮ −y³ dy = 0 ✓</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-8">
+    <header class="cx-hd"><span class="cx-num">Ex 8</span><h3>Calotte sphérique et F = (x, y, z)</h3></header>
+    <div class="cx-enonce">∬<sub>S</sub> rot F · dS, S = {x² + y² + z² = 1, x + y + z ≥ 1}, F = (x, y, z).</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <p>F = ∇(r²/2) est un gradient, donc <b>rot F = 0</b> et le flux est nul : <b>0</b>. (Stokes : F · dr = d(r²/2), exacte, circulation nulle sur le cercle bord.)</p>
+      <div class="why"><b class="lab">À retenir</b>rot(grad f) = 0 et div(rot F) = 0 : les deux identités qui annulent le plus d'exercices.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-9">
+    <header class="cx-hd"><span class="cx-num">Ex 9</span><h3>Flux de (x³, y³, z³) sur la sphère unité</h3></header>
+    <div class="cx-enonce">F = (x³, y³, z³). Flux (sortant) sur la sphère unité.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">div F = 3(x² + y² + z²) = 3r²   ⟹   Φ = ∫₀¹ 3r² · 4πr² dr = 12π/5</div>
+      <p>Même divergence qu'à l'Ex 5, donc même flux : deux champs différents peuvent avoir le même flux sortant.</p>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-10">
+    <header class="cx-hd"><span class="cx-num">Ex 10</span><h3>Cube unité : flux calculé de deux façons</h3></header>
+    <div class="cx-enonce">Ω = [0, 1]³. Calculer ∬<sub>∂Ω</sub> F · dS de deux manières pour 1) F = (x, y, z) ; 2) F = (1, 1, 1) ; 3) F = (x², x², z²).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div><b>Face par face</b> : 6 faces planes de normales ±i, ±j, ±k ; sur la face x = 1, F · n = F₁(1, y, z) ; sur x = 0, F · n = −F₁(0, y, z), etc. <b>Divergence</b> : ∭<sub>Ω</sub> div F.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) div = 3 ⟹ 3.  Faces : x = 1 → ∬ 1 = 1 ; x = 0 → ∬ −0 = 0 ; de même pour y, z ⟹ 3 ✓
+2) div = 0 ⟹ 0.  Faces opposées : +1 et −1 s'annulent deux à deux ⟹ 0 ✓
+3) div = 2x + 0 + 2z ⟹ ∭ (2x + 2z) = 1 + 1 = 2
+   Faces : x = 1 : ∬ 1² = 1        x = 0 : −0 = 0
+           y = 1 : ∬ x² dxdz = 1/3  y = 0 : −1/3      (F₂ = x² ne dépend pas de y)
+           z = 1 : ∬ 1 = 1          z = 0 : 0
+   total : 1 + 0 + 1/3 − 1/3 + 1 + 0 = 2 ✓</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-11">
+    <header class="cx-hd"><span class="cx-num">Ex 11</span><h3>Flux sortant d'un paraboloïde plein (et de ses moitiés)</h3></header>
+    <div class="cx-enonce">F = (x, y, xz). ∬<sub>∂Ω</sub> F · dS pour Ω : 1) x² + y² ≤ z ≤ 1 ; 2) idem avec x ≥ 0 ; 3) idem avec x ≤ 0.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Ostrogradsky + <b>cylindriques</b> : Ω = {0 ≤ z ≤ 1, r ≤ √z}. Volume = ∫₀¹ πz dz = π/2. Le terme en x s'annule sur Ω entier par symétrie, mais pas sur les moitiés.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">div F = 1 + 1 + x = 2 + x
+∭_{moitié x≥0} x = ∫₀¹ ∫_{−π/2}^{π/2} ∫₀^√z r cos θ · r dr dθ dz = ∫₀¹ 2 · z^(3/2)/3 dz = 4/15
+1) 2 · π/2 + 0           = π
+2) 2 · π/4 + 4/15        = π/2 + 4/15 ≈ 1,838
+3) 2 · π/4 − 4/15        = π/2 − 4/15 ≈ 1,304</div>
+      <div class="why"><b class="lab">Contrôle</b>2) + 3) = 1) : la face plane x = 0 commune est comptée une fois avec −i, une fois avec +i, et y F · n = ∓x = 0 de toute façon. Vérification directe de 1) : couvercle z = 1 → ∬ x = 0 ; paraboloïde (normale sortante (2r²cos θ, 2r² sin θ, −r)) → ∬(2r³ − r⁴cos θ) = π ✓.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="sur-12">
+    <header class="cx-hd"><span class="cx-num">Ex 12</span><h3>Même chose avec F = (x − y, y − z, z − x)</h3></header>
+    <div class="cx-enonce">Mêmes domaines qu'à l'Ex 11.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">div F = 1 + 1 + 1 = 3   ⟹   flux = 3 × volume
+1) 3 · π/2 = 3π/2      2) 3 · π/4 = 3π/4      3) 3π/4</div>
+    </div></details>
+  </article>
+</section>
+
+<section class="cx-chap" id="opt" data-cat="opt">
+  <div class="cx-chap-hd">
+    <span class="cx-chap-n">Feuille p. 15-16</span>
+    <h2>Optimisation</h2>
+    <p>Protocole : <b>1.</b> points critiques (∇f = 0) ; <b>2.</b> Monge r = f<sub>xx</sub>, s = f<sub>xy</sub>, t = f<sub>yy</sub>, Δ = rt − s² (Δ &gt; 0 et r &gt; 0 : min ; Δ &gt; 0 et r &lt; 0 : max ; Δ &lt; 0 : col) ; <b>3.</b> si Δ = 0, <b>étude directe</b> du signe de f − f(a) ; <b>4.</b> global : compact → valeurs aux points critiques intérieurs <b>et</b> sur le bord ; contrainte g = 0 → <b>Lagrange</b> ∇f = λ∇g. <a href="index.html#ch7">Revoir le cours (ch. 7)</a></p>
+  </div>
+
+  <article class="cx" id="opt-1">
+    <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Taylor à l'ordre 2 et nature du point</h3></header>
+    <div class="cx-enonce">1. (x + y)² en (0, 0) ; 2. 1/(x² + y² + 1) en (0, 0) ; 3. e<sup>x+y</sup> en (0, 0) ; 4. e<sup>(x−1)²</sup> cos y en (1, 0).</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>f(a + h) = f(a) + ∇f(a)·h + ½ (r h₁² + 2s h₁h₂ + t h₂²) + o(‖h‖²). Plutôt que de dériver, <b>composer les DL usuels</b> : 1/(1 + u) = 1 − u + …, e<sup>u</sup> = 1 + u + u²/2 + …, cos y = 1 − y²/2 + … Le point est critique ⟺ pas de terme d'ordre 1 ; la forme quadratique donne la nature.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) f = x² + 2xy + y² (déjà un polynôme de degré 2). Critique. r = s = t = 2, Δ = 0 : Monge ne conclut pas,
+   mais f = (x + y)² ≥ 0 = f(0,0) : minimum global, non strict (atteint sur toute la droite y = −x)
+2) u = x² + y² : f = 1 − (x² + y²) + o(‖h‖²). Critique, r = t = −2, s = 0, Δ = 4 &gt; 0, r &lt; 0 : maximum (global, f ≤ 1)
+3) f = 1 + (x + y) + (x + y)²/2 + o(‖h‖²). Terme d'ordre 1 ≠ 0 : pas critique (∇f = (1, 1))
+4) h = x − 1 : e^(h²) cos y = (1 + h²)(1 − y²/2) + o = 1 + h² − y²/2 + o(‖(h, y)‖²)
+   Critique, r = 2, t = −1, s = 0, Δ = −2 &lt; 0 : point col</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-2">
+    <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Points critiques et nature (8 fonctions)</h3></header>
+    <div class="cx-enonce">1. x² − y² + xy ; 2. x² + y² + 2xy ; 3. e<sup>1+x²−y²</sup> ; 4. y + x sin y ; 5. xy + 1/x + 1/y ; 6. x³ + y² − 6xy + 6x + 3y ; 7. axⁿ + cyⁿ (ac ≠ 0) ; 8. x² + y² + z² + xy.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Résoudre le système ∇f = 0 en <b>exprimant une variable en fonction de l'autre</b> dans l'équation la plus simple, puis substituer. Garder les facteurs (x(…) = 0 ⟹ deux cas) au lieu de diviser.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. x² − y² + xy</div><div class="sd">2x + y = 0 et x − 2y = 0 ⟹ (0, 0). r = 2, s = 1, t = −2 : Δ = −5 &lt; 0 → <b>col</b>.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. (x + y)²</div><div class="sd">∇f = 2(x + y)(1, 1) = 0 ⟺ y = −x : <b>une droite</b> de points critiques ; Δ = 0 mais f ≥ 0 = f sur cette droite → <b>minima globaux non stricts</b>.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. e<sup>1+x²−y²</sup></div><div class="sd">∇f = f·(2x, −2y) = 0 ⟺ (0, 0) (une exponentielle ne s'annule pas). f ≈ e(1 + x² − y²) : <b>col</b> (r = 2e, t = −2e).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">4. y + x sin y</div><div class="sd">f<sub>x</sub> = sin y = 0 ⟹ y = kπ ; f<sub>y</sub> = 1 + x cos y = 0 ⟹ x = −1/cos(kπ) = (−1)<sup>k+1</sup>.<div class="calc">points ((−1)^(k+1), kπ), k ∈ ℤ
+r = 0, s = cos y = (−1)^k, t = −x sin y = 0   ⟹  Δ = −1 &lt; 0 : tous des cols</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">5. xy + 1/x + 1/y (x, y ≠ 0)</div><div class="sd">y = 1/x² et x = 1/y² ⟹ x = x⁴ ⟹ x = 1 (x ≠ 0), y = 1. r = 2/x³ = 2, t = 2, s = 1 : Δ = 3 &gt; 0, r &gt; 0 → <b>minimum local</b>, f(1, 1) = 3. Pas global : f → −∞ quand x → 0⁻.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">6. x³ + y² − 6xy + 6x + 3y</div><div class="sd"><div class="calc">f_y = 2y − 6x + 3 = 0 ⟹ y = 3x − 3/2
+f_x = 3x² − 6y + 6 = 3x² − 18x + 15 = 3(x − 1)(x − 5) = 0
+(1, 3/2) :  r = 6, s = −6, t = 2 ; Δ = 12 − 36 &lt; 0 → col, f = 19/4
+(5, 27/2) : r = 30, s = −6, t = 2 ; Δ = 60 − 36 &gt; 0, r &gt; 0 → minimum local, f = −109/4</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">7. axⁿ + cyⁿ, ac ≠ 0 (n ≥ 1 entier)</div><div class="sd"><b>n = 1</b> : ∇f = (a, c) ≠ 0, aucun point critique. <b>n ≥ 2</b> : seul point critique (0, 0), f(0, 0) = 0.<div class="calc">n = 2 : r = 2a, t = 2c, s = 0 ; Δ = 4ac
+        a, c &gt; 0 → min ;  a, c &lt; 0 → max ;  ac &lt; 0 → col
+n ≥ 3 : Δ = 0, étude directe :
+   n impair : f(x, 0) = axⁿ change de signe → ni max ni min
+   n pair   : a, c &gt; 0 → min global ; a, c &lt; 0 → max global ; ac &lt; 0 → col</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">8. x² + y² + z² + xy (3 variables)</div><div class="sd">2x + y = 0, x + 2y = 0, 2z = 0 ⟹ (0, 0, 0). Hessienne [[2, 1, 0], [1, 2, 0], [0, 0, 2]] de valeurs propres 1, 3, 2, toutes &gt; 0 → <b>minimum</b> (global : f est une forme quadratique définie positive), f = 0.</div></div></li>
+      </ol>
+      <div class="why"><b class="lab">Outil hors cours (n variables)</b>Monge ne marche qu'en dimension 2. En dimension n : Hessienne à valeurs propres toutes &gt; 0 → min ; toutes &lt; 0 → max ; de signes opposés → col. Critère de <b>Sylvester</b> : définie positive ⟺ tous les mineurs principaux dominants &gt; 0 (ici 2, 3, 6).</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-3">
+    <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Extrema globaux sur le disque unité</h3></header>
+    <div class="cx-enonce">1. (x² + y²)⁴ ; 2. x² + xy + y² ; 3. 3xy − 3x² − y³.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Disque fermé = <b>compact</b> : max et min existent (théorème des bornes atteintes). Candidats : points critiques <b>intérieurs</b> + extrema de t ↦ f(cos t, sin t) sur le <b>bord</b>. On compare les valeurs.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. Fonction de r seulement</div><div class="sd">f = r⁸ croît avec r ∈ [0, 1] : <b>min 0</b> en (0, 0), <b>max 1</b> sur tout le cercle.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. x² + xy + y²</div><div class="sd">Intérieur : (0, 0), f = 0. Bord : f(cos t, sin t) = 1 + ½ sin 2t ∈ [1/2, 3/2].<div class="calc">min global 0 en (0, 0) ;  max global 3/2 en ±(1/√2, 1/√2)  (sin 2t = 1)</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. 3xy − 3x² − y³ : intérieur</div><div class="sd"><div class="calc">f_x = 3y − 6x = 0 ⟹ y = 2x ;  f_y = 3x − 3y² = 0 ⟹ x = 4x² ⟹ x ∈ {0, 1/4}
+(0, 0) : r = −6, s = 3, t = 0 ; Δ = −9 → col, f = 0
+(1/4, 1/2) : r = −6, s = 3, t = −6y = −3 ; Δ = 9 &gt; 0, r &lt; 0 → max local, f = 1/16</div></div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. bord et conclusion</div><div class="sd">g(t) = 3 cos t sin t − 3 cos²t − sin³t n'a pas de racines « jolies » pour g'(t) = 0 : on les obtient numériquement (calculatrice, ou Python <code>scipy.optimize.minimize_scalar</code>).<div class="calc">max du bord ≈ 1,457 en (−0,293 ; −0,956)
+min du bord ≈ −3,690 en (−0,899 ; 0,439)</div>Le max local intérieur 1/16 est battu par le bord : <b>max global ≈ 1,457</b>, <b>min global ≈ −3,69</b>, tous deux sur le cercle.</div></div></li>
+      </ol>
+      <div class="why"><b class="lab">Piège</b>Un maximum local intérieur n'est pas forcément le maximum global : toujours comparer avec le bord.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-4">
+    <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Extrema sur des rectangles</h3></header>
+    <div class="cx-enonce">1. sin x + cos y sur [0, 2π]² ; 2. xy sur [−1, 1]².</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Avant de dériver, chercher une <b>majoration évidente atteinte</b> : sin x ≤ 1 et cos y ≤ 1 donnent f ≤ 2, et on regarde quand il y a égalité.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) −2 ≤ sin x + cos y ≤ 2
+   max 2 : sin x = 1 et cos y = 1  ⟺  x = π/2, y ∈ {0, 2π}          (sur le bord)
+   min −2 : sin x = −1 et cos y = −1 ⟺ (3π/2, π)                      (intérieur)
+   Points critiques intérieurs : cos x = 0, sin y = 0 ⟹ (π/2, π) col (f = 0), (3π/2, π) min
+2) |xy| ≤ 1 : max 1 en (1, 1) et (−1, −1) ; min −1 en (1, −1) et (−1, 1)
+   (0, 0) est l'unique point critique : col (s = 1, r = t = 0, Δ = −1)</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-5">
+    <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Extrema locaux et globaux (6 fonctions)</h3></header>
+    <div class="cx-enonce">1. x² + xy + y² + x³/4 ; 2. x⁴ + y⁴ ; 3. x³ + y³ ; 4. 4xy + 1/x + 1/y ; 5. x ln y − y ln x ; 6. (y² − x²)(y² − 2x²).</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. x² + xy + y² + x³/4</div><div class="sd"><div class="calc">f_y = x + 2y = 0 ⟹ y = −x/2 ;  f_x = 2x + y + 3x²/4 = 3x/2 + 3x²/4 = 0 ⟹ x ∈ {0, −2}
+(0, 0) : r = 2, s = 1, t = 2 ; Δ = 3 &gt; 0 → min local, f = 0
+(−2, 1) : r = 2 + 3x/2 = −1, s = 1, t = 2 ; Δ = −3 → col</div>Aucun extremum global : f(x, 0) = x² + x³/4 → ±∞ quand x → ±∞.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. x⁴ + y⁴</div><div class="sd">Seul point critique (0, 0), Δ = 0 (Hessienne nulle). Mais f ≥ 0 = f(0, 0) : <b>minimum global</b> (strict). Pas de max.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. x³ + y³</div><div class="sd">Seul point critique (0, 0), Δ = 0. f(t, 0) = t³ change de signe : <b>pas d'extremum</b>.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">4. 4xy + 1/x + 1/y</div><div class="sd"><div class="calc">4y = 1/x², 4x = 1/y²  ⟹  x = y = 4^(−1/3)
+r = 2/x³ = 8, t = 8, s = 4 ; Δ = 48 &gt; 0 → min local, f = 3·4^(1/3) = 3∛4 ≈ 4,76</div>Sur le quart de plan x, y &gt; 0, c'est même le <b>minimum global</b> : par l'inégalité arithmético-géométrique, 4xy + 1/x + 1/y ≥ 3 ∛(4xy · 1/x · 1/y) = 3∛4. Sur tout le domaine, pas de min global (f → −∞ quand x → 0⁻).</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">5. x ln y − y ln x (x, y &gt; 0)</div><div class="sd"><div class="calc">f_x = ln y − y/x = 0,  f_y = x/y − ln x = 0
+Posons u = y/x : ln y = u et ln x = 1/u, donc u = y/x = e^(u − 1/u), soit ln u = u − 1/u
+h(u) = u − 1/u − ln u a pour dérivée (u² − u + 1)/u² &gt; 0 et h(1) = 0 ⟹ u = 1, x = y = e
+r = y/x² = 1/e, t = −x/y² = −1/e, s = 1/y − 1/x = 0 ; Δ = −1/e² &lt; 0 → col en (e, e)</div>Aucun extremum.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">6. (y² − x²)(y² − 2x²)</div><div class="sd">∇f = (2x(4x² − 3y²), 2y(2y² − 3x²)) = 0 ⟹ (0, 0) seulement ; Δ = 0 (degré 4). Étude du signe : f(x, 0) = 2x⁴ &gt; 0, mais sur y² = 1,5 x² (entre les deux paires de droites), f = (0,5 x²)(−0,5 x²) &lt; 0. Dans tout voisinage de O, f prend les deux signes : <b>pas d'extremum</b> en (0, 0).</div></div></li>
+      </ol>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-6">
+    <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Extrema sous contraintes (Lagrange)</h3></header>
+    <div class="cx-enonce">1. x − y + z sur x² + y² + z² = 2 ; 2. x − y sur x² − y² = 2 ; 3. x + y + z sous x² − y² = 1 et 2x + z = 1.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Lagrange : aux extrema de f sur {g = 0} (avec ∇g ≠ 0), ∇f = λ∇g. Avec <b>deux contraintes</b> : ∇f = λ∇g₁ + μ∇g₂, ou plus simplement <b>éliminer</b> une variable grâce à la contrainte linéaire. Attention : Lagrange donne des <b>candidats</b> ; l'existence du max/min vient d'un argument de compacité (sphère) ou d'une étude directe.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <ol class="steps">
+        <li class="step"><span class="sn"></span><div><div class="st">1. Sphère (compacte) : max et min existent</div><div class="sd"><div class="calc">(1, −1, 1) = 2λ(x, y, z)  ⟹  (x, y, z) = (1/2λ)(1, −1, 1)
+x² + y² + z² = 3/(4λ²) = 2  ⟹  1/(2λ) = ±√(2/3)
+points ±√(2/3)(1, −1, 1) :  f = ±3√(2/3) = ±√6</div><b>max √6, min −√6</b>. Contrôle Cauchy-Schwarz : |f| = |(1, −1, 1)·(x, y, z)| ≤ √3 · √2 = √6.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">2. Hyperbole (non bornée)</div><div class="sd">(1, −1) = λ(2x, −2y) ⟹ 2λx = 1 = 2λy ⟹ x = y, incompatible avec x² − y² = 2. <b>Aucun extremum</b>. En effet x − y = 2/(x + y) prend, sur chaque branche, toutes les valeurs d'un intervalle ouvert ]0, +∞[ ou ]−∞, 0[, sans les atteindre aux bornes.</div></div></li>
+        <li class="step"><span class="sn"></span><div><div class="st">3. Éliminer z = 1 − 2x</div><div class="sd">f = 1 − x + y sous x² − y² = 1. Lagrange : (−1, 1) = λ(2x, −2y) ⟹ x = y, incompatible avec x² − y² = 1 : <b>aucun extremum</b> (y − x = −1/(x + y) ne fait que tendre vers 0 ou l'infini).</div></div></li>
+      </ol>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-7">
+    <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Restrictions à une droite et à un demi-plan</h3></header>
+    <div class="cx-enonce">f = x² + y² sur 1. S = {(x, 2), x ∈ ℝ} ; 2. S = {(x, y), y ≥ 2}.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) f(x, 2) = x² + 4 : min 4 en (0, 2), pas de max (→ +∞)
+2) x² + y² ≥ y² ≥ 4 sur S, égalité ⟺ x = 0, y = 2 : min 4 en (0, 2), pas de max
+   (∇f = (2x, 2y) ≠ 0 à l'intérieur y &gt; 2 : l'extremum ne peut être que sur le bord y = 2)</div>
+      <div class="why"><b class="lab">Interprétation</b>f = distance² à l'origine : on cherche le point de S le plus proche de O, c'est la projection orthogonale (0, 2).</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-8">
+    <header class="cx-hd"><span class="cx-num">Ex 8</span><h3>Boule unité et disque unité</h3></header>
+    <div class="cx-enonce">1. x + y − z sur la boule unité ; 2. x² + y² − x − y − 1 sur le disque unité.</div>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">1) ∇f = (1, 1, −1) ≠ 0 : pas de point critique intérieur, extrema sur la sphère.
+   Cauchy-Schwarz / Lagrange : ±√3 en ±(1, 1, −1)/√3
+2) Forme canonique : f = (x − 1/2)² + (y − 1/2)² − 3/2
+   intérieur : min −3/2 en (1/2, 1/2) (dans le disque car 1/4 + 1/4 &lt; 1)
+   bord x² + y² = 1 : f = 1 − x − y − 1 = −(x + y) ∈ [−√2, √2]
+   max √2 en (−√2/2, −√2/2) ; min global −3/2 en (1/2, 1/2)</div>
+      <div class="why"><b class="lab">Outil</b>Compléter les carrés donne la nature et la valeur du min sans aucune dérivée. Géométriquement : f + 3/2 = distance² au point (1/2, 1/2), maximale au point du disque le plus éloigné.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-9">
+    <header class="cx-hd"><span class="cx-num">Ex 9</span><h3>Pavé de volume fixé, surface minimale</h3></header>
+    <div class="cx-enonce">Montrer qu'un pavé de volume V fixé a une surface minimale quand c'est un cube.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Arêtes x, y, z &gt; 0, xyz = V, S = 2(xy + yz + zx). Deux voies : Lagrange, ou (plus court) inégalité arithmético-géométrique sur les trois produits xy, yz, zx.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">IAG : (xy + yz + zx)/3 ≥ ∛(xy · yz · zx) = ∛(V²)
+⟹ S ≥ 6 V^(2/3), avec égalité ⟺ xy = yz = zx ⟺ x = y = z = ∛V (cube)
+Lagrange : 2(y + z) = λyz, 2(x + z) = λxz ⟹ en soustrayant, 2(y − x) = λz(y − x) ;
+  si x ≠ y alors λz = 2, puis 2(y + z) = 2y ⟹ z = 0, impossible. Donc x = y, de même y = z.</div>
+      <div class="answer"><b class="lab">Réponse</b>S<sub>min</sub> = 6V<sup>2/3</sup>, atteinte pour le cube d'arête ∛V.</div>
+    </div></details>
+  </article>
+
+  <article class="cx" id="opt-10">
+    <header class="cx-hd"><span class="cx-num">Ex 10</span><h3>Boîte sans couvercle de surface 16 m²</h3></header>
+    <div class="cx-enonce">Dimensions d'une boîte rectangulaire sans couvercle de surface 16 m² et de volume maximal.</div>
+    <details class="cx-meth"><summary>💡 Méthode</summary><div>Base x × y, hauteur z : surface g = xy + 2xz + 2yz = 16 (un fond, quatre côtés), volume V = xyz. Lagrange ∇V = λ∇g, puis exploiter la symétrie x ↔ y.</div></details>
+    <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+      <div class="calc">yz = λ(y + 2z),  xz = λ(x + 2z),  xy = λ(2x + 2y)
+(1)·x − (2)·y : 2λz(x − y) = 0 ⟹ x = y
+(3) : x² = 4λx ⟹ λ = x/4 ;  (1) : xz = (x/4)(x + 2z) ⟹ z = x/2
+contrainte : x² + 2x·(x/2)·2 = 3x² = 16 ⟹ x = y = 4/√3 ≈ 2,31 m, z = 2/√3 ≈ 1,15 m
+V = x²z = (16/3)(2/√3) = 32√3/9 ≈ 6,16 m³</div>
+      <div class="why"><b class="lab">Contrôle sans calcul</b>Recollons la boîte à sa symétrique par rapport au plan du couvercle : on obtient un pavé fermé x × y × 2z, de surface 32 et de volume 2V. D'après l'Ex 9, un pavé de surface fixée a un volume maximal quand c'est un cube : x = y = 2z ✓. Vérifié aussi numériquement (scipy.optimize).</div>
+    </div></details>
+  </article>
+</section>
+
+</div>
+</main>
+
+<div class="foot">
+  <div class="wrap">
+    <span>Champs &amp; Intégrales · Corrigés de la feuille Analyse 3 2026-2027</span>
+    <span><a href="index.html">← Retour au cours</a></span>
+  </div>
+</div>
+<a class="cx-top" href="#" aria-label="Revenir en haut de la page">↑</a>
+
+<script src="js/corriges.js"></script>
+</body>
+</html>

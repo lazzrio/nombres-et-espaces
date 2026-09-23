@@ -20,7 +20,15 @@
 
   /* ---------- NAVIGATION ---------- */
   var views=document.querySelectorAll(".view"), navBtns=document.querySelectorAll("#nav button");
-  function go(name,anchor){
+  var VIEWS=["home","cours","methodes","deroules","notions","formules","express","exos","boite","quiz","planning"];
+  var current=null;
+  function go(name,anchor,fromHash){
+    if(VIEWS.indexOf(name)<0)name="home";
+    if(!fromHash){
+      var url=(name==="home"&&!anchor)?location.pathname+location.search:"#"+(anchor||name);
+      try{ if(name!==current)history.pushState(null,"",url); else history.replaceState(null,"",url); }catch(e){}
+    }
+    current=name;
     views.forEach(function(v){v.classList.toggle("active",v.id==="view-"+name);});
     navBtns.forEach(function(b){b.classList.toggle("active",b.getAttribute("data-go")===name);});
     document.getElementById("nav").classList.remove("open");
@@ -33,8 +41,21 @@
     e.preventDefault(); go(t.getAttribute("data-go"), t.getAttribute("data-anchor"));
   });
   document.getElementById("burger").addEventListener("click",function(){
-    document.getElementById("nav").classList.toggle("open");
+    var open=document.getElementById("nav").classList.toggle("open");
+    this.setAttribute("aria-expanded",open?"true":"false");
   });
+
+  /* ---------- ADRESSES : index.html#cours, index.html#ch4, index.html#ch3-quadriques ---------- */
+  function route(){
+    var h=decodeURIComponent((location.hash||"").slice(1));
+    if(!h)return false;
+    if(VIEWS.indexOf(h)>=0){ go(h,null,true); return true; }
+    var el=document.getElementById(h), v=el&&el.closest(".view");
+    if(v){ go(v.id.slice(5),h,true); return true; }
+    return false;
+  }
+  window.addEventListener("hashchange",function(){ if(!route())go("home",null,true); });
+  if(!route())current="home";
 
   /* ---------- CHAPTERS DATA (home) ---------- */
   var chapters=[
@@ -87,6 +108,7 @@
       e.preventDefault();
       var id=a.getAttribute("href").slice(1), el=document.getElementById(id);
       if(el)el.scrollIntoView({behavior:"smooth",block:"start"});
+      try{ history.replaceState(null,"","#"+id); }catch(e){}
     });
   });
   if("IntersectionObserver" in window){
@@ -111,4 +133,9 @@
       fgroups.forEach(function(g){ g.style.display=(f==="all"||g.getAttribute("data-fg")===f)?"":"none"; });
     });
   });
+
+  /* ---------- HORS LIGNE (GitHub Pages, https) ---------- */
+  if("serviceWorker" in navigator && location.protocol==="https:"){
+    window.addEventListener("load",function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); });
+  }
 })();
