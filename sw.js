@@ -1,5 +1,5 @@
 /* Hors ligne : le réseau d'abord (contenu toujours à jour), la copie locale si pas de connexion. */
-const CACHE = "champs-integrales-v2";
+const CACHE = "champs-integrales-v3";
 const CORE = ["./", "index.html", "corriges.html", "css/style.css", "js/app.js", "js/quiz.js", "js/lightbox.js",
   "js/corriges.js", "js/maths.js", "assets/favicon.svg", "assets/icon-192.png", "manifest.webmanifest"];
 

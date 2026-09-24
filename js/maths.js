@@ -10,7 +10,8 @@
         { left: BS + "[", right: BS + "]", display: true },
         { left: BS + "(", right: BS + ")", display: false }
       ],
-      throwOnError: false
+      throwOnError: false,
+      strict: false
     });
   }
 
