@@ -5,7 +5,7 @@ fonctions de plusieurs variables, opérateurs vectoriels (grad, div, rot),
 courbes/surfaces/solides, intégrales multiples, curvilignes et de surface,
 optimisation.
 
-Statique, sans dépendance, hébergé tel quel sur GitHub Pages :
+Statique (seule la bibliothèque de formules KaTeX est chargée depuis un CDN, puis gardée hors ligne), hébergé tel quel sur GitHub Pages :
 <https://lazzrio.github.io/nombres-et-espaces/>
 
 ## Contenu
@@ -13,7 +13,7 @@ Statique, sans dépendance, hébergé tel quel sur GitHub Pages :
 | Section | Description |
 |---|---|
 | 📚 **Cours complet** | 8 chapitres : définitions, théorèmes (Fermat, Schwarz, Poincaré, Green-Riemann, Stokes, Ostrogradsky, Lagrange…), méthodes, exemples, plus les compléments utiles à un ingénieur (EDP simples, ouverts étoilés, coniques et quadriques, éléments de surface, Hessienne en dimension n, Lagrange à plusieurs contraintes) |
-| ✅ **Exercices corrigés** (`corriges.html`) | Les 70 exercices de la feuille 2026-2027 + les 4 exercices supplémentaires du chapitre 1 : méthode, correction détaillée pas à pas, pièges, contrôle du résultat. Recherche, filtre par thème, suivi « fait » |
+| ✅ **Exercices corrigés** (`corriges.html`) | Les 70 exercices de la feuille 2026-2027 + les 4 exercices supplémentaires du chapitre 1 : méthode avec rappels de cours, correction détaillée pas à pas avec les formules écrites comme sur une copie (rendu KaTeX : vraies fractions, intégrales, vecteurs, matrices), pièges, contrôle du résultat. Recherche, filtre par thème, suivi « fait » |
 | 🛠 **Méthodes** | La boîte à outils par chapitre |
 | 🧭 **Déroulés** | Table de décision « je vois → je pense » + 15 exercices types résolus pas à pas |
 | 💡 **Notions clés** | Une fiche de synthèse par chapitre, avec réflexes et pièges |
@@ -55,6 +55,7 @@ nombres-et-espaces/
 ├── js/
 │   ├── app.js            # navigation, adresses, thème, progression, filtres
 │   ├── corriges.js       # recherche, filtres, suivi « fait » des corrigés
+│   ├── maths.js          # rendu des formules (KaTeX) et ajustement à la largeur de l'écran
 │   ├── quiz.js           # moteur de quiz + banque de questions
 │   └── lightbox.js       # visionneuse plein écran
 ├── assets/

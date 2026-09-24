@@ -626,3 +626,42 @@ a.card:hover{text-decoration:none}
 /* le display:flex d'origine découpait <b> et <sub> en blocs non sécables (légendes coupées sur téléphone) */
 .cfig figcaption{display:block}
 .cfig figcaption::before{display:inline-block;margin-right:8px}
+/* ===================== CORRIGÉS DÉVELOPPÉS ===================== */
+.cx-page .cx .step .sd{color:var(--ink);font-size:14.3px;line-height:1.65}
+.cx-page .cx .step .sd p{margin:6px 0}
+.cx-page .cx .step .st{font-size:15px}
+.cx-data{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:10px;margin:4px 0 12px}
+.cx-data>div{min-width:0;background:var(--surface2);border:1px solid var(--line2);border-radius:10px;padding:10px 12px;font-size:14px}
+.cx-data b.lab{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.fml{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin:8px 0;padding:9px 12px;border-radius:9px;
+  background:var(--accent-soft);border-left:3px solid var(--accent)}
+.fml .f{font-family:var(--f-mono);font-weight:600;font-size:14.5px;color:var(--ink)}
+.fml .leg{font-size:12.8px;color:var(--muted)}
+.cx-meth>div p{margin:6px 0}
+.cx-meth>div ol,.cx-meth>div ul{margin:6px 0;padding-left:20px}
+.cx-meth>div li{margin:4px 0}
+.retenir{margin-top:10px;font-size:13.8px;border-left:3px solid var(--good);padding:8px 12px;background:var(--good-soft);border-radius:0 8px 8px 0}
+.retenir b.lab{color:var(--good);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px}
+.qsub{font-family:var(--f-disp);font-weight:700;font-size:15.5px;margin:18px 0 4px;padding-top:10px;border-top:1px dashed var(--line2);color:var(--accent)}
+.qsub:first-child{border-top:0;padding-top:0;margin-top:4px}
+
+/* ===================== FORMULES (KaTeX) ===================== */
+.cx .katex{font-size:1.07em}
+.fml .f{font-family:inherit}
+.fml .f .katex{font-size:1.14em}
+.mq{margin:8px 0;padding:4px 14px;background:var(--surface2);border:1px solid var(--line2);border-radius:10px;overflow-x:auto;overflow-y:hidden;max-width:100%}
+.mq .katex-display{margin:.55em 0}
+.cx .katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0;max-width:100%}
+.cx .katex-display>.katex{white-space:nowrap}
+.mq+.mq{margin-top:4px}
+
+/* Téléphone : plus de largeur pour les calculs */
+@media(max-width:640px){
+  .cx-page .wrap{padding-left:12px;padding-right:12px}
+  .cx-page article.cx{padding-left:10px;padding-right:10px}
+  .cx-page .cx-corr>div,.cx-page .cx-meth>div{padding-left:6px;padding-right:6px}
+  .cx-page .cx .step{display:block}
+  .cx-page .cx .step>.sn{float:left;margin:0 8px 2px 0}
+  .cx-page .cx .step .st{min-height:26px;display:flex;align-items:center}
+  .mq{padding:2px 8px;margin-left:-2px;margin-right:-2px}
+}

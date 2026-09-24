@@ -1,7 +1,7 @@
 /* Hors ligne : le réseau d'abord (contenu toujours à jour), la copie locale si pas de connexion. */
-const CACHE = "champs-integrales-v1";
+const CACHE = "champs-integrales-v2";
 const CORE = ["./", "index.html", "corriges.html", "css/style.css", "js/app.js", "js/quiz.js", "js/lightbox.js",
-  "js/corriges.js", "assets/favicon.svg", "assets/icon-192.png", "manifest.webmanifest"];
+  "js/corriges.js", "js/maths.js", "assets/favicon.svg", "assets/icon-192.png", "manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));
@@ -13,7 +13,9 @@ self.addEventListener("activate", (e) => {
 });
 self.addEventListener("fetch", (e) => {
   const req = e.request;
-  if (req.method !== "GET" || new URL(req.url).origin !== location.origin) return;
+  const url = new URL(req.url);
+  /* le site, plus KaTeX (formules) pour qu'il reste lisible hors ligne */
+  if (req.method !== "GET" || (url.origin !== location.origin && url.host !== "cdn.jsdelivr.net")) return;
   e.respondWith(
     fetch(req)
       .then((res) => {
