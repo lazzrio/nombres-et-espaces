@@ -51,6 +51,7 @@ nombres-et-espaces/
 ├── corriges.html         # la feuille d'exercices corrigée
 ├── ds.html               # Spécial DS : plan, checklist, stratégie, fiche de survie
 ├── ds-methodes.html      # Spécial DS : 36 méthodes + guide de rédaction
+├── ds-formules.html      # Spécial DS : formulaire (définitions, théorèmes, formules, équations)
 ├── ds-exercices.html     # Spécial DS : 38 exercices corrigés
 ├── ds-blancs.html        # Spécial DS : 3 DS blancs de 1h30 (chrono, barème)
 ├── 404.html              # page d'erreur GitHub Pages

@@ -300,6 +300,51 @@
   }
   paintScores();
 
+  /* ---------- formulaire : recherche, filtres, « je connais » ---------- */
+  var fis = $$("article.fi");
+  if (fis.length) {
+    var fmQ = $("#fmSearch"), fmCh = "all", fmT = "all", fmHide = false;
+    var tot = $("#fmTotal"); if (tot) tot.textContent = String(fis.length);
+    function fmNorm(s) { return norm(s); }
+    function fmFilter() {
+      var q = fmNorm(fmQ ? fmQ.value.trim() : ""), vis = 0;
+      fis.forEach(function (a) {
+        var ok = (fmCh === "all" || a.getAttribute("data-ch") === fmCh) &&
+                 (fmT === "all" || a.getAttribute("data-t") === fmT) &&
+                 (!q || fmNorm(a.textContent).indexOf(q) !== -1) &&
+                 !(fmHide && $("input", a).checked);
+        a.classList.toggle("fm-hidden", !ok);
+        if (ok) vis++;
+      });
+      $$("section.fm-sec").forEach(function (sec) {
+        sec.classList.toggle("fm-hidden", !$$("article.fi", sec).some(function (a) { return !a.classList.contains("fm-hidden"); }));
+      });
+      var e = $("#fmEmpty"); if (e) e.hidden = vis > 0;
+      var c = $("#fmCount"); if (c) c.textContent = vis + " / " + fis.length + " fiches";
+    }
+    function fmKnown() { fis.forEach(function (a) { a.classList.toggle("known", $("input", a).checked); }); }
+    fis.forEach(function (a) { $("input", a).addEventListener("change", function () { fmKnown(); if (fmHide) fmFilter(); }); });
+    if (fmQ) fmQ.addEventListener("input", fmFilter);
+    function chips(id, attr, set) {
+      $$("#" + id + " .fchip").forEach(function (b) {
+        b.addEventListener("click", function () {
+          $$("#" + id + " .fchip").forEach(function (x) { x.classList.remove("active"); });
+          b.classList.add("active"); set(b.getAttribute(attr)); fmFilter();
+        });
+      });
+    }
+    chips("fmChCh", "data-ch", function (v) { fmCh = v; });
+    chips("fmChT", "data-t", function (v) { fmT = v; });
+    var hb = $("#fmHide");
+    if (hb) hb.addEventListener("click", function () {
+      fmHide = !fmHide; hb.setAttribute("data-on", fmHide ? "1" : "0");
+      hb.textContent = fmHide ? "Afficher tout" : "Masquer ce que je connais"; fmFilter();
+    });
+    var fp = $("#fmPrint");
+    if (fp) fp.addEventListener("click", function () { window.print(); });
+    window.setTimeout(function () { fmKnown(); fmFilter(); }, 0);
+  }
+
   /* ---------- hors ligne (https) ---------- */
   if ("serviceWorker" in navigator && location.protocol === "https:") {
     window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
