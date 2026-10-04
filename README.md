@@ -14,6 +14,7 @@ Statique (seule la bibliothèque de formules KaTeX est chargée depuis un CDN, p
 |---|---|
 | 📚 **Cours complet** | 8 chapitres : définitions, théorèmes (Fermat, Schwarz, Poincaré, Green-Riemann, Stokes, Ostrogradsky, Lagrange…), méthodes, exemples, plus les compléments utiles à un ingénieur (EDP simples, ouverts étoilés, coniques et quadriques, éléments de surface, Hessienne en dimension n, Lagrange à plusieurs contraintes) |
 | ✅ **Exercices corrigés** (`corriges.html`) | Les 70 exercices de la feuille 2026-2027 + les 4 exercices supplémentaires du chapitre 1 : méthode avec rappels de cours, correction détaillée pas à pas avec les formules écrites comme sur une copie (rendu KaTeX : vraies fractions, intégrales, vecteurs, matrices), pièges, contrôle du résultat. Recherche, filtre par thème, suivi « fait » |
+| 🎓 **Spécial DS** (`ds.html`, `ds-methodes.html`, `ds-exercices.html`, `ds-blancs.html`) | Préparation du DS sur les **chapitres 1 à 4** : plan sur 10 jours (la date du DS se règle sur la page), checklist « je sais faire », stratégie pour 1h30, fiche de survie imprimable ; **36 méthodes** rédigées (recette, exemple expliqué avec rédaction type et notes de marge, pièges) + guide de rédaction ; **38 exercices** en trois paliers (échauffement, technique, format DS) reliés aux numéros du TD, avec indice et correction rédigée ; **3 DS blancs de 1h30** avec chronomètre, barème détaillé (chaque DS fait 20 points) et auto-notation |
 | 🛠 **Méthodes** | La boîte à outils par chapitre |
 | 🧭 **Déroulés** | Table de décision « je vois → je pense » + 15 exercices types résolus pas à pas |
 | 💡 **Notions clés** | Une fiche de synthèse par chapitre, avec réflexes et pièges |
@@ -48,12 +49,18 @@ mise en page testée à 375, 768, 1024 et 1280 px, impression des corrigés dép
 nombres-et-espaces/
 ├── index.html            # page unique (vues : cours, méthodes, déroulés…)
 ├── corriges.html         # la feuille d'exercices corrigée
+├── ds.html               # Spécial DS : plan, checklist, stratégie, fiche de survie
+├── ds-methodes.html      # Spécial DS : 36 méthodes + guide de rédaction
+├── ds-exercices.html     # Spécial DS : 38 exercices corrigés
+├── ds-blancs.html        # Spécial DS : 3 DS blancs de 1h30 (chrono, barème)
 ├── 404.html              # page d'erreur GitHub Pages
 ├── manifest.webmanifest  # installation sur téléphone
 ├── sw.js                 # hors ligne (réseau d'abord, cache ensuite)
 ├── css/style.css         # design system, thèmes clair/sombre, responsive
+├── css/ds.css            # composants du Spécial DS (copie annotée, plan, chrono, barème…)
 ├── js/
 │   ├── app.js            # navigation, adresses, thème, progression, filtres
+│   ├── ds.js             # Spécial DS : compte à rebours, cases à cocher, chrono, barème, suivi des exercices
 │   ├── corriges.js       # recherche, filtres, suivi « fait » des corrigés
 │   ├── maths.js          # rendu des formules (KaTeX) et ajustement à la largeur de l'écran
 │   ├── quiz.js           # moteur de quiz + banque de questions
@@ -93,3 +100,8 @@ Puis <http://localhost:8766>.
 - Quand un énoncé est ambigu (orientation non précisée, rayon non donné…),
   le corrigé le signale et traite les cas possibles.
 - Progression stockée en `localStorage` (propre à chaque appareil).
+- Le Spécial DS ne s'appuie sur aucun sujet officiel (aucune annale fournie) : les 3 DS blancs
+  sont construits sur le modèle du TD. Tous leurs résultats, ainsi que ceux des méthodes et des
+  exercices, ont été recalculés avec SymPy et SciPy.
+- La date du DS se règle sur `ds.html` (par défaut le 14 octobre 2026 ; l'emploi du temps du
+  23 septembre indiquait le samedi 17 octobre à 9h : à vérifier).

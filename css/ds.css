@@ -1,0 +1,306 @@
+/* =====================================================================
+   Partie « Spécial DS » (ch. 1 à 4) : hub, méthodes, exercices, DS blancs
+   S'appuie sur les variables de style.css ; chargé après lui.
+   ===================================================================== */
+
+/* ---------- barre de navigation de la section ---------- */
+.dsnav{position:sticky;top:57px;z-index:40;background:color-mix(in srgb,var(--surface) 94%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.dsnav-in{max-width:1240px;margin:0 auto;padding:0 20px;display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.dsnav-in::-webkit-scrollbar{display:none}
+.dsnav-tag{font-family:var(--f-disp);font-style:italic;font-weight:800;font-size:15px;color:var(--ink);margin-right:10px;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:8px}
+.dsnav-tag i{font-style:normal;background:var(--accent2);color:#fff;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;
+  padding:2px 7px;border-radius:6px;font-weight:600}
+.dsnav a.tab{font-family:var(--f-mono);font-size:12.5px;padding:11px 12px;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap}
+.dsnav a.tab:hover{color:var(--ink);text-decoration:none}
+.dsnav a.tab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.dscount{margin-left:auto;font-family:var(--f-mono);font-size:12px;color:var(--accent2);background:var(--amber-soft);
+  padding:4px 10px;border-radius:20px;white-space:nowrap;border:1px solid color-mix(in srgb,var(--accent2) 35%,transparent);margin-left:auto}
+.nav .nav-ds{color:var(--accent2);font-weight:600}
+.ds-page .cx-toolbar{top:98px}
+.ds-page .cx,.ds-page .cx-chap,.ds-page .mth,.ds-page section[id],.ds-page article[id]{scroll-margin-top:150px}
+
+/* ---------- héros ---------- */
+.ds-hero .hero-in{grid-template-columns:1.25fr .75fr;gap:34px;padding:44px 20px 38px}
+.ds-hero h1{font-size:clamp(32px,4.6vw,54px)}
+.countcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);text-align:center}
+.countcard .cc-n{font-family:var(--f-disp);font-style:italic;font-weight:800;font-size:68px;line-height:1;color:var(--accent);letter-spacing:-.02em}
+.countcard .cc-l{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.countcard .cc-d{margin-top:14px;padding-top:14px;border-top:1px solid var(--line2);font-size:13px;color:var(--muted)}
+.countcard input[type=date]{font:inherit;font-family:var(--f-mono);font-size:13px;padding:6px 8px;border-radius:8px;border:1px solid var(--line);
+  background:var(--surface2);color:var(--ink);margin-top:6px;max-width:100%}
+@media(max-width:900px){.ds-hero .hero-in{grid-template-columns:1fr}}
+
+/* ---------- cartes de parcours ---------- */
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:14px;margin-top:22px}
+.path a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);
+  color:inherit;transition:.15s;position:relative}
+.path a:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none}
+.path .pn{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2)}
+.path h3{font-size:19px;font-style:italic;margin:4px 0 6px}
+.path p{font-size:13.5px;color:var(--muted);margin:0}
+.path .go{font-family:var(--f-mono);font-size:11.5px;color:var(--accent);display:block;margin-top:10px}
+
+/* ---------- tableau « ce que le DS peut demander » ---------- */
+.dstable td:first-child{font-weight:600;white-space:nowrap}
+.dstable td{vertical-align:top;font-size:14px}
+.minpill{font-family:var(--f-mono);font-size:11.5px;background:var(--accent-soft);color:var(--accent);padding:2px 8px;border-radius:20px;white-space:nowrap}
+
+/* ---------- budget de temps ---------- */
+.tbar{display:flex;gap:3px;margin:16px 0 6px;height:54px;font-family:var(--f-mono);font-size:11.5px}
+.tbar>div{display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:8px;color:#fff;text-align:center;
+  line-height:1.25;padding:0 4px;min-width:0;overflow:hidden}
+.tbar b{font-size:13px}
+.tb-a{background:var(--accent2)}.tb-b{background:var(--accent)}.tb-c{background:#0d8073}.tb-d{background:#8b5c9e}.tb-e{background:#c07030}.tb-f{background:var(--muted)}
+.tlegend{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+
+/* ---------- plan sur 10 jours ---------- */
+.plan{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px;margin-top:20px}
+.pday{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);min-width:0}
+.pday.ds{border-color:var(--bad);background:color-mix(in srgb,var(--bad-soft) 55%,var(--surface))}
+.pday-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+.pday-hd .j{font-family:var(--f-mono);font-weight:700;font-size:12.5px;color:#fff;background:var(--accent);padding:3px 9px;border-radius:6px}
+.pday.ds .pday-hd .j{background:var(--bad)}
+.pday-hd .dt{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.pday-hd .dur{margin-left:auto;font-family:var(--f-mono);font-size:11.5px;color:var(--accent2)}
+.pday h4{font-size:16px;font-style:italic;margin:2px 0 8px}
+.pday ul{list-style:none;margin:0;padding:0}
+.pday li{display:flex;gap:9px;align-items:flex-start;font-size:13.8px;margin:7px 0;line-height:1.45}
+.pday li input{margin-top:4px;accent-color:var(--accent);flex:none;width:15px;height:15px}
+.pday li label{cursor:pointer}
+.pday li input:checked+label{color:var(--muted);text-decoration:line-through}
+
+/* ---------- checklist « je sais faire » ---------- */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:16px;margin-top:20px}
+.skcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);min-width:0}
+.skcard h3{font-size:18px;font-style:italic;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.skcard h3 .n{font-family:var(--f-mono);font-style:normal;font-size:12px;font-weight:600;color:#fff;background:var(--accent);padding:3px 8px;border-radius:6px}
+.skcard h3 .cnt{margin-left:auto;font-family:var(--f-mono);font-style:normal;font-size:11.5px;color:var(--good);font-weight:500}
+.skbar{height:4px;background:var(--line2);border-radius:4px;overflow:hidden;margin:2px 0 10px}
+.skbar i{display:block;height:100%;width:0;background:var(--good);transition:width .3s}
+.skcard ul{list-style:none;margin:0;padding:0}
+.skcard li{padding:8px 0;border-bottom:1px dashed var(--line2);display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.skcard li:last-child{border-bottom:0}
+.skcard li input{margin-top:5px;accent-color:var(--good);width:16px;height:16px}
+.skcard li label{cursor:pointer;font-size:14px;line-height:1.45}
+.skcard li input:checked+div label{color:var(--muted)}
+.skl{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.skl a{font-family:var(--f-mono);font-size:11px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);background:var(--surface2);color:var(--muted);white-space:nowrap}
+.skl a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.skl a.m{color:var(--accent)}.skl a.td{color:var(--good)}.skl a.ex{color:var(--accent2)}
+
+/* ---------- fiche de survie ---------- */
+.survie{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:16px;margin-top:20px}
+.svcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);min-width:0}
+.svcard h3{font-size:16px;font-style:italic;color:var(--accent);margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid var(--line2)}
+.svcard ul{margin:0;padding-left:18px;font-size:13.8px}
+.svcard li{margin:5px 0}
+.svcard .katex{font-size:1.02em}
+
+/* ---------- carte de méthode ---------- */
+.mth{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px 20px;margin-top:22px;box-shadow:var(--shadow);min-width:0}
+.mth-hd{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.mth-code{font-family:var(--f-mono);font-weight:600;font-size:12px;color:#fff;background:var(--accent);padding:3px 9px;border-radius:6px;flex:none}
+.mth-hd h3{font-size:21px;font-style:italic;flex:1 1 260px;min-width:0}
+.mth-when{font-size:14.5px;color:var(--muted);margin:8px 0 0}
+.mth-when b{color:var(--ink)}
+.recette{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-left:4px solid var(--accent);
+  border-radius:12px;padding:13px 18px 12px;margin:14px 0}
+.recette>b.lab,.pieges>b.lab,.copie-hd b.lab{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block}
+.recette>ol{counter-reset:rc;list-style:none;padding:0;margin:8px 0 0}
+.recette>ol>li{counter-increment:rc;position:relative;padding-left:34px;margin:9px 0;font-size:14.5px}
+.recette>ol>li::before{content:counter(rc);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;
+  font-family:var(--f-mono);font-size:12px;font-weight:600;display:grid;place-items:center}
+.recette ul{margin:6px 0 4px;padding-left:20px}
+.recette ul>li{margin:4px 0;font-size:14.3px}
+.pday.today{outline:2px solid var(--accent2);outline-offset:2px}
+body.print-survie .hero,body.print-survie .ds-wrap>*:not(#survie),body.print-survie .dsnav{display:none!important}
+.cc-btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;justify-content:center}
+.dsjump{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
+.dsjump a{font-family:var(--f-mono);font-size:12.5px;padding:7px 13px;border-radius:20px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.dsjump a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.ds-wrap .section-head{padding-top:44px}
+.skglobal{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:16px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.skglobal b{font-family:var(--f-disp);font-style:italic;font-size:18px;color:var(--good)}
+.skglobal .skbar{flex:1 1 160px;margin:0}
+.lite{border:1px dashed var(--accent2);border-radius:12px;padding:14px 18px;background:var(--amber-soft);margin-top:20px;font-size:14px}
+.lite b.lab{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:4px}
+.lite ul{margin:6px 0 0;padding-left:20px}
+.lite li{margin:4px 0}
+.dsrules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px;margin-top:20px}
+.dsrule{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14px;box-shadow:var(--shadow)}
+.dsrule b{display:block;font-family:var(--f-disp);font-style:italic;font-size:16px;color:var(--accent);margin-bottom:4px}
+.dsrule p{margin:0;color:var(--muted)}
+.fin10{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:6px 20px;margin-top:12px;font-size:14px;padding:0;list-style:none}
+.fin10 li{position:relative;padding:5px 0 5px 24px;border-bottom:1px dotted var(--line2)}
+.fin10 li::before{content:"✓";color:var(--good);font-weight:700;position:absolute;left:3px;top:5px}
+.recette p{margin:8px 0 0;font-size:14px}
+.pieges{background:var(--bad-soft);border:1px solid color-mix(in srgb,var(--bad) 28%,transparent);border-left:4px solid var(--bad);border-radius:12px;
+  padding:12px 18px;margin:14px 0;font-size:14px}
+.pieges>b.lab{color:var(--bad)}
+.pieges ul{margin:6px 0 0;padding-left:18px}.pieges li{margin:5px 0}
+
+.exm{border:1px solid var(--line);border-radius:12px;margin:16px 0 4px;overflow:hidden;background:var(--surface)}
+.exm>summary{cursor:pointer;list-style:none;padding:12px 38px 12px 16px;font-family:var(--f-disp);font-weight:600;font-style:italic;font-size:16px;
+  display:block;position:relative;background:var(--surface2);line-height:1.5}
+.exm>summary::-webkit-details-marker{display:none}
+.exm>summary::after{content:"▾";position:absolute;right:16px;top:12px;color:var(--muted);transition:.2s;font-style:normal}
+.exm[open]>summary::after{transform:rotate(180deg)}
+.exm>summary:hover{color:var(--accent)}
+.exm-tag{display:inline-block;margin-right:10px;vertical-align:middle;font-family:var(--f-mono);font-style:normal;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:#fff;background:var(--accent2);padding:2px 8px;border-radius:5px;line-height:1.5}
+.exm-body{padding:6px 16px 16px}
+.exm-body .enonce{margin:10px 0 12px}
+.exm-body p{margin:8px 0}
+.reflexe{font-size:14px;border-left:3px solid var(--accent);background:var(--accent-soft);padding:9px 13px;border-radius:0 9px 9px 0;margin:10px 0}
+.reflexe b.lab{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:2px}
+
+/* ---------- la copie : rédaction + notes de marge ---------- */
+.copie{margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.copie-hd{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;padding:8px 14px;background:var(--surface2);
+  border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.copie-hd b.lab{display:inline;color:var(--accent)}
+.lg{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);border-top:1px dashed var(--line2)}
+.lg:first-of-type{border-top:0}
+.lg>.c{padding:9px 16px;font-size:15.2px;line-height:1.75;min-width:0}
+.lg>.c p{margin:4px 0}
+.lg>.a{padding:9px 14px;font-size:12.8px;line-height:1.55;color:var(--muted);border-left:3px solid var(--accent2);background:var(--amber-soft);min-width:0}
+.lg>.a b{color:var(--ink)}
+.lg>.a:empty{background:transparent;border-left-color:transparent}
+.lg .katex-display{margin:.5em 0;overflow-x:auto;overflow-y:hidden;max-width:100%}
+.lg .katex{font-size:1.06em}
+.hide-notes .lg{grid-template-columns:minmax(0,1fr)}
+.hide-notes .lg>.a{display:none}
+mark.j{background:color-mix(in srgb,var(--accent) 16%,transparent);color:inherit;padding:.02em .22em;border-radius:4px;
+  border-bottom:2px solid color-mix(in srgb,var(--accent) 55%,transparent)}
+.concl{margin:0;padding:11px 16px;background:var(--good-soft);border-top:1px solid color-mix(in srgb,var(--good) 40%,transparent);font-size:14.8px}
+.concl b.lab{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--good);margin-right:8px}
+.legend-copie{display:flex;flex-wrap:wrap;gap:10px 22px;font-family:var(--f-mono);font-size:12px;color:var(--muted);margin:16px 0 4px}
+.legend-copie span{display:inline-flex;align-items:center;gap:7px}
+.legend-copie .sw{width:22px;height:12px;border-radius:3px;display:inline-block}
+.sw-j{background:color-mix(in srgb,var(--accent) 22%,transparent);border-bottom:2px solid var(--accent)}
+.sw-a{background:var(--amber-soft);border-left:3px solid var(--accent2)}
+.sw-r{background:var(--accent-soft);border-left:3px solid var(--accent)}
+
+/* ---------- tables de phrases types ---------- */
+.phr td{vertical-align:top;font-size:14px}
+.phr td:first-child{font-weight:600;width:26%}
+.phr td .katex{font-size:1.02em}
+.phr .bad{color:var(--bad);font-size:13px;display:block;margin-top:5px}
+.phr .bad::before{content:"✗ ";font-weight:700}
+.phr .good{color:var(--good);font-size:13px;display:block;margin-top:5px}
+.phr .good::before{content:"✓ ";font-weight:700}
+
+/* ---------- barre d'outils des méthodes ---------- */
+.mbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:24px 0 4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.chips a{font-family:var(--f-mono);font-size:12.5px;padding:7px 13px;border-radius:20px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.chips a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.mindex{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:6px 20px;margin:12px 0 0;font-size:14px}
+.mindex a{display:flex;gap:9px;align-items:baseline;padding:4px 0;color:var(--ink);border-bottom:1px dotted var(--line2)}
+.mindex a span{font-family:var(--f-mono);font-size:11.5px;color:var(--accent);flex:none;min-width:42px}
+.mindex a:hover{color:var(--accent);text-decoration:none}
+
+/* ---------- exercices : niveau, durée, renvoi TD ---------- */
+.cx-meta{display:flex;flex-wrap:wrap;gap:6px 8px;margin:6px 0 2px;font-family:var(--f-mono);font-size:11.5px}
+.cx-meta .lvl{color:var(--warn);background:var(--amber-soft);padding:2px 9px;border-radius:20px}
+.cx-meta .dur{color:var(--accent);background:var(--accent-soft);padding:2px 9px;border-radius:20px}
+.cx-meta .skill{color:var(--muted);background:var(--surface2);border:1px solid var(--line2);padding:2px 9px;border-radius:20px}
+.cx-ref{font-size:13.2px;color:var(--muted);margin:8px 0 0}
+.cx-ref a{font-family:var(--f-mono);font-size:12px}
+.cx-enonce ol,.cx-enonce ul{margin:6px 0 2px;padding-left:22px}
+.cx-enonce li{margin:4px 0}
+.palier{margin-top:26px;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);
+  display:flex;align-items:center;gap:10px}
+.palier::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* ---------- DS blancs ---------- */
+.chrono{position:sticky;top:98px;z-index:35;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;background:var(--surface);
+  border:1px solid var(--line);border-radius:14px;padding:12px 18px;box-shadow:var(--shadow);margin:20px 0}
+.chrono .time{font-family:var(--f-mono);font-weight:600;font-size:34px;letter-spacing:.02em;color:var(--ink);min-width:5.2ch}
+.chrono.warn15 .time{color:var(--warn)}
+.chrono.warn5 .time{color:var(--bad)}
+.chrono .cmsg{font-size:13.5px;color:var(--muted);flex:1 1 220px;min-width:0}
+.chrono .cbtn{font-family:var(--f-mono);font-size:12.5px;padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);cursor:pointer}
+.chrono .cbtn:hover{border-color:var(--accent);color:var(--accent)}
+.chrono .cbtn.go{background:var(--accent);border-color:var(--accent);color:#fff}
+.sujet{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:6px 22px 18px;box-shadow:var(--shadow);margin-top:18px}
+.sujet-hd{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;padding:14px 0 10px;border-bottom:2px solid var(--accent);margin-bottom:4px}
+.sujet-hd h2{font-size:26px;font-style:italic}
+.sujet-hd .meta{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.consignes{font-size:13.8px;color:var(--muted);border-left:3px solid var(--accent2);padding:6px 12px;background:var(--amber-soft);border-radius:0 8px 8px 0;margin:12px 0}
+.consignes ul{margin:4px 0 0;padding-left:18px}
+.dsx{margin-top:22px;padding-top:6px}
+.dsx-hd{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+.dsx-hd h3{font-size:19px;font-style:italic}
+.dsx-hd .pts{margin-left:auto;font-family:var(--f-mono);font-size:12px;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:20px}
+.dsx-hd .min{font-family:var(--f-mono);font-size:12px;color:var(--accent2)}
+.dsx .q{margin:6px 0 6px 0;font-size:15.2px}
+.dsx ol.qs{margin:6px 0 0;padding-left:0;list-style:none;counter-reset:qq}
+.dsx ol.qs>li{counter-increment:qq;position:relative;padding-left:32px;margin:9px 0}
+.dsx ol.qs>li::before{content:counter(qq) ".";position:absolute;left:0;font-family:var(--f-mono);font-weight:600;color:var(--accent)}
+.dsx ol.qs>li>span.p{font-family:var(--f-mono);font-size:11px;color:var(--muted);margin-left:6px;white-space:nowrap}
+.corr-lock{margin:26px 0 0;border:1px dashed var(--bad);border-radius:12px;padding:12px 16px;font-size:13.8px;background:var(--bad-soft)}
+.corr-lock b{color:var(--bad)}
+.barem{width:100%;margin:10px 0 4px;border-collapse:collapse;font-size:13.8px}
+.barem td{padding:6px 8px;border-bottom:1px dashed var(--line2);vertical-align:top}
+.barem td:last-child{text-align:right;font-family:var(--f-mono);white-space:nowrap;color:var(--accent);width:1%}
+.barem label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;line-height:1.5}
+.barem input{accent-color:var(--good);width:16px;height:16px;margin-top:3px;flex:none}
+.barem input:checked+span{color:var(--muted)}
+.bar-hd{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--good);margin:14px 0 2px}
+.dsb{margin-top:46px;scroll-margin-top:150px}
+.dsb-cor{margin-top:22px}
+.dsb-cor>h3{font-size:22px;font-style:italic;margin-bottom:4px}
+.dsb-cor .cx-corr{margin-top:12px}
+.tag-lvl{font-family:var(--f-mono);font-size:11.5px;padding:3px 10px;border-radius:20px;background:var(--amber-soft);color:var(--warn)}
+.dsmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:14px;margin-top:20px}
+.dsmap a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);color:inherit;transition:.15s}
+.dsmap a:hover{border-color:var(--accent);transform:translateY(-3px);text-decoration:none}
+.dsmap .n{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2)}
+.dsmap h3{font-size:20px;font-style:italic;margin:4px 0 6px}
+.dsmap p{margin:0;font-size:13.8px;color:var(--muted)}
+.dsmap .tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.scorebox{position:sticky;bottom:12px;z-index:30;margin-top:24px;background:var(--surface);border:1px solid var(--good);border-radius:14px;padding:12px 18px;
+  box-shadow:var(--shadow);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.scorebox .sc{font-family:var(--f-disp);font-style:italic;font-weight:800;font-size:34px;color:var(--good)}
+.scorebox .sm{font-size:13.5px;color:var(--muted);flex:1 1 220px}
+.sheet-print{margin-top:10px}
+
+/* ---------- formules affichées : jamais de débordement de la page ---------- */
+.ds-page .tbl-wrap,.ds-page .mq,.ds-page .katex-display{position:relative}   /* le MathML caché de KaTeX est en position:absolute : sans cela il élargit la page */
+.ds-page .katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:2px 0}
+.ds-page .katex-display>.katex{white-space:nowrap}
+.ds-page .recette .katex-display,.ds-page .pieges .katex-display{margin:.6em 0}
+
+/* ---------- impression ---------- */
+@media print{
+  .dsnav,.chrono,.scorebox,.mbar,.chips,.corr-lock{display:none!important}
+  .exm,.recette,.pieges,.mth,.svcard,.skcard,.pday{break-inside:avoid;box-shadow:none}
+  .hide-notes .lg>.a{display:block}
+}
+
+/* ---------- téléphone ---------- */
+@media(max-width:900px){
+  .lg{grid-template-columns:minmax(0,1fr)}
+  .lg>.a{border-left:0;border-top:2px solid var(--accent2);padding:6px 14px 8px}
+  .lg>.a:empty{display:none}
+}
+@media(max-width:640px){
+  .ds-page .cx-toolbar{top:auto}
+  .dsnav{top:57px}
+  .mth{padding:16px 9px}
+  .exm-body{padding:4px 3px 12px}
+  .lg>.c{padding:8px 7px;font-size:14.8px}
+  .lg>.a{padding:6px 9px 8px}
+  .copie-hd{padding:7px 9px}
+  .sujet{padding:4px 12px 14px}
+  .chrono{top:98px;padding:10px 12px}
+  .chrono .time{font-size:28px}
+  .tbar{height:auto;flex-wrap:wrap}
+  .tbar>div{min-height:40px}
+  .countcard .cc-n{font-size:54px}
+  .ds-page .wrap{padding-left:12px;padding-right:12px}
+  .recette,.pieges{padding-left:12px;padding-right:12px}
+}

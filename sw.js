@@ -1,7 +1,8 @@
 /* Hors ligne : le réseau d'abord (contenu toujours à jour), la copie locale si pas de connexion. */
-const CACHE = "champs-integrales-v3";
-const CORE = ["./", "index.html", "corriges.html", "css/style.css", "js/app.js", "js/quiz.js", "js/lightbox.js",
-  "js/corriges.js", "js/maths.js", "assets/favicon.svg", "assets/icon-192.png", "manifest.webmanifest"];
+const CACHE = "champs-integrales-v4";
+const CORE = ["./", "index.html", "corriges.html", "ds.html", "ds-methodes.html", "ds-exercices.html", "ds-blancs.html",
+  "css/style.css", "css/ds.css", "js/app.js", "js/quiz.js", "js/lightbox.js",
+  "js/corriges.js", "js/maths.js", "js/ds.js", "assets/favicon.svg", "assets/icon-192.png", "manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));

@@ -518,6 +518,7 @@ td.mono,th.mono{font-family:var(--f-mono)}
 .nav a:hover{color:var(--ink);background:var(--surface2);text-decoration:none}
 .nav a.active{color:var(--accent);background:var(--accent-soft)}
 .nav .nav-corr{color:var(--good);font-weight:600}
+.nav .nav-ds{color:var(--accent2);font-weight:600}
 a.brand:hover{text-decoration:none}
 a.card{color:inherit}
 a.card:hover{text-decoration:none}
