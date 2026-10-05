@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/ds.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script src="js/topbar.js"></script>
 </head>
 <body class="cx-page ds-page ds-form">
 
@@ -57,6 +58,7 @@
     <a class="tab" href="ds.html">Plan &amp; checklist</a>
     <a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
     <a class="tab on" href="ds-formules.html">📘 Formules</a>
+    <a class="tab" href="ds-quiz.html">🧠 Quiz</a>
     <a class="tab" href="ds-exercices.html">🏋 Exercices</a>
     <a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
     <span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
@@ -71,6 +73,7 @@
       <span class="eyebrow">📘 Spécial DS · formulaire</span>
       <h1>Formules, notions et <em>équations</em> à connaître.</h1>
       <p class="lead">Tout ce qu'il faut savoir <b>sans regarder</b> pour les chapitres 1 à 4 : définitions, théorèmes avec leurs hypothèses, formules, équations de courbes et de surfaces. Chaque fiche a sa case « je connais » : coche-la quand tu sais la réécrire de mémoire. Recherche et filtres en haut de page.</p>
+      <div class="hero-cta" style="margin-top:14px"><a class="btn btn-ghost" href="ds-quiz.html">🧠 Teste-toi : quiz et flashcards sur ces fiches</a></div>
       <div class="hero-meta">
         <div><div class="n" id="fmTotal">64</div><div class="l">Fiches</div></div>
         <div><div class="n">6</div><div class="l">Parties</div></div>
@@ -84,6 +87,8 @@
   <div class="fm-toolbar" role="search">
     <input id="fmSearch" class="cx-search" type="search" placeholder="Rechercher : Schwarz, jacobien, ellipse, sphériques…" aria-label="Rechercher dans le formulaire">
     <span class="fm-count" id="fmCount" aria-live="polite"></span>
+    <button type="button" class="cx-btn" id="fmFiltBtn" aria-expanded="false" aria-controls="fmFilters">⚙ Filtres <span class="fm-n" id="fmFiltN" hidden></span></button>
+    <div class="fm-filters" id="fmFilters" hidden>
     <div class="fm-chips" id="fmChCh" aria-label="Partie">
       <button type="button" class="fchip active" data-ch="all">Tout</button>
       <button type="button" class="fchip" data-ch="0">Ch. 0</button>
@@ -105,6 +110,7 @@
       <button type="button" class="cx-btn" id="fmHide" data-on="0">Masquer ce que je connais</button>
       <button type="button" class="cx-btn" id="fmPrint">🖨 Imprimer</button>
       <span class="cx-progress" data-prog="fm" style="margin-left:0"></span>
+    </div>
     </div>
   </div>
   <p class="cx-empty" id="fmEmpty" hidden>Aucune fiche ne correspond.</p>
@@ -751,7 +757,7 @@
 <div class="foot">
   <div class="wrap">
     <span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
-    <span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
+    <span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
   </div>
 </div>
 <a class="cx-top" href="#" aria-label="Revenir en haut de la page">↑</a>

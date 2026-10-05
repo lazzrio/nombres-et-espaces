@@ -14,7 +14,7 @@ Statique (seule la bibliothèque de formules KaTeX est chargée depuis un CDN, p
 |---|---|
 | 📚 **Cours complet** | 8 chapitres : définitions, théorèmes (Fermat, Schwarz, Poincaré, Green-Riemann, Stokes, Ostrogradsky, Lagrange…), méthodes, exemples, plus les compléments utiles à un ingénieur (EDP simples, ouverts étoilés, coniques et quadriques, éléments de surface, Hessienne en dimension n, Lagrange à plusieurs contraintes) |
 | ✅ **Exercices corrigés** (`corriges.html`) | Les 70 exercices de la feuille 2026-2027 + les 4 exercices supplémentaires du chapitre 1 : méthode avec rappels de cours, correction détaillée pas à pas avec les formules écrites comme sur une copie (rendu KaTeX : vraies fractions, intégrales, vecteurs, matrices), pièges, contrôle du résultat. Recherche, filtre par thème, suivi « fait » |
-| 🎓 **Spécial DS** (`ds.html`, `ds-methodes.html`, `ds-exercices.html`, `ds-blancs.html`) | Préparation du DS sur les **chapitres 1 à 4** : plan sur 10 jours (la date du DS se règle sur la page), checklist « je sais faire », stratégie pour 1h30, fiche de survie imprimable ; **36 méthodes** rédigées (recette, exemple expliqué avec rédaction type et notes de marge, pièges) + guide de rédaction ; **38 exercices** en trois paliers (échauffement, technique, format DS) reliés aux numéros du TD, avec indice et correction rédigée ; **3 DS blancs de 1h30** avec chronomètre, barème détaillé (chaque DS fait 20 points) et auto-notation |
+| 🎓 **Spécial DS** (`ds.html`, `ds-methodes.html`, `ds-formules.html`, `ds-quiz.html`, `ds-exercices.html`, `ds-blancs.html`) | Préparation du DS sur les **chapitres 1 à 4** : plan sur 10 jours (la date du DS se règle sur la page), checklist « je sais faire », stratégie pour 1h30, fiche de survie imprimable ; **36 méthodes** rédigées (recette, exemple expliqué avec rédaction type et notes de marge, pièges) + guide de rédaction ; un **formulaire** de 64 fiches (définitions, théorèmes avec hypothèses, formules, équations) avec recherche et suivi « je connais » ; un **quiz** de 89 QCM et 52 flashcards sur ces fiches (explications, erreurs à refaire, maîtrise par partie) ; **38 exercices** en trois paliers (échauffement, technique, format DS) reliés aux numéros du TD, avec indice et correction rédigée ; **3 DS blancs de 1h30** avec chronomètre, barème détaillé (chaque DS fait 20 points) et auto-notation |
 | 🛠 **Méthodes** | La boîte à outils par chapitre |
 | 🧭 **Déroulés** | Table de décision « je vois → je pense » + 15 exercices types résolus pas à pas |
 | 💡 **Notions clés** | Une fiche de synthèse par chapitre, avec réflexes et pièges |
@@ -26,7 +26,7 @@ Statique (seule la bibliothèque de formules KaTeX est chargée depuis un CDN, p
 
 Tous les résultats des corrigés ont été vérifiés numériquement (175 contrôles avec NumPy/SciPy).
 
-**Fonctionnalités** : thème clair/sombre, adresses directes vers chaque vue
+**Fonctionnalités** : thème clair/sombre, barre du haut escamotable (bouton ⌃ pour la masquer et gagner de la place, pastille « Menu » pour la ramener ; choix mémorisé), adresses directes vers chaque vue
 (`index.html#cours`, `index.html#ch3-quadriques`, `corriges.html#imu-3`),
 bouton « retour » du navigateur, suivi de progression (localStorage),
 utilisable hors ligne et installable sur téléphone (service worker + manifest),
@@ -52,6 +52,7 @@ nombres-et-espaces/
 ├── ds.html               # Spécial DS : plan, checklist, stratégie, fiche de survie
 ├── ds-methodes.html      # Spécial DS : 36 méthodes + guide de rédaction
 ├── ds-formules.html      # Spécial DS : formulaire (définitions, théorèmes, formules, équations)
+├── ds-quiz.html          # Spécial DS : QCM et flashcards sur le formulaire
 ├── ds-exercices.html     # Spécial DS : 38 exercices corrigés
 ├── ds-blancs.html        # Spécial DS : 3 DS blancs de 1h30 (chrono, barème)
 ├── 404.html              # page d'erreur GitHub Pages
@@ -65,6 +66,9 @@ nombres-et-espaces/
 │   ├── corriges.js       # recherche, filtres, suivi « fait » des corrigés
 │   ├── maths.js          # rendu des formules (KaTeX) et ajustement à la largeur de l'écran
 │   ├── quiz.js           # moteur de quiz + banque de questions
+│   ├── ds-quiz.js        # Spécial DS : moteur du quiz (QCM, flashcards, suivi des erreurs)
+│   ├── ds-quiz-data.js   # Spécial DS : banque de questions du quiz (une ligne = une question)
+│   ├── topbar.js         # barre du haut escamotable (mémorisée)
 │   └── lightbox.js       # visionneuse plein écran
 ├── assets/
 │   ├── favicon.svg, icon-192.png, icon-512.png

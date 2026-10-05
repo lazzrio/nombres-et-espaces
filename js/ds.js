@@ -321,7 +321,14 @@
       });
       var e = $("#fmEmpty"); if (e) e.hidden = vis > 0;
       var c = $("#fmCount"); if (c) c.textContent = vis + " / " + fis.length + " fiches";
+      var nf = (fmCh !== "all" ? 1 : 0) + (fmT !== "all" ? 1 : 0) + (fmHide ? 1 : 0), fn = $("#fmFiltN");
+      if (fn) { fn.textContent = nf ? String(nf) : ""; fn.hidden = !nf; }
     }
+    var fb = $("#fmFiltBtn"), fbox = $("#fmFilters");
+    if (fb && fbox) fb.addEventListener("click", function () {
+      var open = fbox.hidden;
+      fbox.hidden = !open; fb.setAttribute("aria-expanded", open ? "true" : "false");
+    });
     function fmKnown() { fis.forEach(function (a) { a.classList.toggle("known", $("input", a).checked); }); }
     fis.forEach(function (a) { $("input", a).addEventListener("change", function () { fmKnown(); if (fmHide) fmFilter(); }); });
     if (fmQ) fmQ.addEventListener("input", fmFilter);
