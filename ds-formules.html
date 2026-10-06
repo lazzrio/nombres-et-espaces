@@ -1,769 +1,692 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Spécial DS · formules, notions et équations — Champs &amp; Intégrales</title>
-<meta name="description" content="Le formulaire du DS d'Analyse 3 (chapitres 1 à 4) : définitions, théorèmes, formules et équations à connaître, avec recherche et suivi « je connais ».">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#4b3e8f" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1128" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/icon-192.png">
-<link rel="manifest" href="manifest.webmanifest">
-<meta property="og:title" content="Spécial DS · formules, notions et équations">
-<meta property="og:description" content="Le formulaire du DS d'Analyse 3 (chapitres 1 à 4) : définitions, théorèmes, formules et équations à connaître, avec recherche et suivi « je connais ».">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/ds.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<meta content="Le formulaire du DS d'Analyse 3 (chapitres 1 à 4) : définitions, théorèmes, formules et équations à connaître, avec recherche et suivi « je connais »." name="description"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="#4b3e8f" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0e1128" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/icon-192.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="Spécial DS · formules, notions et équations" property="og:title"/>
+<meta content="Le formulaire du DS d'Analyse 3 (chapitres 1 à 4) : définitions, théorèmes, formules et équations à connaître, avec recherche et suivi « je connais »." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/ds.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <script src="js/topbar.js"></script>
 </head>
 <body class="cx-page ds-page ds-form">
-
 <div class="topbar">
-  <div class="topbar-in">
-    <a class="brand" href="index.html" aria-label="Accueil du site">
-      <span class="chip-logo">∇</span>
+<div class="topbar-in">
+<a aria-label="Accueil du site" class="brand" href="index.html">
+<span class="chip-logo">\(\nabla\)</span>
       Champs &amp; Intégrales
     </a>
-    <nav class="nav" id="nav" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="ds.html" class="nav-ds active" aria-current="page"><span class="ni">🎓</span> DS</a>
-      <a href="index.html#cours"><span class="ni">📚</span> Cours</a>
-      <a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
-      <a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
-      <a href="corriges.html" class="nav-corr"><span class="ni">✅</span> Corrigés</a>
-      <a href="index.html#notions"><span class="ni">💡</span> Notions</a>
-      <a href="index.html#formules"><span class="ni">📘</span> Formules</a>
-      <a href="index.html#express"><span class="ni">⚡</span> Express</a>
-      <a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
-      <a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
-      <a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
-      <a href="index.html#planning"><span class="ni">📅</span> Planning</a>
-    </nav>
-    <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">
-      <svg id="thIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    </button>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
+<nav aria-label="Navigation principale" class="nav" id="nav">
+<a href="index.html">Accueil</a>
+<a aria-current="page" class="nav-ds active" href="ds.html"><span class="ni">🎓</span> DS</a>
+<a href="index.html#cours"><span class="ni">📚</span> Cours</a>
+<a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
+<a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
+<a class="nav-corr" href="corriges.html"><span class="ni">✅</span> Corrigés</a>
+<a href="index.html#notions"><span class="ni">💡</span> Notions</a>
+<a href="index.html#formules"><span class="ni">📘</span> Formules</a>
+<a href="index.html#express"><span class="ni">⚡</span> Express</a>
+<a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
+<a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
+<a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
+<a href="index.html#planning"><span class="ni">📅</span> Planning</a>
+</nav>
+<button aria-label="Changer de thème" class="theme-btn" id="themeBtn" title="Thème clair / sombre">
+<svg fill="none" id="thIcon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</button>
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
 </div>
-
+</div>
 <div class="dsnav" id="dsnav">
-  <div class="dsnav-in">
-    <span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
-    <a class="tab" href="ds.html">Plan &amp; checklist</a>
-    <a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
-    <a class="tab on" href="ds-formules.html">📘 Formules</a>
-    <a class="tab" href="ds-quiz.html">🧠 Quiz</a>
-    <a class="tab" href="ds-exercices.html">🏋 Exercices</a>
-    <a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
-    <span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
-  </div>
+<div class="dsnav-in">
+<span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
+<a class="tab" href="ds.html">Plan &amp; checklist</a>
+<a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
+<a class="tab on" href="ds-formules.html">📘 Formules</a>
+<a class="tab" href="ds-quiz.html">🧠 Quiz</a>
+<a class="tab" href="ds-exercices.html">🏋 Exercices</a>
+<a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
+<span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
 </div>
-
+</div>
 <main>
 <div class="hero hero-sm ds-hero">
-  <div class="hero-grid"></div>
-  <div class="hero-in" style="grid-template-columns:1fr">
-    <div>
-      <span class="eyebrow">📘 Spécial DS · formulaire</span>
-      <h1>Formules, notions et <em>équations</em> à connaître.</h1>
-      <p class="lead">Tout ce qu'il faut savoir <b>sans regarder</b> pour les chapitres 1 à 4 : définitions, théorèmes avec leurs hypothèses, formules, équations de courbes et de surfaces. Chaque fiche a sa case « je connais » : coche-la quand tu sais la réécrire de mémoire. Recherche et filtres en haut de page.</p>
-      <div class="hero-cta" style="margin-top:14px"><a class="btn btn-ghost" href="ds-quiz.html">🧠 Teste-toi : quiz et flashcards sur ces fiches</a></div>
-      <div class="hero-meta">
-        <div><div class="n" id="fmTotal">64</div><div class="l">Fiches</div></div>
-        <div><div class="n">6</div><div class="l">Parties</div></div>
-        <div><div class="n">0</div><div class="l">À regarder pendant le DS</div></div>
-      </div>
-    </div>
-  </div>
+<div class="hero-grid"></div>
+<div class="hero-in" style="grid-template-columns:1fr">
+<div>
+<span class="eyebrow">📘 Spécial DS · formulaire</span>
+<h1>Formules, notions et <em>équations</em> à connaître.</h1>
+<p class="lead">Tout ce qu'il faut savoir <b>sans regarder</b> pour les chapitres 1 à 4 : définitions, théorèmes avec leurs hypothèses, formules, équations de courbes et de surfaces. Chaque fiche a sa case « je connais » : coche-la quand tu sais la réécrire de mémoire. Recherche et filtres en haut de page.</p>
+<div class="hero-cta" style="margin-top:14px"><a class="btn btn-ghost" href="ds-quiz.html">🧠 Teste-toi : quiz et flashcards sur ces fiches</a></div>
+<div class="hero-meta">
+<div><div class="n" id="fmTotal">64</div><div class="l">Fiches</div></div>
+<div><div class="n">6</div><div class="l">Parties</div></div>
+<div><div class="n">0</div><div class="l">À regarder pendant le DS</div></div>
 </div>
-
+</div>
+</div>
+</div>
 <div class="wrap ds-wrap fm-wrap">
-  <div class="fm-toolbar" role="search">
-    <input id="fmSearch" class="cx-search" type="search" placeholder="Rechercher : Schwarz, jacobien, ellipse, sphériques…" aria-label="Rechercher dans le formulaire">
-    <span class="fm-count" id="fmCount" aria-live="polite"></span>
-    <button type="button" class="cx-btn" id="fmFiltBtn" aria-expanded="false" aria-controls="fmFilters">⚙ Filtres <span class="fm-n" id="fmFiltN" hidden></span></button>
-    <div class="fm-filters" id="fmFilters" hidden>
-    <div class="fm-chips" id="fmChCh" aria-label="Partie">
-      <button type="button" class="fchip active" data-ch="all">Tout</button>
-      <button type="button" class="fchip" data-ch="0">Ch. 0</button>
-      <button type="button" class="fchip" data-ch="1">Ch. 1</button>
-      <button type="button" class="fchip" data-ch="2">Ch. 2</button>
-      <button type="button" class="fchip" data-ch="3">Ch. 3</button>
-      <button type="button" class="fchip" data-ch="4">Ch. 4</button>
-      <button type="button" class="fchip" data-ch="o">Outils</button>
-    </div>
-    <div class="fm-chips" id="fmChT" aria-label="Type">
-      <button type="button" class="fchip active" data-t="all">Tous types</button>
-      <button type="button" class="fchip" data-t="Définition">Définitions</button>
-      <button type="button" class="fchip" data-t="Théorème">Théorèmes</button>
-      <button type="button" class="fchip" data-t="Formule">Formules</button>
-      <button type="button" class="fchip" data-t="Équation">Équations</button>
-      <button type="button" class="fchip" data-t="Piège">Pièges</button>
-    </div>
-    <div class="fm-chips">
-      <button type="button" class="cx-btn" id="fmHide" data-on="0">Masquer ce que je connais</button>
-      <button type="button" class="cx-btn" id="fmPrint">🖨 Imprimer</button>
-      <span class="cx-progress" data-prog="fm" style="margin-left:0"></span>
-    </div>
-    </div>
-  </div>
-  <p class="cx-empty" id="fmEmpty" hidden>Aucune fiche ne correspond.</p>
-  <!-- ce <div class="wrap"> est refermé à la fin de form_outils.html -->
-
-<section class="fm-sec" id="fm-0" data-ch="0">
-  <h2 class="fm-h">Chapitre 0 · Géométrie <span>rappels utiles aux chapitres 3 et 4</span></h2>
-
-  <article class="fi" data-ch="0" data-t="Formule" id="f-0-scalaire">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-0-1" data-g="fm fm-c0" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Produit scalaire et norme <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\vec u\cdot\vec v=xx'+yy'+zz'=\|\vec u\|\,\|\vec v\|\cos(\vec u,\vec v),\qquad\|\vec u\|=\sqrt{x^2+y^2+z^2}\]</div>
-      <p class="fi-n">\(\vec u\perp\vec v\iff\vec u\cdot\vec v=0\). Projeté orthogonal de \(\vec v\) sur \(\vec u\) : \(\dfrac{\vec u\cdot\vec v}{\|\vec u\|^2}\,\vec u\). Bilinéarité : \((\vec u+\vec v)^2=\|\vec u\|^2+2\,\vec u\cdot\vec v+\|\vec v\|^2\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="0" data-t="Formule" id="f-0-vectoriel">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-0-2" data-g="fm fm-c0" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Produit vectoriel <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\vec u\wedge\vec v=(yz'-zy',\ zx'-xz',\ xy'-yx')\]</div>
-      <p class="fi-n">Orthogonal à \(\vec u\) et \(\vec v\) ; \(\|\vec u\wedge\vec v\|=\|\vec u\|\|\vec v\||\sin|\) = aire du parallélogramme ; \(\vec u\wedge\vec v=-\vec v\wedge\vec u\) ; \(=\vec0\iff\) colinéaires. Vecteur normal <b>unitaire</b> : \(\dfrac{\vec u\wedge\vec v}{\|\vec u\wedge\vec v\|}\) (il y en a deux : \(\pm\)).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="0" data-t="Équation" id="f-0-plan">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-0-3" data-g="fm fm-c0" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Équation d'un plan <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="fi-f">\[ax+by+cz+d=0,\ \ \vec n=(a,b,c)\qquad\overrightarrow{M_0M}\cdot\vec n=0\iff a(x-x_0)+b(y-y_0)+c(z-z_0)=0\]</div>
-      <p class="fi-n">Trois points \(A,B,C\) non alignés : \(\vec n=\overrightarrow{AB}\wedge\overrightarrow{AC}\), puis vérifier avec les trois points. Plan paramétré : \(A+s\vec u+t\vec v\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="0" data-t="Équation" id="f-0-droite">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-0-4" data-g="fm fm-c0" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Droites du plan et de l'espace <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="fi-f">\[\text{plan : }ax+by+c=0,\ \vec n=(a,b),\ \vec d=(-b,a)\qquad\text{espace : }\begin{cases}ax+by+cz+d=0\\ a'x+b'y+c'z+d'=0\end{cases}\]</div>
-      <p class="fi-n">Droite par \(M_1,M_2\) : \(\frac{x-x_1}{x_2-x_1}=\frac{y-y_1}{y_2-y_1}\), vecteur directeur \(\overrightarrow{M_1M_2}\). Droite de l'espace = point + direction \(\vec n_1\wedge\vec n_2\) (intersection de deux plans non parallèles).</p>
-    </div>
-  </article>
+<div class="fm-toolbar" role="search">
+<input aria-label="Rechercher dans le formulaire" class="cx-search" id="fmSearch" placeholder="Rechercher : Schwarz, jacobien, ellipse, sphériques…" type="search"/>
+<span aria-live="polite" class="fm-count" id="fmCount"></span>
+<button aria-controls="fmFilters" aria-expanded="false" class="cx-btn" id="fmFiltBtn" type="button">⚙ Filtres <span class="fm-n" hidden="" id="fmFiltN"></span></button>
+<div class="fm-filters" hidden="" id="fmFilters">
+<div aria-label="Partie" class="fm-chips" id="fmChCh">
+<button class="fchip active" data-ch="all" type="button">Tout</button>
+<button class="fchip" data-ch="0" type="button">Ch. 0</button>
+<button class="fchip" data-ch="1" type="button">Ch. 1</button>
+<button class="fchip" data-ch="2" type="button">Ch. 2</button>
+<button class="fchip" data-ch="3" type="button">Ch. 3</button>
+<button class="fchip" data-ch="4" type="button">Ch. 4</button>
+<button class="fchip" data-ch="o" type="button">Outils</button>
+</div>
+<div aria-label="Type" class="fm-chips" id="fmChT">
+<button class="fchip active" data-t="all" type="button">Tous types</button>
+<button class="fchip" data-t="Définition" type="button">Définitions</button>
+<button class="fchip" data-t="Théorème" type="button">Théorèmes</button>
+<button class="fchip" data-t="Formule" type="button">Formules</button>
+<button class="fchip" data-t="Équation" type="button">Équations</button>
+<button class="fchip" data-t="Piège" type="button">Pièges</button>
+</div>
+<div class="fm-chips">
+<button class="cx-btn" data-on="0" id="fmHide" type="button">Masquer ce que je connais</button>
+<button class="cx-btn" id="fmPrint" type="button">🖨 Imprimer</button>
+<span class="cx-progress" data-prog="fm" style="margin-left:0"></span>
+</div>
+</div>
+</div>
+<p class="cx-empty" hidden="" id="fmEmpty">Aucune fiche ne correspond.</p>
+<!-- ce <div class="wrap"> est refermé à la fin de form_outils.html -->
+<section class="fm-sec" data-ch="0" id="fm-0">
+<h2 class="fm-h">Chapitre 0 · Géométrie <span>rappels utiles aux chapitres 3 et 4</span></h2>
+<article class="fi" data-ch="0" data-t="Formule" id="f-0-scalaire">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-0-1" data-g="fm fm-c0" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Produit scalaire et norme <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\vec u\cdot\vec v=xx'+yy'+zz'=\|\vec u\|\,\|\vec v\|\cos(\vec u,\vec v),\qquad\|\vec u\|=\sqrt{x^2+y^2+z^2}\]</div>
+<p class="fi-n">\(\vec u\perp\vec v\iff\vec u\cdot\vec v=0\). Projeté orthogonal de \(\vec v\) sur \(\vec u\) : \(\dfrac{\vec u\cdot\vec v}{\|\vec u\|^2}\,\vec u\). Bilinéarité : \((\vec u+\vec v)^2=\|\vec u\|^2+2\,\vec u\cdot\vec v+\|\vec v\|^2\).</p>
+</div>
+</article>
+<article class="fi" data-ch="0" data-t="Formule" id="f-0-vectoriel">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-0-2" data-g="fm fm-c0" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Produit vectoriel <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\vec u\wedge\vec v=(yz'-zy',\ zx'-xz',\ xy'-yx')\]</div>
+<p class="fi-n">Orthogonal à \(\vec u\) et \(\vec v\) ; \(\|\vec u\wedge\vec v\|=\|\vec u\|\|\vec v\||\sin|\) = aire du parallélogramme ; \(\vec u\wedge\vec v=-\vec v\wedge\vec u\) ; \(=\vec0\iff\) colinéaires. Vecteur normal <b>unitaire</b> : \(\dfrac{\vec u\wedge\vec v}{\|\vec u\wedge\vec v\|}\) (il y en a deux : \(\pm\)).</p>
+</div>
+</article>
+<article class="fi" data-ch="0" data-t="Équation" id="f-0-plan">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-0-3" data-g="fm fm-c0" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Équation d'un plan <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[ax+by+cz+d=0,\ \ \vec n=(a,b,c)\qquad\overrightarrow{M_0M}\cdot\vec n=0\iff a(x-x_0)+b(y-y_0)+c(z-z_0)=0\]</div>
+<p class="fi-n">Trois points \(A,B,C\) non alignés : \(\vec n=\overrightarrow{AB}\wedge\overrightarrow{AC}\), puis vérifier avec les trois points. Plan paramétré : \(A+s\vec u+t\vec v\).</p>
+</div>
+</article>
+<article class="fi" data-ch="0" data-t="Équation" id="f-0-droite">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-0-4" data-g="fm fm-c0" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Droites du plan et de l'espace <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[\text{plan : }ax+by+c=0,\ \vec n=(a,b),\ \vec d=(-b,a)\qquad\text{espace : }\begin{cases}ax+by+cz+d=0\\ a'x+b'y+c'z+d'=0\end{cases}\]</div>
+<p class="fi-n">Droite par \(M_1,M_2\) : \(\frac{x-x_1}{x_2-x_1}=\frac{y-y_1}{y_2-y_1}\), vecteur directeur \(\overrightarrow{M_1M_2}\). Droite de l'espace = point + direction \(\vec n_1\wedge\vec n_2\) (intersection de deux plans non parallèles).</p>
+</div>
+</article>
 </section>
-
-<section class="fm-sec" id="fm-1" data-ch="1">
-  <h2 class="fm-h">Chapitre 1 · Fonctions de plusieurs variables <span>limites, dérivées, jacobienne, EDP</span></h2>
-
-  <article class="fi" data-ch="1" data-t="Définition" id="f-1-ouvert">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-1" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Ouvert de \(\mathbb{R}^2\) (ou \(\mathbb{R}^3\)) <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[U\text{ ouvert}\iff\forall M_0\in U,\ \exists r&gt;0,\ D(M_0,r)=\{M:\|M-M_0\|&lt;r\}\subset U\]</div>
-      <p class="fi-n">Ouverts : \(\mathbb{R}^2\), \(\emptyset\), disque ouvert, \(]a,b[\times]c,d[\). Fermés (complémentaire ouvert) : disque fermé \(\le r\), \([a,b]\times[c,d]\). \([a,b[\times]c,d[\) n'est ni l'un ni l'autre. Inégalités <b>strictes</b> \(\to\) ouvert ; <b>larges</b> \(\to\) fermé.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Formule" id="f-1-domaine">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-2" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Domaine de définition <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\tfrac1u:\ u\neq0\qquad\sqrt u:\ u\ge0\qquad\ln u:\ u&gt;0\qquad\tfrac1{\sqrt u}:\ u&gt;0\qquad x^y:\ x&gt;0\]</div>
-      <p class="fi-n">Polynômes, \(\exp\), \(\sin\), \(\cos\), \(\arctan\) : aucune condition. \(\arcsin u\) : \(|u|\le1\). \(\tan\) : \(\cos\neq0\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Définition" id="f-1-limite">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-3" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Limite en un point <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[\lim_{X\to a}f(X)=\ell\iff\forall\varepsilon&gt;0,\ \exists\delta&gt;0,\ \forall X\in U,\ 0&lt;\|X-a\|&lt;\delta\Rightarrow|f(X)-\ell|&lt;\varepsilon\]</div>
-      <p class="fi-n">Si elle existe, elle est <b>unique</b> et identique quel que soit le chemin suivi. Une limite est un <b>réel</b> (un chemin qui diverge exclut la limite finie).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Formule" id="f-1-chemins">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-4" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Réfuter une limite : les chemins <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[(t,0),\ (0,t),\ (t,t),\ (t,t^2)\ \text{ou}\ (t^2,t)\ \longrightarrow\ \text{deux limites différentes}\Rightarrow\text{pas de limite}\]</div>
-      <p class="fi-n">Même valeur sur les droites <b>ne prouve rien</b> (ex. \(\frac{x^2y}{x^4+y^2}\) : \(0\) sur toute droite, \(\frac12\) sur \(y=x^2\)). Le chemin « courbe » se choisit là où deux termes du dénominateur ont le même ordre.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Théorème" id="f-1-gendarmes">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-5" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Prouver une limite : gendarmes et polaires <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[|f(x,y)-\ell|\le g(x,y)\to0\ \Rightarrow\ \lim f=\ell\qquad x=r\cos\theta,\ y=r\sin\theta:\ |F(r,\theta)-\ell|\le h(r)\to0\]</div>
-      <p class="fi-n">En polaires, \(h\) doit être <b>indépendante de \(\theta\)</b>. Inégalités : \(2|xy|\le x^2+y^2\) ; \(|x|\le\sqrt{x^2+y^2}\) ; \(\frac{x^2}{x^2+y^2}\le1\) ; \(|\sin t|\le|t|\). Limite en \((a,b)\neq(0,0)\) : translation \(u=x-a\), \(v=y-b\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Définition" id="f-1-continuite">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-6" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Continuité et prolongement <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[f\text{ continue en }a\iff\lim_{X\to a}f(X)=f(a)\]</div>
-      <p class="fi-n">Prolongement par continuité : si la limite \(\ell\) existe, \(\tilde f(a)=\ell\). Fonction vectorielle : continue \(\iff\) chaque composante \(f_i\) est continue. Opérations (somme, produit, quotient à dénominateur \(\neq0\), composée) conservent la continuité.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Définition" id="f-1-partielle">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-7" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Dérivées partielles <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[\frac{\partial f}{\partial x}(x_0,y_0)=\lim_{h\to0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}h\qquad\frac{\partial f}{\partial y}(x_0,y_0)=\lim_{k\to0}\frac{f(x_0,y_0+k)-f(x_0,y_0)}k\]</div>
-      <p class="fi-n">En pratique : une variable à la fois, les autres constantes ; règles usuelles (somme, produit, quotient, composée). <b>Au point de recollement d'une fonction définie par morceaux, on utilise la définition</b>, pas la formule dérivée.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Définition" id="f-1-gradient">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-8" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Gradient <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[\nabla f(a)=\Big(\frac{\partial f}{\partial x_1}(a),\dots,\frac{\partial f}{\partial x_n}(a)\Big)\]</div>
-      <p class="fi-n">Normal aux courbes/surfaces de niveau \(f=\text{cte}\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Piège" id="f-1-piege-continu">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-9" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Dérivées partielles \(\neq\) continuité <span class="fi-tag t-pie">Piège</span></h4>
-      <div class="fi-f">\[\text{dérivées partielles en }a\ \not\Rightarrow\ f\text{ continue en }a\qquad\frac{xy}{x^2+y^2},\ f(0,0)=0\]</div>
-      <p class="fi-n">À une variable, dérivable \(\Rightarrow\) continue ; à deux variables, non : deux directions ne suffisent pas à juger du comportement.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Définition" id="f-1-c1">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-10" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Classe \(C^1\), \(C^2\), \(C^k\) <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[f\in C^1(U)\iff\text{les }\partial_if\text{ existent et sont continues sur }U\qquad C^k:\text{ toutes les dérivées jusqu'à l'ordre }k\]</div>
-      <p class="fi-n">\(C^1\Rightarrow\) continue (la réciproque est fausse). Polynômes et fractions rationnelles : \(C^\infty\) sur leur domaine. \(\ln u\), \(\sqrt u\) : \(C^\infty\) sur \(\{u&gt;0\}\). Justification type : « comme somme, produit, quotient (dénominateur non nul) et composée de fonctions \(C^k\) ».</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Formule" id="f-1-c1-4temps">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-11" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>\(C^1\) d'une fonction définie par morceaux : 4 temps <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\text{(1) }C^1\text{ hors de }0\ \ \text{(2) continuité}\ \ \text{(3) }\frac{f(h,0)-f(0,0)}h,\ \frac{f(0,k)-f(0,0)}k\ \ \text{(4) }\lim\partial_xf,\ \lim\partial_yf\overset{?}{=}\text{valeurs de (3)}\]</div>
-      <p class="fi-n">Repère : \(f\) homogène de degré \(d\) (haut moins bas) : \(d&gt;1\) \(\to C^1\) ; \(d=1\) \(\to\) pas \(C^1\) ; \(d\le0\) \(\to\) pas continue.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Théorème" id="f-1-schwarz">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-12" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Théorème de Schwarz <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[f\in C^2(U),\ U\text{ ouvert}\ \Rightarrow\ \frac{\partial^2f}{\partial x\,\partial y}=\frac{\partial^2f}{\partial y\,\partial x}\ \text{ sur }U\]</div>
-      <p class="fi-n">Lecture : \(\frac{\partial^2f}{\partial x\partial y}=\partial_x(\partial_yf)\) (on dérive d'abord à droite). En un point de recollement les croisées peuvent différer (\(f\) n'est alors pas \(C^2\)), se calculent par la définition sur les axes. Sert de <b>contrôle</b> de calcul.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Formule" id="f-1-taylor">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-13" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Formule de Taylor à l'ordre 2 <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[f(a+h,b+k)=f+hf_x+kf_y+\tfrac12\big(h^2f_{xx}+2hk\,f_{xy}+k^2f_{yy}\big)+o(h^2+k^2)\]</div>
-      <p class="fi-n">Dérivées évaluées en \((a,b)\) ; \(f\) de classe \(C^2\). \(n\) variables : \(\sum h_i\partial_if+\frac12\sum_{i,j}h_ih_j\partial_{ij}f\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Définition" id="f-1-jacobienne">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-14" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Matrice jacobienne et jacobien <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[J_f=\Big(\frac{\partial f_i}{\partial x_j}\Big)_{i\le m,\,j\le n}\in\mathcal M_{m,n}(\mathbb{R})\qquad\text{jacobien}=\det J_f\ (m=n)\]</div>
-      <p class="fi-n">Ligne \(i\) = gradient de \(f_i\). Les changements de variables utilisent la <b>valeur absolue</b> du jacobien.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Théorème" id="f-1-chaine">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-15" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Dérivée d'une composée <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[J_{g\circ f}(a)=J_g\big(f(a)\big)\,J_f(a)\qquad\frac{\partial(g\circ f)}{\partial x_j}=\sum_i\frac{\partial g}{\partial u_i}(f)\,\frac{\partial f_i}{\partial x_j}\]</div>
-      <p class="fi-n">\(J_g\) à gauche, évaluée en \(f(a)\). Exemple : \(F=\varphi(x^2+y^2,xy)\Rightarrow F_x=2x\,\partial_1\varphi+y\,\partial_2\varphi\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Formule" id="f-1-edp-polaires">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-16" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Dictionnaire polaire pour les EDP <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[F(r,\theta)=f(r\cos\theta,r\sin\theta):\quad xf_x+yf_y=r\,F_r\qquad xf_y-yf_x=F_\theta\]</div>
-      <p class="fi-n">\(F_r=\cos\theta f_x+\sin\theta f_y\), \(F_\theta=-r\sin\theta f_x+r\cos\theta f_y\). Reconnaître l'un des deux opérateurs \(\Rightarrow\) polaires.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Formule" id="f-1-edp-integration">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-17" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>EDP par intégrations successives <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[f_{xx}=0\Rightarrow f=x\,a(y)+b(y)\qquad f_{xy}=0\Rightarrow f=A(x)+B(y)\qquad f_{xyz}=0\Rightarrow f=A(y,z)+B(x,z)+C(x,y)\]</div>
-      <p class="fi-n">La « constante » d'intégration est une <b>fonction de l'autre variable</b>, jamais un simple \(+C\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Équation" id="f-1-edp-classiques">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-18" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>EDP classiques et leurs solutions <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="fi-f">\[\begin{aligned}\text{Laplace : }&amp;\Delta u=0\ \ \big(\ln(x^2+y^2),\ \tfrac1r\text{ en dim. 3}\big)\\ \text{Ondes : }&amp;u_{tt}=c^2u_{xx}\ \Rightarrow\ u=F(x-ct)+G(x+ct)\\ \text{Chaleur : }&amp;u_t=u_{xx}\ \ \big(e^{-t}\sin x\big)\end{aligned}\]</div>
-      <p class="fi-n">Vérifier une solution : calculer chaque dérivée de l'équation, substituer. Avec \(u=x+y\), \(v=x-y\) : \(f_{xx}-f_{yy}=4\,g_{uv}\) (d'Alembert).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="1" data-t="Formule" id="f-1-chgt-variables">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-1-19" data-g="fm fm-c1" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Changement de variables dans une EDP <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[f(x,y)=g(u,v):\ f_x=g_uu_x+g_vv_x,\quad f_y=g_uu_y+g_vv_y\ \ (\text{puis redériver, Schwarz sur }g)\]</div>
-      <p class="fi-n">\(u=x\), \(v=y/x\) : \(xf_x+yf_y=x\,g_u\). \(u=x+y\), \(v=x-y\) : \(f_x=g_u+g_v\), \(f_y=g_u-g_v\), \(f_{xx}=g_{uu}+2g_{uv}+g_{vv}\), \(f_{yy}=g_{uu}-2g_{uv}+g_{vv}\). Vérifier la <b>bijectivité</b> du changement et revenir à \((x,y)\).</p>
-    </div>
-  </article>
+<section class="fm-sec" data-ch="1" id="fm-1">
+<h2 class="fm-h">Chapitre 1 · Fonctions de plusieurs variables <span>limites, dérivées, jacobienne, EDP</span></h2>
+<article class="fi" data-ch="1" data-t="Définition" id="f-1-ouvert">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-1" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Ouvert de \(\mathbb{R}^2\) (ou \(\mathbb{R}^3\)) <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[U\text{ ouvert}\iff\forall M_0\in U,\ \exists r&gt;0,\ D(M_0,r)=\{M:\|M-M_0\|&lt;r\}\subset U\]</div>
+<p class="fi-n">Ouverts : \(\mathbb{R}^2\), \(\emptyset\), disque ouvert, \(]a,b[\times]c,d[\). Fermés (complémentaire ouvert) : disque fermé \(\le r\), \([a,b]\times[c,d]\). \([a,b[\times]c,d[\) n'est ni l'un ni l'autre. Inégalités <b>strictes</b> \(\to\) ouvert ; <b>larges</b> \(\to\) fermé.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Formule" id="f-1-domaine">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-2" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Domaine de définition <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\tfrac1u:\ u\neq0\qquad\sqrt u:\ u\ge0\qquad\ln u:\ u&gt;0\qquad\tfrac1{\sqrt u}:\ u&gt;0\qquad x^y:\ x&gt;0\]</div>
+<p class="fi-n">Polynômes, \(\exp\), \(\sin\), \(\cos\), \(\arctan\) : aucune condition. \(\arcsin u\) : \(|u|\le1\). \(\tan\) : \(\cos\neq0\).</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Définition" id="f-1-limite">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-3" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Limite en un point <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[\lim_{X\to a}f(X)=\ell\iff\forall\varepsilon&gt;0,\ \exists\delta&gt;0,\ \forall X\in U,\ 0&lt;\|X-a\|&lt;\delta\Rightarrow|f(X)-\ell|&lt;\varepsilon\]</div>
+<p class="fi-n">Si elle existe, elle est <b>unique</b> et identique quel que soit le chemin suivi. Une limite est un <b>réel</b> (un chemin qui diverge exclut la limite finie).</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Formule" id="f-1-chemins">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-4" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Réfuter une limite : les chemins <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[(t,0),\ (0,t),\ (t,t),\ (t,t^2)\ \text{ou}\ (t^2,t)\ \longrightarrow\ \text{deux limites différentes}\Rightarrow\text{pas de limite}\]</div>
+<p class="fi-n">Même valeur sur les droites <b>ne prouve rien</b> (ex. \(\frac{x^2y}{x^4+y^2}\) : \(0\) sur toute droite, \(\frac12\) sur \(y=x^2\)). Le chemin « courbe » se choisit là où deux termes du dénominateur ont le même ordre.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Théorème" id="f-1-gendarmes">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-5" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Prouver une limite : gendarmes et polaires <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[|f(x,y)-\ell|\le g(x,y)\to0\ \Rightarrow\ \lim f=\ell\qquad x=r\cos\theta,\ y=r\sin\theta:\ |F(r,\theta)-\ell|\le h(r)\to0\]</div>
+<p class="fi-n">En polaires, \(h\) doit être <b>indépendante de \(\theta\)</b>. Inégalités : \(2|xy|\le x^2+y^2\) ; \(|x|\le\sqrt{x^2+y^2}\) ; \(\frac{x^2}{x^2+y^2}\le1\) ; \(|\sin t|\le|t|\). Limite en \((a,b)\neq(0,0)\) : translation \(u=x-a\), \(v=y-b\).</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Définition" id="f-1-continuite">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-6" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Continuité et prolongement <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[f\text{ continue en }a\iff\lim_{X\to a}f(X)=f(a)\]</div>
+<p class="fi-n">Prolongement par continuité : si la limite \(\ell\) existe, \(\tilde f(a)=\ell\). Fonction vectorielle : continue \(\iff\) chaque composante \(f_i\) est continue. Opérations (somme, produit, quotient à dénominateur \(\neq0\), composée) conservent la continuité.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Définition" id="f-1-partielle">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-7" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Dérivées partielles <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[\frac{\partial f}{\partial x}(x_0,y_0)=\lim_{h\to0}\frac{f(x_0+h,y_0)-f(x_0,y_0)}h\qquad\frac{\partial f}{\partial y}(x_0,y_0)=\lim_{k\to0}\frac{f(x_0,y_0+k)-f(x_0,y_0)}k\]</div>
+<p class="fi-n">En pratique : une variable à la fois, les autres constantes ; règles usuelles (somme, produit, quotient, composée). <b>Au point de recollement d'une fonction définie par morceaux, on utilise la définition</b>, pas la formule dérivée.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Définition" id="f-1-gradient">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-8" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Gradient <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[\nabla f(a)=\Big(\frac{\partial f}{\partial x_1}(a),\dots,\frac{\partial f}{\partial x_n}(a)\Big)\]</div>
+<p class="fi-n">Normal aux courbes/surfaces de niveau \(f=\text{cte}\).</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Piège" id="f-1-piege-continu">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-9" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Dérivées partielles \(\neq\) continuité <span class="fi-tag t-pie">Piège</span></h4>
+<div class="fi-f">\[\text{dérivées partielles en }a\ \not\Rightarrow\ f\text{ continue en }a\qquad\frac{xy}{x^2+y^2},\ f(0,0)=0\]</div>
+<p class="fi-n">À une variable, dérivable \(\Rightarrow\) continue ; à deux variables, non : deux directions ne suffisent pas à juger du comportement.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Définition" id="f-1-c1">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-10" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Classe \(C^1\), \(C^2\), \(C^k\) <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[f\in C^1(U)\iff\text{les }\partial_if\text{ existent et sont continues sur }U\qquad C^k:\text{ toutes les dérivées jusqu'à l'ordre }k\]</div>
+<p class="fi-n">\(C^1\Rightarrow\) continue (la réciproque est fausse). Polynômes et fractions rationnelles : \(C^\infty\) sur leur domaine. \(\ln u\), \(\sqrt u\) : \(C^\infty\) sur \(\{u&gt;0\}\). Justification type : « comme somme, produit, quotient (dénominateur non nul) et composée de fonctions \(C^k\) ».</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Formule" id="f-1-c1-4temps">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-11" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>\(C^1\) d'une fonction définie par morceaux : 4 temps <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\text{(1) }C^1\text{ hors de }0\ \ \text{(2) continuité}\ \ \text{(3) }\frac{f(h,0)-f(0,0)}h,\ \frac{f(0,k)-f(0,0)}k\ \ \text{(4) }\lim\partial_xf,\ \lim\partial_yf\overset{?}{=}\text{valeurs de (3)}\]</div>
+<p class="fi-n">Repère : \(f\) homogène de degré \(d\) (haut moins bas) : \(d&gt;1\) \(\to C^1\) ; \(d=1\) \(\to\) pas \(C^1\) ; \(d\le0\) \(\to\) pas continue.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Théorème" id="f-1-schwarz">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-12" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Théorème de Schwarz <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[f\in C^2(U),\ U\text{ ouvert}\ \Rightarrow\ \frac{\partial^2f}{\partial x\,\partial y}=\frac{\partial^2f}{\partial y\,\partial x}\ \text{ sur }U\]</div>
+<p class="fi-n">Lecture : \(\frac{\partial^2f}{\partial x\partial y}=\partial_x(\partial_yf)\) (on dérive d'abord à droite). En un point de recollement les croisées peuvent différer (\(f\) n'est alors pas \(C^2\)), se calculent par la définition sur les axes. Sert de <b>contrôle</b> de calcul.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Formule" id="f-1-taylor">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-13" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Formule de Taylor à l'ordre 2 <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[f(a+h,b+k)=f+hf_x+kf_y+\tfrac12\big(h^2f_{xx}+2hk\,f_{xy}+k^2f_{yy}\big)+o(h^2+k^2)\]</div>
+<p class="fi-n">Dérivées évaluées en \((a,b)\) ; \(f\) de classe \(C^2\). \(n\) variables : \(\sum h_i\partial_if+\frac12\sum_{i,j}h_ih_j\partial_{ij}f\).</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Définition" id="f-1-jacobienne">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-14" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Matrice jacobienne et jacobien <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[J_f=\Big(\frac{\partial f_i}{\partial x_j}\Big)_{i\le m,\,j\le n}\in\mathcal M_{m,n}(\mathbb{R})\qquad\text{jacobien}=\det J_f\ (m=n)\]</div>
+<p class="fi-n">Ligne \(i\) = gradient de \(f_i\). Les changements de variables utilisent la <b>valeur absolue</b> du jacobien.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Théorème" id="f-1-chaine">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-15" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Dérivée d'une composée <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[J_{g\circ f}(a)=J_g\big(f(a)\big)\,J_f(a)\qquad\frac{\partial(g\circ f)}{\partial x_j}=\sum_i\frac{\partial g}{\partial u_i}(f)\,\frac{\partial f_i}{\partial x_j}\]</div>
+<p class="fi-n">\(J_g\) à gauche, évaluée en \(f(a)\). Exemple : \(F=\varphi(x^2+y^2,xy)\Rightarrow F_x=2x\,\partial_1\varphi+y\,\partial_2\varphi\).</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Formule" id="f-1-edp-polaires">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-16" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Dictionnaire polaire pour les EDP <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[F(r,\theta)=f(r\cos\theta,r\sin\theta):\quad xf_x+yf_y=r\,F_r\qquad xf_y-yf_x=F_\theta\]</div>
+<p class="fi-n">\(F_r=\cos\theta f_x+\sin\theta f_y\), \(F_\theta=-r\sin\theta f_x+r\cos\theta f_y\). Reconnaître l'un des deux opérateurs \(\Rightarrow\) polaires.</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Formule" id="f-1-edp-integration">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-17" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>EDP par intégrations successives <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[f_{xx}=0\Rightarrow f=x\,a(y)+b(y)\qquad f_{xy}=0\Rightarrow f=A(x)+B(y)\qquad f_{xyz}=0\Rightarrow f=A(y,z)+B(x,z)+C(x,y)\]</div>
+<p class="fi-n">La « constante » d'intégration est une <b>fonction de l'autre variable</b>, jamais un simple \(+C\).</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Équation" id="f-1-edp-classiques">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-18" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>EDP classiques et leurs solutions <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[\begin{aligned}\text{Laplace : }&amp;\Delta u=0\ \ \big(\ln(x^2+y^2),\ \tfrac1r\text{ en dim. 3}\big)\\ \text{Ondes : }&amp;u_{tt}=c^2u_{xx}\ \Rightarrow\ u=F(x-ct)+G(x+ct)\\ \text{Chaleur : }&amp;u_t=u_{xx}\ \ \big(e^{-t}\sin x\big)\end{aligned}\]</div>
+<p class="fi-n">Vérifier une solution : calculer chaque dérivée de l'équation, substituer. Avec \(u=x+y\), \(v=x-y\) : \(f_{xx}-f_{yy}=4\,g_{uv}\) (d'Alembert).</p>
+</div>
+</article>
+<article class="fi" data-ch="1" data-t="Formule" id="f-1-chgt-variables">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-1-19" data-g="fm fm-c1" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Changement de variables dans une EDP <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[f(x,y)=g(u,v):\ f_x=g_uu_x+g_vv_x,\quad f_y=g_uu_y+g_vv_y\ \ (\text{puis redériver, Schwarz sur }g)\]</div>
+<p class="fi-n">\(u=x\), \(v=y/x\) : \(xf_x+yf_y=x\,g_u\). \(u=x+y\), \(v=x-y\) : \(f_x=g_u+g_v\), \(f_y=g_u-g_v\), \(f_{xx}=g_{uu}+2g_{uv}+g_{vv}\), \(f_{yy}=g_{uu}-2g_{uv}+g_{vv}\). Vérifier la <b>bijectivité</b> du changement et revenir à \((x,y)\).</p>
+</div>
+</article>
 </section>
-
-<section class="fm-sec" id="fm-2" data-ch="2">
-  <h2 class="fm-h">Chapitre 2 · Opérateurs vectoriels <span>grad, div, rot, laplacien, potentiels</span></h2>
-
-  <article class="fi" data-ch="2" data-t="Définition" id="f-2-champs">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-1" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Champ scalaire, champ de vecteurs <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[f:D\subset\mathbb{R}^3\to\mathbb{R}\quad(\text{scalaire})\qquad F=(F_1,F_2,F_3):D\to\mathbb{R}^3\quad(\text{vectoriel})\]</div>
-      <p class="fi-n">Types : grad d'un scalaire \(\to\) vecteur ; div d'un vecteur \(\to\) scalaire ; rot d'un vecteur \(\to\) vecteur ; \(\Delta\) d'un scalaire \(\to\) scalaire.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Formule" id="f-2-operateurs">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-2" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Gradient, divergence, rotationnel, laplacien <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\nabla f=(f_x,f_y,f_z)\qquad\operatorname{div}F=\partial_xF_1+\partial_yF_2+\partial_zF_3\qquad\Delta f=f_{xx}+f_{yy}+f_{zz}\]
+<section class="fm-sec" data-ch="2" id="fm-2">
+<h2 class="fm-h">Chapitre 2 · Opérateurs vectoriels <span>\(\operatorname{grad} ,\,\allowbreak \operatorname{div} ,\,\allowbreak \operatorname{rot}\), laplacien, potentiels</span></h2>
+<article class="fi" data-ch="2" data-t="Définition" id="f-2-champs">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-1" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Champ scalaire, champ de vecteurs <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[f:D\subset\mathbb{R}^3\to\mathbb{R}\quad(\text{scalaire})\qquad F=(F_1,F_2,F_3):D\to\mathbb{R}^3\quad(\text{vectoriel})\]</div>
+<p class="fi-n">Types : \(\operatorname{grad}\) d'un scalaire \(\to\) vecteur ; \(\operatorname{div}\) d'un vecteur \(\to\) scalaire ; \(\operatorname{rot}\) d'un vecteur \(\to\) vecteur ; \(\Delta\) d'un scalaire \(\to\) scalaire.</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Formule" id="f-2-operateurs">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-2" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Gradient, divergence, rotationnel, laplacien <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\nabla f=(f_x,f_y,f_z)\qquad\operatorname{div}F=\partial_xF_1+\partial_yF_2+\partial_zF_3\qquad\Delta f=f_{xx}+f_{yy}+f_{zz}\]
         \[\overrightarrow{\mathrm{rot}}\,F=\big(\partial_yF_3-\partial_zF_2,\ \ \partial_zF_1-\partial_xF_3,\ \ \partial_xF_2-\partial_yF_1\big)\]</div>
-      <p class="fi-n">\(\nabla=(\partial_x,\partial_y,\partial_z)\) ; \(\operatorname{div}F=\nabla\cdot F\), \(\overrightarrow{\mathrm{rot}}\,F=\nabla\wedge F\), \(\Delta f=\operatorname{div}\nabla f\). Composante \(i\) du rot : \(\partial_{i+1}F_{i+2}-\partial_{i+2}F_{i+1}\) (indices mod 3). Contrôle : \(F=(-y,x,0)\Rightarrow\overrightarrow{\mathrm{rot}}\,F=(0,0,2)\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Théorème" id="f-2-linearite">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-3" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Linéarité et compositions <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[\overrightarrow{\mathrm{rot}}(\nabla f)=\vec0\qquad\operatorname{div}(\overrightarrow{\mathrm{rot}}\,F)=0\qquad\overrightarrow{\mathrm{rot}}(\overrightarrow{\mathrm{rot}}\,F)=\nabla(\operatorname{div}F)-\Delta F\]</div>
-      <p class="fi-n">Hypothèse : classe \(C^2\) (Schwarz). Grad, div, rot, \(\Delta\) sont <b>linéaires</b> : \(\nabla(\alpha f+\beta g)=\alpha\nabla f+\beta\nabla g\), etc. \(\Delta F=(\Delta F_1,\Delta F_2,\Delta F_3)\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Formule" id="f-2-produits">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-4" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Opérateurs et produits <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\operatorname{div}(p\vec u)=p\operatorname{div}\vec u+\vec u\cdot\nabla p\qquad\overrightarrow{\mathrm{rot}}(p\vec u)=p\overrightarrow{\mathrm{rot}}\,\vec u+\nabla p\wedge\vec u\qquad\Delta(fg)=f\Delta g+g\Delta f+2\nabla f\cdot\nabla g\]</div>
-      <p class="fi-n">Se démontrent en une composante avec la règle de Leibniz. Aussi : \(\operatorname{div}(f\nabla g-g\nabla f)=f\Delta g-g\Delta f\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Formule" id="f-2-radial">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-5" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Champs radiaux (\(r=\|X\|\), \(X=(x,y,z)\), \(r\neq0\)) <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\nabla f(r)=f'(r)\frac Xr\quad\Delta f(r)=f''+\frac2rf'\quad\operatorname{div}\big(g(r)X\big)=rg'+3g\quad\Delta r^n=n(n+1)r^{n-2}\]</div>
-      <p class="fi-n">\(\Delta\frac1r=0\) ; \(\operatorname{div}\frac X{r^3}=0\) ; \(\nabla r=\frac Xr\) ; \(\nabla\ln r=\frac X{r^2}\) ; \(\operatorname{div}X=3\). Dimension 2 : \(\Delta f(r)=f''+\frac1rf'\), \(\ln r\) harmonique.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Définition" id="f-2-conservatif">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-6" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Champ dérivant d'un potentiel (conservatif) <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[F=\nabla f\ \ (f\in C^1)\qquad\Longrightarrow\qquad\overrightarrow{\mathrm{rot}}\,F=\vec0\ \ (F\in C^1)\]</div>
-      <p class="fi-n">Condition <b>nécessaire</b>. Si \(\overrightarrow{\mathrm{rot}}\,F\neq\vec0\) en un seul point : pas de potentiel. En dimension 2, \(F=(P,Q)\) : \(\partial_xQ=\partial_yP\). Le potentiel est défini à une constante près.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Définition" id="f-2-etoile">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-7" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Ouvert étoilé <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[U\text{ étoilé}\iff\exists\,\Omega\in U,\ \forall A\in U,\ [\Omega A]\subset U\]</div>
-      <p class="fi-n">Étoilés : \(\mathbb{R}^2\), \(\mathbb{R}^3\), disque, boule, pavé, tout <b>convexe</b>, \(\{x&gt;0\}\), \(\{x&gt;0\}\cup\{y&gt;0\}\) (centre \((1,1)\)). <b>Non</b> étoilés : \(\mathbb{R}^2\setminus\{0\}\), \(\mathbb{R}^3\setminus\{0\}\), \(\mathbb{R}^3\) privé d'une droite, couronne. \(\{xy\neq0\}\) : quatre composantes, chacune convexe.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Théorème" id="f-2-poincare-rot">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-8" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Primitivation : cas du rotationnel (potentiel scalaire) <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[F\in C^1(U),\ U\text{ ouvert étoilé de }\mathbb{R}^2\text{ ou }\mathbb{R}^3:\quad F\text{ dérive d'un potentiel}\iff\overrightarrow{\mathrm{rot}}\,F=\vec0\]</div>
-      <p class="fi-n">Trois ingrédients à écrire : \(F\) de classe \(C^1\), rot nul, <b>domaine étoilé</b>. Le potentiel est alors de classe \(C^2\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Théorème" id="f-2-poincare-div">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-9" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Primitivation : cas de la divergence (potentiel vecteur) <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[F\in C^1(U),\ U\subset\mathbb{R}^3\text{ ouvert étoilé},\ \operatorname{div}F=0\ \Rightarrow\ \exists G\in C^2,\ F=\overrightarrow{\mathrm{rot}}\,G\]</div>
-      <p class="fi-n">Réciproque (Schwarz) : \(F=\overrightarrow{\mathrm{rot}}\,G\Rightarrow\operatorname{div}F=0\). Donc \(\operatorname{div}F\neq0\Rightarrow\) pas de potentiel vecteur. \(G\) n'est pas unique (\(G+\nabla\varphi\)).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Formule" id="f-2-methode-pot">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-10" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Calcul du potentiel scalaire <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[f=\int F_1dx+C(y,z)\ \to\ \partial_yf=F_2\Rightarrow C=\int\ldots dy+D(z)\ \to\ \partial_zf=F_3\Rightarrow D=\int\ldots dz+K\]</div>
-      <p class="fi-n">À chaque étape les termes restants doivent être indépendants des variables déjà intégrées. Finir par la vérification \(\nabla f=F\), puis fixer \(K\) si on donne \(f(0,0,0)\). Variante : \(f(X)=\int_0^1F(tX)\cdot X\,dt\) (étoilé de centre \(0\)).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Formule" id="f-2-methode-vec">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-11" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Calcul du potentiel vecteur \(G=(X,Y,0)\) <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\overrightarrow{\mathrm{rot}}\,G=\big(-\partial_zY,\ \partial_zX,\ \partial_xY-\partial_yX\big)=F\ \Rightarrow\ Y=-\!\!\int\!F_1dz+b(x,y),\ \ X=\!\int\!F_2dz+a(x,y)\]</div>
-      <p class="fi-n">La troisième équation \(\partial_xY-\partial_yX=F_3\) impose \(b_x-a_y=\dots\) : prendre le choix le plus simple (souvent \(a=0\)). Vérifier \(\overrightarrow{\mathrm{rot}}\,G=F\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="2" data-t="Piège" id="f-2-piege-etoile">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-2-12" data-g="fm fm-c2" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Rot nul sans domaine étoilé <span class="fi-tag t-pie">Piège</span></h4>
-      <div class="fi-f">\[F=\Big(\frac{-y}{x^2+y^2},\frac{x}{x^2+y^2}\Big):\ \partial_xQ=\partial_yP\text{ sur }\mathbb{R}^2\setminus\{0\},\ \text{mais pas de potentiel global}\]</div>
-      <p class="fi-n">Son « potentiel » serait l'angle \(\theta\) (\(\arctan\frac yx\) sur \(\{x&gt;0\}\)), qui n'est pas défini continûment autour de \(0\). À l'inverse \(\frac{(x,y)}{x^2+y^2}=\nabla\frac12\ln(x^2+y^2)\) est un gradient sur \(\mathbb{R}^2\setminus\{0\}\), non étoilé : le théorème n'est qu'une condition <b>suffisante</b>. Les champs centraux \(g(r)X\) sont toujours des gradients (\(\Phi=G(r)\), \(G'=rg\)).</p>
-    </div>
-  </article>
+<p class="fi-n">\(\nabla=(\partial_x,\partial_y,\partial_z)\) ; \(\operatorname{div}F=\nabla\cdot F\), \(\overrightarrow{\mathrm{rot}}\,F=\nabla\wedge F\), \(\Delta f=\operatorname{div}\nabla f\). Composante \(i\) \(\mathrm{d}u\,\operatorname{rot}\) : \(\partial_{i+1}F_{i+2}-\partial_{i+2}F_{i+1}\) (indices mod 3). Contrôle : \(F=(-y,x,0)\Rightarrow\overrightarrow{\mathrm{rot}}\,F=(0,0,2)\).</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Théorème" id="f-2-linearite">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-3" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Linéarité et compositions <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[\overrightarrow{\mathrm{rot}}(\nabla f)=\vec0\qquad\operatorname{div}(\overrightarrow{\mathrm{rot}}\,F)=0\qquad\overrightarrow{\mathrm{rot}}(\overrightarrow{\mathrm{rot}}\,F)=\nabla(\operatorname{div}F)-\Delta F\]</div>
+<p class="fi-n">Hypothèse : classe \(C^2\) (Schwarz). Grad, \(\operatorname{div} ,\,\allowbreak \operatorname{rot}\), \(\Delta\) sont <b>linéaires</b> : \(\nabla(\alpha f+\beta g)=\alpha\nabla f+\beta\nabla g\), etc. \(\Delta F=(\Delta F_1,\Delta F_2,\Delta F_3)\).</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Formule" id="f-2-produits">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-4" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Opérateurs et produits <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\operatorname{div}(p\vec u)=p\operatorname{div}\vec u+\vec u\cdot\nabla p\qquad\overrightarrow{\mathrm{rot}}(p\vec u)=p\overrightarrow{\mathrm{rot}}\,\vec u+\nabla p\wedge\vec u\qquad\Delta(fg)=f\Delta g+g\Delta f+2\nabla f\cdot\nabla g\]</div>
+<p class="fi-n">Se démontrent en une composante avec la règle de Leibniz. Aussi : \(\operatorname{div}(f\nabla g-g\nabla f)=f\Delta g-g\Delta f\).</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Formule" id="f-2-radial">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-5" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Champs radiaux (\(r=\|X\|\), \(X=(x,y,z)\), \(r\neq0\)) <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\nabla f(r)=f'(r)\frac Xr\quad\Delta f(r)=f''+\frac2rf'\quad\operatorname{div}\big(g(r)X\big)=rg'+3g\quad\Delta r^n=n(n+1)r^{n-2}\]</div>
+<p class="fi-n">\(\Delta\frac1r=0\) ; \(\operatorname{div}\frac X{r^3}=0\) ; \(\nabla r=\frac Xr\) ; \(\nabla\ln r=\frac X{r^2}\) ; \(\operatorname{div}X=3\). Dimension 2 : \(\Delta f(r)=f''+\frac1rf'\), \(\ln r\) harmonique.</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Définition" id="f-2-conservatif">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-6" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Champ dérivant d'un potentiel (conservatif) <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[F=\nabla f\ \ (f\in C^1)\qquad\Longrightarrow\qquad\overrightarrow{\mathrm{rot}}\,F=\vec0\ \ (F\in C^1)\]</div>
+<p class="fi-n">Condition <b>nécessaire</b>. Si \(\overrightarrow{\mathrm{rot}}\,F\neq\vec0\) en un seul point : pas de potentiel. En dimension 2, \(F=(P,Q)\) : \(\partial_xQ=\partial_yP\). Le potentiel est défini à une constante près.</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Définition" id="f-2-etoile">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-7" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Ouvert étoilé <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[U\text{ étoilé}\iff\exists\,\Omega\in U,\ \forall A\in U,\ [\Omega A]\subset U\]</div>
+<p class="fi-n">Étoilés : \(\mathbb{R}^2\), \(\mathbb{R}^3\), disque, boule, pavé, tout <b>convexe</b>, \(\{x&gt;0\}\), \(\{x&gt;0\}\cup\{y&gt;0\}\) (centre \((1,1)\)). <b>Non</b> étoilés : \(\mathbb{R}^2\setminus\{0\}\), \(\mathbb{R}^3\setminus\{0\}\), \(\mathbb{R}^3\) privé d'une droite, couronne. \(\{xy\neq0\}\) : quatre composantes, chacune convexe.</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Théorème" id="f-2-poincare-rot">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-8" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Primitivation : cas du rotationnel (potentiel scalaire) <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[F\in C^1(U),\ U\text{ ouvert étoilé de }\mathbb{R}^2\text{ ou }\mathbb{R}^3:\quad F\text{ dérive d'un potentiel}\iff\overrightarrow{\mathrm{rot}}\,F=\vec0\]</div>
+<p class="fi-n">Trois ingrédients à écrire : \(F\) de classe \(C^1\), \(\operatorname{rot}\) nul, <b>domaine étoilé</b>. Le potentiel est alors de classe \(C^2\).</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Théorème" id="f-2-poincare-div">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-9" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Primitivation : cas de la divergence (potentiel vecteur) <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[F\in C^1(U),\ U\subset\mathbb{R}^3\text{ ouvert étoilé},\ \operatorname{div}F=0\ \Rightarrow\ \exists G\in C^2,\ F=\overrightarrow{\mathrm{rot}}\,G\]</div>
+<p class="fi-n">Réciproque (Schwarz) : \(F=\overrightarrow{\mathrm{rot}}\,G\Rightarrow\operatorname{div}F=0\). Donc \(\operatorname{div}F\neq0\Rightarrow\) pas de potentiel vecteur. \(G\) n'est pas unique (\(G+\nabla\varphi\)).</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Formule" id="f-2-methode-pot">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-10" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Calcul du potentiel scalaire <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[f=\int F_1dx+C(y,z)\ \to\ \partial_yf=F_2\Rightarrow C=\int\ldots dy+D(z)\ \to\ \partial_zf=F_3\Rightarrow D=\int\ldots dz+K\]</div>
+<p class="fi-n">À chaque étape les termes restants doivent être indépendants des variables déjà intégrées. Finir par la vérification \(\nabla f=F\), puis fixer \(K\) si on donne \(f(0,0,0)\). Variante : \(f(X)=\int_0^1F(tX)\cdot X\,dt\) (étoilé de centre \(0\)).</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Formule" id="f-2-methode-vec">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-11" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Calcul du potentiel vecteur \(G=(X,Y,0)\) <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\overrightarrow{\mathrm{rot}}\,G=\big(-\partial_zY,\ \partial_zX,\ \partial_xY-\partial_yX\big)=F\ \Rightarrow\ Y=-\!\!\int\!F_1dz+b(x,y),\ \ X=\!\int\!F_2dz+a(x,y)\]</div>
+<p class="fi-n">La troisième équation \(\partial_xY-\partial_yX=F_3\) impose \(b_x-a_y=\dots\) : prendre le choix le plus simple (souvent \(a=0\)). Vérifier \(\overrightarrow{\mathrm{rot}}\,G=F\).</p>
+</div>
+</article>
+<article class="fi" data-ch="2" data-t="Piège" id="f-2-piege-etoile">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-2-12" data-g="fm fm-c2" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Rot nul sans domaine étoilé <span class="fi-tag t-pie">Piège</span></h4>
+<div class="fi-f">\[F=\Big(\frac{-y}{x^2+y^2},\frac{x}{x^2+y^2}\Big):\ \partial_xQ=\partial_yP\text{ sur }\mathbb{R}^2\setminus\{0\},\ \text{mais pas de potentiel global}\]</div>
+<p class="fi-n">Son « potentiel » serait l'angle \(\theta\) (\(\arctan\frac yx\) sur \(\{x&gt;0\}\)), qui n'est pas défini continûment autour de \(0\). À l'inverse \(\frac{(x,y)}{x^2+y^2}=\nabla\frac12\ln(x^2+y^2)\) est un gradient sur \(\mathbb{R}^2\setminus\{0\}\), non étoilé : le théorème n'est qu'une condition <b>suffisante</b>. Les champs centraux \(g(r)X\) sont toujours des gradients (\(\Phi=G(r)\), \(G'=rg\)).</p>
+</div>
+</article>
 </section>
-
-<section class="fm-sec" id="fm-3" data-ch="3">
-  <h2 class="fm-h">Chapitre 3 · Courbes, surfaces et solides <span>équations, paramétrisations, coordonnées</span></h2>
-
-  <article class="fi" data-ch="3" data-t="Définition" id="f-3-courbe">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-1" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Courbe paramétrée, surface paramétrée <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[\gamma:[a,b]\to\mathbb{R}^2,\ t\mapsto(x(t),y(t))\qquad\Psi:D\subset\mathbb{R}^2\to\mathbb{R}^n,\ (u,v)\mapsto(\ldots)\]</div>
-      <p class="fi-n">Une courbe paramétrée est <b>orientée</b> (de \(\gamma(a)\) vers \(\gamma(b)\)) ; fermée si \(\gamma(a)=\gamma(b)\). Une même courbe a plusieurs paramétrisations. Une paramétrisation s'écrit <b>avec son intervalle</b> et se vérifie dans l'équation. Inverser un morceau : \(t\to a+b-t\). Sens direct = anti-horaire.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Formule" id="f-3-segment">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-2" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Segment, droite, graphe <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[[A,B]:\ A+t(B-A),\ t\in[0,1]\qquad y=f(x):\ (t,f(t))\qquad ax+by+c=0\ (a\neq0):\ \big(-\tfrac{bt+c}a,\ t\big)\]</div>
-      <p class="fi-n">Contour polygonal : un morceau par côté, raccords \(\gamma_k(1)=\gamma_{k+1}(0)\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Équation" id="f-3-cercle">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-3" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Cercle et disque <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="fi-f">\[(x-\Omega_1)^2+(y-\Omega_2)^2=R^2:\ \gamma(t)=(\Omega_1+R\cos t,\ \Omega_2+R\sin t)\qquad\text{disque : }\le R^2,\ (\Omega_1+r\cos\theta,\Omega_2+r\sin\theta),\ r\in[0,R]\]</div>
-      <p class="fi-n">Cercle \(t\in[0,2\pi]\), parcouru dans le sens direct quand \(t\) croît. Les cercles sont des courbes fermées.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Équation" id="f-3-ellipse">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-4" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Ellipse <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="fi-f">\[\frac{(x-\Omega_1)^2}{a^2}+\frac{(y-\Omega_2)^2}{b^2}=1:\ \gamma(t)=(\Omega_1+a\cos t,\ \Omega_2+b\sin t)\]</div>
-      <p class="fi-n">\(a\) : demi-axe horizontal, \(b\) : vertical. Intérieur : \(\le1\), paramétré par \((\Omega_1+ar\cos\theta,\ \Omega_2+br\sin\theta)\), \(r\in[0,1]\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Équation" id="f-3-coniques">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-5" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Coniques : reconnaître et paramétrer <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="tbl-wrap"><table class="phr">
-        <thead><tr><th>Forme réduite</th><th>Nature</th><th>Paramétrisation</th></tr></thead>
-        <tbody>
-          <tr><td>\(\frac{X^2}{a^2}+\frac{Y^2}{b^2}=1\)</td><td>ellipse (cercle si \(a=b\))</td><td>\((a\cos t,\ b\sin t)\)</td></tr>
-          <tr><td>\(\frac{X^2}{a^2}-\frac{Y^2}{b^2}=1\)</td><td>hyperbole (2 branches)</td><td>\((\pm a\cosh t,\ b\sinh t)\)</td></tr>
-          <tr><td>\(Y=aX^2\) ou \(X=aY^2\)</td><td>parabole</td><td>\((t,\ at^2)\)</td></tr>
-          <tr><td>\(X^2+Y^2=-\text{cte}&lt;0\)</td><td>ensemble vide</td><td>—</td></tr>
-        </tbody></table></div>
-      <p class="fi-n">Méthode : compléter les carrés en \(x\) <b>et</b> en \(y\) (multiplier les constantes par les coefficients de \(x^2\), \(y^2\)) avec \(X=x-x_0\), \(Y=y-y_0\). Même signe \(\to\) ellipse ; signes opposés \(\to\) hyperbole ; un seul carré \(\to\) parabole ; regarder le <b>signe du second membre</b>.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Équation" id="f-3-sphere">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-6" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Sphère et boule <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="fi-f">\[(x-a)^2+(y-b)^2+(z-c)^2=R^2\qquad x^2+y^2+z^2+\alpha x+\beta y+\gamma z+\delta=0:\ R^2=\tfrac{\alpha^2+\beta^2+\gamma^2}4-\delta\]</div>
-      <p class="fi-n">Sphère = surface (\(=R^2\)), boule = solide (\(\le R^2\)). \(R^2&gt;0\) : sphère ; \(=0\) : un point ; \(&lt;0\) : vide. Si les coefficients de \(x^2,y^2,z^2\) valent \(k\neq1\), diviser d'abord par \(k\). Sphère de diamètre \([AB]\) : centre milieu, \(R=\frac{AB}2\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Équation" id="f-3-quadriques">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-7" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Les quadriques du cours (solide et surface) <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="tbl-wrap"><table class="phr">
-        <thead><tr><th>Objet</th><th>Solide</th><th>Surface</th></tr></thead>
-        <tbody>
-          <tr><td>Cube / pavé</td><td>\([a,b]^3\) ; \([a,b]\times[c,d]\times[e,f]\)</td><td>les 6 faces</td></tr>
-          <tr><td>Cylindre (axe \(Oz\))</td><td>\(x^2+y^2\le r^2,\ a\le z\le b\)</td><td>\(x^2+y^2=r^2\)</td></tr>
-          <tr><td>Paraboloïde (axe \(Oz\))</td><td>\(x^2+y^2\le z\le h\) (rayon \(\sqrt h\))</td><td>\(z=x^2+y^2\)</td></tr>
-          <tr><td>Cône (axe \(Oz\))</td><td>\(x^2+y^2\le z^2,\ 0\le z\le h\) (rayon \(h\))</td><td>\(x^2+y^2=z^2\)</td></tr>
-          <tr><td>Boule / sphère</td><td>\(x^2+y^2+z^2\le R^2\)</td><td>\(x^2+y^2+z^2=R^2\)</td></tr>
-          <tr><td>Ellipsoïde</td><td>\(\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\le1\)</td><td>\(=1\)</td></tr>
-        </tbody></table></div>
-      <p class="fi-n">Reconnaître : une variable au <b>premier degré</b> avec deux carrés de même signe \(\to\) paraboloïde ; un signe \(-\) entre carrés sans terme linéaire \(\to\) cône ; trois carrés \(=\) cte \(\to\) ellipsoïde ; une <b>variable absente</b> \(\to\) cylindre. Confirmer par les coupes \(z=k\) et \(y=0\). Compléter les carrés pour trouver centre ou sommet ; autre axe : renommer les variables.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Formule" id="f-3-cylindriques">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-8" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Coordonnées cylindriques <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[x=r\cos\theta,\ \ y=r\sin\theta,\ \ z=z\qquad r\ge0,\ \theta\in[0,2\pi],\qquad x^2+y^2=r^2\qquad\Big|\frac{\partial(x,y,z)}{\partial(r,\theta,z)}\Big|=r\]</div>
-      <p class="fi-n">Pour objets de type cylindre, paraboloïde, cône. Cylindre : \(0\le r\le R\). Paraboloïde \(x^2+y^2\le z\le h\) : \(r\le\sqrt z\) ou \(r^2\le z\le h\). Cône \(x^2+y^2\le z^2\) : \(r\le z\). Autre axe : renommer (axe \(Oy\) : \(x=r\cos\theta\), \(z=r\sin\theta\)). Conditions de signe : \(x\ge0\Rightarrow\theta\in[-\frac\pi2,\frac\pi2]\), \(y\ge0\Rightarrow[0,\pi]\), \(x,y\ge0\Rightarrow[0,\frac\pi2]\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Formule" id="f-3-spheriques">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-9" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Coordonnées sphériques <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[x=r\sin\varphi\cos\theta,\ \ y=r\sin\varphi\sin\theta,\ \ z=r\cos\varphi\qquad r\ge0,\ \theta\in[0,2\pi],\ \varphi\in[0,\pi]\qquad\Big|\frac{\partial(x,y,z)}{\partial(r,\theta,\varphi)}\Big|=r^2\sin\varphi\]</div>
-      <p class="fi-n">\(\varphi\) = angle avec l'axe \(Oz\) (rester fidèle au cours). \(x^2+y^2+z^2=r^2\), \(\sqrt{x^2+y^2}=r\sin\varphi\). Boule \(r\le R\). Cône \(z\ge\sqrt{x^2+y^2}\iff\varphi\le\frac\pi4\) ; \(z\ge0\iff\varphi\le\frac\pi2\). \(\theta\) et \(\varphi\) ne se doublent pas (sinon on compte deux fois). Boule de centre \(C\) : coordonnées centrées en \(C\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Équation" id="f-3-ellipsoide-param">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-10" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Paramétrisation d'un ellipsoïde <span class="fi-tag t-eq">Équation</span></h4>
-      <div class="fi-f">\[x=a\,r\sin\varphi\cos\theta,\quad y=b\,r\sin\varphi\sin\theta,\quad z=c\,r\cos\varphi\qquad r\in[0,1]\ (\text{surface : }r=1)\]</div>
-      <p class="fi-n">Obtenue en posant \(X=\frac xa\), \(Y=\frac yb\), \(Z=\frac zc\) : on se ramène à la boule unité. Jacobien \(abc\,r^2\sin\varphi\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="3" data-t="Formule" id="f-3-plan-droite-param">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-3-11" data-g="fm fm-c3" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Droites et plans de l'espace : paramétrer <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\text{droite : }A+t\,\vec d\qquad\text{plan : }A+s\vec u+t\vec v\qquad\text{intersection de deux plans : }\vec d=\vec n_1\wedge\vec n_2\ \text{ou un paramètre libre}\]</div>
-      <p class="fi-n">Contrôler dans <b>les deux</b> équations de plans. Ensemble \((x(t),y(t))\) : éliminer \(t\), puis étudier l'intervalle atteint (droite, demi-droite, segment, arc).</p>
-    </div>
-  </article>
+<section class="fm-sec" data-ch="3" id="fm-3">
+<h2 class="fm-h">Chapitre 3 · Courbes, surfaces et solides <span>équations, paramétrisations, coordonnées</span></h2>
+<article class="fi" data-ch="3" data-t="Définition" id="f-3-courbe">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-1" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Courbe paramétrée, surface paramétrée <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[\gamma:[a,b]\to\mathbb{R}^2,\ t\mapsto(x(t),y(t))\qquad\Psi:D\subset\mathbb{R}^2\to\mathbb{R}^n,\ (u,v)\mapsto(\ldots)\]</div>
+<p class="fi-n">Une courbe paramétrée est <b>orientée</b> (de \(\gamma(a)\) vers \(\gamma(b)\)) ; fermée si \(\gamma(a)=\gamma(b)\). Une même courbe a plusieurs paramétrisations. Une paramétrisation s'écrit <b>avec son intervalle</b> et se vérifie dans l'équation. Inverser un morceau : \(t\to a+b-t\). Sens direct = anti-horaire.</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Formule" id="f-3-segment">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-2" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Segment, droite, graphe <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[[A,B]:\ A+t(B-A),\ t\in[0,1]\qquad y=f(x):\ (t,f(t))\qquad ax+by+c=0\ (a\neq0):\ \big(-\tfrac{bt+c}a,\ t\big)\]</div>
+<p class="fi-n">Contour polygonal : un morceau par côté, raccords \(\gamma_k(1)=\gamma_{k+1}(0)\).</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Équation" id="f-3-cercle">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-3" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Cercle et disque <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[(x-\Omega_1)^2+(y-\Omega_2)^2=R^2:\ \gamma(t)=(\Omega_1+R\cos t,\ \Omega_2+R\sin t)\qquad\text{disque : }\le R^2,\ (\Omega_1+r\cos\theta,\Omega_2+r\sin\theta),\ r\in[0,R]\]</div>
+<p class="fi-n">Cercle \(t\in[0,2\pi]\), parcouru dans le sens direct quand \(t\) croît. Les cercles sont des courbes fermées.</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Équation" id="f-3-ellipse">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-4" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Ellipse <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[\frac{(x-\Omega_1)^2}{a^2}+\frac{(y-\Omega_2)^2}{b^2}=1:\ \gamma(t)=(\Omega_1+a\cos t,\ \Omega_2+b\sin t)\]</div>
+<p class="fi-n">\(a\) : demi-axe horizontal, \(b\) : vertical. Intérieur : \(\le1\), paramétré par \((\Omega_1+ar\cos\theta,\ \Omega_2+br\sin\theta)\), \(r\in[0,1]\).</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Équation" id="f-3-coniques">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-5" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Coniques : reconnaître et paramétrer <span class="fi-tag t-eq">Équation</span></h4>
+<div class="tbl-wrap"><table class="phr">
+<thead><tr><th>Forme réduite</th><th>Nature</th><th>Paramétrisation</th></tr></thead>
+<tbody>
+<tr><td>\(\frac{X^2}{a^2}+\frac{Y^2}{b^2}=1\)</td><td>ellipse (cercle si \(a=b\))</td><td>\((a\cos t,\ b\sin t)\)</td></tr>
+<tr><td>\(\frac{X^2}{a^2}-\frac{Y^2}{b^2}=1\)</td><td>hyperbole (2 branches)</td><td>\((\pm a\cosh t,\ b\sinh t)\)</td></tr>
+<tr><td>\(Y=aX^2\) ou \(X=aY^2\)</td><td>parabole</td><td>\((t,\ at^2)\)</td></tr>
+<tr><td>\(X^2+Y^2=-\text{cte}&lt;0\)</td><td>ensemble vide</td><td>—</td></tr>
+</tbody></table></div>
+<p class="fi-n">Méthode : compléter les carrés en \(x\) <b>et</b> en \(y\) (multiplier les constantes par les coefficients de \(x^2\), \(y^2\)) avec \(X=x-x_0\), \(Y=y-y_0\). Même signe \(\to\) ellipse ; signes opposés \(\to\) hyperbole ; un seul carré \(\to\) parabole ; regarder le <b>signe du second membre</b>.</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Équation" id="f-3-sphere">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-6" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Sphère et boule <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[(x-a)^2+(y-b)^2+(z-c)^2=R^2\qquad x^2+y^2+z^2+\alpha x+\beta y+\gamma z+\delta=0:\ R^2=\tfrac{\alpha^2+\beta^2+\gamma^2}4-\delta\]</div>
+<p class="fi-n">Sphère = surface (\(=R^2\)), boule = solide (\(\le R^2\)). \(R^2&gt;0\) : sphère ; \(=0\) : un point ; \(&lt;0\) : vide. Si les coefficients de \(x^2,y^2,z^2\) valent \(k\neq1\), diviser d'abord par \(k\). Sphère de diamètre \([AB]\) : centre milieu, \(R=\frac{AB}2\).</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Équation" id="f-3-quadriques">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-7" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Les quadriques du cours (solide et surface) <span class="fi-tag t-eq">Équation</span></h4>
+<div class="tbl-wrap"><table class="phr">
+<thead><tr><th>Objet</th><th>Solide</th><th>Surface</th></tr></thead>
+<tbody>
+<tr><td>Cube / pavé</td><td>\([a,b]^3\) ; \([a,b]\times[c,d]\times[e,f]\)</td><td>les 6 faces</td></tr>
+<tr><td>Cylindre (axe \(Oz\))</td><td>\(x^2+y^2\le r^2,\ a\le z\le b\)</td><td>\(x^2+y^2=r^2\)</td></tr>
+<tr><td>Paraboloïde (axe \(Oz\))</td><td>\(x^2+y^2\le z\le h\) (rayon \(\sqrt h\))</td><td>\(z=x^2+y^2\)</td></tr>
+<tr><td>Cône (axe \(Oz\))</td><td>\(x^2+y^2\le z^2,\ 0\le z\le h\) (rayon \(h\))</td><td>\(x^2+y^2=z^2\)</td></tr>
+<tr><td>Boule / sphère</td><td>\(x^2+y^2+z^2\le R^2\)</td><td>\(x^2+y^2+z^2=R^2\)</td></tr>
+<tr><td>Ellipsoïde</td><td>\(\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\le1\)</td><td>\(=1\)</td></tr>
+</tbody></table></div>
+<p class="fi-n">Reconnaître : une variable au <b>premier degré</b> avec deux carrés de même signe \(\to\) paraboloïde ; un signe \(-\) entre carrés sans terme linéaire \(\to\) cône ; trois carrés \(=\) cte \(\to\) ellipsoïde ; une <b>variable absente</b> \(\to\) cylindre. Confirmer par les coupes \(z=k\) et \(y=0\). Compléter les carrés pour trouver centre ou sommet ; autre axe : renommer les variables.</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Formule" id="f-3-cylindriques">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-8" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Coordonnées cylindriques <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[x=r\cos\theta,\ \ y=r\sin\theta,\ \ z=z\qquad r\ge0,\ \theta\in[0,2\pi],\qquad x^2+y^2=r^2\qquad\Big|\frac{\partial(x,y,z)}{\partial(r,\theta,z)}\Big|=r\]</div>
+<p class="fi-n">Pour objets de type cylindre, paraboloïde, cône. Cylindre : \(0\le r\le R\). Paraboloïde \(x^2+y^2\le z\le h\) : \(r\le\sqrt z\) ou \(r^2\le z\le h\). Cône \(x^2+y^2\le z^2\) : \(r\le z\). Autre axe : renommer (axe \(Oy\) : \(x=r\cos\theta\), \(z=r\sin\theta\)). Conditions de signe : \(x\ge0\Rightarrow\theta\in[-\frac\pi2,\frac\pi2]\), \(y\ge0\Rightarrow[0,\pi]\), \(x,y\ge0\Rightarrow[0,\frac\pi2]\).</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Formule" id="f-3-spheriques">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-9" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Coordonnées sphériques <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[x=r\sin\varphi\cos\theta,\ \ y=r\sin\varphi\sin\theta,\ \ z=r\cos\varphi\qquad r\ge0,\ \theta\in[0,2\pi],\ \varphi\in[0,\pi]\qquad\Big|\frac{\partial(x,y,z)}{\partial(r,\theta,\varphi)}\Big|=r^2\sin\varphi\]</div>
+<p class="fi-n">\(\varphi\) = angle avec l'axe \(Oz\) (rester fidèle au cours). \(x^2+y^2+z^2=r^2\), \(\sqrt{x^2+y^2}=r\sin\varphi\). Boule \(r\le R\). Cône \(z\ge\sqrt{x^2+y^2}\iff\varphi\le\frac\pi4\) ; \(z\ge0\iff\varphi\le\frac\pi2\). \(\theta\) et \(\varphi\) ne se doublent pas (sinon on compte deux fois). Boule de centre \(C\) : coordonnées centrées en \(C\).</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Équation" id="f-3-ellipsoide-param">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-10" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Paramétrisation d'un ellipsoïde <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[x=a\,r\sin\varphi\cos\theta,\quad y=b\,r\sin\varphi\sin\theta,\quad z=c\,r\cos\varphi\qquad r\in[0,1]\ (\text{surface : }r=1)\]</div>
+<p class="fi-n">Obtenue en posant \(X=\frac xa\), \(Y=\frac yb\), \(Z=\frac zc\) : on se ramène à la boule unité. Jacobien \(abc\,r^2\sin\varphi\).</p>
+</div>
+</article>
+<article class="fi" data-ch="3" data-t="Formule" id="f-3-plan-droite-param">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-3-11" data-g="fm fm-c3" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Droites et plans de l'espace : paramétrer <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\text{droite : }A+t\,\vec d\qquad\text{plan : }A+s\vec u+t\vec v\qquad\text{intersection de deux plans : }\vec d=\vec n_1\wedge\vec n_2\ \text{ou un paramètre libre}\]</div>
+<p class="fi-n">Contrôler dans <b>les deux</b> équations de plans. Ensemble \((x(t),y(t))\) : éliminer \(t\), puis étudier l'intervalle atteint (droite, demi-droite, segment, arc).</p>
+</div>
+</article>
 </section>
-
-<section class="fm-sec" id="fm-4" data-ch="4">
-  <h2 class="fm-h">Chapitre 4 · Intégrales multiples <span>Fubini, changements de variables, volumes</span></h2>
-
-  <article class="fi" data-ch="4" data-t="Définition" id="f-4-interpretation">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-1" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Interprétation et propriétés <span class="fi-tag t-def">Définition</span></h4>
-      <div class="fi-f">\[\iint_Df=\text{volume sous }z=f\ (f\ge0)\qquad\mathrm{Aire}(D)=\iint_Ddx\,dy\qquad\mathrm{Vol}(V)=\iiint_Vdx\,dy\,dz\]</div>
-      <p class="fi-n">Linéarité ; \(f\ge0\Rightarrow\iint f\ge0\) ; \(f\le g\Rightarrow\iint f\le\iint g\) (et \(|\iint f|\le\iint|f|\)) ; Chasles sur domaines disjoints. Un résultat d'aire ou de volume est <b>positif</b>.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Théorème" id="f-4-fubini-rect">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-2" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Fubini sur un rectangle ; fonction séparable <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[f\ \text{continue sur }[a,b]\times[c,d]:\ \iint f=\int_c^d\!\Big(\int_a^bf\,dx\Big)dy=\int_a^b\!\Big(\int_c^df\,dy\Big)dx\qquad f=g(x)h(y):\ \Big(\int g\Big)\Big(\int h\Big)\]</div>
-      <p class="fi-n">Choisir l'ordre qui évite une intégration par parties. Même chose en 3D sur un pavé (produit de trois intégrales si séparable).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Théorème" id="f-4-types">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-3" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Domaines de type 1 et de type 2 <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[D_1=\{a\le x\le b,\ y_1(x)\le y\le y_2(x)\}:\ \iint_{D_1}f=\int_a^b\!\Big(\int_{y_1(x)}^{y_2(x)}f\,dy\Big)dx\qquad D_2=\{c\le y\le d,\ x_1(y)\le x\le x_2(y)\}\]</div>
-      <p class="fi-n">\(f\) continue sur le domaine fermé borné. Bornes <b>extérieures constantes</b>, intérieures fonctions de la variable extérieure. Disque unité : \(-\sqrt{1-x^2}\le y\le\sqrt{1-x^2}\). Triangle \(0\le y\le x\le1\) (type 1) = \(y\le x\le1\), \(0\le y\le1\) (type 2). Inverser l'ordre = décrire \(D\) dans l'autre sens.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Théorème" id="f-4-chgt">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-4" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Changement de variables <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[T:\Delta\to D,\ (u,v)\mapsto(x,y)\ \ (C^1,\text{ bijective hors d'un ensemble négligeable}):\quad\iint_Df\,dx\,dy=\iint_\Delta f(T(u,v))\Big|\frac{\partial(x,y)}{\partial(u,v)}\Big|\,du\,dv\]</div>
-      <p class="fi-n">\(\frac{\partial(x,y)}{\partial(u,v)}=\left|\begin{smallmatrix}x_u&amp;x_v\\ y_u&amp;y_v\end{smallmatrix}\right|=x_uy_v-x_vy_u\). Si on connaît \((u,v)\) en fonction de \((x,y)\) : \(\left|\frac{\partial(x,y)}{\partial(u,v)}\right|=\Big|\frac{\partial(u,v)}{\partial(x,y)}\Big|^{-1}\). <b>Valeur absolue</b> du jacobien ; décrire \(\Delta\) ; transformer l'intégrande.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Formule" id="f-4-polaires">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-5" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Coordonnées polaires <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[x=r\cos\theta,\ y=r\sin\theta,\ \ dx\,dy=r\,dr\,d\theta\qquad\iint_{x^2+y^2\le R^2}f=\int_0^{2\pi}\!\!\int_0^Rf\,r\,dr\,d\theta\]</div>
-      <p class="fi-n">Couronne \(R_1\le r\le R_2\) ; demi-disque \(y\ge0\) : \(\theta\in[0,\pi]\) ; quart : \([0,\frac\pi2]\). <b>Disque décentré</b> : \(x^2+y^2\le2ax\iff r\le2a\cos\theta\), \(\theta\in[-\frac\pi2,\frac\pi2]\) ; \(x^2+y^2\le2by\iff r\le2b\sin\theta\), \(\theta\in[0,\pi]\). Aire du disque : \(\pi R^2\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Formule" id="f-4-ellipse">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-6" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Ellipse et changement affine <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[x=a\,r\cos\theta,\ y=b\,r\sin\theta:\ \Big|\frac{\partial(x,y)}{\partial(r,\theta)}\Big|=abr\qquad\mathrm{Aire}=\pi ab\qquad\iint_Dx^2=\frac{\pi a^3b}4,\ \iint_Dy^2=\frac{\pi ab^3}4\]</div>
-      <p class="fi-n">\(u=\alpha x+\beta y\), \(v=\gamma x+\delta y\) : \(\left|\frac{\partial(x,y)}{\partial(u,v)}\right|=\frac1{|\alpha\delta-\beta\gamma|}\). Exemples : \(u=x+y\), \(v=x-y\) \(\to\frac12\) ; \(u=xy\), \(v=\frac yx\) \(\to\frac1{2v}\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Théorème" id="f-4-triple">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-7" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Intégrale triple : Fubini et tranches <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[\iiint_Vf=\int_a^b\!\!\int_{y_1(x)}^{y_2(x)}\!\!\int_{z_1(x,y)}^{z_2(x,y)}f\,dz\,dy\,dx\qquad f=f(z):\ \iiint_Vf=\int_{z_{\min}}^{z_{\max}}f(z)\,A(z)\,dz\]</div>
-      <p class="fi-n">\(A(z)\) = aire de la section horizontale. Intégrer de l'intérieur vers l'extérieur ; chaque résultat intermédiaire ne dépend que des variables restantes. Tétraèdre \(x,y,z\ge0,\ x+y+z\le a\) : \(A(z)=\frac{(a-z)^2}2\), volume \(\frac{a^3}6\), \(\iiint z=\frac{a^4}{24}\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Formule" id="f-4-jacobiens3d">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-8" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Les trois jacobiens à savoir par cœur <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\text{polaires : }r\qquad\text{cylindriques : }r\qquad\text{sphériques : }r^2\sin\varphi\qquad\text{ellipsoïde : }abc\,r^2\sin\varphi\]</div>
-      <p class="fi-n">\(dV=r\,dr\,d\theta\,dz\) (cylindriques) ; \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\) (sphériques). Les écrire <b>dans la copie</b> avant de substituer.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Formule" id="f-4-volumes">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-9" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Volumes usuels (pour contrôler un résultat) <span class="fi-tag t-for">Formule</span></h4>
-      <div class="tbl-wrap"><table class="phr">
-        <thead><tr><th>Solide</th><th>Volume</th></tr></thead>
-        <tbody>
-          <tr><td>Boule de rayon \(R\)</td><td>\(\frac{4}{3}\pi R^3\)</td></tr>
-          <tr><td>Cylindre rayon \(R\), hauteur \(h\)</td><td>\(\pi R^2h\)</td></tr>
-          <tr><td>Cône rayon \(R\), hauteur \(h\)</td><td>\(\frac13\pi R^2h\)</td></tr>
-          <tr><td>Paraboloïde \(x^2+y^2\le z\le h\)</td><td>\(\frac12\pi h^2\) (\(=\frac12\pi R^2h\), \(R=\sqrt h\))</td></tr>
-          <tr><td>Ellipsoïde de demi-axes \(a,b,c\)</td><td>\(\frac43\pi abc\)</td></tr>
-          <tr><td>Calotte de hauteur \(h\) sur une sphère de rayon \(R\)</td><td>\(\frac{\pi h^2(3R-h)}3\)</td></tr>
-          <tr><td>Tétraèdre \(x,y,z\ge0,\ x+y+z\le a\)</td><td>\(\frac{a^3}6\)</td></tr>
-        </tbody></table></div>
-      <p class="fi-n">Moments utiles : \(\iiint_Bx^2=\frac{4\pi R^5}{15}\) (boule), \(\iiint_B(x^2+y^2+z^2)=\frac{4\pi R^5}5\), \(\iint_{\text{disque}}x^2=\frac{\pi R^4}4\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Théorème" id="f-4-symetrie">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-10" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Symétrie et parité <span class="fi-tag t-thm">Théorème</span></h4>
-      <div class="fi-f">\[D\text{ invariant par }(x,y)\mapsto(-x,y),\ \ f(-x,y)=-f(x,y)\ \Rightarrow\ \iint_Df=0\qquad f\text{ paire}:\ \iint_Df=2\iint_{D\cap\{x\ge0\}}f\]</div>
-      <p class="fi-n">Citer <b>la symétrie du domaine et la parité par rapport à la même variable</b>. Justification : changement de variables de jacobien \(-1\) : \(I=-I\). Par permutation des variables : \(\iiint_Bx^2=\iiint_By^2=\iiint_Bz^2\) sur une boule.</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Piège" id="f-4-pieges">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-11" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Les trois oublis qui coûtent le plus <span class="fi-tag t-pie">Piège</span></h4>
-      <div class="fi-f">\[\iint f\,dx\,dy=\iint F\,\boxed{r}\,dr\,d\theta\qquad\int_{y_1(x)}^{y_2(x)}\Big(\int_a^b\ \cdots\,dx\Big)dy\ \text{interdit}\qquad|J|\ \text{(valeur absolue)}\]</div>
-      <p class="fi-n">Oublier le jacobien ; bornes extérieures non constantes ; oublier la valeur absolue du jacobien (ou prendre l'inverse du bon jacobien). Disque décentré : ne pas écrire \(r\le2\) à la place de \(r\le2\cos\theta\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="4" data-t="Formule" id="f-4-trig">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-4-12" data-g="fm fm-c4" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Intégrales trigonométriques fréquentes <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\int_0^{2\pi}\!\cos^2=\pi\quad\int_0^{2\pi}\!\cos^4=\tfrac{3\pi}4\quad\int_0^\pi\!\sin^2=\tfrac\pi2\quad\int_0^\pi\!\sin^3=\tfrac43\quad\int_0^\pi\!\sin^4=\tfrac{3\pi}8\quad\int_0^{2\pi}\!\sin^2\cos^2=\tfrac\pi4\]</div>
-      <p class="fi-n">\(\int_0^{\pi/2}\sin^3=\frac23\) ; \(\int_0^\pi\cos^2\varphi\sin\varphi=\frac23\) ; \(\int_{-\pi/2}^{\pi/2}\cos^3=\frac43\), \(\int_{-\pi/2}^{\pi/2}\cos^4=\frac{3\pi}8\) ; \(\int_0^{2\pi}\cos\theta=\int_0^{2\pi}\sin\theta\cos\theta=0\). Puissance paire : linéariser ; impaire : \(u=\cos\) ou \(\sin\).</p>
-    </div>
-  </article>
+<section class="fm-sec" data-ch="4" id="fm-4">
+<h2 class="fm-h">Chapitre 4 · Intégrales multiples <span>Fubini, changements de variables, volumes</span></h2>
+<article class="fi" data-ch="4" data-t="Définition" id="f-4-interpretation">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-1" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Interprétation et propriétés <span class="fi-tag t-def">Définition</span></h4>
+<div class="fi-f">\[\iint_Df=\text{volume sous }z=f\ (f\ge0)\qquad\mathrm{Aire}(D)=\iint_Ddx\,dy\qquad\mathrm{Vol}(V)=\iiint_Vdx\,dy\,dz\]</div>
+<p class="fi-n">Linéarité ; \(f\ge0\Rightarrow\iint f\ge0\) ; \(f\le g\Rightarrow\iint f\le\iint g\) (et \(|\iint f|\le\iint|f|\)) ; Chasles sur domaines disjoints. Un résultat d'aire ou de volume est <b>positif</b>.</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Théorème" id="f-4-fubini-rect">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-2" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Fubini sur un rectangle ; fonction séparable <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[f\ \text{continue sur }[a,b]\times[c,d]:\ \iint f=\int_c^d\!\Big(\int_a^bf\,dx\Big)dy=\int_a^b\!\Big(\int_c^df\,dy\Big)dx\qquad f=g(x)h(y):\ \Big(\int g\Big)\Big(\int h\Big)\]</div>
+<p class="fi-n">Choisir l'ordre qui évite une intégration par parties. Même chose en \(3D\) sur un pavé (produit de trois intégrales si séparable).</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Théorème" id="f-4-types">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-3" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Domaines de type 1 et de type 2 <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[D_1=\{a\le x\le b,\ y_1(x)\le y\le y_2(x)\}:\ \iint_{D_1}f=\int_a^b\!\Big(\int_{y_1(x)}^{y_2(x)}f\,dy\Big)dx\qquad D_2=\{c\le y\le d,\ x_1(y)\le x\le x_2(y)\}\]</div>
+<p class="fi-n">\(f\) continue sur le domaine fermé borné. Bornes <b>extérieures constantes</b>, intérieures fonctions de la variable extérieure. Disque unité : \(-\sqrt{1-x^2}\le y\le\sqrt{1-x^2}\). Triangle \(0\le y\le x\le1\) (type 1) = \(y\le x\le1\), \(0\le y\le1\) (type 2). Inverser l'ordre = décrire \(D\) dans l'autre sens.</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Théorème" id="f-4-chgt">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-4" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Changement de variables <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[T:\Delta\to D,\ (u,v)\mapsto(x,y)\ \ (C^1,\text{ bijective hors d'un ensemble négligeable}):\quad\iint_Df\,dx\,dy=\iint_\Delta f(T(u,v))\Big|\frac{\partial(x,y)}{\partial(u,v)}\Big|\,du\,dv\]</div>
+<p class="fi-n">\(\frac{\partial(x,y)}{\partial(u,v)}=\left|\begin{smallmatrix}x_u&amp;x_v\\ y_u&amp;y_v\end{smallmatrix}\right|=x_uy_v-x_vy_u\). Si on connaît \((u,v)\) en fonction de \((x,y)\) : \(\left|\frac{\partial(x,y)}{\partial(u,v)}\right|=\Big|\frac{\partial(u,v)}{\partial(x,y)}\Big|^{-1}\). <b>Valeur absolue</b> du jacobien ; décrire \(\Delta\) ; transformer l'intégrande.</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Formule" id="f-4-polaires">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-5" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Coordonnées polaires <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[x=r\cos\theta,\ y=r\sin\theta,\ \ dx\,dy=r\,dr\,d\theta\qquad\iint_{x^2+y^2\le R^2}f=\int_0^{2\pi}\!\!\int_0^Rf\,r\,dr\,d\theta\]</div>
+<p class="fi-n">Couronne \(R_1\le r\le R_2\) ; demi-disque \(y\ge0\) : \(\theta\in[0,\pi]\) ; quart : \([0,\frac\pi2]\). <b>Disque décentré</b> : \(x^2+y^2\le2ax\iff r\le2a\cos\theta\), \(\theta\in[-\frac\pi2,\frac\pi2]\) ; \(x^2+y^2\le2by\iff r\le2b\sin\theta\), \(\theta\in[0,\pi]\). Aire du disque : \(\pi R^2\).</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Formule" id="f-4-ellipse">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-6" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Ellipse et changement affine <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[x=a\,r\cos\theta,\ y=b\,r\sin\theta:\ \Big|\frac{\partial(x,y)}{\partial(r,\theta)}\Big|=abr\qquad\mathrm{Aire}=\pi ab\qquad\iint_Dx^2=\frac{\pi a^3b}4,\ \iint_Dy^2=\frac{\pi ab^3}4\]</div>
+<p class="fi-n">\(u=\alpha x+\beta y\), \(v=\gamma x+\delta y\) : \(\left|\frac{\partial(x,y)}{\partial(u,v)}\right|=\frac1{|\alpha\delta-\beta\gamma|}\). Exemples : \(u=x+y\), \(v=x-y\) \(\to\frac12\) ; \(u=xy\), \(v=\frac yx\) \(\to\frac1{2v}\).</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Théorème" id="f-4-triple">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-7" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Intégrale triple : Fubini et tranches <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[\iiint_Vf=\int_a^b\!\!\int_{y_1(x)}^{y_2(x)}\!\!\int_{z_1(x,y)}^{z_2(x,y)}f\,dz\,dy\,dx\qquad f=f(z):\ \iiint_Vf=\int_{z_{\min}}^{z_{\max}}f(z)\,A(z)\,dz\]</div>
+<p class="fi-n">\(A(z)\) = aire de la section horizontale. Intégrer de l'intérieur vers l'extérieur ; chaque résultat intermédiaire ne dépend que des variables restantes. Tétraèdre \(x,y,z\ge0,\ x+y+z\le a\) : \(A(z)=\frac{(a-z)^2}2\), volume \(\frac{a^3}6\), \(\iiint z=\frac{a^4}{24}\).</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Formule" id="f-4-jacobiens3d">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-8" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Les trois jacobiens à savoir par cœur <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\text{polaires : }r\qquad\text{cylindriques : }r\qquad\text{sphériques : }r^2\sin\varphi\qquad\text{ellipsoïde : }abc\,r^2\sin\varphi\]</div>
+<p class="fi-n">\(dV=r\,dr\,d\theta\,dz\) (cylindriques) ; \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\) (sphériques). Les écrire <b>dans la copie</b> avant de substituer.</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Formule" id="f-4-volumes">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-9" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Volumes usuels (pour contrôler un résultat) <span class="fi-tag t-for">Formule</span></h4>
+<div class="tbl-wrap"><table class="phr">
+<thead><tr><th>Solide</th><th>Volume</th></tr></thead>
+<tbody>
+<tr><td>Boule de rayon \(R\)</td><td>\(\frac{4}{3}\pi R^3\)</td></tr>
+<tr><td>Cylindre rayon \(R\), hauteur \(h\)</td><td>\(\pi R^2h\)</td></tr>
+<tr><td>Cône rayon \(R\), hauteur \(h\)</td><td>\(\frac13\pi R^2h\)</td></tr>
+<tr><td>Paraboloïde \(x^2+y^2\le z\le h\)</td><td>\(\frac12\pi h^2\) (\(=\frac12\pi R^2h\), \(R=\sqrt h\))</td></tr>
+<tr><td>Ellipsoïde de demi-axes \(a,b,c\)</td><td>\(\frac43\pi abc\)</td></tr>
+<tr><td>Calotte de hauteur \(h\) sur une sphère de rayon \(R\)</td><td>\(\frac{\pi h^2(3R-h)}3\)</td></tr>
+<tr><td>Tétraèdre \(x,y,z\ge0,\ x+y+z\le a\)</td><td>\(\frac{a^3}6\)</td></tr>
+</tbody></table></div>
+<p class="fi-n">Moments utiles : \(\iiint_Bx^2=\frac{4\pi R^5}{15}\) (boule), \(\iiint_B(x^2+y^2+z^2)=\frac{4\pi R^5}5\), \(\iint_{\text{disque}}x^2=\frac{\pi R^4}4\).</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Théorème" id="f-4-symetrie">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-10" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Symétrie et parité <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[D\text{ invariant par }(x,y)\mapsto(-x,y),\ \ f(-x,y)=-f(x,y)\ \Rightarrow\ \iint_Df=0\qquad f\text{ paire}:\ \iint_Df=2\iint_{D\cap\{x\ge0\}}f\]</div>
+<p class="fi-n">Citer <b>la symétrie du domaine et la parité par rapport à la même variable</b>. Justification : changement de variables de jacobien \(-1\) : \(I=-I\). Par permutation des variables : \(\iiint_Bx^2=\iiint_By^2=\iiint_Bz^2\) sur une boule.</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Piège" id="f-4-pieges">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-11" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Les trois oublis qui coûtent le plus <span class="fi-tag t-pie">Piège</span></h4>
+<div class="fi-f">\[\iint f\,dx\,dy=\iint F\,\boxed{r}\,dr\,d\theta\qquad\int_{y_1(x)}^{y_2(x)}\Big(\int_a^b\ \cdots\,dx\Big)dy\ \text{interdit}\qquad|J|\ \text{(valeur absolue)}\]</div>
+<p class="fi-n">Oublier le jacobien ; bornes extérieures non constantes ; oublier la valeur absolue du jacobien (ou prendre l'inverse du bon jacobien). Disque décentré : ne pas écrire \(r\le2\) à la place de \(r\le2\cos\theta\).</p>
+</div>
+</article>
+<article class="fi" data-ch="4" data-t="Formule" id="f-4-trig">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-4-12" data-g="fm fm-c4" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Intégrales trigonométriques fréquentes <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\int_0^{2\pi}\!\cos^2=\pi\quad\int_0^{2\pi}\!\cos^4=\tfrac{3\pi}4\quad\int_0^\pi\!\sin^2=\tfrac\pi2\quad\int_0^\pi\!\sin^3=\tfrac43\quad\int_0^\pi\!\sin^4=\tfrac{3\pi}8\quad\int_0^{2\pi}\!\sin^2\cos^2=\tfrac\pi4\]</div>
+<p class="fi-n">\(\int_0^{\pi/2}\sin^3=\frac23\) ; \(\int_0^\pi\cos^2\varphi\sin\varphi=\frac23\) ; \(\int_{-\pi/2}^{\pi/2}\cos^3=\frac43\), \(\int_{-\pi/2}^{\pi/2}\cos^4=\frac{3\pi}8\) ; \(\int_0^{2\pi}\cos\theta=\int_0^{2\pi}\sin\theta\cos\theta=0\). Puissance paire : linéariser ; impaire : \(u=\cos\) ou \(\sin\).</p>
+</div>
+</article>
 </section>
-
-<section class="fm-sec" id="fm-o" data-ch="o">
-  <h2 class="fm-h">Outils d'analyse d'ING1 <span>à ne pas chercher pendant un calcul</span></h2>
-
-  <article class="fi" data-ch="o" data-t="Formule" id="f-o-trigo">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-o-1" data-g="fm fm-co" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Trigonométrie : valeurs, addition, linéarisation <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\cos^2a+\sin^2a=1\quad\sin2a=2\sin a\cos a\quad\cos2a=\cos^2a-\sin^2a=2\cos^2a-1=1-2\sin^2a\]
+<section class="fm-sec" data-ch="o" id="fm-o">
+<h2 class="fm-h">Outils d'analyse d'ING1 <span>à ne pas chercher pendant un calcul</span></h2>
+<article class="fi" data-ch="o" data-t="Formule" id="f-o-trigo">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-o-1" data-g="fm fm-co" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Trigonométrie : valeurs, addition, linéarisation <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\cos^2a+\sin^2a=1\quad\sin2a=2\sin a\cos a\quad\cos2a=\cos^2a-\sin^2a=2\cos^2a-1=1-2\sin^2a\]
         \[\cos^2a=\frac{1+\cos2a}2\quad\sin^2a=\frac{1-\cos2a}2\quad\cos^4a=\frac{3+4\cos2a+\cos4a}8\quad\sin a\cos a=\tfrac12\sin2a\]</div>
-      <div class="tbl-wrap"><table class="phr">
-        <thead><tr><th>\(x\)</th><th>\(0\)</th><th>\(\frac\pi6\)</th><th>\(\frac\pi4\)</th><th>\(\frac\pi3\)</th><th>\(\frac\pi2\)</th></tr></thead>
-        <tbody><tr><td>\(\sin\)</td><td>\(0\)</td><td>\(\frac12\)</td><td>\(\frac{\sqrt2}2\)</td><td>\(\frac{\sqrt3}2\)</td><td>\(1\)</td></tr>
-        <tr><td>\(\cos\)</td><td>\(1\)</td><td>\(\frac{\sqrt3}2\)</td><td>\(\frac{\sqrt2}2\)</td><td>\(\frac12\)</td><td>\(0\)</td></tr></tbody></table></div>
-      <p class="fi-n">\(\cos(a+b)=\cos a\cos b-\sin a\sin b\) ; \(\sin(a+b)=\sin a\cos b+\cos a\sin b\) ; \(1+\tan^2=\frac1{\cos^2}\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="o" data-t="Formule" id="f-o-derivees">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-o-2" data-g="fm fm-co" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Dérivées usuelles <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[(x^\alpha)'=\alpha x^{\alpha-1}\ \ (\ln|x|)'=\tfrac1x\ \ (e^u)'=u'e^u\ \ (\sqrt u)'=\tfrac{u'}{2\sqrt u}\ \ (\arctan u)'=\tfrac{u'}{1+u^2}\ \ (\arcsin u)'=\tfrac{u'}{\sqrt{1-u^2}}\]
+<div class="tbl-wrap"><table class="phr">
+<thead><tr><th>\(x\)</th><th>\(0\)</th><th>\(\frac\pi6\)</th><th>\(\frac\pi4\)</th><th>\(\frac\pi3\)</th><th>\(\frac\pi2\)</th></tr></thead>
+<tbody><tr><td>\(\sin\)</td><td>\(0\)</td><td>\(\frac12\)</td><td>\(\frac{\sqrt2}2\)</td><td>\(\frac{\sqrt3}2\)</td><td>\(1\)</td></tr>
+<tr><td>\(\cos\)</td><td>\(1\)</td><td>\(\frac{\sqrt3}2\)</td><td>\(\frac{\sqrt2}2\)</td><td>\(\frac12\)</td><td>\(0\)</td></tr></tbody></table></div>
+<p class="fi-n">\(\cos(a+b)=\cos a\cos b-\sin a\sin b\) ; \(\sin(a+b)=\sin a\cos b+\cos a\sin b\) ; \(1+\tan^2=\frac1{\cos^2}\).</p>
+</div>
+</article>
+<article class="fi" data-ch="o" data-t="Formule" id="f-o-derivees">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-o-2" data-g="fm fm-co" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Dérivées usuelles <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[(x^\alpha)'=\alpha x^{\alpha-1}\ \ (\ln|x|)'=\tfrac1x\ \ (e^u)'=u'e^u\ \ (\sqrt u)'=\tfrac{u'}{2\sqrt u}\ \ (\arctan u)'=\tfrac{u'}{1+u^2}\ \ (\arcsin u)'=\tfrac{u'}{\sqrt{1-u^2}}\]
         \[(\sin u)'=u'\cos u\quad(\cos u)'=-u'\sin u\quad(\tan x)'=1+\tan^2x\quad\Big(\frac uv\Big)'=\frac{u'v-uv'}{v^2}\quad(a^x)'=a^x\ln a\]</div>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="o" data-t="Formule" id="f-o-primitives">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-o-3" data-g="fm fm-co" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Primitives usuelles et formes en \(u\) <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\int x^ndx=\tfrac{x^{n+1}}{n+1}\ (n\neq-1)\quad\int\tfrac{dx}x=\ln|x|\quad\int e^{ax}=\tfrac{e^{ax}}a\quad\int\cos(ax)=\tfrac{\sin ax}a\quad\int\sin(ax)=-\tfrac{\cos ax}a\]
+</div>
+</article>
+<article class="fi" data-ch="o" data-t="Formule" id="f-o-primitives">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-o-3" data-g="fm fm-co" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Primitives usuelles et formes en \(u\) <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\int x^ndx=\tfrac{x^{n+1}}{n+1}\ (n\neq-1)\quad\int\tfrac{dx}x=\ln|x|\quad\int e^{ax}=\tfrac{e^{ax}}a\quad\int\cos(ax)=\tfrac{\sin ax}a\quad\int\sin(ax)=-\tfrac{\cos ax}a\]
         \[\int u'u^n=\tfrac{u^{n+1}}{n+1}\qquad\int\tfrac{u'}u=\ln|u|\qquad\int u'e^u=e^u\qquad\int\tfrac{u'}{\sqrt u}=2\sqrt u\qquad\int\tfrac{u'}{1+u^2}=\arctan u\]</div>
-      <p class="fi-n">Intégration par parties : \(\int u'v=uv-\int uv'\). Exemples du chapitre 4 : \(\int r\sqrt{4-r^2}\,dr=-\frac13(4-r^2)^{3/2}\), \(\int r^2e^{r^3}dr=\frac{e^{r^3}}3\), \(\int_1^2\frac{dr}r=\ln2\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="o" data-t="Formule" id="f-o-dl">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-o-4" data-g="fm fm-co" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Développements limités en \(0\) et limites usuelles <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[e^x=1+x+\tfrac{x^2}2+\tfrac{x^3}6+\cdots\quad\sin x=x-\tfrac{x^3}6+\cdots\quad\cos x=1-\tfrac{x^2}2+\tfrac{x^4}{24}-\cdots\quad\ln(1+x)=x-\tfrac{x^2}2+\cdots\]
+<p class="fi-n">Intégration par parties : \(\int u'v=uv-\int uv'\). Exemples du chapitre 4 : \(\int r\sqrt{4-r^2}\,dr=-\frac13(4-r^2)^{3/2}\), \(\int r^2e^{r^3}dr=\frac{e^{r^3}}3\), \(\int_1^2\frac{dr}r=\ln2\).</p>
+</div>
+</article>
+<article class="fi" data-ch="o" data-t="Formule" id="f-o-dl">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-o-4" data-g="fm fm-co" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Développements limités en \(0\) et limites usuelles <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[e^x=1+x+\tfrac{x^2}2+\tfrac{x^3}6+\cdots\quad\sin x=x-\tfrac{x^3}6+\cdots\quad\cos x=1-\tfrac{x^2}2+\tfrac{x^4}{24}-\cdots\quad\ln(1+x)=x-\tfrac{x^2}2+\cdots\]
         \[\frac{\sin t}t\to1\qquad\frac{1-\cos t}{t^2}\to\frac12\qquad\frac{e^t-1}t\to1\qquad\frac{\ln(1+t)}t\to1\qquad(t\to0)\]</div>
-      <p class="fi-n">Inégalités : \(|\sin t|\le|t|\), \(|t-\sin t|\le\frac{|t|^3}6\). Le DL sert à lever une forme \(0/0\) <b>le long d'un chemin</b> (limite de deux variables).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="o" data-t="Formule" id="f-o-hyperboliques">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-o-5" data-g="fm fm-co" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Fonctions hyperboliques <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\cosh t=\frac{e^t+e^{-t}}2\quad\sinh t=\frac{e^t-e^{-t}}2\quad\cosh^2t-\sinh^2t=1\quad(\cosh)'=\sinh\quad(\sinh)'=\cosh\]</div>
-      <p class="fi-n">Servent à paramétrer l'hyperbole \(\frac{X^2}{a^2}-\frac{Y^2}{b^2}=1\) : \((\pm a\cosh t,\ b\sinh t)\).</p>
-    </div>
-  </article>
-
-  <article class="fi" data-ch="o" data-t="Formule" id="f-o-algebre">
-    <label class="fi-chk" title="Je connais"><input type="checkbox" data-ds="fm-o-6" data-g="fm fm-co" aria-label="Je connais"></label>
-    <div class="fi-body">
-      <h4>Complétion du carré et factorisations <span class="fi-tag t-for">Formule</span></h4>
-      <div class="fi-f">\[\alpha x^2+\beta x=\alpha\Big(x+\frac\beta{2\alpha}\Big)^2-\frac{\beta^2}{4\alpha}\qquad x^3-y^3=(x-y)(x^2+xy+y^2)\qquad(|x|-|y|)^2\ge0\Rightarrow2|xy|\le x^2+y^2\]</div>
-      <p class="fi-n">Déterminants : \(\left|\begin{smallmatrix}a&amp;b\\ c&amp;d\end{smallmatrix}\right|=ad-bc\) ; \(\det\) \(3\times3\) par développement. Valeur absolue : \(|x|+|y|=\max(|x+y|,|x-y|)\).</p>
-    </div>
-  </article>
+<p class="fi-n">Inégalités : \(|\sin t|\le|t|\), \(|t-\sin t|\le\frac{|t|^3}6\). Le DL sert à lever une forme \(0/0\) <b>le long d'un chemin</b> (limite de deux variables).</p>
+</div>
+</article>
+<article class="fi" data-ch="o" data-t="Formule" id="f-o-hyperboliques">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-o-5" data-g="fm fm-co" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Fonctions hyperboliques <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\cosh t=\frac{e^t+e^{-t}}2\quad\sinh t=\frac{e^t-e^{-t}}2\quad\cosh^2t-\sinh^2t=1\quad(\cosh)'=\sinh\quad(\sinh)'=\cosh\]</div>
+<p class="fi-n">Servent à paramétrer l'hyperbole \(\frac{X^2}{a^2}-\frac{Y^2}{b^2}=1\) : \((\pm a\cosh t,\ b\sinh t)\).</p>
+</div>
+</article>
+<article class="fi" data-ch="o" data-t="Formule" id="f-o-algebre">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-o-6" data-g="fm fm-co" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Complétion du carré et factorisations <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\alpha x^2+\beta x=\alpha\Big(x+\frac\beta{2\alpha}\Big)^2-\frac{\beta^2}{4\alpha}\qquad x^3-y^3=(x-y)(x^2+xy+y^2)\qquad(|x|-|y|)^2\ge0\Rightarrow2|xy|\le x^2+y^2\]</div>
+<p class="fi-n">Déterminants : \(\left|\begin{smallmatrix}a&amp;b\\ c&amp;d\end{smallmatrix}\right|=ad-bc\) ; \(\det\) \(3\times3\) par développement. Valeur absolue : \(|x|+|y|=\max(|x+y|,|x-y|)\).</p>
+</div>
+</article>
 </section>
 </div>
-
-
 </main>
-
 <div class="foot">
-  <div class="wrap">
-    <span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
-    <span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
-  </div>
+<div class="wrap">
+<span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
+<span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
 </div>
-<a class="cx-top" href="#" aria-label="Revenir en haut de la page">↑</a>
-
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+</div>
+<a aria-label="Revenir en haut de la page" class="cx-top" href="#">↑</a>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script src="js/maths.js"></script>
 <script src="js/ds.js"></script>
 </body>

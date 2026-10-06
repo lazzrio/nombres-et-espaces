@@ -1,468 +1,438 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Spécial DS · plan et checklist — Champs &amp; Intégrales</title>
-<meta name="description" content="Préparer le DS d'Analyse 3 (chapitres 1 à 4) : plan sur 10 jours, checklist « je sais faire », stratégie pour 1h30, fiche de survie.">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#4b3e8f" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1128" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/icon-192.png">
-<link rel="manifest" href="manifest.webmanifest">
-<meta property="og:title" content="Spécial DS · plan et checklist">
-<meta property="og:description" content="Préparer le DS d'Analyse 3 (chapitres 1 à 4) : plan sur 10 jours, checklist « je sais faire », stratégie pour 1h30, fiche de survie.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/ds.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<meta content="Préparer le DS d'Analyse 3 (chapitres 1 à 4) : plan sur 10 jours, checklist « je sais faire », stratégie pour 1h30, fiche de survie." name="description"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="#4b3e8f" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0e1128" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/icon-192.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="Spécial DS · plan et checklist" property="og:title"/>
+<meta content="Préparer le DS d'Analyse 3 (chapitres 1 à 4) : plan sur 10 jours, checklist « je sais faire », stratégie pour 1h30, fiche de survie." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/ds.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <script src="js/topbar.js"></script>
 </head>
 <body class="cx-page ds-page ds-hub">
-
 <div class="topbar">
-  <div class="topbar-in">
-    <a class="brand" href="index.html" aria-label="Accueil du site">
-      <span class="chip-logo">∇</span>
+<div class="topbar-in">
+<a aria-label="Accueil du site" class="brand" href="index.html">
+<span class="chip-logo">\(\nabla\)</span>
       Champs &amp; Intégrales
     </a>
-    <nav class="nav" id="nav" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="ds.html" class="nav-ds active" aria-current="page"><span class="ni">🎓</span> DS</a>
-      <a href="index.html#cours"><span class="ni">📚</span> Cours</a>
-      <a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
-      <a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
-      <a href="corriges.html" class="nav-corr"><span class="ni">✅</span> Corrigés</a>
-      <a href="index.html#notions"><span class="ni">💡</span> Notions</a>
-      <a href="index.html#formules"><span class="ni">📘</span> Formules</a>
-      <a href="index.html#express"><span class="ni">⚡</span> Express</a>
-      <a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
-      <a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
-      <a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
-      <a href="index.html#planning"><span class="ni">📅</span> Planning</a>
-    </nav>
-    <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">
-      <svg id="thIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    </button>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
+<nav aria-label="Navigation principale" class="nav" id="nav">
+<a href="index.html">Accueil</a>
+<a aria-current="page" class="nav-ds active" href="ds.html"><span class="ni">🎓</span> DS</a>
+<a href="index.html#cours"><span class="ni">📚</span> Cours</a>
+<a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
+<a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
+<a class="nav-corr" href="corriges.html"><span class="ni">✅</span> Corrigés</a>
+<a href="index.html#notions"><span class="ni">💡</span> Notions</a>
+<a href="index.html#formules"><span class="ni">📘</span> Formules</a>
+<a href="index.html#express"><span class="ni">⚡</span> Express</a>
+<a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
+<a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
+<a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
+<a href="index.html#planning"><span class="ni">📅</span> Planning</a>
+</nav>
+<button aria-label="Changer de thème" class="theme-btn" id="themeBtn" title="Thème clair / sombre">
+<svg fill="none" id="thIcon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</button>
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
 </div>
-
+</div>
 <div class="dsnav" id="dsnav">
-  <div class="dsnav-in">
-    <span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
-    <a class="tab on" href="ds.html">Plan &amp; checklist</a>
-    <a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
-    <a class="tab" href="ds-formules.html">📘 Formules</a>
-    <a class="tab" href="ds-quiz.html">🧠 Quiz</a>
-    <a class="tab" href="ds-exercices.html">🏋 Exercices</a>
-    <a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
-    <span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
-  </div>
+<div class="dsnav-in">
+<span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
+<a class="tab on" href="ds.html">Plan &amp; checklist</a>
+<a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
+<a class="tab" href="ds-formules.html">📘 Formules</a>
+<a class="tab" href="ds-quiz.html">🧠 Quiz</a>
+<a class="tab" href="ds-exercices.html">🏋 Exercices</a>
+<a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
+<span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
 </div>
-
+</div>
 <main>
 <div class="hero hero-sm ds-hero">
-  <div class="hero-grid"></div>
-  <div class="hero-in">
-    <div>
-      <span class="eyebrow">🎓 Spécial DS · Analyse 3 · chapitres 1 à 4</span>
-      <h1>Le DS, <em>étape par étape</em>.</h1>
-      <p class="lead">Tout ce qu'il faut pour le DS de 1h30 sur les chapitres 1 à 4 : <b>36 méthodes rédigées</b> avec exemples expliqués, <b>38 exercices corrigés</b> reliés à ton TD, <b>3 DS blancs chronométrés</b> avec barème, un <b>plan sur 10 jours</b>, un <b>formulaire</b> (formules, notions, équations à connaître) et son <b>quiz</b>, une checklist « je sais faire » et une fiche de survie. Tout est vérifié par calcul.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#plan">📅 Mon plan sur 10 jours</a>
-        <a class="btn btn-ghost" href="ds-methodes.html">🛠 Les méthodes</a>
-        <a class="btn btn-ghost" href="ds-formules.html">📘 Formulaire</a>
-        <a class="btn btn-ghost" href="ds-quiz.html">🧠 Quiz</a>
-        <a class="btn btn-ghost" href="ds-blancs.html">⏱ DS blancs</a>
-      </div>
-    </div>
-    <div class="countcard">
-      <div class="cc-n js-count-n">10</div>
-      <div class="cc-l js-count-l">jours avant le DS</div>
-      <div class="cc-d">
-        <span class="js-count-date"></span><br>
-        <label for="dsDate" style="font-size:12.5px">Date de ton DS</label><br>
-        <input type="date" id="dsDate">
-        <div class="cc-btns">
-          <button type="button" class="cx-btn" data-setdate="2026-10-14">14 oct. (dans 10 jours)</button>
-          <button type="button" class="cx-btn" data-setdate="2026-10-17">Sam. 17 oct. (EDT du 23 sept.)</button>
-        </div>
-        <p style="font-size:12px;margin:10px 0 0">La date se règle ici une fois pour toutes (mémorisée sur cet appareil) : tout le plan s'adapte. Vérifie-la sur ton emploi du temps officiel.</p>
-      </div>
-    </div>
-  </div>
+<div class="hero-grid"></div>
+<div class="hero-in">
+<div>
+<span class="eyebrow">🎓 Spécial DS · Analyse 3 · chapitres 1 à 4</span>
+<h1>Le DS, <em>étape par étape</em>.</h1>
+<p class="lead">Tout ce qu'il faut pour le DS de 1h30 sur les chapitres 1 à 4 : <b>36 méthodes rédigées</b> avec exemples expliqués, <b>38 exercices corrigés</b> reliés à ton TD, <b>3 DS blancs chronométrés</b> avec barème, un <b>plan sur 10 jours</b>, un <b>formulaire</b> (formules, notions, équations à connaître) et son <b>quiz</b>, une checklist « je sais faire » et une fiche de survie. Tout est vérifié par calcul.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#plan">📅 Mon plan sur 10 jours</a>
+<a class="btn btn-ghost" href="ds-methodes.html">🛠 Les méthodes</a>
+<a class="btn btn-ghost" href="ds-formules.html">📘 Formulaire</a>
+<a class="btn btn-ghost" href="ds-quiz.html">🧠 Quiz</a>
+<a class="btn btn-ghost" href="ds-blancs.html">⏱ DS blancs</a>
 </div>
-
+</div>
+<div class="countcard">
+<div class="cc-n js-count-n">10</div>
+<div class="cc-l js-count-l">jours avant le DS</div>
+<div class="cc-d">
+<span class="js-count-date"></span><br/>
+<label for="dsDate" style="font-size:12.5px">Date de ton DS</label><br/>
+<input id="dsDate" type="date"/>
+<div class="cc-btns">
+<button class="cx-btn" data-setdate="2026-10-14" type="button">14 oct. (dans 10 jours)</button>
+<button class="cx-btn" data-setdate="2026-10-17" type="button">Sam. 17 oct. (EDT du 23 sept.)</button>
+</div>
+<p style="font-size:12px;margin:10px 0 0">La date se règle ici une fois pour toutes (mémorisée sur cet appareil) : tout le plan s'adapte. Vérifie-la sur ton emploi du temps officiel.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="wrap ds-wrap">
-  <div class="dsjump">
-    <a href="#parcours">Parcours</a><a href="#attendu">Ce qu'on peut te demander</a><a href="#plan">Plan sur 10 jours</a><a href="#checklist">Checklist « je sais faire »</a><a href="#strategie">Stratégie 1h30</a><a href="#survie">Fiche de survie</a>
-  </div>
-
-  <!-- ===================== PARCOURS ===================== -->
-  <section id="parcours">
-    <div class="section-head" style="padding-top:20px">
-      <span class="eyebrow">Les quatre outils</span>
-      <h2>Comment ces pages s'enchaînent</h2>
-      <p>Chaque question de DS suit le même chemin : <b>la méthode</b> (avec sa rédaction), <b>l'exercice</b> qui la fait travailler, puis <b>le DS blanc</b> qui la teste sous contrainte de temps.</p>
-    </div>
-    <div class="path">
-      <a href="ds-methodes.html"><span class="pn">1 · Comprendre</span><h3>Méthodes et rédaction</h3><p>36 méthodes : quand, recette, exemple rédigé avec notes de marge, pièges. Plus le guide « ce que le correcteur attend ».</p><span class="go">Ouvrir →</span></a>
-      <a href="ds-formules.html"><span class="pn">1bis · Apprendre</span><h3>Formulaire : notions et équations</h3><p>Définitions, théorèmes avec hypothèses, formules, équations de courbes et de surfaces : une fiche par notion, avec recherche et case « je connais ».</p><span class="go">Ouvrir →</span></a>
-      <a href="ds-quiz.html"><span class="pn">1ter · Vérifier</span><h3>Quiz et flashcards</h3><p>QCM pour reconnaître la bonne formule ou la bonne hypothèse, flashcards pour les réécrire de mémoire ; tes erreurs sont gardées pour les refaire.</p><span class="go">Ouvrir →</span></a>
-      <a href="ds-exercices.html"><span class="pn">2 · S'entraîner</span><h3>38 exercices corrigés</h3><p>Trois paliers par chapitre (échauffement, technique, format DS), liés à ton TD, avec indice et correction rédigée.</p><span class="go">Ouvrir →</span></a>
-      <a href="ds-blancs.html"><span class="pn">3 · Se tester</span><h3>3 DS blancs de 1h30</h3><p>Chronomètre, barème détaillé, auto-notation sur 20. Un sujet équilibré, un sujet calcul, un sujet pièges.</p><span class="go">Ouvrir →</span></a>
-      <a href="corriges.html"><span class="pn">4 · Le TD</span><h3>Corrigés de la feuille officielle</h3><p>Les 74 exercices du TD, corrigés pas à pas. C'est la référence : les exercices ci-dessus renvoient vers ses numéros.</p><span class="go">Ouvrir →</span></a>
-    </div>
-  </section>
-
-  <!-- ===================== ATTENDU ===================== -->
-  <section id="attendu">
-    <div class="section-head">
-      <span class="eyebrow">Ce que le DS peut demander</span>
-      <h2>Quatre blocs, 1h30</h2>
-      <p>Estimation fondée sur la structure des TD (aucun sujet officiel n'a été fourni) : à recouper avec ce que vous a dit votre enseignant. Le chapitre 4 et le chapitre 1 pèsent le plus.</p>
-    </div>
-    <div class="tbl-wrap"><table class="dstable">
-      <thead><tr><th>Chapitre</th><th>Questions typiques</th><th>Temps</th><th>Méthodes</th><th>Entraînement</th></tr></thead>
-      <tbody>
-        <tr><td>1 · Fonctions de plusieurs variables</td><td>Limite ou continuité d'une fonction en \((0,0)\) ; classe \(C^1\) d'une fonction définie par morceaux ; dérivées partielles, jacobienne ; EDP par changement de variables</td><td><span class="minpill">25–35 min</span></td><td><a href="ds-methodes.html#m-1-2">M1.2</a>, <a href="ds-methodes.html#m-1-5">M1.5</a>, <a href="ds-methodes.html#m-1-9">M1.9</a></td><td><a href="ds-exercices.html#ds-e1-2">E1.2</a>, <a href="ds-exercices.html#ds-e1-6">E1.6</a>, <a href="ds-exercices.html#ds-e1-9">E1.9</a></td></tr>
-        <tr><td>2 · Opérateurs vectoriels</td><td>grad, div, rot, \(\Delta\) ; potentiel scalaire ou vecteur ; identité à démontrer ; justification du domaine étoilé</td><td><span class="minpill">15–20 min</span></td><td><a href="ds-methodes.html#m-2-1">M2.1</a>, <a href="ds-methodes.html#m-2-4">M2.4</a>, <a href="ds-methodes.html#m-2-5">M2.5</a></td><td><a href="ds-exercices.html#ds-e2-1">E2.1</a>, <a href="ds-exercices.html#ds-e2-4">E2.4</a>, <a href="ds-exercices.html#ds-e2-5">E2.5</a></td></tr>
-        <tr><td>3 · Courbes, surfaces, solides</td><td>Paramétrer une courbe ou un contour ; reconnaître une conique, une sphère, une quadrique ; décrire un solide avec ses bornes</td><td><span class="minpill">10–15 min</span></td><td><a href="ds-methodes.html#m-3-4">M3.4</a>, <a href="ds-methodes.html#m-3-6">M3.6</a>, <a href="ds-methodes.html#m-3-7">M3.7</a></td><td><a href="ds-exercices.html#ds-e3-4">E3.4</a>, <a href="ds-exercices.html#ds-e3-6">E3.6</a>, <a href="ds-exercices.html#ds-e3-7">E3.7</a></td></tr>
-        <tr><td>4 · Intégrales multiples</td><td>Intégrale double ou triple (types 1/2, polaires, cylindriques, sphériques) ; inversion de l'ordre ; changement de variables ; volume</td><td><span class="minpill">25–35 min</span></td><td><a href="ds-methodes.html#m-4-2">M4.2</a> à <a href="ds-methodes.html#m-4-9">M4.9</a></td><td><a href="ds-exercices.html#ds-e4-4">E4.4</a>, <a href="ds-exercices.html#ds-e4-8">E4.8</a> à <a href="ds-exercices.html#ds-e4-10">E4.10</a></td></tr>
-      </tbody>
-    </table></div>
-  </section>
-
-  <!-- ===================== PLAN ===================== -->
-  <section id="plan">
-    <div class="section-head">
-      <span class="eyebrow">📅 Plan sur 10 jours</span>
-      <h2>De « J-10 » au jour du DS</h2>
-      <p>Environ 2 à 3 heures par jour, <b>adaptables</b> à ton emploi du temps. Les dates se calculent à partir de la date réglée plus haut. Les cases se cochent et sont mémorisées. Les chapitres sont vus <b>dans l'ordre</b> (J-10 à J-4), puis les trois DS blancs (J-3 à J-1) servent à repérer ce qui reste fragile.</p>
-      <div class="skglobal"><b>Avancement du plan</b><span class="cnt" data-prog="plan" style="font-family:var(--f-mono);font-size:12.5px;color:var(--good)"></span><span class="skbar"><i data-bar="plan"></i></span></div>
-    </div>
-
-    <div class="plan">
-      <div class="pday" data-off="10">
-        <div class="pday-hd"><span class="j">J-10</span><span class="dt"></span><span class="dur">≈ 2 h</span></div>
-        <h4>Rédaction + limites et continuité</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-10-1" data-ds="pl-10-1" data-g="plan"><label for="pl-10-1">Lire le <a href="ds-methodes.html#redaction">guide de rédaction</a> (R1 à R4) : 20 min.</label></li>
-          <li><input type="checkbox" id="pl-10-2" data-ds="pl-10-2" data-g="plan"><label for="pl-10-2"><a href="ds-methodes.html#m-1-1">M1.1</a> à <a href="ds-methodes.html#m-1-3">M1.3</a> : masquer les notes de marge et refaire chaque exemple sur papier (45 min).</label></li>
-          <li><input type="checkbox" id="pl-10-3" data-ds="pl-10-3" data-g="plan"><label for="pl-10-3">Exercices <a href="ds-exercices.html#ds-e1-1">E1.1</a> à <a href="ds-exercices.html#ds-e1-4">E1.4</a>, puis correction (≈ 55 min).</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="9">
-        <div class="pday-hd"><span class="j">J-9</span><span class="dt"></span><span class="dur">≈ 2 h</span></div>
-        <h4>Dérivées partielles, classe \(C^1\), Schwarz</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-9-1" data-ds="pl-9-1" data-g="plan"><label for="pl-9-1"><a href="ds-methodes.html#m-1-4">M1.4</a> à <a href="ds-methodes.html#m-1-6">M1.6</a>, avec attention à <a href="ds-methodes.html#m-1-5">M1.5</a> (le plan en 4 temps).</label></li>
-          <li><input type="checkbox" id="pl-9-2" data-ds="pl-9-2" data-g="plan"><label for="pl-9-2"><a href="ds-exercices.html#ds-e1-5">E1.5</a>, <a href="ds-exercices.html#ds-e1-6">E1.6</a>, <a href="ds-exercices.html#ds-e1-7">E1.7</a>.</label></li>
-          <li><input type="checkbox" id="pl-9-3" data-ds="pl-9-3" data-g="plan"><label for="pl-9-3">Refaire <b>sans le corrigé</b> le TD <a href="corriges.html#fpv-3">chap. 1, ex. 3</a> (classe \(C^1\)).</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="8">
-        <div class="pday-hd"><span class="j">J-8</span><span class="dt"></span><span class="dur">≈ 2 h 30</span></div>
-        <h4>Jacobienne, EDP, Taylor + synthèse chapitre 1</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-8-1" data-ds="pl-8-1" data-g="plan"><label for="pl-8-1"><a href="ds-methodes.html#m-1-7">M1.7</a> à <a href="ds-methodes.html#m-1-11">M1.11</a>.</label></li>
-          <li><input type="checkbox" id="pl-8-2" data-ds="pl-8-2" data-g="plan"><label for="pl-8-2"><a href="ds-exercices.html#ds-e1-8">E1.8</a> et <a href="ds-exercices.html#ds-e1-9">E1.9</a> ; TD <a href="corriges.html#edp">EDP, ex. 1 à 4</a> sans corrigé.</label></li>
-          <li><input type="checkbox" id="pl-8-3" data-ds="pl-8-3" data-g="plan"><label for="pl-8-3"><a href="ds-exercices.html#ds-e1-10">E1.10</a> <b>chronométré</b> (35 min), puis correction.</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="7">
-        <div class="pday-hd"><span class="j">J-7</span><span class="dt"></span><span class="dur">≈ 2 h 30</span></div>
-        <h4>Chapitre 2 : opérateurs vectoriels</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-7-1" data-ds="pl-7-1" data-g="plan"><label for="pl-7-1"><a href="ds-methodes.html#m-2-1">M2.1</a> à <a href="ds-methodes.html#m-2-6">M2.6</a>.</label></li>
-          <li><input type="checkbox" id="pl-7-2" data-ds="pl-7-2" data-g="plan"><label for="pl-7-2"><a href="ds-exercices.html#ds-e2-1">E2.1</a> à <a href="ds-exercices.html#ds-e2-7">E2.7</a> (ceux qui vous résistent d'abord).</label></li>
-          <li><input type="checkbox" id="pl-7-3" data-ds="pl-7-3" data-g="plan"><label for="pl-7-3"><a href="ds-exercices.html#ds-e2-8">E2.8</a> chronométré (30 min) ; TD <a href="corriges.html#ope-6">ex. 6 et 10</a> sans corrigé.</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="6">
-        <div class="pday-hd"><span class="j">J-6</span><span class="dt"></span><span class="dur">≈ 2 h</span></div>
-        <h4>Chapitre 3 : courbes, surfaces, solides</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-6-1" data-ds="pl-6-1" data-g="plan"><label for="pl-6-1"><a href="ds-methodes.html#m-3-1">M3.1</a> à <a href="ds-methodes.html#m-3-7">M3.7</a>, surtout <a href="ds-methodes.html#m-3-7">M3.7</a> (les bornes du chapitre 4).</label></li>
-          <li><input type="checkbox" id="pl-6-2" data-ds="pl-6-2" data-g="plan"><label for="pl-6-2"><a href="ds-exercices.html#ds-e3-1">E3.1</a> à <a href="ds-exercices.html#ds-e3-7">E3.7</a>.</label></li>
-          <li><input type="checkbox" id="pl-6-3" data-ds="pl-6-3" data-g="plan"><label for="pl-6-3"><a href="ds-exercices.html#ds-e3-8">E3.8</a> chronométré (25 min).</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="5">
-        <div class="pday-hd"><span class="j">J-5</span><span class="dt"></span><span class="dur">≈ 2 h 30</span></div>
-        <h4>Chapitre 4, première moitié</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-5-1" data-ds="pl-5-1" data-g="plan"><label for="pl-5-1"><a href="ds-methodes.html#m-4-1">M4.1</a> à <a href="ds-methodes.html#m-4-5">M4.5</a> : Fubini, types 1 et 2, inversion, polaires, ellipses.</label></li>
-          <li><input type="checkbox" id="pl-5-2" data-ds="pl-5-2" data-g="plan"><label for="pl-5-2"><a href="ds-exercices.html#ds-e4-1">E4.1</a> à <a href="ds-exercices.html#ds-e4-6">E4.6</a>.</label></li>
-          <li><input type="checkbox" id="pl-5-3" data-ds="pl-5-3" data-g="plan"><label for="pl-5-3">Refaire <b>sans le corrigé</b> le TD <a href="corriges.html#imu-3">chap. 4, ex. 3</a> (polaires).</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="4">
-        <div class="pday-hd"><span class="j">J-4</span><span class="dt"></span><span class="dur">≈ 2 h 30</span></div>
-        <h4>Chapitre 4, seconde moitié</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-4-1" data-ds="pl-4-1" data-g="plan"><label for="pl-4-1"><a href="ds-methodes.html#m-4-6">M4.6</a> à <a href="ds-methodes.html#m-4-10">M4.10</a> : symétries, triples, cylindriques, sphériques, volumes.</label></li>
-          <li><input type="checkbox" id="pl-4-2" data-ds="pl-4-2" data-g="plan"><label for="pl-4-2"><a href="ds-exercices.html#ds-e4-7">E4.7</a> à <a href="ds-exercices.html#ds-e4-10">E4.10</a>.</label></li>
-          <li><input type="checkbox" id="pl-4-3" data-ds="pl-4-3" data-g="plan"><label for="pl-4-3"><a href="ds-exercices.html#ds-e4-11">E4.11</a> et <a href="ds-exercices.html#ds-e4-12">E4.12</a> chronométrés (30 + 35 min).</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="3">
-        <div class="pday-hd"><span class="j">J-3</span><span class="dt"></span><span class="dur">≈ 3 h</span></div>
-        <h4>DS blanc n°1 (équilibré)</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-3-1" data-ds="pl-3-1" data-g="plan"><label for="pl-3-1"><a href="ds-blancs.html#blanc-1">DS n°1</a> en 1h30, conditions réelles.</label></li>
-          <li><input type="checkbox" id="pl-3-2" data-ds="pl-3-2" data-g="plan"><label for="pl-3-2">Correction avec le barème (45 min) : noter où les points se perdent (calcul, rédaction, méthode).</label></li>
-          <li><input type="checkbox" id="pl-3-3" data-ds="pl-3-3" data-g="plan"><label for="pl-3-3">Refaire les deux questions les plus ratées à partir de la méthode correspondante.</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="2">
-        <div class="pday-hd"><span class="j">J-2</span><span class="dt"></span><span class="dur">≈ 3 h</span></div>
-        <h4>DS blanc n°2 (calcul) + reprise des erreurs</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-2-1" data-ds="pl-2-1" data-g="plan"><label for="pl-2-1"><a href="ds-blancs.html#blanc-2">DS n°2</a> en 1h30.</label></li>
-          <li><input type="checkbox" id="pl-2-2" data-ds="pl-2-2" data-g="plan"><label for="pl-2-2">Correction avec le barème, puis relire les méthodes des points perdus.</label></li>
-          <li><input type="checkbox" id="pl-2-3" data-ds="pl-2-3" data-g="plan"><label for="pl-2-3">Refaire les exercices cochés « pas fait » de la page <a href="ds-exercices.html">Exercices</a>.</label></li>
-        </ul>
-      </div>
-
-      <div class="pday" data-off="1">
-        <div class="pday-hd"><span class="j">J-1</span><span class="dt"></span><span class="dur">≈ 2 h 30</span></div>
-        <h4>DS blanc n°3 (pièges), puis repos</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-1-1" data-ds="pl-1-1" data-g="plan"><label for="pl-1-1"><a href="ds-blancs.html#blanc-3">DS n°3</a> le matin ou en début d'après-midi, et sa correction.</label></li>
-          <li><input type="checkbox" id="pl-1-2" data-ds="pl-1-2" data-g="plan"><label for="pl-1-2">Recopier <b>de mémoire</b> la <a href="#survie">fiche de survie</a>, puis comparer.</label></li>
-          <li><input type="checkbox" id="pl-1-3" data-ds="pl-1-3" data-g="plan"><label for="pl-1-3">Aucune nouvelle notion le soir. Dormir tôt.</label></li>
-        </ul>
-      </div>
-
-      <div class="pday ds" data-off="0">
-        <div class="pday-hd"><span class="j">DS</span><span class="dt"></span><span class="dur">≈ 30 min</span></div>
-        <h4>Le jour J</h4>
-        <ul>
-          <li><input type="checkbox" id="pl-0-1" data-ds="pl-0-1" data-g="plan"><label for="pl-0-1">20 min avant : relire la <a href="#survie">fiche de survie</a> et la <a href="#strategie">stratégie 1h30</a>. Rien d'autre.</label></li>
-          <li><input type="checkbox" id="pl-0-2" data-ds="pl-0-2" data-g="plan"><label for="pl-0-2">Au sujet : lire <b>tout</b>, repérer les questions « formule directe », commencer par elles.</label></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="lite"><b class="lab">Si tu as moins de 10 jours</b>
-      <ul>
-        <li><b>5 jours</b> : <a href="ds-methodes.html#redaction">R1-R2</a> ; puis les méthodes et exercices ★/★★ de chaque chapitre (E1.2, E1.6, E1.9, E2.4, E2.5, E3.4, E3.7, E4.2 à E4.4, E4.8 à E4.10) ; DS blancs n°1 et n°3.</li>
-        <li><b>3 jours</b> : <a href="#survie">fiche de survie</a>, les méthodes M1.2, M1.5, M2.4, M2.5, M3.7, M4.4, M4.8, M4.9, et le DS blanc n°1 en entier.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===================== CHECKLIST ===================== -->
-  <section id="checklist">
-    <div class="section-head">
-      <span class="eyebrow">Checklist</span>
-      <h2>Ce que je dois savoir faire</h2>
-      <p>Une case = une compétence que tu sais refaire <b>seul, sans le cours, avec la rédaction complète</b>. Chaque ligne renvoie à la méthode (M), au TD (TD) et à l'exercice d'entraînement (E).</p>
-      <div class="skglobal"><b>Avancement</b><span class="cnt" data-prog="sk" style="font-family:var(--f-mono);font-size:12.5px;color:var(--good)"></span><span class="skbar"><i data-bar="sk"></i></span></div>
-    </div>
-
-    <div class="skills">
-      <div class="skcard">
-        <h3><span class="n">CH 1</span>Fonctions de plusieurs variables<span class="cnt" data-prog="sk-c1"></span></h3>
-        <div class="skbar"><i data-bar="sk-c1"></i></div>
-        <ul>
-          <li><input type="checkbox" id="sk-1" data-ds="sk-1" data-g="sk sk-c1"><div><label for="sk-1">Domaine de définition ; ouvert / fermé justifié</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-1">M1.1</a><a class="td" href="corriges.html#fpv-1">TD fpv-1</a><a class="ex" href="ds-exercices.html#ds-e1-1">E1.1</a></div></div></li>
-          <li><input type="checkbox" id="sk-2" data-ds="sk-2" data-g="sk sk-c1"><div><label for="sk-2">Montrer qu'une limite n'existe pas (chemins, y compris courbes)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-2">M1.2</a><a class="td" href="corriges.html#sup-2">TD sup-2</a><a class="ex" href="ds-exercices.html#ds-e1-2">E1.2</a></div></div></li>
-          <li><input type="checkbox" id="sk-3" data-ds="sk-3" data-g="sk sk-c1"><div><label for="sk-3">Prouver qu'une limite existe (encadrement, polaires)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-2">M1.2</a><a class="td" href="corriges.html#fpv-1">TD fpv-1</a><a class="ex" href="ds-exercices.html#ds-e1-2">E1.2</a></div></div></li>
-          <li><input type="checkbox" id="sk-4" data-ds="sk-4" data-g="sk sk-c1"><div><label for="sk-4">Limite en un point \(\neq(0,0)\) ; développement limité</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-2">M1.2</a><a class="td" href="corriges.html#sup-2">TD sup-2</a><a class="ex" href="ds-exercices.html#ds-e1-3">E1.3</a></div></div></li>
-          <li><input type="checkbox" id="sk-5" data-ds="sk-5" data-g="sk sk-c1"><div><label for="sk-5">Continuité, prolongement, discussion selon un paramètre</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-3">M1.3</a><a class="ex" href="ds-exercices.html#ds-e1-4">E1.4</a></div></div></li>
-          <li><input type="checkbox" id="sk-6" data-ds="sk-6" data-g="sk sk-c1"><div><label for="sk-6">Dérivées partielles (quotients, composées, puissances variables)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-4">M1.4</a><a class="td" href="corriges.html#fpv-2">TD fpv-2</a><a class="ex" href="ds-exercices.html#ds-e1-5">E1.5</a></div></div></li>
-          <li><input type="checkbox" id="sk-7" data-ds="sk-7" data-g="sk sk-c1"><div><label for="sk-7">Classe \(C^1\) d'une fonction définie par morceaux (4 temps)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-5">M1.5</a><a class="td" href="corriges.html#fpv-3">TD fpv-3</a><a class="ex" href="ds-exercices.html#ds-e1-6">E1.6</a><a class="ex" href="ds-exercices.html#ds-e1-10">E1.10</a></div></div></li>
-          <li><input type="checkbox" id="sk-8" data-ds="sk-8" data-g="sk sk-c1"><div><label for="sk-8">Dérivées secondes et troisièmes, Schwarz, contre-exemple en \(0\)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-6">M1.6</a><a class="td" href="corriges.html#sup-1">TD sup-1</a><a class="ex" href="ds-exercices.html#ds-e1-7">E1.7</a></div></div></li>
-          <li><input type="checkbox" id="sk-9" data-ds="sk-9" data-g="sk sk-c1"><div><label for="sk-9">Jacobienne, jacobien, dérivée d'une composée (fonction inconnue)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-7">M1.7</a><a class="td" href="corriges.html#fpv-5">TD fpv-5</a><a class="ex" href="ds-exercices.html#ds-e1-8">E1.8</a></div></div></li>
-          <li><input type="checkbox" id="sk-10" data-ds="sk-10" data-g="sk sk-c1"><div><label for="sk-10">EDP : intégrations successives, changement de variables, polaires</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-8">M1.8</a><a class="m" href="ds-methodes.html#m-1-9">M1.9</a><a class="td" href="corriges.html#edp">TD edp</a><a class="ex" href="ds-exercices.html#ds-e1-9">E1.9</a></div></div></li>
-          <li><input type="checkbox" id="sk-11" data-ds="sk-11" data-g="sk sk-c1"><div><label for="sk-11">Vérifier qu'une fonction est solution d'une EDP ; Taylor à l'ordre 2</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-10">M1.10</a><a class="m" href="ds-methodes.html#m-1-11">M1.11</a><a class="td" href="corriges.html#sup-4">TD sup-4</a><a class="ex" href="ds-exercices.html#ds-e1-7">E1.7</a></div></div></li>
-        </ul>
-      </div>
-
-      <div class="skcard">
-        <h3><span class="n">CH 2</span>Opérateurs vectoriels<span class="cnt" data-prog="sk-c2"></span></h3>
-        <div class="skbar"><i data-bar="sk-c2"></i></div>
-        <ul>
-          <li><input type="checkbox" id="sk-12" data-ds="sk-12" data-g="sk sk-c2"><div><label for="sk-12">Calculer grad, div, rot, \(\Delta\) sans erreur de signe</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-1">M2.1</a><a class="td" href="corriges.html#ope-5">TD ope-5</a><a class="ex" href="ds-exercices.html#ds-e2-1">E2.1</a></div></div></li>
-          <li><input type="checkbox" id="sk-13" data-ds="sk-13" data-g="sk sk-c2"><div><label for="sk-13">Formules radiales : \(r^n\), \(\frac X{r^3}\), \(\ln r\)</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-2">M2.2</a><a class="ex" href="ds-exercices.html#ds-e2-2">E2.2</a></div></div></li>
-          <li><input type="checkbox" id="sk-14" data-ds="sk-14" data-g="sk sk-c2"><div><label for="sk-14">Démontrer une identité vectorielle en citant les hypothèses</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-3">M2.3</a><a class="td" href="corriges.html#ope-5">TD ope-5</a><a class="ex" href="ds-exercices.html#ds-e2-3">E2.3</a></div></div></li>
-          <li><input type="checkbox" id="sk-15" data-ds="sk-15" data-g="sk sk-c2"><div><label for="sk-15">Décider si un champ dérive d'un potentiel ; justifier le domaine étoilé</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-4">M2.4</a><a class="td" href="corriges.html#ope-6">TD ope-6</a><a class="td" href="corriges.html#ope-7">ope-7</a><a class="ex" href="ds-exercices.html#ds-e2-6">E2.6</a></div></div></li>
-          <li><input type="checkbox" id="sk-16" data-ds="sk-16" data-g="sk sk-c2"><div><label for="sk-16">Trouver le potentiel scalaire (intégrer, identifier, vérifier)</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-5">M2.5</a><a class="td" href="corriges.html#ope-9">TD ope-9</a><a class="ex" href="ds-exercices.html#ds-e2-5">E2.5</a></div></div></li>
-          <li><input type="checkbox" id="sk-17" data-ds="sk-17" data-g="sk sk-c2"><div><label for="sk-17">Trouver un potentiel vecteur (\(\operatorname{div}F=0\), \(G=(X,Y,0)\))</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-6">M2.6</a><a class="td" href="corriges.html#ope-10">TD ope-10</a><a class="ex" href="ds-exercices.html#ds-e2-7">E2.7</a></div></div></li>
-        </ul>
-      </div>
-
-      <div class="skcard">
-        <h3><span class="n">CH 3</span>Courbes, surfaces et solides<span class="cnt" data-prog="sk-c3"></span></h3>
-        <div class="skbar"><i data-bar="sk-c3"></i></div>
-        <ul>
-          <li><input type="checkbox" id="sk-18" data-ds="sk-18" data-g="sk sk-c3"><div><label for="sk-18">Paramétrer courbes et contours orientés ; reconnaître un ensemble paramétré</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-1">M3.1</a><a class="m" href="ds-methodes.html#m-3-2">M3.2</a><a class="td" href="corriges.html#csf-1">TD csf-1</a><a class="ex" href="ds-exercices.html#ds-e3-1">E3.1</a></div></div></li>
-          <li><input type="checkbox" id="sk-19" data-ds="sk-19" data-g="sk sk-c3"><div><label for="sk-19">Droite d'intersection de deux plans ; plan paramétrique</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-3">M3.3</a><a class="td" href="corriges.html#csf-3">TD csf-3</a><a class="ex" href="ds-exercices.html#ds-e3-3">E3.3</a></div></div></li>
-          <li><input type="checkbox" id="sk-20" data-ds="sk-20" data-g="sk sk-c3"><div><label for="sk-20">Réduire une conique, la nommer, la paramétrer</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-4">M3.4</a><a class="td" href="corriges.html#csf-4">TD csf-4</a><a class="ex" href="ds-exercices.html#ds-e3-4">E3.4</a></div></div></li>
-          <li><input type="checkbox" id="sk-21" data-ds="sk-21" data-g="sk sk-c3"><div><label for="sk-21">Sphère, boule : centre, rayon, cas vide, paramétrisation</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-5">M3.5</a><a class="td" href="corriges.html#csf-6">TD csf-6</a><a class="ex" href="ds-exercices.html#ds-e3-5">E3.5</a></div></div></li>
-          <li><input type="checkbox" id="sk-22" data-ds="sk-22" data-g="sk sk-c3"><div><label for="sk-22">Identifier et paramétrer une quadrique (paraboloïde, cône, ellipsoïde, cylindre)</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-6">M3.6</a><a class="td" href="corriges.html#csf-7">TD csf-7</a><a class="ex" href="ds-exercices.html#ds-e3-6">E3.6</a></div></div></li>
-          <li><input type="checkbox" id="sk-23" data-ds="sk-23" data-g="sk sk-c3"><div><label for="sk-23">Décrire un solide en cylindriques ou sphériques, avec ses bornes</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-7">M3.7</a><a class="ex" href="ds-exercices.html#ds-e3-7">E3.7</a><a class="ex" href="ds-exercices.html#ds-e3-8">E3.8</a></div></div></li>
-        </ul>
-      </div>
-
-      <div class="skcard">
-        <h3><span class="n">CH 4</span>Intégrales multiples<span class="cnt" data-prog="sk-c4"></span></h3>
-        <div class="skbar"><i data-bar="sk-c4"></i></div>
-        <ul>
-          <li><input type="checkbox" id="sk-24" data-ds="sk-24" data-g="sk sk-c4"><div><label for="sk-24">Fubini sur un rectangle ou un pavé ; fonctions séparables</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-1">M4.1</a><a class="td" href="corriges.html#imu-1">TD imu-1</a><a class="ex" href="ds-exercices.html#ds-e4-1">E4.1</a></div></div></li>
-          <li><input type="checkbox" id="sk-25" data-ds="sk-25" data-g="sk sk-c4"><div><label for="sk-25">Décrire un domaine de type 1 ou 2 et intégrer</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-2">M4.2</a><a class="td" href="corriges.html#imu-4">TD imu-4</a><a class="ex" href="ds-exercices.html#ds-e4-2">E4.2</a></div></div></li>
-          <li><input type="checkbox" id="sk-26" data-ds="sk-26" data-g="sk sk-c4"><div><label for="sk-26">Inverser l'ordre d'intégration</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-3">M4.3</a><a class="ex" href="ds-exercices.html#ds-e4-3">E4.3</a></div></div></li>
-          <li><input type="checkbox" id="sk-27" data-ds="sk-27" data-g="sk sk-c4"><div><label for="sk-27">Polaires : disque, couronne, secteur, disque décentré</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-4">M4.4</a><a class="td" href="corriges.html#imu-3">TD imu-3</a><a class="ex" href="ds-exercices.html#ds-e4-4">E4.4</a></div></div></li>
-          <li><input type="checkbox" id="sk-28" data-ds="sk-28" data-g="sk sk-c4"><div><label for="sk-28">Ellipse, changement de variables affine, jacobien (et son inverse)</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-5">M4.5</a><a class="td" href="corriges.html#imu-5">TD imu-5</a><a class="ex" href="ds-exercices.html#ds-e4-5">E4.5</a><a class="ex" href="ds-exercices.html#ds-e4-6">E4.6</a></div></div></li>
-          <li><input type="checkbox" id="sk-29" data-ds="sk-29" data-g="sk sk-c4"><div><label for="sk-29">Symétries et parité : annuler sans calculer</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-6">M4.6</a><a class="td" href="corriges.html#imu-7">TD imu-7</a><a class="ex" href="ds-exercices.html#ds-e4-7">E4.7</a></div></div></li>
-          <li><input type="checkbox" id="sk-30" data-ds="sk-30" data-g="sk sk-c4"><div><label for="sk-30">Intégrale triple en cartésiennes (emboîtée ou par tranches)</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-7">M4.7</a><a class="td" href="corriges.html#imu-10">TD imu-10</a><a class="ex" href="ds-exercices.html#ds-e4-8">E4.8</a></div></div></li>
-          <li><input type="checkbox" id="sk-31" data-ds="sk-31" data-g="sk sk-c4"><div><label for="sk-31">Cylindriques : cylindre, cône, paraboloïde</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-8">M4.8</a><a class="td" href="corriges.html#imu-6">TD imu-6</a><a class="ex" href="ds-exercices.html#ds-e4-9">E4.9</a></div></div></li>
-          <li><input type="checkbox" id="sk-32" data-ds="sk-32" data-g="sk sk-c4"><div><label for="sk-32">Sphériques : boule, couronne, cône, ellipsoïde</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-9">M4.9</a><a class="td" href="corriges.html#imu-7">TD imu-7</a><a class="ex" href="ds-exercices.html#ds-e4-10">E4.10</a></div></div></li>
-          <li><input type="checkbox" id="sk-33" data-ds="sk-33" data-g="sk sk-c4"><div><label for="sk-33">Calculer aires et volumes ; intégrales de \(\cos^n\), \(\sin^n\)</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-10">M4.10</a><a class="td" href="corriges.html#imu-8">TD imu-8</a><a class="ex" href="ds-exercices.html#ds-e4-11">E4.11</a></div></div></li>
-        </ul>
-      </div>
-
-      <div class="skcard">
-        <h3><span class="n">SYNTHÈSE</span>Rédaction et DS blancs<span class="cnt" data-prog="sk-c5"></span></h3>
-        <div class="skbar"><i data-bar="sk-c5"></i></div>
-        <ul>
-          <li><input type="checkbox" id="sk-34" data-ds="sk-34" data-g="sk sk-c5"><div><label for="sk-34">J'écris les phrases types (hypothèses, théorème, jacobien, conclusion) sans les chercher</label><div class="skl"><a class="m" href="ds-methodes.html#r-2">R2</a><a class="m" href="ds-methodes.html#r-3">R3</a></div></div></li>
-          <li><input type="checkbox" id="sk-35" data-ds="sk-35" data-g="sk sk-c5"><div><label for="sk-35">J'ai fait un DS blanc en 1h30 et obtenu au moins 14/20</label><div class="skl"><a class="ex" href="ds-blancs.html#blanc-1">DS 1</a><a class="ex" href="ds-blancs.html#blanc-2">DS 2</a><a class="ex" href="ds-blancs.html#blanc-3">DS 3</a></div></div></li>
-          <li><input type="checkbox" id="sk-36" data-ds="sk-36" data-g="sk sk-c5"><div><label for="sk-36">Je sais recopier la fiche de survie de mémoire</label><div class="skl"><a class="m" href="#survie">Fiche de survie</a></div></div></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== STRATÉGIE ===================== -->
-  <section id="strategie">
-    <div class="section-head">
-      <span class="eyebrow">⏱ Stratégie</span>
-      <h2>Gérer 1h30</h2>
-      <p>Un DS de 90 minutes se gagne autant sur la gestion du temps que sur les connaissances. Environ <b>4,5 minutes par point</b> sur 20 ; on garde 5 minutes en tête pour la lecture et 5 en queue pour la relecture.</p>
-    </div>
-    <div class="tbar" aria-label="Répartition du temps">
-      <div class="tb-f" style="flex:5"><b>5′</b>lecture</div>
-      <div class="tb-a" style="flex:20"><b>20′</b>Ch. 1</div>
-      <div class="tb-b" style="flex:15"><b>15′</b>Ch. 2</div>
-      <div class="tb-c" style="flex:12"><b>12′</b>Ch. 3</div>
-      <div class="tb-d" style="flex:23"><b>23′</b>Ch. 4</div>
-      <div class="tb-e" style="flex:15"><b>15′</b>marge + relecture</div>
-    </div>
-    <p class="tlegend">Budget indicatif : à ajuster au barème réel du sujet. Les exercices de calcul d'intégrale demandent plus de temps ; les paramétrisations beaucoup moins.</p>
-    <div class="dsrules">
-      <div class="dsrule"><b>1 · Lire tout, d'abord</b><p>Cinq minutes : repérer les questions « formule directe » (grad/div/rot, jacobienne, paramétrisation, domaine) et les faire en premier. Elles sécurisent des points.</p></div>
-      <div class="dsrule"><b>2 · Règle des 8 minutes</b><p>Bloqué plus de 8 minutes sur une question : <b>passer</b>, laisser la place, revenir à la fin. Un exercice complet vaut plus qu'une question parfaite.</p></div>
-      <div class="dsrule"><b>3 · Utiliser les questions précédentes</b><p>Si la question 3 demande « en déduire », utiliser le résultat de la question 2 <b>même sans l'avoir prouvé</b>, en le disant : « d'après 2) (admis) ».</p></div>
-      <div class="dsrule"><b>4 · Rédiger à chaque ligne</b><p>Hypothèse du théorème, jacobien, bornes, conclusion encadrée. Chaque phrase de justification vaut des points ; chaque calcul faux n'en perd qu'un.</p></div>
-      <div class="dsrule"><b>5 · Si ça ne colle pas</b><p>Un volume négatif, un résultat qui dépend d'une variable d'intégration : l'écrire (« incohérent, erreur probable dans … »). Cela rapporte une partie des points.</p></div>
-      <div class="dsrule"><b>6 · Garder 5 minutes</b><p>Pour relire : signes, bornes, jacobiens, domaines, conclusions. Les erreurs de signe se repèrent à la relecture, pas pendant le calcul.</p></div>
-    </div>
-    <h3 class="subhead" style="font-size:20px;margin-top:30px">Les 5 dernières minutes : check-list</h3>
-    <ul class="fin10">
-      <li>Chaque théorème utilisé est nommé et ses hypothèses écrites (\(C^1\), \(C^2\), étoilé, continu sur un compact).</li>
-      <li>Chaque changement de variables : jacobien <b>avec valeur absolue</b>, nouveau domaine, \(r\) ou \(r^2\sin\varphi\).</li>
-      <li>Chaque domaine : bornes imbriquées correctes (extérieur : constantes).</li>
-      <li>Chaque potentiel : vérification \(\nabla f=F\) (ou \(\overrightarrow{\mathrm{rot}}\,G=F\)).</li>
-      <li>Chaque limite : « pas de limite » = deux chemins ; « limite » = majoration.</li>
-      <li>Chaque résultat final : forme exacte, simplifiée, encadrée, plausible (signe, ordre de grandeur).</li>
-    </ul>
-  </section>
-
-  <!-- ===================== FICHE DE SURVIE ===================== -->
-  <section id="survie">
-    <div class="section-head">
-      <span class="eyebrow">📄 Fiche de survie</span>
-      <h2>Ce qu'il faut pouvoir écrire de tête</h2>
-      <p>Les formules et réflexes des quatre chapitres sur une page. Recopie-la de mémoire à J-1, puis compare. <button type="button" class="cx-btn" id="printSurvie" style="margin-left:8px">🖨 Imprimer cette fiche</button></p>
-    </div>
-    <div class="survie">
-      <div class="svcard">
-        <h3>Chapitre 1 · Fonctions de plusieurs variables</h3>
-        <ul>
-          <li><b>Limite en \((0,0)\)</b> : réfuter = deux chemins (\(y=0\), \(x=0\), \(y=x\), <b>\(y=x^2\)</b>) ; prouver = \(|f-\ell|\le g\to0\) ou polaires avec borne <b>indépendante de \(\theta\)</b>. \(2|xy|\le x^2+y^2\).</li>
-          <li><b>Continu</b> : limite \(=\) valeur. <b>Prolongement</b> : on pose la valeur égale à la limite.</li>
-          <li><b>\(C^1\) en 4 temps</b> : (1) \(C^1\) hors de \(0\), (2) continuité, (3) dérivées en \(0\) par <b>définition</b> \(\frac{f(h,0)-f(0,0)}h\), (4) continuité des dérivées.</li>
-          <li><b>Schwarz</b> : \(f\in C^2\) sur un ouvert \(\Rightarrow\partial_x(\partial_yf)=\partial_y(\partial_xf)\).</li>
-          <li><b>Jacobienne</b> : ligne \(i\) = \(\nabla f_i\) ; \(J_{g\circ f}(a)=J_g(f(a))\,J_f(a)\).</li>
-          <li><b>EDP</b> : « \(+C\) » = fonction de l'autre variable. Polaires : \(xf_x+yf_y=rF_r\), \(xf_y-yf_x=F_\theta\).</li>
-          <li><b>Taylor 2</b> : \(f+hf_x+kf_y+\tfrac12(h^2f_{xx}+2hkf_{xy}+k^2f_{yy})+o(\cdot)\).</li>
-        </ul>
-      </div>
-      <div class="svcard">
-        <h3>Chapitre 2 · Opérateurs vectoriels</h3>
-        <ul>
-          <li>\(\nabla f=(f_x,f_y,f_z)\) ; \(\operatorname{div}F=\partial_xF_1+\partial_yF_2+\partial_zF_3\) ; \(\Delta f=\operatorname{div}\nabla f\).</li>
-          <li>\(\overrightarrow{\mathrm{rot}}\,F=(\partial_yF_3-\partial_zF_2,\ \partial_zF_1-\partial_xF_3,\ \partial_xF_2-\partial_yF_1)\).</li>
-          <li>\(\overrightarrow{\mathrm{rot}}\nabla f=\vec0\), \(\operatorname{div}\overrightarrow{\mathrm{rot}}\,F=0\) (classe \(C^2\), Schwarz).</li>
-          <li><b>Potentiel scalaire</b> : \(F\in C^1\), \(\overrightarrow{\mathrm{rot}}\,F=\vec0\), <b>ouvert étoilé</b> \(\Rightarrow\) existe. Intégrer \(F_1\) en \(x\) (\(+C(y,z)\)), identifier, vérifier \(\nabla f=F\).</li>
-          <li><b>Potentiel vecteur</b> : \(\operatorname{div}F=0\), étoilé. \(G=(X,Y,0)\) : \(\overrightarrow{\mathrm{rot}}\,G=(-\partial_zY,\ \partial_zX,\ \partial_xY-\partial_yX)\).</li>
-          <li><b>Étoilé</b> : convexe \(\checkmark\) ; \(\mathbb{R}^2\setminus\{0\}\), couronne \(\times\).</li>
-          <li><b>Radial</b> : \(\Delta f(r)=f''+\frac2rf'\) ; \(\Delta\frac1r=0\) ; \(\operatorname{div}\frac X{r^3}=0\).</li>
-        </ul>
-      </div>
-      <div class="svcard">
-        <h3>Chapitre 3 · Paramétrisations</h3>
-        <ul>
-          <li>Segment \(A+t(B-A)\), \(t\in[0,1]\) ; cercle \((\Omega_1+R\cos t,\Omega_2+R\sin t)\) ; ellipse \((\Omega_1+a\cos t,\Omega_2+b\sin t)\) ; sens direct = anti-horaire.</li>
-          <li>Droite = deux plans : un paramètre libre, ou \(\vec n_1\wedge\vec n_2\) + un point.</li>
-          <li><b>Compléter les carrés</b> : même signe \(\to\) ellipse (second membre \(&gt;0\), sinon vide) ; signes opposés \(\to\) hyperbole ; un seul carré \(\to\) parabole.</li>
-          <li><b>Sphère</b> : \(R^2=\frac{a^2+b^2+c^2}4-d\) ; boule \(\le R^2\).</li>
-          <li><b>Quadriques</b> : variable linéaire \(\to\) paraboloïde ; signe \(-\) sans terme linéaire \(\to\) cône ; trois carrés \(=\) cte \(\to\) ellipsoïde ; variable absente \(\to\) cylindre.</li>
-          <li><b>Cylindriques</b> \((r,\theta,z)\) ; <b>sphériques</b> \(x=r\sin\varphi\cos\theta\), \(y=r\sin\varphi\sin\theta\), \(z=r\cos\varphi\) (\(\varphi\in[0,\pi]\) depuis \(Oz\)).</li>
-        </ul>
-      </div>
-      <div class="svcard">
-        <h3>Chapitre 4 · Intégrales multiples</h3>
-        <ul>
-          <li><b>Fubini</b> : \(f\) continue sur un compact ; type 1 : \(a\le x\le b\), \(y_1(x)\le y\le y_2(x)\) ; bornes extérieures <b>constantes</b>.</li>
-          <li><b>Polaires</b> : \(dx\,dy=r\,dr\,d\theta\) ; \(x^2+y^2\le2ax\iff r\le2a\cos\theta\), \(\theta\in[-\frac\pi2,\frac\pi2]\).</li>
-          <li><b>Ellipse</b> : \(x=ar\cos\theta\), \(y=br\sin\theta\), jacobien \(abr\). Changement \(u,v\) : \(|\partial(x,y)/\partial(u,v)|\) (inverser si besoin).</li>
-          <li><b>Cylindriques</b> \(dV=r\,dr\,d\theta\,dz\) ; <b>sphériques</b> \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\) ; ellipsoïde : \(abc\,r^2\sin\varphi\).</li>
-          <li><b>Symétrie + parité</b> \(\Rightarrow0\). Volume \(=\iiint1\) ; aire \(=\iint1\).</li>
-          <li>\(\int_0^{2\pi}\cos^2=\pi\) ; \(\int_0^{2\pi}\cos^4=\frac{3\pi}4\) ; \(\int_0^\pi\sin^3=\frac43\) ; \(\int_0^\pi\sin^4=\frac{3\pi}8\).</li>
-        </ul>
-      </div>
-      <div class="svcard">
-        <h3>Rédaction</h3>
-        <ul>
-          <li><b>4 temps</b> : annoncer, justifier les hypothèses, calculer, conclure (encadré).</li>
-          <li><b>Toujours écrire</b> : le domaine ; « de classe \(C^k\) sur … comme somme, produit, quotient, composée » ; le nom du théorème ; le jacobien et le nouveau domaine ; les bornes ; la vérification (\(\nabla f=F\), aire \(&gt;0\)).</li>
-          <li><b>Jamais</b> : « évident » ; limite sur quelques chemins \(\Rightarrow\) existence ; « \(+C\) » en EDP à deux variables ; jacobien oublié ; formule dérivée utilisée en un point de recollement.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<div class="dsjump">
+<a href="#parcours">Parcours</a><a href="#attendu">Ce qu'on peut te demander</a><a href="#plan">Plan sur 10 jours</a><a href="#checklist">Checklist « je sais faire »</a><a href="#strategie">Stratégie 1h30</a><a href="#survie">Fiche de survie</a>
 </div>
-
-
+<!-- ===================== PARCOURS ===================== -->
+<section id="parcours">
+<div class="section-head" style="padding-top:20px">
+<span class="eyebrow">Les quatre outils</span>
+<h2>Comment ces pages s'enchaînent</h2>
+<p>Chaque question de DS suit le même chemin : <b>la méthode</b> (avec sa rédaction), <b>l'exercice</b> qui la fait travailler, puis <b>le DS blanc</b> qui la teste sous contrainte de temps.</p>
+</div>
+<div class="path">
+<a href="ds-methodes.html"><span class="pn">1 · Comprendre</span><h3>Méthodes et rédaction</h3><p>36 méthodes : quand, recette, exemple rédigé avec notes de marge, pièges. Plus le guide « ce que le correcteur attend ».</p><span class="go">Ouvrir →</span></a>
+<a href="ds-formules.html"><span class="pn">\(1bis\,\cdot\) Apprendre</span><h3>Formulaire : notions et équations</h3><p>Définitions, théorèmes avec hypothèses, formules, équations de courbes et de surfaces : une fiche par notion, avec recherche et case « je connais ».</p><span class="go">Ouvrir →</span></a>
+<a href="ds-quiz.html"><span class="pn">\(1ter\,\cdot\) Vérifier</span><h3>Quiz et flashcards</h3><p>QCM pour reconnaître la bonne formule ou la bonne hypothèse, flashcards pour les réécrire de mémoire ; tes erreurs sont gardées pour les refaire.</p><span class="go">Ouvrir →</span></a>
+<a href="ds-exercices.html"><span class="pn">2 · S'entraîner</span><h3>38 exercices corrigés</h3><p>Trois paliers par chapitre (échauffement, technique, format DS), liés à ton TD, avec indice et correction rédigée.</p><span class="go">Ouvrir →</span></a>
+<a href="ds-blancs.html"><span class="pn">3 · Se tester</span><h3>3 DS blancs de 1h30</h3><p>Chronomètre, barème détaillé, auto-notation sur 20. Un sujet équilibré, un sujet calcul, un sujet pièges.</p><span class="go">Ouvrir →</span></a>
+<a href="corriges.html"><span class="pn">4 · Le TD</span><h3>Corrigés de la feuille officielle</h3><p>Les 74 exercices du TD, corrigés pas à pas. C'est la référence : les exercices ci-dessus renvoient vers ses numéros.</p><span class="go">Ouvrir →</span></a>
+</div>
+</section>
+<!-- ===================== ATTENDU ===================== -->
+<section id="attendu">
+<div class="section-head">
+<span class="eyebrow">Ce que le DS peut demander</span>
+<h2>Quatre blocs, 1h30</h2>
+<p>Estimation fondée sur la structure des TD (aucun sujet officiel n'a été fourni) : à recouper avec ce que vous a dit votre enseignant. Le chapitre 4 et le chapitre 1 pèsent le plus.</p>
+</div>
+<div class="tbl-wrap"><table class="dstable">
+<thead><tr><th>Chapitre</th><th>Questions typiques</th><th>Temps</th><th>Méthodes</th><th>Entraînement</th></tr></thead>
+<tbody>
+<tr><td>1 · Fonctions de plusieurs variables</td><td>Limite ou continuité d'une fonction en \((0,0)\) ; classe \(C^1\) d'une fonction définie par morceaux ; dérivées partielles, jacobienne ; EDP par changement de variables</td><td><span class="minpill">\(25-35\,\min\)</span></td><td><a href="ds-methodes.html#m-1-2">M1.2</a>, <a href="ds-methodes.html#m-1-5">M1.5</a>, <a href="ds-methodes.html#m-1-9">M1.9</a></td><td><a href="ds-exercices.html#ds-e1-2">E1.2</a>, <a href="ds-exercices.html#ds-e1-6">E1.6</a>, <a href="ds-exercices.html#ds-e1-9">E1.9</a></td></tr>
+<tr><td>2 · Opérateurs vectoriels</td><td>\(\operatorname{grad} ,\,\allowbreak \operatorname{div} ,\,\allowbreak \operatorname{rot}\), \(\Delta\) ; potentiel scalaire ou vecteur ; identité à démontrer ; justification du domaine étoilé</td><td><span class="minpill">\(15-20\,\min\)</span></td><td><a href="ds-methodes.html#m-2-1">M2.1</a>, <a href="ds-methodes.html#m-2-4">M2.4</a>, <a href="ds-methodes.html#m-2-5">M2.5</a></td><td><a href="ds-exercices.html#ds-e2-1">E2.1</a>, <a href="ds-exercices.html#ds-e2-4">E2.4</a>, <a href="ds-exercices.html#ds-e2-5">E2.5</a></td></tr>
+<tr><td>3 · Courbes, surfaces, solides</td><td>Paramétrer une courbe ou un contour ; reconnaître une conique, une sphère, une quadrique ; décrire un solide avec ses bornes</td><td><span class="minpill">\(10-15\,\min\)</span></td><td><a href="ds-methodes.html#m-3-4">M3.4</a>, <a href="ds-methodes.html#m-3-6">M3.6</a>, <a href="ds-methodes.html#m-3-7">M3.7</a></td><td><a href="ds-exercices.html#ds-e3-4">E3.4</a>, <a href="ds-exercices.html#ds-e3-6">E3.6</a>, <a href="ds-exercices.html#ds-e3-7">E3.7</a></td></tr>
+<tr><td>4 · Intégrales multiples</td><td>Intégrale double ou triple (types 1/2, polaires, cylindriques, sphériques) ; inversion de l'ordre ; changement de variables ; volume</td><td><span class="minpill">\(25-35\,\min\)</span></td><td><a href="ds-methodes.html#m-4-2">M4.2</a> à <a href="ds-methodes.html#m-4-9">M4.9</a></td><td><a href="ds-exercices.html#ds-e4-4">E4.4</a>, <a href="ds-exercices.html#ds-e4-8">E4.8</a> à <a href="ds-exercices.html#ds-e4-10">E4.10</a></td></tr>
+</tbody>
+</table></div>
+</section>
+<!-- ===================== PLAN ===================== -->
+<section id="plan">
+<div class="section-head">
+<span class="eyebrow">📅 Plan sur 10 jours</span>
+<h2>De « \(J-10\) » au jour du DS</h2>
+<p>Environ 2 à 3 heures par jour, <b>adaptables</b> à ton emploi du temps. Les dates se calculent à partir de la date réglée plus haut. Les cases se cochent et sont mémorisées. Les chapitres sont vus <b>dans l'ordre</b> (\(J-10\) à \(J-4\)), puis les trois DS blancs (\(J-3\) à \(J-1\)) servent à repérer ce qui reste fragile.</p>
+<div class="skglobal"><b>Avancement du plan</b><span class="cnt" data-prog="plan" style="font-family:var(--f-mono);font-size:12.5px;color:var(--good)"></span><span class="skbar"><i data-bar="plan"></i></span></div>
+</div>
+<div class="plan">
+<div class="pday" data-off="10">
+<div class="pday-hd"><span class="j">\(J-10\)</span><span class="dt"></span><span class="dur">\(\approx 2\,\mathrm{h}\)</span></div>
+<h4>Rédaction + limites et continuité</h4>
+<ul>
+<li><input data-ds="pl-10-1" data-g="plan" id="pl-10-1" type="checkbox"/><label for="pl-10-1">Lire le <a href="ds-methodes.html#redaction">guide de rédaction</a> (R1 à R4) : \(20\,\min\).</label></li>
+<li><input data-ds="pl-10-2" data-g="plan" id="pl-10-2" type="checkbox"/><label for="pl-10-2"><a href="ds-methodes.html#m-1-1">M1.1</a> à <a href="ds-methodes.html#m-1-3">M1.3</a> : masquer les notes de marge et refaire chaque exemple sur papier \((45\,\min )\).</label></li>
+<li><input data-ds="pl-10-3" data-g="plan" id="pl-10-3" type="checkbox"/><label for="pl-10-3">Exercices <a href="ds-exercices.html#ds-e1-1">E1.1</a> à <a href="ds-exercices.html#ds-e1-4">E1.4</a>, puis correction \((\approx 55\,\min )\).</label></li>
+</ul>
+</div>
+<div class="pday" data-off="9">
+<div class="pday-hd"><span class="j">\(J-9\)</span><span class="dt"></span><span class="dur">\(\approx 2\,\mathrm{h}\)</span></div>
+<h4>Dérivées partielles, classe \(C^1\), Schwarz</h4>
+<ul>
+<li><input data-ds="pl-9-1" data-g="plan" id="pl-9-1" type="checkbox"/><label for="pl-9-1"><a href="ds-methodes.html#m-1-4">M1.4</a> à <a href="ds-methodes.html#m-1-6">M1.6</a>, avec attention à <a href="ds-methodes.html#m-1-5">M1.5</a> (le plan en 4 temps).</label></li>
+<li><input data-ds="pl-9-2" data-g="plan" id="pl-9-2" type="checkbox"/><label for="pl-9-2"><a href="ds-exercices.html#ds-e1-5">E1.5</a>, <a href="ds-exercices.html#ds-e1-6">E1.6</a>, <a href="ds-exercices.html#ds-e1-7">E1.7</a>.</label></li>
+<li><input data-ds="pl-9-3" data-g="plan" id="pl-9-3" type="checkbox"/><label for="pl-9-3">Refaire <b>sans le corrigé</b> le TD <a href="corriges.html#fpv-3">chap. 1, ex. 3</a> (classe \(C^1\)).</label></li>
+</ul>
+</div>
+<div class="pday" data-off="8">
+<div class="pday-hd"><span class="j">\(J-8\)</span><span class="dt"></span><span class="dur">\(\approx 2\,\mathrm{h}\,30\)</span></div>
+<h4>Jacobienne, EDP, Taylor + synthèse chapitre 1</h4>
+<ul>
+<li><input data-ds="pl-8-1" data-g="plan" id="pl-8-1" type="checkbox"/><label for="pl-8-1"><a href="ds-methodes.html#m-1-7">M1.7</a> à <a href="ds-methodes.html#m-1-11">M1.11</a>.</label></li>
+<li><input data-ds="pl-8-2" data-g="plan" id="pl-8-2" type="checkbox"/><label for="pl-8-2"><a href="ds-exercices.html#ds-e1-8">E1.8</a> et <a href="ds-exercices.html#ds-e1-9">E1.9</a> ; TD <a href="corriges.html#edp">EDP, ex. 1 à 4</a> sans corrigé.</label></li>
+<li><input data-ds="pl-8-3" data-g="plan" id="pl-8-3" type="checkbox"/><label for="pl-8-3"><a href="ds-exercices.html#ds-e1-10">E1.10</a> <b>chronométré</b> \((35\,\min )\), puis correction.</label></li>
+</ul>
+</div>
+<div class="pday" data-off="7">
+<div class="pday-hd"><span class="j">\(J-7\)</span><span class="dt"></span><span class="dur">\(\approx 2\,\mathrm{h}\,30\)</span></div>
+<h4>Chapitre 2 : opérateurs vectoriels</h4>
+<ul>
+<li><input data-ds="pl-7-1" data-g="plan" id="pl-7-1" type="checkbox"/><label for="pl-7-1"><a href="ds-methodes.html#m-2-1">M2.1</a> à <a href="ds-methodes.html#m-2-6">M2.6</a>.</label></li>
+<li><input data-ds="pl-7-2" data-g="plan" id="pl-7-2" type="checkbox"/><label for="pl-7-2"><a href="ds-exercices.html#ds-e2-1">E2.1</a> à <a href="ds-exercices.html#ds-e2-7">E2.7</a> (ceux qui vous résistent d'abord).</label></li>
+<li><input data-ds="pl-7-3" data-g="plan" id="pl-7-3" type="checkbox"/><label for="pl-7-3"><a href="ds-exercices.html#ds-e2-8">E2.8</a> chronométré \((30\,\min )\) ; TD <a href="corriges.html#ope-6">ex. 6 et 10</a> sans corrigé.</label></li>
+</ul>
+</div>
+<div class="pday" data-off="6">
+<div class="pday-hd"><span class="j">\(J-6\)</span><span class="dt"></span><span class="dur">\(\approx 2\,\mathrm{h}\)</span></div>
+<h4>Chapitre 3 : courbes, surfaces, solides</h4>
+<ul>
+<li><input data-ds="pl-6-1" data-g="plan" id="pl-6-1" type="checkbox"/><label for="pl-6-1"><a href="ds-methodes.html#m-3-1">M3.1</a> à <a href="ds-methodes.html#m-3-7">M3.7</a>, surtout <a href="ds-methodes.html#m-3-7">M3.7</a> (les bornes du chapitre 4).</label></li>
+<li><input data-ds="pl-6-2" data-g="plan" id="pl-6-2" type="checkbox"/><label for="pl-6-2"><a href="ds-exercices.html#ds-e3-1">E3.1</a> à <a href="ds-exercices.html#ds-e3-7">E3.7</a>.</label></li>
+<li><input data-ds="pl-6-3" data-g="plan" id="pl-6-3" type="checkbox"/><label for="pl-6-3"><a href="ds-exercices.html#ds-e3-8">E3.8</a> chronométré \((25\,\min )\).</label></li>
+</ul>
+</div>
+<div class="pday" data-off="5">
+<div class="pday-hd"><span class="j">\(J-5\)</span><span class="dt"></span><span class="dur">\(\approx 2\,\mathrm{h}\,30\)</span></div>
+<h4>Chapitre 4, première moitié</h4>
+<ul>
+<li><input data-ds="pl-5-1" data-g="plan" id="pl-5-1" type="checkbox"/><label for="pl-5-1"><a href="ds-methodes.html#m-4-1">M4.1</a> à <a href="ds-methodes.html#m-4-5">M4.5</a> : Fubini, types 1 et 2, inversion, polaires, ellipses.</label></li>
+<li><input data-ds="pl-5-2" data-g="plan" id="pl-5-2" type="checkbox"/><label for="pl-5-2"><a href="ds-exercices.html#ds-e4-1">E4.1</a> à <a href="ds-exercices.html#ds-e4-6">E4.6</a>.</label></li>
+<li><input data-ds="pl-5-3" data-g="plan" id="pl-5-3" type="checkbox"/><label for="pl-5-3">Refaire <b>sans le corrigé</b> le TD <a href="corriges.html#imu-3">chap. 4, ex. 3</a> (polaires).</label></li>
+</ul>
+</div>
+<div class="pday" data-off="4">
+<div class="pday-hd"><span class="j">\(J-4\)</span><span class="dt"></span><span class="dur">\(\approx 2\,\mathrm{h}\,30\)</span></div>
+<h4>Chapitre 4, seconde moitié</h4>
+<ul>
+<li><input data-ds="pl-4-1" data-g="plan" id="pl-4-1" type="checkbox"/><label for="pl-4-1"><a href="ds-methodes.html#m-4-6">M4.6</a> à <a href="ds-methodes.html#m-4-10">M4.10</a> : symétries, triples, cylindriques, sphériques, volumes.</label></li>
+<li><input data-ds="pl-4-2" data-g="plan" id="pl-4-2" type="checkbox"/><label for="pl-4-2"><a href="ds-exercices.html#ds-e4-7">E4.7</a> à <a href="ds-exercices.html#ds-e4-10">E4.10</a>.</label></li>
+<li><input data-ds="pl-4-3" data-g="plan" id="pl-4-3" type="checkbox"/><label for="pl-4-3"><a href="ds-exercices.html#ds-e4-11">E4.11</a> et <a href="ds-exercices.html#ds-e4-12">E4.12</a> chronométrés \((30+35\,\min )\).</label></li>
+</ul>
+</div>
+<div class="pday" data-off="3">
+<div class="pday-hd"><span class="j">\(J-3\)</span><span class="dt"></span><span class="dur">\(\approx 3\,\mathrm{h}\)</span></div>
+<h4>DS blanc \(n\)°1 (équilibré)</h4>
+<ul>
+<li><input data-ds="pl-3-1" data-g="plan" id="pl-3-1" type="checkbox"/><label for="pl-3-1"><a href="ds-blancs.html#blanc-1">DS \(n\)°1</a> en 1h30, conditions réelles.</label></li>
+<li><input data-ds="pl-3-2" data-g="plan" id="pl-3-2" type="checkbox"/><label for="pl-3-2">Correction avec le barème \((45\,\min )\) : noter où les points se perdent (calcul, rédaction, méthode).</label></li>
+<li><input data-ds="pl-3-3" data-g="plan" id="pl-3-3" type="checkbox"/><label for="pl-3-3">Refaire les deux questions les plus ratées à partir de la méthode correspondante.</label></li>
+</ul>
+</div>
+<div class="pday" data-off="2">
+<div class="pday-hd"><span class="j">\(J-2\)</span><span class="dt"></span><span class="dur">\(\approx 3\,\mathrm{h}\)</span></div>
+<h4>DS blanc \(n\)°2 (calcul) + reprise des erreurs</h4>
+<ul>
+<li><input data-ds="pl-2-1" data-g="plan" id="pl-2-1" type="checkbox"/><label for="pl-2-1"><a href="ds-blancs.html#blanc-2">DS \(n\)°2</a> en 1h30.</label></li>
+<li><input data-ds="pl-2-2" data-g="plan" id="pl-2-2" type="checkbox"/><label for="pl-2-2">Correction avec le barème, puis relire les méthodes des points perdus.</label></li>
+<li><input data-ds="pl-2-3" data-g="plan" id="pl-2-3" type="checkbox"/><label for="pl-2-3">Refaire les exercices cochés « pas fait » de la page <a href="ds-exercices.html">Exercices</a>.</label></li>
+</ul>
+</div>
+<div class="pday" data-off="1">
+<div class="pday-hd"><span class="j">\(J-1\)</span><span class="dt"></span><span class="dur">\(\approx 2\,\mathrm{h}\,30\)</span></div>
+<h4>DS blanc \(n\)°3 (pièges), puis repos</h4>
+<ul>
+<li><input data-ds="pl-1-1" data-g="plan" id="pl-1-1" type="checkbox"/><label for="pl-1-1"><a href="ds-blancs.html#blanc-3">DS \(n\)°3</a> le matin ou en début d'après-midi, et sa correction.</label></li>
+<li><input data-ds="pl-1-2" data-g="plan" id="pl-1-2" type="checkbox"/><label for="pl-1-2">Recopier <b>de mémoire</b> la <a href="#survie">fiche de survie</a>, puis comparer.</label></li>
+<li><input data-ds="pl-1-3" data-g="plan" id="pl-1-3" type="checkbox"/><label for="pl-1-3">Aucune nouvelle notion le soir. Dormir tôt.</label></li>
+</ul>
+</div>
+<div class="pday ds" data-off="0">
+<div class="pday-hd"><span class="j">DS</span><span class="dt"></span><span class="dur">\(\approx 30\,\min\)</span></div>
+<h4>Le jour \(J\)</h4>
+<ul>
+<li><input data-ds="pl-0-1" data-g="plan" id="pl-0-1" type="checkbox"/><label for="pl-0-1">\(20\,\min\) avant : relire la <a href="#survie">fiche de survie</a> et la <a href="#strategie">stratégie 1h30</a>. Rien d'autre.</label></li>
+<li><input data-ds="pl-0-2" data-g="plan" id="pl-0-2" type="checkbox"/><label for="pl-0-2">Au sujet : lire <b>tout</b>, repérer les questions « formule directe », commencer par elles.</label></li>
+</ul>
+</div>
+</div>
+<div class="lite"><b class="lab">Si tu as moins de 10 jours</b>
+<ul>
+<li><b>5 jours</b> : <a href="ds-methodes.html#redaction">R1\(-R_{2}\)</a> ; puis les méthodes et exercices ★/★★ de chaque chapitre (E1.2, E1.6, E1.9, E2.4, E2.5, E3.4, E3.7, E4.2 à E4.4, E4.8 à E4.10) ; DS blancs \(n\)°1 et \(n\)°3.</li>
+<li><b>3 jours</b> : <a href="#survie">fiche de survie</a>, les méthodes M1.2, M1.5, M2.4, M2.5, M3.7, M4.4, M4.8, M4.9, et le DS blanc \(n\)°1 en entier.</li>
+</ul>
+</div>
+</section>
+<!-- ===================== CHECKLIST ===================== -->
+<section id="checklist">
+<div class="section-head">
+<span class="eyebrow">Checklist</span>
+<h2>Ce que je dois savoir faire</h2>
+<p>Une case = une compétence que tu sais refaire <b>seul, sans le cours, avec la rédaction complète</b>. Chaque ligne renvoie à la méthode \((M)\), au TD (TD) et à l'exercice d'entraînement \((E)\).</p>
+<div class="skglobal"><b>Avancement</b><span class="cnt" data-prog="sk" style="font-family:var(--f-mono);font-size:12.5px;color:var(--good)"></span><span class="skbar"><i data-bar="sk"></i></span></div>
+</div>
+<div class="skills">
+<div class="skcard">
+<h3><span class="n">CH 1</span>Fonctions de plusieurs variables<span class="cnt" data-prog="sk-c1"></span></h3>
+<div class="skbar"><i data-bar="sk-c1"></i></div>
+<ul>
+<li><input data-ds="sk-1" data-g="sk sk-c1" id="sk-1" type="checkbox"/><div><label for="sk-1">Domaine de définition ; ouvert / fermé justifié</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-1">M1.1</a><a class="td" href="corriges.html#fpv-1">TD fpv-1</a><a class="ex" href="ds-exercices.html#ds-e1-1">E1.1</a></div></div></li>
+<li><input data-ds="sk-2" data-g="sk sk-c1" id="sk-2" type="checkbox"/><div><label for="sk-2">Montrer qu'une limite n'existe pas (chemins, y compris courbes)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-2">M1.2</a><a class="td" href="corriges.html#sup-2">TD \(\sup -2\)</a><a class="ex" href="ds-exercices.html#ds-e1-2">E1.2</a></div></div></li>
+<li><input data-ds="sk-3" data-g="sk sk-c1" id="sk-3" type="checkbox"/><div><label for="sk-3">Prouver qu'une limite existe (encadrement, polaires)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-2">M1.2</a><a class="td" href="corriges.html#fpv-1">TD fpv-1</a><a class="ex" href="ds-exercices.html#ds-e1-2">E1.2</a></div></div></li>
+<li><input data-ds="sk-4" data-g="sk sk-c1" id="sk-4" type="checkbox"/><div><label for="sk-4">Limite en un point \(\neq(0,0)\) ; développement limité</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-2">M1.2</a><a class="td" href="corriges.html#sup-2">TD \(\sup -2\)</a><a class="ex" href="ds-exercices.html#ds-e1-3">E1.3</a></div></div></li>
+<li><input data-ds="sk-5" data-g="sk sk-c1" id="sk-5" type="checkbox"/><div><label for="sk-5">Continuité, prolongement, discussion selon un paramètre</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-3">M1.3</a><a class="ex" href="ds-exercices.html#ds-e1-4">E1.4</a></div></div></li>
+<li><input data-ds="sk-6" data-g="sk sk-c1" id="sk-6" type="checkbox"/><div><label for="sk-6">Dérivées partielles (quotients, composées, puissances variables)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-4">M1.4</a><a class="td" href="corriges.html#fpv-2">TD fpv-2</a><a class="ex" href="ds-exercices.html#ds-e1-5">E1.5</a></div></div></li>
+<li><input data-ds="sk-7" data-g="sk sk-c1" id="sk-7" type="checkbox"/><div><label for="sk-7">Classe \(C^1\) d'une fonction définie par morceaux (4 temps)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-5">M1.5</a><a class="td" href="corriges.html#fpv-3">TD fpv-3</a><a class="ex" href="ds-exercices.html#ds-e1-6">E1.6</a><a class="ex" href="ds-exercices.html#ds-e1-10">E1.10</a></div></div></li>
+<li><input data-ds="sk-8" data-g="sk sk-c1" id="sk-8" type="checkbox"/><div><label for="sk-8">Dérivées secondes et troisièmes, Schwarz, contre-exemple en \(0\)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-6">M1.6</a><a class="td" href="corriges.html#sup-1">TD \(\sup -1\)</a><a class="ex" href="ds-exercices.html#ds-e1-7">E1.7</a></div></div></li>
+<li><input data-ds="sk-9" data-g="sk sk-c1" id="sk-9" type="checkbox"/><div><label for="sk-9">Jacobienne, jacobien, dérivée d'une composée (fonction inconnue)</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-7">M1.7</a><a class="td" href="corriges.html#fpv-5">TD fpv-5</a><a class="ex" href="ds-exercices.html#ds-e1-8">E1.8</a></div></div></li>
+<li><input data-ds="sk-10" data-g="sk sk-c1" id="sk-10" type="checkbox"/><div><label for="sk-10">EDP : intégrations successives, changement de variables, polaires</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-8">M1.8</a><a class="m" href="ds-methodes.html#m-1-9">M1.9</a><a class="td" href="corriges.html#edp">TD edp</a><a class="ex" href="ds-exercices.html#ds-e1-9">E1.9</a></div></div></li>
+<li><input data-ds="sk-11" data-g="sk sk-c1" id="sk-11" type="checkbox"/><div><label for="sk-11">Vérifier qu'une fonction est solution d'une EDP ; Taylor à l'ordre 2</label><div class="skl"><a class="m" href="ds-methodes.html#m-1-10">M1.10</a><a class="m" href="ds-methodes.html#m-1-11">M1.11</a><a class="td" href="corriges.html#sup-4">TD \(\sup -4\)</a><a class="ex" href="ds-exercices.html#ds-e1-7">E1.7</a></div></div></li>
+</ul>
+</div>
+<div class="skcard">
+<h3><span class="n">CH 2</span>Opérateurs vectoriels<span class="cnt" data-prog="sk-c2"></span></h3>
+<div class="skbar"><i data-bar="sk-c2"></i></div>
+<ul>
+<li><input data-ds="sk-12" data-g="sk sk-c2" id="sk-12" type="checkbox"/><div><label for="sk-12">Calculer \(\operatorname{grad} ,\,\allowbreak \operatorname{div} ,\,\allowbreak \operatorname{rot}\), \(\Delta\) sans erreur de signe</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-1">M2.1</a><a class="td" href="corriges.html#ope-5">TD ope-5</a><a class="ex" href="ds-exercices.html#ds-e2-1">E2.1</a></div></div></li>
+<li><input data-ds="sk-13" data-g="sk sk-c2" id="sk-13" type="checkbox"/><div><label for="sk-13">Formules radiales : \(r^n\), \(\frac X{r^3}\), \(\ln r\)</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-2">M2.2</a><a class="ex" href="ds-exercices.html#ds-e2-2">E2.2</a></div></div></li>
+<li><input data-ds="sk-14" data-g="sk sk-c2" id="sk-14" type="checkbox"/><div><label for="sk-14">Démontrer une identité vectorielle en citant les hypothèses</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-3">M2.3</a><a class="td" href="corriges.html#ope-5">TD ope-5</a><a class="ex" href="ds-exercices.html#ds-e2-3">E2.3</a></div></div></li>
+<li><input data-ds="sk-15" data-g="sk sk-c2" id="sk-15" type="checkbox"/><div><label for="sk-15">Décider si un champ dérive d'un potentiel ; justifier le domaine étoilé</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-4">M2.4</a><a class="td" href="corriges.html#ope-6">TD ope-6</a><a class="td" href="corriges.html#ope-7">ope-7</a><a class="ex" href="ds-exercices.html#ds-e2-6">E2.6</a></div></div></li>
+<li><input data-ds="sk-16" data-g="sk sk-c2" id="sk-16" type="checkbox"/><div><label for="sk-16">Trouver le potentiel scalaire (intégrer, identifier, vérifier)</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-5">M2.5</a><a class="td" href="corriges.html#ope-9">TD ope-9</a><a class="ex" href="ds-exercices.html#ds-e2-5">E2.5</a></div></div></li>
+<li><input data-ds="sk-17" data-g="sk sk-c2" id="sk-17" type="checkbox"/><div><label for="sk-17">Trouver un potentiel vecteur (\(\operatorname{div}F=0\), \(G=(X,Y,0)\))</label><div class="skl"><a class="m" href="ds-methodes.html#m-2-6">M2.6</a><a class="td" href="corriges.html#ope-10">TD ope-10</a><a class="ex" href="ds-exercices.html#ds-e2-7">E2.7</a></div></div></li>
+</ul>
+</div>
+<div class="skcard">
+<h3><span class="n">CH 3</span>Courbes, surfaces et solides<span class="cnt" data-prog="sk-c3"></span></h3>
+<div class="skbar"><i data-bar="sk-c3"></i></div>
+<ul>
+<li><input data-ds="sk-18" data-g="sk sk-c3" id="sk-18" type="checkbox"/><div><label for="sk-18">Paramétrer courbes et contours orientés ; reconnaître un ensemble paramétré</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-1">M3.1</a><a class="m" href="ds-methodes.html#m-3-2">M3.2</a><a class="td" href="corriges.html#csf-1">TD csf-1</a><a class="ex" href="ds-exercices.html#ds-e3-1">E3.1</a></div></div></li>
+<li><input data-ds="sk-19" data-g="sk sk-c3" id="sk-19" type="checkbox"/><div><label for="sk-19">Droite d'intersection de deux plans ; plan paramétrique</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-3">M3.3</a><a class="td" href="corriges.html#csf-3">TD csf-3</a><a class="ex" href="ds-exercices.html#ds-e3-3">E3.3</a></div></div></li>
+<li><input data-ds="sk-20" data-g="sk sk-c3" id="sk-20" type="checkbox"/><div><label for="sk-20">Réduire une conique, la nommer, la paramétrer</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-4">M3.4</a><a class="td" href="corriges.html#csf-4">TD csf-4</a><a class="ex" href="ds-exercices.html#ds-e3-4">E3.4</a></div></div></li>
+<li><input data-ds="sk-21" data-g="sk sk-c3" id="sk-21" type="checkbox"/><div><label for="sk-21">Sphère, boule : centre, rayon, cas vide, paramétrisation</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-5">M3.5</a><a class="td" href="corriges.html#csf-6">TD csf-6</a><a class="ex" href="ds-exercices.html#ds-e3-5">E3.5</a></div></div></li>
+<li><input data-ds="sk-22" data-g="sk sk-c3" id="sk-22" type="checkbox"/><div><label for="sk-22">Identifier et paramétrer une quadrique (paraboloïde, cône, ellipsoïde, cylindre)</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-6">M3.6</a><a class="td" href="corriges.html#csf-7">TD csf-7</a><a class="ex" href="ds-exercices.html#ds-e3-6">E3.6</a></div></div></li>
+<li><input data-ds="sk-23" data-g="sk sk-c3" id="sk-23" type="checkbox"/><div><label for="sk-23">Décrire un solide en cylindriques ou sphériques, avec ses bornes</label><div class="skl"><a class="m" href="ds-methodes.html#m-3-7">M3.7</a><a class="ex" href="ds-exercices.html#ds-e3-7">E3.7</a><a class="ex" href="ds-exercices.html#ds-e3-8">E3.8</a></div></div></li>
+</ul>
+</div>
+<div class="skcard">
+<h3><span class="n">CH 4</span>Intégrales multiples<span class="cnt" data-prog="sk-c4"></span></h3>
+<div class="skbar"><i data-bar="sk-c4"></i></div>
+<ul>
+<li><input data-ds="sk-24" data-g="sk sk-c4" id="sk-24" type="checkbox"/><div><label for="sk-24">Fubini sur un rectangle ou un pavé ; fonctions séparables</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-1">M4.1</a><a class="td" href="corriges.html#imu-1">TD imu-1</a><a class="ex" href="ds-exercices.html#ds-e4-1">E4.1</a></div></div></li>
+<li><input data-ds="sk-25" data-g="sk sk-c4" id="sk-25" type="checkbox"/><div><label for="sk-25">Décrire un domaine de type 1 ou 2 et intégrer</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-2">M4.2</a><a class="td" href="corriges.html#imu-4">TD imu-4</a><a class="ex" href="ds-exercices.html#ds-e4-2">E4.2</a></div></div></li>
+<li><input data-ds="sk-26" data-g="sk sk-c4" id="sk-26" type="checkbox"/><div><label for="sk-26">Inverser l'ordre d'intégration</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-3">M4.3</a><a class="ex" href="ds-exercices.html#ds-e4-3">E4.3</a></div></div></li>
+<li><input data-ds="sk-27" data-g="sk sk-c4" id="sk-27" type="checkbox"/><div><label for="sk-27">Polaires : disque, couronne, secteur, disque décentré</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-4">M4.4</a><a class="td" href="corriges.html#imu-3">TD imu-3</a><a class="ex" href="ds-exercices.html#ds-e4-4">E4.4</a></div></div></li>
+<li><input data-ds="sk-28" data-g="sk sk-c4" id="sk-28" type="checkbox"/><div><label for="sk-28">Ellipse, changement de variables affine, jacobien (et son inverse)</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-5">M4.5</a><a class="td" href="corriges.html#imu-5">TD imu-5</a><a class="ex" href="ds-exercices.html#ds-e4-5">E4.5</a><a class="ex" href="ds-exercices.html#ds-e4-6">E4.6</a></div></div></li>
+<li><input data-ds="sk-29" data-g="sk sk-c4" id="sk-29" type="checkbox"/><div><label for="sk-29">Symétries et parité : annuler sans calculer</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-6">M4.6</a><a class="td" href="corriges.html#imu-7">TD imu-7</a><a class="ex" href="ds-exercices.html#ds-e4-7">E4.7</a></div></div></li>
+<li><input data-ds="sk-30" data-g="sk sk-c4" id="sk-30" type="checkbox"/><div><label for="sk-30">Intégrale triple en cartésiennes (emboîtée ou par tranches)</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-7">M4.7</a><a class="td" href="corriges.html#imu-10">TD imu-10</a><a class="ex" href="ds-exercices.html#ds-e4-8">E4.8</a></div></div></li>
+<li><input data-ds="sk-31" data-g="sk sk-c4" id="sk-31" type="checkbox"/><div><label for="sk-31">Cylindriques : cylindre, cône, paraboloïde</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-8">M4.8</a><a class="td" href="corriges.html#imu-6">TD imu-6</a><a class="ex" href="ds-exercices.html#ds-e4-9">E4.9</a></div></div></li>
+<li><input data-ds="sk-32" data-g="sk sk-c4" id="sk-32" type="checkbox"/><div><label for="sk-32">Sphériques : boule, couronne, cône, ellipsoïde</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-9">M4.9</a><a class="td" href="corriges.html#imu-7">TD imu-7</a><a class="ex" href="ds-exercices.html#ds-e4-10">E4.10</a></div></div></li>
+<li><input data-ds="sk-33" data-g="sk sk-c4" id="sk-33" type="checkbox"/><div><label for="sk-33">Calculer aires et volumes ; intégrales de \(\cos^n\), \(\sin^n\)</label><div class="skl"><a class="m" href="ds-methodes.html#m-4-10">M4.10</a><a class="td" href="corriges.html#imu-8">TD imu-8</a><a class="ex" href="ds-exercices.html#ds-e4-11">E4.11</a></div></div></li>
+</ul>
+</div>
+<div class="skcard">
+<h3><span class="n">SYNTHÈSE</span>Rédaction et DS blancs<span class="cnt" data-prog="sk-c5"></span></h3>
+<div class="skbar"><i data-bar="sk-c5"></i></div>
+<ul>
+<li><input data-ds="sk-34" data-g="sk sk-c5" id="sk-34" type="checkbox"/><div><label for="sk-34">J'écris les phrases types (hypothèses, théorème, jacobien, conclusion) sans les chercher</label><div class="skl"><a class="m" href="ds-methodes.html#r-2">R2</a><a class="m" href="ds-methodes.html#r-3">R3</a></div></div></li>
+<li><input data-ds="sk-35" data-g="sk sk-c5" id="sk-35" type="checkbox"/><div><label for="sk-35">J'ai fait un DS blanc en 1h30 et obtenu au moins 14/20</label><div class="skl"><a class="ex" href="ds-blancs.html#blanc-1">DS 1</a><a class="ex" href="ds-blancs.html#blanc-2">DS 2</a><a class="ex" href="ds-blancs.html#blanc-3">DS 3</a></div></div></li>
+<li><input data-ds="sk-36" data-g="sk sk-c5" id="sk-36" type="checkbox"/><div><label for="sk-36">Je sais recopier la fiche de survie de mémoire</label><div class="skl"><a class="m" href="#survie">Fiche de survie</a></div></div></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- ===================== STRATÉGIE ===================== -->
+<section id="strategie">
+<div class="section-head">
+<span class="eyebrow">⏱ Stratégie</span>
+<h2>Gérer 1h30</h2>
+<p>Un DS de 90 minutes se gagne autant sur la gestion du temps que sur les connaissances. Environ <b>4,5 minutes par point</b> sur 20 ; on garde 5 minutes en tête pour la lecture et 5 en queue pour la relecture.</p>
+</div>
+<div aria-label="Répartition du temps" class="tbar">
+<div class="tb-f" style="flex:5"><b>5′</b>lecture</div>
+<div class="tb-a" style="flex:20"><b>20′</b>Ch. 1</div>
+<div class="tb-b" style="flex:15"><b>15′</b>Ch. 2</div>
+<div class="tb-c" style="flex:12"><b>12′</b>Ch. 3</div>
+<div class="tb-d" style="flex:23"><b>23′</b>Ch. 4</div>
+<div class="tb-e" style="flex:15"><b>15′</b>marge + relecture</div>
+</div>
+<p class="tlegend">Budget indicatif : à ajuster au barème réel du sujet. Les exercices de calcul d'intégrale demandent plus de temps ; les paramétrisations beaucoup moins.</p>
+<div class="dsrules">
+<div class="dsrule"><b>1 · Lire tout, d'abord</b><p>Cinq minutes : repérer les questions « formule directe » (\(\operatorname{grad} /\operatorname{div} /\operatorname{rot}\), jacobienne, paramétrisation, domaine) et les faire en premier. Elles sécurisent des points.</p></div>
+<div class="dsrule"><b>2 · Règle des 8 minutes</b><p>Bloqué plus de 8 minutes sur une question : <b>passer</b>, laisser la place, revenir à la fin. Un exercice complet vaut plus qu'une question parfaite.</p></div>
+<div class="dsrule"><b>3 · Utiliser les questions précédentes</b><p>Si la question 3 demande « en déduire », utiliser le résultat de la question 2 <b>même sans l'avoir prouvé</b>, en le disant : « d'après 2) (admis) ».</p></div>
+<div class="dsrule"><b>4 · Rédiger à chaque ligne</b><p>Hypothèse du théorème, jacobien, bornes, conclusion encadrée. Chaque phrase de justification vaut des points ; chaque calcul faux n'en perd qu'un.</p></div>
+<div class="dsrule"><b>5 · Si ça ne colle pas</b><p>Un volume négatif, un résultat qui dépend d'une variable d'intégration : l'écrire (« incohérent, erreur probable dans … »). Cela rapporte une partie des points.</p></div>
+<div class="dsrule"><b>6 · Garder 5 minutes</b><p>Pour relire : signes, bornes, jacobiens, domaines, conclusions. Les erreurs de signe se repèrent à la relecture, pas pendant le calcul.</p></div>
+</div>
+<h3 class="subhead" style="font-size:20px;margin-top:30px">Les 5 dernières minutes : check-list</h3>
+<ul class="fin10">
+<li>Chaque théorème utilisé est nommé et ses hypothèses écrites (\(C^1\), \(C^2\), étoilé, continu sur un compact).</li>
+<li>Chaque changement de variables : jacobien <b>avec valeur absolue</b>, nouveau domaine, \(r\) ou \(r^2\sin\varphi\).</li>
+<li>Chaque domaine : bornes imbriquées correctes (extérieur : constantes).</li>
+<li>Chaque potentiel : vérification \(\nabla f=F\) (ou \(\overrightarrow{\mathrm{rot}}\,G=F\)).</li>
+<li>Chaque limite : « pas de limite » = deux chemins ; « limite » = majoration.</li>
+<li>Chaque résultat final : forme exacte, simplifiée, encadrée, plausible (signe, ordre de grandeur).</li>
+</ul>
+</section>
+<!-- ===================== FICHE DE SURVIE ===================== -->
+<section id="survie">
+<div class="section-head">
+<span class="eyebrow">📄 Fiche de survie</span>
+<h2>Ce qu'il faut pouvoir écrire de tête</h2>
+<p>Les formules et réflexes des quatre chapitres sur une page. Recopie-la de mémoire à \(J-1\), puis compare. <button class="cx-btn" id="printSurvie" style="margin-left:8px" type="button">🖨 Imprimer cette fiche</button></p>
+</div>
+<div class="survie">
+<div class="svcard">
+<h3>Chapitre 1 · Fonctions de plusieurs variables</h3>
+<ul>
+<li><b>Limite en \((0,0)\)</b> : réfuter = deux chemins (\(y=0\), \(x=0\), \(y=x\), <b>\(y=x^2\)</b>) ; prouver = \(|f-\ell|\le g\to0\) ou polaires avec borne <b>indépendante de \(\theta\)</b>. \(2|xy|\le x^2+y^2\).</li>
+<li><b>Continu</b> : limite \(=\) valeur. <b>Prolongement</b> : on pose la valeur égale à la limite.</li>
+<li><b>\(C^1\) en 4 temps</b> : (1) \(C^1\) hors de \(0\), (2) continuité, (3) dérivées en \(0\) par <b>définition</b> \(\frac{f(h,0)-f(0,0)}h\), (4) continuité des dérivées.</li>
+<li><b>Schwarz</b> : \(f\in C^2\) sur un ouvert \(\Rightarrow\partial_x(\partial_yf)=\partial_y(\partial_xf)\).</li>
+<li><b>Jacobienne</b> : ligne \(i\) = \(\nabla f_i\) ; \(J_{g\circ f}(a)=J_g(f(a))\,J_f(a)\).</li>
+<li><b>EDP</b> : « \(+C\) » = fonction de l'autre variable. Polaires : \(xf_x+yf_y=rF_r\), \(xf_y-yf_x=F_\theta\).</li>
+<li><b>Taylor 2</b> : \(f+hf_x+kf_y+\tfrac12(h^2f_{xx}+2hkf_{xy}+k^2f_{yy})+o(\cdot)\).</li>
+</ul>
+</div>
+<div class="svcard">
+<h3>Chapitre 2 · Opérateurs vectoriels</h3>
+<ul>
+<li>\(\nabla f=(f_x,f_y,f_z)\) ; \(\operatorname{div}F=\partial_xF_1+\partial_yF_2+\partial_zF_3\) ; \(\Delta f=\operatorname{div}\nabla f\).</li>
+<li>\(\overrightarrow{\mathrm{rot}}\,F=(\partial_yF_3-\partial_zF_2,\ \partial_zF_1-\partial_xF_3,\ \partial_xF_2-\partial_yF_1)\).</li>
+<li>\(\overrightarrow{\mathrm{rot}}\nabla f=\vec0\), \(\operatorname{div}\overrightarrow{\mathrm{rot}}\,F=0\) (classe \(C^2\), Schwarz).</li>
+<li><b>Potentiel scalaire</b> : \(F\in C^1\), \(\overrightarrow{\mathrm{rot}}\,F=\vec0\), <b>ouvert étoilé</b> \(\Rightarrow\) existe. Intégrer \(F_1\) en \(x\) (\(+C(y,z)\)), identifier, vérifier \(\nabla f=F\).</li>
+<li><b>Potentiel vecteur</b> : \(\operatorname{div}F=0\), étoilé. \(G=(X,Y,0)\) : \(\overrightarrow{\mathrm{rot}}\,G=(-\partial_zY,\ \partial_zX,\ \partial_xY-\partial_yX)\).</li>
+<li><b>Étoilé</b> : convexe \(\checkmark\) ; \(\mathbb{R}^2\setminus\{0\}\), couronne \(\times\).</li>
+<li><b>Radial</b> : \(\Delta f(r)=f''+\frac2rf'\) ; \(\Delta\frac1r=0\) ; \(\operatorname{div}\frac X{r^3}=0\).</li>
+</ul>
+</div>
+<div class="svcard">
+<h3>Chapitre 3 · Paramétrisations</h3>
+<ul>
+<li>Segment \(A+t(B-A)\), \(t\in[0,1]\) ; cercle \((\Omega_1+R\cos t,\Omega_2+R\sin t)\) ; ellipse \((\Omega_1+a\cos t,\Omega_2+b\sin t)\) ; sens direct = anti-horaire.</li>
+<li>Droite = deux plans : un paramètre libre, ou \(\vec n_1\wedge\vec n_2\) + un point.</li>
+<li><b>Compléter les carrés</b> : même signe \(\to\) ellipse (second membre \(&gt;0\), sinon vide) ; signes opposés \(\to\) hyperbole ; un seul carré \(\to\) parabole.</li>
+<li><b>Sphère</b> : \(R^2=\frac{a^2+b^2+c^2}4-d\) ; boule \(\le R^2\).</li>
+<li><b>Quadriques</b> : variable linéaire \(\to\) paraboloïde ; signe \(-\) sans terme linéaire \(\to\) cône ; trois carrés \(=\) cte \(\to\) ellipsoïde ; variable absente \(\to\) cylindre.</li>
+<li><b>Cylindriques</b> \((r,\theta,z)\) ; <b>sphériques</b> \(x=r\sin\varphi\cos\theta\), \(y=r\sin\varphi\sin\theta\), \(z=r\cos\varphi\) (\(\varphi\in[0,\pi]\) depuis \(Oz\)).</li>
+</ul>
+</div>
+<div class="svcard">
+<h3>Chapitre 4 · Intégrales multiples</h3>
+<ul>
+<li><b>Fubini</b> : \(f\) continue sur un compact ; type 1 : \(a\le x\le b\), \(y_1(x)\le y\le y_2(x)\) ; bornes extérieures <b>constantes</b>.</li>
+<li><b>Polaires</b> : \(dx\,dy=r\,dr\,d\theta\) ; \(x^2+y^2\le2ax\iff r\le2a\cos\theta\), \(\theta\in[-\frac\pi2,\frac\pi2]\).</li>
+<li><b>Ellipse</b> : \(x=ar\cos\theta\), \(y=br\sin\theta\), jacobien \(abr\). Changement \(u,v\) : \(|\partial(x,y)/\partial(u,v)|\) (inverser si besoin).</li>
+<li><b>Cylindriques</b> \(dV=r\,dr\,d\theta\,dz\) ; <b>sphériques</b> \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\) ; ellipsoïde : \(abc\,r^2\sin\varphi\).</li>
+<li><b>Symétrie + parité</b> \(\Rightarrow0\). Volume \(=\iiint1\) ; aire \(=\iint1\).</li>
+<li>\(\int_0^{2\pi}\cos^2=\pi\) ; \(\int_0^{2\pi}\cos^4=\frac{3\pi}4\) ; \(\int_0^\pi\sin^3=\frac43\) ; \(\int_0^\pi\sin^4=\frac{3\pi}8\).</li>
+</ul>
+</div>
+<div class="svcard">
+<h3>Rédaction</h3>
+<ul>
+<li><b>4 temps</b> : annoncer, justifier les hypothèses, calculer, conclure (encadré).</li>
+<li><b>Toujours écrire</b> : le domaine ; « de classe \(C^k\) sur … comme somme, produit, quotient, composée » ; le nom du théorème ; le jacobien et le nouveau domaine ; les bornes ; la vérification (\(\nabla f=F\), aire \(&gt;0\)).</li>
+<li><b>Jamais</b> : « évident » ; limite sur quelques chemins \(\Rightarrow\) existence ; « \(+C\) » en EDP à deux variables ; jacobien oublié ; formule dérivée utilisée en un point de recollement.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
 </main>
-
 <div class="foot">
-  <div class="wrap">
-    <span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
-    <span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
-  </div>
+<div class="wrap">
+<span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
+<span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
 </div>
-<a class="cx-top" href="#" aria-label="Revenir en haut de la page">↑</a>
-
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+</div>
+<a aria-label="Revenir en haut de la page" class="cx-top" href="#">↑</a>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script src="js/maths.js"></script>
 <script src="js/ds.js"></script>
 </body>

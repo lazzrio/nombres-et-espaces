@@ -1,127 +1,116 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Spécial DS · quiz et flashcards — Champs &amp; Intégrales</title>
-<meta name="description" content="QCM et flashcards sur les formules, définitions et théorèmes des chapitres 1 à 4 d'Analyse 3, avec explications, suivi des erreurs et maîtrise par chapitre.">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#4b3e8f" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1128" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/icon-192.png">
-<link rel="manifest" href="manifest.webmanifest">
-<meta property="og:title" content="Spécial DS · quiz et flashcards">
-<meta property="og:description" content="QCM et flashcards sur les formules, définitions et théorèmes des chapitres 1 à 4 d'Analyse 3, avec explications, suivi des erreurs et maîtrise par chapitre.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/ds.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<meta content="QCM et flashcards sur les formules, définitions et théorèmes des chapitres 1 à 4 d'Analyse 3, avec explications, suivi des erreurs et maîtrise par chapitre." name="description"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="#4b3e8f" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0e1128" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/icon-192.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="Spécial DS · quiz et flashcards" property="og:title"/>
+<meta content="QCM et flashcards sur les formules, définitions et théorèmes des chapitres 1 à 4 d'Analyse 3, avec explications, suivi des erreurs et maîtrise par chapitre." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/ds.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <script src="js/topbar.js"></script>
 </head>
 <body class="cx-page ds-page ds-quiz">
-
 <div class="topbar">
-  <div class="topbar-in">
-    <a class="brand" href="index.html" aria-label="Accueil du site">
-      <span class="chip-logo">∇</span>
+<div class="topbar-in">
+<a aria-label="Accueil du site" class="brand" href="index.html">
+<span class="chip-logo">\(\nabla\)</span>
       Champs &amp; Intégrales
     </a>
-    <nav class="nav" id="nav" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="ds.html" class="nav-ds active" aria-current="page"><span class="ni">🎓</span> DS</a>
-      <a href="index.html#cours"><span class="ni">📚</span> Cours</a>
-      <a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
-      <a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
-      <a href="corriges.html" class="nav-corr"><span class="ni">✅</span> Corrigés</a>
-      <a href="index.html#notions"><span class="ni">💡</span> Notions</a>
-      <a href="index.html#formules"><span class="ni">📘</span> Formules</a>
-      <a href="index.html#express"><span class="ni">⚡</span> Express</a>
-      <a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
-      <a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
-      <a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
-      <a href="index.html#planning"><span class="ni">📅</span> Planning</a>
-    </nav>
-    <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">
-      <svg id="thIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    </button>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
+<nav aria-label="Navigation principale" class="nav" id="nav">
+<a href="index.html">Accueil</a>
+<a aria-current="page" class="nav-ds active" href="ds.html"><span class="ni">🎓</span> DS</a>
+<a href="index.html#cours"><span class="ni">📚</span> Cours</a>
+<a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
+<a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
+<a class="nav-corr" href="corriges.html"><span class="ni">✅</span> Corrigés</a>
+<a href="index.html#notions"><span class="ni">💡</span> Notions</a>
+<a href="index.html#formules"><span class="ni">📘</span> Formules</a>
+<a href="index.html#express"><span class="ni">⚡</span> Express</a>
+<a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
+<a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
+<a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
+<a href="index.html#planning"><span class="ni">📅</span> Planning</a>
+</nav>
+<button aria-label="Changer de thème" class="theme-btn" id="themeBtn" title="Thème clair / sombre">
+<svg fill="none" id="thIcon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</button>
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
 </div>
-
+</div>
 <div class="dsnav" id="dsnav">
-  <div class="dsnav-in">
-    <span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
-    <a class="tab" href="ds.html">Plan &amp; checklist</a>
-    <a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
-    <a class="tab" href="ds-formules.html">📘 Formules</a>
-    <a class="tab on" href="ds-quiz.html">🧠 Quiz</a>
-    <a class="tab" href="ds-exercices.html">🏋 Exercices</a>
-    <a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
-    <span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
-  </div>
+<div class="dsnav-in">
+<span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
+<a class="tab" href="ds.html">Plan &amp; checklist</a>
+<a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
+<a class="tab" href="ds-formules.html">📘 Formules</a>
+<a class="tab on" href="ds-quiz.html">🧠 Quiz</a>
+<a class="tab" href="ds-exercices.html">🏋 Exercices</a>
+<a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
+<span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
 </div>
-
+</div>
 <main>
 <div class="hero hero-sm ds-hero">
-  <div class="hero-grid"></div>
-  <div class="hero-in" style="grid-template-columns:1fr">
-    <div>
-      <span class="eyebrow">🧠 Spécial DS · quiz</span>
-      <h1>Teste-toi sur le <em>formulaire</em>.</h1>
-      <p class="lead">Des QCM pour vérifier que tu <b>reconnais</b> la bonne formule, la bonne hypothèse, le bon résultat ; des flashcards pour t'entraîner à les <b>réécrire de mémoire</b>. Chaque réponse est expliquée et renvoie à la fiche du formulaire. Tout est mélangé à chaque série ; tes erreurs sont gardées pour que tu les refasses.</p>
-      <div class="hero-meta">
-        <div><div class="n" id="qzNQ">0</div><div class="l">QCM</div></div>
-        <div><div class="n" id="qzNC">0</div><div class="l">Flashcards</div></div>
-        <div><div class="n">6</div><div class="l">Parties (ch. 0 à 4, outils)</div></div>
-      </div>
-    </div>
-  </div>
+<div class="hero-grid"></div>
+<div class="hero-in" style="grid-template-columns:1fr">
+<div>
+<span class="eyebrow">🧠 Spécial DS · quiz</span>
+<h1>Teste-toi sur le <em>formulaire</em>.</h1>
+<p class="lead">Des QCM pour vérifier que tu <b>reconnais</b> la bonne formule, la bonne hypothèse, le bon résultat ; des flashcards pour t'entraîner à les <b>réécrire de mémoire</b>. Chaque réponse est expliquée et renvoie à la fiche du formulaire. Tout est mélangé à chaque série ; tes erreurs sont gardées pour que tu les refasses.</p>
+<div class="hero-meta">
+<div><div class="n" id="qzNQ">0</div><div class="l">QCM</div></div>
+<div><div class="n" id="qzNC">0</div><div class="l">Flashcards</div></div>
+<div><div class="n">6</div><div class="l">Parties (ch. 0 à 4, outils)</div></div>
 </div>
-
+</div>
+</div>
+</div>
 <div class="wrap ds-wrap qz-wrap" id="qz">
-  <div class="qz-tabs" id="qzTabs" role="tablist" aria-label="Type d'entraînement">
-    <button type="button" class="qz-tab active" role="tab" aria-selected="true" data-mode="qcm">✅ QCM <small>reconnaître</small></button>
-    <button type="button" class="qz-tab" role="tab" aria-selected="false" data-mode="cards">🃏 Flashcards <small>réécrire de mémoire</small></button>
-  </div>
-
-  <section class="qz-setup" id="qzSetup" aria-label="Réglages de la série">
-    <h3 class="qz-h3">Choisis ta série</h3>
-    <div class="qz-row" id="qzChaps" aria-label="Chapitres"></div>
-    <div class="qz-row qz-sel">
-      <label>Nombre <select id="qzCount" class="cx-search"><option value="10">10</option><option value="20" selected>20</option><option value="30">30</option><option value="all">Tout</option></select></label>
-      <label>Contenu <select id="qzFilter" class="cx-search"></select></label>
-      <span class="qz-pool" id="qzPool" aria-live="polite"></span>
-    </div>
-    <div class="qz-row">
-      <button type="button" class="cx-btn qz-primary qz-go" id="qzStart">▶ Commencer</button>
-      <button type="button" class="cx-btn" id="qzReset" title="Efface seulement la progression du quiz">Effacer ma progression</button>
-    </div>
-  </section>
-
-  <div id="qzPlay" class="qz-play" aria-live="polite"></div>
-
-  <section class="qz-mastery" id="qzMastery" aria-label="Maîtrise par partie"></section>
-
-  <p class="qz-note">Pour t'entraîner en conditions d'examen, passe plutôt aux <a href="ds-blancs.html">DS blancs de 1h30</a>. Les formules elles-mêmes sont dans le <a href="ds-formules.html">formulaire</a>.</p>
+<div aria-label="Type d'entraînement" class="qz-tabs" id="qzTabs" role="tablist">
+<button aria-selected="true" class="qz-tab active" data-mode="qcm" role="tab" type="button">✅ QCM <small>reconnaître</small></button>
+<button aria-selected="false" class="qz-tab" data-mode="cards" role="tab" type="button">🃏 Flashcards <small>réécrire de mémoire</small></button>
 </div>
-
-
+<section aria-label="Réglages de la série" class="qz-setup" id="qzSetup">
+<h3 class="qz-h3">Choisis ta série</h3>
+<div aria-label="Chapitres" class="qz-row" id="qzChaps"></div>
+<div class="qz-row qz-sel">
+<label>Nombre <select class="cx-search" id="qzCount"><option value="10">10</option><option selected="" value="20">20</option><option value="30">30</option><option value="all">Tout</option></select></label>
+<label>Contenu <select class="cx-search" id="qzFilter"></select></label>
+<span aria-live="polite" class="qz-pool" id="qzPool"></span>
+</div>
+<div class="qz-row">
+<button class="cx-btn qz-primary qz-go" id="qzStart" type="button">▶ Commencer</button>
+<button class="cx-btn" id="qzReset" title="Efface seulement la progression du quiz" type="button">Effacer ma progression</button>
+</div>
+</section>
+<div aria-live="polite" class="qz-play" id="qzPlay"></div>
+<section aria-label="Maîtrise par partie" class="qz-mastery" id="qzMastery"></section>
+<p class="qz-note">Pour t'entraîner en conditions d'examen, passe plutôt aux <a href="ds-blancs.html">DS blancs de 1h30</a>. Les formules elles-mêmes sont dans le <a href="ds-formules.html">formulaire</a>.</p>
+</div>
 </main>
-
 <div class="foot">
-  <div class="wrap">
-    <span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
-    <span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
-  </div>
+<div class="wrap">
+<span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
+<span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
 </div>
-<a class="cx-top" href="#" aria-label="Revenir en haut de la page">↑</a>
-
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+</div>
+<a aria-label="Revenir en haut de la page" class="cx-top" href="#">↑</a>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script src="js/maths.js"></script>
 <script src="js/ds.js"></script>
 <script src="js/ds-quiz-data.js"></script>

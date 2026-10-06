@@ -1,719 +1,663 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Spécial DS · DS blancs de 1h30 — Champs &amp; Intégrales</title>
-<meta name="description" content="Trois DS blancs de 1h30 sur les chapitres 1 à 4 d'Analyse 3, avec chronomètre, barème détaillé, correction rédigée et auto-notation.">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#4b3e8f" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1128" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/icon-192.png">
-<link rel="manifest" href="manifest.webmanifest">
-<meta property="og:title" content="Spécial DS · DS blancs de 1h30">
-<meta property="og:description" content="Trois DS blancs de 1h30 sur les chapitres 1 à 4 d'Analyse 3, avec chronomètre, barème détaillé, correction rédigée et auto-notation.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/ds.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<meta content="Trois DS blancs de 1h30 sur les chapitres 1 à 4 d'Analyse 3, avec chronomètre, barème détaillé, correction rédigée et auto-notation." name="description"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="#4b3e8f" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0e1128" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/icon-192.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="Spécial DS · DS blancs de 1h30" property="og:title"/>
+<meta content="Trois DS blancs de 1h30 sur les chapitres 1 à 4 d'Analyse 3, avec chronomètre, barème détaillé, correction rédigée et auto-notation." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/ds.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
 <script src="js/topbar.js"></script>
 </head>
 <body class="cx-page ds-page ds-blanc">
-
 <div class="topbar">
-  <div class="topbar-in">
-    <a class="brand" href="index.html" aria-label="Accueil du site">
-      <span class="chip-logo">∇</span>
+<div class="topbar-in">
+<a aria-label="Accueil du site" class="brand" href="index.html">
+<span class="chip-logo">\(\nabla\)</span>
       Champs &amp; Intégrales
     </a>
-    <nav class="nav" id="nav" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="ds.html" class="nav-ds active" aria-current="page"><span class="ni">🎓</span> DS</a>
-      <a href="index.html#cours"><span class="ni">📚</span> Cours</a>
-      <a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
-      <a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
-      <a href="corriges.html" class="nav-corr"><span class="ni">✅</span> Corrigés</a>
-      <a href="index.html#notions"><span class="ni">💡</span> Notions</a>
-      <a href="index.html#formules"><span class="ni">📘</span> Formules</a>
-      <a href="index.html#express"><span class="ni">⚡</span> Express</a>
-      <a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
-      <a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
-      <a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
-      <a href="index.html#planning"><span class="ni">📅</span> Planning</a>
-    </nav>
-    <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" title="Thème clair / sombre">
-      <svg id="thIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    </button>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
+<nav aria-label="Navigation principale" class="nav" id="nav">
+<a href="index.html">Accueil</a>
+<a aria-current="page" class="nav-ds active" href="ds.html"><span class="ni">🎓</span> DS</a>
+<a href="index.html#cours"><span class="ni">📚</span> Cours</a>
+<a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
+<a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
+<a class="nav-corr" href="corriges.html"><span class="ni">✅</span> Corrigés</a>
+<a href="index.html#notions"><span class="ni">💡</span> Notions</a>
+<a href="index.html#formules"><span class="ni">📘</span> Formules</a>
+<a href="index.html#express"><span class="ni">⚡</span> Express</a>
+<a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
+<a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
+<a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
+<a href="index.html#planning"><span class="ni">📅</span> Planning</a>
+</nav>
+<button aria-label="Changer de thème" class="theme-btn" id="themeBtn" title="Thème clair / sombre">
+<svg fill="none" id="thIcon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</button>
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
 </div>
-
+</div>
 <div class="dsnav" id="dsnav">
-  <div class="dsnav-in">
-    <span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
-    <a class="tab" href="ds.html">Plan &amp; checklist</a>
-    <a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
-    <a class="tab" href="ds-formules.html">📘 Formules</a>
-    <a class="tab" href="ds-quiz.html">🧠 Quiz</a>
-    <a class="tab" href="ds-exercices.html">🏋 Exercices</a>
-    <a class="tab on" href="ds-blancs.html">⏱ DS blancs</a>
-    <span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
-  </div>
+<div class="dsnav-in">
+<span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
+<a class="tab" href="ds.html">Plan &amp; checklist</a>
+<a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
+<a class="tab" href="ds-formules.html">📘 Formules</a>
+<a class="tab" href="ds-quiz.html">🧠 Quiz</a>
+<a class="tab" href="ds-exercices.html">🏋 Exercices</a>
+<a class="tab on" href="ds-blancs.html">⏱ DS blancs</a>
+<span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
 </div>
-
+</div>
 <main>
 <div class="hero hero-sm ds-hero">
-  <div class="hero-grid"></div>
-  <div class="hero-in" style="grid-template-columns:1fr">
-    <div>
-      <span class="eyebrow">⏱ Spécial DS · DS blancs de 1h30</span>
-      <h1>Trois DS en <em>conditions réelles</em>.</h1>
-      <p class="lead">Chaque sujet couvre les chapitres 1 à 4, tient en 1h30 et se corrige avec un barème détaillé : une case à cocher par point gagné, donc une note honnête, sur 20. Aucun sujet officiel n'était disponible : ces trois DS sont construits sur le modèle du TD (même nature de questions, mêmes méthodes, fonctions nouvelles). Tous les résultats ont été recalculés.</p>
-      <div class="hero-meta">
-        <div><div class="n">3</div><div class="l">DS blancs</div></div>
-        <div><div class="n">15</div><div class="l">Exercices</div></div>
-        <div><div class="n">20</div><div class="l">Points chacun</div></div>
-      </div>
-    </div>
-  </div>
+<div class="hero-grid"></div>
+<div class="hero-in" style="grid-template-columns:1fr">
+<div>
+<span class="eyebrow">⏱ Spécial DS · DS blancs de 1h30</span>
+<h1>Trois DS en <em>conditions réelles</em>.</h1>
+<p class="lead">Chaque sujet couvre les chapitres 1 à 4, tient en 1h30 et se corrige avec un barème détaillé : une case à cocher par point gagné, donc une note honnête, sur 20. Aucun sujet officiel n'était disponible : ces trois DS sont construits sur le modèle du TD (même nature de questions, mêmes méthodes, fonctions nouvelles). Tous les résultats ont été recalculés.</p>
+<div class="hero-meta">
+<div><div class="n">3</div><div class="l">DS blancs</div></div>
+<div><div class="n">15</div><div class="l">Exercices</div></div>
+<div><div class="n">20</div><div class="l">Points chacun</div></div>
 </div>
-
+</div>
+</div>
+</div>
 <div class="wrap">
-  <div class="cx-howto">
-    <div><b>1 · Conditions réelles</b>Une feuille, un stylo, pas de cours (adaptez si votre DS autorise des documents). Lancez le chronomètre <b>quand vous commencez</b>.</div>
-    <div><b>2 · Rédiger pour de bon</b>Justifier chaque hypothèse de théorème, écrire les phrases du guide de rédaction. Un résultat juste non justifié ne vaut presque rien.</div>
-    <div><b>3 · Corriger avec le barème</b>Cochez seulement les points que votre copie aurait <b>réellement</b> obtenus. Une justification absente = pas de point.</div>
-    <div><b>4 · Analyser</b>Notez où vous perdez : calcul, rédaction ou méthode ? Puis refaites les exercices ratés (page Exercices) avant le DS suivant.</div>
-  </div>
-
-  <div class="section-head" style="padding-top:34px">
-    <span class="eyebrow">Les trois sujets</span>
-    <h2>Un tous les deux jours, jamais deux le même jour</h2>
-    <p>Dans le <a href="ds.html#plan">plan sur 10 jours</a>, le DS n°1 est placé à J-3, le n°2 à J-2 et le n°3 à J-1 (le matin). Réservez-vous 1h30 sans interruption, puis 45 minutes pour la correction. Si vous manquez de temps, faites au moins le n°1 et le n°3.</p>
-  </div>
-  <div class="dsmap">
-    <a href="#blanc-1"><span class="n">DS blanc n°1</span><h3>Équilibré</h3><p>Les quatre chapitres au même poids. Une fonction « presque \(C^1\) », une EDP avec conditions, un potentiel, une conique et un solide, trois intégrales.</p><div class="tg"><span class="minpill">Ch. 1 · 8 pts</span><span class="minpill">Ch. 2 · 4 pts</span><span class="minpill">Ch. 3 · 3 pts</span><span class="minpill">Ch. 4 · 5 pts</span></div></a>
-    <a href="#blanc-2"><span class="n">DS blanc n°2</span><h3>Calcul</h3><p>Plus de calcul : limites avec paramètre, EDP homogène, potentiel vecteur, sphère et cône, trois intégrales dont une triple en cylindriques et une par changement de variables.</p><div class="tg"><span class="minpill">Ch. 1 · 7,5 pts</span><span class="minpill">Ch. 2 · 4,5 pts</span><span class="minpill">Ch. 3 · 3 pts</span><span class="minpill">Ch. 4 · 5 pts</span></div></a>
-    <a href="#blanc-3"><span class="n">DS blanc n°3</span><h3>Pièges et raisonnement</h3><p>Un vrai/faux justifié, des champs centraux (domaine non étoilé), une EDP radiale, un cône, des intégrales avec inversion et symétrie. Pour vérifier que la compréhension suit.</p><div class="tg"><span class="minpill">Ch. 1 · 9 pts</span><span class="minpill">Ch. 2 · 4 pts</span><span class="minpill">Ch. 3 · 3 pts</span><span class="minpill">Ch. 4 · 4 pts</span></div></a>
-  </div>
-  <div class="box method" style="margin-top:26px"><div class="bt">📌 Si votre DS est différent</div><p>La date et le format réels de votre évaluation viennent de votre emploi du temps : vérifiez-les. Si le programme du DS exclut un point (par exemple les EDP), sautez simplement la question concernée : le barème reste indicatif.</p></div>
+<div class="cx-howto">
+<div><b>1 · Conditions réelles</b>Une feuille, un stylo, pas de cours (adaptez si votre DS autorise des documents). Lancez le chronomètre <b>quand vous commencez</b>.</div>
+<div><b>2 · Rédiger pour de bon</b>Justifier chaque hypothèse de théorème, écrire les phrases du guide de rédaction. Un résultat juste non justifié ne vaut presque rien.</div>
+<div><b>3 · Corriger avec le barème</b>Cochez seulement les points que votre copie aurait <b>réellement</b> obtenus. Une justification absente = pas de point.</div>
+<div><b>4 · Analyser</b>Notez où vous perdez : calcul, rédaction ou méthode ? Puis refaites les exercices ratés (page Exercices) avant le DS suivant.</div>
 </div>
-
+<div class="section-head" style="padding-top:34px">
+<span class="eyebrow">Les trois sujets</span>
+<h2>Un tous les deux jours, jamais deux le même jour</h2>
+<p>Dans le <a href="ds.html#plan">plan sur 10 jours</a>, le DS \(n\)°1 est placé à \(J-3\), le \(n\)°2 à \(J-2\) et le \(n\)°3 à \(J-1\) (le matin). Réservez-vous 1h30 sans interruption, puis 45 minutes pour la correction. Si vous manquez de temps, faites au moins le \(n\)°1 et le \(n\)°3.</p>
+</div>
+<div class="dsmap">
+<a href="#blanc-1"><span class="n">DS blanc \(n\)°1</span><h3>Équilibré</h3><p>Les quatre chapitres au même poids. Une fonction « presque \(C^1\) », une EDP avec conditions, un potentiel, une conique et un solide, trois intégrales.</p><div class="tg"><span class="minpill">Ch. 1 · 8 pts</span><span class="minpill">Ch. 2 · 4 pts</span><span class="minpill">Ch. 3 · 3 pts</span><span class="minpill">Ch. 4 · 5 pts</span></div></a>
+<a href="#blanc-2"><span class="n">DS blanc \(n\)°2</span><h3>Calcul</h3><p>Plus de calcul : limites avec paramètre, EDP homogène, potentiel vecteur, sphère et cône, trois intégrales dont une triple en cylindriques et une par changement de variables.</p><div class="tg"><span class="minpill">Ch. 1 · 7,5 pts</span><span class="minpill">Ch. 2 · 4,5 pts</span><span class="minpill">Ch. 3 · 3 pts</span><span class="minpill">Ch. 4 · 5 pts</span></div></a>
+<a href="#blanc-3"><span class="n">DS blanc \(n\)°3</span><h3>Pièges et raisonnement</h3><p>Un vrai/faux justifié, des champs centraux (domaine non étoilé), une EDP radiale, un cône, des intégrales avec inversion et symétrie. Pour vérifier que la compréhension suit.</p><div class="tg"><span class="minpill">Ch. 1 · 9 pts</span><span class="minpill">Ch. 2 · 4 pts</span><span class="minpill">Ch. 3 · 3 pts</span><span class="minpill">Ch. 4 · 4 pts</span></div></a>
+</div>
+<div class="box method" style="margin-top:26px"><div class="bt">📌 Si votre DS est différent</div><p>La date et le format réels de votre évaluation viennent de votre emploi du temps : vérifiez-les. Si le programme du DS exclut un point (par exemple les EDP), sautez simplement la question concernée : le barème reste indicatif.</p></div>
+</div>
 <div class="wrap">
 <section class="dsb" id="blanc-1">
-  <div class="cx-chap-hd">
-    <span class="cx-chap-n">DS blanc n°1 · équilibré</span>
-    <h2>Sujet 1 — chapitres 1 à 4</h2>
-    <p>5 exercices, 20 points, 1h30. Répartition conseillée : 3 min de lecture, puis 20 · 12 · 16 · 12 · 22 minutes, et 5 minutes de relecture (signes, bornes, jacobiens).</p>
-  </div>
-
-  <div class="chrono" id="chrono-1" data-id="1" data-total="5400">
-    <span class="time">90:00</span>
-    <span class="cmsg"></span>
-    <button type="button" class="cbtn go" data-chrono="go">▶ Lancer le chrono</button>
-    <button type="button" class="cbtn" data-chrono="reset">Remettre à zéro</button>
-  </div>
-
-  <div class="sujet">
-    <div class="sujet-hd"><h2>Devoir surveillé d'Analyse 3</h2><span class="meta">Chapitres 1 à 4 · durée 1h30 · barème sur 20</span></div>
-    <div class="consignes"><b>Consignes.</b>
-      <ul>
-        <li>Sans documents ni calculatrice. Toute affirmation doit être justifiée : hypothèses des théorèmes citées, domaines précisés.</li>
-        <li>Les résultats doivent être donnés sous forme exacte et encadrés.</li>
-        <li>Le barème est indicatif.</li>
-      </ul></div>
-
-    <div class="dsx" id="b1-ex1">
-      <div class="dsx-hd"><h3>Exercice 1 — Une fonction « presque \(C^1\) »</h3><span class="min">⏱ 20 min</span><span class="pts">5 points</span></div>
-      <p class="q">Soit \(f:\mathbb{R}^2\to\mathbb{R}\) définie par \(f(x,y)=\dfrac{x^2y}{\sqrt{x^4+y^2}}\) si \((x,y)\neq(0,0)\) et \(f(0,0)=0\).</p>
-      <ol class="qs">
-        <li>Montrer que \(f\) est continue sur \(\mathbb{R}^2\). <span class="p">(1 pt)</span></li>
-        <li>Montrer que \(f\) admet des dérivées partielles en \((0,0)\) et les calculer. <span class="p">(1 pt)</span></li>
-        <li>Calculer \(\dfrac{\partial f}{\partial x}\) et \(\dfrac{\partial f}{\partial y}\) en tout point \((x,y)\neq(0,0)\). <span class="p">(1 pt)</span></li>
-        <li>La fonction \(\dfrac{\partial f}{\partial x}\) est-elle continue en \((0,0)\) ? Et \(\dfrac{\partial f}{\partial y}\) ? La fonction \(f\) est-elle de classe \(C^1\) sur \(\mathbb{R}^2\) ? <span class="p">(2 pts)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b1-ex2">
-      <div class="dsx-hd"><h3>Exercice 2 — EDP avec conditions, jacobien</h3><span class="min">⏱ 12 min</span><span class="pts">3 points</span></div>
-      <ol class="qs">
-        <li>Déterminer toutes les fonctions \(f\) de classe \(C^2\) sur \(\mathbb{R}^2\) telles que \(\dfrac{\partial}{\partial x}\Big(\dfrac{\partial f}{\partial y}\Big)=x\,e^{y}\), et qui vérifient de plus \(f(x,0)=x^2\) pour tout \(x\) et \(f(0,y)=y\) pour tout \(y\). <span class="p">(2 pts)</span></li>
-        <li>Soit \(T(u,v)=(uv,\ u^2-v^2)\). Calculer la matrice jacobienne et le jacobien de \(T\). En quels points le jacobien est-il nul ? <span class="p">(1 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b1-ex3">
-      <div class="dsx-hd"><h3>Exercice 3 — Un champ de gradient</h3><span class="min">⏱ 16 min</span><span class="pts">4 points</span></div>
-      <p class="q">On considère sur \(\mathbb{R}^3\) le champ de vecteurs \(F(x,y,z)=\big(e^x\cos y+z^2,\ \ -e^x\sin y+z,\ \ 2xz+y\big)\).</p>
-      <ol class="qs">
-        <li>Montrer que \(F\) dérive d'un potentiel scalaire sur \(\mathbb{R}^3\). <span class="p">(1,5 pt)</span></li>
-        <li>Déterminer le potentiel \(f\) de \(F\) vérifiant \(f(0,0,0)=0\). <span class="p">(1,5 pt)</span></li>
-        <li>Calculer \(\operatorname{div}F\). Le champ \(F\) est-il un champ de rotationnels ? Justifier. <span class="p">(1 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b1-ex4">
-      <div class="dsx-hd"><h3>Exercice 4 — Une conique, un solide</h3><span class="min">⏱ 12 min</span><span class="pts">3 points</span></div>
-      <ol class="qs">
-        <li>Montrer que l'équation \(9x^2+16y^2-36x+32y-92=0\) est celle d'une ellipse. Préciser son centre, ses demi-axes et en donner une paramétrisation. <span class="p">(1,5 pt)</span></li>
-        <li>Décrire en coordonnées cylindriques le solide \(V=\{(x,y,z)\in\mathbb{R}^3:\ x^2+y^2\le2y,\ \ 0\le z\le4-y\}\) (on précisera les bornes). <span class="p">(1,5 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b1-ex5">
-      <div class="dsx-hd"><h3>Exercice 5 — Intégrales</h3><span class="min">⏱ 22 min</span><span class="pts">5 points</span></div>
-      <ol class="qs">
-        <li>Calculer \(I=\displaystyle\int_0^1\Big(\int_{\sqrt x}^{1}e^{y^3}\,dy\Big)dx\). <span class="p">(1,5 pt)</span></li>
-        <li>Calculer le volume du solide \(V\) de l'exercice 4 (question 2). <span class="p">(2 pts)</span></li>
-        <li>Calculer \(\displaystyle\iiint_Bxyz\,dx\,dy\,dz\), où \(B=\{x^2+y^2+z^2\le1,\ x\ge0,\ y\ge0,\ z\ge0\}\). <span class="p">(1,5 pt)</span></li>
-      </ol>
-    </div>
-  </div>
-
-  <div class="corr-lock"><b>Fin du temps ?</b> Pose le stylo, puis seulement ouvre la correction. Cocher les points <b>réellement</b> obtenus : une justification absente de ta copie ne rapporte pas le point.</div>
-
-  <div class="dsb-cor" id="blanc-1-corr">
-    <h3>Correction et barème du DS n°1</h3>
-
-    <article id="blanc-1-c1"><details class="cx-corr"><summary>✅ Exercice 1 — correction rédigée et barème (5 pts)</summary><div>
-      <div class="qsub">1. Continuité</div>
-      <p>Sur \(\mathbb{R}^2\setminus\{0\}\), \(f\) est continue comme quotient et composée de fonctions continues, \(\sqrt{x^4+y^2}\) ne s'annulant pas. En \((0,0)\) : \(\sqrt{x^4+y^2}\ge\sqrt{y^2}=|y|\), donc pour \(y\neq0\), \(|f(x,y)|\le\dfrac{x^2|y|}{|y|}=x^2\) ; si \(y=0\), \(f(x,0)=0\). Dans tous les cas \(|f(x,y)|\le x^2\to0=f(0,0)\) : \(f\) est continue en \((0,0)\) donc sur \(\mathbb{R}^2\).</p>
-      <div class="qsub">2. Dérivées partielles en \((0,0)\)</div>
-      <p>Comme \(f(h,0)=0\) et \(f(0,k)=0\) (\(x=0\) annule le numérateur), par définition : \(\partial_xf(0,0)=\lim\limits_{h\to0}\dfrac{f(h,0)-f(0,0)}h=0\) et \(\partial_yf(0,0)=\lim\limits_{k\to0}\dfrac{f(0,k)-f(0,0)}k=0\).</p>
-      <div class="qsub">3. Dérivées partielles hors de l'origine</div>
-      <p>On écrit \(f=x^2y\,(x^4+y^2)^{-1/2}\) :
+<div class="cx-chap-hd">
+<span class="cx-chap-n">DS blanc \(n\)°1 · équilibré</span>
+<h2>Sujet 1 — chapitres 1 à 4</h2>
+<p>5 exercices, 20 points, 1h30. Répartition conseillée : \(3\,\min\) de lecture, puis 20 · 12 · 16 · 12 · 22 minutes, et 5 minutes de relecture (signes, bornes, jacobiens).</p>
+</div>
+<div class="chrono" data-id="1" data-total="5400" id="chrono-1">
+<span class="time">90:00</span>
+<span class="cmsg"></span>
+<button class="cbtn go" data-chrono="go" type="button">▶ Lancer le chrono</button>
+<button class="cbtn" data-chrono="reset" type="button">Remettre à zéro</button>
+</div>
+<div class="sujet">
+<div class="sujet-hd"><h2>Devoir surveillé d'Analyse 3</h2><span class="meta">Chapitres 1 à 4 · durée \(1\,\mathrm{h}_{30}\,\cdot\) barème sur 20</span></div>
+<div class="consignes"><b>Consignes.</b>
+<ul>
+<li>Sans documents ni calculatrice. Toute affirmation doit être justifiée : hypothèses des théorèmes citées, domaines précisés.</li>
+<li>Les résultats doivent être donnés sous forme exacte et encadrés.</li>
+<li>Le barème est indicatif.</li>
+</ul></div>
+<div class="dsx" id="b1-ex1">
+<div class="dsx-hd"><h3>Exercice 1 — Une fonction « presque \(C^1\) »</h3><span class="min">⏱ \(20\,\min\)</span><span class="pts">5 points</span></div>
+<p class="q">Soit \(f:\mathbb{R}^2\to\mathbb{R}\) définie par \(f(x,y)=\dfrac{x^2y}{\sqrt{x^4+y^2}}\) si \((x,y)\neq(0,0)\) et \(f(0,0)=0\).</p>
+<ol class="qs">
+<li>Montrer que \(f\) est continue sur \(\mathbb{R}^2\). <span class="p">(1 pt)</span></li>
+<li>Montrer que \(f\) admet des dérivées partielles en \((0,0)\) et les calculer. <span class="p">(1 pt)</span></li>
+<li>Calculer \(\dfrac{\partial f}{\partial x}\) et \(\dfrac{\partial f}{\partial y}\) en tout point \((x,y)\neq(0,0)\). <span class="p">(1 pt)</span></li>
+<li>La fonction \(\dfrac{\partial f}{\partial x}\) est-elle continue en \((0,0)\) ? Et \(\dfrac{\partial f}{\partial y}\) ? La fonction \(f\) est-elle de classe \(C^1\) sur \(\mathbb{R}^2\) ? <span class="p">(2 pts)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b1-ex2">
+<div class="dsx-hd"><h3>Exercice 2 — EDP avec conditions, jacobien</h3><span class="min">⏱ \(12\,\min\)</span><span class="pts">3 points</span></div>
+<ol class="qs">
+<li>Déterminer toutes les fonctions \(f\) de classe \(C^2\) sur \(\mathbb{R}^2\) telles que \(\dfrac{\partial}{\partial x}\Big(\dfrac{\partial f}{\partial y}\Big)=x\,e^{y}\), et qui vérifient de plus \(f(x,0)=x^2\) pour tout \(x\) et \(f(0,y)=y\) pour tout \(y\). <span class="p">(2 pts)</span></li>
+<li>Soit \(T(u,v)=(uv,\ u^2-v^2)\). Calculer la matrice jacobienne et le jacobien de \(T\). En quels points le jacobien est-il nul ? <span class="p">(1 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b1-ex3">
+<div class="dsx-hd"><h3>Exercice 3 — Un champ de gradient</h3><span class="min">⏱ \(16\,\min\)</span><span class="pts">4 points</span></div>
+<p class="q">On considère sur \(\mathbb{R}^3\) le champ de vecteurs \(F(x,y,z)=\big(e^x\cos y+z^2,\ \ -e^x\sin y+z,\ \ 2xz+y\big)\).</p>
+<ol class="qs">
+<li>Montrer que \(F\) dérive d'un potentiel scalaire sur \(\mathbb{R}^3\). <span class="p">(1,5 pt)</span></li>
+<li>Déterminer le potentiel \(f\) de \(F\) vérifiant \(f(0,0,0)=0\). <span class="p">(1,5 pt)</span></li>
+<li>Calculer \(\operatorname{div}F\). Le champ \(F\) est-il un champ de rotationnels ? Justifier. <span class="p">(1 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b1-ex4">
+<div class="dsx-hd"><h3>Exercice 4 — Une conique, un solide</h3><span class="min">⏱ \(12\,\min\)</span><span class="pts">3 points</span></div>
+<ol class="qs">
+<li>Montrer que l'équation \(9x^2+16y^2-36x+32y-92=0\) est celle d'une ellipse. Préciser son centre, ses demi-axes et en donner une paramétrisation. <span class="p">(1,5 pt)</span></li>
+<li>Décrire en coordonnées cylindriques le solide \(V=\{(x,y,z)\in\mathbb{R}^3:\ x^2+y^2\le2y,\ \ 0\le z\le4-y\}\) (on précisera les bornes). <span class="p">(1,5 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b1-ex5">
+<div class="dsx-hd"><h3>Exercice 5 — Intégrales</h3><span class="min">⏱ \(22\,\min\)</span><span class="pts">5 points</span></div>
+<ol class="qs">
+<li>Calculer \(I=\displaystyle\int_0^1\Big(\int_{\sqrt x}^{1}e^{y^3}\,dy\Big)dx\). <span class="p">(1,5 pt)</span></li>
+<li>Calculer le volume du solide \(V\) de l'exercice 4 (question 2). <span class="p">(2 pts)</span></li>
+<li>Calculer \(\displaystyle\iiint_Bxyz\,dx\,dy\,dz\), où \(B=\{x^2+y^2+z^2\le1,\ x\ge0,\ y\ge0,\ z\ge0\}\). <span class="p">(1,5 pt)</span></li>
+</ol>
+</div>
+</div>
+<div class="corr-lock"><b>Fin du temps ?</b> Pose le stylo, puis seulement ouvre la correction. Cocher les points <b>réellement</b> obtenus : une justification absente de ta copie ne rapporte pas le point.</div>
+<div class="dsb-cor" id="blanc-1-corr">
+<h3>Correction et barème du DS \(n\)°1</h3>
+<article id="blanc-1-c1"><details class="cx-corr"><summary>✅ Exercice 1 — correction rédigée et barème (5 pts)</summary><div>
+<div class="qsub">1. Continuité</div>
+<p>Sur \(\mathbb{R}^2\setminus\{0\}\), \(f\) est continue comme quotient et composée de fonctions continues, \(\sqrt{x^4+y^2}\) ne s'annulant pas. En \((0,0)\) : \(\sqrt{x^4+y^2}\ge\sqrt{y^2}=|y|\), donc pour \(y\neq0\), \(|f(x,y)|\le\dfrac{x^2|y|}{|y|}=x^2\) ; si \(y=0\), \(f(x,0)=0\). Dans tous les cas \(|f(x,y)|\le x^2\to0=f(0,0)\) : \(f\) est continue en \((0,0)\) donc sur \(\mathbb{R}^2\).</p>
+<div class="qsub">2. Dérivées partielles en \((0,0)\)</div>
+<p>Comme \(f(h,0)=0\) et \(f(0,k)=0\) (\(x=0\) annule le numérateur), par définition : \(\partial_xf(0,0)=\lim\limits_{h\to0}\dfrac{f(h,0)-f(0,0)}h=0\) et \(\partial_yf(0,0)=\lim\limits_{k\to0}\dfrac{f(0,k)-f(0,0)}k=0\).</p>
+<div class="qsub">3. Dérivées partielles hors de l'origine</div>
+<p>On écrit \(f=x^2y\,(x^4+y^2)^{-1/2}\) :
       \[\partial_xf=2xy\,(x^4+y^2)^{-1/2}-x^2y\cdot\tfrac12(x^4+y^2)^{-3/2}\cdot4x^3=\frac{2xy\,(x^4+y^2)-2x^5y}{(x^4+y^2)^{3/2}}=\frac{2xy^3}{(x^4+y^2)^{3/2}},\]
       \[\partial_yf=x^2(x^4+y^2)^{-1/2}-x^2y\cdot y\,(x^4+y^2)^{-3/2}=\frac{x^2(x^4+y^2)-x^2y^2}{(x^4+y^2)^{3/2}}=\frac{x^6}{(x^4+y^2)^{3/2}}.\]</p>
-      <div class="qsub">4. Continuité des dérivées, classe \(C^1\)</div>
-      <p><b>\(\partial_xf\)</b> : comme \(|y|^3\le(x^4+y^2)^{3/2}\), on a \(|\partial_xf(x,y)|\le2|x|\to0=\partial_xf(0,0)\) : \(\partial_xf\) est continue en \((0,0)\).<br>
-      <b>\(\partial_yf\)</b> : le long de l'axe \(y=0\), \(x\neq0\) : \(\partial_yf(x,0)=\dfrac{x^6}{(x^4)^{3/2}}=\dfrac{x^6}{|x|^6}=1\), qui tend vers \(1\neq0=\partial_yf(0,0)\). Donc \(\partial_yf\) n'est pas continue en \((0,0)\).<br>
-      <b>Conclusion</b> : \(f\) est \(C^1\) sur \(\mathbb{R}^2\setminus\{0\}\), mais les dérivées partielles ne sont pas toutes deux continues en \((0,0)\) : <b>\(f\) n'est pas de classe \(C^1\) sur \(\mathbb{R}^2\)</b>.</p>
-      <div class="bar-hd">Barème (cochez les points obtenus)</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-1-1a" data-pts="0.25" data-ds-id="1"><span>1. Continuité hors de l'origine justifiée (opérations, dénominateur non nul)</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-1-1b" data-pts="0.75" data-ds-id="1"><span>1. Encadrement \(|f|\le x^2\) justifié par \(\sqrt{x^4+y^2}\ge|y|\), conclusion \(f\to0=f(0,0)\)</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-1-2" data-pts="1" data-ds-id="1"><span>2. Définition par taux d'accroissement avec \(f(h,0)=f(0,k)=0\) ; les deux dérivées valent \(0\)</span></label></td><td>1</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-1-3a" data-pts="0.5" data-ds-id="1"><span>3. \(\partial_xf=\dfrac{2xy^3}{(x^4+y^2)^{3/2}}\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-1-3b" data-pts="0.5" data-ds-id="1"><span>3. \(\partial_yf=\dfrac{x^6}{(x^4+y^2)^{3/2}}\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-1-4a" data-pts="0.75" data-ds-id="1"><span>4. \(\partial_xf\) continue en \((0,0)\) : majoration \(|\partial_xf|\le2|x|\)</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-1-4b" data-pts="0.75" data-ds-id="1"><span>4. \(\partial_yf\) non continue : chemin \(y=0\), valeur \(1\neq0\)</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-1-4c" data-pts="0.5" data-ds-id="1"><span>4. Conclusion « pas \(C^1\) sur \(\mathbb{R}^2\) » justifiée (une dérivée discontinue suffit)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-1-c2"><details class="cx-corr"><summary>✅ Exercice 2 — correction rédigée et barème (3 pts)</summary><div>
-      <div class="qsub">1. EDP avec conditions</div>
-      <p>Posons \(h=\partial_yf\) : l'équation est \(\partial_xh=xe^y\). En intégrant en \(x\) (\(y\) fixé) : \(h=\dfrac{x^2}2e^y+\beta(y)\), où \(\beta\) est une fonction <b>de \(y\) seule</b>. En intégrant en \(y\) : \(f(x,y)=\dfrac{x^2}2e^y+B(y)+A(x)\), avec \(A,B\) de classe \(C^2\) arbitraires.</p>
-      <p><b>Conditions.</b> \(f(x,0)=\dfrac{x^2}2+B(0)+A(x)=x^2\) donne \(A(x)=\dfrac{x^2}2-B(0)\) ; en particulier \(A(0)=-B(0)\). \(f(0,y)=B(y)+A(0)=y\) donne \(B(y)=y+B(0)\). Alors
+<div class="qsub">4. Continuité des dérivées, classe \(C^1\)</div>
+<p><b>\(\partial_xf\)</b> : comme \(|y|^3\le(x^4+y^2)^{3/2}\), on a \(|\partial_xf(x,y)|\le2|x|\to0=\partial_xf(0,0)\) : \(\partial_xf\) est continue en \((0,0)\).<br/>
+<b>\(\partial_yf\)</b> : le long de l'axe \(y=0\), \(x\neq0\) : \(\partial_yf(x,0)=\dfrac{x^6}{(x^4)^{3/2}}=\dfrac{x^6}{|x|^6}=1\), qui tend vers \(1\neq0=\partial_yf(0,0)\). Donc \(\partial_yf\) n'est pas continue en \((0,0)\).<br/>
+<b>Conclusion</b> : \(f\) est \(C^1\) sur \(\mathbb{R}^2\setminus\{0\}\), mais les dérivées partielles ne sont pas toutes deux continues en \((0,0)\) : <b>\(f\) n'est pas de classe \(C^1\) sur \(\mathbb{R}^2\)</b>.</p>
+<div class="bar-hd">Barème (cochez les points obtenus)</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds1-1-1a" data-ds-id="1" data-pts="0.25" type="checkbox"/><span>1. Continuité hors de l'origine justifiée (opérations, dénominateur non nul)</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-1-1b" data-ds-id="1" data-pts="0.75" type="checkbox"/><span>1. Encadrement \(|f|\le x^2\) justifié par \(\sqrt{x^4+y^2}\ge|y|\), conclusion \(f\to0=f(0,0)\)</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-1-2" data-ds-id="1" data-pts="1" type="checkbox"/><span>2. Définition par taux d'accroissement avec \(f(h,0)=f(0,k)=0\) ; les deux dérivées valent \(0\)</span></label></td><td>1</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-1-3a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>3. \(\partial_xf=\dfrac{2xy^3}{(x^4+y^2)^{3/2}}\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-1-3b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>3. \(\partial_yf=\dfrac{x^6}{(x^4+y^2)^{3/2}}\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-1-4a" data-ds-id="1" data-pts="0.75" type="checkbox"/><span>4. \(\partial_xf\) continue en \((0,0)\) : majoration \(|\partial_xf|\le2|x|\)</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-1-4b" data-ds-id="1" data-pts="0.75" type="checkbox"/><span>4. \(\partial_yf\) non continue : chemin \(y=0\), valeur \(1\neq0\)</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-1-4c" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>4. Conclusion « pas \(C^1\) sur \(\mathbb{R}^2\) » justifiée (une dérivée discontinue suffit)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-1-c2"><details class="cx-corr"><summary>✅ Exercice 2 — correction rédigée et barème (3 pts)</summary><div>
+<div class="qsub">1. EDP avec conditions</div>
+<p>Posons \(h=\partial_yf\) : l'équation est \(\partial_xh=xe^y\). En intégrant en \(x\) (\(y\) fixé) : \(h=\dfrac{x^2}2e^y+\beta(y)\), où \(\beta\) est une fonction <b>de \(y\) seule</b>. En intégrant en \(y\) : \(f(x,y)=\dfrac{x^2}2e^y+B(y)+A(x)\), avec \(A,B\) de classe \(C^2\) arbitraires.</p>
+<p><b>Conditions.</b> \(f(x,0)=\dfrac{x^2}2+B(0)+A(x)=x^2\) donne \(A(x)=\dfrac{x^2}2-B(0)\) ; en particulier \(A(0)=-B(0)\). \(f(0,y)=B(y)+A(0)=y\) donne \(B(y)=y+B(0)\). Alors
       \[f(x,y)=\frac{x^2}2e^y+y+B(0)+\frac{x^2}2-B(0)=\frac{x^2}2\,(e^y+1)+y.\]
       <b>Vérification</b> : \(f(x,0)=x^2\) ✓, \(f(0,y)=y\) ✓, et \(\partial_x(\partial_yf)=\partial_x\big(\frac{x^2}2e^y+1\big)=xe^y\) ✓. Il y a donc une <b>unique</b> solution.</p>
-      <div class="qsub">2. Jacobienne</div>
-      <p>\(T\) est polynomiale (de classe \(C^1\)) et \(J_T(u,v)=\begin{pmatrix}v&amp;u\\ 2u&amp;-2v\end{pmatrix}\). Le jacobien est \(\det J_T=-2v^2-2u^2=-2(u^2+v^2)\), qui s'annule <b>uniquement</b> en \((0,0)\).</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-2-1a" data-pts="0.5" data-ds-id="1"><span>1. Première intégration : \(\frac{x^2}2e^y+\beta(y)\), la constante est une <b>fonction de \(y\)</b></span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-2-1b" data-pts="0.5" data-ds-id="1"><span>1. Solution générale \(f=\frac{x^2}2e^y+A(x)+B(y)\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-2-1c" data-pts="0.75" data-ds-id="1"><span>1. Utilisation des deux conditions, \(f=\frac{x^2}2(e^y+1)+y\)</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-2-1d" data-pts="0.25" data-ds-id="1"><span>1. Vérification</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-2-2a" data-pts="0.5" data-ds-id="1"><span>2. Matrice jacobienne correcte (lignes = composantes)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-2-2b" data-pts="0.5" data-ds-id="1"><span>2. Jacobien \(-2(u^2+v^2)\), nul seulement en \((0,0)\)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-1-c3"><details class="cx-corr"><summary>✅ Exercice 3 — correction rédigée et barème (4 pts)</summary><div>
-      <div class="qsub">1. Existence d'un potentiel</div>
-      <p>Les composantes de \(F\) sont de classe \(C^\infty\) sur \(\mathbb{R}^3\) (exponentielles, trigonométriques, polynômes). Rotationnel :
+<div class="qsub">2. Jacobienne</div>
+<p>\(T\) est polynomiale (de classe \(C^1\)) et \(J_T(u,v)=\begin{pmatrix}v&amp;u\\ 2u&amp;-2v\end{pmatrix}\). Le jacobien est \(\det J_T=-2v^2-2u^2=-2(u^2+v^2)\), qui s'annule <b>uniquement</b> en \((0,0)\).</p>
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds1-2-1a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>1. Première intégration : \(\frac{x^2}2e^y+\beta(y)\), la constante est une <b>fonction de \(y\)</b></span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-2-1b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>1. Solution générale \(f=\frac{x^2}2e^y+A(x)+B(y)\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-2-1c" data-ds-id="1" data-pts="0.75" type="checkbox"/><span>1. Utilisation des deux conditions, \(f=\frac{x^2}2(e^y+1)+y\)</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-2-1d" data-ds-id="1" data-pts="0.25" type="checkbox"/><span>1. Vérification</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-2-2a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>2. Matrice jacobienne correcte (lignes = composantes)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-2-2b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>2. Jacobien \(-2(u^2+v^2)\), nul seulement en \((0,0)\)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-1-c3"><details class="cx-corr"><summary>✅ Exercice 3 — correction rédigée et barème (4 pts)</summary><div>
+<div class="qsub">1. Existence d'un potentiel</div>
+<p>Les composantes de \(F\) sont de classe \(C^\infty\) sur \(\mathbb{R}^3\) (exponentielles, trigonométriques, polynômes). Rotationnel :
       \[\overrightarrow{\mathrm{rot}}\,F=\big(\partial_yF_3-\partial_zF_2,\ \partial_zF_1-\partial_xF_3,\ \partial_xF_2-\partial_yF_1\big)=\big(1-1,\ 2z-2z,\ -e^x\sin y+e^x\sin y\big)=\vec0.\]
       Comme \(\mathbb{R}^3\) est un ouvert <b>étoilé</b>, le théorème de primitivation montre que \(F\) dérive d'un potentiel scalaire.</p>
-      <div class="qsub">2. Calcul du potentiel</div>
-      <div class="mq">\[\begin{aligned}f&amp;=\int(e^x\cos y+z^2)\,dx=e^x\cos y+xz^2+C(y,z)\\ \partial_yf&amp;=-e^x\sin y+\partial_yC=-e^x\sin y+z\ \Longrightarrow\ \partial_yC=z\ \Longrightarrow\ C=yz+D(z)\\ \partial_zf&amp;=2xz+y+D'(z)=2xz+y\ \Longrightarrow\ D'=0\end{aligned}\]</div>
-      <p>Donc \(f=e^x\cos y+xz^2+yz+K\). La condition \(f(0,0,0)=1+K=0\) donne \(K=-1\) : <b>\(f(x,y,z)=e^x\cos y+xz^2+yz-1\)</b>. (Vérification : \(\nabla f=F\) ✓.)</p>
-      <div class="qsub">3. Divergence</div>
-      <p>\(\operatorname{div}F=e^x\cos y-e^x\cos y+2x=2x\), non identiquement nulle (par exemple \(=2\) en \((1,0,0)\)). Si \(F=\overrightarrow{\mathrm{rot}}\,G\) avec \(G\) de classe \(C^2\), on aurait \(\operatorname{div}F=\operatorname{div}(\overrightarrow{\mathrm{rot}}\,G)=0\) (Schwarz). Donc <b>\(F\) n'est pas un champ de rotationnels</b>.</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-3-1a" data-pts="0.5" data-ds-id="1"><span>1. Régularité \(C^1\) et domaine \(\mathbb{R}^3\) étoilé cités</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-3-1b" data-pts="1" data-ds-id="1"><span>1. Les trois composantes du rotationnel calculées, \(\overrightarrow{\mathrm{rot}}\,F=\vec0\)</span></label></td><td>1</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-3-2a" data-pts="0.5" data-ds-id="1"><span>2. Intégration de \(F_1\) en \(x\), constante \(C(y,z)\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-3-2b" data-pts="0.5" data-ds-id="1"><span>2. Identification en \(y\) puis en \(z\) : \(C=yz+D\), \(D'=0\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-3-2c" data-pts="0.25" data-ds-id="1"><span>2. Constante fixée : \(K=-1\)</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-3-2d" data-pts="0.25" data-ds-id="1"><span>2. Vérification \(\nabla f=F\)</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-3-3a" data-pts="0.5" data-ds-id="1"><span>3. \(\operatorname{div}F=2x\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-3-3b" data-pts="0.5" data-ds-id="1"><span>3. Conclusion justifiée par \(\operatorname{div}(\overrightarrow{\mathrm{rot}}\,G)=0\)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-1-c4"><details class="cx-corr"><summary>✅ Exercice 4 — correction rédigée et barème (3 pts)</summary><div>
-      <div class="qsub">1. L'ellipse</div>
-      <p>\(9x^2-36x=9\big((x-2)^2-4\big)\) et \(16y^2+32y=16\big((y+1)^2-1\big)\), donc l'équation s'écrit \(9(x-2)^2-36+16(y+1)^2-16-92=0\), soit \(9(x-2)^2+16(y+1)^2=144\) et
+<div class="qsub">2. Calcul du potentiel</div>
+<div class="mq">\[\begin{aligned}f&amp;=\int(e^x\cos y+z^2)\,dx=e^x\cos y+xz^2+C(y,z)\\ \partial_yf&amp;=-e^x\sin y+\partial_yC=-e^x\sin y+z\ \Longrightarrow\ \partial_yC=z\ \Longrightarrow\ C=yz+D(z)\\ \partial_zf&amp;=2xz+y+D'(z)=2xz+y\ \Longrightarrow\ D'=0\end{aligned}\]</div>
+<p>Donc \(f=e^x\cos y+xz^2+yz+K\). La condition \(f(0,0,0)=1+K=0\) donne \(K=-1\) : <b>\(f(x,y,z)=e^x\cos y+xz^2+yz-1\)</b>. (Vérification : \(\nabla f=F\) ✓.)</p>
+<div class="qsub">3. Divergence</div>
+<p>\(\operatorname{div}F=e^x\cos y-e^x\cos y+2x=2x\), non identiquement nulle (par exemple \(=2\) en \((1,0,0)\)). Si \(F=\overrightarrow{\mathrm{rot}}\,G\) avec \(G\) de classe \(C^2\), on aurait \(\operatorname{div}F=\operatorname{div}(\overrightarrow{\mathrm{rot}}\,G)=0\) (Schwarz). Donc <b>\(F\) n'est pas un champ de rotationnels</b>.</p>
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds1-3-1a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>1. Régularité \(C^1\) et domaine \(\mathbb{R}^3\) étoilé cités</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-3-1b" data-ds-id="1" data-pts="1" type="checkbox"/><span>1. Les trois composantes du rotationnel calculées, \(\overrightarrow{\mathrm{rot}}\,F=\vec0\)</span></label></td><td>1</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-3-2a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>2. Intégration de \(F_1\) en \(x\), constante \(C(y,z)\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-3-2b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>2. Identification en \(y\) puis en \(z\) : \(C=yz+D\), \(D'=0\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-3-2c" data-ds-id="1" data-pts="0.25" type="checkbox"/><span>2. Constante fixée : \(K=-1\)</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-3-2d" data-ds-id="1" data-pts="0.25" type="checkbox"/><span>2. Vérification \(\nabla f=F\)</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-3-3a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>3. \(\operatorname{div}F=2x\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-3-3b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>3. Conclusion justifiée par \(\operatorname{div}(\overrightarrow{\mathrm{rot}}\,G)=0\)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-1-c4"><details class="cx-corr"><summary>✅ Exercice 4 — correction rédigée et barème (3 pts)</summary><div>
+<div class="qsub">1. L'ellipse</div>
+<p>\(9x^2-36x=9\big((x-2)^2-4\big)\) et \(16y^2+32y=16\big((y+1)^2-1\big)\), donc l'équation s'écrit \(9(x-2)^2-36+16(y+1)^2-16-92=0\), soit \(9(x-2)^2+16(y+1)^2=144\) et
       \[\frac{(x-2)^2}{16}+\frac{(y+1)^2}{9}=1.\]
       Les deux carrés ont le même signe et le second membre est positif : c'est une <b>ellipse</b> de centre \((2,-1)\), de demi-axe \(4\) (horizontal, le grand) et \(3\) (vertical). Paramétrisation : \(\gamma(t)=(2+4\cos t,\ -1+3\sin t)\), \(t\in[0,2\pi]\).</p>
-      <div class="qsub">2. Le solide en cylindriques</div>
-      <p>Avec \(x=r\cos\theta\), \(y=r\sin\theta\) : \(x^2+y^2\le2y\iff r^2\le2r\sin\theta\iff r\le2\sin\theta\) (pour \(r&gt;0\)), ce qui exige \(\sin\theta\ge0\), donc \(\theta\in[0,\pi]\) (disque de centre \((0,1)\), rayon \(1\)). Sur ce disque \(y\le2\), donc \(4-y\ge2&gt;0\) : la borne supérieure est bien au-dessus de \(z=0\). Ainsi
+<div class="qsub">2. Le solide en cylindriques</div>
+<p>Avec \(x=r\cos\theta\), \(y=r\sin\theta\) : \(x^2+y^2\le2y\iff r^2\le2r\sin\theta\iff r\le2\sin\theta\) (pour \(r&gt;0\)), ce qui exige \(\sin\theta\ge0\), donc \(\theta\in[0,\pi]\) (disque de centre \((0,1)\), rayon \(1\)). Sur ce disque \(y\le2\), donc \(4-y\ge2&gt;0\) : la borne supérieure est bien au-dessus de \(z=0\). Ainsi
       \[V=\{(r,\theta,z):\ 0\le\theta\le\pi,\ \ 0\le r\le2\sin\theta,\ \ 0\le z\le4-r\sin\theta\},\qquad dV=r\,dr\,d\theta\,dz.\]</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-4-1a" data-pts="0.5" data-ds-id="1"><span>1. Carrés complétés correctement (\(9(x-2)^2+16(y+1)^2=144\))</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-4-1b" data-pts="0.5" data-ds-id="1"><span>1. Équation réduite, nature, centre \((2,-1)\), demi-axes \(4\) et \(3\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-4-1c" data-pts="0.5" data-ds-id="1"><span>1. Paramétrisation avec intervalle</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-4-2a" data-pts="0.75" data-ds-id="1"><span>2. \(r\le2\sin\theta\) et \(\theta\in[0,\pi]\) justifiés</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-4-2b" data-pts="0.5" data-ds-id="1"><span>2. Bornes en \(z\) : \(0\le z\le4-r\sin\theta\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-4-2c" data-pts="0.25" data-ds-id="1"><span>2. Jacobien \(r\) mentionné</span></label></td><td>0,25</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-1-c5"><details class="cx-corr"><summary>✅ Exercice 5 — correction rédigée et barème (5 pts)</summary><div>
-      <div class="qsub">1. Inversion de l'ordre</div>
-      <p>La fonction \(y\mapsto e^{y^3}\) n'a pas de primitive élémentaire : on inverse. Les bornes décrivent \(D=\{0\le x\le1,\ \sqrt x\le y\le1\}\). Pour \(y\in[0,1]\), \(y\ge\sqrt x\iff x\le y^2\), donc \(D=\{0\le y\le1,\ 0\le x\le y^2\}\). La fonction \((x,y)\mapsto e^{y^3}\) est continue sur le compact \(D\) : Fubini.
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds1-4-1a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>1. Carrés complétés correctement (\(9(x-2)^2+16(y+1)^2=144\))</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-4-1b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>1. Équation réduite, nature, centre \((2,-1)\), demi-axes \(4\) et \(3\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-4-1c" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>1. Paramétrisation avec intervalle</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-4-2a" data-ds-id="1" data-pts="0.75" type="checkbox"/><span>2. \(r\le2\sin\theta\) et \(\theta\in[0,\pi]\) justifiés</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-4-2b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>2. Bornes en \(z\) : \(0\le z\le4-r\sin\theta\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-4-2c" data-ds-id="1" data-pts="0.25" type="checkbox"/><span>2. Jacobien \(r\) mentionné</span></label></td><td>0,25</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-1-c5"><details class="cx-corr"><summary>✅ Exercice 5 — correction rédigée et barème (5 pts)</summary><div>
+<div class="qsub">1. Inversion de l'ordre</div>
+<p>La fonction \(y\mapsto e^{y^3}\) n'a pas de primitive élémentaire : on inverse. Les bornes décrivent \(D=\{0\le x\le1,\ \sqrt x\le y\le1\}\). Pour \(y\in[0,1]\), \(y\ge\sqrt x\iff x\le y^2\), donc \(D=\{0\le y\le1,\ 0\le x\le y^2\}\). La fonction \((x,y)\mapsto e^{y^3}\) est continue sur le compact \(D\) : Fubini.
       \[I=\int_0^1\Big(\int_0^{y^2}e^{y^3}dx\Big)dy=\int_0^1y^2e^{y^3}dy=\Big[\frac{e^{y^3}}3\Big]_0^1=\frac{e-1}3.\]</p>
-      <div class="qsub">2. Volume de \(V\)</div>
-      <p>D'après l'exercice 4, \(\mathrm{Vol}(V)=\displaystyle\int_0^\pi\!\!\int_0^{2\sin\theta}\!\!\int_0^{4-r\sin\theta}r\,dz\,dr\,d\theta=\int_0^\pi\!\!\int_0^{2\sin\theta}(4-r\sin\theta)\,r\,dr\,d\theta\). L'intégrale intérieure vaut \(\Big[2r^2-\dfrac{r^3\sin\theta}3\Big]_0^{2\sin\theta}=8\sin^2\theta-\dfrac83\sin^4\theta\), donc
+<div class="qsub">2. Volume de \(V\)</div>
+<p>D'après l'exercice 4, \(\mathrm{Vol}(V)=\displaystyle\int_0^\pi\!\!\int_0^{2\sin\theta}\!\!\int_0^{4-r\sin\theta}r\,dz\,dr\,d\theta=\int_0^\pi\!\!\int_0^{2\sin\theta}(4-r\sin\theta)\,r\,dr\,d\theta\). L'intégrale intérieure vaut \(\Big[2r^2-\dfrac{r^3\sin\theta}3\Big]_0^{2\sin\theta}=8\sin^2\theta-\dfrac83\sin^4\theta\), donc
       \[\mathrm{Vol}(V)=8\int_0^\pi\sin^2\theta\,d\theta-\frac83\int_0^\pi\sin^4\theta\,d\theta=8\cdot\frac\pi2-\frac83\cdot\frac{3\pi}8=4\pi-\pi=3\pi.\]
       <b>Contrôle</b> : \(\mathrm{Vol}(V)=\iint_D(4-y)\,dx\,dy=4\,\mathrm{Aire}(D)-\iint_Dy=4\pi-\pi\), car le disque \(D\) a pour aire \(\pi\) et \(y\) y a pour moyenne \(1\) (centre \((0,1)\)).</p>
-      <div class="qsub">3. Octant de la boule</div>
-      <p>En sphériques (\(x=r\sin\varphi\cos\theta\), \(y=r\sin\varphi\sin\theta\), \(z=r\cos\varphi\)), \(B\) correspond à \(r\in[0,1]\), \(\theta\in[0,\frac\pi2]\) (\(x,y\ge0\)), \(\varphi\in[0,\frac\pi2]\) (\(z\ge0\)), et \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\). Comme \(xyz=r^3\sin^2\varphi\cos\varphi\cos\theta\sin\theta\) :
+<div class="qsub">3. Octant de la boule</div>
+<p>En sphériques (\(x=r\sin\varphi\cos\theta\), \(y=r\sin\varphi\sin\theta\), \(z=r\cos\varphi\)), \(B\) correspond à \(r\in[0,1]\), \(\theta\in[0,\frac\pi2]\) (\(x,y\ge0\)), \(\varphi\in[0,\frac\pi2]\) (\(z\ge0\)), et \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\). Comme \(xyz=r^3\sin^2\varphi\cos\varphi\cos\theta\sin\theta\) :
       \[\iiint_Bxyz\,dV=\int_0^1r^5dr\int_0^{\pi/2}\sin^3\varphi\cos\varphi\,d\varphi\int_0^{\pi/2}\cos\theta\sin\theta\,d\theta=\frac16\cdot\frac14\cdot\frac12=\frac1{48}.\]</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-1a" data-pts="0.75" data-ds-id="1"><span>1. Domaine lu dans les bornes et réécrit \(\{0\le y\le1,\ 0\le x\le y^2\}\), justifié</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-1b" data-pts="0.5" data-ds-id="1"><span>1. Fubini (continuité sur le compact) et \(\int_0^1y^2e^{y^3}dy\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-1c" data-pts="0.25" data-ds-id="1"><span>1. Valeur \(\frac{e-1}3\)</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-2a" data-pts="0.5" data-ds-id="1"><span>2. Intégrale triple posée en cylindriques avec le jacobien \(r\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-2b" data-pts="0.5" data-ds-id="1"><span>2. Intégrale en \(z\), puis en \(r\) : \(8\sin^2\theta-\frac83\sin^4\theta\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-2c" data-pts="0.75" data-ds-id="1"><span>2. Intégrales trigonométriques (\(\frac\pi2\), \(\frac{3\pi}8\)) correctes</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-2d" data-pts="0.25" data-ds-id="1"><span>2. Résultat \(3\pi\)</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-3a" data-pts="0.5" data-ds-id="1"><span>3. Domaine en sphériques (\(r,\theta,\varphi\)) justifié</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-3b" data-pts="0.5" data-ds-id="1"><span>3. Expression de \(xyz\) et jacobien \(r^2\sin\varphi\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds1-5-3c" data-pts="0.5" data-ds-id="1"><span>3. Trois intégrales séparées, résultat \(\frac1{48}\)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <div class="scorebox" data-score="1" data-total="20"><span class="sc">0 / 20</span><span class="sm"></span></div>
-  </div>
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds1-5-1a" data-ds-id="1" data-pts="0.75" type="checkbox"/><span>1. Domaine lu dans les bornes et réécrit \(\{0\le y\le1,\ 0\le x\le y^2\}\), justifié</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-1b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>1. Fubini (continuité sur le compact) et \(\int_0^1y^2e^{y^3}dy\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-1c" data-ds-id="1" data-pts="0.25" type="checkbox"/><span>1. Valeur \(\frac{e-1}3\)</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-2a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>2. Intégrale triple posée en cylindriques avec le jacobien \(r\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-2b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>2. Intégrale en \(z\), puis en \(r\) : \(8\sin^2\theta-\frac83\sin^4\theta\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-2c" data-ds-id="1" data-pts="0.75" type="checkbox"/><span>2. Intégrales trigonométriques (\(\frac\pi2\), \(\frac{3\pi}8\)) correctes</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-2d" data-ds-id="1" data-pts="0.25" type="checkbox"/><span>2. Résultat \(3\pi\)</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-3a" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>3. Domaine en sphériques (\(r,\theta,\varphi\)) justifié</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-3b" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>3. Expression de \(xyz\) et jacobien \(r^2\sin\varphi\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds1-5-3c" data-ds-id="1" data-pts="0.5" type="checkbox"/><span>3. Trois intégrales séparées, résultat \(\frac1{48}\)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<div class="scorebox" data-score="1" data-total="20"><span class="sc">0 / 20</span><span class="sm"></span></div>
+</div>
 </section>
 </div>
-
 <div class="wrap">
 <section class="dsb" id="blanc-2">
-  <div class="cx-chap-hd">
-    <span class="cx-chap-n">DS blanc n°2 · calcul</span>
-    <h2>Sujet 2 — chapitres 1 à 4</h2>
-    <p>5 exercices, 20 points, 1h30. Répartition conseillée : 3 min de lecture, puis 16 · 14 · 18 · 12 · 22 minutes, et 5 minutes de relecture (signes, bornes, jacobiens).</p>
-  </div>
-
-  <div class="chrono" id="chrono-2" data-id="2" data-total="5400">
-    <span class="time">90:00</span>
-    <span class="cmsg"></span>
-    <button type="button" class="cbtn go" data-chrono="go">▶ Lancer le chrono</button>
-    <button type="button" class="cbtn" data-chrono="reset">Remettre à zéro</button>
-  </div>
-
-  <div class="sujet">
-    <div class="sujet-hd"><h2>Devoir surveillé d'Analyse 3</h2><span class="meta">Chapitres 1 à 4 · durée 1h30 · barème sur 20</span></div>
-    <div class="consignes"><b>Consignes.</b>
-      <ul>
-        <li>Sans documents ni calculatrice. Toute affirmation doit être justifiée : hypothèses des théorèmes citées, domaines précisés.</li>
-        <li>Les résultats doivent être donnés sous forme exacte et encadrés.</li>
-        <li>Le barème est indicatif.</li>
-      </ul></div>
-
-    <div class="dsx" id="b2-ex1">
-      <div class="dsx-hd"><h3>Exercice 1 — Limites et continuité</h3><span class="min">⏱ 16 min</span><span class="pts">4 points</span></div>
-      <ol class="qs">
-        <li>Montrer que \(\displaystyle\lim_{(x,y)\to(0,0)}\dfrac{y\,\sin(x^2)}{x^2+y^2}=0\). <span class="p">(1 pt)</span></li>
-        <li>La fonction \(\dfrac{x+y}{x^2+y^2}\) admet-elle une limite en \((0,0)\) ? <span class="p">(1 pt)</span></li>
-        <li>Pour \(a&gt;0\), on pose \(g(x,y)=\dfrac{|x|^a\,y}{x^2+y^2}\) si \((x,y)\neq(0,0)\) et \(g(0,0)=0\). Pour quelles valeurs de \(a\) la fonction \(g\) est-elle continue en \((0,0)\) ? <span class="p">(2 pts)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b2-ex2">
-      <div class="dsx-hd"><h3>Exercice 2 — EDP homogène, jacobien</h3><span class="min">⏱ 14 min</span><span class="pts">3,5 points</span></div>
-      <ol class="qs">
-        <li>Sur \(\{x&gt;0\}\), déterminer les fonctions \(f\) de classe \(C^1\) telles que \(x\dfrac{\partial f}{\partial x}+y\dfrac{\partial f}{\partial y}=2f\), à l'aide du changement de variables \(u=x\), \(v=\dfrac yx\). <span class="p">(2,5 pts)</span></li>
-        <li>Soit \(T(x,y)=(x^2-y^2,\ 2xy)\). Calculer la matrice jacobienne et le jacobien de \(T\), puis l'écrire avec \(r=\sqrt{x^2+y^2}\). <span class="p">(1 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b2-ex3">
-      <div class="dsx-hd"><h3>Exercice 3 — Potentiel vecteur</h3><span class="min">⏱ 18 min</span><span class="pts">4,5 points</span></div>
-      <p class="q">Soit \(F(x,y,z)=\big(x,\ 2yz,\ -z-z^2\big)\) sur \(\mathbb{R}^3\).</p>
-      <ol class="qs">
-        <li>Montrer que \(F\) est un champ de rotationnels sur \(\mathbb{R}^3\). <span class="p">(1 pt)</span></li>
-        <li>Déterminer un champ \(G=(X,Y,0)\) de classe \(C^2\) tel que \(\overrightarrow{\mathrm{rot}}\,G=F\). <span class="p">(2 pts)</span></li>
-        <li>Calculer \(\overrightarrow{\mathrm{rot}}\,F\). Le champ \(F\) est-il un champ de gradient ? <span class="p">(1 pt)</span></li>
-        <li>Vérifier, à l'aide d'une identité du cours, que \(\overrightarrow{\mathrm{rot}}\,F=-\Delta G\), où \(\Delta G=(\Delta X,\Delta Y,\Delta Z)\). <span class="p">(0,5 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b2-ex4">
-      <div class="dsx-hd"><h3>Exercice 4 — Une sphère, un cône</h3><span class="min">⏱ 12 min</span><span class="pts">3 points</span></div>
-      <ol class="qs">
-        <li>Montrer que \(x^2+y^2+z^2-4x+2y-2z-3=0\) est l'équation d'une sphère ; donner son centre, son rayon et une paramétrisation. Déterminer l'intersection de cette sphère avec le plan \(z=1\) et la paramétrer. <span class="p">(1,5 pt)</span></li>
-        <li>Décrire en coordonnées sphériques le solide \(K=\{(x,y,z):\ z\ge\sqrt{x^2+y^2},\ x^2+y^2+z^2\le4\}\). <span class="p">(1,5 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b2-ex5">
-      <div class="dsx-hd"><h3>Exercice 5 — Intégrales</h3><span class="min">⏱ 22 min</span><span class="pts">5 points</span></div>
-      <ol class="qs">
-        <li>Calculer \(\displaystyle\iint_D(x+y)\,dx\,dy\), où \(D=\{x^2+y^2\le4,\ y\ge0\}\). <span class="p">(1,5 pt)</span></li>
-        <li>Calculer \(\displaystyle\iiint_V(x^2+y^2)\,dx\,dy\,dz\), où \(V=\{x^2+y^2\le z^2,\ 0\le z\le1\}\). <span class="p">(2 pts)</span></li>
-        <li>Calculer le volume de l'ellipsoïde plein \(E=\{x^2+4y^2+9z^2\le1\}\) à l'aide d'un changement de variables. <span class="p">(1,5 pt)</span></li>
-      </ol>
-    </div>
-  </div>
-
-  <div class="corr-lock"><b>Fin du temps ?</b> Pose le stylo, puis seulement ouvre la correction. Cocher les points <b>réellement</b> obtenus : une justification absente de ta copie ne rapporte pas le point.</div>
-
-  <div class="dsb-cor" id="blanc-2-corr">
-    <h3>Correction et barème du DS n°2</h3>
-
-    <article id="blanc-2-c1"><details class="cx-corr"><summary>✅ Exercice 1 — correction rédigée et barème (4 pts)</summary><div>
-      <div class="qsub">1.</div>
-      <p>Pour \((x,y)\neq(0,0)\), \(|\sin(x^2)|\le x^2\), donc
+<div class="cx-chap-hd">
+<span class="cx-chap-n">DS blanc \(n\)°2 · calcul</span>
+<h2>Sujet 2 — chapitres 1 à 4</h2>
+<p>5 exercices, 20 points, 1h30. Répartition conseillée : \(3\,\min\) de lecture, puis 16 · 14 · 18 · 12 · 22 minutes, et 5 minutes de relecture (signes, bornes, jacobiens).</p>
+</div>
+<div class="chrono" data-id="2" data-total="5400" id="chrono-2">
+<span class="time">90:00</span>
+<span class="cmsg"></span>
+<button class="cbtn go" data-chrono="go" type="button">▶ Lancer le chrono</button>
+<button class="cbtn" data-chrono="reset" type="button">Remettre à zéro</button>
+</div>
+<div class="sujet">
+<div class="sujet-hd"><h2>Devoir surveillé d'Analyse 3</h2><span class="meta">Chapitres 1 à 4 · durée \(1\,\mathrm{h}_{30}\,\cdot\) barème sur 20</span></div>
+<div class="consignes"><b>Consignes.</b>
+<ul>
+<li>Sans documents ni calculatrice. Toute affirmation doit être justifiée : hypothèses des théorèmes citées, domaines précisés.</li>
+<li>Les résultats doivent être donnés sous forme exacte et encadrés.</li>
+<li>Le barème est indicatif.</li>
+</ul></div>
+<div class="dsx" id="b2-ex1">
+<div class="dsx-hd"><h3>Exercice 1 — Limites et continuité</h3><span class="min">⏱ \(16\,\min\)</span><span class="pts">4 points</span></div>
+<ol class="qs">
+<li>Montrer que \(\displaystyle\lim_{(x,y)\to(0,0)}\dfrac{y\,\sin(x^2)}{x^2+y^2}=0\). <span class="p">(1 pt)</span></li>
+<li>La fonction \(\dfrac{x+y}{x^2+y^2}\) admet-elle une limite en \((0,0)\) ? <span class="p">(1 pt)</span></li>
+<li>Pour \(a&gt;0\), on pose \(g(x,y)=\dfrac{|x|^a\,y}{x^2+y^2}\) si \((x,y)\neq(0,0)\) et \(g(0,0)=0\). Pour quelles valeurs de \(a\) la fonction \(g\) est-elle continue en \((0,0)\) ? <span class="p">(2 pts)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b2-ex2">
+<div class="dsx-hd"><h3>Exercice 2 — EDP homogène, jacobien</h3><span class="min">⏱ \(14\,\min\)</span><span class="pts">3,5 points</span></div>
+<ol class="qs">
+<li>Sur \(\{x&gt;0\}\), déterminer les fonctions \(f\) de classe \(C^1\) telles que \(x\dfrac{\partial f}{\partial x}+y\dfrac{\partial f}{\partial y}=2f\), à l'aide du changement de variables \(u=x\), \(v=\dfrac yx\). <span class="p">(2,5 pts)</span></li>
+<li>Soit \(T(x,y)=(x^2-y^2,\ 2xy)\). Calculer la matrice jacobienne et le jacobien de \(T\), puis l'écrire avec \(r=\sqrt{x^2+y^2}\). <span class="p">(1 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b2-ex3">
+<div class="dsx-hd"><h3>Exercice 3 — Potentiel vecteur</h3><span class="min">⏱ \(18\,\min\)</span><span class="pts">4,5 points</span></div>
+<p class="q">Soit \(F(x,y,z)=\big(x,\ 2yz,\ -z-z^2\big)\) sur \(\mathbb{R}^3\).</p>
+<ol class="qs">
+<li>Montrer que \(F\) est un champ de rotationnels sur \(\mathbb{R}^3\). <span class="p">(1 pt)</span></li>
+<li>Déterminer un champ \(G=(X,Y,0)\) de classe \(C^2\) tel que \(\overrightarrow{\mathrm{rot}}\,G=F\). <span class="p">(2 pts)</span></li>
+<li>Calculer \(\overrightarrow{\mathrm{rot}}\,F\). Le champ \(F\) est-il un champ de gradient ? <span class="p">(1 pt)</span></li>
+<li>Vérifier, à l'aide d'une identité du cours, que \(\overrightarrow{\mathrm{rot}}\,F=-\Delta G\), où \(\Delta G=(\Delta X,\Delta Y,\Delta Z)\). <span class="p">(0,5 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b2-ex4">
+<div class="dsx-hd"><h3>Exercice 4 — Une sphère, un cône</h3><span class="min">⏱ \(12\,\min\)</span><span class="pts">3 points</span></div>
+<ol class="qs">
+<li>Montrer que \(x^2+y^2+z^2-4x+2y-2z-3=0\) est l'équation d'une sphère ; donner son centre, son rayon et une paramétrisation. Déterminer l'intersection de cette sphère avec le plan \(z=1\) et la paramétrer. <span class="p">(1,5 pt)</span></li>
+<li>Décrire en coordonnées sphériques le solide \(K=\{(x,y,z):\ z\ge\sqrt{x^2+y^2},\ x^2+y^2+z^2\le4\}\). <span class="p">(1,5 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b2-ex5">
+<div class="dsx-hd"><h3>Exercice 5 — Intégrales</h3><span class="min">⏱ \(22\,\min\)</span><span class="pts">5 points</span></div>
+<ol class="qs">
+<li>Calculer \(\displaystyle\iint_D(x+y)\,dx\,dy\), où \(D=\{x^2+y^2\le4,\ y\ge0\}\). <span class="p">(1,5 pt)</span></li>
+<li>Calculer \(\displaystyle\iiint_V(x^2+y^2)\,dx\,dy\,dz\), où \(V=\{x^2+y^2\le z^2,\ 0\le z\le1\}\). <span class="p">(2 pts)</span></li>
+<li>Calculer le volume de l'ellipsoïde plein \(E=\{x^2+4y^2+9z^2\le1\}\) à l'aide d'un changement de variables. <span class="p">(1,5 pt)</span></li>
+</ol>
+</div>
+</div>
+<div class="corr-lock"><b>Fin du temps ?</b> Pose le stylo, puis seulement ouvre la correction. Cocher les points <b>réellement</b> obtenus : une justification absente de ta copie ne rapporte pas le point.</div>
+<div class="dsb-cor" id="blanc-2-corr">
+<h3>Correction et barème du DS \(n\)°2</h3>
+<article id="blanc-2-c1"><details class="cx-corr"><summary>✅ Exercice 1 — correction rédigée et barème (4 pts)</summary><div>
+<div class="qsub">1.</div>
+<p>Pour \((x,y)\neq(0,0)\), \(|\sin(x^2)|\le x^2\), donc
       \[\left|\frac{y\sin(x^2)}{x^2+y^2}\right|\le|y|\cdot\frac{x^2}{x^2+y^2}\le|y|\xrightarrow[(x,y)\to(0,0)]{}0.\]
       Par le théorème des gendarmes, la limite vaut \(0\).</p>
-      <div class="qsub">2.</div>
-      <p>Posons \(f(x,y)=\dfrac{x+y}{x^2+y^2}\). Le long de \(y=-x\) : \(f(t,-t)=0\to0\). Le long de \(y=0\) : \(f(t,0)=\dfrac1t\), qui n'a pas de limite finie quand \(t\to0\) (elle tend vers \(\pm\infty\)). <b>\(f\) n'a pas de limite en \((0,0)\).</b></p>
-      <div class="qsub">3. Continuité de \(g\)</div>
-      <p>Hors de l'origine \(g\) est continue (\(|x|^a\) est continue pour \(a&gt;0\), quotient à dénominateur non nul). En polaires (\(r&gt;0\)) : \(g=\dfrac{r^a|\cos\theta|^a\,r\sin\theta}{r^2}=r^{a-1}|\cos\theta|^a\sin\theta\).</p>
-      <ul>
-        <li><b>\(a&gt;1\)</b> : \(|g|\le r^{a-1}\to0\) (majoration indépendante de \(\theta\)), donc \(\lim g=0=g(0,0)\) : <b>continue</b>.</li>
-        <li><b>\(a=1\)</b> : \(g(t,t)=\dfrac{|t|\,t}{2t^2}=\dfrac{\operatorname{sgn}t}2\), qui ne tend pas vers \(0\) : <b>non continue</b>.</li>
-        <li><b>\(0&lt;a&lt;1\)</b> : \(g(t,t)=\dfrac{\operatorname{sgn}t}2\,|t|^{a-1}\to\pm\infty\) : <b>non continue</b>.</li>
-      </ul>
-      <p><b>Conclusion</b> : \(g\) est continue en \((0,0)\) si et seulement si \(a&gt;1\).</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-1-1a" data-pts="0.75" data-ds-id="2"><span>1. Encadrement avec \(|\sin t|\le|t|\) et \(\frac{x^2}{x^2+y^2}\le1\) justifié</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-1-1b" data-pts="0.25" data-ds-id="2"><span>1. Conclusion par gendarmes</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-1-2a" data-pts="0.75" data-ds-id="2"><span>2. Deux chemins calculés (\(y=-x\) et \(y=0\))</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-1-2b" data-pts="0.25" data-ds-id="2"><span>2. Conclusion « pas de limite »</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-1-3a" data-pts="0.5" data-ds-id="2"><span>3. Expression en polaires \(r^{a-1}|\cos\theta|^a\sin\theta\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-1-3b" data-pts="0.5" data-ds-id="2"><span>3. Cas \(a&gt;1\) (majoration indépendante de \(\theta\))</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-1-3c" data-pts="0.5" data-ds-id="2"><span>3. Cas \(a=1\) (contre-exemple le long de \(y=x\))</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-1-3d" data-pts="0.5" data-ds-id="2"><span>3. Cas \(a&lt;1\) et conclusion « \(a&gt;1\) »</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-2-c2"><details class="cx-corr"><summary>✅ Exercice 2 — correction rédigée et barème (3,5 pts)</summary><div>
-      <div class="qsub">1. Changement de variables</div>
-      <p>L'application \((x,y)\mapsto(u,v)=(x,\frac yx)\) est une bijection de \(\{x&gt;0\}\) sur \(\{u&gt;0\}\times\mathbb{R}\), de réciproque \((u,v)\mapsto(u,uv)\). Soit \(g\) de classe \(C^1\) telle que \(f(x,y)=g(x,\frac yx)\). Règle de la chaîne :
+<div class="qsub">2.</div>
+<p>Posons \(f(x,y)=\dfrac{x+y}{x^2+y^2}\). Le long de \(y=-x\) : \(f(t,-t)=0\to0\). Le long de \(y=0\) : \(f(t,0)=\dfrac1t\), qui n'a pas de limite finie quand \(t\to0\) (elle tend vers \(\pm\infty\)). <b>\(f\) n'a pas de limite en \((0,0)\).</b></p>
+<div class="qsub">3. Continuité de \(g\)</div>
+<p>Hors de l'origine \(g\) est continue (\(|x|^a\) est continue pour \(a&gt;0\), quotient à dénominateur non nul). En polaires (\(r&gt;0\)) : \(g=\dfrac{r^a|\cos\theta|^a\,r\sin\theta}{r^2}=r^{a-1}|\cos\theta|^a\sin\theta\).</p>
+<ul>
+<li><b>\(a&gt;1\)</b> : \(|g|\le r^{a-1}\to0\) (majoration indépendante de \(\theta\)), donc \(\lim g=0=g(0,0)\) : <b>continue</b>.</li>
+<li><b>\(a=1\)</b> : \(g(t,t)=\dfrac{|t|\,t}{2t^2}=\dfrac{\operatorname{sgn}t}2\), qui ne tend pas vers \(0\) : <b>non continue</b>.</li>
+<li><b>\(0&lt;a&lt;1\)</b> : \(g(t,t)=\dfrac{\operatorname{sgn}t}2\,|t|^{a-1}\to\pm\infty\) : <b>non continue</b>.</li>
+</ul>
+<p><b>Conclusion</b> : \(g\) est continue en \((0,0)\) si et seulement si \(a&gt;1\).</p>
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds2-1-1a" data-ds-id="2" data-pts="0.75" type="checkbox"/><span>1. Encadrement avec \(|\sin t|\le|t|\) et \(\frac{x^2}{x^2+y^2}\le1\) justifié</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-1-1b" data-ds-id="2" data-pts="0.25" type="checkbox"/><span>1. Conclusion par gendarmes</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-1-2a" data-ds-id="2" data-pts="0.75" type="checkbox"/><span>2. Deux chemins calculés (\(y=-x\) et \(y=0\))</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-1-2b" data-ds-id="2" data-pts="0.25" type="checkbox"/><span>2. Conclusion « pas de limite »</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-1-3a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. Expression en polaires \(r^{a-1}|\cos\theta|^a\sin\theta\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-1-3b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. Cas \(a&gt;1\) (majoration indépendante de \(\theta\))</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-1-3c" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. Cas \(a=1\) (contre-exemple le long de \(y=x\))</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-1-3d" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. Cas \(a&lt;1\) et conclusion « \(a&gt;1\) »</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-2-c2"><details class="cx-corr"><summary>✅ Exercice 2 — correction rédigée et barème (3,5 pts)</summary><div>
+<div class="qsub">1. Changement de variables</div>
+<p>L'application \((x,y)\mapsto(u,v)=(x,\frac yx)\) est une bijection de \(\{x&gt;0\}\) sur \(\{u&gt;0\}\times\mathbb{R}\), de réciproque \((u,v)\mapsto(u,uv)\). Soit \(g\) de classe \(C^1\) telle que \(f(x,y)=g(x,\frac yx)\). Règle de la chaîne :
       \[\partial_xf=\partial_ug-\frac y{x^2}\,\partial_vg,\qquad\partial_yf=\frac1x\,\partial_vg.\]
       Donc \(x\partial_xf+y\partial_yf=x\,\partial_ug-\dfrac yx\,\partial_vg+\dfrac yx\,\partial_vg=x\,\partial_ug\). L'équation devient \(x\,\partial_ug=2g\), soit \(u\,\partial_ug=2g\). Pour \(u&gt;0\), \(\partial_u\!\Big(\dfrac{g}{u^2}\Big)=\dfrac{u\,\partial_ug-2g}{u^3}=0\), donc \(g(u,v)=u^2h(v)\) avec \(h\) de classe \(C^1\). Ainsi
       \[f(x,y)=x^2\,h\!\left(\frac yx\right),\qquad h\in C^1(\mathbb{R}).\]
       <b>Vérification</b> : \(\partial_xf=2xh-yh'\) et \(\partial_yf=xh'\), donc \(x\partial_xf+y\partial_yf=2x^2h=2f\) ✓.</p>
-      <div class="qsub">2. Jacobien de \(T\)</div>
-      <p>\(T\) est polynomiale, de classe \(C^1\) : \(J_T(x,y)=\begin{pmatrix}2x&amp;-2y\\ 2y&amp;2x\end{pmatrix}\), de jacobien \(4x^2+4y^2=4r^2\). Il ne s'annule qu'en \((0,0)\).</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-2-1a" data-pts="0.5" data-ds-id="2"><span>1. Changement de variables bijectif décrit (domaine, réciproque), \(g\) de classe \(C^1\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-2-1b" data-pts="0.75" data-ds-id="2"><span>1. Dérivées par la règle de la chaîne</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-2-1c" data-pts="0.5" data-ds-id="2"><span>1. Équation transformée : \(x\,\partial_ug=2g\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-2-1d" data-pts="0.5" data-ds-id="2"><span>1. Résolution : \(g=u^2h(v)\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-2-1e" data-pts="0.25" data-ds-id="2"><span>1. Retour à \((x,y)\) et régularité de \(h\)</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-2-2a" data-pts="0.5" data-ds-id="2"><span>2. Matrice jacobienne correcte</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-2-2b" data-pts="0.5" data-ds-id="2"><span>2. Déterminant \(4(x^2+y^2)=4r^2\)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-2-c3"><details class="cx-corr"><summary>✅ Exercice 3 — correction rédigée et barème (4,5 pts)</summary><div>
-      <div class="qsub">1. Champ de rotationnels</div>
-      <p>\(F\) est polynomiale, donc de classe \(C^1\) sur \(\mathbb{R}^3\), ouvert étoilé. \(\operatorname{div}F=\partial_x(x)+\partial_y(2yz)+\partial_z(-z-z^2)=1+2z-1-2z=0\). D'après le théorème de primitivation, <b>\(F\) est un champ de rotationnels</b>.</p>
-      <div class="qsub">2. Un potentiel vecteur</div>
-      <p>Cherchons \(G=(X,Y,0)\). Alors \(\overrightarrow{\mathrm{rot}}\,G=(-\partial_zY,\ \partial_zX,\ \partial_xY-\partial_yX)\) et il faut \(-\partial_zY=x\), \(\partial_zX=2yz\), \(\partial_xY-\partial_yX=-z-z^2\). Les deux premières équations donnent
+<div class="qsub">2. Jacobien de \(T\)</div>
+<p>\(T\) est polynomiale, de classe \(C^1\) : \(J_T(x,y)=\begin{pmatrix}2x&amp;-2y\\ 2y&amp;2x\end{pmatrix}\), de jacobien \(4x^2+4y^2=4r^2\). Il ne s'annule qu'en \((0,0)\).</p>
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds2-2-1a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Changement de variables bijectif décrit (domaine, réciproque), \(g\) de classe \(C^1\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-2-1b" data-ds-id="2" data-pts="0.75" type="checkbox"/><span>1. Dérivées par la règle de la chaîne</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-2-1c" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Équation transformée : \(x\,\partial_ug=2g\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-2-1d" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Résolution : \(g=u^2h(v)\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-2-1e" data-ds-id="2" data-pts="0.25" type="checkbox"/><span>1. Retour à \((x,y)\) et régularité de \(h\)</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-2-2a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>2. Matrice jacobienne correcte</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-2-2b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>2. Déterminant \(4(x^2+y^2)=4r^2\)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-2-c3"><details class="cx-corr"><summary>✅ Exercice 3 — correction rédigée et barème (4,5 pts)</summary><div>
+<div class="qsub">1. Champ de rotationnels</div>
+<p>\(F\) est polynomiale, donc de classe \(C^1\) sur \(\mathbb{R}^3\), ouvert étoilé. \(\operatorname{div}F=\partial_x(x)+\partial_y(2yz)+\partial_z(-z-z^2)=1+2z-1-2z=0\). D'après le théorème de primitivation, <b>\(F\) est un champ de rotationnels</b>.</p>
+<div class="qsub">2. Un potentiel vecteur</div>
+<p>Cherchons \(G=(X,Y,0)\). Alors \(\overrightarrow{\mathrm{rot}}\,G=(-\partial_zY,\ \partial_zX,\ \partial_xY-\partial_yX)\) et il faut \(-\partial_zY=x\), \(\partial_zX=2yz\), \(\partial_xY-\partial_yX=-z-z^2\). Les deux premières équations donnent
       \[Y=-xz+b(x,y),\qquad X=yz^2+a(x,y).\]
       La troisième : \(\partial_xY-\partial_yX=(-z+b_x)-(z^2+a_y)=-z-z^2+(b_x-a_y)\), qui doit valoir \(-z-z^2\) : il faut \(b_x=a_y\). Le choix le plus simple est \(a=b=0\) :
       \[G(x,y,z)=\big(yz^2,\ -xz,\ 0\big).\]
       <b>Vérification</b> : \(\overrightarrow{\mathrm{rot}}\,G=\big(0-\partial_z(-xz),\ \partial_z(yz^2)-0,\ \partial_x(-xz)-\partial_y(yz^2)\big)=(x,\ 2yz,\ -z-z^2)=F\) ✓.</p>
-      <div class="qsub">3. Rotationnel de \(F\)</div>
-      <p>\(\overrightarrow{\mathrm{rot}}\,F=\big(\partial_yF_3-\partial_zF_2,\ \partial_zF_1-\partial_xF_3,\ \partial_xF_2-\partial_yF_1\big)=(0-2y,\ 0,\ 0)=(-2y,0,0)\), qui n'est pas nul (par exemple en \((0,1,0)\)). Un champ de gradient de classe \(C^1\) a un rotationnel nul (Schwarz) : <b>\(F\) n'est pas un champ de gradient</b>.</p>
-      <div class="qsub">4. Identité</div>
-      <p>D'après le cours, \(\overrightarrow{\mathrm{rot}}(\overrightarrow{\mathrm{rot}}\,G)=\nabla(\operatorname{div}G)-\Delta G\). Ici \(\operatorname{div}G=\partial_x(yz^2)+\partial_y(-xz)=0\), donc \(\overrightarrow{\mathrm{rot}}\,F=\overrightarrow{\mathrm{rot}}(\overrightarrow{\mathrm{rot}}\,G)=-\Delta G\). Directement : \(\Delta G=(\Delta(yz^2),\Delta(-xz),0)=(2y,0,0)\), donc \(-\Delta G=(-2y,0,0)=\overrightarrow{\mathrm{rot}}\,F\) ✓.</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-1a" data-pts="0.5" data-ds-id="2"><span>1. Régularité \(C^1\) et ouvert étoilé cités</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-1b" data-pts="0.5" data-ds-id="2"><span>1. \(\operatorname{div}F=0\) calculée, conclusion</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-2a" data-pts="0.5" data-ds-id="2"><span>2. Système \(-\partial_zY=F_1\), \(\partial_zX=F_2\), \(\partial_xY-\partial_yX=F_3\) écrit</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-2b" data-pts="0.5" data-ds-id="2"><span>2. \(X\) et \(Y\) à une fonction de \((x,y)\) près</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-2c" data-pts="0.5" data-ds-id="2"><span>2. Troisième équation : condition \(b_x=a_y\), choix \(a=b=0\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-2d" data-pts="0.5" data-ds-id="2"><span>2. \(G\) donné et vérifié</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-3a" data-pts="0.5" data-ds-id="2"><span>3. \(\overrightarrow{\mathrm{rot}}\,F=(-2y,0,0)\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-3b" data-pts="0.5" data-ds-id="2"><span>3. Conclusion justifiée (rot non nul \(\Rightarrow\) pas de potentiel)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-3-4" data-pts="0.5" data-ds-id="2"><span>4. Identité \(\overrightarrow{\mathrm{rot}}\,\overrightarrow{\mathrm{rot}}=\nabla\operatorname{div}-\Delta\), \(\operatorname{div}G=0\), vérification</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-2-c4"><details class="cx-corr"><summary>✅ Exercice 4 — correction rédigée et barème (3 pts)</summary><div>
-      <div class="qsub">1. Sphère et plan \(z=1\)</div>
-      <p>En complétant les carrés : \((x-2)^2-4+(y+1)^2-1+(z-1)^2-1-3=0\iff(x-2)^2+(y+1)^2+(z-1)^2=9\). Le second membre est positif : c'est la sphère de centre \(C(2,-1,1)\) et de rayon \(3\). Paramétrisation :
+<div class="qsub">3. Rotationnel de \(F\)</div>
+<p>\(\overrightarrow{\mathrm{rot}}\,F=\big(\partial_yF_3-\partial_zF_2,\ \partial_zF_1-\partial_xF_3,\ \partial_xF_2-\partial_yF_1\big)=(0-2y,\ 0,\ 0)=(-2y,0,0)\), qui n'est pas nul (par exemple en \((0,1,0)\)). Un champ de gradient de classe \(C^1\) a un rotationnel nul (Schwarz) : <b>\(F\) n'est pas un champ de gradient</b>.</p>
+<div class="qsub">4. Identité</div>
+<p>D'après le cours, \(\overrightarrow{\mathrm{rot}}(\overrightarrow{\mathrm{rot}}\,G)=\nabla(\operatorname{div}G)-\Delta G\). Ici \(\operatorname{div}G=\partial_x(yz^2)+\partial_y(-xz)=0\), donc \(\overrightarrow{\mathrm{rot}}\,F=\overrightarrow{\mathrm{rot}}(\overrightarrow{\mathrm{rot}}\,G)=-\Delta G\). Directement : \(\Delta G=(\Delta(yz^2),\Delta(-xz),0)=(2y,0,0)\), donc \(-\Delta G=(-2y,0,0)=\overrightarrow{\mathrm{rot}}\,F\) ✓.</p>
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds2-3-1a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Régularité \(C^1\) et ouvert étoilé cités</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-3-1b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. \(\operatorname{div}F=0\) calculée, conclusion</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-3-2a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>2. Système \(-\partial_zY=F_1\), \(\partial_zX=F_2\), \(\partial_xY-\partial_yX=F_3\) écrit</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-3-2b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>2. \(X\) et \(Y\) à une fonction de \((x,y)\) près</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-3-2c" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>2. Troisième équation : condition \(b_x=a_y\), choix \(a=b=0\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-3-2d" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>2. \(G\) donné et vérifié</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-3-3a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. \(\overrightarrow{\mathrm{rot}}\,F=(-2y,0,0)\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-3-3b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. Conclusion justifiée (\(\operatorname{rot}\) non nul \(\Rightarrow\) pas de potentiel)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-3-4" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>4. Identité \(\overrightarrow{\mathrm{rot}}\,\overrightarrow{\mathrm{rot}}=\nabla\operatorname{div}-\Delta\), \(\operatorname{div}G=0\), vérification</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-2-c4"><details class="cx-corr"><summary>✅ Exercice 4 — correction rédigée et barème (3 pts)</summary><div>
+<div class="qsub">1. Sphère et plan \(z=1\)</div>
+<p>En complétant les carrés : \((x-2)^2-4+(y+1)^2-1+(z-1)^2-1-3=0\iff(x-2)^2+(y+1)^2+(z-1)^2=9\). Le second membre est positif : c'est la sphère de centre \(C(2,-1,1)\) et de rayon \(3\). Paramétrisation :
       \[(2+3\sin\varphi\cos\theta,\ \ -1+3\sin\varphi\sin\theta,\ \ 1+3\cos\varphi),\quad\theta\in[0,2\pi],\ \varphi\in[0,\pi].\]
       Pour \(z=1\), l'équation donne \((x-2)^2+(y+1)^2=9\) : l'intersection est le cercle de centre \((2,-1,1)\) et de rayon \(3\) dans le plan \(z=1\) (qui passe par le centre : c'est un grand cercle), paramétré par \(\gamma(t)=(2+3\cos t,\ -1+3\sin t,\ 1)\), \(t\in[0,2\pi]\).</p>
-      <div class="qsub">2. Le solide \(K\)</div>
-      <p>En sphériques, \(\sqrt{x^2+y^2}=r\sin\varphi\) et \(z=r\cos\varphi\), donc pour \(r&gt;0\) : \(z\ge\sqrt{x^2+y^2}\iff\cos\varphi\ge\sin\varphi\iff\varphi\in[0,\frac\pi4]\) (avec \(\varphi\in[0,\pi]\)). La condition \(x^2+y^2+z^2\le4\) donne \(r\le2\) :
+<div class="qsub">2. Le solide \(K\)</div>
+<p>En sphériques, \(\sqrt{x^2+y^2}=r\sin\varphi\) et \(z=r\cos\varphi\), donc pour \(r&gt;0\) : \(z\ge\sqrt{x^2+y^2}\iff\cos\varphi\ge\sin\varphi\iff\varphi\in[0,\frac\pi4]\) (avec \(\varphi\in[0,\pi]\)). La condition \(x^2+y^2+z^2\le4\) donne \(r\le2\) :
       \[K=\{0\le r\le2,\ \ 0\le\theta\le2\pi,\ \ 0\le\varphi\le\tfrac\pi4\},\qquad dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi.\]</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-4-1a" data-pts="0.5" data-ds-id="2"><span>1. Carrés complétés, \(R^2=9&gt;0\), centre \((2,-1,1)\) et rayon \(3\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-4-1b" data-pts="0.5" data-ds-id="2"><span>1. Paramétrisation de la sphère avec intervalles</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-4-1c" data-pts="0.5" data-ds-id="2"><span>1. Intersection avec \(z=1\) : cercle de rayon \(3\), paramétrisation avec \(t\in[0,2\pi]\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-4-2a" data-pts="1" data-ds-id="2"><span>2. \(z\ge\sqrt{x^2+y^2}\iff\varphi\le\frac\pi4\) démontré</span></label></td><td>1</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-4-2b" data-pts="0.5" data-ds-id="2"><span>2. Bornes \(r\le2\), \(\theta\in[0,2\pi]\) et jacobien \(r^2\sin\varphi\)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-2-c5"><details class="cx-corr"><summary>✅ Exercice 5 — correction rédigée et barème (5 pts)</summary><div>
-      <div class="qsub">1. Demi-disque</div>
-      <p>\(D\) est invariant par \((x,y)\mapsto(-x,y)\) et \(x\) est impaire en \(x\) : \(\iint_Dx\,dx\,dy=0\). Il reste \(\iint_Dy\,dx\,dy\). Avec \(x=r\cos\theta\), \(y=r\sin\theta\) (\(dx\,dy=r\,dr\,d\theta\), \(D\) correspondant à \(r\in[0,2]\), \(\theta\in[0,\pi]\)) :
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds2-4-1a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Carrés complétés, \(R^2=9&gt;0\), centre \((2,-1,1)\) et rayon \(3\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-4-1b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Paramétrisation de la sphère avec intervalles</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-4-1c" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Intersection avec \(z=1\) : cercle de rayon \(3\), paramétrisation avec \(t\in[0,2\pi]\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-4-2a" data-ds-id="2" data-pts="1" type="checkbox"/><span>2. \(z\ge\sqrt{x^2+y^2}\iff\varphi\le\frac\pi4\) démontré</span></label></td><td>1</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-4-2b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>2. Bornes \(r\le2\), \(\theta\in[0,2\pi]\) et jacobien \(r^2\sin\varphi\)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-2-c5"><details class="cx-corr"><summary>✅ Exercice 5 — correction rédigée et barème (5 pts)</summary><div>
+<div class="qsub">1. Demi-disque</div>
+<p>\(D\) est invariant par \((x,y)\mapsto(-x,y)\) et \(x\) est impaire en \(x\) : \(\iint_Dx\,dx\,dy=0\). Il reste \(\iint_Dy\,dx\,dy\). Avec \(x=r\cos\theta\), \(y=r\sin\theta\) (\(dx\,dy=r\,dr\,d\theta\), \(D\) correspondant à \(r\in[0,2]\), \(\theta\in[0,\pi]\)) :
       \[\iint_Dy\,dx\,dy=\int_0^2r^2dr\int_0^\pi\sin\theta\,d\theta=\frac83\cdot2=\frac{16}3.\]
       Donc \(\iint_D(x+y)\,dx\,dy=\dfrac{16}3\).</p>
-      <div class="qsub">2. Triple en cylindriques</div>
-      <p>Le solide est un cône d'axe \(Oz\) : \(V=\{0\le z\le1,\ 0\le r\le z,\ 0\le\theta\le2\pi\}\) (car \(x^2+y^2\le z^2\iff r\le z\) pour \(z\ge0\)). Avec \(x^2+y^2=r^2\) et \(dV=r\,dr\,d\theta\,dz\) :
+<div class="qsub">2. Triple en cylindriques</div>
+<p>Le solide est un cône d'axe \(Oz\) : \(V=\{0\le z\le1,\ 0\le r\le z,\ 0\le\theta\le2\pi\}\) (car \(x^2+y^2\le z^2\iff r\le z\) pour \(z\ge0\)). Avec \(x^2+y^2=r^2\) et \(dV=r\,dr\,d\theta\,dz\) :
       \[\iiint_V(x^2+y^2)\,dV=\int_0^1\!\!\int_0^{2\pi}\!\!\int_0^zr^3\,dr\,d\theta\,dz=2\pi\int_0^1\frac{z^4}4\,dz=\frac{2\pi}{20}=\frac\pi{10}.\]</p>
-      <div class="qsub">3. Volume de l'ellipsoïde</div>
-      <p>\(E\) est l'ellipsoïde de demi-axes \(a=1\), \(b=\frac12\), \(c=\frac13\). On pose \(x=r\sin\varphi\cos\theta\), \(y=\frac r2\sin\varphi\sin\theta\), \(z=\frac r3\cos\varphi\) : alors \(x^2+4y^2+9z^2=r^2\), donc \(E\) correspond à \(r\in[0,1]\), \(\theta\in[0,2\pi]\), \(\varphi\in[0,\pi]\), et le jacobien est \(1\cdot\frac12\cdot\frac13\,r^2\sin\varphi=\frac{r^2\sin\varphi}6\). Donc
+<div class="qsub">3. Volume de l'ellipsoïde</div>
+<p>\(E\) est l'ellipsoïde de demi-axes \(a=1\), \(b=\frac12\), \(c=\frac13\). On pose \(x=r\sin\varphi\cos\theta\), \(y=\frac r2\sin\varphi\sin\theta\), \(z=\frac r3\cos\varphi\) : alors \(x^2+4y^2+9z^2=r^2\), donc \(E\) correspond à \(r\in[0,1]\), \(\theta\in[0,2\pi]\), \(\varphi\in[0,\pi]\), et le jacobien est \(1\cdot\frac12\cdot\frac13\,r^2\sin\varphi=\frac{r^2\sin\varphi}6\). Donc
       \[\mathrm{Vol}(E)=\frac16\int_0^1r^2dr\int_0^\pi\sin\varphi\,d\varphi\int_0^{2\pi}d\theta=\frac16\cdot\frac13\cdot2\cdot2\pi=\frac{2\pi}9.\]
       Contrôle : \(\frac{4\pi}3abc=\frac{4\pi}3\cdot\frac16=\frac{2\pi}9\) ✓.</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-1a" data-pts="0.5" data-ds-id="2"><span>1. Symétrie du domaine et parité de \(x\) citées : \(\iint x=0\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-1b" data-pts="0.5" data-ds-id="2"><span>1. Polaires, domaine \(r\in[0,2]\), \(\theta\in[0,\pi]\), jacobien \(r\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-1c" data-pts="0.5" data-ds-id="2"><span>1. Résultat \(\frac{16}3\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-2a" data-pts="0.75" data-ds-id="2"><span>2. Description du cône en cylindriques (\(r\le z\le1\))</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-2b" data-pts="0.5" data-ds-id="2"><span>2. Intégrande \(r^2\) et jacobien \(r\) : \(r^3\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-2c" data-pts="0.75" data-ds-id="2"><span>2. Intégrations successives et résultat \(\frac\pi{10}\)</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-3a" data-pts="0.5" data-ds-id="2"><span>3. Changement de variables défini, domaine \(r\le1\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-3b" data-pts="0.5" data-ds-id="2"><span>3. Jacobien \(\frac16r^2\sin\varphi\) calculé ou justifié</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds2-5-3c" data-pts="0.5" data-ds-id="2"><span>3. Volume \(\frac{2\pi}9\)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <div class="scorebox" data-score="2" data-total="20"><span class="sc">0 / 20</span><span class="sm"></span></div>
-  </div>
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds2-5-1a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Symétrie du domaine et parité de \(x\) citées : \(\iint x=0\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-5-1b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Polaires, domaine \(r\in[0,2]\), \(\theta\in[0,\pi]\), jacobien \(r\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-5-1c" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>1. Résultat \(\frac{16}3\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-5-2a" data-ds-id="2" data-pts="0.75" type="checkbox"/><span>2. Description du cône en cylindriques (\(r\le z\le1\))</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-5-2b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>2. Intégrande \(r^2\) et jacobien \(r\) : \(r^3\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-5-2c" data-ds-id="2" data-pts="0.75" type="checkbox"/><span>2. Intégrations successives et résultat \(\frac\pi{10}\)</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-5-3a" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. Changement de variables défini, domaine \(r\le1\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-5-3b" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. Jacobien \(\frac16r^2\sin\varphi\) calculé ou justifié</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds2-5-3c" data-ds-id="2" data-pts="0.5" type="checkbox"/><span>3. Volume \(\frac{2\pi}9\)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<div class="scorebox" data-score="2" data-total="20"><span class="sc">0 / 20</span><span class="sm"></span></div>
+</div>
 </section>
 </div>
-
 <div class="wrap">
 <section class="dsb" id="blanc-3">
-  <div class="cx-chap-hd">
-    <span class="cx-chap-n">DS blanc n°3 · pièges et raisonnement</span>
-    <h2>Sujet 3 — chapitres 1 à 4</h2>
-    <p>5 exercices, 20 points, 1h30. Répartition conseillée : 3 min de lecture, puis 18 · 16 · 16 · 12 · 20 minutes, et 5 minutes de relecture. Ce sujet teste surtout la <b>compréhension</b> : contre-exemples, domaines, hypothèses.</p>
-  </div>
-
-  <div class="chrono" id="chrono-3" data-id="3" data-total="5400">
-    <span class="time">90:00</span>
-    <span class="cmsg"></span>
-    <button type="button" class="cbtn go" data-chrono="go">▶ Lancer le chrono</button>
-    <button type="button" class="cbtn" data-chrono="reset">Remettre à zéro</button>
-  </div>
-
-  <div class="sujet">
-    <div class="sujet-hd"><h2>Devoir surveillé d'Analyse 3</h2><span class="meta">Chapitres 1 à 4 · durée 1h30 · barème sur 20</span></div>
-    <div class="consignes"><b>Consignes.</b>
-      <ul>
-        <li>Sans documents ni calculatrice. Toute affirmation doit être justifiée : hypothèses des théorèmes citées, domaines précisés.</li>
-        <li>Les résultats doivent être donnés sous forme exacte et encadrés.</li>
-        <li>Le barème est indicatif.</li>
-      </ul></div>
-
-    <div class="dsx" id="b3-ex1">
-      <div class="dsx-hd"><h3>Exercice 1 — Vrai ou faux (justifier)</h3><span class="min">⏱ 18 min</span><span class="pts">5 points</span></div>
-      <p class="q">Pour chacune des affirmations suivantes, dire si elle est vraie ou fausse. Si elle est fausse, donner un contre-exemple précis et le justifier ; si elle est vraie, citer le résultat du cours qui l'établit. <span class="p" style="font-family:var(--f-mono);font-size:12px;color:var(--muted)">(1 pt chacune)</span></p>
-      <ol class="qs" type="a">
-        <li>Si \(f:\mathbb{R}^2\to\mathbb{R}\) admet des dérivées partielles en \((0,0)\), alors \(f\) est continue en \((0,0)\).</li>
-        <li>Si \(f(x,y)\) admet la même limite \(\ell\) le long de toute droite passant par \((0,0)\), alors \(\displaystyle\lim_{(x,y)\to(0,0)}f(x,y)=\ell\).</li>
-        <li>Si \(f\) est de classe \(C^2\) sur un ouvert \(U\) de \(\mathbb{R}^2\), alors \(\dfrac{\partial}{\partial x}\Big(\dfrac{\partial f}{\partial y}\Big)=\dfrac{\partial}{\partial y}\Big(\dfrac{\partial f}{\partial x}\Big)\) sur \(U\).</li>
-        <li>Tout champ de vecteurs \(F\) de classe \(C^1\) sur \(\mathbb{R}^3\) tel que \(\operatorname{div}F=0\) dérive d'un potentiel scalaire.</li>
-        <li>Tout champ de vecteurs \(F\) de classe \(C^1\) sur \(\mathbb{R}^3\) tel que \(\overrightarrow{\mathrm{rot}}\,F=\vec0\) dérive d'un potentiel scalaire.</li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b3-ex2">
-      <div class="dsx-hd"><h3>Exercice 2 — Fonction radiale dans le plan</h3><span class="min">⏱ 16 min</span><span class="pts">4 points</span></div>
-      <p class="q">Soit \(f\) de classe \(C^2\) sur \(]0,+\infty[\) et \(F(x,y)=f(x^2+y^2)\) pour \((x,y)\neq(0,0)\). On note \(s=x^2+y^2\).</p>
-      <ol class="qs">
-        <li>Calculer \(\dfrac{\partial F}{\partial x}\) et \(\dfrac{\partial F}{\partial y}\). <span class="p">(1 pt)</span></li>
-        <li>Montrer que \(\Delta F=\dfrac{\partial^2F}{\partial x^2}+\dfrac{\partial^2F}{\partial y^2}=4f'(s)+4s\,f''(s)\). <span class="p">(1,5 pt)</span></li>
-        <li>Déterminer toutes les fonctions \(f\) de classe \(C^2\) telles que \(F\) soit harmonique (\(\Delta F=0\)) sur \(\mathbb{R}^2\setminus\{(0,0)\}\). <span class="p">(1,5 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b3-ex3">
-      <div class="dsx-hd"><h3>Exercice 3 — Champs centraux</h3><span class="min">⏱ 16 min</span><span class="pts">4 points</span></div>
-      <p class="q">Soit \(g\) de classe \(C^1\) sur \(]0,+\infty[\), \(r=\sqrt{x^2+y^2+z^2}\), \(X=(x,y,z)\) et \(F(X)=g(r)\,X\) sur \(\mathbb{R}^3\setminus\{0\}\).</p>
-      <ol class="qs">
-        <li>Montrer que \(\overrightarrow{\mathrm{rot}}\,F=\vec0\) sur \(\mathbb{R}^3\setminus\{0\}\). <span class="p">(1 pt)</span></li>
-        <li>Pourquoi ne peut-on pas en conclure directement, par le théorème de primitivation, que \(F\) dérive d'un potentiel sur \(\mathbb{R}^3\setminus\{0\}\) ? <span class="p">(0,5 pt)</span></li>
-        <li>Soit \(G\) une primitive de \(r\mapsto r\,g(r)\) sur \(]0,+\infty[\). Montrer que \(\Phi(X)=G(r)\) vérifie \(\nabla\Phi=F\). Que conclut-on ? <span class="p">(1,5 pt)</span></li>
-        <li>Déterminer un potentiel de \(F_1(X)=\dfrac X{r^3}\) et de \(F_2(X)=e^{-r^2}\,X\). <span class="p">(1 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b3-ex4">
-      <div class="dsx-hd"><h3>Exercice 4 — Un cône</h3><span class="min">⏱ 12 min</span><span class="pts">3 points</span></div>
-      <ol class="qs">
-        <li>Montrer que \(4x^2+4y^2-z^2+2z-1=0\) est l'équation d'un cône de révolution ; préciser son sommet et son axe, et paramétrer la nappe \(z\ge1\). <span class="p">(1,5 pt)</span></li>
-        <li>Décrire en coordonnées cylindriques le solide \(W=\{4(x^2+y^2)\le(z-1)^2,\ 1\le z\le3\}\) et calculer son volume. <span class="p">(1,5 pt)</span></li>
-      </ol>
-    </div>
-
-    <div class="dsx" id="b3-ex5">
-      <div class="dsx-hd"><h3>Exercice 5 — Intégrales</h3><span class="min">⏱ 20 min</span><span class="pts">4 points</span></div>
-      <ol class="qs">
-        <li>Calculer \(\displaystyle\int_0^1\Big(\int_{\sqrt y}^{1}\sqrt{1+x^3}\,dx\Big)dy\). <span class="p">(1,5 pt)</span></li>
-        <li>Calculer \(\displaystyle\iint_D\dfrac{dx\,dy}{\sqrt{x^2+y^2}}\), où \(D=\{x^2+y^2\le2x\}\) privé de l'origine. <span class="p">(1,25 pt)</span></li>
-        <li>Calculer \(\displaystyle\iiint_B\exp\!\big((x^2+y^2+z^2)^{3/2}\big)\,dx\,dy\,dz\), où \(B\) est la boule unité. <span class="p">(1,25 pt)</span></li>
-      </ol>
-    </div>
-  </div>
-
-  <div class="corr-lock"><b>Fin du temps ?</b> Pose le stylo, puis seulement ouvre la correction. Cocher les points <b>réellement</b> obtenus : une justification absente de ta copie ne rapporte pas le point.</div>
-
-  <div class="dsb-cor" id="blanc-3-corr">
-    <h3>Correction et barème du DS n°3</h3>
-
-    <article id="blanc-3-c1"><details class="cx-corr"><summary>✅ Exercice 1 — correction rédigée et barème (5 pts)</summary><div>
-      <div class="qsub">a) <b>Faux.</b></div>
-      <p>Contre-exemple : \(f(x,y)=\dfrac{xy}{x^2+y^2}\) si \((x,y)\neq(0,0)\), \(f(0,0)=0\). Comme \(f(h,0)=0\) et \(f(0,k)=0\), \(\partial_xf(0,0)\) et \(\partial_yf(0,0)\) existent (et valent \(0\)). Mais \(f(t,t)=\frac12\not\to0=f(0,0)\) : \(f\) n'est pas continue en \((0,0)\).</p>
-      <div class="qsub">b) <b>Faux.</b></div>
-      <p>Contre-exemple : \(f(x,y)=\dfrac{x^2y}{x^4+y^2}\). Sur la droite \(y=mx\) (\(m\neq0\)) : \(f(x,mx)=\dfrac{mx}{x^2+m^2}\to0\) ; sur \(y=0\) et sur \(x=0\), \(f=0\). Donc la limite le long de toute droite vaut \(0\). Mais sur la parabole \(y=x^2\) : \(f(t,t^2)=\dfrac{t^4}{2t^4}=\dfrac12\neq0\). La fonction n'a pas de limite en \((0,0)\).</p>
-      <div class="qsub">c) <b>Vrai.</b></div>
-      <p>C'est le <b>théorème de Schwarz</b> : si \(f\) est de classe \(C^2\) sur un ouvert, les dérivées partielles croisées d'ordre 2 sont égales.</p>
-      <div class="qsub">d) <b>Faux.</b></div>
-      <p>Contre-exemple : \(F(x,y,z)=(-y,\,x,\,0)\), de classe \(C^1\) sur \(\mathbb{R}^3\), avec \(\operatorname{div}F=0+0+0=0\). Mais \(\overrightarrow{\mathrm{rot}}\,F=(0,0,\,1-(-1))=(0,0,2)\neq\vec0\). Or un champ de gradient de classe \(C^1\) a un rotationnel nul (Schwarz) : \(F\) ne dérive d'aucun potentiel.</p>
-      <div class="qsub">e) <b>Vrai.</b></div>
-      <p>\(\mathbb{R}^3\) est un ouvert <b>étoilé</b> ; d'après le théorème de primitivation, un champ \(C^1\) de rotationnel nul sur un ouvert étoilé dérive d'un potentiel.</p>
-      <div class="bar-hd">Barème (1 pt par affirmation : 0,5 verdict + 0,5 justification)</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-av" data-pts="0.5" data-ds-id="3"><span>a) Faux, et contre-exemple correct (dérivées partielles existent)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-aj" data-pts="0.5" data-ds-id="3"><span>a) Discontinuité justifiée (chemin \(y=x\))</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-bv" data-pts="0.5" data-ds-id="3"><span>b) Faux, avec \(\frac{x^2y}{x^4+y^2}\) ou équivalent : limite nulle sur toutes les droites</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-bj" data-pts="0.5" data-ds-id="3"><span>b) Chemin courbe \(y=x^2\) avec valeur \(\frac12\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-cv" data-pts="0.25" data-ds-id="3"><span>c) Vrai</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-cj" data-pts="0.75" data-ds-id="3"><span>c) Théorème de Schwarz cité avec ses hypothèses (\(C^2\), ouvert)</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-dv" data-pts="0.5" data-ds-id="3"><span>d) Faux avec \(F=(-y,x,0)\) et \(\operatorname{div}F=0\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-dj" data-pts="0.5" data-ds-id="3"><span>d) \(\overrightarrow{\mathrm{rot}}\,F\neq\vec0\), donc pas de potentiel</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-ev" data-pts="0.25" data-ds-id="3"><span>e) Vrai</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-1-ej" data-pts="0.75" data-ds-id="3"><span>e) Théorème de primitivation + \(\mathbb{R}^3\) étoilé cités</span></label></td><td>0,75</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-3-c2"><details class="cx-corr"><summary>✅ Exercice 2 — correction rédigée et barème (4 pts)</summary><div>
-      <div class="qsub">1. Dérivées premières</div>
-      <p>\(F\) est de classe \(C^2\) sur \(\mathbb{R}^2\setminus\{0\}\), comme composée de \(f\) et de \((x,y)\mapsto x^2+y^2\). Par la règle de la chaîne : \(\partial_xF=2x\,f'(s)\) et \(\partial_yF=2y\,f'(s)\).</p>
-      <div class="qsub">2. Laplacien</div>
-      <p>On dérive \(2x\,f'(s)\) en \(x\) (produit, puis chaîne pour \(f'(s)\)) : \(\partial_{xx}F=2f'(s)+2x\cdot2x\,f''(s)=2f'(s)+4x^2f''(s)\). De même \(\partial_{yy}F=2f'(s)+4y^2f''(s)\). En additionnant :
+<div class="cx-chap-hd">
+<span class="cx-chap-n">DS blanc \(n\)°3 · pièges et raisonnement</span>
+<h2>Sujet 3 — chapitres 1 à 4</h2>
+<p>5 exercices, 20 points, 1h30. Répartition conseillée : \(3\,\min\) de lecture, puis 18 · 16 · 16 · 12 · 20 minutes, et 5 minutes de relecture. Ce sujet teste surtout la <b>compréhension</b> : contre-exemples, domaines, hypothèses.</p>
+</div>
+<div class="chrono" data-id="3" data-total="5400" id="chrono-3">
+<span class="time">90:00</span>
+<span class="cmsg"></span>
+<button class="cbtn go" data-chrono="go" type="button">▶ Lancer le chrono</button>
+<button class="cbtn" data-chrono="reset" type="button">Remettre à zéro</button>
+</div>
+<div class="sujet">
+<div class="sujet-hd"><h2>Devoir surveillé d'Analyse 3</h2><span class="meta">Chapitres 1 à 4 · durée \(1\,\mathrm{h}_{30}\,\cdot\) barème sur 20</span></div>
+<div class="consignes"><b>Consignes.</b>
+<ul>
+<li>Sans documents ni calculatrice. Toute affirmation doit être justifiée : hypothèses des théorèmes citées, domaines précisés.</li>
+<li>Les résultats doivent être donnés sous forme exacte et encadrés.</li>
+<li>Le barème est indicatif.</li>
+</ul></div>
+<div class="dsx" id="b3-ex1">
+<div class="dsx-hd"><h3>Exercice 1 — Vrai ou faux (justifier)</h3><span class="min">⏱ \(18\,\min\)</span><span class="pts">5 points</span></div>
+<p class="q">Pour chacune des affirmations suivantes, dire si elle est vraie ou fausse. Si elle est fausse, donner un contre-exemple précis et le justifier ; si elle est vraie, citer le résultat du cours qui l'établit. <span class="p" style="font-family:var(--f-mono);font-size:12px;color:var(--muted)">(1 pt chacune)</span></p>
+<ol class="qs" type="a">
+<li>Si \(f:\mathbb{R}^2\to\mathbb{R}\) admet des dérivées partielles en \((0,0)\), alors \(f\) est continue en \((0,0)\).</li>
+<li>Si \(f(x,y)\) admet la même limite \(\ell\) le long de toute droite passant par \((0,0)\), alors \(\displaystyle\lim_{(x,y)\to(0,0)}f(x,y)=\ell\).</li>
+<li>Si \(f\) est de classe \(C^2\) sur un ouvert \(U\) de \(\mathbb{R}^2\), alors \(\dfrac{\partial}{\partial x}\Big(\dfrac{\partial f}{\partial y}\Big)=\dfrac{\partial}{\partial y}\Big(\dfrac{\partial f}{\partial x}\Big)\) sur \(U\).</li>
+<li>Tout champ de vecteurs \(F\) de classe \(C^1\) sur \(\mathbb{R}^3\) tel que \(\operatorname{div}F=0\) dérive d'un potentiel scalaire.</li>
+<li>Tout champ de vecteurs \(F\) de classe \(C^1\) sur \(\mathbb{R}^3\) tel que \(\overrightarrow{\mathrm{rot}}\,F=\vec0\) dérive d'un potentiel scalaire.</li>
+</ol>
+</div>
+<div class="dsx" id="b3-ex2">
+<div class="dsx-hd"><h3>Exercice 2 — Fonction radiale dans le plan</h3><span class="min">⏱ \(16\,\min\)</span><span class="pts">4 points</span></div>
+<p class="q">Soit \(f\) de classe \(C^2\) sur \(]0,+\infty[\) et \(F(x,y)=f(x^2+y^2)\) pour \((x,y)\neq(0,0)\). On note \(s=x^2+y^2\).</p>
+<ol class="qs">
+<li>Calculer \(\dfrac{\partial F}{\partial x}\) et \(\dfrac{\partial F}{\partial y}\). <span class="p">(1 pt)</span></li>
+<li>Montrer que \(\Delta F=\dfrac{\partial^2F}{\partial x^2}+\dfrac{\partial^2F}{\partial y^2}=4f'(s)+4s\,f''(s)\). <span class="p">(1,5 pt)</span></li>
+<li>Déterminer toutes les fonctions \(f\) de classe \(C^2\) telles que \(F\) soit harmonique (\(\Delta F=0\)) sur \(\mathbb{R}^2\setminus\{(0,0)\}\). <span class="p">(1,5 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b3-ex3">
+<div class="dsx-hd"><h3>Exercice 3 — Champs centraux</h3><span class="min">⏱ \(16\,\min\)</span><span class="pts">4 points</span></div>
+<p class="q">Soit \(g\) de classe \(C^1\) sur \(]0,+\infty[\), \(r=\sqrt{x^2+y^2+z^2}\), \(X=(x,y,z)\) et \(F(X)=g(r)\,X\) sur \(\mathbb{R}^3\setminus\{0\}\).</p>
+<ol class="qs">
+<li>Montrer que \(\overrightarrow{\mathrm{rot}}\,F=\vec0\) sur \(\mathbb{R}^3\setminus\{0\}\). <span class="p">(1 pt)</span></li>
+<li>Pourquoi ne peut-on pas en conclure directement, par le théorème de primitivation, que \(F\) dérive d'un potentiel sur \(\mathbb{R}^3\setminus\{0\}\) ? <span class="p">(0,5 pt)</span></li>
+<li>Soit \(G\) une primitive de \(r\mapsto r\,g(r)\) sur \(]0,+\infty[\). Montrer que \(\Phi(X)=G(r)\) vérifie \(\nabla\Phi=F\). Que conclut-on ? <span class="p">(1,5 pt)</span></li>
+<li>Déterminer un potentiel de \(F_1(X)=\dfrac X{r^3}\) et de \(F_2(X)=e^{-r^2}\,X\). <span class="p">(1 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b3-ex4">
+<div class="dsx-hd"><h3>Exercice 4 — Un cône</h3><span class="min">⏱ \(12\,\min\)</span><span class="pts">3 points</span></div>
+<ol class="qs">
+<li>Montrer que \(4x^2+4y^2-z^2+2z-1=0\) est l'équation d'un cône de révolution ; préciser son sommet et son axe, et paramétrer la nappe \(z\ge1\). <span class="p">(1,5 pt)</span></li>
+<li>Décrire en coordonnées cylindriques le solide \(W=\{4(x^2+y^2)\le(z-1)^2,\ 1\le z\le3\}\) et calculer son volume. <span class="p">(1,5 pt)</span></li>
+</ol>
+</div>
+<div class="dsx" id="b3-ex5">
+<div class="dsx-hd"><h3>Exercice 5 — Intégrales</h3><span class="min">⏱ \(20\,\min\)</span><span class="pts">4 points</span></div>
+<ol class="qs">
+<li>Calculer \(\displaystyle\int_0^1\Big(\int_{\sqrt y}^{1}\sqrt{1+x^3}\,dx\Big)dy\). <span class="p">(1,5 pt)</span></li>
+<li>Calculer \(\displaystyle\iint_D\dfrac{dx\,dy}{\sqrt{x^2+y^2}}\), où \(D=\{x^2+y^2\le2x\}\) privé de l'origine. <span class="p">(1,25 pt)</span></li>
+<li>Calculer \(\displaystyle\iiint_B\exp\!\big((x^2+y^2+z^2)^{3/2}\big)\,dx\,dy\,dz\), où \(B\) est la boule unité. <span class="p">(1,25 pt)</span></li>
+</ol>
+</div>
+</div>
+<div class="corr-lock"><b>Fin du temps ?</b> Pose le stylo, puis seulement ouvre la correction. Cocher les points <b>réellement</b> obtenus : une justification absente de ta copie ne rapporte pas le point.</div>
+<div class="dsb-cor" id="blanc-3-corr">
+<h3>Correction et barème du DS \(n\)°3</h3>
+<article id="blanc-3-c1"><details class="cx-corr"><summary>✅ Exercice 1 — correction rédigée et barème (5 pts)</summary><div>
+<div class="qsub">a) <b>Faux.</b></div>
+<p>Contre-exemple : \(f(x,y)=\dfrac{xy}{x^2+y^2}\) si \((x,y)\neq(0,0)\), \(f(0,0)=0\). Comme \(f(h,0)=0\) et \(f(0,k)=0\), \(\partial_xf(0,0)\) et \(\partial_yf(0,0)\) existent (et valent \(0\)). Mais \(f(t,t)=\frac12\not\to0=f(0,0)\) : \(f\) n'est pas continue en \((0,0)\).</p>
+<div class="qsub">\(b\)) <b>Faux.</b></div>
+<p>Contre-exemple : \(f(x,y)=\dfrac{x^2y}{x^4+y^2}\). Sur la droite \(y=mx\) (\(m\neq0\)) : \(f(x,mx)=\dfrac{mx}{x^2+m^2}\to0\) ; sur \(y=0\) et sur \(x=0\), \(f=0\). Donc la limite le long de toute droite vaut \(0\). Mais sur la parabole \(y=x^2\) : \(f(t,t^2)=\dfrac{t^4}{2t^4}=\dfrac12\neq0\). La fonction n'a pas de limite en \((0,0)\).</p>
+<div class="qsub">\(c\)) <b>Vrai.</b></div>
+<p>C'est le <b>théorème de Schwarz</b> : si \(f\) est de classe \(C^2\) sur un ouvert, les dérivées partielles croisées d'ordre 2 sont égales.</p>
+<div class="qsub">\(d\)) <b>Faux.</b></div>
+<p>Contre-exemple : \(F(x,y,z)=(-y,\,x,\,0)\), de classe \(C^1\) sur \(\mathbb{R}^3\), avec \(\operatorname{div}F=0+0+0=0\). Mais \(\overrightarrow{\mathrm{rot}}\,F=(0,0,\,1-(-1))=(0,0,2)\neq\vec0\). Or un champ de gradient de classe \(C^1\) a un rotationnel nul (Schwarz) : \(F\) ne dérive d'aucun potentiel.</p>
+<div class="qsub">\(e\)) <b>Vrai.</b></div>
+<p>\(\mathbb{R}^3\) est un ouvert <b>étoilé</b> ; d'après le théorème de primitivation, un champ \(C^1\) de rotationnel nul sur un ouvert étoilé dérive d'un potentiel.</p>
+<div class="bar-hd">Barème (1 pt par affirmation : 0,5 verdict + 0,5 justification)</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds3-1-av" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>a) Faux, et contre-exemple correct (dérivées partielles existent)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-aj" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>a) Discontinuité justifiée (chemin \(y=x\))</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-bv" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>\(b\)) Faux, avec \(\frac{x^2y}{x^4+y^2}\) ou équivalent : limite nulle sur toutes les droites</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-bj" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>\(b\)) Chemin courbe \(y=x^2\) avec valeur \(\frac12\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-cv" data-ds-id="3" data-pts="0.25" type="checkbox"/><span>\(c\)) Vrai</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-cj" data-ds-id="3" data-pts="0.75" type="checkbox"/><span>\(c\)) Théorème de Schwarz cité avec ses hypothèses (\(C^2\), ouvert)</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-dv" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>\(d\)) Faux avec \(F=(-y,x,0)\) et \(\operatorname{div}F=0\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-dj" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>\(d\)) \(\overrightarrow{\mathrm{rot}}\,F\neq\vec0\), donc pas de potentiel</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-ev" data-ds-id="3" data-pts="0.25" type="checkbox"/><span>\(e\)) Vrai</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-1-ej" data-ds-id="3" data-pts="0.75" type="checkbox"/><span>\(e\)) Théorème de primitivation + \(\mathbb{R}^3\) étoilé cités</span></label></td><td>0,75</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-3-c2"><details class="cx-corr"><summary>✅ Exercice 2 — correction rédigée et barème (4 pts)</summary><div>
+<div class="qsub">1. Dérivées premières</div>
+<p>\(F\) est de classe \(C^2\) sur \(\mathbb{R}^2\setminus\{0\}\), comme composée de \(f\) et de \((x,y)\mapsto x^2+y^2\). Par la règle de la chaîne : \(\partial_xF=2x\,f'(s)\) et \(\partial_yF=2y\,f'(s)\).</p>
+<div class="qsub">2. Laplacien</div>
+<p>On dérive \(2x\,f'(s)\) en \(x\) (produit, puis chaîne pour \(f'(s)\)) : \(\partial_{xx}F=2f'(s)+2x\cdot2x\,f''(s)=2f'(s)+4x^2f''(s)\). De même \(\partial_{yy}F=2f'(s)+4y^2f''(s)\). En additionnant :
       \[\Delta F=4f'(s)+4\,(x^2+y^2)\,f''(s)=4f'(s)+4s\,f''(s).\]</p>
-      <div class="qsub">3. Fonctions harmoniques</div>
-      <p>Quand \((x,y)\) décrit \(\mathbb{R}^2\setminus\{0\}\), \(s=x^2+y^2\) prend toutes les valeurs de \(]0,+\infty[\). Donc \(F\) est harmonique \(\iff f'(s)+s\,f''(s)=0\) pour tout \(s&gt;0\) \(\iff(s\,f'(s))'=0\iff s\,f'(s)=c\) (constante) \(\iff f'(s)=\dfrac cs\iff f(s)=c\ln s+d\), avec \(c,d\in\mathbb{R}\). Les fonctions cherchées sont donc
+<div class="qsub">3. Fonctions harmoniques</div>
+<p>Quand \((x,y)\) décrit \(\mathbb{R}^2\setminus\{0\}\), \(s=x^2+y^2\) prend toutes les valeurs de \(]0,+\infty[\). Donc \(F\) est harmonique \(\iff f'(s)+s\,f''(s)=0\) pour tout \(s&gt;0\) \(\iff(s\,f'(s))'=0\iff s\,f'(s)=c\) (constante) \(\iff f'(s)=\dfrac cs\iff f(s)=c\ln s+d\), avec \(c,d\in\mathbb{R}\). Les fonctions cherchées sont donc
       \[F(x,y)=c\,\ln(x^2+y^2)+d.\]
       (On retrouve que \(\ln(x^2+y^2)\) est harmonique, vu en M1.10.)</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-2-1" data-pts="1" data-ds-id="3"><span>1. \(\partial_xF=2xf'(s)\), \(\partial_yF=2yf'(s)\), régularité justifiée</span></label></td><td>1</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-2-2a" data-pts="0.75" data-ds-id="3"><span>2. Dérivée seconde correcte (produit + chaîne) : \(2f'+4x^2f''\)</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-2-2b" data-pts="0.75" data-ds-id="3"><span>2. Somme et regroupement \(4f'+4sf''\)</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-2-3a" data-pts="0.5" data-ds-id="3"><span>3. Réduction à l'équation en \(s\) : toutes les valeurs \(s&gt;0\) sont atteintes</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-2-3b" data-pts="0.5" data-ds-id="3"><span>3. \((sf')'=0\) puis \(sf'=c\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-2-3c" data-pts="0.5" data-ds-id="3"><span>3. \(f=c\ln s+d\) et conclusion en \(F\)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-3-c3"><details class="cx-corr"><summary>✅ Exercice 3 — correction rédigée et barème (4 pts)</summary><div>
-      <div class="qsub">1. Rotationnel nul</div>
-      <p>\(F=g(r)\,X\) est de classe \(C^1\) sur \(\mathbb{R}^3\setminus\{0\}\) (\(r\) est \(C^1\) hors de l'origine). Avec la formule \(\overrightarrow{\mathrm{rot}}(p\vec u)=p\,\overrightarrow{\mathrm{rot}}\,\vec u+\nabla p\wedge\vec u\) (\(p=g(r)\), \(\vec u=X\), tous deux \(C^1\)) et \(\overrightarrow{\mathrm{rot}}\,X=\vec0\) :
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds3-2-1" data-ds-id="3" data-pts="1" type="checkbox"/><span>1. \(\partial_xF=2xf'(s)\), \(\partial_yF=2yf'(s)\), régularité justifiée</span></label></td><td>1</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-2-2a" data-ds-id="3" data-pts="0.75" type="checkbox"/><span>2. Dérivée seconde correcte (produit + chaîne) : \(2f'+4x^2f''\)</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-2-2b" data-ds-id="3" data-pts="0.75" type="checkbox"/><span>2. Somme et regroupement \(4f'+4sf''\)</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-2-3a" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>3. Réduction à l'équation en \(s\) : toutes les valeurs \(s&gt;0\) sont atteintes</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-2-3b" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>3. \((sf')'=0\) puis \(sf'=c\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-2-3c" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>3. \(f=c\ln s+d\) et conclusion en \(F\)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-3-c3"><details class="cx-corr"><summary>✅ Exercice 3 — correction rédigée et barème (4 pts)</summary><div>
+<div class="qsub">1. Rotationnel nul</div>
+<p>\(F=g(r)\,X\) est de classe \(C^1\) sur \(\mathbb{R}^3\setminus\{0\}\) (\(r\) est \(C^1\) hors de l'origine). Avec la formule \(\overrightarrow{\mathrm{rot}}(p\vec u)=p\,\overrightarrow{\mathrm{rot}}\,\vec u+\nabla p\wedge\vec u\) (\(p=g(r)\), \(\vec u=X\), tous deux \(C^1\)) et \(\overrightarrow{\mathrm{rot}}\,X=\vec0\) :
       \[\overrightarrow{\mathrm{rot}}\,F=\nabla\big(g(r)\big)\wedge X=g'(r)\,\frac Xr\wedge X=\vec0,\]
       car \(X\wedge X=\vec0\).</p>
-      <div class="qsub">2. Pourquoi cela ne suffit pas</div>
-      <p>Le théorème de primitivation exige un ouvert <b>étoilé</b>, et \(\mathbb{R}^3\setminus\{0\}\) ne l'est pas (aucun centre ne « voit » le point opposé sans traverser l'origine). L'hypothèse manque : on ne peut pas conclure directement.</p>
-      <div class="qsub">3. Construction d'un potentiel</div>
-      <p>La fonction \(r\mapsto r\,g(r)\) est continue sur \(]0,+\infty[\) : elle admet une primitive \(G\) (de classe \(C^1\)). \(\Phi(X)=G(r)\) est de classe \(C^1\) sur \(\mathbb{R}^3\setminus\{0\}\) et
+<div class="qsub">2. Pourquoi cela ne suffit pas</div>
+<p>Le théorème de primitivation exige un ouvert <b>étoilé</b>, et \(\mathbb{R}^3\setminus\{0\}\) ne l'est pas (aucun centre ne « voit » le point opposé sans traverser l'origine). L'hypothèse manque : on ne peut pas conclure directement.</p>
+<div class="qsub">3. Construction d'un potentiel</div>
+<p>La fonction \(r\mapsto r\,g(r)\) est continue sur \(]0,+\infty[\) : elle admet une primitive \(G\) (de classe \(C^1\)). \(\Phi(X)=G(r)\) est de classe \(C^1\) sur \(\mathbb{R}^3\setminus\{0\}\) et
       \[\nabla\Phi=G'(r)\,\nabla r=r\,g(r)\,\frac Xr=g(r)\,X=F.\]
       On a exhibé un potentiel défini sur <b>tout</b> \(\mathbb{R}^3\setminus\{0\}\) : <b>tout champ central \(g(r)X\) est un champ de gradient</b>, bien que cet ouvert ne soit pas étoilé.</p>
-      <div class="qsub">4. Applications</div>
-      <p>Pour \(F_1\) : \(g(r)=r^{-3}\), \(r\,g(r)=r^{-2}\), \(G(r)=-\dfrac1r\), donc \(\Phi_1(X)=-\dfrac1r+K\). Vérification : \(\nabla(-r^{-1})=r^{-2}\dfrac Xr=\dfrac X{r^3}\) ✓.<br>
+<div class="qsub">4. Applications</div>
+<p>Pour \(F_1\) : \(g(r)=r^{-3}\), \(r\,g(r)=r^{-2}\), \(G(r)=-\dfrac1r\), donc \(\Phi_1(X)=-\dfrac1r+K\). Vérification : \(\nabla(-r^{-1})=r^{-2}\dfrac Xr=\dfrac X{r^3}\) ✓.<br/>
       Pour \(F_2\) : \(g(r)=e^{-r^2}\), \(r\,g(r)=re^{-r^2}\), \(G(r)=-\dfrac{e^{-r^2}}2\), donc \(\Phi_2(X)=-\dfrac{e^{-r^2}}2+K\). Vérification : \(\nabla\Phi_2=re^{-r^2}\dfrac Xr=e^{-r^2}X\) ✓.</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-3-1a" data-pts="0.5" data-ds-id="3"><span>1. Identité \(\overrightarrow{\mathrm{rot}}(p\vec u)\) citée avec ses hypothèses (\(C^1\)), \(\overrightarrow{\mathrm{rot}}\,X=\vec0\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-3-1b" data-pts="0.5" data-ds-id="3"><span>1. \(\nabla g(r)=g'(r)X/r\) puis \(X\wedge X=\vec0\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-3-2" data-pts="0.5" data-ds-id="3"><span>2. \(\mathbb{R}^3\setminus\{0\}\) non étoilé : l'hypothèse du théorème manque</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-3-3a" data-pts="0.5" data-ds-id="3"><span>3. Existence de la primitive \(G\) (continuité de \(rg(r)\))</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-3-3b" data-pts="0.5" data-ds-id="3"><span>3. \(\nabla\Phi=G'(r)X/r=g(r)X\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-3-3c" data-pts="0.5" data-ds-id="3"><span>3. Conclusion : champ de gradient sur tout \(\mathbb{R}^3\setminus\{0\}\), malgré le domaine non étoilé</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-3-4a" data-pts="0.5" data-ds-id="3"><span>4. Potentiel de \(F_1\) : \(-\frac1r+K\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-3-4b" data-pts="0.5" data-ds-id="3"><span>4. Potentiel de \(F_2\) : \(-\frac12e^{-r^2}+K\)</span></label></td><td>0,5</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-3-c4"><details class="cx-corr"><summary>✅ Exercice 4 — correction rédigée et barème (3 pts)</summary><div>
-      <div class="qsub">1. Le cône</div>
-      <p>Comme \(-z^2+2z-1=-(z-1)^2\), l'équation s'écrit \(4(x^2+y^2)=(z-1)^2\), soit \(x^2+y^2=\dfrac{(z-1)^2}4\). La coupe par le plan \(z=k\) est le cercle de centre \((0,0,k)\) et de rayon \(\dfrac{|k-1|}2\), qui se réduit à un point pour \(k=1\) : c'est un <b>cône de révolution</b> de sommet \(S(0,0,1)\), d'axe la droite \(\{x=y=0\}\) (l'axe \(Oz\)), à deux nappes. Paramétrisation de la nappe \(z\ge1\) :
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds3-3-1a" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>1. Identité \(\overrightarrow{\mathrm{rot}}(p\vec u)\) citée avec ses hypothèses (\(C^1\)), \(\overrightarrow{\mathrm{rot}}\,X=\vec0\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-3-1b" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>1. \(\nabla g(r)=g'(r)X/r\) puis \(X\wedge X=\vec0\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-3-2" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>2. \(\mathbb{R}^3\setminus\{0\}\) non étoilé : l'hypothèse du théorème manque</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-3-3a" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>3. Existence de la primitive \(G\) (continuité de \(rg(r)\))</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-3-3b" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>3. \(\nabla\Phi=G'(r)X/r=g(r)X\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-3-3c" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>3. Conclusion : champ de gradient sur tout \(\mathbb{R}^3\setminus\{0\}\), malgré le domaine non étoilé</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-3-4a" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>4. Potentiel de \(F_1\) : \(-\frac1r+K\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-3-4b" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>4. Potentiel de \(F_2\) : \(-\frac12e^{-r^2}+K\)</span></label></td><td>0,5</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-3-c4"><details class="cx-corr"><summary>✅ Exercice 4 — correction rédigée et barème (3 pts)</summary><div>
+<div class="qsub">1. Le cône</div>
+<p>Comme \(-z^2+2z-1=-(z-1)^2\), l'équation s'écrit \(4(x^2+y^2)=(z-1)^2\), soit \(x^2+y^2=\dfrac{(z-1)^2}4\). La coupe par le plan \(z=k\) est le cercle de centre \((0,0,k)\) et de rayon \(\dfrac{|k-1|}2\), qui se réduit à un point pour \(k=1\) : c'est un <b>cône de révolution</b> de sommet \(S(0,0,1)\), d'axe la droite \(\{x=y=0\}\) (l'axe \(Oz\)), à deux nappes. Paramétrisation de la nappe \(z\ge1\) :
       \[x=r\cos\theta,\quad y=r\sin\theta,\quad z=1+2r,\qquad r\ge0,\ \theta\in[0,2\pi],\]
       car \(4(x^2+y^2)=4r^2=(2r)^2=(z-1)^2\) ✓.</p>
-      <div class="qsub">2. Le solide \(W\)</div>
-      <p>Pour \(z\in[1,3]\), \(z-1\ge0\), donc \(4r^2\le(z-1)^2\iff r\le\dfrac{z-1}2\) :
+<div class="qsub">2. Le solide \(W\)</div>
+<p>Pour \(z\in[1,3]\), \(z-1\ge0\), donc \(4r^2\le(z-1)^2\iff r\le\dfrac{z-1}2\) :
       \[W=\{1\le z\le3,\ \ 0\le r\le\tfrac{z-1}2,\ \ 0\le\theta\le2\pi\}.\]
       \[\mathrm{Vol}(W)=\int_1^3\!\!\int_0^{2\pi}\!\!\int_0^{(z-1)/2}r\,dr\,d\theta\,dz=2\pi\int_1^3\frac{(z-1)^2}8\,dz=\frac{2\pi}8\cdot\frac83=\frac{2\pi}3.\]
       <b>Contrôle</b> : \(W\) est un cône plein de hauteur \(2\) et de rayon de base \(1\) : \(\frac13\pi\cdot1^2\cdot2=\frac{2\pi}3\) ✓.</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-4-1a" data-pts="0.5" data-ds-id="3"><span>1. Factorisation \(-z^2+2z-1=-(z-1)^2\), équation réduite</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-4-1b" data-pts="0.5" data-ds-id="3"><span>1. Nature (cône de révolution), sommet et axe justifiés par les coupes</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-4-1c" data-pts="0.5" data-ds-id="3"><span>1. Paramétrisation de la nappe \(z\ge1\) avec intervalles</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-4-2a" data-pts="0.75" data-ds-id="3"><span>2. Description \(0\le r\le\frac{z-1}2\) justifiée (signe de \(z-1\))</span></label></td><td>0,75</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-4-2b" data-pts="0.5" data-ds-id="3"><span>2. Intégrale triple avec le jacobien \(r\) et calcul</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-4-2c" data-pts="0.25" data-ds-id="3"><span>2. Résultat \(\frac{2\pi}3\), contrôlé</span></label></td><td>0,25</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <article id="blanc-3-c5"><details class="cx-corr"><summary>✅ Exercice 5 — correction rédigée et barème (4 pts)</summary><div>
-      <div class="qsub">1. Inversion de l'ordre</div>
-      <p>\(\sqrt{1+x^3}\) n'a pas de primitive simple en \(x\) pour des bornes en \(\sqrt y\) : on inverse. Domaine : \(D=\{0\le y\le1,\ \sqrt y\le x\le1\}=\{0\le x\le1,\ 0\le y\le x^2\}\). L'intégrande est continu sur le compact \(D\) : Fubini.
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds3-4-1a" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>1. Factorisation \(-z^2+2z-1=-(z-1)^2\), équation réduite</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-4-1b" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>1. Nature (cône de révolution), sommet et axe justifiés par les coupes</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-4-1c" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>1. Paramétrisation de la nappe \(z\ge1\) avec intervalles</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-4-2a" data-ds-id="3" data-pts="0.75" type="checkbox"/><span>2. Description \(0\le r\le\frac{z-1}2\) justifiée (signe de \(z-1\))</span></label></td><td>0,75</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-4-2b" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>2. Intégrale triple avec le jacobien \(r\) et calcul</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-4-2c" data-ds-id="3" data-pts="0.25" type="checkbox"/><span>2. Résultat \(\frac{2\pi}3\), contrôlé</span></label></td><td>0,25</td></tr>
+</tbody></table>
+</div></details></article>
+<article id="blanc-3-c5"><details class="cx-corr"><summary>✅ Exercice 5 — correction rédigée et barème (4 pts)</summary><div>
+<div class="qsub">1. Inversion de l'ordre</div>
+<p>\(\sqrt{1+x^3}\) n'a pas de primitive simple en \(x\) pour des bornes en \(\sqrt y\) : on inverse. Domaine : \(D=\{0\le y\le1,\ \sqrt y\le x\le1\}=\{0\le x\le1,\ 0\le y\le x^2\}\). L'intégrande est continu sur le compact \(D\) : Fubini.
       \[I=\int_0^1\Big(\int_0^{x^2}\sqrt{1+x^3}\,dy\Big)dx=\int_0^1x^2\sqrt{1+x^3}\,dx=\Big[\frac29(1+x^3)^{3/2}\Big]_0^1=\frac29\big(2\sqrt2-1\big).\]</p>
-      <div class="qsub">2. Disque décentré</div>
-      <p>\(x^2+y^2\le2x\iff(x-1)^2+y^2\le1\) : disque de centre \((1,0)\), rayon \(1\). En polaires, \(r\le2\cos\theta\) avec \(\theta\in[-\frac\pi2,\frac\pi2]\). L'intégrande \(\frac1r\) n'est pas défini en \(O\) (point négligeable) et, avec le jacobien, \(\frac1r\cdot r=1\) :
+<div class="qsub">2. Disque décentré</div>
+<p>\(x^2+y^2\le2x\iff(x-1)^2+y^2\le1\) : disque de centre \((1,0)\), rayon \(1\). En polaires, \(r\le2\cos\theta\) avec \(\theta\in[-\frac\pi2,\frac\pi2]\). L'intégrande \(\frac1r\) n'est pas défini en \(O\) (point négligeable) et, avec le jacobien, \(\frac1r\cdot r=1\) :
       \[\iint_D\frac{dx\,dy}{\sqrt{x^2+y^2}}=\int_{-\pi/2}^{\pi/2}\!\!\int_0^{2\cos\theta}\frac1r\,r\,dr\,d\theta=\int_{-\pi/2}^{\pi/2}2\cos\theta\,d\theta=4.\]</p>
-      <div class="qsub">3. Boule unité</div>
-      <p>En sphériques, \((x^2+y^2+z^2)^{3/2}=r^3\), \(r\in[0,1]\), \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\) :
+<div class="qsub">3. Boule unité</div>
+<p>En sphériques, \((x^2+y^2+z^2)^{3/2}=r^3\), \(r\in[0,1]\), \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\) :
       \[\iiint_Be^{r^3}dV=\int_0^1r^2e^{r^3}dr\int_0^\pi\sin\varphi\,d\varphi\int_0^{2\pi}d\theta=\Big[\frac{e^{r^3}}3\Big]_0^1\cdot2\cdot2\pi=\frac{4\pi}3\,(e-1).\]</p>
-      <div class="bar-hd">Barème</div>
-      <table class="barem"><tbody>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-1a" data-pts="0.5" data-ds-id="3"><span>1. Domaine lu et réécrit : \(\{0\le x\le1,\ 0\le y\le x^2\}\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-1b" data-pts="0.5" data-ds-id="3"><span>1. Fubini (continuité, compact) et \(\int_0^1x^2\sqrt{1+x^3}dx\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-1c" data-pts="0.5" data-ds-id="3"><span>1. Valeur \(\frac29(2\sqrt2-1)\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-2a" data-pts="0.5" data-ds-id="3"><span>2. \(r\le2\cos\theta\), \(\theta\in[-\frac\pi2,\frac\pi2]\) justifiés</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-2b" data-pts="0.25" data-ds-id="3"><span>2. Simplification \(\frac1r\cdot r=1\) (jacobien)</span></label></td><td>0,25</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-2c" data-pts="0.5" data-ds-id="3"><span>2. Résultat \(4\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-3a" data-pts="0.5" data-ds-id="3"><span>3. Sphériques et jacobien \(r^2\sin\varphi\), \((x^2+y^2+z^2)^{3/2}=r^3\)</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-3b" data-pts="0.5" data-ds-id="3"><span>3. \(\int_0^1r^2e^{r^3}dr=\frac{e-1}3\) (forme \(u'e^u\))</span></label></td><td>0,5</td></tr>
-        <tr><td><label><input type="checkbox" class="bar" data-b="ds3-5-3c" data-pts="0.25" data-ds-id="3"><span>3. Résultat \(\frac{4\pi}3(e-1)\)</span></label></td><td>0,25</td></tr>
-      </tbody></table>
-    </div></details></article>
-
-    <div class="scorebox" data-score="3" data-total="20"><span class="sc">0 / 20</span><span class="sm"></span></div>
-  </div>
+<div class="bar-hd">Barème</div>
+<table class="barem"><tbody>
+<tr><td><label><input class="bar" data-b="ds3-5-1a" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>1. Domaine lu et réécrit : \(\{0\le x\le1,\ 0\le y\le x^2\}\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-5-1b" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>1. Fubini (continuité, compact) et \(\int_0^1x^2\sqrt{1+x^3}dx\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-5-1c" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>1. Valeur \(\frac29(2\sqrt2-1)\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-5-2a" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>2. \(r\le2\cos\theta\), \(\theta\in[-\frac\pi2,\frac\pi2]\) justifiés</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-5-2b" data-ds-id="3" data-pts="0.25" type="checkbox"/><span>2. Simplification \(\frac1r\cdot r=1\) (jacobien)</span></label></td><td>0,25</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-5-2c" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>2. Résultat \(4\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-5-3a" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>3. Sphériques et jacobien \(r^2\sin\varphi\), \((x^2+y^2+z^2)^{3/2}=r^3\)</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-5-3b" data-ds-id="3" data-pts="0.5" type="checkbox"/><span>3. \(\int_0^1r^2e^{r^3}dr=\frac{e-1}3\) (forme \(u'e^u\))</span></label></td><td>0,5</td></tr>
+<tr><td><label><input class="bar" data-b="ds3-5-3c" data-ds-id="3" data-pts="0.25" type="checkbox"/><span>3. Résultat \(\frac{4\pi}3(e-1)\)</span></label></td><td>0,25</td></tr>
+</tbody></table>
+</div></details></article>
+<div class="scorebox" data-score="3" data-total="20"><span class="sc">0 / 20</span><span class="sm"></span></div>
+</div>
 </section>
 </div>
-
-
 </main>
-
 <div class="foot">
-  <div class="wrap">
-    <span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
-    <span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
-  </div>
+<div class="wrap">
+<span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
+<span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
 </div>
-<a class="cx-top" href="#" aria-label="Revenir en haut de la page">↑</a>
-
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+</div>
+<a aria-label="Revenir en haut de la page" class="cx-top" href="#">↑</a>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script src="js/maths.js"></script>
 <script src="js/ds.js"></script>
 </body>

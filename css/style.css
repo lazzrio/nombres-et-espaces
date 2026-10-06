@@ -682,3 +682,8 @@ a.card:hover{text-decoration:none}
   .cx-page .cx .step .st{min-height:26px;display:flex;align-items:center}
   .mq{padding:2px 8px;margin-left:-2px;margin-right:-2px}
 }
+
+/* Formules LaTeX : sur petit écran, un tableau trop large défile au lieu de faire déborder la page */
+@media (max-width:720px){
+  .view table{display:block;position:relative;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}

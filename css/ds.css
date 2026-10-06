@@ -198,8 +198,8 @@ mark.j{background:color-mix(in srgb,var(--accent) 16%,transparent);color:inherit
 .chips a{font-family:var(--f-mono);font-size:12.5px;padding:7px 13px;border-radius:20px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
 .chips a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
 .mindex{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:6px 20px;margin:12px 0 0;font-size:14px}
-.mindex a{display:flex;gap:9px;align-items:baseline;padding:4px 0;color:var(--ink);border-bottom:1px dotted var(--line2)}
-.mindex a span{font-family:var(--f-mono);font-size:11.5px;color:var(--accent);flex:none;min-width:42px}
+.mindex a{display:block;position:relative;padding:4px 0 4px 51px;color:var(--ink);border-bottom:1px dotted var(--line2)}
+.mindex a>span:first-child{position:absolute;left:0;top:5px;font-family:var(--f-mono);font-size:11.5px;color:var(--accent);min-width:42px}
 .mindex a:hover{color:var(--accent);text-decoration:none}
 
 /* ---------- exercices : niveau, durée, renvoi TD ---------- */
