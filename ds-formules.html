@@ -59,6 +59,7 @@
 <a class="tab on" href="ds-formules.html">📘 Formules</a>
 <a class="tab" href="ds-quiz.html">🧠 Quiz</a>
 <a class="tab" href="ds-exercices.html">🏋 Exercices</a>
+<a class="tab" href="ds-annales.html">📜 Annales</a>
 <a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
 <span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
 </div>
@@ -73,8 +74,8 @@
 <p class="lead">Tout ce qu'il faut savoir <b>sans regarder</b> pour les chapitres 1 à 4 : définitions, théorèmes avec leurs hypothèses, formules, équations de courbes et de surfaces. Chaque fiche a sa case « je connais » : coche-la quand tu sais la réécrire de mémoire. Recherche et filtres en haut de page.</p>
 <div class="hero-cta" style="margin-top:14px"><a class="btn btn-ghost" href="ds-quiz.html">🧠 Teste-toi : quiz et flashcards sur ces fiches</a></div>
 <div class="hero-meta">
-<div><div class="n" id="fmTotal">64</div><div class="l">Fiches</div></div>
-<div><div class="n">6</div><div class="l">Parties</div></div>
+<div><div class="n" id="fmTotal">75</div><div class="l">Fiches</div></div>
+<div><div class="n">7</div><div class="l">Parties</div></div>
 <div><div class="n">0</div><div class="l">À regarder pendant le DS</div></div>
 </div>
 </div>
@@ -94,6 +95,7 @@
 <button class="fchip" data-ch="3" type="button">Ch. 3</button>
 <button class="fchip" data-ch="4" type="button">Ch. 4</button>
 <button class="fchip" data-ch="o" type="button">Outils</button>
+<button class="fchip" data-ch="p" type="button">Compléments</button>
 </div>
 <div aria-label="Type" class="fm-chips" id="fmChT">
 <button class="fchip active" data-t="all" type="button">Tous types</button>
@@ -676,12 +678,110 @@
 </div>
 </article>
 </section>
+<section class="fm-sec" data-ch="p" id="fm-p">
+<h2 class="fm-h">Compléments <span>ce que les DS utilisent sans que le cours l'écrive</span></h2>
+<article class="fi" data-ch="p" data-t="Formule" id="f-p-majorations">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-1" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Inégalités pour majorer (limites, continuité, \(C^1\)) <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[|x|\le r,\ |y|\le r\quad(r=\sqrt{x^2+y^2})\qquad|xy|\le\frac{x^2+y^2}2\qquad|x^2-y^2|\le x^2+y^2\qquad|x^ay^b|\le r^{a+b}\]
+        \[|\sin u|\le1,\ |\cos u|\le1,\ |\sin u|\le|u|\qquad1-\cos u\le\frac{u^2}2\qquad|x|+|y|\ge r\ \text{ et }\ (|x|+|y|)^2\le2r^2\]</div>
+<p class="fi-n">Origine : \((|x|-|y|)^2\ge0\) donne \(2|xy|\le x^2+y^2\). Exemples : \(\dfrac{x^3}{x^2+y^2}\) est majoré par \(|x|\) ; \(\dfrac{x^2y}{x^2+y^2}\) par \(|y|\) ; \(\dfrac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}\) par \(\frac32|y|\). Un majorant doit tendre vers \(0\) : alors <b>gendarmes</b>, à nommer sur la copie.</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Théorème" id="f-p-croissance">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-2" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Croissance comparée et variable \(t=x^2+y^2\) <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[\lim_{r\to0^+}r^a\ln r=0\ (a&gt;0)\qquad\lim_{t\to0^+}t\ln t=0\qquad\lim_{t\to0^+}t^t=1\qquad\lim_{x\to+\infty}\frac{\ln x}{x^a}=0\]
+        \[f(x,y)=g(x^2+y^2)\ \Longrightarrow\ \lim_{(x,y)\to(0,0)}f=\lim_{t\to0^+}g(t)\]</div>
+<p class="fi-n">Quand \(f\) ne dépend que de \(x^2+y^2\) (ou de \(r\)), la limite à deux variables devient une limite à <b>une</b> variable. Exemple du DS 2024 : \(|x\ln(x^2+y^2)|\le2r|\ln r|\to0\), donc \(e^{x\ln(x^2+y^2)}\to1\). Piège : \(\ln(h^2)=2\ln|h|\), jamais \(2\ln h\) si \(h&lt;0\).</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Théorème" id="f-p-tangent">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-3" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Gradient, plan tangent, dérivée directionnelle <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[\vec\nabla F(M_0)\perp\{F=c\}\qquad\text{plan tangent : }\ \vec\nabla F(M_0)\cdot\overrightarrow{M_0M}=0\]
+        \[z=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)\qquad D_{\vec u}f=\vec\nabla f\cdot\vec u\ \ (\|\vec u\|=1)\]</div>
+<p class="fi-n">Le cours dit que \(\vec\nabla f(X)\) est normal à la surface \(f=\text{cste}\). Conséquences classiques : le plan tangent à la surface \(F(x,y,z)=c\) en \(M_0\) a pour vecteur normal \(\vec\nabla F(M_0)\) ; la plus forte croissance de \(f\) est dans la direction \(\vec\nabla f\), de taux \(\|\vec\nabla f\|\). Valable pour \(f\) de classe \(C^1\). <em>Hors cours, mais standard.</em></p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Formule" id="f-p-simples">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-4" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Fractions rationnelles : éléments simples et \(\arctan\) <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\frac1{x(x+1)}=\frac1x-\frac1{x+1}\qquad\frac1{x^2-a^2}=\frac1{2a}\Big(\frac1{x-a}-\frac1{x+a}\Big)\qquad\int\frac{dx}{ax+b}=\frac{\ln|ax+b|}a\]
+        \[\int\frac{dx}{x^2+a^2}=\frac1a\arctan\frac xa\qquad\int\frac{dx}{x^2+bx+c}:\ \text{compléter le carré}\]</div>
+<p class="fi-n">Après Fubini, on tombe souvent sur \(\int\frac{dy}{1+x^2+y^2}\) ou \(\int\frac{dx}{x+y+1}\). Reconnaître la forme \(\frac{u'}u\) (logarithme) ou \(\frac{u'}{1+u^2}\) (arctangente) avant de décomposer.</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Formule" id="f-p-ipp">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-5" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Intégration par parties : les primitives à connaître <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\int\ln x\,dx=x\ln x-x\qquad\int\ln(ax+b)\,dx=\frac{(ax+b)\ln(ax+b)-(ax+b)}a\qquad\int xe^{ax}dx=\Big(\frac xa-\frac1{a^2}\Big)e^{ax}\]
+        \[\int x\ln x\,dx=\frac{x^2}2\ln x-\frac{x^2}4\qquad\int\arctan x\,dx=x\arctan x-\tfrac12\ln(1+x^2)\qquad\int(2y+1)e^{-2y}dy=-(y+1)e^{-2y}\]</div>
+<p class="fi-n">Principe : on dérive le facteur qui se simplifie (\(\ln\), \(\arctan\), polynôme), on intègre l'autre. Vérifier toujours en <b>dérivant</b> la primitive trouvée : c'est rapide et cela évite l'erreur de signe.</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Équation" id="f-p-angles">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-6" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Polaires : l'intervalle de \(\theta\) selon le domaine <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[x\ge0:\ \theta\in[-\tfrac\pi2,\tfrac\pi2]\quad y\ge0:\ \theta\in[0,\pi]\quad x,y\ge0:\ \theta\in[0,\tfrac\pi2]\quad y\ge x\ (x,y\ge0):\ \theta\in[\tfrac\pi4,\tfrac\pi2]\]
+        \[x^2+y^2\le2ax\iff0\le r\le2a\cos\theta,\ \theta\in[-\tfrac\pi2,\tfrac\pi2]\qquad x^2+y^2\le2ay\iff0\le r\le2a\sin\theta,\ \theta\in[0,\pi]\]</div>
+<p class="fi-n">Couronne \(a^2\le x^2+y^2\le b^2\) : \(a\le r\le b\), \(\theta\in[0,2\pi]\). Disque centré en \((a,0)\) : \((x-a)^2+y^2\le a^2\) s'écrit \(x^2+y^2\le2ax\). Toujours dessiner le domaine et vérifier que \(\theta\) balaie bien <b>tout</b> le domaine, pas seulement un demi-tour.</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Équation" id="f-p-surfaces">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-7" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Surfaces en cylindriques et en sphériques <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[\begin{array}{lll}\text{surface}&amp;\text{cylindriques }(r,\theta,z)&amp;\text{sphériques }(\rho,\theta,\varphi)\\\hline x^2+y^2+z^2=R^2&amp;r^2+z^2=R^2&amp;\rho=R\\x^2+y^2=R^2&amp;r=R&amp;\rho\sin\varphi=R\\z=x^2+y^2&amp;z=r^2&amp;\rho=\cos\varphi/\sin^2\varphi\\z=\sqrt{x^2+y^2}&amp;z=r&amp;\varphi=\pi/4\\z=c&amp;z=c&amp;\rho\cos\varphi=c\\x^2+y^2+z^2=2az&amp;r^2+z^2=2az&amp;\rho=2a\cos\varphi\end{array}\]</div>
+<p class="fi-n">Convention : \(x=\rho\sin\varphi\cos\theta\), \(y=\rho\sin\varphi\sin\theta\), \(z=\rho\cos\varphi\), \(\varphi\in[0,\pi]\) angle avec l'axe \(Oz\), jacobien \(\rho^2\sin\varphi\). Le cône \(z\ge\sqrt{x^2+y^2}\) est \(\varphi\in[0,\frac\pi4]\). Cylindriques si le solide a un axe \(Oz\) et des sections circulaires ; sphériques si c'est une boule, un cône ou une sphère décentrée sur l'axe.</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Formule" id="f-p-applications">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-8" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Applications des intégrales multiples <span class="fi-tag t-for">Formule</span></h4>
+<div class="fi-f">\[\text{Aire}(D)=\iint_Ddx\,dy\qquad\text{Vol}=\iiint_Ddx\,dy\,dz=\iint_{\text{base}}(h_{\rm haut}-h_{\rm bas})\,dx\,dy\qquad\bar f=\frac1{\text{Aire}(D)}\iint_Df\]
+        \[m=\iint_D\rho\qquad x_G=\frac1m\iint_Dx\,\rho\qquad y_G=\frac1m\iint_Dy\,\rho\qquad I_z=\iint_D(x^2+y^2)\,\rho\ \Big(\text{disque : }I=\tfrac{mR^2}2\Big)\]</div>
+<p class="fi-n">Aire, volume et « volume sous un graphe » sont au cours ; valeur moyenne, masse, centre de gravité et moment d'inertie sont des applications classiques (<em>hors cours</em>, à connaître si l'énoncé les mentionne). Pour un solide homogène \(\rho=1\) : \(m=\) volume, et la symétrie donne souvent une coordonnée de \(G\) sans calcul.</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Équation" id="f-p-courbes">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-9" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Courbes à savoir tracer en dix secondes <span class="fi-tag t-eq">Équation</span></h4>
+<div class="fi-f">\[y=x^2\ \ x=y^2\ \ y=\sqrt x\ \ y=x^3\ \ y=\tfrac1x\ \ y=e^x\ \ y=\ln x\ \ y=|x|\ \ y=1-x^2\ \ x^2+y^2=R^2\]</div>
+<p class="fi-n">Points à placer : \(y=x^2\) passe par \((0,0)\), \((\pm1,1)\) ; \(x=y^2\) est la même parabole couchée (\(x\ge0\)) ; \(y=\sqrt x\) est la moitié haute de \(x=y^2\) ; \(y=e^x\) passe par \((0,1)\), est au-dessus de l'axe \(Ox\) (asymptote) ; \(y=\ln x\) passe par \((1,0)\), asymptote \(x=0\) ; \(y=\frac1x\) a deux branches (asymptotes \(Ox,Oy\)) ; \(y=1-x^2\) est tournée vers le bas, sommet \((0,1)\), racines \(\pm1\) ; deux courbes se coupent là où on résout \(f(x)=g(x)\) : ce sont les sommets du domaine.</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Théorème" id="f-p-sanspreuve">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-10" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Ce qu'on peut affirmer sans preuve (et ce qui exige un calcul) <span class="fi-tag t-thm">Théorème</span></h4>
+<div class="fi-f">\[f,g\ \text{de classe }C^k\Rightarrow f+g,\ fg,\ \tfrac fg\ (g\ne0),\ g\circ f\ \text{de classe }C^k\qquad C^1\Rightarrow\text{continue}\ \ (\Leftarrow\text{ faux})\]</div>
+<p class="fi-n"><b>Sans preuve</b> (une phrase suffit) : polynômes, \(\exp\), \(\sin\), \(\cos\) sont \(C^\infty\) sur \(\mathbb R^n\) ; fractions rationnelles, \(\ln(\cdot)\) et \(\sqrt{\cdot}\) sont \(C^\infty\) là où le dénominateur est non nul, l'argument du \(\ln\) strictement positif, celui de la racine strictement positif. <b>Exige un calcul</b> : tout point où la formule n'a plus de sens (l'origine pour \(\frac{xy}{x^2+y^2}\)), et toute fonction contenant \(|x|\) ou \(\sqrt{x^2+y^2}\) au point où l'argument s'annule (non dérivable).</p>
+</div>
+</article>
+<article class="fi" data-ch="p" data-t="Piège" id="f-p-erreurs">
+<label class="fi-chk" title="Je connais"><input aria-label="Je connais" data-ds="fm-p-11" data-g="fm fm-cp" type="checkbox"/></label>
+<div class="fi-body">
+<h4>Les six erreurs classiques des annales <span class="fi-tag t-pie">Piège</span></h4>
+<div class="fi-f">\[f_x(0,0)=\lim_{h\to0}\frac{f(h,0)-f(0,0)}h\ \ (\text{jamais en remplaçant dans }f_x)\qquad C^1\iff f_x,f_y\ \text{continues}\]</div>
+<p class="fi-n">1) Calculer \(f_x(0,0)\) en remplaçant dans la formule de \(f_x\) valable hors de l'origine. 2) Conclure « \(C^1\) » sans étudier \(\lim f_x\) en \((0,0)\), ou « pas \(C^1\) » sans l'avoir montré. 3) Deux chemins qui donnent la même limite ne prouvent <b>pas</b> son existence : il faut un encadrement. 4) Écrire \(\ln h\) au lieu de \(\ln|h|\). 5) Oublier la valeur absolue \(|J|\) ou le facteur \(r\) d'un changement de variables. 6) Mauvaise borne en polaires pour un demi-disque (\(x\ge0\) donne \(\theta\in[-\frac\pi2,\frac\pi2]\)). Chaque ligne se retrouve dans les annales corrigées.</p>
+</div>
+</article>
+</section>
 </div>
 </main>
 <div class="foot">
 <div class="wrap">
 <span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
-<span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
+<span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-annales.html">Annales</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
 </div>
 </div>
 <a aria-label="Revenir en haut de la page" class="cx-top" href="#">↑</a>

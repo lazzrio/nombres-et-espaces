@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Spécial DS · annales et préparation — Champs &amp; Intégrales</title>
+<meta content="Les DS1 d'Analyse 3 de 2024 et 2025 et la feuille de préparation 2026, entièrement corrigés et rédigés comme sur une copie." name="description"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="#4b3e8f" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0e1128" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/icon-192.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="Spécial DS · annales et préparation" property="og:title"/>
+<meta content="Les DS1 d'Analyse 3 de 2024 et 2025 et la feuille de préparation 2026, entièrement corrigés et rédigés comme sur une copie." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/ds.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
+<script src="js/topbar.js"></script>
+</head>
+<body class="cx-page ds-page ds-exo">
+<div class="topbar">
+<div class="topbar-in">
+<a aria-label="Accueil du site" class="brand" href="index.html">
+<span class="chip-logo">\(\nabla\)</span>
+      Champs &amp; Intégrales
+    </a>
+<nav aria-label="Navigation principale" class="nav" id="nav">
+<a href="index.html">Accueil</a>
+<a aria-current="page" class="nav-ds active" href="ds.html"><span class="ni">🎓</span> DS</a>
+<a href="index.html#cours"><span class="ni">📚</span> Cours</a>
+<a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
+<a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
+<a class="nav-corr" href="corriges.html"><span class="ni">✅</span> Corrigés</a>
+<a href="index.html#notions"><span class="ni">💡</span> Notions</a>
+<a href="index.html#formules"><span class="ni">📘</span> Formules</a>
+<a href="index.html#express"><span class="ni">⚡</span> Express</a>
+<a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
+<a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
+<a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
+<a href="index.html#planning"><span class="ni">📅</span> Planning</a>
+</nav>
+<button aria-label="Changer de thème" class="theme-btn" id="themeBtn" title="Thème clair / sombre">
+<svg fill="none" id="thIcon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</button>
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+</div>
+</div>
+<div class="dsnav" id="dsnav">
+<div class="dsnav-in">
+<span class="dsnav-tag"><i>DS</i> Chapitres 1 à 4</span>
+<a class="tab" href="ds.html">Plan &amp; checklist</a>
+<a class="tab" href="ds-methodes.html">🛠 Méthodes</a>
+<a class="tab" href="ds-formules.html">📘 Formules</a>
+<a class="tab" href="ds-quiz.html">🧠 Quiz</a>
+<a class="tab" href="ds-exercices.html">🏋 Exercices</a>
+<a class="tab on" href="ds-annales.html">📜 Annales</a>
+<a class="tab" href="ds-blancs.html">⏱ DS blancs</a>
+<span class="dscount js-count-chip" title="Jours avant ton DS (la date se règle sur la page Plan &amp; checklist)"></span>
+</div>
+</div>
+<main>
+<div class="hero hero-sm ds-hero">
+<div class="hero-grid"></div>
+<div class="hero-in" style="grid-template-columns:1fr">
+<div>
+<span class="eyebrow">📜 Spécial DS · annales &amp; préparation</span>
+<h1>Les vrais sujets, <em>entièrement</em> corrigés.</h1>
+<p class="lead">Les deux DS1 des années précédentes (octobre 2024 et octobre 2025) et la <b>feuille « Préparation au DS1 »</b> de cette année, soit <b>17 exercices</b> corrigés comme sur une copie : énoncé exact, indice, puis rédaction complète avec les justifications que le sujet exige (« les copies dépourvues d'explications seront pénalisées »). Tous les résultats ont été recalculés.</p>
+<div class="hero-meta">
+<div><div class="n">17</div><div class="l">Exercices</div></div>
+<div><div class="n">3</div><div class="l">Sujets</div></div>
+<div><div class="n">90</div><div class="l">Minutes par DS</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="wrap">
+<div class="section-head" style="padding-top:34px">
+<span class="eyebrow">Ce qui tombe</span>
+<h2>Le DS1 a la même ossature chaque année</h2>
+<p>Les trois sujets se ressemblent beaucoup : une <b>question de cours</b> sur les opérateurs, <b>une fonction définie par morceaux en \((0,0)\)</b>, un <b>potentiel</b> ou une EDP, une <b>intégrale double</b> sur un domaine à dessiner, un <b>volume</b>. Si vous savez faire chaque ligne du tableau, vous savez faire le DS.</p>
+</div>
+<div class="tbl-wrap"><table class="dstable">
+<thead><tr><th>Thème</th><th>DS 2024</th><th>DS 2025</th><th>Préparation 2026</th><th>Méthode</th></tr></thead>
+<tbody>
+<tr><td>Question de cours (opérateurs)</td><td>rot, div de \(F\) + calcul</td><td>laplacien de \(\ln(xy+z)\)</td><td>jacobienne (ex. 5)</td><td><a href="ds-methodes.html#m-2-1">M2.1</a> · <a href="ds-methodes.html#m-1-7">M1.7</a></td></tr>
+<tr><td>Fonction par morceaux en \((0,0)\)</td><td>\(e^{x\ln(x^2+y^2)}\) : continuité, \(f_x\), \(f_y\), continuité de \(f_x,f_y\)</td><td>\((x^2+y^2)\sin\frac{xy}{x^2+y^2}\) : continuité, dérivées, \(C^1\)</td><td>\(\frac{xy(x^2-y^2)}{x^2+y^2}\) (ex. 4) ; limites et continuité (ex. 1, 2)</td><td><a href="ds-methodes.html#m-1-2">M1.2</a> · <a href="ds-methodes.html#m-1-3">M1.3</a> · <a href="ds-methodes.html#m-1-5">M1.5</a></td></tr>
+<tr><td>Potentiel scalaire</td><td>condition sur \(\alpha\), puis potentiel</td><td>—</td><td>ex. 6</td><td><a href="ds-methodes.html#m-2-4">M2.4</a> · <a href="ds-methodes.html#m-2-5">M2.5</a></td></tr>
+<tr><td>Intégrale double</td><td>triangle \(0\le x\le y\le1\)</td><td>parabole (deux ordres) et demi-disque</td><td>triangle ; ellipse (ex. 7)</td><td><a href="ds-methodes.html#m-4-2">M4.2</a> · <a href="ds-methodes.html#m-4-3">M4.3</a> · <a href="ds-methodes.html#m-4-4">M4.4</a> · <a href="ds-methodes.html#m-4-6">M4.6</a></td></tr>
+<tr><td>Volume</td><td>entre \(z=1\) et \(z=5-x^2-y^2\)</td><td>tétraèdre \(x-y-1\le z\le0\)</td><td>—</td><td><a href="ds-methodes.html#m-4-8">M4.8</a> · <a href="ds-methodes.html#m-4-10">M4.10</a></td></tr>
+</tbody>
+</table></div>
+<div class="cx-howto" style="margin-top:22px">
+<div><b>Le DS en 90 minutes</b>Question de cours \(5\,\min\) · fonction par morceaux \(30\,\min\) · potentiel \(10\,\min\) · intégrale double (dessin compris) \(20\,\min\) · volume \(15\,\min\) · relecture \(10\,\min\). Le DS 2025 tient exactement dans ce découpage.</div>
+<div><b>Toujours un dessin</b>Dès qu'un domaine est donné par des inégalités, dessinez-le <em>avant</em> d'écrire les bornes : le sujet le demande, et c'est la source de la moitié des erreurs.</div>
+<div><b>Justifier chaque limite</b>« On a donc \(\to0\) » ne vaut rien. Écrivez la majoration (valeur absolue, polaires) et le théorème des gendarmes.</div>
+<div><b>Annales d'abord, corrigé ensuite</b>Chronométrez-vous sur l'énoncé seul. Le corrigé manuscrit de 2024 (PDF du cours) contient deux imprécisions, signalées dans l'exercice concerné.</div>
+</div>
+<div class="pieges" style="margin-top:18px"><b class="lab">Cinq pièges vus dans ces sujets</b>
+<ul>
+<li><b>\(f_x(0,0)\) se calcule par la définition</b> \(\lim_{h\to0}\frac{f(h,0)-f(0,0)}h\), jamais en remplaçant \((0,0)\) dans la formule de \(f_x\) (elle n'y est pas définie).</li>
+<li><b>Une dérivée partielle qui existe en \((0,0)\) n'est pas forcément continue</b> : pour la classe \(C^1\), il faut étudier \(\lim_{(x,y)\to(0,0)}f_x(x,y)\) et la comparer à \(f_x(0,0)\).</li>
+<li><b>Un logarithme de \(h\) s'écrit \(\ln|h|\)</b> quand \(h\) peut être négatif : \(\ln(h^2)=2\ln|h|\).</li>
+<li><b>L'ordre d'intégration n'est pas libre</b> : dans le DS 2025 (ex. 2), un ordre donne une primitive immédiate, l'autre une intégrale impossible.</li>
+<li><b>Coordonnées polaires et demi-plan</b> : \(x\ge0\) impose \(\theta\in[-\frac\pi2,\frac\pi2]\), pas \([0,\pi]\).</li>
+</ul></div>
+<div class="section-head" style="padding-top:34px">
+<span class="eyebrow">Sommaire</span>
+<h2>Trois sujets, dix-sept exercices</h2>
+<p>Chaque exercice a un chronomètre suggéré, la méthode à relire, un indice et la correction rédigée. Cochez « Marquer fait » quand vous réussissez <em>seul</em>.</p>
+</div>
+<nav aria-label="Sujets" class="cx-index">
+<a class="cx-card" href="#a25"><span class="n">DS1 · samedi 18 octobre 2025 · 5 exercices</span><span class="t">DS1 Analyse 3 ING2 2025-2026</span><span class="d">Laplacien ; fonction \((x^2+y^2)\sin\frac{xy}{x^2+y^2}\) ; parabole dans les deux ordres ; demi-disque ; volume d'un tétraèdre.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+<a class="cx-card" href="#a24"><span class="n">DS1 · samedi 19 octobre 2024 · 5 exercices</span><span class="t">DS1 Analyse 3 ING2 2024-2025</span><span class="d">Rotationnel et divergence ; \(e^{x\ln(x^2+y^2)}\) ; potentiel avec paramètre ; triangle ; volume d'un paraboloïde.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+<a class="cx-card" href="#a26"><span class="n">Feuille de préparation 2026-2027 · 7 exercices</span><span class="t">Préparation au DS1 Analyse 3</span><span class="d">Limites, continuité, dérivées partielles, \(C^1\), jacobienne, potentiel, intégrales doubles.</span><span class="cnt"></span><span class="bar"><i></i></span></a>
+</nav>
+<div class="cx-toolbar" role="search">
+<input aria-label="Rechercher dans les annales" class="cx-search" id="cxSearch" placeholder="Rechercher : potentiel, polaires, laplacien…" type="search"/>
+<select aria-label="Filtrer par sujet" class="cx-select" id="cxCat">
+<option value="all">Tous les sujets</option>
+<option value="a25">DS 2025</option>
+<option value="a24">DS 2024</option>
+<option value="a26">Préparation 2026</option>
+</select>
+<button class="cx-btn" id="cxExpand" type="button">Tout déplier</button>
+<button class="cx-btn" id="cxMeth" type="button">Indices seuls</button>
+<span aria-live="polite" class="cx-progress" id="cxProgress"></span>
+</div>
+<p class="cx-empty" hidden="" id="cxEmpty">Aucun exercice ne correspond à cette recherche.</p>
+<!-- le <div class="wrap"> reste ouvert : il est refermé à la fin du fichier -->
+
+<!-- ===================================================== DS 2025 ===================================================== -->
+<section class="cx-chap" data-cat="a25" id="a25">
+<div class="cx-chap-hd">
+<span class="cx-chap-n">Samedi 18 octobre 2025 · 1,5 heure · sans document ni calculatrice</span>
+<h2>DS1 Analyse 3 · ING2 · 2025-2026</h2>
+<p>« Les copies illisibles, dépourvues d'explications ou de soin seront pénalisées. » · Cours : <a href="index.html#ch1">Ch. 1</a>, <a href="index.html#ch2">Ch. 2</a>, <a href="index.html#ch4">Ch. 4</a></p>
+</div>
+
+<article class="cx" id="an-25-qc">
+<header class="cx-hd"><span class="cx-num">QC 2025</span><h3>Question de cours : laplacien de \(\ln(xy+z)\)</h3></header>
+<div class="cx-meta"><span class="lvl">★ échauffement</span><span class="dur">⏱ \(5\,\min\)</span><span class="skill">Laplacien · dérivées secondes</span></div>
+<div class="cx-enonce">Soit \(f\) la fonction définie sur \(\,]0,+\infty[^3\) par \(f(x,y,z)=\ln(xy+z)\). Calculer le laplacien de \(f\).</div>
+<p class="cx-ref">Méthode : <a href="ds-methodes.html#m-2-1">M2.1</a> (grad, div, rot, laplacien)</p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>\(\Delta f=\dfrac{\partial^2f}{\partial x^2}+\dfrac{\partial^2f}{\partial y^2}+\dfrac{\partial^2f}{\partial z^2}\) : trois dérivées secondes <b>pures</b>, aucune dérivée croisée. Dérivez deux fois par rapport à la <em>même</em> variable, en gardant \(u=xy+z\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<p>Sur \(]0,+\infty[^3\), \(xy+z&gt;0\) : \(f\) est donc bien définie et de classe \(C^\infty\) comme composée de \(\ln\) (sur \(]0,+\infty[\)) et d'un polynôme. Posons \(u=xy+z\).</p>
+<div class="mq">\[\frac{\partial f}{\partial x}=\frac yu,\qquad\frac{\partial^2f}{\partial x^2}=-\frac{y\cdot y}{u^2}=-\frac{y^2}{(xy+z)^2}.\]</div>
+<div class="mq">\[\frac{\partial f}{\partial y}=\frac xu,\qquad\frac{\partial^2f}{\partial y^2}=-\frac{x^2}{(xy+z)^2}.\]</div>
+<div class="mq">\[\frac{\partial f}{\partial z}=\frac1u,\qquad\frac{\partial^2f}{\partial z^2}=-\frac1{(xy+z)^2}.\]</div>
+<p>Par définition du laplacien :</p>
+<div class="mq">\[\boxed{\ \Delta f(x,y,z)=-\frac{x^2+y^2+1}{(xy+z)^2}\ }\]</div>
+<div class="retenir"><b class="lab">À retenir</b>Le laplacien est toujours \(\operatorname{div}(\vec\nabla f)\), donc une somme de dérivées secondes pures. Ici \(\Delta f&lt;0\) partout : un contrôle de signe rapide (chaque terme est négatif).</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-25-1">
+<header class="cx-hd"><span class="cx-num">Ex. 1 · 2025</span><h3>\((x^2+y^2)\sin\dfrac{xy}{x^2+y^2}\) : continuité, dérivées, classe \(C^1\)</h3></header>
+<div class="cx-meta"><span class="lvl">★★★ format DS</span><span class="dur">⏱ \(30\,\min\)</span><span class="skill">Continuité · dérivées partielles · \(C^1\)</span></div>
+<div class="cx-enonce">Soit \(f:\mathbb R^2\to\mathbb R\) définie par
+\[f(x,y)=\begin{cases}(x^2+y^2)\sin\!\Big(\dfrac{xy}{x^2+y^2}\Big)&amp;\text{si }(x,y)\ne(0,0),\\[2mm]0&amp;\text{si }(x,y)=(0,0).\end{cases}\]
+<ol>
+<li>Étudier la continuité de \(f\) en \((0,0)\).</li>
+<li>Calculer les dérivées partielles d'ordre 1 : \(\dfrac{\partial f}{\partial x}\) et \(\dfrac{\partial f}{\partial y}\) sur \(\mathbb R^2\setminus\{(0,0)\}\).</li>
+<li>Calculer \(\dfrac{\partial f}{\partial x}(0,0)\) et \(\dfrac{\partial f}{\partial y}(0,0)\).</li>
+<li>\(f\) est-elle de classe \(C^1\) sur \(\mathbb R^2\) ?</li>
+</ol></div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-1-3">M1.3</a> · <a href="ds-methodes.html#m-1-4">M1.4</a> · <a href="ds-methodes.html#m-1-5">M1.5</a> (fonction par morceaux)</p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>1) \(|\sin|\le1\) donne une majoration immédiate. 2) Notez \(u=\dfrac{xy}{x^2+y^2}\) : \(f=(x^2+y^2)\sin u\), dérivez un produit puis \(u\). Pour \(f_y\), utilisez la symétrie \(f(x,y)=f(y,x)\). 3) Définition avec \(f(h,0)\) et \(f(0,h)\). 4) Il faut montrer que \(f_x\) et \(f_y\) tendent vers \(0\) en \((0,0)\) : majorez par \(|x|\) et \(|y|\) en utilisant \(|\sin|\le1\), \(|\cos|\le1\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Continuité en \((0,0)\)</div>
+<p>Pour \((x,y)\neq(0,0)\), \(|\sin(\cdot)|\le1\), donc
+\[0\le|f(x,y)|\le x^2+y^2\xrightarrow[(x,y)\to(0,0)]{}0.\]
+Par le théorème des gendarmes, \(\lim_{(x,y)\to(0,0)}f(x,y)=0=f(0,0)\) : <b>\(f\) est continue en \((0,0)\)</b>. (Hors de l'origine, \(f\) est continue comme composée et quotient de fonctions continues, le dénominateur ne s'annulant pas : \(f\) est continue sur \(\mathbb R^2\).)</p>
+<div class="qsub">2. Dérivées partielles sur \(\mathbb R^2\setminus\{(0,0)\}\)</div>
+<p>Sur cet ouvert, \(f=(x^2+y^2)\sin u\) avec \(u=\dfrac{xy}{x^2+y^2}\), de classe \(C^1\) (quotient à dénominateur non nul). On calcule
+\[\frac{\partial u}{\partial x}=\frac{y(x^2+y^2)-xy\cdot2x}{(x^2+y^2)^2}=\frac{y(y^2-x^2)}{(x^2+y^2)^2}.\]
+La dérivée d'un produit donne
+\[\frac{\partial f}{\partial x}=2x\sin u+(x^2+y^2)\cos u\cdot\frac{\partial u}{\partial x}\]
+d'où
+\[\boxed{\ \frac{\partial f}{\partial x}(x,y)=2x\sin\!\Big(\frac{xy}{x^2+y^2}\Big)+\frac{y(y^2-x^2)}{x^2+y^2}\cos\!\Big(\frac{xy}{x^2+y^2}\Big)\ }\]
+<p>Comme \(f(x,y)=f(y,x)\), on obtient \(\dfrac{\partial f}{\partial y}(x,y)=\dfrac{\partial f}{\partial x}(y,x)\), c'est-à-dire</p>
+\[\boxed{\ \frac{\partial f}{\partial y}(x,y)=2y\sin\!\Big(\frac{xy}{x^2+y^2}\Big)+\frac{x(x^2-y^2)}{x^2+y^2}\cos\!\Big(\frac{xy}{x^2+y^2}\Big)\ }\]
+<div class="qsub">3. Dérivées partielles en \((0,0)\)</div>
+<p>Par définition, pour \(h\neq0\) : \(\dfrac{f(h,0)-f(0,0)}h=\dfrac{h^2\sin(0)-0}h=0\). Ce taux d'accroissement est nul : \(\dfrac{\partial f}{\partial x}(0,0)=0\). De même \(\dfrac{f(0,h)-f(0,0)}h=0\) donc \(\dfrac{\partial f}{\partial y}(0,0)=0\).</p>
+<div class="qsub">4. \(f\) est-elle \(C^1\) sur \(\mathbb R^2\) ?</div>
+<p>\(f\) est \(C^1\) sur \(\mathbb R^2\setminus\{(0,0)\}\) (question 2). Reste à montrer que \(f_x\) et \(f_y\) sont continues en \((0,0)\), c'est-à-dire qu'elles tendent vers \(f_x(0,0)=f_y(0,0)=0\). Pour \((x,y)\ne(0,0)\), avec \(|\sin|\le1\), \(|\cos|\le1\) et \(|y^2-x^2|\le x^2+y^2\) :
+\[|f_x(x,y)|\le2|x|+\frac{|y|\,|y^2-x^2|}{x^2+y^2}\le2|x|+|y|\xrightarrow[(x,y)\to(0,0)]{}0.\]
+Donc \(f_x(x,y)\to0=f_x(0,0)\) : \(f_x\) est continue en \((0,0)\). Par symétrie, \(|f_y(x,y)|\le2|y|+|x|\to0=f_y(0,0)\). Les deux dérivées partielles sont continues sur \(\mathbb R^2\) : <b>\(f\) est de classe \(C^1\) sur \(\mathbb R^2\)</b>.</p>
+<div class="why"><b class="lab">Remarque</b>Les dérivées partielles oscillent (le facteur \(\cos u\) n'a pas de limite), mais elles sont multipliées par \(x\) ou \(y\) qui tendent vers \(0\) : c'est cela qui sauve la continuité. Sans cette majoration, on ne pourrait pas conclure.</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-25-2">
+<header class="cx-hd"><span class="cx-num">Ex. 2 · 2025</span><h3>Domaine sous une parabole : les deux ordres d'intégration</h3></header>
+<div class="cx-meta"><span class="lvl">★★ technique</span><span class="dur">⏱ \(20\,\min\)</span><span class="skill">Type 1 / type 2 · choix de l'ordre</span></div>
+<div class="cx-enonce">Soit \(D\) le domaine situé au-dessus de l'axe des abscisses et en dessous de la parabole \(y=1-x^2\) dans le plan \(xOy\).
+<ol>
+<li>Représenter graphiquement le domaine \(D\).</li>
+<li>Exprimer \(\displaystyle\iint_Df(x,y)\,dx\,dy\) comme intégrale correspondant d'abord à l'ordre \(dx\,dy\), puis comme intégrale correspondant à l'ordre \(dy\,dx\).</li>
+<li>Calculer l'intégrale pour \(f(x,y)=\exp\!\Big(x-\dfrac{x^3}3\Big)\).</li>
+</ol></div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-4-2">M4.2</a> · <a href="ds-methodes.html#m-4-3">M4.3</a> (inverser l'ordre)</p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>La parabole coupe l'axe en \(x=\pm1\). Pour décrire \(D\) en balayant par \(y\), résolvez \(y=1-x^2\) en \(x\). À la question 3, regardez la dérivée de l'exposant \(x-\frac{x^3}3\) : elle ressemble à une borne de la question 2. Pour quel ordre la primitive est-elle immédiate ?</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Le domaine</div>
+<p>\(D=\{(x,y):\,y\ge0,\ y\le1-x^2\}\). La parabole \(y=1-x^2\) est tournée vers le bas, de sommet \((0,1)\), et coupe l'axe \(Ox\) en \((-1,0)\) et \((1,0)\). Le domaine est la « cloche » fermée entre la parabole et l'axe, pour \(x\in[-1,1]\).</p>
+<svg class="cx-fig" viewBox="0 0 260 180" role="img" aria-label="Domaine D sous la parabole y = 1 - x au carré, au-dessus de l'axe des x">
+<path class="rg" d="M50,150 Q130,-10 210,150 Z"/>
+<path class="ax" d="M15,150 H245 M130,172 V12"/>
+<path class="ax" d="M245,150 l-6,-3 M245,150 l-6,3 M130,12 l-3,6 M130,12 l3,6"/>
+<text x="46" y="167">-1</text><text x="206" y="167">1</text><text x="136" y="72">1</text>
+<text x="118" y="125">D</text><text x="196" y="52">y=1-x²</text><text x="236" y="140">x</text><text x="138" y="22">y</text>
+</svg>
+<div class="qsub">2. Les deux écritures</div>
+<p><b>Intégrale intérieure en \(y\)</b> (on balaie par \(x\), type 1) : pour \(x\in[-1,1]\), \(y\) va de \(0\) à \(1-x^2\).
+\[\iint_Df\,dx\,dy=\int_{-1}^{1}\Big(\int_0^{1-x^2}f(x,y)\,dy\Big)dx.\]
+<b>Intégrale intérieure en \(x\)</b> (on balaie par \(y\), type 2) : pour \(y\in[0,1]\), \(y\le1-x^2\iff x^2\le1-y\iff|x|\le\sqrt{1-y}\).
+\[\iint_Df\,dx\,dy=\int_{0}^{1}\Big(\int_{-\sqrt{1-y}}^{\sqrt{1-y}}f(x,y)\,dx\Big)dy.\]
+<p>(Selon la convention de notation, l'ordre « \(dx\,dy\) » désigne l'une ou l'autre de ces écritures ; indiquez clairement quelle variable est intégrée en premier.)</p>
+<div class="qsub">3. Calcul pour \(f=\exp(x-x^3/3)\)</div>
+<p>La fonction ne dépend pas de \(y\). Avec la première écriture, l'intégrale en \(y\) est immédiate :
+\[\iint_Df\,dx\,dy=\int_{-1}^{1}(1-x^2)\,e^{x-x^3/3}\,dx.\]
+Or \(\dfrac d{dx}\Big(x-\dfrac{x^3}3\Big)=1-x^2\) : l'intégrande est de la forme \(u'e^{u}\), de primitive \(e^{u}\). Donc
+\[\iint_Df\,dx\,dy=\Big[e^{x-x^3/3}\Big]_{-1}^{1}=e^{1-\frac13}-e^{-1+\frac13}=\boxed{\,e^{2/3}-e^{-2/3}=2\sinh\tfrac23\,}\]
+<div class="why"><b class="lab">Pourquoi cet ordre</b>Avec l'autre ordre, il faudrait intégrer \(e^{-x^3/3}e^{x}\) en \(x\) : aucune primitive usuelle. Quand l'intégrande ne dépend que d'une variable, intégrez d'abord <b>en l'autre</b> : la longueur de l'intervalle apparaît comme facteur (ici \(1-x^2\)), qui est précisément la dérivée de l'exposant.</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-25-3">
+<header class="cx-hd"><span class="cx-num">Ex. 3 · 2025</span><h3>Demi-disque et coordonnées polaires</h3></header>
+<div class="cx-meta"><span class="lvl">★★ technique</span><span class="dur">⏱ \(15\,\min\)</span><span class="skill">Polaires · demi-plan</span></div>
+<div class="cx-enonce">Soit \(D=\{(x,y)\in\mathbb R^2,\ x\ge0,\ x^2+y^2-9\le0\}\).
+<ol>
+<li>Représenter graphiquement le domaine \(D\).</li>
+<li>Calculer l'intégrale \(\displaystyle\iint_D(x^2+y^2)\,dx\,dy\).</li>
+</ol></div>
+<p class="cx-ref">Méthode : <a href="ds-methodes.html#m-4-4">M4.4</a> (polaires)</p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>Disque de rayon \(3\) coupé par \(x\ge0\). Que devient la condition \(x\ge0\) en polaires ? \(r\cos\theta\ge0\), donc \(\cos\theta\ge0\). N'oubliez pas le jacobien \(r\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Le domaine</div>
+<p>\(x^2+y^2\le9\) est le disque fermé de centre \(O\) et de rayon \(3\) ; avec \(x\ge0\), \(D\) est le <b>demi-disque de droite</b> (y compris le diamètre sur l'axe \(Oy\)).</p>
+<svg class="cx-fig" viewBox="0 0 260 220" role="img" aria-label="Demi-disque de rayon 3 pour x positif">
+<path class="rg" d="M70,20 A90,90 0 0 1 70,200 Z"/>
+<path class="ax" d="M30,110 H245 M70,214 V8"/>
+<path class="ax" d="M245,110 l-6,-3 M245,110 l-6,3 M70,8 l-3,6 M70,8 l3,6"/>
+<text x="152" y="128">3</text><text x="76" y="28">3</text><text x="76" y="208">-3</text><text x="105" y="112">D</text><text x="236" y="100">x</text><text x="78" y="16">y</text>
+</svg>
+<div class="qsub">2. Calcul en polaires</div>
+<p>On pose \(x=r\cos\theta\), \(y=r\sin\theta\), \(dx\,dy=r\,dr\,d\theta\). La condition \(x^2+y^2\le9\) donne \(0\le r\le3\), et \(x\ge0\) donne \(\cos\theta\ge0\), soit \(\theta\in[-\frac\pi2,\frac\pi2]\). Donc \(D\) correspond à \([0,3]\times[-\frac\pi2,\frac\pi2]\) et, comme \(x^2+y^2=r^2\),
+\[\iint_D(x^2+y^2)\,dx\,dy=\int_{-\pi/2}^{\pi/2}\!\!\int_0^3r^2\cdot r\,dr\,d\theta=\Big(\int_{-\pi/2}^{\pi/2}d\theta\Big)\Big(\int_0^3r^3\,dr\Big)=\pi\cdot\frac{3^4}4=\boxed{\frac{81\pi}4}\]
+<div class="retenir"><b class="lab">Contrôle</b>Sur le disque entier, on trouverait \(2\pi\cdot\frac{81}4=\frac{81\pi}2\) : la moitié est cohérente. Le domaine est un secteur symétrique en \(\theta\) autour de \(0\), donc \(\theta\in[-\frac\pi2,\frac\pi2]\) (et non \([0,\pi]\), qui décrirait \(y\ge0\)).</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-25-4">
+<header class="cx-hd"><span class="cx-num">Ex. 4 · 2025</span><h3>Volume d'un solide délimité par des plans</h3></header>
+<div class="cx-meta"><span class="lvl">★★ technique</span><span class="dur">⏱ \(20\,\min\)</span><span class="skill">Volume · base triangulaire</span></div>
+<div class="cx-enonce">Soit \(D=\{(x,y,z)\in\mathbb R^3,\ y\le0\le x,\ x-y-1\le z\le0\}\). Calculer le volume de \(D\).</div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-4-7">M4.7</a> (triple en cartésiennes) · <a href="ds-methodes.html#m-4-10">M4.10</a> (volumes)</p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>Pour que \(z\) existe, il faut \(x-y-1\le0\). Cette condition, avec \(x\ge0\) et \(y\le0\), définit la <b>base</b> dans le plan \(xOy\) : dessinez-la. Le volume est alors l'intégrale double de la <b>hauteur</b> \(0-(x-y-1)\) sur cette base.</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Projection de \(D\) sur le plan \(xOy\)</div>
+<p>Il existe un \(z\) avec \(x-y-1\le z\le0\) si et seulement si \(x-y-1\le0\). La projection est donc
+\[\Delta=\{(x,y):\ x\ge0,\ y\le0,\ x-y\le1\}\]
+c'est le triangle de sommets \((0,0)\), \((1,0)\), \((0,-1)\). En balayant par \(x\) : \(x\in[0,1]\) et \(y\in[x-1,0]\).</p>
+<svg class="cx-fig" viewBox="0 0 260 190" role="img" aria-label="Triangle de sommets (0,0), (1,0) et (0,-1)">
+<path class="rg" d="M60,50 L160,50 L60,150 Z"/>
+<path class="ax" d="M20,50 H245 M60,185 V12"/>
+<path class="ax" d="M245,50 l-6,-3 M245,50 l-6,3 M60,12 l-3,6 M60,12 l3,6"/>
+<text x="156" y="42">1</text><text x="40" y="154">-1</text><text x="236" y="40">x</text><text x="68" y="22">y</text><text x="78" y="86">Δ</text><text x="120" y="112">y=x-1</text>
+</svg>
+<div class="qsub">2. Volume</div>
+<p>La hauteur au-dessus du point \((x,y)\) de \(\Delta\) vaut \(0-(x-y-1)=1-x+y\ge0\). Donc
+\[\mathrm{Vol}(D)=\iint_\Delta(1-x+y)\,dx\,dy=\int_0^1\Big(\int_{x-1}^0(1-x+y)\,dy\Big)dx.\]
+L'intégrale intérieure vaut \(\Big[(1-x)y+\dfrac{y^2}2\Big]_{x-1}^0=-(1-x)(x-1)-\dfrac{(x-1)^2}2=(1-x)^2-\dfrac{(1-x)^2}2=\dfrac{(1-x)^2}2\). Donc
+\[\mathrm{Vol}(D)=\int_0^1\frac{(1-x)^2}2\,dx=\Big[-\frac{(1-x)^3}6\Big]_0^1=\boxed{\frac16}\]
+<div class="retenir"><b class="lab">Contrôle géométrique</b>\(D\) est le tétraèdre de sommets \((0,0,0)\), \((1,0,0)\), \((0,-1,0)\), \((0,0,-1)\) : trois arêtes orthogonales de longueur \(1\), donc volume \(\frac13\times\frac12=\frac16\). Le calcul est confirmé.</div>
+</div></details>
+</article>
+</section>
+
+<!-- ===================================================== DS 2024 ===================================================== -->
+<section class="cx-chap" data-cat="a24" id="a24">
+<div class="cx-chap-hd">
+<span class="cx-chap-n">Samedi 19 octobre 2024 · 1,5 heure · sans document ni calculatrice</span>
+<h2>DS1 Analyse 3 · ING2 · 2024-2025</h2>
+<p>Le corrigé manuscrit de ce sujet figure dans le dossier du cours ; les corrections ci-dessous le reprennent en détaillant les justifications, et en signalent deux imprécisions. · Cours : <a href="index.html#ch1">Ch. 1</a>, <a href="index.html#ch2">Ch. 2</a>, <a href="index.html#ch4">Ch. 4</a></p>
+</div>
+
+<article class="cx" id="an-24-qc">
+<header class="cx-hd"><span class="cx-num">QC 2024</span><h3>Question de cours : rotationnel et divergence</h3></header>
+<div class="cx-meta"><span class="lvl">★ échauffement</span><span class="dur">⏱ \(10\,\min\)</span><span class="skill">rot · div</span></div>
+<div class="cx-enonce">Soit \(F=(F_1,F_2,F_3)\) un champ de vecteurs de classe \(C^1\) sur \(\mathbb R^3\).
+<ol>
+<li>Donner les coordonnées du rotationnel de \(F\).</li>
+<li>Donner la divergence de \(F\).</li>
+<li>Si \(F(x,y,z)=\big(xyz,\ e^{xyz},\ \cos(x^2+y^2+z^2)\big)\), calculer le rotationnel et la divergence de \(F\).</li>
+</ol></div>
+<p class="cx-ref">Méthode : <a href="ds-methodes.html#m-2-1">M2.1</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>\(\operatorname{rot}F=\vec\nabla\wedge F\) : la 1<sup>re</sup> coordonnée ne contient ni \(\partial_x\) ni \(F_1\) (même logique en permutant circulairement \(x\to y\to z\)). Pour la question 3, notez \(s=x^2+y^2+z^2\) : \(\partial_x\cos s=-2x\sin s\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1 et 2. Formules</div>
+<div class="mq">\[\operatorname{rot}F=\vec\nabla\wedge F=\Big(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z},\ \ \frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x},\ \ \frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\Big)\]</div>
+<div class="mq">\[\operatorname{div}F=\vec\nabla\cdot F=\frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z}.\]</div>
+<div class="qsub">3. Application</div>
+<p>Avec \(F_1=xyz\), \(F_2=e^{xyz}\), \(F_3=\cos s\) où \(s=x^2+y^2+z^2\). Les dérivées utiles :
+\(\partial_yF_3=-2y\sin s\), \(\partial_zF_2=xy\,e^{xyz}\), \(\partial_zF_1=xy\), \(\partial_xF_3=-2x\sin s\), \(\partial_xF_2=yz\,e^{xyz}\), \(\partial_yF_1=xz\), et \(\partial_xF_1=yz\), \(\partial_yF_2=xz\,e^{xyz}\), \(\partial_zF_3=-2z\sin s\). Donc :</p>
+<div class="mq">\[\boxed{\ \operatorname{rot}F=\Big(-2y\sin s-xy\,e^{xyz},\ \ xy+2x\sin s,\ \ yz\,e^{xyz}-xz\Big)\ }\]</div>
+<div class="mq">\[\boxed{\ \operatorname{div}F=yz+xz\,e^{xyz}-2z\sin s\ }\]</div>
+<div class="pieges"><b class="lab">Erreur dans le corrigé manuscrit</b>
+<ul><li>Le PDF du corrigé donne « \(xy-2x\sin(x^2+y^2+z^2)\) » pour la <b>2<sup>e</sup> coordonnée</b>. Le signe correct est <b>\(+\)</b> : \(\partial_zF_1-\partial_xF_3=xy-(-2x\sin s)=xy+2x\sin s\). Les deux autres coordonnées et la divergence sont exactes. Attention à ne pas recopier cette erreur dans vos révisions.</li></ul></div>
+</div></details>
+</article>
+
+<article class="cx" id="an-24-1">
+<header class="cx-hd"><span class="cx-num">Ex. 1 · 2024</span><h3>\(f=e^{x\ln(x^2+y^2)}\) : continuité, dérivées, continuité des dérivées</h3></header>
+<div class="cx-meta"><span class="lvl">★★★ format DS</span><span class="dur">⏱ \(30\,\min\)</span><span class="skill">Continuité · dérivées partielles en 0 · non-\(C^1\)</span></div>
+<div class="cx-enonce">Soit \(f:\mathbb R^2\to\mathbb R\) définie par
+\[f(x,y)=\begin{cases}e^{x\ln(x^2+y^2)}&amp;\text{si }(x,y)\ne(0,0),\\[1mm]1&amp;\text{si }(x,y)=(0,0).\end{cases}\]
+<ol>
+<li>Étudier la continuité de \(f\) en \((0,0)\).</li>
+<li>Calculer les dérivées partielles d'ordre 1 : \(\dfrac{\partial f}{\partial x}\) et \(\dfrac{\partial f}{\partial y}\) sur \(\mathbb R^2\setminus\{(0,0)\}\).</li>
+<li>Calculer \(\dfrac{\partial f}{\partial x}(0,0)\) et \(\dfrac{\partial f}{\partial y}(0,0)\).</li>
+<li>Étudier la continuité de \(\dfrac{\partial f}{\partial x}\) et \(\dfrac{\partial f}{\partial y}\) en \((0,0)\).</li>
+</ol></div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-1-3">M1.3</a> · <a href="ds-methodes.html#m-1-5">M1.5</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>1) L'exposant est \(x\ln(x^2+y^2)=2r\cos\theta\,\ln r\) : un « \(0\times\infty\) » qui se règle par la croissance comparée \(r\ln r\to0\). 3) \(f(h,0)=e^{h\ln(h^2)}=e^{2h\ln|h|}\) : équivalent \(e^u-1\sim u\). 4) Une dérivée partielle qui n'existe pas en \((0,0)\) ne peut pas y être continue ; pour \(f_y\), cherchez un chemin donnant une limite \(\ne0\) (indice : \(y=-x\)).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Continuité en \((0,0)\)</div>
+<p>Posons \(r=\sqrt{x^2+y^2}\). Alors \(|x\ln(x^2+y^2)|\le r\cdot|2\ln r|=2r|\ln r|\xrightarrow[r\to0]{}0\) (croissance comparée). Donc \(x\ln(x^2+y^2)\to0\) quand \((x,y)\to(0,0)\) et, par continuité de l'exponentielle, \(f(x,y)\to e^0=1=f(0,0)\). <b>\(f\) est continue en \((0,0)\).</b></p>
+<div class="qsub">2. Dérivées partielles sur \(\mathbb R^2\setminus\{(0,0)\}\)</div>
+<p>Sur cet ouvert, \(f=e^{\varphi}\) avec \(\varphi=x\ln(x^2+y^2)\), et \(\partial_x\varphi=\ln(x^2+y^2)+\dfrac{2x^2}{x^2+y^2}\), \(\partial_y\varphi=\dfrac{2xy}{x^2+y^2}\). Donc
+\[\boxed{\ f_x=\Big(\ln(x^2+y^2)+\frac{2x^2}{x^2+y^2}\Big)e^{x\ln(x^2+y^2)},\qquad f_y=\frac{2xy}{x^2+y^2}\,e^{x\ln(x^2+y^2)}\ }\]
+<div class="qsub">3. Dérivées partielles en \((0,0)\)</div>
+<p><b>Selon \(x\).</b> Pour \(h\neq0\), \(\dfrac{f(h,0)-f(0,0)}h=\dfrac{e^{2h\ln|h|}-1}h=\dfrac{e^{2h\ln|h|}-1}{2h\ln|h|}\cdot2\ln|h|\). Quand \(h\to0\), \(2h\ln|h|\to0\) donc le premier facteur tend vers \(1\) (limite de \((e^u-1)/u\) en \(0\)), et \(2\ln|h|\to-\infty\). Le taux d'accroissement tend vers \(-\infty\) : <b>\(\dfrac{\partial f}{\partial x}(0,0)\) n'existe pas.</b></p>
+<p><b>Selon \(y\).</b> Pour \(h\ne0\), \(f(0,h)=e^{0\cdot\ln(h^2)}=1\), donc \(\dfrac{f(0,h)-f(0,0)}h=\dfrac{1-1}h=0\) : <b>\(\dfrac{\partial f}{\partial y}(0,0)=0\).</b></p>
+<div class="qsub">4. Continuité de \(f_x\) et \(f_y\) en \((0,0)\)</div>
+<p>\(f_x\) n'est <b>pas définie</b> en \((0,0)\) (question 3) : elle ne peut pas y être continue.</p>
+<p>Pour \(f_y\), considérons la suite de points \((x,-x)\), \(x\to0\), \(x\ne0\) : \(\dfrac{2x(-x)}{2x^2}=-1\) et \(f(x,-x)=e^{x\ln(2x^2)}\to1\) (même argument qu'en 1). Donc
+\[\lim_{x\to0}f_y(x,-x)=-1\neq0=f_y(0,0).\]
+Deux chemins (\(y=0\) donne \(f_y=0\), \(y=-x\) donne \(-1\)) suffiraient : <b>\(f_y\) n'est pas continue en \((0,0)\).</b></p>
+<div class="why"><b class="lab">Conclusion utile</b>\(f\) est continue en \((0,0)\), \(f_y(0,0)\) existe, mais \(f\) n'est pas de classe \(C^1\) sur \(\mathbb R^2\). Dans le corrigé manuscrit, la division par \(h\) est écrite avec \(\ln(h)\) : il faut \(\ln|h|\) (ou \(\ln h^2=2\ln|h|\)), puisque \(h\) peut être négatif.</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-24-2">
+<header class="cx-hd"><span class="cx-num">Ex. 2 · 2024</span><h3>Un champ avec paramètre dérive-t-il d'un potentiel ?</h3></header>
+<div class="cx-meta"><span class="lvl">★★ technique</span><span class="dur">⏱ \(10\,\min\)</span><span class="skill">Critère du rotationnel · potentiel</span></div>
+<div class="cx-enonce">
+<ol>
+<li>À quelle condition sur \(\alpha\) le champ de vecteurs de composantes \((xy,\ z+\alpha x^2,\ y)\) dérive-t-il d'un potentiel ?</li>
+<li>Calculer ce potentiel.</li>
+</ol></div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-2-4">M2.4</a> · <a href="ds-methodes.html#m-2-5">M2.5</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>Calculez le rotationnel : une seule coordonnée dépend de \(\alpha\). Le champ est défini sur \(\mathbb R^3\) tout entier (étoilé), donc \(\operatorname{rot}F=0\) suffit. Pour le potentiel, intégrez \(\varphi_x=xy\) en \(x\), puis comparez avec \(\varphi_y\), puis \(\varphi_z\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Condition sur \(\alpha\)</div>
+<p>Soit \(F=(xy,\ z+\alpha x^2,\ y)\), de classe \(C^1\) sur \(\mathbb R^3\). Si \(F=\vec\nabla\varphi\), le théorème de Schwarz donne \(\operatorname{rot}F=0\) (condition nécessaire). Réciproquement, \(\mathbb R^3\) est étoilé : si \(\operatorname{rot}F=0\), \(F\) dérive d'un potentiel (lemme de Poincaré). Donc \(F\) dérive d'un potentiel \(\iff\operatorname{rot}F=\vec0\).
+\[\operatorname{rot}F=\Big(\underbrace{1-1}_{\partial_yF_3-\partial_zF_2},\ \underbrace{0-0}_{\partial_zF_1-\partial_xF_3},\ \underbrace{2\alpha x-x}_{\partial_xF_2-\partial_yF_1}\Big)=\big(0,0,(2\alpha-1)x\big).\]
+Ce vecteur est nul pour tout \(x\) si et seulement si \(2\alpha-1=0\) : <b>\(F\) dérive d'un potentiel \(\iff\alpha=\dfrac12\).</b></p>
+<div class="qsub">2. Le potentiel pour \(\alpha=\frac12\)</div>
+<p>On cherche \(\varphi\) avec \(\varphi_x=xy\), \(\varphi_y=z+\frac{x^2}2\), \(\varphi_z=y\). En intégrant \(\varphi_x\) par rapport à \(x\) : \(\varphi(x,y,z)=\dfrac{x^2y}2+g(y,z)\). Alors \(\varphi_y=\dfrac{x^2}2+g_y=z+\dfrac{x^2}2\), d'où \(g_y=z\) et \(g(y,z)=yz+h(z)\). Enfin \(\varphi_z=y+h'(z)=y\) donne \(h'=0\), \(h=c\). Donc
+\[\boxed{\ \varphi(x,y,z)=\frac{x^2y}2+yz+c,\qquad c\in\mathbb R\ }\]
+<div class="retenir"><b class="lab">Vérification</b>\(\vec\nabla\varphi=\big(xy,\ \frac{x^2}2+z,\ y\big)=F\). À écrire sur la copie : cela prouve le résultat.</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-24-3">
+<header class="cx-hd"><span class="cx-num">Ex. 3 · 2024</span><h3>Intégrale de \(\dfrac1{x+y+1}\) sur un triangle</h3></header>
+<div class="cx-meta"><span class="lvl">★★ technique</span><span class="dur">⏱ \(20\,\min\)</span><span class="skill">Type 1/2 · intégration de \(\ln\)</span></div>
+<div class="cx-enonce">Si \(D=\{(x,y)\in\mathbb R^2,\ 0\le x\le y\le1\}\), représenter graphiquement \(D\) puis calculer l'intégrale double \(\displaystyle\iint_D\frac{dx\,dy}{x+y+1}\).</div>
+<p class="cx-ref">Méthode : <a href="ds-methodes.html#m-4-2">M4.2</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>\(D\) est un triangle ; décrivez-le de deux façons : \(x\in[0,1]\), \(y\in[x,1]\) ou \(y\in[0,1]\), \(x\in[0,y]\). Les deux marchent ; l'intégrale en \(x\) (bornes \(0\) et \(y\)) donne \(\ln(2y+1)-\ln(y+1)\). Rappel : \(\int\ln u\,du=u\ln u-u\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Le domaine</div>
+<p>\(0\le x\le y\le1\) : le point est au-dessus de la droite \(y=x\), sous la droite \(y=1\) et à droite de l'axe \(Oy\). \(D\) est le triangle de sommets \((0,0)\), \((0,1)\), \((1,1)\).</p>
+<svg class="cx-fig" viewBox="0 0 260 190" role="img" aria-label="Triangle de sommets (0,0), (0,1) et (1,1)">
+<path class="rg" d="M50,160 L50,40 L170,40 Z"/>
+<path class="ax" d="M15,160 H245 M50,185 V12"/>
+<path class="ax" d="M245,160 l-6,-3 M245,160 l-6,3 M50,12 l-3,6 M50,12 l3,6"/>
+<path d="M30,180 L200,10" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1" fill="none" opacity=".6"/>
+<text x="30" y="44">1</text><text x="166" y="176">1</text><text x="72" y="82">D</text><text x="182" y="40">y=1</text><text x="150" y="108">y=x</text>
+</svg>
+<div class="qsub">2. Calcul</div>
+<p>On balaie par \(y\in[0,1]\) avec \(0\le x\le y\) (\(x\) est l'intégrale intérieure) :
+\[\iint_D\frac{dx\,dy}{x+y+1}=\int_0^1\Big(\int_0^y\frac{dx}{x+y+1}\Big)dy=\int_0^1\Big[\ln(x+y+1)\Big]_{x=0}^{x=y}dy=\int_0^1\big(\ln(2y+1)-\ln(y+1)\big)dy.\]
+(\(x+y+1&gt;0\) sur \(D\) : le logarithme est bien défini.) Avec \(\int\ln(ay+1)\,dy=\dfrac{(ay+1)\ln(ay+1)-(ay+1)}a\) :
+\[\int_0^1\ln(2y+1)\,dy=\frac{3\ln3-3+1}2=\frac32\ln3-1,\qquad\int_0^1\ln(y+1)\,dy=2\ln2-2+1=2\ln2-1.\]
+En soustrayant :
+\[\iint_D\frac{dx\,dy}{x+y+1}=\boxed{\ \frac32\ln3-2\ln2=\ln\frac{3\sqrt3}4\approx0{,}26\ }\]
+<div class="retenir"><b class="lab">Contrôle</b>L'aire de \(D\) est \(\frac12\) et l'intégrande varie de \(1\) en \((0,0)\) à \(\frac13\) en \((1,1)\) : une valeur moyenne autour de \(\frac12\) donne \(\approx0{,}25\). Cohérent. L'autre ordre (\(x\) extérieur, bornes \([x,1]\)) mène à \(\int_0^1(\ln(2+x)-\ln(1+2x))\,dx\), qui donne le même résultat.</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-24-4">
+<header class="cx-hd"><span class="cx-num">Ex. 4 · 2024</span><h3>Volume entre un plan et un paraboloïde</h3></header>
+<div class="cx-meta"><span class="lvl">★★ technique</span><span class="dur">⏱ \(15\,\min\)</span><span class="skill">Volume · cylindriques</span></div>
+<div class="cx-enonce">Calculer le volume de la région \(D\) délimitée par les surfaces \(z=1\) et \(z=5-x^2-y^2\).</div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-4-8">M4.8</a> · <a href="ds-methodes.html#m-4-10">M4.10</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>Cherchez où le paraboloïde coupe le plan \(z=1\) : \(5-r^2=1\). Le solide est le « dôme » au-dessus du plan, sous le paraboloïde. Deux routes : (i) volume \(=\iint_{\text{base}}(\text{haut}-\text{bas})\,dx\,dy\) ; (ii) cylindriques avec \(z\) extérieur.</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Description du solide</div>
+<p>Le paraboloïde \(z=5-x^2-y^2\) est de révolution autour de l'axe \(Oz\), de sommet \((0,0,5)\), ouvert vers le bas. Il rencontre le plan \(z=1\) quand \(5-x^2-y^2=1\), c'est-à-dire \(x^2+y^2=4\) : le cercle de rayon \(2\). Le solide \(D\) est la partie située <b>au-dessus du plan \(z=1\)</b> et <b>sous le paraboloïde</b> :
+\[D=\{(x,y,z):\ x^2+y^2\le4,\ \ 1\le z\le5-x^2-y^2\}.\]
+<div class="qsub">2. Volume (en polaires pour la base)</div>
+<p>La hauteur au-dessus de \((x,y)\) est \((5-x^2-y^2)-1=4-r^2\ge0\) sur le disque \(r\le2\). Avec \(dx\,dy=r\,dr\,d\theta\) :
+\[\mathrm{Vol}(D)=\iint_{r\le2}(4-r^2)\,dx\,dy=\int_0^{2\pi}\!\!\int_0^2(4-r^2)\,r\,dr\,d\theta=2\pi\Big[2r^2-\frac{r^4}4\Big]_0^2=2\pi(8-4)=\boxed{8\pi}\]
+<div class="qsub">3. Même résultat en cylindriques, \(z\) extérieur (corrigé du cours)</div>
+<p>À \(z\in[1,5]\) fixé, la tranche est le disque \(x^2+y^2\le5-z\), de rayon \(\sqrt{5-z}\) : \(\displaystyle V=\int_0^{2\pi}\!\!\int_1^5\!\!\int_0^{\sqrt{5-z}}r\,dr\,dz\,d\theta=2\pi\int_1^5\frac{5-z}2\,dz=\pi\Big[-\frac{(5-z)^2}2\Big]_1^5=\pi\cdot8=8\pi.\) Les deux méthodes concordent.</p>
+<div class="retenir"><b class="lab">Choisir la route</b>Quand le solide est « sous une surface, au-dessus d'une autre », la route (i) (aire de la base \(\times\) hauteur variable) est la plus courte : une seule intégrale double, sans borne en \(z\) à gérer.</div>
+</div></details>
+</article>
+</section>
+
+<!-- ===================================================== PRÉPARATION 2026 ===================================================== -->
+<section class="cx-chap" data-cat="a26" id="a26">
+<div class="cx-chap-hd">
+<span class="cx-chap-n">Feuille « Préparation au DS1 » · 2026-2027</span>
+<h2>Préparation au DS1 Analyse 3</h2>
+<p>Les sept exercices donnés cette année : ils couvrent exactement les types vus aux deux DS précédents. Faites-les comme un sujet : une feuille, un minuteur, pas de cours. · Cours : <a href="index.html#ch1">Ch. 1</a>, <a href="index.html#ch2">Ch. 2</a>, <a href="index.html#ch4">Ch. 4</a></p>
+</div>
+
+<article class="cx" id="an-26-1">
+<header class="cx-hd"><span class="cx-num">Prép. 1</span><h3>Domaines de définition et limites en \((0,0)\)</h3></header>
+<div class="cx-meta"><span class="lvl">★ échauffement</span><span class="dur">⏱ \(15\,\min\)</span><span class="skill">Domaine · limites · chemins · polaires</span></div>
+<div class="cx-enonce">Donner les domaines de définition et calculer les limites en \((0,0)\) (si possible) des fonctions \(f:\mathbb R^2\to\mathbb R\) suivantes :
+<ol>
+<li>\(f(x,y)=\dfrac{(\cos(x^2)-1)+\sin y}{x^4+y}\).</li>
+<li>\(f(x,y)=\dfrac{x^2+y^2}{x^2-y^2}\).</li>
+<li>\(f(x,y)=\dfrac{x^2(x^2-2y^2)}{x^2+y^2}\).</li>
+</ol></div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-1-1">M1.1</a> (domaines) · <a href="ds-methodes.html#m-1-2">M1.2</a> (limites)</p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>Essayez toujours les chemins \(y=0\) et \(x=0\) d'abord : si les deux limites diffèrent, c'est fini (1 et 2). Si elles coïncident (3), passez à un encadrement ou aux polaires. Pour 1, \(\cos u-1\sim-\frac{u^2}2\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. \(f=\dfrac{(\cos x^2-1)+\sin y}{x^4+y}\)</div>
+<p><b>Domaine.</b> Il faut \(x^4+y\ne0\) : \(D_f=\{(x,y):\ y\ne-x^4\}\), le plan privé de la courbe \(y=-x^4\) (qui passe par \((0,0)\)). \((0,0)\) n'est pas dans \(D_f\) mais en est adhérent : la question de la limite a un sens.</p>
+<p><b>Limite.</b> Sur l'axe \(y=0\) (\(x\ne0\)) : \(f(x,0)=\dfrac{\cos x^2-1}{x^4}\to-\dfrac12\) car \(\cos u-1\sim-\dfrac{u^2}2\) avec \(u=x^2\). Sur l'axe \(x=0\) (\(y\ne0\)) : \(f(0,y)=\dfrac{\sin y}y\to1\). Deux chemins, deux limites distinctes (\(-\frac12\ne1\)) : <b>pas de limite en \((0,0)\)</b>.</p>
+<div class="qsub">2. \(f=\dfrac{x^2+y^2}{x^2-y^2}\)</div>
+<p><b>Domaine.</b> \(x^2\ne y^2\) : \(D_f=\{y\ne\pm x\}\) (le plan privé des deux bissectrices).</p>
+<p><b>Limite.</b> \(f(x,0)=\dfrac{x^2}{x^2}=1\) et \(f(0,y)=\dfrac{y^2}{-y^2}=-1\) : <b>pas de limite</b>.</p>
+<div class="qsub">3. \(f=\dfrac{x^2(x^2-2y^2)}{x^2+y^2}\)</div>
+<p><b>Domaine.</b> \(x^2+y^2\ne0\) : \(D_f=\mathbb R^2\setminus\{(0,0)\}\).</p>
+<p><b>Limite.</b> On a \(x^2\le x^2+y^2\) et \(|x^2-2y^2|\le2(x^2+y^2)\), donc \(|f(x,y)|\le\dfrac{(x^2+y^2)\cdot2(x^2+y^2)}{x^2+y^2}=2(x^2+y^2)\to0\). Par gendarmes, <b>\(\displaystyle\lim_{(x,y)\to(0,0)}f(x,y)=0\)</b>. (En polaires : \(f=r^2\cos^2\theta(\cos^2\theta-2\sin^2\theta)\), borné par \(2r^2\).)</p>
+<div class="retenir"><b class="lab">Réflexe</b>Degré du numérateur \(&gt;\) degré du dénominateur : la limite est en général \(0\) (3). Même degré (1 : mélange, 2) : en général pas de limite, et les axes suffisent pour le prouver.</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-26-2">
+<header class="cx-hd"><span class="cx-num">Prép. 2</span><h3>Continuité de \(\dfrac{\sin(x^2+y^2)}{\ln(1+x^2+y^2)}\)</h3></header>
+<div class="cx-meta"><span class="lvl">★ échauffement</span><span class="dur">⏱ \(10\,\min\)</span><span class="skill">Continuité · changement \(t=x^2+y^2\)</span></div>
+<div class="cx-enonce">La fonction \(f\) suivante est-elle continue sur \(\mathbb R^2\) ?
+\[f(x,y)=\begin{cases}\dfrac{\sin(x^2+y^2)}{\ln(1+x^2+y^2)}&amp;\text{si }(x,y)\neq(0,0),\\[2mm]0&amp;\text{si }(x,y)=(0,0).\end{cases}\]</div>
+<p class="cx-ref">Méthode : <a href="ds-methodes.html#m-1-3">M1.3</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>La fonction ne dépend que de \(t=x^2+y^2\) : posez \(t\to0^+\) et utilisez \(\sin t\sim t\), \(\ln(1+t)\sim t\). Comparez la limite à la valeur \(f(0,0)\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<p><b>Hors de l'origine.</b> Pour \((x,y)\ne(0,0)\), \(t=x^2+y^2&gt;0\) donc \(\ln(1+t)&gt;0\) : le dénominateur ne s'annule pas, et \(f\) est continue comme quotient de fonctions continues.</p>
+<p><b>En \((0,0)\).</b> Posons \(t=x^2+y^2\to0^+\) quand \((x,y)\to(0,0)\). Alors
+\[f(x,y)=\frac{\sin t}{\ln(1+t)}=\frac{\sin t}{t}\cdot\frac{t}{\ln(1+t)}\xrightarrow[t\to0^+]{}1\times1=1.\]
+La limite vaut \(1\) alors que \(f(0,0)=0\) : <b>\(f\) n'est pas continue en \((0,0)\)</b>, donc pas continue sur \(\mathbb R^2\) (elle l'est sur \(\mathbb R^2\setminus\{(0,0)\}\)).</p>
+<div class="retenir"><b class="lab">Remarque</b>En posant \(f(0,0)=1\), on obtient un <b>prolongement par continuité</b> : la discontinuité est « artificielle ».</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-26-3">
+<header class="cx-hd"><span class="cx-num">Prép. 3</span><h3>Dérivées partielles de \(\dfrac{x^2y}{1+x^2+y^2}\)</h3></header>
+<div class="cx-meta"><span class="lvl">★ échauffement</span><span class="dur">⏱ \(8\,\min\)</span><span class="skill">Dérivées partielles · quotient</span></div>
+<div class="cx-enonce">Calculer les dérivées partielles \(\dfrac{\partial f}{\partial x}\) et \(\dfrac{\partial f}{\partial y}\) de la fonction \(f:\mathbb R^2\to\mathbb R\) définie par \(f(x,y)=\dfrac{x^2y}{1+x^2+y^2}\).</div>
+<p class="cx-ref">Méthode : <a href="ds-methodes.html#m-1-4">M1.4</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>Quotient \(\left(\frac uv\right)'=\frac{u'v-uv'}{v^2}\), avec \(v=1+x^2+y^2\) (jamais nul). Dérivez en \(x\) en traitant \(y\) comme une constante, puis l'inverse. Factorisez le numérateur.</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<p>\(f\) est une fraction rationnelle dont le dénominateur \(v=1+x^2+y^2\ge1\) ne s'annule jamais : \(f\) est de classe \(C^\infty\) sur \(\mathbb R^2\).</p>
+<p>\[\frac{\partial f}{\partial x}=\frac{2xy\,(1+x^2+y^2)-x^2y\cdot2x}{(1+x^2+y^2)^2}=\frac{2xy+2x^3y+2xy^3-2x^3y}{(1+x^2+y^2)^2}=\boxed{\ \frac{2xy\,(1+y^2)}{(1+x^2+y^2)^2}\ }\]
+\[\frac{\partial f}{\partial y}=\frac{x^2(1+x^2+y^2)-x^2y\cdot2y}{(1+x^2+y^2)^2}=\frac{x^2+x^4+x^2y^2-2x^2y^2}{(1+x^2+y^2)^2}=\boxed{\ \frac{x^2\,(1+x^2-y^2)}{(1+x^2+y^2)^2}\ }\]
+<div class="retenir"><b class="lab">Contrôle</b>\(f_x=0\) sur les axes (\(x=0\) ou \(y=0\)) : c'est cohérent, car \(f\) est nulle sur chaque axe.</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-26-4">
+<header class="cx-hd"><span class="cx-num">Prép. 4</span><h3>\(\dfrac{xy(x^2-y^2)}{x^2+y^2}\) : continuité, \(C^1\), dérivées en \((0,0)\)</h3></header>
+<div class="cx-meta"><span class="lvl">★★★ format DS</span><span class="dur">⏱ \(30\,\min\)</span><span class="skill">Fonction par morceaux · \(C^1\) · Schwarz</span></div>
+<div class="cx-enonce">Soit \(f:\mathbb R^2\to\mathbb R\) définie par
+\[f(x,y)=\begin{cases}\dfrac{xy(x^2-y^2)}{x^2+y^2}&amp;\text{si }(x,y)\ne(0,0),\\[2mm]0&amp;\text{si }(x,y)=(0,0).\end{cases}\]
+<ol>
+<li>Montrer que \(f\) est continue sur \(\mathbb R^2\).</li>
+<li>Montrer que \(f\) est de classe \(C^1\) sur \(\mathbb R^2\setminus\{(0,0)\}\).</li>
+<li>Calculer les dérivées partielles d'ordre 1 : \(\dfrac{\partial f}{\partial x}(x,y)\) et \(\dfrac{\partial f}{\partial y}(x,y)\) sur \(\mathbb R^2\setminus\{(0,0)\}\).</li>
+<li>Les dérivées partielles premières de \(f\) en \((0,0)\) existent-elles ? Si oui, les calculer. \(f\) est-elle de classe \(C^1\) sur \(\mathbb R^2\) ?</li>
+</ol></div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-1-3">M1.3</a> · <a href="ds-methodes.html#m-1-5">M1.5</a> · <a href="ds-methodes.html#m-1-6">M1.6</a> (Schwarz)</p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>1) \(|x^2-y^2|\le x^2+y^2\) puis \(|xy|\le\frac{x^2+y^2}2\). 3) Quotient ; pour \(f_y\), utilisez que \(f(y,x)=-f(x,y)\). 4) Définition par le taux \(\frac{f(h,0)-f(0,0)}h\). Pour la classe \(C^1\), majorez \(|f_x|\) : numérateur de degré 5, dénominateur de degré 4, donc \(|f_x|\lesssim|y|\to0\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Continuité sur \(\mathbb R^2\)</div>
+<p>Sur \(\mathbb R^2\setminus\{(0,0)\}\), \(f\) est un quotient de polynômes à dénominateur non nul : continue. En \((0,0)\) : comme \(|x^2-y^2|\le x^2+y^2\),
+\[|f(x,y)|\le|xy|\le\frac{x^2+y^2}2\xrightarrow[(x,y)\to(0,0)]{}0=f(0,0).\]
+Par gendarmes, \(f\) est continue en \((0,0)\), donc <b>continue sur \(\mathbb R^2\)</b>.</p>
+<div class="qsub">2. Classe \(C^1\) hors de l'origine</div>
+<p>Sur l'ouvert \(\mathbb R^2\setminus\{(0,0)\}\), \(f\) est un quotient de deux polynômes dont le dénominateur ne s'annule pas : \(f\) est de classe \(C^\infty\), en particulier \(C^1\).</p>
+<div class="qsub">3. Dérivées partielles hors de l'origine</div>
+<p>Pour \((x,y)\neq(0,0)\), avec \(f=\dfrac{x^3y-xy^3}{x^2+y^2}\) :
+\[f_x=\frac{(3x^2y-y^3)(x^2+y^2)-(x^3y-xy^3)\cdot2x}{(x^2+y^2)^2}=\frac{3x^4y+2x^2y^3-y^5-2x^4y+2x^2y^3}{(x^2+y^2)^2}\]
+\[\boxed{\ \frac{\partial f}{\partial x}(x,y)=\frac{y\,(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}\ }\]
+Comme \(f(y,x)=-f(x,y)\), on a \(f_y(x,y)=-f_x(y,x)\), soit
+\[\boxed{\ \frac{\partial f}{\partial y}(x,y)=\frac{x\,(x^4-4x^2y^2-y^4)}{(x^2+y^2)^2}\ }\]
+<div class="qsub">4. Dérivées en \((0,0)\) et classe \(C^1\)</div>
+<p>Pour \(h\ne0\) : \(f(h,0)=0\) et \(f(0,h)=0\). Donc \(\dfrac{f(h,0)-f(0,0)}h=0\) et \(\dfrac{f(0,h)-f(0,0)}h=0\) : <b>les dérivées partielles existent et \(\dfrac{\partial f}{\partial x}(0,0)=\dfrac{\partial f}{\partial y}(0,0)=0\).</b></p>
+<p>Étudions la continuité de \(f_x\) en \((0,0)\). Comme \(|x^4+4x^2y^2-y^4|\le x^4+4x^2y^2+y^4=(x^2+y^2)^2+2x^2y^2\le\frac32(x^2+y^2)^2\) :
+\[|f_x(x,y)|\le\frac32|y|\xrightarrow[(x,y)\to(0,0)]{}0=f_x(0,0).\]
+De même \(|f_y(x,y)|\le\frac32|x|\to0=f_y(0,0)\). Les dérivées partielles sont continues sur \(\mathbb R^2\setminus\{(0,0)\}\) (question 2) et en \((0,0)\) : <b>\(f\) est de classe \(C^1\) sur \(\mathbb R^2\).</b></p>
+<div class="why"><b class="lab">Pour aller plus loin</b>\(f_x(0,y)=\dfrac{y\cdot(-y^4)}{y^4}=-y\) et \(f_y(x,0)=x\), donc \(\partial_y(f_x)(0,0)=-1\) et \(\partial_x(f_y)(0,0)=+1\) : les dérivées croisées sont <b>différentes</b>. Il n'y a pas de contradiction avec le théorème de Schwarz, qui exige que \(f\) soit de classe \(C^2\) : ici \(f\) est \(C^1\) mais pas \(C^2\). C'est l'exemple classique ; il apparaît aussi dans l'exercice supplémentaire 1 du chapitre 1.</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-26-5">
+<header class="cx-hd"><span class="cx-num">Prép. 5</span><h3>Matrice jacobienne de \(\mathbb R^3\to\mathbb R^4\)</h3></header>
+<div class="cx-meta"><span class="lvl">★ échauffement</span><span class="dur">⏱ \(8\,\min\)</span><span class="skill">Jacobienne · 4 lignes, 3 colonnes</span></div>
+<div class="cx-enonce">Donner la matrice jacobienne de la fonction \(f\) définie sur \(\mathbb R^3\) et à valeurs dans \(\mathbb R^4\) par
+\[f(x,y,z)=\big(x\cos y+ze^y,\ \ y^2\ln(1+x)+z\sin y,\ \ e^{x+y^2}+xyz,\ \ z^2+y^3x^2\big).\]</div>
+<p class="cx-ref">Méthode : <a href="ds-methodes.html#m-1-7">M1.7</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>Ligne \(i\) = gradient de la composante \(f_i\) ; colonnes dans l'ordre \(x,\,y,\,z\). La matrice a donc <b>4 lignes</b> et <b>3 colonnes</b>. Une composante, trois dérivées ; ne pas se tromper de variable.</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<p>Notons \(f=(f_1,f_2,f_3,f_4)\). La jacobienne \(J_f(x,y,z)=\Big(\dfrac{\partial f_i}{\partial x_j}\Big)\) est de taille \(4\times3\) (définie pour \(x&gt;-1\), à cause de \(\ln(1+x)\)). Dérivées de chaque ligne :</p>
+<ul>
+<li>\(f_1=x\cos y+ze^y\) : \(\ \partial_x=\cos y,\ \ \partial_y=-x\sin y+ze^y,\ \ \partial_z=e^y\).</li>
+<li>\(f_2=y^2\ln(1+x)+z\sin y\) : \(\ \partial_x=\dfrac{y^2}{1+x},\ \ \partial_y=2y\ln(1+x)+z\cos y,\ \ \partial_z=\sin y\).</li>
+<li>\(f_3=e^{x+y^2}+xyz\) : \(\ \partial_x=e^{x+y^2}+yz,\ \ \partial_y=2y\,e^{x+y^2}+xz,\ \ \partial_z=xy\).</li>
+<li>\(f_4=z^2+x^2y^3\) : \(\ \partial_x=2xy^3,\ \ \partial_y=3x^2y^2,\ \ \partial_z=2z\).</li>
+</ul>
+<div class="mq">\[J_f(x,y,z)=\begin{pmatrix}\cos y&amp;-x\sin y+ze^y&amp;e^y\\[1mm]\dfrac{y^2}{1+x}&amp;2y\ln(1+x)+z\cos y&amp;\sin y\\[2mm]e^{x+y^2}+yz&amp;2ye^{x+y^2}+xz&amp;xy\\[1mm]2xy^3&amp;3x^2y^2&amp;2z\end{pmatrix}\]</div>
+<div class="retenir"><b class="lab">Contrôle</b>Une jacobienne d'une application \(\mathbb R^n\to\mathbb R^m\) a \(m\) lignes et \(n\) colonnes. Ici \(4\times3\) : elle n'a pas de déterminant (matrice non carrée).</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-26-6">
+<header class="cx-hd"><span class="cx-num">Prép. 6</span><h3>Un champ dérive d'un potentiel : démonstration et calcul</h3></header>
+<div class="cx-meta"><span class="lvl">★★ technique</span><span class="dur">⏱ \(15\,\min\)</span><span class="skill">rot \(=0\) · potentiel · intégrations successives</span></div>
+<div class="cx-enonce">On considère le champ de vecteurs
+\[\vec F=(2xyz^3+\cos y)\,\vec\imath+(x^2z^3-x\sin y+e^z)\,\vec\jmath+(3x^2yz^2+ye^z)\,\vec k.\]
+<ol>
+<li>Montrer que \(\vec F\) dérive d'un potentiel scalaire.</li>
+<li>Trouver un potentiel dont il dérive.</li>
+</ol></div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-2-4">M2.4</a> · <a href="ds-methodes.html#m-2-5">M2.5</a></p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>1) Calculez les trois coordonnées du rotationnel (elles doivent s'annuler) et justifiez le domaine : \(\mathbb R^3\) est étoilé. 2) Intégrez \(F_1\) en \(x\) ; le « terme constant » est une fonction \(g(y,z)\) ; dérivez en \(y\), comparez à \(F_2\) ; recommencez avec \(z\).</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. \(\operatorname{rot}\vec F=\vec0\)</div>
+<p>Notons \(F_1=2xyz^3+\cos y\), \(F_2=x^2z^3-x\sin y+e^z\), \(F_3=3x^2yz^2+ye^z\). \(\vec F\) est de classe \(C^1\) sur \(\mathbb R^3\) (polynômes, \(\cos\), \(\sin\), \(\exp\)).
+\[\partial_yF_3-\partial_zF_2=(3x^2z^2+e^z)-(3x^2z^2+e^z)=0,\]
+\[\partial_zF_1-\partial_xF_3=6xyz^2-6xyz^2=0,\]
+\[\partial_xF_2-\partial_yF_1=(2xz^3-\sin y)-(2xz^3-\sin y)=0.\]
+Donc \(\operatorname{rot}\vec F=\vec0\) sur \(\mathbb R^3\). Comme \(\mathbb R^3\) est étoilé (le lemme de Poincaré s'applique), <b>\(\vec F\) dérive d'un potentiel scalaire</b>.</p>
+<div class="qsub">2. Calcul du potentiel</div>
+<p>On cherche \(\varphi\) avec \(\vec\nabla\varphi=\vec F\).
+<br>• \(\varphi_x=2xyz^3+\cos y\) donne \(\varphi=x^2yz^3+x\cos y+g(y,z)\).
+<br>• \(\varphi_y=x^2z^3-x\sin y+g_y=F_2=x^2z^3-x\sin y+e^z\) donne \(g_y=e^z\), donc \(g(y,z)=ye^z+h(z)\).
+<br>• \(\varphi_z=3x^2yz^2+ye^z+h'(z)=F_3=3x^2yz^2+ye^z\) donne \(h'=0\), \(h=c\).</p>
+<div class="mq">\[\boxed{\ \varphi(x,y,z)=x^2yz^3+x\cos y+ye^z+c,\qquad c\in\mathbb R\ }\]</div>
+<div class="retenir"><b class="lab">Vérification</b>\(\varphi_x=2xyz^3+\cos y\), \(\varphi_y=x^2z^3-x\sin y+e^z\), \(\varphi_z=3x^2yz^2+ye^z\) : on retrouve \(F_1,F_2,F_3\).</div>
+</div></details>
+</article>
+
+<article class="cx" id="an-26-7">
+<header class="cx-hd"><span class="cx-num">Prép. 7</span><h3>Deux intégrales doubles : triangle et ellipse</h3></header>
+<div class="cx-meta"><span class="lvl">★★ technique</span><span class="dur">⏱ \(25\,\min\)</span><span class="skill">Type 1 · symétrie</span></div>
+<div class="cx-enonce">Calculer les intégrales doubles :
+<ol>
+<li>\(\displaystyle\iint_D(x-y)\,e^{x-y}\,dx\,dy\) avec \(D\) la région du plan bornée par les droites \(y=x\), \(y=-x\) et \(y=1\).</li>
+<li>\(\displaystyle\iint_Dx^2y\,dx\,dy\) avec \(D=\{(x,y)\in\mathbb R^2,\ x^2+9y^2\le1\}\).</li>
+</ol></div>
+<p class="cx-ref">Méthodes : <a href="ds-methodes.html#m-4-2">M4.2</a> · <a href="ds-methodes.html#m-4-5">M4.5</a> · <a href="ds-methodes.html#m-4-6">M4.6</a> (symétries)</p>
+<details class="cx-meth"><summary>💡 Indice</summary><div>
+<p>1) Dessinez le triangle de sommets \((0,0)\), \((1,1)\), \((-1,1)\) ; balayez par \(y\in[0,1]\) avec \(x\in[-y,y]\). Pour l'intégrale en \(x\), posez \(u=x-y\) : \(\int ue^u\,du=(u-1)e^u\). 2) Le domaine est symétrique par \(y\mapsto-y\) ; l'intégrande est impaire en \(y\). Aucun calcul lourd n'est nécessaire, mais il faut le justifier.</p>
+</div></details>
+<details class="cx-corr"><summary>✅ Correction rédigée</summary><div>
+<div class="qsub">1. Le triangle</div>
+<p>Les droites \(y=x\) et \(y=-x\) se coupent en \((0,0)\) ; elles rencontrent \(y=1\) en \((1,1)\) et \((-1,1)\). \(D\) est le triangle de sommets \((0,0)\), \((1,1)\), \((-1,1)\), c'est-à-dire \(D=\{0\le y\le1,\ -y\le x\le y\}\).</p>
+<svg class="cx-fig" viewBox="0 0 260 190" role="img" aria-label="Triangle de sommets (0,0), (1,1) et (-1,1)">
+<path class="rg" d="M130,160 L220,70 L40,70 Z"/>
+<path class="ax" d="M15,160 H245 M130,185 V12"/>
+<path class="ax" d="M245,160 l-6,-3 M245,160 l-6,3 M130,12 l-3,6 M130,12 l3,6"/>
+<text x="224" y="66">(1,1)</text><text x="6" y="66">(-1,1)</text><text x="122" y="108">D</text><text x="176" y="130">y=x</text><text x="62" y="130">y=-x</text><text x="140" y="62">y=1</text>
+</svg>
+<p><b>Intégrale intérieure en \(x\)</b> (avec \(u=x-y\), \(du=dx\)) :
+\[\int_{-y}^{y}(x-y)e^{x-y}\,dx=\Big[(x-y-1)e^{x-y}\Big]_{x=-y}^{x=y}=(-1)e^{0}-(-2y-1)e^{-2y}=-1+(2y+1)e^{-2y}.\]
+<p><b>Intégrale en \(y\).</b> Une primitive de \((2y+1)e^{-2y}\) est \(-(y+1)e^{-2y}\) (dérivée : \(-e^{-2y}+2(y+1)e^{-2y}=(2y+1)e^{-2y}\)). Donc
+\[\iint_D(x-y)e^{x-y}\,dx\,dy=\int_0^1\big(-1+(2y+1)e^{-2y}\big)dy=-1+\Big[-(y+1)e^{-2y}\Big]_0^1=-1+(-2e^{-2}+1)=\boxed{-2e^{-2}}\]
+<div class="retenir"><b class="lab">Contrôle de signe</b>Sur \(D\), \(x\le y\), donc \(x-y\le0\) et l'intégrande est négatif : le résultat est négatif (\(-2e^{-2}\approx-0{,}27\)). Cohérent avec l'aire \(1\) et un intégrande de l'ordre de \(-0{,}3\).</div>
+<div class="qsub">2. L'ellipse</div>
+<p>\(D\) est l'ellipse pleine \(x^2+\dfrac{y^2}{(1/3)^2}\le1\), de demi-axes \(1\) (selon \(x\)) et \(\frac13\) (selon \(y\)). <b>Symétrie.</b> \(D\) est invariant par \((x,y)\mapsto(x,-y)\) et l'intégrande \(g(x,y)=x^2y\) vérifie \(g(x,-y)=-g(x,y)\) : l'intégrale est égale à son opposée, donc nulle. Pour rédiger sans invoquer la symétrie : \(D=\{-1\le x\le1,\ |y|\le\frac13\sqrt{1-x^2}\}\) et
+\[\iint_Dx^2y\,dx\,dy=\int_{-1}^1x^2\Big(\int_{-\frac13\sqrt{1-x^2}}^{\frac13\sqrt{1-x^2}}y\,dy\Big)dx=\int_{-1}^1x^2\cdot0\,dx=\boxed{0}\]
+<p>puisque \(y\mapsto y\) est impaire sur un intervalle symétrique par rapport à \(0\). (Avec les coordonnées elliptiques \(x=r\cos\theta\), \(y=\frac r3\sin\theta\), jacobien \(\frac r3\), on retrouve \(\int_0^{2\pi}\cos^2\theta\sin\theta\,d\theta=0\).)</p>
+<div class="retenir"><b class="lab">Réflexe</b>Avant tout calcul sur un domaine symétrique (disque, ellipse, triangle isocèle), cherchez la parité de l'intégrande : cela peut faire gagner dix minutes.</div>
+</div></details>
+</article>
+</section>
+</div>
+</main>
+<div class="foot">
+<div class="wrap">
+<span>Champs &amp; Intégrales · Spécial DS (ch. 1 à 4) · Analyse 3 · ING2 · 2026-2027</span>
+<span><a href="ds.html">Plan</a> · <a href="ds-methodes.html">Méthodes</a> · <a href="ds-formules.html">Formules</a> · <a href="ds-quiz.html">Quiz</a> · <a href="ds-exercices.html">Exercices</a> · <a href="ds-annales.html">Annales</a> · <a href="ds-blancs.html">DS blancs</a> · <a href="corriges.html">Corrigés du TD</a></span>
+</div>
+</div>
+<a aria-label="Revenir en haut de la page" class="cx-top" href="#">↑</a>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="js/maths.js"></script>
+<script src="js/ds.js"></script>
+</body>
+</html>

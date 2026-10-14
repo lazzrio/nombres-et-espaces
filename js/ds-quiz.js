@@ -7,8 +7,8 @@
 
   var LS = "ci_ds_quiz";
   var CHN = { "0": "Ch. 0 · Géométrie", "1": "Ch. 1 · Plusieurs variables", "2": "Ch. 2 · Opérateurs vectoriels",
-              "3": "Ch. 3 · Courbes et surfaces", "4": "Ch. 4 · Intégrales multiples", "o": "Outils d'ING1" };
-  var ORDER = ["0", "1", "2", "3", "4", "o"];
+              "3": "Ch. 3 · Courbes et surfaces", "4": "Ch. 4 · Intégrales multiples", "o": "Outils d'ING1", "p": "Compléments · à connaître en plus" };
+  var ORDER = ["0", "1", "2", "3", "4", "o", "p"];
   var BS = String.fromCharCode(92);
 
   /* ---------- banque ---------- */

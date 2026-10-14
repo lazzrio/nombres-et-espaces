@@ -434,3 +434,9 @@ body.print-fm .hero,body.print-fm .fm-toolbar,body.print-fm .dsnav{display:none!
   .qz-big{font-size:46px}
 }
 @media print{.qz-setup,.qz-play{display:none!important}}
+
+/* ---------- annales : figures des domaines ---------- */
+.cx-fig{display:block;margin:12px auto;width:min(100%,300px);height:auto;color:var(--muted)}
+.cx-fig .rg{fill:var(--accent);fill-opacity:.22;stroke:var(--accent);stroke-width:2}
+.cx-fig .ax{stroke:currentColor;stroke-width:1.2;fill:none}
+.cx-fig text{fill:var(--ink);font:12px var(--f-mono)}
