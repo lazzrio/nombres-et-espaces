@@ -1,6 +1,6 @@
 /* Hors ligne : le réseau d'abord (contenu toujours à jour), la copie locale si pas de connexion. */
-const CACHE = "champs-integrales-v9";
-const CORE = ["./", "index.html", "corriges.html", "ds.html", "ds-methodes.html", "ds-formules.html", "ds-quiz.html", "ds-exercices.html", "ds-annales.html", "ds-blancs.html",
+const CACHE = "champs-integrales-v10";
+const CORE = ["./", "index.html", "corriges.html", "ds.html", "ds-methodes.html", "ds-formules.html", "ds-bornes.html", "ds-quiz.html", "ds-exercices.html", "ds-annales.html", "ds-blancs.html",
   "css/style.css", "css/ds.css", "js/app.js", "js/quiz.js", "js/lightbox.js",
   "js/corriges.js", "js/maths.js", "js/ds.js", "js/ds-quiz.js", "js/ds-quiz-data.js", "js/topbar.js", "assets/favicon.svg", "assets/icon-192.png", "manifest.webmanifest"];
 

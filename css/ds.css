@@ -440,3 +440,64 @@ body.print-fm .hero,body.print-fm .fm-toolbar,body.print-fm .dsnav{display:none!
 .cx-fig .rg{fill:var(--accent);fill-opacity:.22;stroke:var(--accent);stroke-width:2}
 .cx-fig .ax{stroke:currentColor;stroke-width:1.2;fill:none}
 .cx-fig text{fill:var(--ink);font:12px var(--f-mono)}
+
+/* ---------- page Bornes d'intégrales ---------- */
+.bx-wrap{max-width:1040px}
+.bx-lead{font-size:15.5px;line-height:1.7;margin:14px 0 6px}
+.bx-big{font-family:var(--f-disp);font-size:clamp(18px,2.4vw,23px);font-style:italic;line-height:1.5;margin:0 0 10px}
+.bx-idea{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:16px 26px;align-items:center;margin:16px 0}
+.bx{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:16px 18px 14px;margin-top:20px;min-width:0}
+.bx-hd{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.bx-code{font-family:var(--f-mono);font-weight:600;font-size:12px;color:#fff;background:var(--accent);padding:3px 9px;border-radius:6px;flex:none}
+.bx-hd h4{font-size:18px;font-style:italic;flex:1 1 240px;min-width:0;line-height:1.4}
+.bx-grid{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:14px 24px;align-items:start}
+.bx-figs{display:flex;flex-wrap:wrap;gap:10px 14px;align-content:flex-start;min-width:0}
+.bxf{margin:0;min-width:0;text-align:center}
+.bxf figcaption{font-size:12.5px;color:var(--muted);line-height:1.45;margin-top:4px;max-width:300px;margin-left:auto;margin-right:auto}
+.bxs{display:block;width:100%;height:auto;margin:0 auto;overflow:visible}
+.bxs .ax{stroke:var(--muted);stroke-width:1.2;fill:none}
+.bxs text.ax{stroke:none;fill:var(--muted);font-style:italic}
+.bxs .ah{fill:var(--muted)}
+.bxs .rg{fill:var(--accent-soft);stroke:none}
+.bxs .rg2{fill:var(--good-soft);stroke:none}
+.bxs .cv{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linejoin:round}
+.bxs .cd{fill:none;stroke:var(--muted);stroke-width:1.1;stroke-dasharray:4 3}
+.bxs .sw{stroke:var(--warn);stroke-width:2.3;fill:none}
+.bxs .swh{fill:var(--warn)}
+.bxs .dt{fill:var(--warn);stroke:var(--surface);stroke-width:1}
+.bxs .dth{fill:var(--surface);stroke:var(--warn);stroke-width:2}
+.bxs path.rg,.bxs polygon.rg{stroke:var(--accent);stroke-width:1.6;stroke-linejoin:round}
+.bxs polygon.rg2{stroke:var(--good);stroke-width:1.4}
+.bxs text{font-family:var(--f-mono);font-size:10.5px;fill:var(--muted)}
+.bxs text.tk{font-size:10px}
+.bxs text.lb{fill:var(--ink);font-weight:600;paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.bx-steps{margin:0;padding-left:20px;font-size:14.8px;line-height:1.7}
+.bx-steps li{margin:6px 0}
+.bx>.bx-res{margin:14px 0 6px}
+.bx-res{margin:10px 0 6px;padding:8px 12px;background:var(--surface2);border:1px solid var(--line2);border-left:3px solid var(--accent);border-radius:9px;overflow-x:auto;overflow-y:hidden;max-width:100%;position:relative}
+.bx-res .katex-display{margin:.55em 0;overflow:visible;padding:0}
+.bx-note{font-size:13.8px;color:var(--muted);margin:8px 0 0;line-height:1.6}
+.bx-note b,.bx-lead b{color:var(--ink)}
+.bx-tbl{margin-top:18px}
+.bx-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin:12px 0}
+.bx-box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);min-width:0}
+.bx-box>b.lab{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block}
+.bx-box p{font-size:14.5px;margin:8px 0 0}
+.cad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin:10px 0}
+.cad{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 6px}
+.cad .bxs{max-width:136px}
+.cad figcaption{font-size:13px;color:var(--ink);max-width:none}
+.bx-wrap .recette{margin-top:18px}
+@media(max-width:1060px){
+  .bx-grid{grid-template-columns:minmax(0,1fr)}
+  .bx-figs{justify-content:center}
+}
+@media(max-width:820px){
+  .bx-idea{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:640px){
+  .bx{padding:14px 10px 12px}
+  .bx-two{grid-template-columns:minmax(0,1fr)}
+  .bx-steps{font-size:14.3px}
+}
+@media print{.bx{break-inside:avoid;box-shadow:none}}
