@@ -2217,40 +2217,77 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <div class="cx-enonce">Calculer \(\displaystyle\int_C x\,dx+y^2\,dy+z^3\,dz\) pour : 1) \(c(t)=(t,t,t)\), \(t\in[0,1]\) ; 2) \(c(t)=(\cos t,\sin t,0)\), \(t\in[0,\pi]\) ; 3) \(c(t)=(t^2,3t,2t^3)\), \(t\in[-1,2]\).</div>
 <div class="rr"><b class="lab">Rappel</b>\(\omega=d\Phi\Rightarrow\displaystyle\int_C\omega=\Phi(\text{arrivée})-\Phi(\text{départ})\) : seules les extrémités comptent.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
-<p><b>Rappel de cours.</b> Une forme \(\omega\) est <b>exacte</b> s'il existe une fonction \(\Phi\) (un potentiel) telle que \(\omega=d\Phi\). Alors l'intégrale ne dépend que des extrémités :</p>
-<div class="fml"><span class="f">\(\displaystyle\int_C d\Phi=\Phi(\text{arrivée})-\Phi(\text{départ})\)</span><span class="leg">analogue de \(\int_a^b f'=f(b)-f(a)\)</span></div>
-<p>Ici les variables sont séparées : chaque terme est la différentielle d'une fonction d'une seule variable (\(x\,dx=d(x^2/2)\), etc.). Le potentiel est donc :</p>
-<div class="mq">\[\Phi(x,y,z)=\frac{x^2}{2}+\frac{y^3}{3}+\frac{z^4}{4}\]</div>
-<p>On n'a même pas besoin de dériver la paramétrisation : seuls les points de départ et d'arrivée comptent.</p>
+<p><b>Rappel 1 · définition.</b> Un chemin est une application \(c:[a,b]\to\mathbb{R}^3\), \(t\mapsto(x(t),y(t),z(t))\), de classe \(C^1\) par morceaux ; il est parcouru de \(c(a)\) (origine) vers \(c(b)\) (extrémité). L'intégrale de la forme \(\omega=P\,dx+Q\,dy+R\,dz\) (c'est-à-dire du champ \(\vec F=(P,Q,R)\)) le long de \(C\) est</p>
+<div class="fml"><span class="f">\(\displaystyle \int_C\omega=\int_C\vec F\cdot d\vec s=\int_a^b\Big[P\big(c(t)\big)\,x'(t)+Q\big(c(t)\big)\,y'(t)+R\big(c(t)\big)\,z'(t)\Big]dt\)</span><span class="leg">on remplace \(x,y,z\) par leurs valeurs sur le chemin, et \(dx,dy,dz\) par \(x'(t)\,dt,\ y'(t)\,dt,\ z'(t)\,dt\)</span></div>
+<p><b>Rappel 2 · forme exacte.</b> \(\omega\) est <b>exacte</b> s'il existe une fonction \(\Phi\) (un <b>potentiel</b>) avec \(\vec F=\nabla\Phi\), c'est-à-dire \(P=\Phi_x\), \(Q=\Phi_y\), \(R=\Phi_z\). Alors, par la règle de la chaîne, \(\frac{d}{dt}\Phi(c(t))=\nabla\Phi(c(t))\cdot c'(t)=\vec F(c(t))\cdot c'(t)\) : l'intégrande est la dérivée de \(t\mapsto\Phi(c(t))\), et</p>
+<div class="fml"><span class="f">\(\displaystyle \int_C\vec F\cdot d\vec s=\Phi\big(c(b)\big)-\Phi\big(c(a)\big)\)</span><span class="leg">analogue de \(\int_a^bf'=f(b)-f(a)\) : seules les <b>extrémités</b> comptent, pas le chemin</span></div>
+<p><b>Rappel 3 · reconnaître une forme exacte.</b> Sur un ouvert étoilé comme \(\mathbb{R}^3\), un champ \(C^1\) est un gradient si et seulement si \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\), c'est-à-dire \(\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\), \(\frac{\partial P}{\partial z}=\frac{\partial R}{\partial x}\), \(\frac{\partial Q}{\partial z}=\frac{\partial R}{\partial y}\) (théorème de Poincaré). Le potentiel se construit en intégrant variable par variable.</p>
+<p><b>Stratégie.</b> Les trois chemins sont différents mais la forme est la même : on cherche d'abord si elle est exacte. Si oui, une seule construction de \(\Phi\) sert pour les trois questions, et chaque intégrale est une différence de deux valeurs. On garde le calcul par paramétrage comme <b>contrôle</b>.</p>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
-<div class="qsub">1) De \((0,0,0)\) à \((1,1,1)\)</div>
+<div class="qsub">Étape 0 · lire la forme</div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Différence de potentiel</div><div class="sd">
-<div class="mq">\[\Phi(1,1,1)-\Phi(0,0,0)=\frac12+\frac13+\frac14=\frac{13}{12}\]</div>
-<p>Contrôle par paramétrage : \(x=y=z=t\), \(dx=dy=dz=dt\), donc \(\displaystyle\int_0^1(t+t^2+t^3)\,dt=\frac12+\frac13+\frac14\) ✓.</p>
-</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Identifier \(P\), \(Q\), \(R\)</div><div class="sd">
+<p>La forme est \(\omega=x\,dx+y^2\,dy+z^3\,dz\) : le coefficient de \(dx\) est \(P=x\), celui de \(dy\) est \(Q=y^2\), celui de \(dz\) est \(R=z^3\). Le champ associé est \(\vec F=(x,\ y^2,\ z^3)\).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Tester l'exactitude (rotationnel nul)</div><div class="sd">
+<p>Chaque composante ne dépend que de « sa » variable, donc toutes les dérivées croisées sont nulles :</p>
+<div class="mq">\[\frac{\partial P}{\partial y}=0=\frac{\partial Q}{\partial x}\qquad\frac{\partial P}{\partial z}=0=\frac{\partial R}{\partial x}\qquad\frac{\partial Q}{\partial z}=0=\frac{\partial R}{\partial y}\]</div>
+<p>Donc \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\) sur \(\mathbb{R}^3\), qui est étoilé, et \(\vec F\) est de classe \(C^1\) : par le théorème de Poincaré, la forme est <b>exacte</b>.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Construire le potentiel \(\Phi\)</div><div class="sd">
+<p>On cherche \(\Phi\) avec \(\Phi_x=x\), \(\Phi_y=y^2\), \(\Phi_z=z^3\), en intégrant une variable à la fois (la « constante » d'intégration est une fonction des autres variables).</p>
+<div class="mq">\[\begin{aligned}\Phi_x=x&amp;\ \Rightarrow\ \Phi=\frac{x^2}{2}+C(y,z)\\ \Phi_y=C_y=y^2&amp;\ \Rightarrow\ C=\frac{y^3}{3}+D(z)\\ \Phi_z=D'(z)=z^3&amp;\ \Rightarrow\ D=\frac{z^4}{4}+K\end{aligned}\]</div>
+<div class="mq">\[\Phi(x,y,z)=\frac{x^2}{2}+\frac{y^3}{3}+\frac{z^4}{4}\qquad(K=0)\]</div>
+<p><b>Vérification</b> : \(\nabla\Phi=(x,\ y^2,\ z^3)=\vec F\) ✓.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Énoncer le théorème utilisé</div><div class="sd">
+<p>Comme \(\omega=d\Phi\), pour tout chemin \(C\) de \(A=c(a)\) à \(B=c(b)\) : \(\displaystyle\int_C\omega=\Phi(B)-\Phi(A)\). Il suffit donc, dans chaque question, de relever l'origine et l'extrémité du chemin.</p></div></div></li>
 </ol>
-<div class="qsub">2) De \((1,0,0)\) à \((-1,0,0)\)</div>
-<ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Même potentiel aux deux bouts</div><div class="sd">
-<p>\(c(0)=(1,0,0)\) et \(c(\pi)=(-1,0,0)\). Seul le terme \(\tfrac{x^2}{2}\) est non nul, et il vaut \(\tfrac12\) aux deux extrémités :</p>
-<div class="mq">\[\Phi(-1,0,0)-\Phi(1,0,0)=\frac12-\frac12=0\]</div>
-</div></div></li>
-</ol>
-<div class="qsub">3) De \(c(-1)\) à \(c(2)\)</div>
+<div class="qsub">1) Le segment \(c(t)=(t,t,t)\), \(t\in[0,1]\)</div>
 <ol class="steps">
 <li class="step"><span class="sn"></span><div><div class="st">Extrémités</div><div class="sd">
-<div class="mq">\[c(-1)=(1,-3,-2)\qquad c(2)=(4,6,16)\]</div>
+<p>Origine \(c(0)=(0,0,0)\), extrémité \(c(1)=(1,1,1)\).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Différence de potentiel</div><div class="sd">
+<div class="mq">\[\Phi(1,1,1)-\Phi(0,0,0)=\Big(\frac12+\frac13+\frac14\Big)-0=\frac{6+4+3}{12}=\frac{13}{12}\]</div>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Potentiels</div><div class="sd">
-<div class="mq">\[\begin{aligned}\Phi(4,6,16) &amp;= \frac{16}{2}+\frac{216}{3}+\frac{65536}{4}\\ &amp;= 8+72+16384\\ &amp;= 16464\end{aligned}\]</div>
-<div class="mq">\[\Phi(1,-3,-2)=\frac12-\frac{27}{3}+\frac{16}{4}=\frac12-9+4=-\frac92\]</div>
-<div class="mq">\[\int_C\omega=16464+\frac92=\frac{32937}{2}=16468{,}5\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle par paramétrage</div><div class="sd">
+<p>\(x=y=z=t\) donc \(dx=dy=dz=dt\), et \(P=t\), \(Q=t^2\), \(R=t^3\) :</p>
+<div class="mq">\[\int_0^1\big(t\cdot1+t^2\cdot1+t^3\cdot1\big)\,dt=\Big[\frac{t^2}{2}+\frac{t^3}{3}+\frac{t^4}{4}\Big]_0^1=\frac{13}{12}\ ✓\]</div>
 </div></div></li>
 </ol>
-<div class="why"><b class="lab">Contrôle par paramétrage (3)</b>\(x\,dx=2t^3\,dt\), \(y^2dy=27t^2\,dt\), \(z^3dz=48t^{11}\,dt\) : \(\int_{-1}^{2}=\tfrac{15}{2}+81+16380=\tfrac{32937}{2}\) ✓. Même résultat, mais le potentiel évite les grosses puissances.</div>
-<div class="retenir rt2"><b class="lab">À retenir</b>Variables séparées \(\Rightarrow\) potentiel immédiat : \(\Phi=\frac{x^2}2+\frac{y^3}3+\frac{z^4}4\). L'intégrale <b>ne dépend pas du chemin</b>, seulement de \(c(a)\) et \(c(b)\) : on n'a pas besoin de dériver la paramétrisation (mais on peut la garder pour contrôler).</div>
+<div class="qsub">2) Le demi-cercle \(c(t)=(\cos t,\sin t,0)\), \(t\in[0,\pi]\)</div>
+<ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">Extrémités</div><div class="sd">
+<p>\(c(0)=(1,0,0)\) et \(c(\pi)=(-1,0,0)\). La courbe n'est pas fermée, mais les deux extrémités ont le même potentiel.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Différence de potentiel</div><div class="sd">
+<p>Pour \(y=z=0\), seul le terme \(\frac{x^2}{2}\) subsiste :</p>
+<div class="mq">\[\Phi(-1,0,0)-\Phi(1,0,0)=\frac{(-1)^2}{2}-\frac{1^2}{2}=\frac12-\frac12=0\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle par paramétrage</div><div class="sd">
+<p>\(x'=-\sin t\), \(y'=\cos t\), \(z'=0\) ; \(P=\cos t\), \(Q=\sin^2t\), \(R=0\) :</p>
+<div class="mq">\[\int_0^\pi\Big[-\sin t\cos t+\sin^2t\cos t\Big]dt=\Big[-\frac{\sin^2t}{2}+\frac{\sin^3t}{3}\Big]_0^\pi=0-0=0\ ✓\]</div>
+<p>(\(\sin0=\sin\pi=0\) : les deux primitives s'annulent aux bornes.)</p></div></div></li>
+</ol>
+<div class="qsub">3) La courbe gauche \(c(t)=(t^2,\,3t,\,2t^3)\), \(t\in[-1,2]\)</div>
+<ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">Extrémités</div><div class="sd">
+<p>On calcule \(c\) aux bornes du paramètre :</p>
+<div class="mq">\[c(-1)=\big((-1)^2,\ 3(-1),\ 2(-1)^3\big)=(1,-3,-2)\qquad c(2)=(2^2,\ 3\cdot2,\ 2\cdot2^3)=(4,6,16)\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Valeurs du potentiel</div><div class="sd">
+<div class="mq">\[\begin{aligned}\Phi(4,6,16)&amp;=\frac{4^2}{2}+\frac{6^3}{3}+\frac{16^4}{4}=8+72+16384=16464\\ \Phi(1,-3,-2)&amp;=\frac{1^2}{2}+\frac{(-3)^3}{3}+\frac{(-2)^4}{4}=\frac12-9+4=-\frac92\end{aligned}\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Différence</div><div class="sd">
+<div class="mq">\[\int_C\omega=16464-\Big(-\frac92\Big)=16464+\frac92=\frac{32937}{2}=16468{,}5\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle par paramétrage (calcul complet)</div><div class="sd">
+<p>Dérivées : \(x'=2t\), \(y'=3\), \(z'=6t^2\). Valeurs de \(P,Q,R\) sur le chemin : \(P=x=t^2\), \(Q=y^2=9t^2\), \(R=z^3=(2t^3)^3=8t^9\). Intégrande :</p>
+<div class="mq">\[t^2\cdot2t+9t^2\cdot3+8t^9\cdot6t^2=2t^3+27t^2+48t^{11}\]</div>
+<div class="mq">\[\int_{-1}^{2}\big(2t^3+27t^2+48t^{11}\big)dt=\Big[\frac{t^4}{2}+9t^3+4t^{12}\Big]_{-1}^{2}=\big(8+72+16384\big)-\Big(\frac12-9+4\Big)=16464+\frac92\ ✓\]</div>
+</div></div></li>
+</ol>
+<div class="answer"><b class="lab">Réponse</b>1) \(\frac{13}{12}\) ; 2) \(0\) ; 3) \(\frac{32937}{2}=16468{,}5\).</div>
+<div class="why"><b class="lab">Rédaction type</b>« La forme \(\omega=x\,dx+y^2dy+z^3dz\) est de classe \(C^1\) et son rotationnel est nul sur l'ouvert étoilé \(\mathbb{R}^3\) : elle est exacte, de potentiel \(\Phi=\frac{x^2}{2}+\frac{y^3}{3}+\frac{z^4}{4}\). Donc \(\int_C\omega=\Phi(c(b))-\Phi(c(a))\). »</div>
+<div class="why"><b class="lab">Piège</b>Ne pas confondre les deux calculs : avec le potentiel, on <b>n'utilise pas</b> \(c'(t)\) ; avec le paramétrage, on l'utilise obligatoirement (\(dx=x'(t)dt\)). Et on évalue \(\Phi\) aux <b>valeurs du paramètre</b> converties en points, pas en \(t=-1\) et \(t=2\) directement : \(\Phi(c(2))\neq\Phi(2,2,2)\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Forme exacte \(\Rightarrow\) \(\int_C\omega=\Phi(\text{arrivée})-\Phi(\text{départ})\) : le chemin n'intervient pas. Procédure : (1) lire \(P,Q,R\) ; (2) tester le rotationnel ; (3) construire \(\Phi\) variable par variable et vérifier \(\nabla\Phi=\vec F\) ; (4) convertir les bornes du paramètre en points \(c(a)\), \(c(b)\) ; (5) contrôler par paramétrage si le temps le permet.</div>
 </div></details>
 </article>
 <article class="cx" id="cur-2">
@@ -2258,99 +2295,180 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <div class="cx-enonce">\(C\) : demi-cercle supérieur de centre \(O\) et de rayon \(R\) (\(R=1\) si non précisé), orienté dans le sens direct. Calculer \(\displaystyle\int_C(x-y)\,dx+(x+y)\,dy\).</div>
 <div class="rr"><b class="lab">Rappel</b>\(\displaystyle\int_CP\,dx+Q\,dy=\int_a^b\big[P(c(t))\,x'(t)+Q(c(t))\,y'(t)\big]dt\) ; demi-cercle direct : \(t\in[0,\pi]\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
-<p><b>Test d'exactitude</b> : \(P=x-y\), \(Q=x+y\), donc \(\dfrac{\partial P}{\partial y}=-1\neq\dfrac{\partial Q}{\partial x}=1\). La forme n'est pas exacte, et la courbe n'est pas fermée : on <b>paramètre</b>.</p>
-<p><b>Rappel</b> : avec \(x=x(t)\), \(y=y(t)\), on remplace \(dx=x'(t)\,dt\) et \(dy=y'(t)\,dt\) :</p>
-<div class="fml"><span class="f">\(\displaystyle\int_CP\,dx+Q\,dy=\int_{t_0}^{t_1}\Big[P\big(x(t),y(t)\big)\,x'(t)+Q\big(x(t),y(t)\big)\,y'(t)\Big]dt\)</span><span class="leg">\(t\) va du départ à l'arrivée</span></div>
-<p>Sens direct : de \((R,0)\) vers \((-R,0)\) par le haut, soit \(t\) de 0 à \(\pi\).</p>
+<p><b>Rappel · calcul par paramétrage.</b> Pour \(\omega=P\,dx+Q\,dy\) et un chemin \(c(t)=(x(t),y(t))\), \(t\in[a,b]\) :</p>
+<div class="fml"><span class="f">\(\displaystyle \int_C P\,dx+Q\,dy=\int_a^b\Big[P\big(x(t),y(t)\big)\,x'(t)+Q\big(x(t),y(t)\big)\,y'(t)\Big]dt\)</span><span class="leg">\(t\) va du <b>départ</b> à l'<b>arrivée</b> ; \(dx=x'(t)\,dt\), \(dy=y'(t)\,dt\)</span></div>
+<p><b>Les cinq étapes à rédiger.</b></p>
+<ol>
+<li><b>Tester l'exactitude</b> : \(\frac{\partial P}{\partial y}\) et \(\frac{\partial Q}{\partial x}\). Si elles sont égales (domaine étoilé), un potentiel existe : l'intégrale est une différence de potentiel. Sinon, on ne peut pas faire ce raccourci.</li>
+<li><b>Paramétrer</b> la courbe <b>avec son intervalle</b> et vérifier : l'équation est satisfaite, les extrémités sont les bonnes, le sens de parcours est le bon.</li>
+<li><b>Dériver</b> : \(x'(t)\), \(y'(t)\).</li>
+<li><b>Substituer</b> dans \(P\) et \(Q\), puis former \(P\,x'+Q\,y'\) et simplifier (ici avec \(\cos^2+\sin^2=1\)).</li>
+<li><b>Intégrer</b> en \(t\) entre les bornes, et conclure.</li>
+</ol>
+<p><b>Orientation.</b> Le sens direct est le sens trigonométrique (anti-horaire, le domaine à gauche). Sur le demi-cercle supérieur, on part de \((R,0)\), on passe par \((0,R)\) et on arrive en \((-R,0)\) : \(t\) va de \(0\) à \(\pi\). Parcourir la courbe en sens inverse change le signe de l'intégrale.</p>
+<p><b>Contrôle.</b> La courbe n'est pas fermée, donc on ne peut pas appliquer Green-Riemann directement ; mais on peut la <b>fermer</b> par le diamètre et retrancher la contribution du segment ajouté.</p>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
+<div class="qsub">Étape 1 · test d'exactitude</div>
+<ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">Lire \(P\) et \(Q\) et dériver en croix</div><div class="sd">
+<p>\(P=x-y\) (coefficient de \(dx\)) et \(Q=x+y\) (coefficient de \(dy\)) :</p>
+<div class="mq">\[\frac{\partial P}{\partial y}=-1\qquad\frac{\partial Q}{\partial x}=+1\qquad\frac{\partial P}{\partial y}\neq\frac{\partial Q}{\partial x}\]</div>
+<p>La forme n'est <b>pas exacte</b> : il n'existe pas de potentiel, l'intégrale dépend du chemin. Comme la courbe n'est pas fermée, il faut <b>paramétrer</b>.</p></div></div></li>
+</ol>
+<div class="qsub">Étape 2 · la courbe et son orientation</div>
 <ol class="steps">
 <li class="step"><span class="sn"></span><div><div class="st">Paramétrage</div><div class="sd">
-<div class="mq">\[\begin{gathered}x=R\cos t,\quad y=R\sin t,\\[4pt] dx=-R\sin t\,dt,\quad dy=R\cos t\,dt\end{gathered}\]</div>
-</div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Remplacer et simplifier</div><div class="sd">
-<div class="mq">\[\begin{aligned}\omega&amp;=R^2\Big[-(\cos t-\sin t)\sin t+(\cos t+\sin t)\cos t\Big]dt\\&amp;=R^2\big[\sin^2t+\cos^2t\big]\,dt\\&amp;=R^2\,dt\end{aligned}\]</div>
-<p>Les termes \(\cos t\sin t\) se compensent.</p>
-</div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Intégrer</div><div class="sd">
-<div class="mq">\[\begin{gathered}\int_C\omega=\int_0^{\pi}R^2\,dt=\pi R^2\\[4pt] (=\pi\text{ pour le cercle unité})\end{gathered}\]</div>
+<p>Le demi-cercle supérieur de centre \(O\) et de rayon \(R\) est \(\{x^2+y^2=R^2,\ y\ge0\}\). On pose</p>
+<div class="mq">\[x(t)=R\cos t\qquad y(t)=R\sin t\qquad t\in[0,\pi]\]</div>
+<p><b>Vérifications</b> : (i) \(x^2+y^2=R^2(\cos^2t+\sin^2t)=R^2\) ✓ ; (ii) \(y=R\sin t\ge0\) sur \([0,\pi]\) ✓ ; (iii) \(c(0)=(R,0)\) (départ) et \(c(\pi)=(-R,0)\) (arrivée) ✓ ; (iv) quand \(t\) croît de \(0\) à \(\pi\), le point tourne dans le sens trigonométrique : c'est bien le sens direct ✓.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Dérivées</div><div class="sd">
+<div class="mq">\[x'(t)=-R\sin t\qquad y'(t)=R\cos t\qquad dx=-R\sin t\,dt\qquad dy=R\cos t\,dt\]</div>
 </div></div></li>
 </ol>
-<div class="why"><b class="lab">Vérification avec Green</b>On ferme par le segment \([-R,R]\) de l'axe \(Ox\) (\(y=0\), \(dy=0\) : \(\omega=x\,dx\), contribution \(\int_{-R}^Rx\,dx=0\)). Green : \(\iint\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)=\iint2=2\times\dfrac{\pi R^2}{2}=\pi R^2\) ✓.</div>
-<div class="retenir rt2"><b class="lab">À retenir</b>Forme non exacte (\(P_y\neq Q_x\)) et courbe non fermée \(\Rightarrow\) <b>paramétrer</b>. Le sens de parcours fixe l'ordre des bornes de \(t\). Contrôle : fermer par le diamètre et appliquer Green.</div>
+<div class="qsub">Étape 3 · calcul</div>
+<ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">Substituer dans \(P\) et \(Q\)</div><div class="sd">
+<div class="mq">\[P=x-y=R(\cos t-\sin t)\qquad Q=x+y=R(\cos t+\sin t)\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Former l'intégrande \(P\,x'+Q\,y'\)</div><div class="sd">
+<div class="mq">\[\begin{aligned}P\,x'+Q\,y'&amp;=R(\cos t-\sin t)\cdot(-R\sin t)+R(\cos t+\sin t)\cdot R\cos t\\ &amp;=R^2\big[-\sin t\cos t+\sin^2t+\cos^2t+\sin t\cos t\big]\\ &amp;=R^2\big(\sin^2t+\cos^2t\big)=R^2\end{aligned}\]</div>
+<p>Les deux termes en \(\sin t\cos t\) se compensent, et \(\cos^2t+\sin^2t=1\).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Intégrer</div><div class="sd">
+<div class="mq">\[\int_C(x-y)\,dx+(x+y)\,dy=\int_0^{\pi}R^2\,dt=\pi R^2\]</div>
+</div></div></li>
+</ol>
+<div class="qsub">Étape 4 · vérification par Green-Riemann (en fermant la courbe)</div>
+<ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">Fermer par le diamètre</div><div class="sd">
+<p>Soit \(D\) le demi-disque \(\{x^2+y^2\le R^2,\ y\ge0\}\). Son bord orienté positivement est le demi-cercle \(C\) (de \((R,0)\) à \((-R,0)\)) <b>suivi</b> du segment \(\Delta\) de \((-R,0)\) à \((R,0)\) sur l'axe \(Ox\) (le domaine reste à gauche).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contribution du segment</div><div class="sd">
+<p>Sur \(\Delta\) : \(y=0\) et \(dy=0\), donc \(\omega=(x-0)\,dx=x\,dx\) avec \(x\) de \(-R\) à \(R\) :</p>
+<div class="mq">\[\int_\Delta\omega=\int_{-R}^{R}x\,dx=\Big[\frac{x^2}{2}\Big]_{-R}^{R}=0\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Formule de Green-Riemann</div><div class="sd">
+<p>\(P\) et \(Q\) sont polynomiales, donc \(C^1\) sur \(D\) :</p>
+<div class="mq">\[\int_C\omega+\int_\Delta\omega=\iint_D\Big(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Big)dx\,dy=\iint_D\big(1-(-1)\big)\,dx\,dy=2\cdot\mathrm{Aire}(D)=2\cdot\frac{\pi R^2}{2}=\pi R^2\]</div>
+<p>Donc \(\int_C\omega=\pi R^2-0=\pi R^2\) ✓ : le même résultat.</p></div></div></li>
+</ol>
+<div class="answer"><b class="lab">Réponse</b>\(\displaystyle\int_C(x-y)\,dx+(x+y)\,dy=\pi R^2\) (soit \(\pi\) pour \(R=1\)).</div>
+<div class="why"><b class="lab">Remarques</b>Parcourue en sens inverse (de \((-R,0)\) à \((R,0)\)), l'intégrale vaut \(-\pi R^2\). Si on avait oublié de vérifier le sens, on aurait pu obtenir le mauvais signe : toujours contrôler \(c(a)\) et \(c(b)\).</div>
+<div class="why"><b class="lab">Piège</b>Appliquer Green-Riemann directement à un <b>arc non fermé</b> : la formule ne concerne que les courbes fermées. Ici, on ferme par le diamètre et on calcule (ou on annule) la contribution du segment ajouté.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Forme non exacte (\(P_y\neq Q_x\)) sur une courbe non fermée \(\Rightarrow\) paramétrer : \(x=R\cos t,\ y=R\sin t\), puis calculer \(P\,x'+Q\,y'\) et intégrer entre les bornes. Écrire le paramétrage <b>avec son intervalle</b>, vérifier départ, arrivée et sens. Contrôle par Green : fermer la courbe et calculer le segment ajouté.</div>
 </div></details>
 </article>
 <article class="cx" id="cur-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Cinq circulations sur des courbes fermées</h3></header>
-<div class="cx-enonce">a) \(\omega=(x-y^3)\,dx+x^3\,dy\), cercle unité, sens positif ; \(b\)) \(\omega=xy^2\,dy-yx^2\,dx\), cercle \(x^2+y^2-2y=0\), sens direct ; \(c\)) \(\omega=x^2\,dy+y^2\,dx\), demi-ellipse \(x^2+4y^2=4\), \(y\geq0\), sens <b>indirect</b> ; \(d\)) \(\omega=\dfrac{(x-y)\,dx+(x+y)\,dy}{x^2+y^2}\), carré \(A(1,1)\), \(B(-1,1)\), \(C(-1,-1)\), \(D(1,-1)\) ; \(e\)) \(\omega=y\,dx+2x\,dy\), bord de \(\{x^2+y^2-2x\leq0,\ x^2+y^2-2y\leq0\}\).</div>
+<div class="cx-enonce">a) \(\omega=(x-y^3)\,dx+x^3\,dy\), cercle unité, sens positif ; \(b)\) \(\omega=xy^2\,dy-yx^2\,dx\), cercle \(x^2+y^2-2y=0\), sens direct ; \(c)\) \(\omega=x^2\,dy+y^2\,dx\), demi-ellipse \(x^2+4y^2=4\), \(y\geq0\), sens indirect ; \(d)\) \(\omega=\dfrac{(x-y)\,dx+(x+y)\,dy}{x^2+y^2}\), carré \(A(1,1)\), \(B(-1,1)\), \(C(-1,-1)\), \(D(1,-1)\) ; \(e)\) \(\omega=y\,dx+2x\,dy\), bord de \(\{x^2+y^2-2x\leq0,\ x^2+y^2-2y\leq0\}\).</div>
 <div class="rr"><b class="lab">Rappel</b>Green-Riemann : \(\displaystyle\oint_{\partial D}P\,dx+Q\,dy=\iint_D(Q_x-P_y)\,dx\,dy\), bord direct, \(P,Q\) de classe \(C^1\) <b>sur tout \(D\)</b>.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
-<p><b>Formule de Green-Riemann.</b> Pour un domaine \(D\) dont le bord \(\partial D\) est parcouru dans le sens direct (le domaine à gauche) :</p>
-<div class="fml"><span class="f">\(\displaystyle\oint_{\partial D}P\,dx+Q\,dy=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dx\,dy\)</span><span class="leg">une circulation devient une intégrale double</span></div>
-<p><b>Deux précautions :</b></p>
-<ul>
-<li>sens indirect → changer le signe ;</li>
-<li>hypothèse : \(P\) et \(Q\) de classe \(C^1\) sur <b>tout</b> \(D\), intérieur compris. Elle échoue en \(d\)), à cause de l'origine.</li>
-</ul>
+<p><b>Théorème de Green-Riemann.</b> Soit \(D\) un domaine fermé borné (de type 1 ou 2, ou réunion finie de tels domaines) dont le bord \(\partial D\) est une courbe fermée \(C^1\) par morceaux, <b>orientée positivement</b> (sens trigonométrique : le domaine reste à gauche). Si \(P\) et \(Q\) sont de classe \(C^1\) sur \(D\) <b>tout entier</b> :</p>
+<div class="fml"><span class="f">\(\displaystyle \oint_{\partial D}P\,dx+Q\,dy=\iint_D\Big(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Big)\,dx\,dy\)</span><span class="leg">une circulation le long du bord devient une intégrale double sur l'intérieur</span></div>
+<p><b>Les étapes à rédiger pour chaque question.</b></p>
+<ol>
+<li><b>Lire</b> \(P\) (coefficient de \(dx\)) et \(Q\) (coefficient de \(dy\)) ; <b>vérifier les hypothèses</b> : la courbe est fermée, \(P\) et \(Q\) sont \(C^1\) sur le domaine <u>y compris à l'intérieur</u>.</li>
+<li><b>Calculer l'intégrande</b> \(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\) et le simplifier.</li>
+<li><b>Décrire le domaine</b> \(D\) (compléter les carrés pour reconnaître un disque, une ellipse…) et choisir le système de coordonnées : polaires pour un disque, polaires « étirées » pour une ellipse, Fubini pour un polygone.</li>
+<li><b>Gérer l'orientation</b> : si la courbe est parcourue dans le sens <b>indirect</b> (horaire), le résultat est l'<b>opposé</b> de celui de la formule.</li>
+<li><b>Calculer</b> l'intégrale double, puis <b>contrôler</b> (paramétrage direct, deuxième système de coordonnées, aire…).</li>
+</ol>
+<p><b>Quand Green ne s'applique pas.</b> Si \(P\) ou \(Q\) n'est pas définie ou pas \(C^1\) en un point <b>intérieur</b> au domaine (ici le cas d), on ne peut pas l'utiliser. Il faut alors calculer sur les côtés, ou décomposer la forme en formes classiques : \(\dfrac{x\,dx+y\,dy}{x^2+y^2}=d(\ln r)\) et \(\dfrac{x\,dy-y\,dx}{x^2+y^2}=d\theta\).</p>
+<p><b>Courbe non fermée.</b> Pour un arc (cas c), on le ferme par un segment et on vérifie la contribution de ce segment.</p>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
-<div class="qsub">a) Cercle unité</div>
+<div class="qsub">a) Le cercle unité, \(\omega=(x-y^3)\,dx+x^3\,dy\), sens positif</div>
 <ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">Hypothèses et lecture</div><div class="sd">
+<p>\(P=x-y^3\), \(Q=x^3\) : polynômes, donc \(C^1\) sur le disque unité fermé \(D\). La courbe est le cercle \(\partial D\), fermée, parcourue dans le sens positif : Green-Riemann s'applique.</p></div></div></li>
 <li class="step"><span class="sn"></span><div><div class="st">Intégrande de Green</div><div class="sd">
-<div class="mq">\[\begin{aligned}\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} &amp;= 3x^2-(-3y^2)\\ &amp;= 3(x^2+y^2)\\ &amp;= 3r^2\end{aligned}\]</div>
+<div class="mq">\[\frac{\partial Q}{\partial x}=3x^2\qquad\frac{\partial P}{\partial y}=-3y^2\qquad\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=3x^2+3y^2=3r^2\]</div>
 </div></div></li>
 <li class="step"><span class="sn"></span><div><div class="st">Polaires sur le disque unité</div><div class="sd">
-<div class="mq">\[\begin{aligned}\oint\omega &amp;= \int_0^{2\pi}\!\!\int_0^1 3r^2\cdot r\,dr\,d\theta\\ &amp;= 3\cdot2\pi\cdot\frac14\\ &amp;= \frac{3\pi}{2}\end{aligned}\]</div>
+<p>Disque : \(0\le r\le1\), \(0\le\theta\le2\pi\), avec \(dx\,dy=r\,dr\,d\theta\) :</p>
+<div class="mq">\[\oint\omega=\int_0^{2\pi}\!\!\int_0^1 3r^2\cdot r\,dr\,d\theta=2\pi\cdot3\cdot\frac14=\frac{3\pi}{2}\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle par paramétrage</div><div class="sd">
+<p>\(x=\cos t\), \(y=\sin t\), \(t\in[0,2\pi]\) : \(P\,x'+Q\,y'=(\cos t-\sin^3t)(-\sin t)+\cos^3t\cdot\cos t=-\sin t\cos t+\sin^4t+\cos^4t\). Or \(\int_0^{2\pi}\sin t\cos t\,dt=0\) et \(\int_0^{2\pi}\sin^4t\,dt=\int_0^{2\pi}\cos^4t\,dt=\frac{3\pi}{4}\), d'où</p>
+<div class="mq">\[\oint\omega=0+\frac{3\pi}4+\frac{3\pi}4=\frac{3\pi}2\ ✓\]</div>
 </div></div></li>
 </ol>
-<div class="qsub">\(b\)) Cercle \(x^2+y^2=2y\)</div>
+<div class="qsub">b) Le cercle \(x^2+y^2-2y=0\), \(\omega=xy^2\,dy-yx^2\,dx\), sens direct</div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Intégrande et domaine</div><div class="sd">
-<p>\(P=-yx^2\), \(Q=xy^2\) : \(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}=y^2+x^2\). Le domaine est le disque de centre \((0,1)\) et de rayon 1 ; en polaires centrées en \(O\) : \(r\leq2\sin\theta\), \(\theta\in[0,\pi]\).</p>
+<li class="step"><span class="sn"></span><div><div class="st">Lire \(P\) et \(Q\)</div><div class="sd">
+<p>On range \(\omega=-yx^2\,dx+xy^2\,dy\) : \(P=-x^2y\) (devant \(dx\)), \(Q=xy^2\) (devant \(dy\)). Polynômes, donc \(C^1\) sur tout le disque ; courbe fermée, sens direct : Green s'applique.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Intégrande</div><div class="sd">
+<div class="mq">\[\frac{\partial Q}{\partial x}=y^2\qquad\frac{\partial P}{\partial y}=-x^2\qquad\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=x^2+y^2\]</div>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Calcul</div><div class="sd">
-<div class="mq">\[\begin{aligned}\oint\omega &amp;= \int_0^{\pi}\!\!\int_0^{2\sin\theta}r^3\,dr\,d\theta\\ &amp;= \int_0^{\pi}4\sin^4\theta\,d\theta\\ &amp;= 4\cdot\frac{3\pi}{8}\\ &amp;= \frac{3\pi}{2}\end{aligned}\]</div>
-<p>(\(\int_0^\pi\sin^4\theta\,d\theta=\tfrac{3\pi}8\), en linéarisant \(\sin^4\).)</p>
+<li class="step"><span class="sn"></span><div><div class="st">Reconnaître le domaine</div><div class="sd">
+<p>\(x^2+y^2-2y=x^2+(y-1)^2-1\), donc \(x^2+(y-1)^2=1\) : le cercle de centre \((0,1)\) et de rayon \(1\), qui passe par l'origine. \(D\) est le disque de bord ce cercle.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Polaires centrées en \(O\)</div><div class="sd">
+<p>\(x^2+y^2=2y\iff r^2=2r\sin\theta\iff r=2\sin\theta\) (après division par \(r&gt;0\)) ; \(r\ge0\) impose \(\sin\theta\ge0\), soit \(\theta\in[0,\pi]\). Donc \(D=\{0\le r\le2\sin\theta,\ 0\le\theta\le\pi\}\) :</p>
+<div class="mq">\[\oint\omega=\int_0^{\pi}\!\!\int_0^{2\sin\theta}r^2\cdot r\,dr\,d\theta=\int_0^\pi\frac{(2\sin\theta)^4}{4}\,d\theta=4\int_0^\pi\sin^4\theta\,d\theta=4\cdot\frac{3\pi}{8}=\frac{3\pi}2\]</div>
+<p>avec \(\int_0^\pi\sin^4\theta\,d\theta=\frac{3\pi}{8}\) (on linéarise : \(\sin^4\theta=\frac{3-4\cos2\theta+\cos4\theta}{8}\)).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle : polaires centrées au centre du disque</div><div class="sd">
+<p>On pose \(x=r\cos\theta\), \(y=1+r\sin\theta\), \(0\le r\le1\), \(0\le\theta\le2\pi\) (jacobien \(r\)). Alors \(x^2+y^2=r^2+2r\sin\theta+1\) :</p>
+<div class="mq">\[\int_0^{2\pi}\!\!\int_0^1\big(r^2+2r\sin\theta+1\big)\,r\,dr\,d\theta=2\pi\Big(\frac14+\frac12\Big)+0=\frac{3\pi}2\ ✓\]</div>
+<p>(l'intégrale de \(\sin\theta\) sur un tour est nulle).</p></div></div></li>
+</ol>
+<div class="qsub">c) La demi-ellipse \(x^2+4y^2=4\), \(y\ge0\), \(\omega=x^2\,dy+y^2\,dx\), sens indirect</div>
+<ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">Courbe non fermée : on la ferme</div><div class="sd">
+<p>\(x^2+4y^2=4\iff\frac{x^2}{4}+y^2=1\) : ellipse de demi-axes \(2\) et \(1\). L'arc \(y\ge0\) va de \((2,0)\) à \((-2,0)\) dans le sens direct (par le haut). Ce n'est <b>pas</b> une courbe fermée : on lui ajoute le segment \([-2,2]\) de l'axe \(Ox\), ce qui donne le bord du demi-domaine elliptique \(D=\{\frac{x^2}{4}+y^2\le1,\ y\ge0\}\).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Le segment ajouté ne contribue pas</div><div class="sd">
+<p>\(P=y^2\) (devant \(dx\)), \(Q=x^2\) (devant \(dy\)). Sur le segment, \(y=0\) et \(dy=0\) : \(y^2\,dx=0\) et \(x^2\,dy=0\). Donc \(\int_{\text{segment}}\omega=0\) (dans un sens comme dans l'autre) : l'intégrale sur l'arc est égale à celle sur le contour fermé.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Intégrande de Green</div><div class="sd">
+<div class="mq">\[\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=2x-2y\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Orientation : le sens indirect change le signe</div><div class="sd">
+<p>La formule de Green concerne le sens <b>direct</b> du bord. Ici le parcours est indirect : on prend l'opposé.</p>
+<div class="mq">\[\int_C\omega=-\iint_D(2x-2y)\,dx\,dy=-2\iint_Dx\,dx\,dy+2\iint_Dy\,dx\,dy\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Calculer les deux intégrales doubles</div><div class="sd">
+<p>\(D\) est symétrique par rapport à \(Oy\) (\(x\mapsto-x\)) et \(x\) est impaire : \(\iint_Dx\,dx\,dy=0\). Pour \(y\) : à \(x\in[-2,2]\) fixé, \(y\) va de \(0\) à \(\sqrt{1-x^2/4}\) :</p>
+<div class="mq">\[\iint_Dy\,dx\,dy=\int_{-2}^{2}\frac12\Big(1-\frac{x^2}{4}\Big)dx=\frac12\Big[x-\frac{x^3}{12}\Big]_{-2}^{2}=\frac12\Big(4-\frac43\Big)=\frac43\]</div>
+<div class="mq">\[\int_C\omega=-\,(0-2\cdot\tfrac43)=\frac83\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle par paramétrage de l'arc</div><div class="sd">
+<p>Dans le sens <b>direct</b>, \(x=2\cos t\), \(y=\sin t\), \(t\in[0,\pi]\) : \(P\,x'+Q\,y'=\sin^2t\cdot(-2\sin t)+4\cos^2t\cdot\cos t=-2\sin^3t+4\cos^2t\cos t\). Avec \(\int_0^\pi\sin^3t\,dt=\frac43\) et \(\int_0^\pi\cos^3t\,dt=0\) :</p>
+<div class="mq">\[\int_{\text{direct}}\omega=-2\cdot\frac43+4\cdot0=-\frac83\quad\Longrightarrow\quad\int_{\text{indirect}}\omega=+\frac83\ ✓\]</div>
 </div></div></li>
 </ol>
-<div class="qsub">\(c\)) Demi-ellipse, sens indirect</div>
+<div class="qsub">d) Le carré \(ABCD\) autour de l'origine, \(\omega=\dfrac{(x-y)\,dx+(x+y)\,dy}{x^2+y^2}\)</div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Green avec changement de signe</div><div class="sd">
-<p>\(P=y^2\), \(Q=x^2\) : \(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}=2x-2y\). Sens indirect :</p>
-<div class="mq">\[\oint_{\text{indirect}}\omega=-\iint_D(2x-2y)\,dx\,dy\]</div>
-</div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Symétrie et intégrale de \(y\)</div><div class="sd">
-<p>\(D\) est symétrique par \(x\mapsto-x\), donc \(\iint2x=0\). Pour \(y\), à \(x\) fixé, \(y\) va de 0 à \(\sqrt{1-x^2/4}\) :</p>
-<div class="mq">\[\begin{aligned}\iint_Dy\,dx\,dy &amp;= \int_{-2}^{2}\frac12\left(1-\frac{x^2}{4}\right)dx\\ &amp;= \frac12\left(4-\frac43\right)\\ &amp;= \frac43\end{aligned}\]</div>
-<div class="mq">\[\oint_{\text{indirect}}\omega=-\left(0-2\cdot\frac43\right)=\frac83\]</div>
-</div></div></li>
-</ol>
-<div class="qsub">\(d\)) Carré autour de l'origine : Green interdit</div>
-<ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Pourquoi Green ne s'applique pas</div><div class="sd">
-<p>\(\omega\) n'est pas définie en \(O\), qui est à l'intérieur du carré. On décompose \(\omega\) en deux formes classiques :</p>
-<div class="mq">\[\begin{gathered}\frac{x\,dx+y\,dy}{x^2+y^2}=d(\ln r)\\[4pt] \frac{x\,dy-y\,dx}{x^2+y^2}=d\theta\ \text{(« forme angle »)}\end{gathered}\]</div>
-<div class="mq">\[\omega=d(\ln r)+d\theta\]</div>
-</div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Un tour autour de \(O\)</div><div class="sd">
-<p>\(A\to B\to C\to D\) fait une fois le tour de \(O\) dans le sens direct : \(\ln r\) revient à sa valeur de départ, mais l'angle \(\theta\) augmente de \(2\pi\).</p>
+<li class="step"><span class="sn"></span><div><div class="st">Pourquoi Green est interdit</div><div class="sd">
+<p>Les coefficients \(P=\frac{x-y}{x^2+y^2}\) et \(Q=\frac{x+y}{x^2+y^2}\) ne sont pas définis en \(O=(0,0)\), qui est <b>à l'intérieur</b> du carré. L'hypothèse « \(C^1\) sur tout \(D\) » n'est pas vérifiée. (Hors de \(O\), on a pourtant \(\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}\) : si on appliquait quand même Green, on trouverait \(0\), ce qui est <b>faux</b>.)</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Sens de parcours</div><div class="sd">
+<p>\(A(1,1)\to B(-1,1)\to C(-1,-1)\to D(1,-1)\to A\) : haut droite, haut gauche, bas gauche, bas droite. Le carré est parcouru dans le sens <b>direct</b>, en faisant une fois le tour de \(O\).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Méthode 1 : décomposer la forme</div><div class="sd">
+<p>En développant \((x-y)\,dx+(x+y)\,dy=(x\,dx+y\,dy)+(x\,dy-y\,dx)\), on a</p>
+<div class="mq">\[\omega=\underbrace{\frac{x\,dx+y\,dy}{x^2+y^2}}_{=\,d(\ln r)}+\underbrace{\frac{x\,dy-y\,dx}{x^2+y^2}}_{=\,d\theta}\]</div>
+<p>La première forme est exacte (\(d\big(\tfrac12\ln(x^2+y^2)\big)\), fonction bien définie sur \(\mathbb{R}^2\setminus\{0\}\)) : sa circulation sur une courbe fermée est \(0\). La seconde est la « forme angle » : après un tour direct autour de \(O\), l'angle polaire \(\theta\) a augmenté de \(2\pi\).</p>
 <div class="mq">\[\oint\omega=0+2\pi=2\pi\]</div>
 </div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Méthode 2 : calcul direct sur les quatre côtés</div><div class="sd">
+<p>Chaque côté se paramètre par la variable qui change ; \(x^2+y^2\) vaut \(x^2+1\) ou \(1+y^2\) selon le côté.</p>
+<div class="mq">\[\begin{aligned}AB&amp;:\ y=1,\ dy=0,\ x:1\to-1:&amp;\ \int_1^{-1}\frac{x-1}{x^2+1}dx&amp;=0-\big[\arctan x\big]_1^{-1}=\frac\pi2\\ BC&amp;:\ x=-1,\ dx=0,\ y:1\to-1:&amp;\ \int_1^{-1}\frac{y-1}{1+y^2}dy&amp;=\frac\pi2\\ CD&amp;:\ y=-1,\ dy=0,\ x:-1\to1:&amp;\ \int_{-1}^{1}\frac{x+1}{x^2+1}dx&amp;=\frac\pi2\\ DA&amp;:\ x=1,\ dx=0,\ y:-1\to1:&amp;\ \int_{-1}^{1}\frac{1+y}{1+y^2}dy&amp;=\frac\pi2\end{aligned}\]</div>
+<p>(les termes \(\frac{x}{x^2+1}\) et \(\frac{y}{1+y^2}\) sont impairs sur un intervalle symétrique : leur intégrale est nulle ; il reste \(\pm\int\frac{dx}{1+x^2}=\pm\big[\arctan\big]\)). Total : \(4\cdot\frac\pi2=2\pi\) ✓.</p></div></div></li>
 </ol>
-<div class="qsub">\(e\)) Lentille entre deux disques</div>
+<div class="qsub">e) Le bord de la lentille \(\{x^2+y^2\le2x\}\cap\{x^2+y^2\le2y\}\), \(\omega=y\,dx+2x\,dy\)</div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">La circulation vaut l'aire</div><div class="sd">
-<p>\(P=y\), \(Q=2x\) : \(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}=2-1=1\). Green donne \(\oint\omega=\iint_D1=\text{aire}(D)\).</p>
+<li class="step"><span class="sn"></span><div><div class="st">Hypothèses et intégrande</div><div class="sd">
+<p>\(P=y\), \(Q=2x\) : \(C^1\) partout ; le bord d'un domaine borné est fermé, orienté positivement par défaut : Green s'applique.</p>
+<div class="mq">\[\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=2-1=1\qquad\Longrightarrow\qquad\oint\omega=\iint_D1\,dx\,dy=\mathrm{Aire}(D)\]</div>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Aire de la lentille</div><div class="sd">
-<p>\(D\) est l'intersection des disques de rayon 1 centrés en \((1,0)\) et \((0,1)\). La droite \(y=x\) la coupe en deux segments circulaires identiques, d'angle \(\tfrac\pi2\) chacun :</p>
-<div class="mq">\[\begin{gathered}\text{aire(segment)}=\underbrace{\frac{\pi}{4}}_{\text{secteur}}-\underbrace{\frac12}_{\text{triangle}}\\[4pt] \text{aire}(D)=2\left(\frac\pi4-\frac12\right)=\frac\pi2-1\end{gathered}\]</div>
-<div class="mq">\[\begin{gathered}\oint\omega=\frac\pi2-1\approx0{,}571\\[4pt] \text{(sens direct)}\end{gathered}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Reconnaître le domaine</div><div class="sd">
+<p>\(x^2+y^2\le2x\iff(x-1)^2+y^2\le1\) : disque de centre \((1,0)\), rayon \(1\). \(x^2+y^2\le2y\iff x^2+(y-1)^2\le1\) : disque de centre \((0,1)\), rayon \(1\). Leurs cercles se coupent en \(O\) et \((1,1)\). \(D\) est leur intersection (une « lentille »).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Aire par les polaires</div><div class="sd">
+<p>En polaires centrées en \(O\), pour \(\theta\in[0,\frac\pi2]\), \(r\le\min(2\cos\theta,\ 2\sin\theta)\) : c'est \(2\sin\theta\) pour \(\theta\le\frac\pi4\) et \(2\cos\theta\) pour \(\theta\ge\frac\pi4\). Avec \(\mathrm{Aire}=\int\frac12r_{max}^2\,d\theta\) :</p>
+<div class="mq">\[\mathrm{Aire}(D)=\int_0^{\pi/4}\frac12(2\sin\theta)^2d\theta+\int_{\pi/4}^{\pi/2}\frac12(2\cos\theta)^2d\theta=2\int_0^{\pi/4}2\sin^2\theta\,d\theta=2\Big(\frac\pi4-\frac12\Big)=\frac\pi2-1\]</div>
 </div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle géométrique</div><div class="sd">
+<p>La droite \(y=x\) coupe la lentille en deux segments circulaires identiques, d'angle au centre \(\frac\pi2\) ; chacun a pour aire (secteur \(\frac\pi4\)) \(-\) (triangle \(\frac12\)) \(=\frac\pi4-\frac12\). D'où \(\mathrm{Aire}(D)=2\big(\frac\pi4-\frac12\big)=\frac\pi2-1\approx0{,}571\) ✓.</p></div></div></li>
 </ol>
-<div class="answer"><b class="lab">Réponse</b>a) \(\tfrac{3\pi}2\) ; \(b\)) \(\tfrac{3\pi}2\) ; \(c\)) \(\tfrac83\) ; \(d\)) \(2\pi\) ; \(e\)) \(\tfrac\pi2-1\).</div>
-<div class="why"><b class="lab">Piège \((d)\)</b>\(\partial Q/\partial x=\partial P/\partial y\) hors de \(O\), mais \(\mathbb{R}^2\setminus\{0\}\) n'est pas étoilé : fermée n'implique pas exacte. Si Green s'appliquait, on trouverait 0, ce qui est faux. C'est l'exemple fondamental du cours d'électromagnétisme (circulation du champ magnétique autour d'un fil : théorème d'Ampère).</div>
-<div class="retenir rt2"><b class="lab">À retenir</b>Sens indirect \(\Rightarrow\) changer le signe. Une singularité à l'intérieur (cas d : \(O\) dans le carré) interdit Green : on utilise \(\omega=d(\ln r)+d\theta\), d'où \(2\pi\). Quand \(Q_x-P_y=1\), la circulation est l'<b>aire</b> du domaine (cas e).</div>
+<div class="answer"><b class="lab">Réponse</b>a) \(\frac{3\pi}2\) ; b) \(\frac{3\pi}2\) ; c) \(\frac83\) ; d) \(2\pi\) ; e) \(\frac\pi2-1\).</div>
+<div class="why"><b class="lab">Piège (d)</b>\(\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}\) hors de \(O\), mais \(\mathbb{R}^2\setminus\{0\}\) n'est pas étoilé : « fermée » n'implique pas « exacte ». Appliquer Green donnerait \(0\), ce qui est faux. C'est l'exemple fondamental du théorème d'Ampère (circulation du champ magnétique autour d'un fil).</div>
+<div class="why"><b class="lab">Piège (c)</b>Oublier que l'arc n'est pas fermé (le segment ajouté contribue ici \(0\), mais il faut le dire) et oublier le changement de signe pour le sens indirect.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Green-Riemann : circulation fermée \(=\iint(Q_x-P_y)\), pour le bord orienté <b>positivement</b> et \(P,Q\) de classe \(C^1\) sur <b>tout</b> le domaine. Sens indirect \(\Rightarrow\) signe \(-\). Arc non fermé \(\Rightarrow\) fermer par un segment. Singularité à l'intérieur \(\Rightarrow\) pas de Green (forme angle, \(2\pi\)). Quand \(Q_x-P_y=1\), la circulation est l'<b>aire</b> du domaine.</div>
 </div></details>
 </article>
 <article class="cx" id="cur-4">
@@ -2358,37 +2476,68 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <div class="cx-enonce">1. \(\int x\,dy+xy^2\,dx\), \(c(t)=(\cos t,\sin t)\), \(t\in[0,2\pi]\) ; 2. \(\int x\,dx+y\,dy\), \(c(t)=(\cos\pi t,\sin\pi t)\), \(t\in[0,2]\) ; 3. \(\int x\,dx+y\,dy\), \(C\) formée des arcs \(y=x^2\) et \(x=y^2\) entre \((0,0)\) et \((1,1)\), sens direct ; 4. \(\int yz\,dx+xz\,dy+xy\,dz\), \(C\) formée des segments \((1,0,0)\to(0,1,0)\to(0,0,1)\) \((\to(1,0,0))\).</div>
 <div class="rr"><b class="lab">Rappel</b>\(x\,dx+y\,dy=d\big(\frac{x^2+y^2}2\big)\) ; \(yz\,dx+xz\,dy+xy\,dz=d(xyz)\) ; forme exacte \(\Rightarrow\) intégrale nulle sur une courbe fermée.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
-<p>Reconnaître les formes exactes :</p>
-<div class="mq">\[\begin{gathered}x\,dx+y\,dy=d\!\left(\frac{x^2+y^2}{2}\right)\\[4pt] yz\,dx+xz\,dy+xy\,dz=d(xyz)\end{gathered}\]</div>
-<p>Une forme exacte a une intégrale nulle sur toute courbe fermée, et égale à \(\Phi(B)-\Phi(A)\) sinon. Seule la 1 demande un vrai calcul.</p>
+<p><b>Principe : tester l'exactitude avant tout calcul.</b> Pour \(\omega=P\,dx+Q\,dy\) : si \(\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\) sur un ouvert étoilé (par exemple \(\mathbb{R}^2\)), la forme est exacte, \(\omega=d\Phi\). En dimension 3, il faut \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\). Alors :</p>
+<div class="fml"><span class="f">\(\displaystyle \int_C\omega=\Phi(\text{arrivée})-\Phi(\text{départ})\qquad\text{et}\qquad\oint_C\omega=0\ \text{ si }C\text{ est fermée}\)</span><span class="leg">ne dépend pas du chemin</span></div>
+<p><b>Formes exactes à reconnaître :</b></p>
+<div class="mq">\[x\,dx+y\,dy=d\Big(\frac{x^2+y^2}{2}\Big)\qquad yz\,dx+xz\,dy+xy\,dz=d(xyz)\qquad y\,dx+x\,dy=d(xy)\]</div>
+<p><b>Quand le test échoue</b> (question 1), on revient à la définition : paramétrer, substituer, intégrer ; Green-Riemann sert de contrôle. <b>Courbe fermée ?</b> Une courbe est fermée quand \(c(a)=c(b)\) : le paramètre \(t\in[0,2]\) avec \(\pi t\in[0,2\pi]\) décrit un tour complet ; deux arcs reliant les mêmes points forment une boucle.</p>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
-<div class="qsub">1. Cercle unité, forme non exacte</div>
+<div class="qsub">1. \(\int x\,dy+xy^2\,dx\) sur le cercle unité (forme non exacte)</div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Paramétrage</div><div class="sd">
-<p>\(x=\cos t\), \(y=\sin t\), \(dx=-\sin t\,dt\), \(dy=\cos t\,dt\) :</p>
-<div class="mq">\[x\,dy=\cos^2t\,dt\qquad xy^2\,dx=-\cos t\sin^3t\,dt\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Lire \(P\) et \(Q\) et tester</div><div class="sd">
+<p>\(P=xy^2\) (coefficient de \(dx\)), \(Q=x\) (coefficient de \(dy\)) :</p>
+<div class="mq">\[\frac{\partial P}{\partial y}=2xy\qquad\frac{\partial Q}{\partial x}=1\qquad\text{différentes}\]</div>
+<p>La forme n'est <b>pas exacte</b> : le calcul est nécessaire (le cercle est fermé, mais cela ne suffit pas à annuler l'intégrale).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Paramétrage et dérivées</div><div class="sd">
+<p>\(x=\cos t\), \(y=\sin t\), \(t\in[0,2\pi]\) : \(x'=-\sin t\), \(y'=\cos t\) (un tour direct).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Intégrande</div><div class="sd">
+<div class="mq">\[P\,x'+Q\,y'=\cos t\sin^2t\cdot(-\sin t)+\cos t\cdot\cos t=-\cos t\sin^3t+\cos^2t\]</div>
 </div></div></li>
 <li class="step"><span class="sn"></span><div><div class="st">Intégration</div><div class="sd">
-<p>\(\int_0^{2\pi}\cos^2t\,dt=\pi\) (valeur moyenne \(\tfrac12\) sur une période) ; \(\cos t\sin^3t\) a pour primitive \(\tfrac{\sin^4t}{4}\), qui revient à sa valeur :</p>
-<div class="mq">\[\int_C\omega=\pi-\left[\frac{\sin^4t}{4}\right]_0^{2\pi}=\pi-0=\pi\]</div>
-<p>Contrôle par Green : \(\iint_{\text{disque}}(1-2xy)=\pi-0=\pi\) ✓.</p>
+<p>\(\int_0^{2\pi}\cos^2t\,dt=\pi\) (on linéarise : \(\cos^2t=\frac{1+\cos2t}{2}\)) ; \(\cos t\sin^3t\) a pour primitive \(\frac{\sin^4t}{4}\), qui reprend la même valeur en \(0\) et \(2\pi\) :</p>
+<div class="mq">\[\int_C\omega=\int_0^{2\pi}\cos^2t\,dt-\Big[\frac{\sin^4t}{4}\Big]_0^{2\pi}=\pi-0=\pi\]</div>
 </div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle par Green-Riemann</div><div class="sd">
+<div class="mq">\[\iint_{D}\big(1-2xy\big)\,dx\,dy=\mathrm{Aire}(D)-2\iint_Dxy\,dx\,dy=\pi-0=\pi\ ✓\]</div>
+<p>(\(\iint_Dxy=0\) par parité en \(x\) sur le disque.)</p></div></div></li>
 </ol>
-<div class="qsub">2., 3., 4. Formes exactes</div>
+<div class="qsub">2. \(\int x\,dx+y\,dy\) avec \(c(t)=(\cos\pi t,\sin\pi t)\), \(t\in[0,2]\)</div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">2. Cercle parcouru une fois</div><div class="sd">
-<p>\(t\in[0,2]\) donne \(\pi t\in[0,2\pi]\) : une courbe fermée, et la forme est exacte. Intégrale nulle.</p>
+<li class="step"><span class="sn"></span><div><div class="st">Forme exacte</div><div class="sd">
+<p>\(x\,dx+y\,dy=d\Phi\) avec \(\Phi=\frac{x^2+y^2}{2}\) (\(\Phi_x=x\), \(\Phi_y=y\)) : \(P_y=0=Q_x\), \(\mathbb{R}^2\) est étoilé.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Courbe fermée</div><div class="sd">
+<p>\(c(0)=(\cos0,\sin0)=(1,0)\) et \(c(2)=(\cos2\pi,\sin2\pi)=(1,0)\) : la courbe est fermée (un tour complet). Donc</p>
+<div class="mq">\[\int_C\omega=\Phi\big(c(2)\big)-\Phi\big(c(0)\big)=\frac12-\frac12=0\]</div>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">3. Deux arcs formant une courbe fermée</div><div class="sd">
-<p>Les deux paraboles relient \((0,0)\) et \((1,1)\) : ensemble, elles forment une courbe fermée. Forme exacte : intégrale nulle.</p>
-</div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">4. Potentiel \(xyz\)</div><div class="sd">
-<p>\(xyz\) vaut 0 en \((1,0,0)\), \((0,1,0)\) et \((0,0,1)\) (une coordonnée nulle à chaque fois) : l'intégrale est nulle, que le chemin soit fermé ou non.</p>
-</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle direct</div><div class="sd">
+<p>\(x'=-\pi\sin\pi t\), \(y'=\pi\cos\pi t\) : \(x\,x'+y\,y'=-\pi\cos\pi t\sin\pi t+\pi\sin\pi t\cos\pi t=0\) pour tout \(t\) (c'est la dérivée de \(\frac{x^2+y^2}{2}=\frac12\), constante). L'intégrale d'une fonction nulle est \(0\) ✓.</p></div></div></li>
 </ol>
-<div class="answer"><b class="lab">Réponse</b>\(\pi\) ; 0 ; 0 ; 0.</div>
-<div class="retenir"><b class="lab">À retenir</b>Avant tout paramétrage, tester \(\partial P/\partial y=\partial Q/\partial x\) (et en \(3D\), rotationnel nul). Si la forme est exacte, le calcul se réduit à deux évaluations du potentiel.</div>
+<div class="qsub">3. \(\int x\,dx+y\,dy\) sur les deux arcs \(y=x^2\) et \(x=y^2\)</div>
+<ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">La courbe est fermée</div><div class="sd">
+<p>Les deux arcs relient \((0,0)\) et \((1,1)\) (\(0=0^2\), \(1=1^2\)) : le premier (\(y=x^2\), en dessous) va de \((0,0)\) à \((1,1)\), le second (\(x=y^2\), au-dessus) revient de \((1,1)\) à \((0,0)\), ce qui fait un parcours direct de la boucle. Le chemin total est <b>fermé</b>.</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Conclusion par l'exactitude</div><div class="sd">
+<p>La forme est exacte (même potentiel \(\Phi=\frac{x^2+y^2}{2}\) qu'en 2.), donc l'intégrale sur une courbe fermée est \(\oint\omega=0\).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle arc par arc</div><div class="sd">
+<p>Arc 1 : \(c_1(t)=(t,t^2)\), \(t:0\to1\), \(x'=1\), \(y'=2t\) : \(\int_0^1\big(t+t^2\cdot2t\big)dt=\int_0^1(t+2t^3)dt=\frac12+\frac12=1\). Arc 2 : \(c_2(t)=(t^2,t)\), \(t:1\to0\), \(x'=2t\), \(y'=1\) : \(\int_1^0\big(t^2\cdot2t+t\big)dt=-\int_0^1(2t^3+t)dt=-1\). Somme : \(1-1=0\) ✓ (chaque arc vaut \(\Phi(1,1)-\Phi(0,0)=1\), au signe près selon le sens).</p></div></div></li>
+</ol>
+<div class="qsub">4. \(\int yz\,dx+xz\,dy+xy\,dz\) sur les segments \((1,0,0)\to(0,1,0)\to(0,0,1)\ (\to(1,0,0))\)</div>
+<ol class="steps">
+<li class="step"><span class="sn"></span><div><div class="st">Tester le rotationnel</div><div class="sd">
+<p>\(\vec F=(P,Q,R)=(yz,\ xz,\ xy)\) :</p>
+<div class="mq">\[\overrightarrow{\mathrm{rot}}\,\vec F=\big(\partial_yR-\partial_zQ,\ \partial_zP-\partial_xR,\ \partial_xQ-\partial_yP\big)=(x-x,\ y-y,\ z-z)=\vec0\]</div>
+<p>\(\mathbb{R}^3\) est étoilé : la forme est exacte, avec \(\Phi=xyz\) (\(\Phi_x=yz\), \(\Phi_y=xz\), \(\Phi_z=xy\)).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Valeurs du potentiel aux sommets</div><div class="sd">
+<p>\(\Phi(1,0,0)=0\), \(\Phi(0,1,0)=0\), \(\Phi(0,0,1)=0\) : à chaque sommet, deux coordonnées sont nulles, donc \(xyz=0\).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Conclusion</div><div class="sd">
+<p>Chemin ouvert (deux segments) : \(\Phi(0,0,1)-\Phi(1,0,0)=0\). Chemin fermé (avec le troisième segment qui revient en \((1,0,0)\)) : \(0\) aussi, car la forme est exacte. Les deux lectures de l'énoncé donnent \(0\).</p></div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Contrôle segment par segment</div><div class="sd">
+<p>Segment 1 : \(c(t)=(1-t,t,0)\), \(x'=-1\), \(y'=1\), \(z'=0\) ; \(yz=0\), \(xz=0\), \(z'=0\) : intégrande \(0\). Segment 2 : \((0,1-t,t)\), \(x'=0\), \(y'=-1\), \(z'=1\) ; \(x=0\) annule \(xz\) et \(xy\), et \(x'=0\) annule \(yz\,x'\) : \(0\). Segment 3 : \((t,0,1-t)\), \(y=0\) annule \(yz\), \(xy\), et \(y'=0\) annule \(xz\,y'\) : \(0\). Les trois intégrales sont nulles ✓.</p></div></div></li>
+</ol>
+<div class="answer"><b class="lab">Réponse</b>1) \(\pi\) ; 2) \(0\) ; 3) \(0\) ; 4) \(0\).</div>
+<div class="why"><b class="lab">Piège</b>Le cercle de la question 1 est fermé mais la forme n'est pas exacte : « fermée » ne suffit pas, il faut l'<b>exactitude</b> pour annuler l'intégrale. Inversement, ne pas paramétrer quand la forme est exacte fait perdre du temps.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Avant tout paramétrage, tester \(\partial P/\partial y=\partial Q/\partial x\) (en \(3D\), \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\)). Forme exacte : le calcul se réduit à \(\Phi(\text{arrivée})-\Phi(\text{départ})\), et vaut \(0\) sur une courbe fermée. Forme non exacte : paramétrer (ou Green si la courbe est fermée).</div>
 </div></details>
 </article>
 </section>
