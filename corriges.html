@@ -115,9 +115,17 @@
 <h2>Géométrie du plan et de l'espace</h2>
 <p>Outils utilisés : produit scalaire (orthogonalité, normes), produit vectoriel (normale, colinéarité, aire), produit mixte, équations de droites et de plans. <a href="index.html#ch0">Revoir le cours (ch. 0)</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître</b>
+<ul>
+<li><b>Produit scalaire</b> : \(\vec u\cdot\vec v=xx'+yy'+zz'=\|\vec u\|\|\vec v\|\cos\theta\) ; \(\vec u\perp\vec v\iff\vec u\cdot\vec v=0\) ; \(\vec u\cdot\vec u=\|\vec u\|^2\).</li>
+<li><b>Produit vectoriel</b> : \(\vec u\wedge\vec v=(yz'-zy',\ zx'-xz',\ xy'-yx')\), orthogonal à \(\vec u\) et \(\vec v\) ; \(\|\vec u\wedge\vec v\|\) = aire du parallélogramme ; colinéaires \(\iff\vec u\wedge\vec v=\vec0\).</li>
+<li><b>Droite du plan</b> \(ax+by+c=0\) : normal \((a,b)\), directeur \((-b,a)\). <b>Plan</b> \(ax+by+cz+d=0\) : normal \((a,b,c)\) ; par trois points : \(\vec n=\overrightarrow{AB}\wedge\overrightarrow{AC}\).</li>
+<li><b>Projeté</b> de \(\vec v\) sur \(\vec u\) : \(\dfrac{\vec u\cdot\vec v}{\|\vec u\|^2}\,\vec u\).</li>
+</ul></div>
 <article class="cx" id="geo-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Produits scalaires de vecteurs orthogonaux</h3></header>
 <div class="cx-enonce">\(\vec u,\vec v\in\mathbb{R}^2\) orthogonaux, \(\|\vec u\|=4\), \(\|\vec v\|=5\). Calculer \((\vec u+\vec v)^2\), \((\vec u-\vec v)^2\), \((\vec u+\vec v)\cdot(\vec u-\vec v)\). Trouver \(x\) tel que a) \((x\vec u+\vec v)\cdot(\vec u+\vec v)=13\) ; \(b\)) \((x\vec u-\vec v)\cdot(x\vec u-\vec v)=23\).</div>
+<div class="rr"><b class="lab">Rappel</b>\((\vec w)^2=\|\vec w\|^2\) ; le produit scalaire est bilinéaire ; \(\vec u\perp\vec v\Rightarrow\vec u\cdot\vec v=0\).</div>
 <details class="cx-meth"><summary>💡 Méthode</summary><div>
 <p>Ne jamais chercher de coordonnées : <b>développer</b> par bilinéarité, puis remplacer</p>
 <div class="mq">\[\begin{gathered}\vec u\cdot\vec u=\|\vec u\|^2=16,\\[4pt] \vec v\cdot\vec v=25,\\[4pt] \vec u\cdot\vec v=0\ \text{(orthogonaux)}\end{gathered}\]</div>
@@ -139,11 +147,13 @@
 </ol>
 <div class="answer"><b class="lab">Réponse</b>41 ; 41 ; −9. a) \(x=-\tfrac34\). \(b\)) aucun réel \(x\) ne convient.</div>
 <div class="why"><b class="lab">Piège</b>Répondre « \(x=\pm\sqrt{-2/16}\) » : une norme au carré est toujours \(\geq0\), dire clairement « pas de solution réelle ».</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Pas de coordonnées : développer par bilinéarité, puis remplacer \(\|\vec u\|^2\), \(\|\vec v\|^2\) et \(0\). Un carré scalaire est toujours \(\ge0\) : une équation qui l'égale à un nombre négatif n'a aucune solution réelle.</div>
 </div></details>
 </article>
 <article class="cx" id="geo-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Équations cartésiennes de droites du plan</h3></header>
 <div class="cx-enonce">1. Équation de la droite \(D\) passant par \(A(3,4)\) et \(B(6,-2)\). Le point \(C\left(2,\tfrac{10}{3}\right)\) est-il sur \(D\) ? 2. Équation de la droite perpendiculaire à \(2x+3y-1=0\) passant par \(A(1,-1)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Droite \(ax+by+c=0\) : normal \((a,b)\), directeur \((-b,a)\). Une droite perpendiculaire a pour directeur le normal de l'autre.</div>
 <details class="cx-meth"><summary>💡 Méthode</summary><div>
 <p>Une droite du plan \(ax+by+c=0\) a pour <b>vecteur normal</b> \((a,b)\) et pour <b>vecteur directeur</b> \((-b,a)\). On obtient donc l'équation à partir d'un vecteur directeur en « échangeant et changeant un signe », puis on trouve \(c\) avec un point.</p>
 </div></details>
@@ -165,11 +175,13 @@
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(D : 2x+y-10=0\), \(C\notin D\). Perpendiculaire : \(3x-2y-5=0\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Pour savoir si un point est sur une droite, on remplace ses coordonnées dans l'équation. Pour une perpendiculaire : « échanger les coefficients et changer un signe », puis trouver \(c\) avec le point.</div>
 </div></details>
 </article>
 <article class="cx" id="geo-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Ensembles définis avec des valeurs absolues</h3></header>
 <div class="cx-enonce">Représenter l'ensemble des points \(M(x,y)\) tels que : 1. \(2x+|y|-1=0\) ; 2. \(|x|+|y|=1\) ; 3. \(\max(|x|,|y|)=1\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(|u|=u\) si \(u\ge0\), \(-u\) sinon : une valeur absolue donne deux cas. \(|x|\) est paire (symétrie par rapport à \(Oy\)), \(|y|\) aussi (par rapport à \(Ox\)).</div>
 <details class="cx-meth"><summary>💡 Méthode</summary><div>
 <p>Une valeur absolue = <b>deux cas</b> selon le signe. On découpe le plan par quadrants (ou demi-plans), on obtient des morceaux de droites, puis on exploite les <b>symétries</b> : \(|y|\) ne change pas si \(y\to-y\) (symétrie par rapport à \(Ox\)), \(|x|\) ne change pas si \(x\to-x\) (symétrie par rapport à \(Oy\)).</p>
 </div></details>
@@ -194,11 +206,13 @@
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">À savoir</b>\(|x|+|y|=1\) et \(\max(|x|,|y|)=1\) sont les « cercles unités » des normes \(\|\cdot\|_1\) et \(\|\cdot\|_\infty\) ; \(x^2+y^2=1\) est celui de la norme euclidienne \(\|\cdot\|_2\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>On trace dans un seul quadrant, puis on complète par symétries. \(|x|+|y|=1\) est un losange ; \(\max(|x|,|y|)=1\) est le contour d'un carré.</div>
 </div></details>
 </article>
 <article class="cx" id="geo-4">
 <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Produits scalaire et vectoriel, projections, orthogonalité, colinéarité</h3></header>
 <div class="cx-enonce">Calculer \(\vec u\cdot\vec v\) et \(\vec u\wedge\vec v\) pour : 1. \(\vec u(4,1,3)\), \(\vec v(-2,-1,5)\) ; 2. \(\vec u(1,0,3)\), \(\vec v(-1,4,-3)\), ainsi que les projetés \(\vec v_{\vec u}\) et \(\vec u_{\vec v}\) ; 3. \(\vec u(a,a+1,4)\), \(\vec v(a+1,a,-1)\) : pour quels \(a\) sont-ils orthogonaux ? colinéaires ?</div>
+<div class="rr"><b class="lab">Rappel</b>\(\vec u\wedge\vec v=(u_2v_3-u_3v_2,\ u_3v_1-u_1v_3,\ u_1v_2-u_2v_1)\) ; orthogonaux \(\iff\vec u\cdot\vec v=0\) ; colinéaires \(\iff\vec u\wedge\vec v=\vec0\) ; projeté \(\frac{\vec u\cdot\vec v}{\|\vec u\|^2}\vec u\).</div>
 <details class="cx-meth"><summary>💡 Méthode</summary><div>
 <div class="mq">\[\begin{gathered}\vec u\wedge\vec v=\big(u_2v_3-u_3v_2,\ u_3v_1-u_1v_3,\ u_1v_2-u_2v_1\big)\\[4pt] \vec v_{\vec u}=\frac{\vec u\cdot\vec v}{\|\vec u\|^2}\,\vec u\end{gathered}\]</div>
 <p>Orthogonaux ⟺ \(\vec u\cdot\vec v=0\) ; colinéaires ⟺ \(\vec u\wedge\vec v=\vec0\) (les 3 composantes nulles <b>en même temps</b>).</p>
@@ -224,11 +238,13 @@
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1. 6 ; \((8,-26,-2)\). 2. −10 ; \((-12,0,4)\) ; \(\vec v_{\vec u}=(-1,0,-3)\), \(\vec u_{\vec v}=\tfrac1{13}(5,-20,15)\). 3. orthogonaux pour \(a\in\{1,-2\}\) ; jamais colinéaires.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Orthogonal et colinéaire sont deux conditions différentes (scalaire nul / vectoriel nul). Colinéaire exige que les <b>trois</b> composantes du produit vectoriel s'annulent en même temps.</div>
 </div></details>
 </article>
 <article class="cx" id="geo-5">
 <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Double produit vectoriel et produit mixte</h3></header>
 <div class="cx-enonce">\(\vec A=\vec e_x+\vec e_y\), \(\vec B=\vec e_x+2\vec e_y\), \(\vec C=2\vec e_x+\vec e_y\). 1. Comparer \((\vec A\wedge\vec B)\wedge\vec C\) et \(\vec A\wedge(\vec B\wedge\vec C)\). 2. Comparer \(\vec A\cdot(\vec B\wedge\vec C)\) et \((\vec A\wedge\vec B)\cdot\vec C\).</div>
+<div class="rr"><b class="lab">Rappel</b>Le produit vectoriel est antisymétrique et <b>non associatif</b> ; le produit mixte \(\vec a\cdot(\vec b\wedge\vec c)=\det(\vec a,\vec b,\vec c)\).</div>
 <details class="cx-meth"><summary>💡 Méthode</summary><div>
 <p>Calcul direct en coordonnées (\(\vec A=(1,1,0)\), \(\vec B=(1,2,0)\), \(\vec C=(2,1,0)\)), puis contrôle par la formule du double produit vectoriel (hors programme mais très utile en électromagnétisme) :</p>
 <div class="mq">\[\vec a\wedge(\vec b\wedge\vec c)=(\vec a\cdot\vec c)\,\vec b-(\vec a\cdot\vec b)\,\vec c\]</div>
@@ -240,11 +256,13 @@
 <div class="mq">\[\begin{gathered}\vec A\cdot(\vec B\wedge\vec C)=(1,1,0)\cdot(0,0,-3)=0\\[4pt] (\vec A\wedge\vec B)\cdot\vec C=(0,0,1)\cdot(2,1,0)=0\end{gathered}\]</div>
 <p>Égaux, comme toujours (c'est le produit mixte \([\vec A,\vec B,\vec C]\)), et <b>nuls</b> parce que les trois vecteurs sont dans le plan \((xOy)\) : ils sont coplanaires, le parallélépipède est plat.</p>
 <div class="answer"><b class="lab">Réponse</b>\((-1,2,0)\neq(-3,3,0)\) ; produits mixtes égaux à 0.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Les parenthèses comptent : \((\vec A\wedge\vec B)\wedge\vec C\neq\vec A\wedge(\vec B\wedge\vec C)\) en général. Le produit mixte, lui, est invariant par permutation circulaire : \(\vec A\cdot(\vec B\wedge\vec C)=(\vec A\wedge\vec B)\cdot\vec C\).</div>
 </div></details>
 </article>
 <article class="cx" id="geo-6">
 <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Vecteur unitaire normal à deux vecteurs</h3></header>
 <div class="cx-enonce">Trouver un vecteur unitaire normal à \(\vec u\) et \(\vec v\) : 1. \(\vec u(4,2,1)\), \(\vec v(-1,-1,2)\) ; 2. \(\vec u(1,2,-3)\), \(\vec v(0,1,4)\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\vec u\wedge\vec v\) est orthogonal à \(\vec u\) et à \(\vec v\) ; pour un vecteur unitaire, on divise par la norme.</div>
 <details class="cx-meth"><summary>💡 Méthode</summary><div>
 <p>\(\vec u\wedge\vec v\) est orthogonal aux deux ; on le divise par sa norme : \(\vec n=\pm\dfrac{\vec u\wedge\vec v}{\|\vec u\wedge\vec v\|}\). Il y a toujours <b>deux</b> réponses \((\pm )\).</p>
 </div></details>
@@ -254,11 +272,13 @@
 <div class="mq">\[2.\quad\vec u\wedge\vec v=\big(2\cdot4-(-3)\cdot1,\ (-3)\cdot0-1\cdot4,\ 1\cdot1-2\cdot0\big)=(11,-4,1),\quad\|\cdot\|=\sqrt{138}\]</div>
 <div class="mq">\[\vec n=\pm\frac{1}{\sqrt{138}}\,(11,-4,1)\]</div>
 <div class="why"><b class="lab">Contrôle en \(10\,\mathrm{s}\)</b>\((5,-9,-2)\cdot(4,2,1)=20-18-2=0\) et \((5,-9,-2)\cdot(-1,-1,2)=-5+9-4=0\) ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Il y a toujours <b>deux</b> réponses (\(\pm\)). Contrôle : les deux produits scalaires avec \(\vec u\) et \(\vec v\) sont nuls et la norme vaut \(1\).</div>
 </div></details>
 </article>
 <article class="cx" id="geo-7">
 <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Équations cartésiennes de plans</h3></header>
 <div class="cx-enonce">1. Plan passant par \(A(3,2,-1)\) et orthogonal à la droite de vecteur directeur \(\vec u=\vec i+2\vec j+2\vec k\). 2. Plan passant par \(A(1,2,3)\), \(B(-1,1,2)\), \(C(0,1,1)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Plan \(=\) un point + un vecteur normal \(\vec n=(a,b,c)\) \(\Rightarrow ax+by+cz+d=0\) ; par trois points : \(\vec n=\overrightarrow{AB}\wedge\overrightarrow{AC}\).</div>
 <details class="cx-meth"><summary>💡 Méthode</summary><div>
 <p>Un plan = un point + un <b>vecteur normal</b> \(\vec n=(a,b,c)\) → \(ax+by+cz+d=0\). Plan orthogonal à une droite : \(\vec n\) = vecteur directeur de la droite. Plan par 3 points : \(\vec n=\overrightarrow{AB}\wedge\overrightarrow{AC}\).</p>
 </div></details>
@@ -276,6 +296,7 @@
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1. \(x+2y+2z-5=0\). 2. \(x-3y+z+2=0\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Plan orthogonal à une droite : le directeur de la droite est le normal du plan. On trouve \(d\) en remplaçant un point, et on vérifie avec les trois points.</div>
 </div></details>
 </article>
 </section>
@@ -285,9 +306,18 @@
 <h2>Fonctions de plusieurs variables</h2>
 <p>Outils : domaine de définition, limites (chemins, polaires, gendarmes), dérivées partielles, classe \(C^1\), théorème de Schwarz, matrice jacobienne, dérivée d'une composée. <a href="index.html#ch1">Revoir le cours (ch. 1)</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître</b>
+<ul>
+<li><b>Domaine</b> : dénominateur \(\neq0\), sous la racine \(\ge0\), dans le \(\ln\) \(&gt;0\).</li>
+<li><b>Limite</b> : pas de limite \(\Leftarrow\) deux chemins, deux valeurs ; limite \(\Leftarrow\) majoration (gendarmes) ou polaires avec une borne <b>indépendante de \(\theta\)</b> ; en \((a,b)\neq(0,0)\) : translation \(u=x-a\), \(v=y-b\).</li>
+<li><b>Dérivées partielles</b> : on dérive en traitant les autres variables comme constantes ; au point de recollement d'une fonction définie par morceaux, <b>par la définition</b> (\(\lim f(h,0)/h\)).</li>
+<li><b>Classe \(C^1\)</b> en 4 temps : hors de \(0\) ; continuité en \(0\) ; dérivées partielles en \(0\) ; continuité des dérivées partielles en \(0\). <b>Schwarz</b> : \(C^2\Rightarrow f_{xy}=f_{yx}\).</li>
+<li><b>Jacobienne</b> : \(p\) lignes (composantes) \(\times\ n\) colonnes (variables) ; composée : \(J_{g\circ f}=J_g(f)\,J_f\).</li>
+</ul></div>
 <article class="cx" id="fpv-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Domaines de définition et limites en \((0,\,\allowbreak 0)\)</h3></header>
 <div class="cx-enonce">Donner le domaine de définition et étudier la limite en \((0,0)\) de : 1) \(f(x,y)=\dfrac{xy}{x^2+y^2+2}\) ; 2) \(f(x,y)=\dfrac{(x-y)^2}{x^2+y^2}\) ; 3) \(f(x,y)=\dfrac{\sin(xy)}{xy}\) ; 4) \(f(x,y)=\dfrac{x^2y^2}{x^2+y^2}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Pas de limite : deux chemins, deux valeurs. Limite : majoration (gendarmes) ou polaires avec une borne \(h(r)\to0\) <b>indépendante de \(\theta\)</b>.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours.</b> \(f\) a pour limite \(\ell\) en \((0,0)\) si \(f(x,y)\) se rapproche de \(\ell\) quand \((x,y)\) se rapproche de \((0,0)\) <b>par n'importe quel chemin</b>. En une variable, on ne peut arriver que par la gauche ou par la droite ; dans le plan, il existe une infinité de chemins (droites, paraboles, spirales…).</p>
 <p><b>Conséquences pratiques :</b></p>
@@ -344,11 +374,13 @@
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1) \(\mathbb{R}^2\), limite 0. 2) \(\mathbb{R}^2\setminus\{0\}\), pas de limite. 3) plan privé des axes, limite 1. 4) \(\mathbb{R}^2\setminus\{0\}\), limite 0.</div>
 <div class="why"><b class="lab">Piège</b>Trouver la même limite sur deux ou trois chemins ne <b>prouve pas</b> que la limite existe. Seule une majoration valable pour tous les chemins le prouve.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Même valeur sur plusieurs droites ne prouve rien. Chemins à tester : \((t,0)\), \((0,t)\), \((t,t)\), \((t,t^2)\). Le domaine exclut les points où le dénominateur s'annule.</div>
 </div></details>
 </article>
 <article class="cx" id="fpv-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Calcul de dérivées partielles</h3></header>
 <div class="cx-enonce">Calculer les dérivées partielles premières de : 1) \(xy\) ; 2) \(e^{xy}\) ; 3) \(x\cos x\cos y\) ; 4) \(\dfrac{x^2+y^2}{x^2-y^2}\) ; 5) \(\sqrt{1+x^2y^2}\) ; 6) \((x^2+y^2)\ln(x^2+y^2)\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\partial_x\) : on dérive en \(x\) en traitant \(y\) comme une constante ; règles \((uv)'\), \(\big(\frac uv\big)'\), composée.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours.</b> La dérivée partielle par rapport à \(x\) mesure comment \(f\) varie quand on bouge seulement \(x\) :</p>
 <div class="fml"><span class="f">\(\dfrac{\partial f}{\partial x}(x,y)=\displaystyle\lim_{h\to0}\frac{f(x+h,y)-f(x,y)}{h}\)</span><span class="leg">\(y\) reste fixé</span></div>
@@ -403,11 +435,13 @@
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Pièges</b>3) \(x\cos x\) est un <b>produit</b> en \(x\) : on dérive les deux facteurs. 4) Le signe « − » du quotient et la dérivée de \(-y^2\). 6) Ne pas oublier le facteur \(u'\) dans la dérivée du logarithme.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Dans une composée, ne pas oublier la dérivée de l'intérieur (\(\partial_x(x^2y^2)=2xy^2\)). Garder les résultats factorisés : on s'en resservira pour les dérivées secondes.</div>
 </div></details>
 </article>
 <article class="cx" id="fpv-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Continuité, dérivées partielles, classe \(C^1\) (fonctions prolongées en 0)</h3></header>
 <div class="cx-enonce">1) \(f(x,y)=\dfrac{y^3}{\sqrt{x^2+y^4}}\) si \((x,y)\neq(0,0)\), \(f(0,0)=0\). 2) \(f(x,y)=\dfrac{x^3-y^3}{x^2+y^2}\) si \((x,y)\neq(0,0)\), \(f(0,0)=0\). Étudier la continuité de \(f\), l'existence et la continuité des dérivées partielles. \(f\) est-elle \(C^1\) sur \(\mathbb{R}^2\) ?</div>
+<div class="rr"><b class="lab">Rappel</b>\(C^1\) en 4 temps : hors de \(0\) ; continuité en \(0\) ; dérivées partielles en \(0\) ; continuité des dérivées partielles en \(0\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours.</b> \(f\) est de classe \(C^1\) sur un ouvert si ses dérivées partielles existent <b>et sont continues</b> sur cet ouvert. C'est ce qui garantit que \(f\) est différentiable (bien approchée par son plan tangent).</p>
 <p><b>Le plan en 4 temps (toujours le même) :</b></p>
@@ -461,11 +495,13 @@
 </ol>
 <div class="answer"><b class="lab">Conclusion 2)</b>\(f\) continue sur \(\mathbb{R}^2\), dérivées partielles partout (1 et −1 en 0), mais <b>pas \(C^1\)</b> sur \(\mathbb{R}^2\).</div>
 <div class="why"><b class="lab">Pour aller plus loin</b>Dans 2), \(f\) n'est même pas différentiable en 0 : si elle l'était, sa différentielle serait \((h,k)\mapsto h-k\), et le reste \(\dfrac{f(h,k)-(h-k)}{\sqrt{h^2+k^2}}\) vaudrait \(-\tfrac{1}{\sqrt2}\) le long de \(k=-h\) au lieu de tendre vers 0. Leçon : avoir des dérivées partielles en un point ne suffit pas pour être différentiable.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Les dérivées partielles <b>en \(0\)</b> se calculent par la définition (\(\lim f(h,0)/h\)), jamais en remplaçant dans la formule valable hors de \(0\). Repère pour un quotient homogène de degré \(d\) : \(d&gt;1\Rightarrow C^1\) ; \(d=1\Rightarrow\) pas \(C^1\).</div>
 </div></details>
 </article>
 <article class="cx" id="fpv-4">
 <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Dérivées partielles secondes (et troisièmes pour la 3)</h3></header>
 <div class="cx-enonce">1) \(\dfrac{2xy}{(x^2+y^2)^2}\), \((x,y)\neq(0,0)\) ; 2) \(f(x,y,z)=e^z+\dfrac1x+x\,e^{-y}\), \(x\neq0\) ; 3) \(\cos(xy^2)\) ; 4) \(\dfrac{1}{\cos^2x+e^{-y}}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Schwarz : \(f\in C^2\Rightarrow\dfrac{\partial^2f}{\partial x\partial y}=\dfrac{\partial^2f}{\partial y\partial x}\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours (Schwarz).</b> Si \(f\) est de classe \(C^2\), l'ordre de dérivation n'a pas d'importance :</p>
 <div class="fml"><span class="f">\(\dfrac{\partial^2 f}{\partial x\,\partial y}=\dfrac{\partial^2 f}{\partial y\,\partial x}\)</span><span class="leg">une seule dérivée croisée à calculer</span></div>
@@ -527,11 +563,13 @@
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Remarque</b>Dans 4), \(g\) ne s'annule jamais (\(e^{-y}&gt;0\)) : \(f\) est définie sur tout \(\mathbb{R}^2\). Toutes ces formules ont été vérifiées numériquement.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Calculer la dérivée croisée dans les deux ordres est un contrôle gratuit. En deux variables, il n'y a que trois dérivées secondes distinctes : \(f_{xx}\), \(f_{xy}\), \(f_{yy}\).</div>
 </div></details>
 </article>
 <article class="cx" id="fpv-5">
 <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Matrices jacobiennes</h3></header>
 <div class="cx-enonce">1) \(f(x,y)=(x,y)\) ; 2) \(f(x,y)=(x\,e^y+\cos y,\ x,\ x+e^y)\) ; 3) \(f(x,y,z)=(x+e^z+y,\ yx^2)\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(J_f=\big(\partial f_i/\partial x_j\big)\) : une ligne par composante de \(f\), une colonne par variable.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours.</b> Pour \(f:\mathbb{R}^n\to\mathbb{R}^p\), la matrice jacobienne rassemble toutes les dérivées partielles premières :</p>
 <div class="fml"><span class="f">\(J_f=\left(\dfrac{\partial f_i}{\partial x_j}\right)\)</span><span class="leg">\(p\) lignes (une par composante), \(n\) colonnes (une par variable)</span></div>
@@ -559,11 +597,13 @@
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Piège</b>Inverser lignes et colonnes. Vérifier la taille : (nombre de composantes) \(\times\) (nombre de variables).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Vérifier d'abord la taille : \(f:\mathbb{R}^n\to\mathbb{R}^p\) donne une matrice \(p\times n\). La ligne \(i\) est le gradient de \(f_i\).</div>
 </div></details>
 </article>
 <article class="cx" id="fpv-6">
 <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Composée \(g\circ f\) et ses dérivées partielles</h3></header>
 <div class="cx-enonce">\(f:\mathbb{R}^2\to\mathbb{R}^3\), \(f(x,y)=\big(xy\sin(xy),\ e^{-x-y},\ y\cos x\big)\) et \(g(u,v,w)=uvw\). 1. Calculer \(g\circ f\). 2. Ses dérivées partielles.</div>
+<div class="rr"><b class="lab">Rappel</b>\(J_{g\circ f}(a)=J_g\big(f(a)\big)\,J_f(a)\) : \(J_g\) à gauche, évaluée en \(f(a)\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Deux méthodes :</b></p>
 <ul>
@@ -603,6 +643,7 @@
 <article class="cx" id="sup-1">
 <header class="cx-hd"><span class="cx-num">Supp 1</span><h3>\(f=\dfrac{x^3y-xy^3}{x^2+y^2}\) : \(C^1\) mais pas \(C^2\) (contre-exemple de Schwarz)</h3></header>
 <div class="cx-enonce">\(f(x,y)=\dfrac{x^3y-xy^3}{x^2+y^2}\) si \((x,y)\neq(0,0)\), \(f(0,0)=0\). 1. Continuité. 2. Existence et continuité des dérivées partielles premières. 3. \(f\) est-elle \(C^1\) ? 4. \(f_{xy}(0,0)\) et \(f_{yx}(0,0)\). 5. Conclusion avec un théorème du cours.</div>
+<div class="rr"><b class="lab">Rappel</b>Même plan que l'exercice 3. Schwarz : \(f\in C^2\) au voisinage d'un point \(\Rightarrow f_{xy}=f_{yx}\) en ce point.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Même plan que l'exercice 3 pour les questions 1 à 3. Pour les dérivées croisées en 0, on utilise encore la <b>définition</b> : on calcule \(\partial f/\partial x\) le long de l'axe \(x=0\) (c'est une fonction de \(y\)), puis on dérive cette fonction en \(y=0\). Et inversement.</p>
 <p><b>Rappel du théorème de Schwarz</b> : si \(f\) est \(C^2\) au voisinage d'un point, ses dérivées croisées y sont égales. Par contraposée, des dérivées croisées différentes prouvent que \(f\) n'est pas \(C^2\).</p>
@@ -647,11 +688,13 @@
 <p>Si \(f\) était \(C^2\) en \((0,0)\), ses dérivées croisées y seraient égales. Elles ne le sont pas : \(f\) <b>n'est pas \(C^2\)</b> en \((0,0)\). Les dérivées secondes existent en 0 mais n'y sont pas continues.</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Deux dérivées croisées différentes en un point prouvent que \(f\) n'y est pas \(C^2\) (contraposée de Schwarz). Ici \(f\) est \(C^1\) mais pas \(C^2\) : Schwarz est un théorème <b>à hypothèse</b>.</div>
 </div></details>
 </article>
 <article class="cx" id="sup-2">
 <header class="cx-hd"><span class="cx-num">Supp 2</span><h3>Limite en \((3,\,\allowbreak -1)\) : deux chemins puis polaires</h3></header>
 <div class="cx-enonce">Montrer que \(\displaystyle\lim_{(x,y)\to(3,-1)}\frac{xy-3y+x-3}{(x-3)^2+(y+1)^2}\) n'existe pas : 1. avec deux chemins ; 2. avec les coordonnées polaires.</div>
+<div class="rr"><b class="lab">Rappel</b>Pour une limite en \((a,b)\neq(0,0)\) : translation \(u=x-a\), \(v=y-b\), puis chemins ou polaires en \((u,v)\to(0,0)\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Les techniques du cours (polaires, chemins par l'origine) sont écrites en \((0,0)\). On s'y ramène par une translation : \(u=x-3\), \(v=y+1\). Quand \((x,y)\to(3,-1)\), \((u,v)\to(0,0)\).</p>
 <p>Ensuite on <b>factorise</b> le numérateur : un numérateur qui se factorise en \(uv\) révèle souvent la structure « même degré en haut et en bas ».</p>
@@ -671,11 +714,13 @@
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>Deux limites différentes selon le chemin (0 et \(\tfrac12\)) : la limite n'existe pas.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>En polaires, si l'expression dépend encore de \(\theta\) quand \(r\to0\), la limite n'existe pas. Un numérateur qui se factorise en \(uv\) sur \(u^2+v^2\) est le cas typique (\(\cos\theta\sin\theta\)).</div>
 </div></details>
 </article>
 <article class="cx" id="sup-3">
 <header class="cx-hd"><span class="cx-num">Supp 3</span><h3>Jacobiens des coordonnées cylindriques et sphériques</h3></header>
 <div class="cx-enonce">1. \(f(r,\theta,z)=(r\cos\theta,\ r\sin\theta,\ z)\). 2. \(f(r,\theta,\varphi)=(r\sin\varphi\cos\theta,\ r\sin\varphi\sin\theta,\ r\cos\varphi)\). Calculer les jacobiens.</div>
+<div class="rr"><b class="lab">Rappel</b>Jacobien \(=\det J_f\) ; dans une intégrale \(dx\,dy\,dz=|\det J_f|\,dr\,d\theta\,dz\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Pourquoi c'est important.</b> Dans un changement de variables pour une intégrale, le petit volume se transforme selon la valeur absolue du jacobien :</p>
 <div class="fml"><span class="f">\(dx\,dy\,dz=|\det J_f|\;dr\,d\theta\,dz\)</span><span class="leg">le jacobien mesure la dilatation locale des volumes</span></div>
@@ -710,6 +755,7 @@
 <article class="cx" id="sup-4">
 <header class="cx-hd"><span class="cx-num">Supp 4</span><h3>Équation de Laplace et équation des ondes</h3></header>
 <div class="cx-enonce">1. Montrer que \(u=\dfrac{1}{\sqrt{x^2+y^2+z^2}}\) vérifie \(u_{xx}+u_{yy}+u_{zz}=0\). 2. Montrer que \(u(x,t)=\dfrac{t}{t^2-x^2}\) vérifie \(u_{tt}=u_{xx}\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\Delta u=u_{xx}+u_{yy}+u_{zz}\) ; pour \(r=\sqrt{x^2+y^2+z^2}\), \(\dfrac{\partial r}{\partial x}=\dfrac xr\) ; ondes : \(u_{tt}=u_{xx}\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>1. Poser \(r=\sqrt{x^2+y^2+z^2}\) et écrire \(u=r^{-1}\). Une seule dérivée est à calculer : grâce à la symétrie des rôles de \(x,y,z\), les deux autres s'en déduisent en changeant la lettre. Outil clé :</p>
 <div class="fml"><span class="f">\(\dfrac{\partial r}{\partial x}=\dfrac{x}{r}\)</span><span class="leg">dérivée de \(\sqrt{x^2+y^2+z^2}\) en \(x\)</span></div>
@@ -738,6 +784,7 @@
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Pourquoi ça marche</b>\(u=\dfrac{t}{t^2-x^2}=\dfrac12\left[\dfrac{1}{t-x}+\dfrac{1}{t+x}\right]\) est de la forme \(F(t-x)+G(t+x)\) : c'est exactement la solution générale de l'équation des ondes (voir l'EDP 4). Et \(1/r\) est le potentiel d'une charge ponctuelle : il est harmonique hors de la charge (cours d'électromagnétisme).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Pour une fonction radiale, un seul calcul suffit (les rôles de \(x,y,z\) sont symétriques). Vérifier qu'une fonction est solution : dériver, substituer, simplifier jusqu'à \(0\).</div>
 </div></details>
 </article>
 </section>
@@ -747,9 +794,16 @@
 <h2>Équations aux dérivées partielles (EDP)</h2>
 <p>Idée unique : <b>intégrer une variable à la fois</b> (la « constante » d'intégration dépend des autres variables), ou <b>changer de variables</b> pour se ramener à une EDP triviale. <a href="index.html#ch1-edp">Revoir la méthode (cours, ch. 1)</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître</b>
+<ul>
+<li><b>Intégrer une variable à la fois</b> : \(f_{xx}=0\Rightarrow f=x\,a(y)+b(y)\) ; \(f_{xy}=0\Rightarrow f=A(x)+B(y)\). La « constante » est une <b>fonction des autres variables</b>.</li>
+<li><b>Changement de variables</b> \(f(x,y)=g(u,v)\) : chaîne, puis Schwarz sur \(g\) ; ne pas oublier de revenir à \((x,y)\).</li>
+<li><b>Polaires</b> : \(r\,g_r=xf_x+yf_y\) et \(g_\theta=-yf_x+xf_y\). <b>d'Alembert</b> : \(u=\frac{x+y}2\), \(v=\frac{x-y}2\) donne \(g_{uv}=f_{xx}-f_{yy}\).</li>
+</ul></div>
 <article class="cx" id="edp-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Intégrations successives</h3></header>
 <div class="cx-enonce">Résoudre : 1) \(\dfrac{\partial^2 f}{\partial x^2}=0\) (\(f\) de \(x,y\)) ; 2) \(\dfrac{\partial^2 f}{\partial x\,\partial y}=0\) (\(f\) de \(x,y\)) ; 3) \(\dfrac{\partial^3 f}{\partial x\,\partial y\,\partial z}=0\) (\(f\) de \(x,y,z\)).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\partial_xg=0\Rightarrow g=C(y)\) : la constante est une <b>fonction des autres variables</b>.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours.</b> Sur un domaine « d'un seul tenant » dans la direction \(x\) (comme \(\mathbb{R}^2\) ou un pavé) :</p>
 <div class="fml"><span class="f">\(\dfrac{\partial g}{\partial x}=0\iff g(x,y)=C(y)\)</span><span class="leg">\(g\) ne dépend pas de \(x\), mais peut dépendre de \(y\)</span></div>
@@ -792,11 +846,13 @@
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1) \(f=A(y)\,x+B(y)\). 2) \(f=F(x)+G(y)\). 3) \(f=A(x,y)+B(x,z)+C(y,z)\), avec \(A,B,C,F,G\) quelconques (assez régulières).</div>
 <div class="why"><b class="lab">Contrôle</b>Toujours redériver la solution : \(\dfrac{\partial^2}{\partial x\,\partial y}\big[F(x)+G(y)\big]=\dfrac{\partial}{\partial x}\big[G'(y)\big]=0\) ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Résultats à connaître : \(f_{xx}=0\Rightarrow f=x\,a(y)+b(y)\) ; \(f_{xy}=0\Rightarrow f=A(x)+B(y)\) ; \(f_{xyz}=0\Rightarrow f=A(y,z)+B(x,z)+C(x,y)\). Jamais un simple « \(+C\) ».</div>
 </div></details>
 </article>
 <article class="cx" id="edp-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>\(F(x,y)=f(y/x)\) : dérivées secondes et deux EDP</h3></header>
 <div class="cx-enonce">\(f\) de classe \(C^2\), \(u=\dfrac yx\) (\(x\neq0\)), \(F(x,y)=f\!\left(\dfrac yx\right)\). 1) Calculer les dérivées partielles secondes de \(F\). 2) Trouver \(f\) telle que a) \(F_{xx}+F_{yy}=0\) ; \(b\)) \(F_y\,F_{xx}=F_x\,F_{yy}\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(F=f(u(x,y))\Rightarrow F_x=f'(u)\,u_x\) ; ici \(u_x=-\frac y{x^2}\), \(u_y=\frac1x\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Règle de la chaîne</b> pour une fonction d'une seule variable composée avec \(u(x,y)\) :</p>
 <div class="fml"><span class="f">\(\dfrac{\partial F}{\partial x}=f'(u)\,\dfrac{\partial u}{\partial x}\)</span><span class="leg">avec \(\dfrac{\partial u}{\partial x}=-\dfrac{y}{x^2}\), \(\dfrac{\partial u}{\partial y}=\dfrac1x\)</span></div>
@@ -845,11 +901,13 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 </ol>
 <div class="answer"><b class="lab">Réponse</b>a) \(f(u)=C\arctan u+D\). \(b\)) \(f(u)=\dfrac{A}{1+u}+D\) (constantes comprises), soit \(F=\dfrac{Ax}{x+y}+D\).</div>
 <div class="why"><b class="lab">Contrôle de \(b\))</b>\(F=\dfrac{x}{x+y}\) : \(F_x=\dfrac{y}{(x+y)^2}\), \(F_y=\dfrac{-x}{(x+y)^2}\), \(F_{xx}=\dfrac{-2y}{(x+y)^3}\), \(F_{yy}=\dfrac{2x}{(x+y)^3}\) ; alors \(F_yF_{xx}=\dfrac{2xy}{(x+y)^5}=F_xF_{yy}\) ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>En redérivant, \(f'(u)\) dépend encore de \(x\) à travers \(u\) : sa dérivée est \(f''(u)\,u_x\). Les EDP se ramènent alors à une équation différentielle ordinaire en \(u\).</div>
 </div></details>
 </article>
 <article class="cx" id="edp-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>EDP résolues en coordonnées polaires</h3></header>
 <div class="cx-enonce">Résoudre : 1) \(y\,\dfrac{\partial f}{\partial x}-x\,\dfrac{\partial f}{\partial y}=0\) ; 2) \(x\,\dfrac{\partial f}{\partial x}+y\,\dfrac{\partial f}{\partial y}=\sqrt{x^2+y^2}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Avec \(g(r,\theta)=f(r\cos\theta,r\sin\theta)\) : \(r\,g_r=xf_x+yf_y\) et \(g_\theta=-yf_x+xf_y\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Les combinaisons \(x f_x+y f_y\) et \(-y f_x+x f_y\) sont typiques des polaires. On pose \(g(r,\theta)=f(r\cos\theta,\,r\sin\theta)\) et on calcule ses dérivées par la chaîne.</p>
 <p>Deux identités à connaître par cœur :</p>
@@ -885,11 +943,13 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1) Les fonctions radiales \(f=\varphi(x^2+y^2)\). 2) \(f=\sqrt{x^2+y^2}+\psi(\theta)\), où \(\psi\) est une fonction quelconque de l'angle polaire (\(2\pi\)-périodique pour être définie sur \(\mathbb{R}^2\setminus\{0\}\) ; sur \(x&gt;0\), on peut écrire \(\psi(\theta)=h(y/x)\)).</div>
 <div class="why"><b class="lab">Interprétation</b>\(y\,\partial_x-x\,\partial_y\) dérive « le long des cercles » : \(f\) est constante sur chaque cercle centré en 0. \(x\,\partial_x+y\,\partial_y\) dérive « le long des rayons ».</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Reconnaître \(xf_x+yf_y\) ou \(-yf_x+xf_y\) \(\Rightarrow\) polaires. \(g_\theta=0\) signifie que \(f\) ne dépend que de \(r\) (constante sur les cercles).</div>
 </div></details>
 </article>
 <article class="cx" id="edp-4">
 <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Équation des ondes \(f_{xx}=f_{yy}\) (d'Alembert)</h3></header>
 <div class="cx-enonce">Résoudre \(\dfrac{\partial^2 f}{\partial x^2}=\dfrac{\partial^2 f}{\partial y^2}\) avec le changement de variables \(u=\dfrac{x+y}{2}\), \(v=\dfrac{x-y}{2}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Avec \(g(u,v)=f(u+v,u-v)\) : \(g_u=f_x+f_y\), \(g_v=f_x-f_y\), donc \(g_{uv}=f_{xx}-f_{yy}\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <ol>
 <li>Inverser le changement : \(x=u+v\), \(y=u-v\).</li>
@@ -923,9 +983,17 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 <h2>Opérateurs vectoriels</h2>
 <p>Outils : gradient, divergence, rotationnel, laplacien, identités, <b>potentiel scalaire</b> (\(\overrightarrow{\mathrm{rot}}\,\vec F=\vec 0\) sur un ouvert étoilé), <b>potentiel vecteur</b> (\(\mathrm{div}\,\vec F=0\)). <a href="index.html#ch2">Revoir le cours (ch. 2)</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître</b>
+<ul>
+<li>\(\nabla f=(f_x,f_y,f_z)\) ; \(\operatorname{div}F=\partial_xF_1+\partial_yF_2+\partial_zF_3\) (scalaire) ; \(\overrightarrow{\mathrm{rot}}\,F=(\partial_yF_3-\partial_zF_2,\ \partial_zF_1-\partial_xF_3,\ \partial_xF_2-\partial_yF_1)\) ; \(\Delta f=\operatorname{div}\nabla f\).</li>
+<li><b>Identités</b> : \(\overrightarrow{\mathrm{rot}}(\nabla f)=\vec0\) et \(\operatorname{div}(\overrightarrow{\mathrm{rot}}\,F)=0\) (Schwarz).</li>
+<li><b>Potentiel scalaire</b> : \(F\in C^1\), \(\overrightarrow{\mathrm{rot}}\,F=\vec0\), ouvert <b>étoilé</b> \(\Rightarrow F=\nabla f\) ; en dimension 2, \(P_y=Q_x\). On intègre variable par variable. <b>Potentiel vecteur</b> : \(\operatorname{div}F=0\) sur un étoilé \(\Rightarrow F=\overrightarrow{\mathrm{rot}}\,G\).</li>
+<li><b>Étoilés</b> : \(\mathbb{R}^3\), convexes, boules. <b>Non étoilés</b> : \(\mathbb{R}^3\) privé d'un point ou d'un axe.</li>
+</ul></div>
 <article class="cx" id="ope-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Retrouver \(f\) à partir de son gradient</h3></header>
 <div class="cx-enonce">Trouver \(f\) telle que : 1. \(\nabla f=\big(y+\ln(x+1),\ x+1-e^y\big)\) ; 2. \(\nabla f=\big(4x^3y^2-3y^2+8,\ 2x^4y-6xy-1\big)\) ; 3. \(\nabla f=\left(\dfrac{1-y}{(x+y+1)^2},\ \dfrac{2+x}{(x+y+1)^2}\right)\) ; 4. \(\nabla f=\left(\dfrac{y^2}{(x+y)^2},\ \dfrac{x^2}{(x+y)^2}\right)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Si \(\nabla f=(P,Q)\) avec \(f\in C^2\), alors \(P_y=Q_x\) (Schwarz) ; puis \(f=\int P\,dx+C(y)\) et on identifie avec \(Q\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Condition nécessaire.</b> Si \(\nabla f=(P,Q)\) avec \(f\) de classe \(C^2\), alors \(P=f_x\) et \(Q=f_y\), et par Schwarz \(f_{xy}=f_{yx}\) :</p>
 <div class="fml"><span class="f">\(\dfrac{\partial P}{\partial y}=\dfrac{\partial Q}{\partial x}\)</span><span class="leg">à vérifier d'abord : sinon aucune fonction \(f\) ne convient</span></div>
@@ -991,11 +1059,13 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Remarque</b>Pour 3 et 4, le domaine a deux composantes (deux demi-plans) : la constante \(K\) peut être différente sur chacune.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Toujours tester \(P_y=Q_x\) avant de chercher \(f\) (sinon aucun potentiel). Le potentiel est défini à une constante près. Conclure par la vérification \(\nabla f=(P,Q)\).</div>
 </div></details>
 </article>
 <article class="cx" id="ope-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Divergences</h3></header>
 <div class="cx-enonce">Calculer la divergence de : 1. \(\vec A=e^{-y}\big(\vec e_x-\sin(x)\,\vec e_y\big)\) ; 2. \(\vec A=x^2\,\vec e_x+yz\,\vec e_y+xy\,\vec e_z\) ; 3. \(\vec A=5x^2\sin\!\left(\dfrac{\pi x}{2}\right)\vec e_x\), en \(x=1\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\operatorname{div}\vec A=\partial_xA_x+\partial_yA_y+\partial_zA_z\) : chaque composante est dérivée par rapport à « sa » variable.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <div class="fml"><span class="f">\(\mathrm{div}\,\vec A=\dfrac{\partial A_x}{\partial x}+\dfrac{\partial A_y}{\partial y}+\dfrac{\partial A_z}{\partial z}\)</span><span class="leg">un scalaire : chaque composante dérivée par rapport à « sa » variable</span></div>
 <p><b>Sens physique</b> : la divergence mesure ce qui « sort » d'un petit volume autour du point. Positive : le champ diverge (source) ; négative : il converge (puits).</p>
@@ -1023,11 +1093,13 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 </ol>
 <div class="answer"><b class="lab">Réponses</b>1. \(e^{-y}\sin x\). 2. \(2x+z\). 3. 10.</div>
 <div class="why"><b class="lab">Piège</b>La divergence se lit « composante \(x\) dérivée en \(x\) + composante \(y\) dérivée en \(y\) + … » : ne jamais dériver la composante \(x\) par rapport à \(y\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>La divergence est un <b>scalaire</b>. Positive : source ; négative : puits. Une évaluation en un point (\(x=1\)) se fait <b>après</b> avoir dérivé.</div>
 </div></details>
 </article>
 <article class="cx" id="ope-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Un rotationnel</h3></header>
 <div class="cx-enonce">\(\vec A=y\cos(ax)\,\vec e_x+(y+e^x)\,\vec e_z\). Calculer \(\nabla\wedge\vec A\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\overrightarrow{\mathrm{rot}}\,\vec A=\big(\partial_yA_z-\partial_zA_y,\ \partial_zA_x-\partial_xA_z,\ \partial_xA_y-\partial_yA_x\big)\) (cycle \(x\to y\to z\)).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Le rotationnel se calcule comme un produit vectoriel de \(\nabla=\left(\partial_x,\partial_y,\partial_z\right)\) par \(\vec A\) :</p>
 <div class="fml"><span class="f">\(\overrightarrow{\mathrm{rot}}\,\vec A=\left(\dfrac{\partial A_z}{\partial y}-\dfrac{\partial A_y}{\partial z},\ \dfrac{\partial A_x}{\partial z}-\dfrac{\partial A_z}{\partial x},\ \dfrac{\partial A_y}{\partial x}-\dfrac{\partial A_x}{\partial y}\right)\)</span><span class="leg">même cycle \(x\to y\to z\) que le produit vectoriel</span></div>
@@ -1047,11 +1119,13 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(\nabla\wedge\vec A=\big(1,\ -e^x,\ -\cos(ax)\big)\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Le rotationnel est un <b>vecteur</b>. Contrôle : sa divergence est nulle. Une composante de \(\vec A\) qui ne dépend pas de la variable de dérivation annule le terme correspondant : repérer ces zéros d'emblée.</div>
 </div></details>
 </article>
 <article class="cx" id="ope-4"><span id="ope-8"></span>
 <header class="cx-hd"><span class="cx-num">Ex 4 = Ex 8</span><h3>\(\vec F=(x^2,y^2,z^2)\) : divergence, rotationnel, champ de gradient</h3></header>
 <div class="cx-enonce">Calculer \(\mathrm{div}\,\vec F\) et \(\overrightarrow{\mathrm{rot}}\,\vec F\), justifier que \(\vec F\) est un champ de gradient. (L'exercice 8 de la feuille est identique.)</div>
+<div class="rr"><b class="lab">Rappel</b>Poincaré : \(F\in C^1\), \(\overrightarrow{\mathrm{rot}}\,F=\vec0\) et ouvert étoilé \(\Rightarrow F=\nabla f\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Théorème de Poincaré (primitivation).</b> Sur un ouvert <b>étoilé</b> (par exemple \(\mathbb{R}^3\) ou un convexe), un champ \(C^1\) de rotationnel nul est un gradient : il existe \(f\) telle que \(\vec F=\nabla f\).</p>
 <p>Ici chaque composante ne dépend que de « sa » variable : les dérivées croisées sont nulles et le potentiel se devine composante par composante.</p>
@@ -1071,11 +1145,13 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(\mathrm{div}\,\vec F=2(x+y+z)\) ; \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\) ; \(\vec F=\nabla\!\left(\dfrac{x^3+y^3+z^3}{3}\right)\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Si chaque composante ne dépend que de « sa » variable, le champ est un gradient : \(\Phi=\sum\int F_i\). Justification type : « \(C^1\), rotationnel nul, \(\mathbb{R}^3\) étoilé ».</div>
 </div></details>
 </article>
 <article class="cx" id="ope-5">
 <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>\(\Phi=x^2yz^3\) et \(\vec A=(xz,-y^2,2x^2y)\) : 8 calculs + 4 identités</h3></header>
 <div class="cx-enonce">1. a) \(\overrightarrow{\mathrm{grad}}\,\Phi\), \(b\)) \(\mathrm{div}\,\vec A\), \(c\)) \(\overrightarrow{\mathrm{rot}}\,\vec A\), \(d\)) \(\Delta\Phi\), \(e\)) \(\mathrm{div}(\Phi\vec A)\), \(f\)) \(\overrightarrow{\mathrm{rot}}(\Phi\vec A)\), \(g\)) \(\overrightarrow{\mathrm{rot}}(\overrightarrow{\mathrm{grad}}\,\Phi)\), \(h\)) \(\mathrm{div}(\overrightarrow{\mathrm{rot}}\,\vec A)\). 2. Vérifier : \(\mathrm{div}(p\vec u)=p\,\mathrm{div}\,\vec u+\vec u\cdot\overrightarrow{\mathrm{grad}}\,p\) ; \(\overrightarrow{\mathrm{rot}}(p\vec u)=p\,\overrightarrow{\mathrm{rot}}\,\vec u+\overrightarrow{\mathrm{grad}}\,p\wedge\vec u\) ; \(\overrightarrow{\mathrm{rot}}(\overrightarrow{\mathrm{grad}}\,p)=\vec0\) ; \(\mathrm{div}(\overrightarrow{\mathrm{rot}}\,\vec u)=0\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\operatorname{div}(p\vec u)=p\operatorname{div}\vec u+\vec u\cdot\nabla p\) ; \(\overrightarrow{\mathrm{rot}}(p\vec u)=p\overrightarrow{\mathrm{rot}}\,\vec u+\nabla p\wedge\vec u\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Rappels : \(\Delta\Phi=\Phi_{xx}+\Phi_{yy}+\Phi_{zz}=\mathrm{div}(\overrightarrow{\mathrm{grad}}\,\Phi)\).</p>
 <p>Pour \(e\)) et \(f\)), deux chemins : calcul direct sur \(\Phi\vec A=(x^3yz^4,\ -x^2y^3z^3,\ 2x^4y^2z^3)\), ou formules du 2. Faire les deux donne un contrôle gratuit.</p>
@@ -1128,6 +1204,7 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 <article class="cx" id="ope-6">
 <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Champ de gradients avec des fractions</h3></header>
 <div class="cx-enonce">\(\vec F=\left(x+\dfrac{z}{x^2y},\ y+\dfrac{z}{xy^2},\ z-\dfrac{1}{xy}\right)\). 1. Calculer \(\overrightarrow{\mathrm{rot}}\,\vec F\) ; en déduire que \(\vec F\) est un champ de gradients. 2. Trouver \(f\).</div>
+<div class="rr"><b class="lab">Rappel</b>Rotationnel nul sur un ouvert étoilé \(\Rightarrow\) potentiel ; si le domaine n'est pas étoilé, on le découpe en morceaux convexes.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Même démarche qu'à l'exercice 1, en \(3D\) : on vérifie \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\), on intègre \(P\) en \(x\) (constante \(C(y,z)\)), on identifie avec \(Q\) (reste \(D(z)\)), puis avec \(R\).</p>
 <p><b>Attention au domaine</b> : il faut \(xy\neq0\). Le domaine se découpe en quatre « quarts d'espace » (selon les signes de \(x\) et \(y\)), chacun convexe, donc étoilé : le théorème de Poincaré s'applique sur chacun.</p>
@@ -1158,11 +1235,13 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Rédaction</b>Écrire « \(\vec F\) est \(C^1\) et \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\) sur chacun des quarts d'espace, qui sont étoilés : \(\vec F\) y dérive d'un potentiel ». Sans l'hypothèse « étoilé », un rotationnel nul ne suffit pas (voir l'exercice 7).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Le domaine \(\{xy\neq0\}\) a quatre morceaux convexes : le potentiel existe sur chacun, avec des constantes qui peuvent être différentes. Intégrer en \(x\), identifier avec \(Q\), puis avec \(R\).</div>
 </div></details>
 </article>
 <article class="cx" id="ope-7">
 <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Potentiel d'un champ défini hors de l'axe \(Oz\)</h3></header>
 <div class="cx-enonce">\(\vec F=\left(\dfrac{-2xz^3}{(x^2+y^2)^2},\ \dfrac{-2yz^3}{(x^2+y^2)^2},\ 1+\dfrac{3z^2}{x^2+y^2}\right)\). Montrer que \(\vec F\) est un champ de gradient et trouver un potentiel \(\Phi\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\mathbb{R}^3\) privé de l'axe \(Oz\) n'est pas étoilé : Poincaré ne s'applique pas. Exhiber un potentiel défini sur tout le domaine suffit.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Le domaine \(\mathbb{R}^3\) privé de l'axe \(Oz\) <b>n'est pas étoilé</b> (aucun point ne « voit » tous les autres sans traverser l'axe) : le théorème de Poincaré ne s'applique pas directement.</p>
 <p>On contourne la difficulté : on calcule \(\overrightarrow{\mathrm{rot}}\,\vec F\) (condition nécessaire), puis on <b>construit</b> \(\Phi\). Exhiber un potentiel défini sur tout le domaine prouve à lui seul que \(\vec F\) est un gradient.</p>
@@ -1186,11 +1265,13 @@ F_{xy}=F_{yx}&amp;=-\frac1{x^2}\,f'(u)-\frac{y}{x^3}\,f''(u)
 <p>\(\Phi\) est définie sur tout le domaine (hors de l'axe) : \(\vec F=\nabla\Phi\) y est donc un champ de gradient.</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Rotationnel nul ne suffit pas sur un domaine non étoilé : ici on <b>construit</b> \(\Phi\) explicitement, et c'est la preuve. Commencer par la variable qui donne l'intégration la plus simple.</div>
 </div></details>
 </article>
 <article class="cx" id="ope-9">
 <header class="cx-hd"><span class="cx-num">Ex 9</span><h3>Potentiel scalaire d'un champ polynomial</h3></header>
 <div class="cx-enonce">\(\vec F=\big(3x^2+3y-1,\ z^2+3x,\ 2yz+1\big)\). 1. Montrer que \(\vec F\) dérive d'un potentiel. 2. Le trouver.</div>
+<div class="rr"><b class="lab">Rappel</b>Champ polynomial \(\Rightarrow C^1\) sur \(\mathbb{R}^3\) étoilé : il suffit de vérifier \(\overrightarrow{\mathrm{rot}}\,F=\vec0\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Champ polynomial, donc \(C^1\) sur \(\mathbb{R}^3\) (étoilé) : il suffit de vérifier \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\), puis d'intégrer variable par variable.</p>
 </div></details>
@@ -1209,11 +1290,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <div class="mq">\[f=x^3+3xy-x+yz^2+z+K\]</div>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Intégrer variable par variable en gardant \(C(y,z)\) puis \(D(z)\), et finir par la vérification \(\nabla\Phi=\vec F\). Les termes restants ne doivent dépendre que des variables non encore intégrées.</div>
 </div></details>
 </article>
 <article class="cx" id="ope-10">
 <header class="cx-hd"><span class="cx-num">Ex 10</span><h3>Potentiel vecteur : \(\vec F=\overrightarrow{\mathrm{rot}}\,\vec G\)</h3></header>
 <div class="cx-enonce">\(\vec F=\big(yz,\ -xy,\ x^2+xz\big)\). 1. Montrer que \(\vec F\) est un champ de rotationnels. 2. Trouver \(\vec G=(X,Y,0)\) tel que \(\vec F=\overrightarrow{\mathrm{rot}}\,\vec G\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\operatorname{div}(\overrightarrow{\mathrm{rot}}\,G)=0\) ; réciproque sur un étoilé. Avec \(G=(X,Y,0)\) : \(\overrightarrow{\mathrm{rot}}\,G=(-Y_z,\ X_z,\ Y_x-X_y)\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours.</b> Comme \(\mathrm{div}(\overrightarrow{\mathrm{rot}}\,\vec G)=0\) toujours, un champ de rotationnels a forcément une divergence nulle. Réciproquement, sur un ouvert étoilé, un champ \(C^1\) de divergence nulle est un rotationnel.</p>
 <p><b>Calcul</b> : avec \(\vec G=(X,Y,0)\),</p>
@@ -1246,6 +1329,7 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Non-unicité</b>\(\vec G\) n'est pas unique : on peut lui ajouter n'importe quel gradient, puisque \(\overrightarrow{\mathrm{rot}}(\nabla\varphi)=\vec0\). En électromagnétisme, c'est la liberté de « jauge » du potentiel vecteur.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Le potentiel vecteur n'est pas unique (on peut ajouter un gradient) : prendre le choix le plus simple dans la 3<sup>e</sup> équation (souvent \(X=0\)). Vérifier \(\overrightarrow{\mathrm{rot}}\,G=\vec F\).</div>
 </div></details>
 </article>
 </section>
@@ -1255,9 +1339,17 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <h2>Courbes, surfaces, solides</h2>
 <p>Outils : paramétrer segments et contours, droite intersection de deux plans, <b>complétion du carré</b> pour reconnaître coniques, sphères et quadriques. <a href="index.html#ch3">Revoir le cours (ch. 3)</a> · <a href="index.html#ch3-quadriques">Tableau des quadriques</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître</b>
+<ul>
+<li><b>Segment</b> \([PQ]\) : \(P+t(Q-P)\), \(t\in[0,1]\) ; <b>cercle</b> : \((a+R\cos t,\ b+R\sin t)\), \(t\in[0,2\pi]\) (sens direct) ; <b>ellipse</b> : \((a_0+a\cos t,\ b_0+b\sin t)\) ; graphe \(y=f(x)\) : \((t,f(t))\).</li>
+<li><b>Droite d'intersection de deux plans</b> : directeur \(\vec n_1\wedge\vec n_2\) + un point commun.</li>
+<li><b>Compléter les carrés</b> : \(ax^2+bx=a\big(x+\frac b{2a}\big)^2-\frac{b^2}{4a}\). Sphère \((x-a)^2+(y-b)^2+(z-c)^2=R^2\) (boule : \(\le\)).</li>
+<li><b>Quadriques</b> d'axe \(Oz\) : somme de deux carrés \(=\) variable du 1<sup>er</sup> degré \(\to\) paraboloïde ; \(=k^2z^2\to\) cône ; \(=\) constante \(\to\) cylindre.</li>
+</ul></div>
 <article class="cx" id="csf-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Contour d'un rectangle orienté</h3></header>
 <div class="cx-enonce">Paramétrer le contour du rectangle \(ABCD\), parcouru dans le sens direct : \(A(2,1)\), \(B(-1,1)\), \(C(-1,-1)\), \(D(2,-1)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Segment \([PQ]\) : \(P+t(Q-P)\), \(t\in[0,1]\) ; un contour polygonal se paramètre segment par segment (sens direct = anti-horaire).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours.</b> Le segment \([PQ]\) se parcourt de \(P\) vers \(Q\) avec :</p>
 <div class="fml"><span class="f">\(M(t)=P+t\,(Q-P),\quad t\in[0,1]\)</span><span class="leg">\(t=0\) donne \(P\), \(t=1\) donne \(Q\)</span></div>
@@ -1288,6 +1380,7 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <article class="cx" id="csf-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Droite, demi-droite, segment</h3></header>
 <div class="cx-enonce">Ensemble des points \((2-2t,\ -3+t)\) pour 1. \(t\in\mathbb{R}\) ; 2. \(t\in\mathbb{R}_+\) ; 3. \(t\in[-1,2]\). Représenter.</div>
+<div class="rr"><b class="lab">Rappel</b>\(M_0+t\vec d\) est une droite ; c'est l'<b>intervalle de \(t\)</b> qui donne la droite, la demi-droite ou le segment.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Une écriture \(M(t)=M_0+t\,\vec d\) décrit une droite passant par \(M_0\) (valeur \(t=0\)) et dirigée par \(\vec d\). C'est l'<b>intervalle de \(t\)</b> qui dit quelle partie de la droite on parcourt : tout \(\mathbb{R}\) donne la droite, \([0,+\infty[\) une demi-droite, un intervalle borné un segment.</p>
 <p>Pour l'équation cartésienne : on <b>élimine</b> \(t\) entre les deux coordonnées.</p>
@@ -1311,11 +1404,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <p>C'est le <b>segment</b> qui relie ces deux points.</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Pour l'équation cartésienne, on élimine \(t\) entre les deux coordonnées. L'intervalle de \(t\) précise ensuite quelle portion on parcourt.</div>
 </div></details>
 </article>
 <article class="cx" id="csf-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Droite intersection de deux plans</h3></header>
 <div class="cx-enonce">Paramétrer l'intersection des plans \(2x-y+z-1=0\) et \(x+y+z=0\).</div>
+<div class="rr"><b class="lab">Rappel</b>La direction de l'intersection de deux plans est \(\vec n_1\wedge\vec n_2\) ; on ajoute un point commun (on fixe une coordonnée).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Pourquoi le produit vectoriel ?</b> La droite est contenue dans les deux plans, donc sa direction est orthogonale aux deux normales \(\vec n_1\) et \(\vec n_2\). Le vecteur orthogonal à deux vecteurs, c'est leur produit vectoriel :</p>
 <div class="fml"><span class="f">\(\vec d=\vec n_1\wedge\vec n_2\)</span><span class="leg">\(\vec n_1=(2,-1,1)\), \(\vec n_2=(1,1,1)\)</span></div>
@@ -1339,11 +1434,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <p>C'est la même droite, avec un autre paramètre.</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Vérifier le résultat dans les <b>deux</b> équations de plans. Autre méthode : choisir un paramètre libre (par exemple \(z=t\)) et résoudre le système en \(x,y\).</div>
 </div></details>
 </article>
 <article class="cx" id="csf-4">
 <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Reconnaître une conique (complétion du carré)</h3></header>
 <div class="cx-enonce">Nature, équation réduite, représentation et paramétrisation de : 1. \(4x^2+9y^2-6x-4y=\dfrac{223}{36}\) ; 2. \(6x^2+y^2-x+4y=0\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(ax^2+bx=a\big(x+\frac b{2a}\big)^2-\frac{b^2}{4a}\) ; mêmes signes \(\to\) ellipse, signes opposés \(\to\) hyperbole, un seul carré \(\to\) parabole.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Complétion du carré</b> (identité à savoir redémontrer) :</p>
 <div class="fml"><span class="f">\(ax^2+bx=a\left(x+\dfrac{b}{2a}\right)^2-\dfrac{b^2}{4a}\)</span><span class="leg">on développe le carré pour vérifier</span></div>
@@ -1390,11 +1487,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Contrôle</b>Les deux paramétrisations ont été réinjectées dans les équations de départ (vérification numérique ✓). Réflexe : la deuxième conique passe par l'origine (pas de terme constant).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Après complétion, regarder le <b>signe du second membre</b> : positif \(\to\) conique, nul \(\to\) un point, négatif \(\to\) ensemble vide. Paramétrisation de l'ellipse : \((x_0+a\cos t,\ y_0+b\sin t)\).</div>
 </div></details>
 </article>
 <article class="cx" id="csf-5">
 <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Équations d'une sphère et d'une boule</h3></header>
 <div class="cx-enonce">Écrire l'équation de la sphère et de la boule de centre \(C(a,b,c)\) et de rayon \(R\) : 1. \(C(2,-1,0)\), \(R=3\) ; 2. \(C(0,1,2)\), \(R=\sqrt5\).</div>
+<div class="rr"><b class="lab">Rappel</b>Sphère : \((x-a)^2+(y-b)^2+(z-c)^2=R^2\) ; boule : \(\le R^2\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>La sphère est l'ensemble des points à la distance \(R\) du centre ; la boule, ceux à une distance au plus \(R\). La distance au carré s'écrit avec Pythagore dans l'espace :</p>
 <div class="fml"><span class="f">\((x-a)^2+(y-b)^2+(z-c)^2=R^2\)</span><span class="leg">sphère ; « \(\leq R^2\) » pour la boule fermée</span></div>
@@ -1414,11 +1513,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <p>Boule : \(\leq5\). Pas de terme constant : la sphère passe par l'origine (en effet \(0+1+4=5\)).</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Sphère = surface, boule = solide. Dans l'équation figure le rayon <b>au carré</b>.</div>
 </div></details>
 </article>
 <article class="cx" id="csf-6">
 <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Centre et rayon d'une sphère</h3></header>
 <div class="cx-enonce">Déterminer centre et rayon : 1. \(x^2+y^2+z^2-2x+4y-6z=0\) ; 2. \(2x^2+2y^2+2z^2+4x+y+z+2=0\).</div>
+<div class="rr"><b class="lab">Rappel</b>Compléter les trois carrés (après avoir divisé par le coefficient de \(x^2\)) ; le second membre donne \(R^2\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>C'est le chemin inverse de l'exercice 5 :</p>
 <ol>
@@ -1449,11 +1550,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Piège</b>Oublier de diviser par 2 avant de compléter les carrés : on trouverait un faux centre et un faux rayon.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>\(R^2&gt;0\) : sphère ; \(R^2=0\) : un point ; \(R^2&lt;0\) : ensemble vide. Ne pas oublier de diviser par \(2\) quand les carrés ont le coefficient \(2\).</div>
 </div></details>
 </article>
 <article class="cx" id="csf-7">
 <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Identifier et paramétrer des quadriques</h3></header>
 <div class="cx-enonce">Identifier et paramétrer : 1. \(3(z-2)=x^2+y^2\) ; 2. \(x^2+y^2+z^2+4x-3y+z+1\leq0\) ; 3. \(y^2+z^2+2z=x\) ; 4. \(3x^2+3z^2=y-1\) ; 5. \((x-1)^2+y^2\leq3(z+1)^2\).</div>
+<div class="rr"><b class="lab">Rappel</b>Somme de deux carrés \(=\) variable du 1<sup>er</sup> degré \(\to\) paraboloïde ; \(=k^2Z^2\to\) cône ; trois carrés \(=\) constante \(\to\) sphère ou ellipsoïde.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Repérer la variable « à part » (celle qui joue le rôle de l'axe) et regarder à quoi est égale la somme des deux autres carrés :</p>
 <ul>
@@ -1521,9 +1624,18 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <h2>Intégrales multiples (doubles, triples)</h2>
 <p>Outils : Fubini (bornes intérieures variables, extérieures constantes), séparation des variables, <b>symétries</b>, polaires (\(r\,dr\,d\theta\)), cylindriques (\(r\,dr\,d\theta\,dz\)), sphériques (\(r^2\sin\varphi\,dr\,d\varphi\,d\theta\)), changement affine (ellipse, ellipsoïde). <a href="index.html#ch4">Revoir le cours (ch. 4)</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître</b>
+<ul>
+<li><b>Fubini</b> : bornes <b>extérieures constantes</b>, bornes intérieures fonctions de la variable extérieure ; toujours dessiner le domaine (<a href="ds-bornes.html">méthode de la flèche</a>).</li>
+<li><b>Polaires</b> \(dx\,dy=r\,dr\,d\theta\) ; disque \(x^2+y^2\le2ax\) : \(r\le2a\cos\theta\) ; ellipse \(x=ar\cos\theta\), \(y=br\sin\theta\) : jacobien \(abr\).</li>
+<li><b>Cylindriques</b> \(dV=r\,dr\,d\theta\,dz\) ; <b>sphériques</b> \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\) (\(\varphi\) mesuré depuis \(Oz\)).</li>
+<li><b>Symétrie et parité</b> : domaine symétrique et fonction impaire par rapport à la même variable \(\Rightarrow0\). Volume \(=\iiint1\) ; par tranches \(\int S(z)\,dz\).</li>
+<li><b>Applications</b> : masse \(M=\iiint\delta\,dV\) ; centre de masse \(\bar x=\frac{M_{yz}}M\) ; moment d'inertie \(I_z=\iiint(x^2+y^2)\delta\,dV\) ; moyenne \(=\frac{\iiint T}{\mathrm{Vol}}\).</li>
+</ul></div>
 <article class="cx" id="imu-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Six intégrales sur le carré \([0,\,\allowbreak 1]^{2}\)</h3></header>
 <div class="cx-enonce">Calculer sur \(D=[0,1]^2\) : 1) \(\iint(x^3+y^2)\) ; 2) \(\iint y\,e^{xy}\) ; 3) \(\iint (xy)^2\cos x^3\) ; 4) \(\iint\ln\big[(x+1)(y+1)\big]\) ; 5) \(\iint x^m y^n\) (\(m,n&gt;0\)) ; 6) \(\iint\sin(x+y)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Fubini sur un rectangle : bornes constantes, ordre libre ; intégrande \(f(x)g(y)\) \(\Rightarrow\) produit de deux intégrales simples.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel (Fubini).</b> Sur un rectangle, on intègre d'abord par rapport à une variable (l'autre étant fixée), puis par rapport à l'autre ; l'ordre est au choix :</p>
 <div class="fml"><span class="f">\(\displaystyle\iint_{[a,b]\times[c,d]}f\,dx\,dy=\int_c^d\!\left(\int_a^b f(x,y)\,dx\right)dy\)</span><span class="leg">bornes constantes : on peut échanger l'ordre</span></div>
@@ -1581,11 +1693,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Valeurs</b>\(\tfrac7{12}\approx0{,}583\) ; \(e-2\approx0{,}718\) ; \(\tfrac{\sin1}{9}\approx0{,}093\) ; \(4\ln2-2\approx0{,}773\) ; \(\tfrac{1}{(m+1)(n+1)}\) ; \(2\sin1-\sin2\approx0{,}774\).</div>
 <div class="why"><b class="lab">Piège (2)</b>Commencer par \(y\) oblige à une intégration par parties : l'ordre d'intégration est un choix, pas une fatalité.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Choisir l'ordre qui évite une intégration par parties (par exemple \(y\,e^{xy}\) s'intègre directement en \(x\) car \(\partial_xe^{xy}=y\,e^{xy}\)). Une somme se découpe en deux intégrales.</div>
 </div></details>
 </article>
 <article class="cx" id="imu-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>\(\iint(x^2+y^2)\) sur un triangle</h3></header>
 <div class="cx-enonce">\(D\) : région bornée par les demi-axes positifs et la droite \(3x+4y=10\). Calculer \(\displaystyle\iint_D(x^2+y^2)\,dx\,dy\).</div>
+<div class="rr"><b class="lab">Rappel</b>Domaine non rectangulaire : bornes extérieures = nombres, bornes intérieures = fonctions de la variable extérieure (dessiner d'abord).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Toujours dessiner le domaine.</b> Ici : triangle de sommets \((0,0)\), \(\left(\tfrac{10}3,0\right)\) et \(\left(0,\tfrac52\right)\).</p>
 <p><b>Fubini sur un domaine non rectangulaire</b> : on fixe \(x\), puis on regarde entre quelles valeurs varie \(y\). Les bornes <b>intérieures</b> dépendent de \(x\), les bornes <b>extérieures</b> sont des nombres.</p>
@@ -1606,11 +1720,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Contrôle express</b>Pour un triangle rectangle de côtés \(a\) (sur \(Ox\)) et \(b\) (sur \(Oy\)) : \(\iint x^2=\dfrac{a^3b}{12}\) et \(\iint y^2=\dfrac{ab^3}{12}\). Avec \(a=\tfrac{10}3\), \(b=\tfrac52\), on retrouve \(\tfrac{625}{81}\) et \(\tfrac{625}{144}\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Les sommets du triangle sont les intersections des droites deux à deux ; la droite \(3x+4y=10\) se résout en \(y=\frac{10-3x}4\). Les bornes extérieures sont des constantes.</div>
 </div></details>
 </article>
 <article class="cx" id="imu-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Demi-disque, disque décentré, quart de couronne</h3></header>
 <div class="cx-enonce">1. \(f=\dfrac{y}{x^2+1}\) sur \(D=\{x\geq0,\ x^2+y^2\leq1\}\) ; 2. \(f=x^2y\) sur \(D=\{y\geq0,\ x^2+y^2-2x\leq0\}\) ; 3. \(f=\dfrac{xy}{x^2+y^2}\) sur \(D=\{x\geq0,\ y\geq0,\ 1\leq x^2+y^2\leq4\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Domaine symétrique et \(f\) impaire par rapport à la même variable \(\Rightarrow\iint=0\) ; polaires \(dx\,dy=r\,dr\,d\theta\) ; \(x^2+y^2\le2x\iff r\le2\cos\theta\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>1. Regarder les symétries avant de calculer.</b> Si le domaine est symétrique par rapport à \(Ox\) et que \(f\) est impaire en \(y\), les contributions de \(y\) et \(-y\) se compensent : l'intégrale est nulle.</p>
 <p><b>2. Disque décentré.</b> \(x^2+y^2\leq2x\iff(x-1)^2+y^2\leq1\) : disque de centre \((1,0)\) et de rayon 1. En polaires centrées en \(O\), \(r^2\leq2r\cos\theta\) donne :</p>
@@ -1648,11 +1764,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1) 0. 2) \(\tfrac45\). 3) \(\tfrac34\).</div>
 <div class="why"><b class="lab">Piège (2)</b>Écrire \(r\leq1\) en polaires centrées en \(O\) : faux, le disque n'est pas centré en \(O\). Soit on écrit \(r\leq2\cos\theta\), soit on pose \(x=1+\rho\cos\theta\), \(y=\rho\sin\theta\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Regarder les <b>symétries</b> avant de calculer. Un disque décentré n'est pas « \(r\le R\) » : on remplace dans l'équation du bord, et la condition \(\cos\theta\ge0\) limite l'angle.</div>
 </div></details>
 </article>
 <article class="cx" id="imu-4">
 <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Région entre deux paraboles</h3></header>
 <div class="cx-enonce">Calculer \(\displaystyle\iint_Dy^2\sqrt x\,dx\,dy\), \(D=\{x&gt;0,\ x^2&lt;y&lt;10-x^2\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Région entre deux courbes : leurs intersections donnent les bornes extérieures ; à \(x\) fixé, \(y\) va de la courbe du bas à celle du haut.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Bornes</b> : à \(x\) fixé, \(y\) va de la parabole du bas (\(x^2\)) à celle du haut (\(10-x^2\)). Les deux se coupent quand \(x^2=10-x^2\), soit \(x=\sqrt5\) : c'est la borne de \(x\).</p>
 <p><b>Organisation du calcul</b> : on développe \((10-x^2)^3\) et on intègre terme à terme des puissances de \(x\). Toutes les puissances finales s'expriment avec \(s=5^{3/4}\) : on factorise par \(s\) pour éviter les racines partout.</p>
@@ -1672,11 +1790,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Contrôle</b>Valeur vérifiée numériquement. Au dénominateur commun 231 : \(154000-99000+31500-7700=78800\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Intersection : \(x^2=10-x^2\Rightarrow x=\sqrt5\) (bornes constantes). Développer \((10-x^2)^3\) puis intégrer des puissances de \(x\) terme à terme ; factoriser par \(5^{3/4}\) pour alléger.</div>
 </div></details>
 </article>
 <article class="cx" id="imu-5">
 <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>\(\iint xy\) sur un triangle, un quart d'ellipse, une ellipse</h3></header>
 <div class="cx-enonce">Calculer \(\iint_Dxy\,dx\,dy\) pour 1) \(D=\{x,y\geq0,\ x+y\leq1\}\) ; 2) \(D=\left\{x,y\geq0,\ \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}\leq1\right\}\) ; 3) \(D=\left\{\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}\leq1\right\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Ellipse : \(x=ar\cos\theta\), \(y=br\sin\theta\), \(0\le r\le1\), jacobien \(abr\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Ellipse → polaires « étirées ».</b> On pose \(x=a\,r\cos\theta\), \(y=b\,r\sin\theta\). L'ellipse devient \(r\leq1\), et le jacobien vaut :</p>
 <div class="fml"><span class="f">\(dx\,dy=a\,b\,r\;dr\,d\theta\)</span><span class="leg">\(\det\begin{pmatrix}a\cos\theta&amp;-ar\sin\theta\\ b\sin\theta&amp;br\cos\theta\end{pmatrix}=abr\)</span></div>
@@ -1702,11 +1822,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1) \(\tfrac1{24}\). 2) \(\tfrac{a^2b^2}{8}\). 3) 0.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Le jacobien est \(abr\) (pas \(r\)). Quart d'ellipse : \(\theta\in[0,\frac\pi2]\). Sur l'ellipse entière, \(xy\) est impaire en \(x\) et en \(y\) : l'intégrale est nulle.</div>
 </div></details>
 </article>
 <article class="cx" id="imu-6">
 <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Trois intégrales triples : cube, cylindre, cône</h3></header>
 <div class="cx-enonce">1) \(\iiint x^2y\,e^{xyz}\) sur \([0,1]^3\) ; 2) \(\iiint z^2\) sur \(\{x^2+y^2\leq1,\ 0\leq z\leq1\}\) ; 3) \(\iiint x^2z\) sur \(\{x^2+y^2\leq z^2,\ 0\leq z\leq1\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Fubini triple sur un pavé ; cylindriques \(dV=r\,dr\,d\theta\,dz\) ; si \(f=g(z)\) : \(\iiint f=\int g(z)\,S(z)\,dz\) (\(S\) = aire de la section).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <ol>
 <li>Cube : intégrer d'abord en \(z\), car \(x^2y\,e^{xyz}=x\cdot\dfrac{\partial}{\partial z}\big(e^{xyz}\big)\).</li>
@@ -1737,11 +1859,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1) \(e-\tfrac52\). 2) \(\tfrac\pi3\). 3) \(\tfrac{\pi}{24}\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Intégrer d'abord la variable qui donne une primitive facile (\(e^{xyz}\) en \(z\)). Cône \(x^2+y^2\le z^2\) : \(r\le z\), avec \(0\le z\le1\).</div>
 </div></details>
 </article>
 <article class="cx" id="imu-7">
 <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Boule, ellipsoïde, cornet de glace</h3></header>
 <div class="cx-enonce">1) \(\iiint(x+y+z)\) sur la boule \(x^2+y^2+z^2\leq R^2\) ; 2) \(\iiint(3x+2y+z)^2\) sur \(9x^2+4y^2+z^2\leq1\) ; 3) \(\iiint z\) sur \(\{x^2+y^2\leq z^2,\ x^2+y^2+z^2\leq1,\ z\geq0\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Sphériques \(dV=r^2\sin\varphi\,dr\,d\theta\,d\varphi\) ; changement linéaire \(u=3x\), \(v=2y\) : \(dx\,dy\,dz=\frac{du\,dv\,dw}{6}\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>1.</b> Symétries de la boule.</p>
 <p><b>2.</b> Le changement \(u=3x\), \(v=2y\), \(w=z\) envoie l'ellipsoïde sur la boule unité. Le jacobien vaut \(3\times2\times1=6\), donc :</p>
@@ -1777,11 +1901,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1) 0. 2) \(\tfrac{2\pi}{15}\). 3) \(\tfrac\pi8\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Les symétries éliminent les termes croisés (\(\iiint xy=0\)). Le cône \(x^2+y^2\le z^2\), \(z\ge0\) est \(\varphi\le\frac\pi4\). Ellipsoïde \(\to\) boule : on divise par le produit des facteurs.</div>
 </div></details>
 </article>
 <article class="cx" id="imu-8">
 <header class="cx-hd"><span class="cx-num">Ex 8</span><h3>Volume délimité par un paraboloïde</h3></header>
 <div class="cx-enonce">Volume du solide délimité par \(z=x^2+y^2\), \(z=0\) et \(z=10\).</div>
+<div class="rr"><b class="lab">Rappel</b>Volume \(=\iiint1\,dx\,dy\,dz\) ; paraboloïde \(\to\) cylindriques ; par tranches \(\int S(z)\,dz\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Volume = intégrale de 1</b> : \(V=\iiint_Ddx\,dy\,dz\).</p>
 <p>L'énoncé est ambigu : solide <b>au-dessus</b> du paraboloïde (\(x^2+y^2\leq z\leq10\)) ou <b>en dessous</b> (\(0\leq z\leq x^2+y^2\), pour \(x^2+y^2\leq10\)). On traite les deux : le résultat est le même.</p>
@@ -1798,11 +1924,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(V=50\pi\approx157{,}1\). Les deux solides partagent le cylindre \(r\leq\sqrt{10}\), \(0\leq z\leq10\), de volume \(100\pi\), en deux moitiés égales.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Quand l'énoncé est ambigu, traiter les deux cas : ici le solide au-dessus et le solide en dessous du paraboloïde ont le même volume, \(50\pi\).</div>
 </div></details>
 </article>
 <article class="cx" id="imu-9">
 <header class="cx-hd"><span class="cx-num">Ex 9</span><h3>Calotte sphérique</h3></header>
 <div class="cx-enonce">Volume de \(\{x^2+y^2+z^2\leq10,\ z\geq2\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Tranche à la hauteur \(z\) : disque de rayon\(^2\) égal à \(R^2-z^2\) (Pythagore) ; \(V=\int S(z)\,dz\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Par tranches horizontales</b> : à la hauteur \(z\), on coupe la boule par un plan horizontal. La section est un disque dont le rayon au carré vaut \(10-z^2\) (Pythagore). Les tranches existent pour \(z\in\left[2,\sqrt{10}\right]\).</p>
 <div class="fml"><span class="f">\(V=\displaystyle\int_{z_1}^{z_2}S(z)\,dz\)</span><span class="leg">\(S(z)\) : aire de la section à la hauteur \(z\)</span></div>
@@ -1818,11 +1946,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Contrôle</b>Formule de la calotte : \(V=\dfrac{\pi h^2(3R-h)}{3}\) avec \(R=\sqrt{10}\), \(h=\sqrt{10}-2\) : même valeur ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Calotte de hauteur \(h\) sur une sphère de rayon \(R\) : \(V=\dfrac{\pi h^2(3R-h)}{3}\), formule de contrôle. Les tranches existent pour \(z\in[2,\sqrt{10}]\).</div>
 </div></details>
 </article>
 <article class="cx" id="imu-10">
 <header class="cx-hd"><span class="cx-num">Ex 10</span><h3>Tétraèdres et quart de cylindre</h3></header>
 <div class="cx-enonce">1) \(\iiint(x^2+y^2+z^2)\) sur le tétraèdre \(x+y+z\leq1\), \(x,y,z\geq0\) ; 2) \(\iiint z\) sur le quart de cylindre \(\{x^2+y^2\leq1,\ x,y\geq0,\ 0\leq z\leq1\}\) ; 3) \(\iiint z\) sur \(\{x,y,z\geq0,\ x+y+z\leq a\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Symétrie des rôles \(x,y,z\) : \(\iiint x^2=\iiint y^2=\iiint z^2\) ; par tranches, la section est un triangle d'aire \(\frac{(a-x)^2}{2}\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Symétrie des rôles</b> : dans le tétraèdre, \(x\), \(y\), \(z\) jouent le même rôle, donc \(\iiint x^2=\iiint y^2=\iiint z^2\) et l'intégrale vaut \(3\iiint x^2\).</p>
 <p><b>Par tranches</b> : à \(x\) fixé, la section \(\{y,z\geq0,\ y+z\leq1-x\}\) est un triangle rectangle isocèle de côté \(1-x\), d'aire \(\dfrac{(1-x)^2}{2}\).</p>
@@ -1856,6 +1986,7 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <article class="cx" id="sup4-1">
 <header class="cx-hd"><span class="cx-num">Supp 1</span><h3>Température moyenne dans un paraboloïde tronqué</h3></header>
 <div class="cx-enonce">\(E=\{(x-1)^2+y^2\leq4,\ 0\leq z\leq4-(x-1)^2-y^2\}\), \(T(x,y,z)=15+z^2\). Calculer \(T_{\text{moy}}=\dfrac{1}{\mathrm{Vol}(E)}\iiint_E T\,dV\).</div>
+<div class="rr"><b class="lab">Rappel</b>Moyenne \(=\dfrac{\iiint T\,dV}{\mathrm{Vol}(E)}\) ; solide de révolution autour d'une droite décentrée : translation \(X=x-1\), puis cylindriques.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel.</b> La moyenne d'une fonction sur un solide est son intégrale divisée par le volume :</p>
 <div class="fml"><span class="f">\(T_{\text{moy}}=\dfrac{\iiint_E T\,dV}{\iiint_E dV}\)</span><span class="leg">deux intégrales triples sur le même domaine</span></div>
@@ -1894,11 +2025,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(T_{\text{moy}}=\dfrac{53}{3}\approx17{,}7\).</div>
 <div class="why"><b class="lab">Contrôle</b>Volume d'un paraboloïde de rayon de base \(R=2\) et de hauteur \(h=4\) : \(\tfrac12\pi R^2h=\tfrac12\pi\cdot4\cdot4=8\pi\) ✓. Et \(T\) varie entre \(15\) (en \(z=0\)) et \(31\) (au sommet) : la moyenne \(17{,}7\) est proche de 15 car le solide est surtout bas ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Calculer l'intégrale et le volume avec les <b>mêmes bornes</b>. La combinaison \((x-1)^2+y^2\) est le carré de la distance à l'axe : on recentre, et \(r\) va de \(0\) à \(\sqrt{4-z}\).</div>
 </div></details>
 </article>
 <article class="cx" id="sup4-2">
 <header class="cx-hd"><span class="cx-num">Supp 2</span><h3>Masse d'une pièce creuse (cylindre elliptique)</h3></header>
 <div class="cx-enonce">\(E=\{1\leq\tfrac{x^2}{4}+y^2\leq4,\ 0\leq z\leq3\}\), densité \(\delta=1+\tfrac{x^2}{4}+y^2\). Calculer la masse \(M=\iiint_E\delta\,dV\).</div>
+<div class="rr"><b class="lab">Rappel</b>Masse \(M=\iiint\delta\,dV\) ; couche elliptique : \(X=\frac x2\) la transforme en couronne, \(dx\,dy=2\,dX\,dy\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Reconnaître la forme.</b> \(\tfrac{x^2}{4}+y^2=c\) est une ellipse (demi-axes \(2\sqrt c\) en \(x\) et \(\sqrt c\) en \(y\)). L'ensemble \(1\leq\tfrac{x^2}{4}+y^2\leq4\) est donc la zone entre deux ellipses : une « couronne elliptique ». Avec \(0\leq z\leq3\), c'est un tuyau elliptique de hauteur 3.</p>
 <p><b>L'astuce : transformer l'ellipse en cercle.</b> Dans \(\tfrac{x^2}{4}+y^2=\big(\tfrac x2\big)^2+y^2\), il suffit de poser \(X=\tfrac x2\) pour retrouver un cercle. On écrit donc directement des « polaires adaptées » :</p>
@@ -1928,11 +2061,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(M=63\pi\approx197{,}9\).</div>
 <div class="why"><b class="lab">Contrôle</b>Aire de la couronne : ellipse extérieure (\(\tfrac{x^2}{4}+y^2=4\) : demi-axes 4 et 2) \(\pi\cdot4\cdot2=8\pi\), moins l'ellipse intérieure (demi-axes 2 et 1) \(\pi\cdot2\cdot1=2\pi\), soit \(6\pi\). Volume : \(6\pi\cdot3=18\pi\). La densité vaut entre 2 et 5, donc la masse est entre \(36\pi\) et \(90\pi\) ; \(63\pi\) convient (densité moyenne \(3{,}5\)) ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Transformer l'ellipse en cercle par \(X=\frac x2\) ; le <b>facteur \(2\)</b> du jacobien multiplie l'intégrale. Les bornes deviennent \(1\le r\le2\), \(0\le z\le3\).</div>
 </div></details>
 </article>
 <article class="cx" id="sup4-3">
 <header class="cx-hd"><span class="cx-num">Supp 3</span><h3>Centre de masse d'un prisme triangulaire</h3></header>
 <div class="cx-enonce">\(E=\{x\geq0,\ y\geq0,\ x+2y\leq4,\ 0\leq z\leq3\}\), densité 1. Trouver \(G=(\bar x,\bar y,\bar z)\) avec \(\bar x=\tfrac{M_{yz}}{M}\), \(\bar y=\tfrac{M_{xz}}{M}\), \(\bar z=\tfrac{M_{xy}}{M}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Centre de masse : \(\bar x=\frac{M_{yz}}M\), \(\bar y=\frac{M_{xz}}M\), \(\bar z=\frac{M_{xy}}M\) (\(M_{yz}=\iiint x\,\delta\,dV\), etc.).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Dessiner la base.</b> Les conditions \(x\geq0\), \(y\geq0\), \(x+2y\leq4\) découpent un triangle dans le plan \((x,y)\). Ses sommets sont les intersections des droites deux à deux :</p>
 <ul>
@@ -1974,11 +2109,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(G=\Big(\dfrac43,\ \dfrac23,\ \dfrac32\Big)\).</div>
 <div class="why"><b class="lab">Contrôle</b>Le centre de gravité d'un triangle est la moyenne de ses sommets : \(\tfrac{0+4+0}{3}=\tfrac43\) et \(\tfrac{0+0+2}{3}=\tfrac23\) ✓. Et pour un solide de hauteur constante, \(\bar z\) est à mi-hauteur : \(\tfrac32\) ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Prisme = base \(\times\) hauteur : les bornes sont indépendantes et l'intégrale se factorise. Contrôle : pour une densité constante, \(\bar z=\frac32\) (milieu de la hauteur) et \((\bar x,\bar y)\) est le centre de gravité du triangle, \(\big(\frac43,\frac23\big)\).</div>
 </div></details>
 </article>
 <article class="cx" id="sup4-4">
 <header class="cx-hd"><span class="cx-num">Supp 4</span><h3>Moment d'inertie d'un tronc de cône</h3></header>
 <div class="cx-enonce">\(E=\{2\leq z\leq4,\ x^2+y^2\leq\tfrac{z^2}{4}\}\), densité constante \(\delta\). Calculer \(I_z=\iiint_E(x^2+y^2)\,\delta\,dV\) et l'exprimer en fonction de \(M=\iiint_E\delta\,dV\).</div>
+<div class="rr"><b class="lab">Rappel</b>Moment d'inertie : \(I_z=\iiint(x^2+y^2)\,\delta\,dV\) ; cylindriques d'axe \(Oz\) : \(x^2+y^2=r^2\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Voir le solide.</b> La condition \(x^2+y^2\leq\tfrac{z^2}{4}\) s'écrit \(\sqrt{x^2+y^2}\leq\tfrac z2\) : à la hauteur \(z\), la section horizontale est un <b>disque de rayon \(\tfrac z2\)</b>. Le rayon grandit avec \(z\) : c'est un cône d'axe \(Oz\) (demi-angle d'ouverture tel que \(\tan=\tfrac12\)), de sommet l'origine, coupé entre \(z=2\) (rayon 1) et \(z=4\) (rayon 2) : un tronc de cône.</p>
 <p><b>Cylindriques d'axe \(Oz\).</b> Disque et axe \(Oz\) : \(x=r\cos\theta\), \(y=r\sin\theta\), \(x^2+y^2=r^2\), \(dV=r\,dr\,d\theta\,dz\).</p>
@@ -2013,11 +2150,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(I_z=\dfrac{31\pi\delta}{5}=\dfrac{93}{70}\,M\approx1{,}33\,M\).</div>
 <div class="why"><b class="lab">Contrôle</b>Tous les points du solide sont à une distance de l'axe comprise entre \(0\) et \(2\), donc \(I_z\leq4M\). Pour un cylindre plein de rayon \(a\), \(I_z=\tfrac12Ma^2\) : avec \(a=1\) puis \(a=2\) on obtient \(0{,}5M\) et \(2M\), et \(1{,}33\,M\) est dans cette fourchette ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Exprimer \(I_z\) en fonction de \(M\) : un moment d'inertie est « masse \(\times\) longueur\(^2\) », c'est un contrôle de cohérence. Section à la hauteur \(z\) : disque de rayon \(\frac z2\).</div>
 </div></details>
 </article>
 <article class="cx" id="sup4-5">
 <header class="cx-hd"><span class="cx-num">Supp 5</span><h3>Masse d'une couche sphérique à densité radiale</h3></header>
 <div class="cx-enonce">\(E=\{R^2\leq x^2+y^2+z^2\leq4R^2\}\), \(\delta=k\sqrt{x^2+y^2+z^2}\). Calculer \(M\) en fonction de \(k\) et \(R\), puis la densité sur la surface extérieure en fonction de \(M\) et \(R\).</div>
+<div class="rr"><b class="lab">Rappel</b>Sphériques ; pour \(f(\rho)\) : \(\iiint f\,dV=4\pi\displaystyle\int f(\rho)\,\rho^2\,d\rho\) (les angles donnent \(4\pi\)).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Reconnaître la forme.</b> \(x^2+y^2+z^2\) est le carré de la distance \(\rho\) à l'origine. L'ensemble \(R^2\leq\rho^2\leq4R^2\) est la couche entre la sphère de rayon \(R\) et celle de rayon \(2R\). Et la densité ne dépend aussi que de \(\rho\) : tout est radial, donc <b>sphériques</b> :</p>
 <div class="fml"><span class="f">\(dV=\rho^2\sin\varphi\,d\rho\,d\varphi\,d\theta\)</span><span class="leg">\(\varphi\) = angle depuis l'axe \(Oz\)</span></div>
@@ -2052,6 +2191,7 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(M=15\pi kR^4\) et \(\delta_{\text{ext}}=\dfrac{2M}{15\pi R^3}\).</div>
 <div class="why"><b class="lab">Contrôle</b>Dimensions : \(\delta\) est une masse par volume, et \(\tfrac{M}{R^3}\) aussi ✓. De plus, la densité intérieure vaut \(kR\), soit la moitié de \(\delta_{\text{ext}}=2kR\) : la densité double d'une face à l'autre, comme \(\rho\) ✓. Enfin, \(4\pi\int_R^{2R}\rho^2d\rho=\tfrac{28\pi R^3}{3}\) est le volume de la couche : \(M\) doit valoir environ ce volume fois une densité entre \(kR\) et \(2kR\), soit entre \(9{,}3\,\pi kR^4\) et \(18{,}7\,\pi kR^4\) ✓ (\(15\pi kR^4\)).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Domaine et densité radiaux \(\Rightarrow\) une seule intégrale en \(\rho\). La couche \(R^2\le\rho^2\le4R^2\) se lit \(R\le\rho\le2R\).</div>
 </div></details>
 </article>
 </section>
@@ -2061,9 +2201,21 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <h2>Intégrales curvilignes</h2>
 <p>Trois réflexes, dans cet ordre : <b>1.</b> la forme est-elle <b>exacte</b> (\(\partial P/\partial y=\partial Q/\partial x\), on devine un potentiel) ? → différence de potentiel, 0 sur une courbe fermée ; <b>2.</b> courbe <b>fermée</b> et forme régulière à l'intérieur → <b>Green-Riemann</b> ; <b>3.</b> sinon, <b>paramétrer</b> : \(x=x(t)\), \(dx=x'(t)\,dt\)… <a href="index.html#ch5">Revoir le cours (ch. 5)</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître pour l'interrogation (chapitre 5)</b>
+<ul>
+<li><b>Chemin</b> \(c:[a,b]\to\mathbb{R}^n\), \(C^1\) par morceaux : origine \(c(a)\), extrémité \(c(b)\) ; <b>fermé</b> si \(c(a)=c(b)\) ; orienté <b>positivement</b> = sens trigonométrique (domaine à gauche).</li>
+<li><b>Définition</b> : \(\displaystyle\int_CP\,dx+Q\,dy=\int_a^b\Big[P\big(c(t)\big)\,x'(t)+Q\big(c(t)\big)\,y'(t)\Big]dt\) (en 3D, on ajoute \(R\,z'(t)\)). On remplace \(x,y\) et \(dx=x'dt\), \(dy=y'dt\).</li>
+<li><b>Propriétés</b> : indépendante de la paramétrisation (changement croissant) ; <b>sens inverse</b> \(c^-(t)=c(a+b-t)\) donne \(\int_{C^-}=-\int_C\) ; <b>Chasles</b> \(\int_{C_1\vee C_2}=\int_{C_1}+\int_{C_2}\) ; linéarité. Paramétrages usuels : segment \(P+t(Q-P)\), cercle \((R\cos t,R\sin t)\).</li>
+<li><b>Forme exacte</b> (\(F=\nabla\Phi\)) : \(\displaystyle\int_C F\cdot ds=\Phi(c(b))-\Phi(c(a))\), donc \(0\) sur toute courbe fermée. Test : \(\partial P/\partial y=\partial Q/\partial x\) (en 3D \(\overrightarrow{\mathrm{rot}}\,F=\vec0\)) <b>sur un ouvert étoilé</b>.</li>
+<li><b>Green-Riemann</b> : \(\displaystyle\oint_{\partial\Delta}P\,dx+Q\,dy=\iint_\Delta\Big(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Big)dx\,dy\), bord orienté <b>positivement</b>, \(P,Q\) de classe \(C^1\) sur \(\Delta\) <b>tout entier</b>.</li>
+<li><b>Aire par Green</b> : \(\mathrm{Aire}(\Delta)=\oint x\,dy=-\oint y\,dx=\tfrac12\oint(x\,dy-y\,dx)\) ; ellipse : \(\pi ab\).</li>
+<li><b>Les trois réflexes, dans l'ordre</b> : 1) forme exacte ? \(\to\) différence de potentiel ; 2) courbe fermée et \(P,Q\) réguliers à l'intérieur ? \(\to\) Green ; 3) sinon <b>paramétrer</b>.</li>
+<li><b>Pièges</b> : sens de parcours (signe) ; une singularité à l'intérieur interdit Green (forme angle, \(2\pi\)) ; « fermée » \(\not\Rightarrow\) « nulle » ; oublier \(x'(t)\), \(y'(t)\) ; mauvaises bornes de \(t\).</li>
+</ul></div>
 <article class="cx" id="cur-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>\(x\,dx+y^2\,dy+z^3\,dz\) le long de trois chemins</h3></header>
 <div class="cx-enonce">Calculer \(\displaystyle\int_C x\,dx+y^2\,dy+z^3\,dz\) pour : 1) \(c(t)=(t,t,t)\), \(t\in[0,1]\) ; 2) \(c(t)=(\cos t,\sin t,0)\), \(t\in[0,\pi]\) ; 3) \(c(t)=(t^2,3t,2t^3)\), \(t\in[-1,2]\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\omega=d\Phi\Rightarrow\displaystyle\int_C\omega=\Phi(\text{arrivée})-\Phi(\text{départ})\) : seules les extrémités comptent.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel de cours.</b> Une forme \(\omega\) est <b>exacte</b> s'il existe une fonction \(\Phi\) (un potentiel) telle que \(\omega=d\Phi\). Alors l'intégrale ne dépend que des extrémités :</p>
 <div class="fml"><span class="f">\(\displaystyle\int_C d\Phi=\Phi(\text{arrivée})-\Phi(\text{départ})\)</span><span class="leg">analogue de \(\int_a^b f'=f(b)-f(a)\)</span></div>
@@ -2098,11 +2250,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Contrôle par paramétrage (3)</b>\(x\,dx=2t^3\,dt\), \(y^2dy=27t^2\,dt\), \(z^3dz=48t^{11}\,dt\) : \(\int_{-1}^{2}=\tfrac{15}{2}+81+16380=\tfrac{32937}{2}\) ✓. Même résultat, mais le potentiel évite les grosses puissances.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Variables séparées \(\Rightarrow\) potentiel immédiat : \(\Phi=\frac{x^2}2+\frac{y^3}3+\frac{z^4}4\). L'intégrale <b>ne dépend pas du chemin</b>, seulement de \(c(a)\) et \(c(b)\) : on n'a pas besoin de dériver la paramétrisation (mais on peut la garder pour contrôler).</div>
 </div></details>
 </article>
 <article class="cx" id="cur-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>\((x-y)\,dx+(x+y)\,dy\) sur le demi-cercle supérieur</h3></header>
 <div class="cx-enonce">\(C\) : demi-cercle supérieur de centre \(O\) et de rayon \(R\) (\(R=1\) si non précisé), orienté dans le sens direct. Calculer \(\displaystyle\int_C(x-y)\,dx+(x+y)\,dy\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\displaystyle\int_CP\,dx+Q\,dy=\int_a^b\big[P(c(t))\,x'(t)+Q(c(t))\,y'(t)\big]dt\) ; demi-cercle direct : \(t\in[0,\pi]\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Test d'exactitude</b> : \(P=x-y\), \(Q=x+y\), donc \(\dfrac{\partial P}{\partial y}=-1\neq\dfrac{\partial Q}{\partial x}=1\). La forme n'est pas exacte, et la courbe n'est pas fermée : on <b>paramètre</b>.</p>
 <p><b>Rappel</b> : avec \(x=x(t)\), \(y=y(t)\), on remplace \(dx=x'(t)\,dt\) et \(dy=y'(t)\,dt\) :</p>
@@ -2123,11 +2277,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Vérification avec Green</b>On ferme par le segment \([-R,R]\) de l'axe \(Ox\) (\(y=0\), \(dy=0\) : \(\omega=x\,dx\), contribution \(\int_{-R}^Rx\,dx=0\)). Green : \(\iint\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)=\iint2=2\times\dfrac{\pi R^2}{2}=\pi R^2\) ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Forme non exacte (\(P_y\neq Q_x\)) et courbe non fermée \(\Rightarrow\) <b>paramétrer</b>. Le sens de parcours fixe l'ordre des bornes de \(t\). Contrôle : fermer par le diamètre et appliquer Green.</div>
 </div></details>
 </article>
 <article class="cx" id="cur-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Cinq circulations sur des courbes fermées</h3></header>
 <div class="cx-enonce">a) \(\omega=(x-y^3)\,dx+x^3\,dy\), cercle unité, sens positif ; \(b\)) \(\omega=xy^2\,dy-yx^2\,dx\), cercle \(x^2+y^2-2y=0\), sens direct ; \(c\)) \(\omega=x^2\,dy+y^2\,dx\), demi-ellipse \(x^2+4y^2=4\), \(y\geq0\), sens <b>indirect</b> ; \(d\)) \(\omega=\dfrac{(x-y)\,dx+(x+y)\,dy}{x^2+y^2}\), carré \(A(1,1)\), \(B(-1,1)\), \(C(-1,-1)\), \(D(1,-1)\) ; \(e\)) \(\omega=y\,dx+2x\,dy\), bord de \(\{x^2+y^2-2x\leq0,\ x^2+y^2-2y\leq0\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>Green-Riemann : \(\displaystyle\oint_{\partial D}P\,dx+Q\,dy=\iint_D(Q_x-P_y)\,dx\,dy\), bord direct, \(P,Q\) de classe \(C^1\) <b>sur tout \(D\)</b>.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Formule de Green-Riemann.</b> Pour un domaine \(D\) dont le bord \(\partial D\) est parcouru dans le sens direct (le domaine à gauche) :</p>
 <div class="fml"><span class="f">\(\displaystyle\oint_{\partial D}P\,dx+Q\,dy=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dx\,dy\)</span><span class="leg">une circulation devient une intégrale double</span></div>
@@ -2194,11 +2350,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>a) \(\tfrac{3\pi}2\) ; \(b\)) \(\tfrac{3\pi}2\) ; \(c\)) \(\tfrac83\) ; \(d\)) \(2\pi\) ; \(e\)) \(\tfrac\pi2-1\).</div>
 <div class="why"><b class="lab">Piège \((d)\)</b>\(\partial Q/\partial x=\partial P/\partial y\) hors de \(O\), mais \(\mathbb{R}^2\setminus\{0\}\) n'est pas étoilé : fermée n'implique pas exacte. Si Green s'appliquait, on trouverait 0, ce qui est faux. C'est l'exemple fondamental du cours d'électromagnétisme (circulation du champ magnétique autour d'un fil : théorème d'Ampère).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Sens indirect \(\Rightarrow\) changer le signe. Une singularité à l'intérieur (cas d : \(O\) dans le carré) interdit Green : on utilise \(\omega=d(\ln r)+d\theta\), d'où \(2\pi\). Quand \(Q_x-P_y=1\), la circulation est l'<b>aire</b> du domaine (cas e).</div>
 </div></details>
 </article>
 <article class="cx" id="cur-4">
 <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Quatre intégrales dont trois sont nulles « sans calcul »</h3></header>
 <div class="cx-enonce">1. \(\int x\,dy+xy^2\,dx\), \(c(t)=(\cos t,\sin t)\), \(t\in[0,2\pi]\) ; 2. \(\int x\,dx+y\,dy\), \(c(t)=(\cos\pi t,\sin\pi t)\), \(t\in[0,2]\) ; 3. \(\int x\,dx+y\,dy\), \(C\) formée des arcs \(y=x^2\) et \(x=y^2\) entre \((0,0)\) et \((1,1)\), sens direct ; 4. \(\int yz\,dx+xz\,dy+xy\,dz\), \(C\) formée des segments \((1,0,0)\to(0,1,0)\to(0,0,1)\) \((\to(1,0,0))\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(x\,dx+y\,dy=d\big(\frac{x^2+y^2}2\big)\) ; \(yz\,dx+xz\,dy+xy\,dz=d(xyz)\) ; forme exacte \(\Rightarrow\) intégrale nulle sur une courbe fermée.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Reconnaître les formes exactes :</p>
 <div class="mq">\[\begin{gathered}x\,dx+y\,dy=d\!\left(\frac{x^2+y^2}{2}\right)\\[4pt] yz\,dx+xz\,dy+xy\,dz=d(xyz)\end{gathered}\]</div>
@@ -2240,9 +2398,17 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <h2>Intégrales de surface, Stokes, Green-Ostrogradsky</h2>
 <p>Arbre de décision : <b>surface fermée</b> → divergence (Ostrogradsky) ; flux d'un <b>rotationnel</b> → Stokes (circulation sur le bord) ou « même bord ⇒ même flux » ; sinon <b>paramétrer</b> : \(d\vec S=(\vec T_u\wedge\vec T_v)\,du\,dv\), et pour un graphe \(z=g(x,y)\), \(d\vec S=(-g_x,-g_y,1)\,dx\,dy\) (normale vers le haut). <a href="index.html#ch6">Revoir le cours (ch. 6)</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître</b>
+<ul>
+<li><b>Flux</b> à travers un graphe \(z=g(x,y)\) : \(\vec N=(-g_x,-g_y,1)\), \(\iint_\Sigma\vec F\cdot d\vec S=\iint_T\vec F\big(x,y,g\big)\cdot\vec N\,dx\,dy\) ; surface paramétrée : \(d\vec S=(\vec T_u\wedge\vec T_v)\,du\,dv\) (l'ordre fixe l'orientation).</li>
+<li><b>Green-Ostrogradsky</b> : surface <b>fermée</b>, normale extérieure : \(\oiint\vec F\cdot d\vec S=\iiint\operatorname{div}\vec F\,dV\) ; divergence constante \(c\) : flux \(=c\times\) volume.</li>
+<li><b>Stokes</b> : \(\iint_S\overrightarrow{\mathrm{rot}}\,\vec F\cdot d\vec S=\oint_{\partial S}\vec F\cdot d\vec r\), bord orienté par le tire-bouchon ; deux surfaces de même bord ont <b>même flux de rotationnel</b>.</li>
+<li><b>Réflexes</b> : \(\overrightarrow{\mathrm{rot}}(\nabla f)=\vec0\) et \(\operatorname{div}(\overrightarrow{\mathrm{rot}}\,\vec F)=0\) annulent beaucoup d'exercices.</li>
+</ul></div>
 <article class="cx" id="sur-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Flux à travers un triangle de plan</h3></header>
 <div class="cx-enonce">\(\Sigma=\{z=6-3x-2y,\ x,y,z\geq0\}\), \(\vec F=(0,z,z)\). Calculer le flux de \(\vec F\) à travers \(\Sigma\).</div>
+<div class="rr"><b class="lab">Rappel</b>Graphe \(z=g(x,y)\) : \(\vec N=(-g_x,-g_y,1)\) et \(\iint_\Sigma\vec F\cdot d\vec S=\iint_T\vec F(x,y,g)\cdot\vec N\,dx\,dy\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel : flux à travers un graphe.</b> Si \(\Sigma\) est le graphe de \(z=g(x,y)\) au-dessus d'un domaine \(T\) du plan, le vecteur \(\vec N=(-g_x,-g_y,1)\) est normal à la surface (vers le haut), et :</p>
 <div class="fml"><span class="f">\(\displaystyle\iint_\Sigma\vec F\cdot d\vec S=\iint_T\vec F\big(x,y,g(x,y)\big)\cdot(-g_x,-g_y,1)\,dx\,dy\)</span><span class="leg">\(\vec N\) n'est pas unitaire : il contient déjà l'élément d'aire</span></div>
@@ -2266,11 +2432,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(\Phi=18\) (normale vers le haut ; \(-18\) avec l'autre orientation).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>\(\vec N\) n'est pas unitaire : il contient déjà l'élément d'aire. Ici \(g=6-3x-2y\) donne \(\vec N=(3,2,1)\), et \(T\) est la projection de la surface sur \(Oxy\) (un triangle).</div>
 </div></details>
 </article>
 <article class="cx" id="sur-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Flux à travers un cône</h3></header>
 <div class="cx-enonce">\(\vec F=(y,-x,x^2)\), \(\Sigma=\{z^2=x^2+y^2,\ 0\leq z\leq1\}\). Calculer le flux à travers \(\Sigma\).</div>
+<div class="rr"><b class="lab">Rappel</b>Surface paramétrée \(M(u,v)\) : \(d\vec S=(\vec T_u\wedge\vec T_v)\,du\,dv\) ; cône : \((r\cos\theta,\ r\sin\theta,\ r)\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel : surface paramétrée.</b> Si \(M(u,v)\) décrit la surface, les vecteurs tangents \(\vec T_u=\dfrac{\partial M}{\partial u}\) et \(\vec T_v=\dfrac{\partial M}{\partial v}\) engendrent le plan tangent, et :</p>
 <div class="fml"><span class="f">\(d\vec S=(\vec T_u\wedge\vec T_v)\,du\,dv\)</span><span class="leg">l'ordre \(u,v\) fixe l'orientation</span></div>
@@ -2293,11 +2461,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(\tfrac\pi4\) avec la normale vers le haut (intérieure au cône plein) ; \(-\tfrac\pi4\) avec la normale extérieure.</div>
 <div class="why"><b class="lab">Remarque</b>La partie \((y,-x,0)\) de \(\vec F\) est tangente au cône (rotation autour de \(Oz\)) : elle ne traverse pas la surface, seul \(x^2\) compte.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>L'ordre des paramètres fixe l'orientation : comparer \(\vec T_r\wedge\vec T_\theta\) avec la normale demandée et corriger le signe si besoin.</div>
 </div></details>
 </article>
 <article class="cx" id="sur-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Flux d'un rotationnel à travers un demi-ellipsoïde</h3></header>
 <div class="cx-enonce">Calculer \(\displaystyle\iint_S\overrightarrow{\mathrm{rot}}\,\vec F\cdot d\vec S\), \(\vec F=(y,-x,zx^3y^2)\), \(S : x^2+y^2+3z^2=1\), \(z\leq0\), normale vers le haut.</div>
+<div class="rr"><b class="lab">Rappel</b>Stokes : \(\iint_S\overrightarrow{\mathrm{rot}}\,\vec F\cdot d\vec S=\oint_{\partial S}\vec F\cdot d\vec r\), bord orienté par le tire-bouchon.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Théorème de Stokes.</b> Le flux d'un rotationnel à travers une surface ne dépend que de son bord :</p>
 <div class="fml"><span class="f">\(\displaystyle\iint_S\overrightarrow{\mathrm{rot}}\,\vec F\cdot d\vec S=\oint_{\partial S}\vec F\cdot d\vec r\)</span><span class="leg">bord orienté par la règle du tire-bouchon</span></div>
@@ -2318,11 +2488,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(-2\pi\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Le flux d'un rotationnel ne dépend que du <b>bord</b> : on remplace la surface par son bord (ici le cercle unité de \(z=0\)). Normale vers le haut \(\Rightarrow\) bord parcouru dans le sens trigonométrique vu d'en haut.</div>
 </div></details>
 </article>
 <article class="cx" id="sur-4">
 <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Stokes sur une demi-sphère de rayon 4</h3></header>
 <div class="cx-enonce">Calculer \(\displaystyle\iint_S\overrightarrow{\mathrm{rot}}\,\vec F\cdot d\vec S\), \(\vec F=(x^2+y-4,\ 3xy,\ 2xz+z^2)\), \(S : x^2+y^2+z^2=16\), \(z\geq0\), normale vers le haut.</div>
+<div class="rr"><b class="lab">Rappel</b>Stokes puis Green dans le plan du bord : la circulation sur le cercle devient une intégrale double sur le disque.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Même stratégie qu'à l'exercice 3 : le bord est le cercle de rayon 4 dans \(z=0\), parcouru dans le sens direct. Dans ce plan, la circulation se calcule avec <b>Green-Riemann</b> sur le disque, ce qui évite de paramétrer.</p>
 </div></details>
@@ -2339,11 +2511,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(-16\pi\).</div>
 <div class="why"><b class="lab">Contrôle</b>\(\overrightarrow{\mathrm{rot}}\,\vec F=(0,\ -2z,\ 3y-1)\) ; flux à travers le disque \(z=0\) (normale \(\vec k\)) : \(\iint(3y-1)=-16\pi\) ✓. Paramétrer la demi-sphère aurait été bien plus long.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Dans le plan \(z=0\), calculer la circulation avec Green-Riemann évite de paramétrer le cercle. Attention au sens du bord et à la normale « vers le haut ».</div>
 </div></details>
 </article>
 <article class="cx" id="sur-5">
 <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Flux sortant de la sphère unité</h3></header>
 <div class="cx-enonce">Calculer \(\displaystyle\iint_S\vec F\cdot d\vec S\), \(\vec F=(3xy^2,\ 3x^2y,\ z^3)\), \(S\) sphère unité (normale extérieure).</div>
+<div class="rr"><b class="lab">Rappel</b>Green-Ostrogradsky : surface fermée, normale extérieure : \(\oiint\vec F\cdot d\vec S=\iiint\operatorname{div}\vec F\,dV\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Théorème de Green-Ostrogradsky (divergence).</b> Pour une surface fermée \(\partial\Omega\) orientée vers l'extérieur :</p>
 <div class="fml"><span class="f">\(\displaystyle\oiint_{\partial\Omega}\vec F\cdot d\vec S=\iiint_\Omega\mathrm{div}\,\vec F\,dV\)</span><span class="leg">ce qui sort = somme des sources à l'intérieur</span></div>
@@ -2359,11 +2533,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(\tfrac{12\pi}{5}\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Surface fermée \(\Rightarrow\) divergence. Pour une fonction de \(r\) seulement : \(\iiint_{\text{boule}}f(r)\,dV=\int_0^1f(r)\,4\pi r^2\,dr\).</div>
 </div></details>
 </article>
 <article class="cx" id="sur-6">
 <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Cylindre + demi-sphère : tout se joue sur le bord</h3></header>
 <div class="cx-enonce">\(S=S_1\cup S_2\) : \(S_1\) cylindre \(x^2+y^2=1\), \(0\leq z\leq1\) ; \(S_2 : x^2+y^2+(z-1)^2=1\), \(z\geq1\). \(\vec F=(zx+z^2y+x,\ z^3yx+y,\ z^4x^2)\). Calculer \(\displaystyle\iint_S\overrightarrow{\mathrm{rot}}\,\vec F\cdot d\vec S\).</div>
+<div class="rr"><b class="lab">Rappel</b>Stokes : deux surfaces de même bord ont le même flux de rotationnel ; seul le bord compte.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>\(S\) est un « bocal retourné » : son seul bord est le cercle \(x^2+y^2=1\) dans le plan \(z=0\). Par Stokes, il suffit de calculer la circulation de \(\vec F\) sur ce cercle, où <b>tous les termes contenant \(z\) disparaissent</b>.</p>
 </div></details>
@@ -2379,11 +2555,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </ol>
 <div class="answer"><b class="lab">Réponse</b>0.</div>
 <div class="why"><b class="lab">Leçon</b>Un champ compliqué est souvent un signal : l'exercice veut que vous utilisiez un théorème, pas que vous calculiez \(\overrightarrow{\mathrm{rot}}\,\vec F\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Ici le bord de la surface est le cercle \(x^2+y^2=1\) dans \(z=0\), où tous les termes contenant \(z\) disparaissent : la circulation se calcule en quelques lignes.</div>
 </div></details>
 </article>
 <article class="cx" id="sur-7">
 <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Demi-ellipsoïde, champ irrotationnel</h3></header>
 <div class="cx-enonce">Calculer \(\displaystyle\iint_S\overrightarrow{\mathrm{rot}}\,\vec F\cdot d\vec S\), \(S : x^2+y^2+2z^2=10\), \(x\geq0\) ; \(\vec F=(x^3,-y^3,0)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Si \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\), le flux de \(\overrightarrow{\mathrm{rot}}\,\vec F\) à travers n'importe quelle surface est nul.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Calculer \(\overrightarrow{\mathrm{rot}}\,\vec F\) avant tout : chaque composante ne dépend que de « sa » variable, donc toutes les dérivées croisées sont nulles.</p>
 </div></details>
@@ -2398,11 +2576,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>0.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Calculer \(\overrightarrow{\mathrm{rot}}\,\vec F\) <b>avant tout</b> : s'il est nul, la réponse est \(0\) sans autre calcul. Ici chaque composante ne dépend que de sa variable.</div>
 </div></details>
 </article>
 <article class="cx" id="sur-8">
 <header class="cx-hd"><span class="cx-num">Ex 8</span><h3>Calotte sphérique et \(\vec F=(x,y,z)\)</h3></header>
 <div class="cx-enonce">Calculer \(\displaystyle\iint_S\overrightarrow{\mathrm{rot}}\,\vec F\cdot d\vec S\), \(S=\{x^2+y^2+z^2=1,\ x+y+z\geq1\}\), \(\vec F=(x,y,z)\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(\vec F=\nabla\big(\frac{r^2}2\big)\) donc \(\overrightarrow{\mathrm{rot}}\,\vec F=\vec0\) ; le flux d'un rotationnel nul est nul.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Reconnaître un gradient : \(\vec F=\nabla\!\left(\dfrac{r^2}{2}\right)\) avec \(r^2=x^2+y^2+z^2\). Or le rotationnel d'un gradient est toujours nul.</p>
 </div></details>
@@ -2420,6 +2600,7 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <article class="cx" id="sur-9">
 <header class="cx-hd"><span class="cx-num">Ex 9</span><h3>Flux de \((x^3,y^3,z^3)\) sur la sphère unité</h3></header>
 <div class="cx-enonce">\(\vec F=(x^3,y^3,z^3)\). Calculer le flux sortant à travers la sphère unité.</div>
+<div class="rr"><b class="lab">Rappel</b>Ostrogradsky : \(\operatorname{div}(x^3,y^3,z^3)=3(x^2+y^2+z^2)=3r^2\), puis sphériques.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Surface fermée → théorème de la divergence, puis sphériques (comme à l'exercice 5).</p>
 </div></details>
@@ -2431,11 +2612,13 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(\tfrac{12\pi}{5}\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Surface fermée \(\Rightarrow\) divergence, puis \(\iiint3r^2\,dV=3\cdot4\pi\int_0^1r^4\,dr=\frac{12\pi}5\) (contrôle).</div>
 </div></details>
 </article>
 <article class="cx" id="sur-10">
 <header class="cx-hd"><span class="cx-num">Ex 10</span><h3>Cube unité : flux calculé de deux façons</h3></header>
 <div class="cx-enonce">\(\Omega=[0,1]^3\). Calculer \(\displaystyle\oiint_{\partial\Omega}\vec F\cdot d\vec S\) de deux manières pour 1) \(\vec F=(x,y,z)\) ; 2) \(\vec F=(1,1,1)\) ; 3) \(\vec F=(x^2,x^2,z^2)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Cube : six faces de normales \(\pm\vec i,\pm\vec j,\pm\vec k\) ; sur la face \(x=1\), \(\vec F\cdot\vec n=F_1(1,y,z)\) ; sur \(x=0\), \(-F_1(0,y,z)\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Face par face</b> : le cube a 6 faces planes, de normales extérieures \(\pm\vec i\), \(\pm\vec j\), \(\pm\vec k\). Sur la face \(x=1\), \(\vec F\cdot\vec n=F_1(1,y,z)\) ; sur la face \(x=0\), \(\vec F\cdot\vec n=-F_1(0,y,z)\) ; et de même pour \(y\) et \(z\). Chaque face a une aire de 1.</p>
 <p><b>Par la divergence</b> : \(\iiint_\Omega\mathrm{div}\,\vec F\). Les deux calculs doivent coïncider : c'est une vérification du théorème.</p>
@@ -2470,11 +2653,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>1) 3. 2) 0. 3) 2.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Les deux méthodes (face par face, divergence) doivent coïncider. Pour \(\vec F=(x,y,z)\), \(\operatorname{div}=3\) et le flux vaut \(3\) ; pour \(\vec F=(1,1,1)\), \(\operatorname{div}=0\) : flux nul (ce qui entre sort).</div>
 </div></details>
 </article>
 <article class="cx" id="sur-11">
 <header class="cx-hd"><span class="cx-num">Ex 11</span><h3>Flux sortant d'un paraboloïde plein (et de ses moitiés)</h3></header>
 <div class="cx-enonce">\(\vec F=(x,y,xz)\). Calculer \(\displaystyle\oiint_{\partial\Omega}\vec F\cdot d\vec S\) pour \(\Omega\) : 1) \(x^2+y^2\leq z\leq1\) ; 2) idem avec \(x\geq0\) ; 3) idem avec \(x\leq0\).</div>
+<div class="rr"><b class="lab">Rappel</b>Ostrogradsky puis cylindriques : \(\Omega=\{0\le z\le1,\ r\le\sqrt z\}\), \(V=\int_0^1\pi z\,dz=\frac\pi2\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Ostrogradsky, puis <b>cylindriques</b> : \(\Omega=\{0\leq z\leq1,\ r\leq\sqrt z\}\).</p>
 <p>Volume par tranches : à hauteur \(z\), la section est un disque d'aire \(\pi z\), donc \(V=\int_0^1\pi z\,dz=\tfrac\pi2\).</p>
@@ -2498,11 +2683,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Contrôle</b>2) + 3) = 1) : la face plane \(x=0\), commune aux deux moitiés, est comptée une fois avec \(-\vec i\) et une fois avec \(+\vec i\) (et de toute façon \(\vec F\cdot\vec n=\mp x=0\) dessus). Vérification directe de 1) : couvercle \(z=1\) → \(\iint x=0\) ; paraboloïde (normale sortante \((2r^2\cos\theta,\ 2r^2\sin\theta,\ -r)\)) → \(\iint(2r^3-r^4\cos\theta)=\pi\) ✓.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Par symétrie, \(\iiint x\,dV=0\) sur \(\Omega\) entier mais pas sur les moitiés \(x\ge0\) et \(x\le0\). Pour une moitié, la frontière contient aussi la face plane \(x=0\) : le théorème donne le flux sortant total.</div>
 </div></details>
 </article>
 <article class="cx" id="sur-12">
 <header class="cx-hd"><span class="cx-num">Ex 12</span><h3>Même chose avec \(\vec F=(x-y,\ y-z,\ z-x)\)</h3></header>
 <div class="cx-enonce">Mêmes domaines qu'à l'exercice 11, avec \(\vec F=(x-y,\ y-z,\ z-x)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Si \(\operatorname{div}\vec F=c\) (constante), alors le flux sortant vaut \(c\times\mathrm{Vol}(\Omega)\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Si la divergence est une constante \(c\), le théorème de la divergence donne directement : flux sortant \(=c\times\) volume.</p>
 </div></details>
@@ -2516,6 +2703,7 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(\tfrac{3\pi}{2}\) ; \(\tfrac{3\pi}{4}\) ; \(\tfrac{3\pi}{4}\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Ici \(\operatorname{div}=3\) et \(\mathrm{Vol}=\frac\pi2\) : flux total \(\frac{3\pi}2\), et \(\frac{3\pi}4\) pour chaque moitié. Plus aucune intégrale à calculer.</div>
 </div></details>
 </article>
 </section>
@@ -2525,9 +2713,17 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 <h2>Optimisation</h2>
 <p>Protocole : <b>1.</b> points critiques (\(\nabla f=\vec0\)) ; <b>2.</b> Monge \(r=f_{xx}\), \(s=f_{xy}\), \(t=f_{yy}\), \(\Delta=rt-s^2\) (\(\Delta&gt;0\) et \(r&gt;0\) : \(\min\) ; \(\Delta&gt;0\) et \(r&lt;0\) : \(\max\) ; \(\Delta&lt;0\) : col) ; <b>3.</b> si \(\Delta=0\), <b>étude directe</b> du signe de \(f-f(a)\) ; <b>4.</b> global : compact → valeurs aux points critiques intérieurs <b>et</b> sur le bord ; contrainte \(g=0\) → <b>Lagrange</b> \(\nabla f=\lambda\nabla g\). <a href="index.html#ch7">Revoir le cours (ch. 7)</a></p>
 </div>
+<div class="cx-know"><b class="lab">À connaître</b>
+<ul>
+<li><b>Points critiques</b> : \(\nabla f=\vec0\). <b>Monge</b> : \(r=f_{xx}\), \(s=f_{xy}\), \(t=f_{yy}\), \(\Delta=rt-s^2\) : \(\Delta&gt;0,\ r&gt;0\) minimum ; \(\Delta&gt;0,\ r&lt;0\) maximum ; \(\Delta&lt;0\) col ; \(\Delta=0\) on ne sait pas (étudier le signe de \(f-f(a)\)).</li>
+<li><b>Sur un compact</b> : \(f\) continue atteint ses bornes ; candidats = points critiques intérieurs + extrema sur le bord (paramétré) ; on compare les valeurs.</li>
+<li><b>Lagrange</b> : sous la contrainte \(g=0\) (avec \(\nabla g\neq\vec0\)), \(\nabla f=\lambda\nabla g\) ; avec deux contraintes \(\nabla f=\lambda\nabla g_1+\mu\nabla g_2\). Ce ne sont que des <b>candidats</b>.</li>
+<li><b>Taylor à l'ordre 2</b> : \(f(a+h)=f(a)+\nabla f(a)\cdot h+\tfrac12(rh_1^2+2sh_1h_2+th_2^2)+o(\|h\|^2)\).</li>
+</ul></div>
 <article class="cx" id="opt-1">
 <header class="cx-hd"><span class="cx-num">Ex 1</span><h3>Taylor à l'ordre 2 et nature du point</h3></header>
 <div class="cx-enonce">Développement de Taylor à l'ordre 2 et nature du point : 1. \((x+y)^2\) en \((0,0)\) ; 2. \(\dfrac{1}{x^2+y^2+1}\) en \((0,0)\) ; 3. \(e^{x+y}\) en \((0,0)\) ; 4. \(e^{(x-1)^2}\cos y\) en \((1,0)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Taylor ordre 2 : \(f(a)+\nabla f(a)\cdot h+\frac12(rh_1^2+2sh_1h_2+th_2^2)+o(\|h\|^2)\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Formule de Taylor à l'ordre 2</b> au point \(a\), avec \(h=(h_1,h_2)\) :</p>
 <div class="fml"><span class="f">\(f(a+h)=f(a)+\nabla f(a)\cdot h+\tfrac12\big(r\,h_1^2+2s\,h_1h_2+t\,h_2^2\big)+o(\|h\|^2)\)</span><span class="leg">\(r=f_{xx}(a)\), \(s=f_{xy}(a)\), \(t=f_{yy}(a)\)</span></div>
@@ -2567,11 +2763,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 <p><b>Point col</b> : \(f\) augmente dans la direction \(x\) et diminue dans la direction \(y\).</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Plutôt que de dériver deux fois, composer les développements usuels (\(\frac1{1+u}\), \(e^u\), \(\cos y\)). Le point est critique si et seulement si le terme d'ordre \(1\) est nul.</div>
 </div></details>
 </article>
 <article class="cx" id="opt-2">
 <header class="cx-hd"><span class="cx-num">Ex 2</span><h3>Points critiques et nature (8 fonctions)</h3></header>
 <div class="cx-enonce">1. \(x^2-y^2+xy\) ; 2. \(x^2+y^2+2xy\) ; 3. \(e^{1+x^2-y^2}\) ; 4. \(y+x\sin y\) ; 5. \(xy+\dfrac1x+\dfrac1y\) ; 6. \(x^3+y^2-6xy+6x+3y\) ; 7. \(ax^n+cy^n\) (\(ac\neq0\)) ; 8. \(x^2+y^2+z^2+xy\).</div>
+<div class="rr"><b class="lab">Rappel</b>Point critique : \(\nabla f=\vec0\). Monge : \(\Delta=rt-s^2\) ; \(\Delta&gt;0,r&gt;0\) minimum ; \(\Delta&gt;0,r&lt;0\) maximum ; \(\Delta&lt;0\) col.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Pourquoi Monge ?</b> Près d'un point critique, \(f(a+h)-f(a)\approx\tfrac12(rh_1^2+2sh_1h_2+th_2^2)\). Le signe de cette forme quadratique décide : toujours positive → minimum, toujours négative → maximum, les deux signes → col. Son discriminant réduit est \(\Delta=rt-s^2\).</p>
 <p><b>Résoudre \(\nabla f=\vec0\)</b> : exprimer une variable en fonction de l'autre dans l'équation la plus simple, puis substituer. Garder les facteurs (\(x(\dots)=0\) donne deux cas) au lieu de diviser, pour ne pas perdre de solution.</p>
@@ -2650,11 +2848,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Outil hors cours (\(n\) variables)</b>Monge ne marche qu'en dimension 2. En dimension \(n\) : hessienne à valeurs propres toutes \(&gt;0\) \(\to \min\) ; toutes \(&lt;0\) \(\to \max\) ; de signes opposés → col. Critère de <b>Sylvester</b> : définie positive ⟺ tous les mineurs principaux dominants sont \(&gt;0\) (ici 2, 3, 6).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Si \(\Delta=0\), le test ne conclut pas : étudier le signe de \(f-f(a)\) près du point. En résolvant \(\nabla f=\vec0\), garder les facteurs (\(x(\dots)=0\) donne deux cas).</div>
 </div></details>
 </article>
 <article class="cx" id="opt-3">
 <header class="cx-hd"><span class="cx-num">Ex 3</span><h3>Extrema globaux sur le disque unité</h3></header>
 <div class="cx-enonce">Extrema globaux sur le disque unité fermé de : 1. \((x^2+y^2)^4\) ; 2. \(x^2+xy+y^2\) ; 3. \(3xy-3x^2-y^3\).</div>
+<div class="rr"><b class="lab">Rappel</b>Une fonction continue sur un compact atteint son maximum et son minimum : candidats = points critiques intérieurs + extrema sur le bord.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Théorème des bornes atteintes.</b> Une fonction continue sur un compact (fermé et borné, comme le disque fermé) atteint son maximum et son minimum.</p>
 <p><b>Où les chercher ?</b> Soit à l'intérieur, et alors en un point critique ; soit sur le bord. On dresse la liste des candidats :</p>
@@ -2699,11 +2899,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Piège</b>Un maximum local intérieur n'est pas forcément le maximum global : toujours comparer avec le bord.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Ne rien oublier : points critiques <b>à l'intérieur</b> et étude de \(t\mapsto f(\cos t,\sin t)\) sur le bord. Comparer ensuite toutes les valeurs.</div>
 </div></details>
 </article>
 <article class="cx" id="opt-4">
 <header class="cx-hd"><span class="cx-num">Ex 4</span><h3>Extrema sur des rectangles</h3></header>
 <div class="cx-enonce">1. \(\sin x+\cos y\) sur \([0,2\pi]^2\) ; 2. \(xy\) sur \([-1,1]^2\).</div>
+<div class="rr"><b class="lab">Rappel</b>Un majorant atteint est le maximum ; un minorant atteint est le minimum.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Avant de dériver, chercher une <b>majoration évidente qui est atteinte</b> : \(\sin x\leq1\) et \(\cos y\leq1\) donnent \(f\leq2\), et on regarde quand il y a égalité. C'est souvent plus rapide et plus sûr que la liste des candidats.</p>
 </div></details>
@@ -2724,11 +2926,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 <p>\(|xy|\leq1\) : \(\max \,1\) en \((1,1)\) et \((-1,-1)\) ; \(\min\) \(-1\) en \((1,-1)\) et \((-1,1)\). L'unique point critique \((0,0)\) est un col (\(r=t=0\), \(s=1\), \(\Delta=-1\)).</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Majorer d'abord (\(\sin x\le1\), \(\cos y\le1\)), puis chercher quand l'égalité a lieu : c'est plus rapide et plus sûr que la liste des candidats.</div>
 </div></details>
 </article>
 <article class="cx" id="opt-5">
 <header class="cx-hd"><span class="cx-num">Ex 5</span><h3>Extrema locaux et globaux (6 fonctions)</h3></header>
 <div class="cx-enonce">1. \(x^2+xy+y^2+\dfrac{x^3}{4}\) ; 2. \(x^4+y^4\) ; 3. \(x^3+y^3\) ; 4. \(4xy+\dfrac1x+\dfrac1y\) ; 5. \(x\ln y-y\ln x\) ; 6. \((y^2-x^2)(y^2-2x^2)\).</div>
+<div class="rr"><b class="lab">Rappel</b>Même protocole que l'exercice 2 ; si \(\Delta=0\), étudier le signe de \(f-f(a)\) dans un voisinage.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Même protocole qu'à l'exercice 2. Quand \(\Delta=0\), on étudie directement le signe de \(f-f(a)\) près du point : si \(f\) prend les deux signes dans tout voisinage, ce n'est pas un extremum.</p>
 <p><b>Global ou local ?</b> Un extremum local n'est global que si l'on peut comparer avec toutes les valeurs : chercher un chemin où \(f\to\pm\infty\), ou une inégalité valable partout.</p>
@@ -2794,11 +2998,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 <p>Dans tout voisinage de \(O\), \(f\) prend les deux signes : <b>pas d'extremum</b> en \((0,0)\).</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Un extremum <b>local</b> n'est global que si on peut comparer avec toutes les valeurs : chercher un chemin où \(f\to\pm\infty\) (pas de global) ou une inégalité valable partout.</div>
 </div></details>
 </article>
 <article class="cx" id="opt-6">
 <header class="cx-hd"><span class="cx-num">Ex 6</span><h3>Extrema sous contraintes (Lagrange)</h3></header>
 <div class="cx-enonce">1. \(x-y+z\) sur \(x^2+y^2+z^2=2\) ; 2. \(x-y\) sur \(x^2-y^2=2\) ; 3. \(x+y+z\) sous \(x^2-y^2=1\) et \(2x+z=1\).</div>
+<div class="rr"><b class="lab">Rappel</b>Lagrange : sous \(g=0\) avec \(\nabla g\neq\vec0\), \(\nabla f=\lambda\nabla g\) ; avec deux contraintes, \(\nabla f=\lambda\nabla g_1+\mu\nabla g_2\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Théorème de Lagrange.</b> Aux extrema de \(f\) sur l'ensemble \(\{g=0\}\) (avec \(\nabla g\neq\vec0\)), les gradients sont colinéaires :</p>
 <div class="fml"><span class="f">\(\nabla f=\lambda\,\nabla g\)</span><span class="leg">\(\lambda\) : multiplicateur de Lagrange</span></div>
@@ -2834,11 +3040,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 <p>Incompatible avec \(x^2-y^2=1\) : <b>aucun extremum</b> (\(y-x=-\dfrac1{x+y}\) ne fait que tendre vers 0 ou vers l'infini).</p>
 </div></div></li>
 </ol>
+<div class="retenir rt2"><b class="lab">À retenir</b>Lagrange ne donne que des <b>candidats</b> : on compare leurs valeurs (si la contrainte est compacte) ou on étudie leur nature. Vérifier que \(\nabla g\neq\vec0\) aux points trouvés.</div>
 </div></details>
 </article>
 <article class="cx" id="opt-7">
 <header class="cx-hd"><span class="cx-num">Ex 7</span><h3>Restrictions à une droite et à un demi-plan</h3></header>
 <div class="cx-enonce">\(f=x^2+y^2\) sur 1. \(S=\{(x,2),\ x\in\mathbb{R}\}\) ; 2. \(S=\{(x,y),\ y\geq2\}\).</div>
+<div class="rr"><b class="lab">Rappel</b>\(f=x^2+y^2\) est le carré de la distance à l'origine : extrema \(=\) points de \(S\) les plus proches ou les plus éloignés de \(O\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>\(f\) est le carré de la distance à l'origine : on cherche le point de \(S\) le plus proche (et le plus éloigné) de \(O\).</p>
 </div></details>
@@ -2857,11 +3065,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Interprétation</b>Le point de \(S\) le plus proche de \(O\) est la projection orthogonale de \(O\) sur la droite \(y=2\) : \((0,2)\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Sur la droite \(y=2\) : \(f=x^2+4\), minimum \(4\) en \((0,2)\), pas de maximum. Sur le demi-plan \(y\ge2\) : même minimum, et \(f\to+\infty\).</div>
 </div></details>
 </article>
 <article class="cx" id="opt-8">
 <header class="cx-hd"><span class="cx-num">Ex 8</span><h3>Boule unité et disque unité</h3></header>
 <div class="cx-enonce">1. \(x+y-z\) sur la boule unité ; 2. \(x^2+y^2-x-y-1\) sur le disque unité.</div>
+<div class="rr"><b class="lab">Rappel</b>Une fonction linéaire n'a pas de point critique : ses extrema sont sur le bord. Compléter les carrés donne nature et valeur sans dériver.</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>1. Fonction linéaire : son gradient ne s'annule jamais, les extrema sont sur le bord (la sphère).</p>
 <p>2. <b>Compléter les carrés</b> donne la nature et la valeur du minimum sans aucune dérivée.</p>
@@ -2886,11 +3096,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Interprétation</b>\(f+\tfrac32\) est la distance au carré au point \(\left(\tfrac12,\tfrac12\right)\) : elle est maximale au point du disque le plus éloigné, diamétralement opposé.</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Boule : extrema sur la sphère, aux points où \((x,y,z)\) est colinéaire à \((1,1,-1)\). Disque : \((x-\frac12)^2+(y-\frac12)^2-\frac32\) a un minimum \(-\frac32\) en \((\frac12,\frac12)\), qui est dans le disque.</div>
 </div></details>
 </article>
 <article class="cx" id="opt-9">
 <header class="cx-hd"><span class="cx-num">Ex 9</span><h3>Pavé de volume fixé, surface minimale</h3></header>
 <div class="cx-enonce">Montrer qu'un pavé de volume \(V\) fixé a une surface minimale quand c'est un cube.</div>
+<div class="rr"><b class="lab">Rappel</b>Inégalité arithmético-géométrique : \(\frac{a+b+c}3\ge\sqrt[3]{abc}\), égalité \(\iff a=b=c\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Arêtes \(x,y,z&gt;0\), contrainte \(xyz=V\), surface \(S=2(xy+yz+zx)\). Deux voies : Lagrange, ou (plus court) l'<b>inégalité arithmético-géométrique</b> :</p>
 <div class="fml"><span class="f">\(\dfrac{a+b+c}{3}\geq\sqrt[3]{abc}\)</span><span class="leg">pour \(a,b,c\geq0\), égalité si et seulement si \(a=b=c\)</span></div>
@@ -2909,11 +3121,13 @@ z=1 :&amp;\ \iint1=1 &amp;\qquad z=0 :&amp;\ 0
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(S_{\min}=6V^{2/3}\), atteinte pour le cube d'arête \(\sqrt[3]V\).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Avec \(a=xy\), \(b=yz\), \(c=zx\) : \(S=2(xy+yz+zx)\ge6\sqrt[3]{(xyz)^2}=6V^{2/3}\), égalité si \(xy=yz=zx\), soit \(x=y=z\) : le cube. Pas besoin de Lagrange.</div>
 </div></details>
 </article>
 <article class="cx" id="opt-10">
 <header class="cx-hd"><span class="cx-num">Ex 10</span><h3>Boîte sans couvercle de surface \(16\,\mathrm{m}^{2}\)</h3></header>
 <div class="cx-enonce">Dimensions d'une boîte rectangulaire sans couvercle, de surface \(16\,\mathrm{m}^{2}\) et de volume maximal.</div>
+<div class="rr"><b class="lab">Rappel</b>Lagrange : \(\nabla V=\lambda\nabla g\) avec \(V=xyz\) et \(g=xy+2xz+2yz=16\) ; on exploite la symétrie \(x\leftrightarrow y\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p>Base \(x\times y\), hauteur \(z\). Surface : un fond et quatre côtés, \(g=xy+2xz+2yz=16\). Volume \(V=xyz\).</p>
 <p>Lagrange \(\nabla V=\lambda\nabla g\), puis on exploite la symétrie \(x\leftrightarrow y\) du problème.</p>
@@ -2939,6 +3153,7 @@ xy&amp;=\lambda(2x+2y)&amp;\quad(3)
 </div></div></li>
 </ol>
 <div class="why"><b class="lab">Contrôle sans calcul</b>Recollons la boîte à sa symétrique par rapport au plan du couvercle : on obtient un pavé fermé \(x\times y\times2z\), de surface 32 et de volume \(2V\). D'après l'exercice 9, un pavé de surface fixée a un volume maximal quand c'est un cube : \(x=y=2z\) ✓. Vérifié aussi numériquement (scipy.optimize).</div>
+<div class="retenir rt2"><b class="lab">À retenir</b>Pour une boîte sans couvercle de surface donnée, la base est carrée et la hauteur vaut la <b>moitié</b> du côté de la base (\(x=y=\frac4{\sqrt3}\), \(z=\frac2{\sqrt3}\)).</div>
 </div></details>
 </article>
 </section>
