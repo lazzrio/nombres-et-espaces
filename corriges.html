@@ -1859,123 +1859,199 @@ f_z=2yz+D'(z)=2yz+1&amp;\ \Longrightarrow\ D=z
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
 <p><b>Rappel.</b> La moyenne d'une fonction sur un solide est son intégrale divisée par le volume :</p>
 <div class="fml"><span class="f">\(T_{\text{moy}}=\dfrac{\iiint_E T\,dV}{\iiint_E dV}\)</span><span class="leg">deux intégrales triples sur le même domaine</span></div>
-<p>Le domaine est de révolution autour de la droite \(x=1,\ y=0\) : on translate \(u=x-1\) (le jacobien vaut 1), puis on passe en <b>cylindriques</b> \((u,y)=(r\cos\theta,\,r\sin\theta)\). Le solide devient \(0\leq r\leq2\), \(0\leq z\leq4-r^2\), et \(dV=r\,dr\,d\theta\,dz\).</p>
+<p><b>Quel repère choisir ?</b> Les deux conditions ne contiennent \(x\) et \(y\) que par la combinaison \((x-1)^2+y^2\) : c'est le carré de la distance au point \((1,0)\). Le solide est donc de révolution autour de la droite verticale passant par \((1,0)\). On recentre avec \(u=x-1\) (simple translation, jacobien 1), puis on passe en cylindriques :</p>
+<div class="fml"><span class="f">\(u=r\cos\theta,\quad y=r\sin\theta,\quad z=z\)</span><span class="leg">alors \((x-1)^2+y^2=r^2\) et \(dV=r\,dr\,d\theta\,dz\)</span></div>
+<p><b>Comment trouver les bornes.</b> On lit le domaine inégalité par inégalité, en commençant par la variable dont la borne dépend des autres (ici \(z\)) :</p>
+<ul>
+<li>\(z\) : directement dans l'énoncé, \(0\leq z\leq4-r^2\) (du plan au paraboloïde) ;</li>
+<li>\(r\) : il faut que cette tranche existe, c'est-à-dire \(4-r^2\geq0\), soit \(r\leq2\). C'est exactement la condition \((x-1)^2+y^2\leq4\) : le cylindre est la trace du paraboloïde sur le plan \(z=0\). Donc \(0\leq r\leq2\) ;</li>
+<li>\(\theta\) : aucune condition ne privilégie une direction, donc un tour complet \(0\leq\theta\leq2\pi\).</li>
+</ul>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Volume</div><div class="sd">
-<div class="mq">\[\begin{aligned}\mathrm{Vol}(E) &amp;= \int_0^{2\pi}\!\!\int_0^2\!\!\int_0^{4-r^2}r\,dz\,dr\,d\theta\\ &amp;= 2\pi\int_0^2(4-r^2)\,r\,dr\\ &amp;= 2\pi\Big[2r^2-\frac{r^4}{4}\Big]_0^2\\ &amp;= 2\pi\,(8-4)=8\pi\end{aligned}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Passage en cylindriques et bornes</div><div class="sd">
+<p>Avec \(u=x-1\) puis \(r,\theta\) :</p>
+<div class="mq">\[E:\quad 0\leq\theta\leq2\pi,\qquad 0\leq r\leq2,\qquad 0\leq z\leq4-r^2\]</div>
+<p>Les bornes de \(\theta\) et \(r\) sont constantes, celle de \(z\) dépend de \(r\) : on intègre donc <b>d'abord en \(z\)</b>, puis en \(r\), puis en \(\theta\).</p>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Intégrale de la température</div><div class="sd">
-<p>On intègre d'abord en \(z\) :</p>
-<div class="mq">\[\int_0^{4-r^2}(15+z^2)\,dz=15(4-r^2)+\frac{(4-r^2)^3}{3}\]</div>
-<p>Puis en \(r\), avec \(s=4-r^2\), \(r\,dr=-\tfrac12ds\) (\(r:0\to2\) devient \(s:4\to0\)) :</p>
-<div class="mq">\[\begin{aligned}\iiint_ET\,dV &amp;= 2\pi\cdot\frac12\int_0^4\Big(15s+\frac{s^3}{3}\Big)ds\\ &amp;= \pi\Big[\frac{15s^2}{2}+\frac{s^4}{12}\Big]_0^4\\ &amp;= \pi\Big(120+\frac{64}{3}\Big)=\frac{424\pi}{3}\end{aligned}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Volume</div><div class="sd">
+<p>Intégrale en \(z\) : \(\int_0^{4-r^2}dz=4-r^2\). Puis :</p>
+<div class="mq">\[\begin{aligned}\mathrm{Vol}(E) &amp;= \int_0^{2\pi}\!\!\int_0^2\!\!\int_0^{4-r^2}r\,dz\,dr\,d\theta\\ &amp;= \int_0^{2\pi}d\theta\cdot\int_0^2(4-r^2)\,r\,dr\\ &amp;= 2\pi\int_0^2\big(4r-r^3\big)\,dr\\ &amp;= 2\pi\Big[2r^2-\frac{r^4}{4}\Big]_0^2\\ &amp;= 2\pi\,(8-4)=8\pi\end{aligned}\]</div>
+<p>Primitive : \(\int4r\,dr=2r^2\) et \(\int r^3dr=\tfrac{r^4}{4}\). En \(r=2\) : \(2\cdot4-\tfrac{16}{4}=8-4=4\).</p>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Intégrale de la température : d'abord en \(z\)</div><div class="sd">
+<p>La température dépend de \(z\), qui est la variable intérieure :</p>
+<div class="mq">\[\int_0^{4-r^2}(15+z^2)\,dz=\Big[15z+\frac{z^3}{3}\Big]_0^{4-r^2}=15(4-r^2)+\frac{(4-r^2)^3}{3}\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Puis en \(r\) : changement de variable \(s=4-r^2\)</div><div class="sd">
+<p>Le facteur \(r\) de \(dV\) est justement ce qu'il faut : \(ds=-2r\,dr\), donc \(r\,dr=-\tfrac12ds\). Les bornes se convertissent : \(r=0\Rightarrow s=4\) et \(r=2\Rightarrow s=0\). Le signe « − » se compense en échangeant les bornes :</p>
+<div class="mq">\[\begin{aligned}\iiint_ET\,dV &amp;= 2\pi\int_0^2\Big[15(4-r^2)+\frac{(4-r^2)^3}{3}\Big]r\,dr\\ &amp;= 2\pi\cdot\frac12\int_0^4\Big(15s+\frac{s^3}{3}\Big)ds\\ &amp;= \pi\Big[\frac{15s^2}{2}+\frac{s^4}{12}\Big]_0^4\\ &amp;= \pi\Big(\frac{15\cdot16}{2}+\frac{256}{12}\Big)\\ &amp;= \pi\Big(120+\frac{64}{3}\Big)=\frac{424\pi}{3}\end{aligned}\]</div>
 </div></div></li>
 <li class="step"><span class="sn"></span><div><div class="st">Moyenne</div><div class="sd">
-<div class="mq">\[T_{\text{moy}}=\frac{\iiint_ET\,dV}{\mathrm{Vol}(E)}=\frac{424\pi/3}{8\pi}=\frac{53}{3}\approx17{,}67\]</div>
+<div class="mq">\[T_{\text{moy}}=\frac{\iiint_ET\,dV}{\mathrm{Vol}(E)}=\frac{424\pi/3}{8\pi}=\frac{424}{24}=\frac{53}{3}\approx17{,}67\]</div>
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(T_{\text{moy}}=\dfrac{53}{3}\approx17{,}7\).</div>
-<div class="why"><b class="lab">Contrôle</b>\(T\) varie entre \(15\) (en \(z=0\)) et \(15+16=31\) (au sommet). La moyenne est proche de 15 car le solide est surtout bas : \(17{,}7\in[15,31]\) ✓.</div>
+<div class="why"><b class="lab">Contrôle</b>Volume d'un paraboloïde de rayon de base \(R=2\) et de hauteur \(h=4\) : \(\tfrac12\pi R^2h=\tfrac12\pi\cdot4\cdot4=8\pi\) ✓. Et \(T\) varie entre \(15\) (en \(z=0\)) et \(31\) (au sommet) : la moyenne \(17{,}7\) est proche de 15 car le solide est surtout bas ✓.</div>
 </div></details>
 </article>
 <article class="cx" id="sup4-2">
 <header class="cx-hd"><span class="cx-num">Supp 2</span><h3>Masse d'une pièce creuse (cylindre elliptique)</h3></header>
 <div class="cx-enonce">\(E=\{1\leq\tfrac{x^2}{4}+y^2\leq4,\ 0\leq z\leq3\}\), densité \(\delta=1+\tfrac{x^2}{4}+y^2\). Calculer la masse \(M=\iiint_E\delta\,dV\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
-<p>La section est une <b>couronne elliptique</b>. On l'aplatit en couronne circulaire par un changement affine :</p>
-<div class="fml"><span class="f">\(x=2\rho\cos\theta,\quad y=\rho\sin\theta\)</span><span class="leg">alors \(\tfrac{x^2}{4}+y^2=\rho^2\)</span></div>
-<p>Le jacobien de \((\rho,\theta)\mapsto(x,y)\) vaut \(2\rho\) (au lieu de \(\rho\) pour les polaires usuelles : le facteur 2 est l'étirement en \(x\)). Le domaine devient \(1\leq\rho\leq2\), \(0\leq\theta\leq2\pi\), et \(\delta=1+\rho^2\).</p>
+<p><b>Reconnaître la forme.</b> \(\tfrac{x^2}{4}+y^2=c\) est une ellipse (demi-axes \(2\sqrt c\) en \(x\) et \(\sqrt c\) en \(y\)). L'ensemble \(1\leq\tfrac{x^2}{4}+y^2\leq4\) est donc la zone entre deux ellipses : une « couronne elliptique ». Avec \(0\leq z\leq3\), c'est un tuyau elliptique de hauteur 3.</p>
+<p><b>L'astuce : transformer l'ellipse en cercle.</b> Dans \(\tfrac{x^2}{4}+y^2=\big(\tfrac x2\big)^2+y^2\), il suffit de poser \(X=\tfrac x2\) pour retrouver un cercle. On écrit donc directement des « polaires adaptées » :</p>
+<div class="fml"><span class="f">\(x=2\rho\cos\theta,\quad y=\rho\sin\theta\)</span><span class="leg">alors \(\tfrac{x^2}{4}+y^2=\rho^2\cos^2\theta+\rho^2\sin^2\theta=\rho^2\)</span></div>
+<p><b>Le jacobien.</b> On le calcule, on ne le devine pas :</p>
+<div class="mq">\[\det\begin{pmatrix}\partial_\rho x&amp;\partial_\theta x\\ \partial_\rho y&amp;\partial_\theta y\end{pmatrix}=\det\begin{pmatrix}2\cos\theta&amp;-2\rho\sin\theta\\ \sin\theta&amp;\rho\cos\theta\end{pmatrix}=2\rho\cos^2\theta+2\rho\sin^2\theta=2\rho\]</div>
+<p>Donc \(dx\,dy=2\rho\,d\rho\,d\theta\) : c'est le \(\rho\,d\rho\,d\theta\) des polaires, multiplié par l'étirement 2 en \(x\) (l'aire de l'ellipse est 2 fois celle du cercle).</p>
+<p><b>Les bornes.</b> Comme \(\tfrac{x^2}{4}+y^2=\rho^2\) : l'inégalité \(1\leq\rho^2\leq4\) donne \(1\leq\rho\leq2\) (\(\rho\geq0\)). La couronne fait le tour complet : \(0\leq\theta\leq2\pi\). Enfin \(z\) est donné : \(0\leq z\leq3\). Toutes les bornes sont constantes.</p>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Écrire l'intégrale</div><div class="sd">
+<li class="step"><span class="sn"></span><div><div class="st">Tout exprimer avec \(\rho,\theta,z\)</div><div class="sd">
+<p>Densité : \(\delta=1+\rho^2\). Élément de volume : \(dV=2\rho\,d\rho\,d\theta\,dz\). Domaine : \(\rho\in[1,2]\), \(\theta\in[0,2\pi]\), \(z\in[0,3]\).</p>
 <div class="mq">\[M=\int_0^3dz\int_0^{2\pi}\!d\theta\int_1^2(1+\rho^2)\,2\rho\,d\rho\]</div>
-<p>Les variables sont séparées : la masse est un produit de trois intégrales.</p>
+<p>L'intégrande ne mélange pas les variables et les bornes sont constantes : la triple intégrale est le produit de trois intégrales simples.</p>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Calculer</div><div class="sd">
-<div class="mq">\[\begin{aligned}M &amp;= 3\cdot2\pi\cdot2\int_1^2(\rho+\rho^3)\,d\rho\\ &amp;= 12\pi\Big[\frac{\rho^2}{2}+\frac{\rho^4}{4}\Big]_1^2\\ &amp;= 12\pi\Big[(2+4)-\Big(\frac12+\frac14\Big)\Big]\\ &amp;= 12\pi\cdot\frac{21}{4}=63\pi\end{aligned}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Les deux premiers facteurs</div><div class="sd">
+<div class="mq">\[\int_0^3dz=3,\qquad\int_0^{2\pi}d\theta=2\pi\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Le facteur radial</div><div class="sd">
+<p>On développe \((1+\rho^2)\cdot2\rho=2\rho+2\rho^3\), puis on intègre terme à terme :</p>
+<div class="mq">\[\begin{aligned}\int_1^2\big(2\rho+2\rho^3\big)\,d\rho &amp;= \Big[\rho^2+\frac{\rho^4}{2}\Big]_1^2\\ &amp;= \Big(4+8\Big)-\Big(1+\frac12\Big)\\ &amp;= 12-\frac32=\frac{21}{2}\end{aligned}\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Assembler</div><div class="sd">
+<div class="mq">\[M=3\cdot2\pi\cdot\frac{21}{2}=63\pi\]</div>
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(M=63\pi\approx197{,}9\).</div>
-<div class="why"><b class="lab">Contrôle</b>Aire de la couronne : \(2\pi(4-1)=6\pi\) (aire d'une ellipse \(=\pi ab\) : \(\pi\cdot4\cdot2-\pi\cdot2\cdot1\)), hauteur 3, donc volume \(18\pi\). Densité entre 2 et 5 : masse entre \(36\pi\) et \(90\pi\)et \(63\pi\) est bien dans cet intervalle ✓ (densité moyenne \(3{,}5\)).</div>
+<div class="why"><b class="lab">Contrôle</b>Aire de la couronne : ellipse extérieure (\(\tfrac{x^2}{4}+y^2=4\) : demi-axes 4 et 2) \(\pi\cdot4\cdot2=8\pi\), moins l'ellipse intérieure (demi-axes 2 et 1) \(\pi\cdot2\cdot1=2\pi\), soit \(6\pi\). Volume : \(6\pi\cdot3=18\pi\). La densité vaut entre 2 et 5, donc la masse est entre \(36\pi\) et \(90\pi\) ; \(63\pi\) convient (densité moyenne \(3{,}5\)) ✓.</div>
 </div></details>
 </article>
 <article class="cx" id="sup4-3">
 <header class="cx-hd"><span class="cx-num">Supp 3</span><h3>Centre de masse d'un prisme triangulaire</h3></header>
 <div class="cx-enonce">\(E=\{x\geq0,\ y\geq0,\ x+2y\leq4,\ 0\leq z\leq3\}\), densité 1. Trouver \(G=(\bar x,\bar y,\bar z)\) avec \(\bar x=\tfrac{M_{yz}}{M}\), \(\bar y=\tfrac{M_{xz}}{M}\), \(\bar z=\tfrac{M_{xy}}{M}\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
-<p>La base est le triangle de sommets \((0,0)\), \((4,0)\), \((0,2)\), et la hauteur est constante : le solide est un produit <b>base × segment</b>. Chaque moment se factorise en (intégrale sur la base) × (intégrale en \(z\)).</p>
-<p>Pour la base, à \(x\) fixé, \(y\) va de \(0\) à \(\tfrac{4-x}{2}\), avec \(x\in[0,4]\).</p>
+<p><b>Dessiner la base.</b> Les conditions \(x\geq0\), \(y\geq0\), \(x+2y\leq4\) découpent un triangle dans le plan \((x,y)\). Ses sommets sont les intersections des droites deux à deux :</p>
+<ul>
+<li>\(x=0\) et \(y=0\) : \((0,0)\) ;</li>
+<li>\(y=0\) et \(x+2y=4\) : \(x=4\), donc \((4,0)\) ;</li>
+<li>\(x=0\) et \(x+2y=4\) : \(y=2\), donc \((0,2)\).</li>
+</ul>
+<p>Le solide est ce triangle « extrudé » sur la hauteur \(z\in[0,3]\) : les conditions sur \((x,y)\) et sur \(z\) sont indépendantes, donc le domaine est un produit <b>base × segment</b>.</p>
+<p><b>Bornes de la base, deux façons de balayer.</b></p>
+<ul>
+<li><i>\(x\) extérieur, \(y\) intérieur.</i> On fixe \(x\). Alors \(y\) part de \(0\) et monte jusqu'à la droite : \(x+2y\leq4\iff y\leq\tfrac{4-x}{2}\). Et \(x\) varie de \(0\) jusqu'à \(4\) (au-delà, \(\tfrac{4-x}{2}<0\) et il n'y a plus de point).</li>
+<li><i>\(y\) extérieur, \(x\) intérieur.</i> On fixe \(y\). Alors \(x\) va de \(0\) à \(4-2y\), et \(y\) varie de \(0\) à \(2\).</li>
+</ul>
+<p>On prend le balayage qui aide pour chaque moment : \(x\) extérieur pour \(\iint x\), \(y\) extérieur pour \(\iint y\), mais les deux donneraient le même résultat.</p>
+<p><b>Factorisation.</b> Si l'intégrande ne dépend que de \((x,y)\) (ou seulement de \(z\)), l'intégrale triple devient (intégrale sur la base) × (intégrale en \(z\)).</p>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Masse</div><div class="sd">
-<p>Aire de la base \(=\tfrac12\cdot4\cdot2=4\), hauteur \(3\) :</p>
-<div class="mq">\[M=\iiint_EdV=4\times3=12\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Masse (densité 1 : c'est le volume)</div><div class="sd">
+<p>Aire de la base (triangle rectangle de côtés 4 et 2) \(=\tfrac12\cdot4\cdot2=4\). Hauteur \(3\) :</p>
+<div class="mq">\[M=\iiint_EdV=\text{aire}\times\text{hauteur}=4\times3=12\]</div>
+<p>Avec les bornes, on retrouve bien le même résultat : \(\int_0^4\tfrac{4-x}{2}dx=\tfrac12\big[4x-\tfrac{x^2}{2}\big]_0^4=\tfrac12(16-8)=4\).</p>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Moment \(M_{yz}\) (en \(x\))</div><div class="sd">
-<div class="mq">\[\begin{aligned}M_{yz} &amp;= 3\int_0^4x\cdot\frac{4-x}{2}\,dx\\ &amp;= \frac32\Big[2x^2-\frac{x^3}{3}\Big]_0^4\\ &amp;= \frac32\Big(32-\frac{64}{3}\Big)=16\end{aligned}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Moment \(M_{yz}=\iiint x\,dV\)</div><div class="sd">
+<p>On intègre en \(y\) puis en \(z\) (l'intégrande ne dépend que de \(x\)) : \(\int_0^{(4-x)/2}dy=\tfrac{4-x}{2}\) et \(\int_0^3dz=3\).</p>
+<div class="mq">\[\begin{aligned}M_{yz} &amp;= 3\int_0^4x\cdot\frac{4-x}{2}\,dx\\ &amp;= \frac32\int_0^4\big(4x-x^2\big)\,dx\\ &amp;= \frac32\Big[2x^2-\frac{x^3}{3}\Big]_0^4\\ &amp;= \frac32\Big(32-\frac{64}{3}\Big)=\frac32\cdot\frac{32}{3}=16\end{aligned}\]</div>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Moment \(M_{xz}\) (en \(y\))</div><div class="sd">
-<p>À \(y\) fixé, \(x\) va de \(0\) à \(4-2y\), avec \(y\in[0,2]\) :</p>
-<div class="mq">\[\begin{aligned}M_{xz} &amp;= 3\int_0^2y\,(4-2y)\,dy\\ &amp;= 3\Big[2y^2-\frac{2y^3}{3}\Big]_0^2\\ &amp;= 3\Big(8-\frac{16}{3}\Big)=8\end{aligned}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Moment \(M_{xz}=\iiint y\,dV\)</div><div class="sd">
+<p>Ici on balaie par \(y\) : pour \(y\) fixé, \(x\) va de \(0\) à \(4-2y\), et \(y\in[0,2]\).</p>
+<div class="mq">\[\begin{aligned}M_{xz} &amp;= 3\int_0^2y\,(4-2y)\,dy\\ &amp;= 3\int_0^2\big(4y-2y^2\big)\,dy\\ &amp;= 3\Big[2y^2-\frac{2y^3}{3}\Big]_0^2\\ &amp;= 3\Big(8-\frac{16}{3}\Big)=3\cdot\frac83=8\end{aligned}\]</div>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Moment \(M_{xy}\) (en \(z\))</div><div class="sd">
-<div class="mq">\[M_{xy}=4\int_0^3z\,dz=4\cdot\frac92=18\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Moment \(M_{xy}=\iiint z\,dV\)</div><div class="sd">
+<p>L'intégrande ne dépend que de \(z\) : on multiplie par l'aire de la base.</p>
+<div class="mq">\[M_{xy}=4\int_0^3z\,dz=4\Big[\frac{z^2}{2}\Big]_0^3=4\cdot\frac92=18\]</div>
 </div></div></li>
 <li class="step"><span class="sn"></span><div><div class="st">Coordonnées de \(G\)</div><div class="sd">
-<div class="mq">\[\bar x=\frac{16}{12}=\frac43,\qquad \bar y=\frac{8}{12}=\frac23,\qquad \bar z=\frac{18}{12}=\frac32\]</div>
+<div class="mq">\[\bar x=\frac{M_{yz}}{M}=\frac{16}{12}=\frac43,\qquad \bar y=\frac{M_{xz}}{M}=\frac{8}{12}=\frac23,\qquad \bar z=\frac{M_{xy}}{M}=\frac{18}{12}=\frac32\]</div>
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(G=\Big(\dfrac43,\ \dfrac23,\ \dfrac32\Big)\).</div>
-<div class="why"><b class="lab">Contrôle</b>\(G\) est le centre du triangle de base (moyenne des sommets : \(\tfrac{0+4+0}{3}=\tfrac43\), \(\tfrac{0+0+2}{3}=\tfrac23\)) et à mi-hauteur (\(\tfrac32\)) ✓.</div>
+<div class="why"><b class="lab">Contrôle</b>Le centre de gravité d'un triangle est la moyenne de ses sommets : \(\tfrac{0+4+0}{3}=\tfrac43\) et \(\tfrac{0+0+2}{3}=\tfrac23\) ✓. Et pour un solide de hauteur constante, \(\bar z\) est à mi-hauteur : \(\tfrac32\) ✓.</div>
 </div></details>
 </article>
 <article class="cx" id="sup4-4">
 <header class="cx-hd"><span class="cx-num">Supp 4</span><h3>Moment d'inertie d'un tronc de cône</h3></header>
 <div class="cx-enonce">\(E=\{2\leq z\leq4,\ x^2+y^2\leq\tfrac{z^2}{4}\}\), densité constante \(\delta\). Calculer \(I_z=\iiint_E(x^2+y^2)\,\delta\,dV\) et l'exprimer en fonction de \(M=\iiint_E\delta\,dV\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
-<p>Cylindriques d'axe \(Oz\) : \(x^2+y^2=r^2\), \(dV=r\,dr\,d\theta\,dz\). À hauteur \(z\), la section est un disque de rayon \(\tfrac z2\) : on intègre en \(r\) de \(0\) à \(\tfrac z2\), puis en \(z\) de \(2\) à \(4\).</p>
-<p>On calcule \(I_z\) et \(M\) séparément ; le rapport \(\tfrac{I_z}{M}\) ne dépend plus de \(\delta\).</p>
+<p><b>Voir le solide.</b> La condition \(x^2+y^2\leq\tfrac{z^2}{4}\) s'écrit \(\sqrt{x^2+y^2}\leq\tfrac z2\) : à la hauteur \(z\), la section horizontale est un <b>disque de rayon \(\tfrac z2\)</b>. Le rayon grandit avec \(z\) : c'est un cône d'axe \(Oz\) (demi-angle d'ouverture tel que \(\tan=\tfrac12\)), de sommet l'origine, coupé entre \(z=2\) (rayon 1) et \(z=4\) (rayon 2) : un tronc de cône.</p>
+<p><b>Cylindriques d'axe \(Oz\).</b> Disque et axe \(Oz\) : \(x=r\cos\theta\), \(y=r\sin\theta\), \(x^2+y^2=r^2\), \(dV=r\,dr\,d\theta\,dz\).</p>
+<p><b>Les bornes, et dans quel ordre intégrer.</b></p>
+<ul>
+<li>\(z\) : donné, \(2\leq z\leq4\) ;</li>
+<li>\(r\) : \(r^2\leq\tfrac{z^2}{4}\iff r\leq\tfrac z2\) (\(r\geq0\)), donc \(0\leq r\leq\tfrac z2\) ;</li>
+<li>\(\theta\) : disque complet, \(0\leq\theta\leq2\pi\).</li>
+</ul>
+<p>La borne de \(r\) dépend de \(z\) : \(z\) doit donc être la variable <b>extérieure</b> et \(r\) intérieure. L'ordre est \(\int dz\int d\theta\int dr\), en intégrant d'abord en \(r\) (jamais l'inverse : une borne ne peut pas dépendre d'une variable déjà intégrée).</p>
+<p>On calcule \(I_z\) et \(M\) séparément : le rapport \(\tfrac{I_z}{M}\) ne dépend plus de \(\delta\).</p>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Moment d'inertie</div><div class="sd">
-<div class="mq">\[\begin{aligned}I_z &amp;= \delta\int_2^4\!\!\int_0^{2\pi}\!\!\int_0^{z/2}r^2\cdot r\,dr\,d\theta\,dz\\ &amp;= 2\pi\delta\int_2^4\frac{(z/2)^4}{4}\,dz\\ &amp;= \frac{2\pi\delta}{64}\int_2^4z^4\,dz\\ &amp;= \frac{\pi\delta}{32}\cdot\frac{4^5-2^5}{5}\\ &amp;= \frac{\pi\delta}{32}\cdot\frac{992}{5}=\frac{31\pi\delta}{5}\end{aligned}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Moment d'inertie : intégrale en \(r\)</div><div class="sd">
+<p>L'intégrande est \((x^2+y^2)\,\delta=\delta r^2\), multiplié par le \(r\) de \(dV\) : on intègre \(\delta r^3\).</p>
+<div class="mq">\[\int_0^{z/2}r^3\,dr=\Big[\frac{r^4}{4}\Big]_0^{z/2}=\frac{(z/2)^4}{4}=\frac{z^4}{64}\]</div>
 </div></div></li>
-<li class="step"><span class="sn"></span><div><div class="st">Masse</div><div class="sd">
-<div class="mq">\[\begin{aligned}M &amp;= \delta\int_2^4\!\!\int_0^{2\pi}\!\!\int_0^{z/2}r\,dr\,d\theta\,dz\\ &amp;= 2\pi\delta\int_2^4\frac{z^2}{8}\,dz\\ &amp;= \frac{\pi\delta}{4}\cdot\frac{4^3-2^3}{3}\\ &amp;= \frac{\pi\delta}{4}\cdot\frac{56}{3}=\frac{14\pi\delta}{3}\end{aligned}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Intégrales en \(\theta\) puis en \(z\)</div><div class="sd">
+<div class="mq">\[\begin{aligned}I_z &amp;= \delta\int_2^4\!\!\int_0^{2\pi}\frac{z^4}{64}\,d\theta\,dz\\ &amp;= \frac{2\pi\delta}{64}\int_2^4z^4\,dz\\ &amp;= \frac{\pi\delta}{32}\Big[\frac{z^5}{5}\Big]_2^4\\ &amp;= \frac{\pi\delta}{32}\cdot\frac{1024-32}{5}\\ &amp;= \frac{\pi\delta}{32}\cdot\frac{992}{5}=\frac{31\pi\delta}{5}\end{aligned}\]</div>
+<p>Car \(992=32\times31\) : le facteur 32 se simplifie.</p>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Masse : même découpage</div><div class="sd">
+<p>Cette fois, on intègre \(\delta\) seul, donc \(\delta r\,dr\) :</p>
+<div class="mq">\[\int_0^{z/2}r\,dr=\frac{(z/2)^2}{2}=\frac{z^2}{8}\]</div>
+<div class="mq">\[\begin{aligned}M &amp;= \delta\int_2^4\!\!\int_0^{2\pi}\frac{z^2}{8}\,d\theta\,dz\\ &amp;= \frac{2\pi\delta}{8}\Big[\frac{z^3}{3}\Big]_2^4\\ &amp;= \frac{\pi\delta}{4}\cdot\frac{64-8}{3}\\ &amp;= \frac{\pi\delta}{4}\cdot\frac{56}{3}=\frac{14\pi\delta}{3}\end{aligned}\]</div>
 </div></div></li>
 <li class="step"><span class="sn"></span><div><div class="st">Exprimer \(I_z\) avec \(M\)</div><div class="sd">
-<div class="mq">\[\frac{I_z}{M}=\frac{31\pi\delta/5}{14\pi\delta/3}=\frac{31\cdot3}{5\cdot14}=\frac{93}{70}\quad\Longrightarrow\quad I_z=\frac{93}{70}\,M\]</div>
+<p>On divise : \(\delta\) et \(\pi\) disparaissent.</p>
+<div class="mq">\[\frac{I_z}{M}=\frac{31\pi\delta/5}{14\pi\delta/3}=\frac{31}{5}\cdot\frac{3}{14}=\frac{93}{70}\quad\Longrightarrow\quad I_z=\frac{93}{70}\,M\]</div>
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(I_z=\dfrac{31\pi\delta}{5}=\dfrac{93}{70}\,M\approx1{,}33\,M\).</div>
-<div class="why"><b class="lab">Contrôle</b>Le rayon du solide va de \(1\) à \(2\). Pour un cylindre plein de rayon \(a\), \(I=\tfrac12Ma^2\) (entre \(0{,}5M\) et \(2M\) ici) ; \(1{,}33\,M\) est dans cette fourchette ✓ (et \(I_z\) a bien la dimension masse × longueur²).</div>
+<div class="why"><b class="lab">Contrôle</b>Tous les points du solide sont à une distance de l'axe comprise entre \(0\) et \(2\), donc \(I_z\leq4M\). Pour un cylindre plein de rayon \(a\), \(I_z=\tfrac12Ma^2\) : avec \(a=1\) puis \(a=2\) on obtient \(0{,}5M\) et \(2M\), et \(1{,}33\,M\) est dans cette fourchette ✓.</div>
 </div></details>
 </article>
 <article class="cx" id="sup4-5">
 <header class="cx-hd"><span class="cx-num">Supp 5</span><h3>Masse d'une couche sphérique à densité radiale</h3></header>
 <div class="cx-enonce">\(E=\{R^2\leq x^2+y^2+z^2\leq4R^2\}\), \(\delta=k\sqrt{x^2+y^2+z^2}\). Calculer \(M\) en fonction de \(k\) et \(R\), puis la densité sur la surface extérieure en fonction de \(M\) et \(R\).</div>
 <details class="cx-meth"><summary>💡 Méthode et raisonnement</summary><div>
-<p>Domaine et densité ne dépendent que de la distance \(\rho\) au centre : <b>sphériques</b>. Alors \(\sqrt{x^2+y^2+z^2}=\rho\) et :</p>
-<div class="fml"><span class="f">\(dV=\rho^2\sin\varphi\,d\rho\,d\varphi\,d\theta\)</span><span class="leg">\(\rho\in[R,2R]\), \(\varphi\in[0,\pi]\), \(\theta\in[0,2\pi]\)</span></div>
-<p>Les variables angulaires se séparent : \(\int_0^{2\pi}d\theta\int_0^\pi\sin\varphi\,d\varphi=2\pi\cdot2=4\pi\) (l'aire de la sphère unité).</p>
+<p><b>Reconnaître la forme.</b> \(x^2+y^2+z^2\) est le carré de la distance \(\rho\) à l'origine. L'ensemble \(R^2\leq\rho^2\leq4R^2\) est la couche entre la sphère de rayon \(R\) et celle de rayon \(2R\). Et la densité ne dépend aussi que de \(\rho\) : tout est radial, donc <b>sphériques</b> :</p>
+<div class="fml"><span class="f">\(dV=\rho^2\sin\varphi\,d\rho\,d\varphi\,d\theta\)</span><span class="leg">\(\varphi\) = angle depuis l'axe \(Oz\)</span></div>
+<p><b>Les bornes.</b></p>
+<ul>
+<li>\(\rho\) : \(R^2\leq\rho^2\leq4R^2\) donne \(R\leq\rho\leq2R\) (on prend la racine, \(\rho\geq0\)) ;</li>
+<li>\(\varphi\in[0,\pi]\) : de l'axe \(Oz\) vers le haut (\(\varphi=0\)) jusqu'à l'axe \(Oz\) vers le bas (\(\varphi=\pi\)). C'est ce qu'il faut pour couvrir toute la sphère, et sur cet intervalle \(\sin\varphi\geq0\) (sinon l'élément de volume serait négatif) ;</li>
+<li>\(\theta\in[0,2\pi]\) : un tour complet autour de \(Oz\).</li>
+</ul>
+<p>Rien ne couple les variables : les trois bornes sont constantes et l'intégrale est un produit.</p>
 </div></details>
 <details class="cx-corr"><summary>✅ Correction détaillée</summary><div>
 <ol class="steps">
-<li class="step"><span class="sn"></span><div><div class="st">Masse</div><div class="sd">
-<div class="mq">\[\begin{aligned}M &amp;= \int_0^{2\pi}\!\!\int_0^\pi\!\!\int_R^{2R}k\rho\cdot\rho^2\sin\varphi\,d\rho\,d\varphi\,d\theta\\ &amp;= 4\pi k\int_R^{2R}\rho^3\,d\rho\\ &amp;= 4\pi k\Big[\frac{\rho^4}{4}\Big]_R^{2R}\\ &amp;= \pi k\,(16R^4-R^4)=15\pi kR^4\end{aligned}\]</div>
+<li class="step"><span class="sn"></span><div><div class="st">Écrire l'intégrale</div><div class="sd">
+<p>\(\delta=k\rho\) et \(dV=\rho^2\sin\varphi\,d\rho\,d\varphi\,d\theta\), donc l'intégrande est \(k\rho\cdot\rho^2\sin\varphi=k\rho^3\sin\varphi\) :</p>
+<div class="mq">\[M=\int_0^{2\pi}d\theta\cdot\int_0^\pi\sin\varphi\,d\varphi\cdot\int_R^{2R}k\rho^3\,d\rho\]</div>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Les trois facteurs</div><div class="sd">
+<div class="mq">\[\int_0^{2\pi}d\theta=2\pi,\qquad\int_0^\pi\sin\varphi\,d\varphi=\big[-\cos\varphi\big]_0^\pi=1-(-1)=2\]</div>
+<div class="mq">\[\int_R^{2R}k\rho^3\,d\rho=k\Big[\frac{\rho^4}{4}\Big]_R^{2R}=\frac k4\big(16R^4-R^4\big)=\frac{15kR^4}{4}\]</div>
+<p>Rappel : \((2R)^4=16R^4\).</p>
+</div></div></li>
+<li class="step"><span class="sn"></span><div><div class="st">Assembler</div><div class="sd">
+<div class="mq">\[M=2\pi\cdot2\cdot\frac{15kR^4}{4}=15\pi kR^4\]</div>
 </div></div></li>
 <li class="step"><span class="sn"></span><div><div class="st">Densité sur la surface extérieure</div><div class="sd">
-<p>La surface extérieure est la sphère \(\rho=2R\), où \(\delta=k\cdot2R\). On élimine \(k\) grâce à \(M=15\pi kR^4\), soit \(k=\dfrac{M}{15\pi R^4}\) :</p>
+<p>La surface extérieure est la sphère \(\rho=2R\). Là, \(\delta=k\cdot2R\). Mais on veut l'écrire avec \(M\) et \(R\), pas avec \(k\) : on tire \(k\) de la masse,</p>
+<div class="mq">\[M=15\pi kR^4\quad\Longrightarrow\quad k=\frac{M}{15\pi R^4}\]</div>
+<p>puis on remplace :</p>
 <div class="mq">\[\delta_{\text{ext}}=2kR=2R\cdot\frac{M}{15\pi R^4}=\frac{2M}{15\pi R^3}\]</div>
 </div></div></li>
 </ol>
 <div class="answer"><b class="lab">Réponse</b>\(M=15\pi kR^4\) et \(\delta_{\text{ext}}=\dfrac{2M}{15\pi R^3}\).</div>
-<div class="why"><b class="lab">Contrôle</b>Dimensions : \(\delta\) est une masse par volume, et \(\tfrac{M}{R^3}\) aussi ✓. Par ailleurs \(\delta_{\text{int}}=kR\) vaut la moitié de \(\delta_{\text{ext}}\) : la densité double d'une face à l'autre, comme \(\rho\).</div>
+<div class="why"><b class="lab">Contrôle</b>Dimensions : \(\delta\) est une masse par volume, et \(\tfrac{M}{R^3}\) aussi ✓. De plus, la densité intérieure vaut \(kR\), soit la moitié de \(\delta_{\text{ext}}=2kR\) : la densité double d'une face à l'autre, comme \(\rho\) ✓. Enfin, \(4\pi\int_R^{2R}\rho^2d\rho=\tfrac{28\pi R^3}{3}\) est le volume de la couche : \(M\) doit valoir environ ce volume fois une densité entre \(kR\) et \(2kR\), soit entre \(9{,}3\,\pi kR^4\) et \(18{,}7\,\pi kR^4\) ✓ (\(15\pi kR^4\)).</div>
 </div></details>
 </article>
 </section>
