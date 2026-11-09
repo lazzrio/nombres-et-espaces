@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<script src="gate.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fiche intégrales curvilignes — Champs &amp; Intégrales</title>
+<meta content="Analyse 3 : fiche sur les intégrales curvilignes (chapitre 5) avec les seules méthodes du cours, exemples rédigés et parcours d'exercices." name="description"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="#4b3e8f" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0e1128" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/icon-192.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="Analyse 3 — fiche intégrales curvilignes" property="og:title"/>
+<meta content="La feuille d'exercices 2026-2027 corrigée pas à pas : méthodes, calculs, pièges." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700;1,9..144,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet"/>
+<script src="js/topbar.js"></script>
+</head>
+<body>
+<div class="topbar">
+<div class="topbar-in">
+<a aria-label="Accueil du site" class="brand" href="index.html">
+<span class="chip-logo">\(\nabla\)</span>
+      Champs &amp; Intégrales
+    </a>
+<nav aria-label="Navigation principale" class="nav" id="nav">
+<a href="index.html">Accueil</a>
+<a class="nav-ds" href="ds.html"><span class="ni">🎓</span> DS</a>
+<a href="index.html#cours"><span class="ni">📚</span> Cours</a>
+<a href="index.html#methodes"><span class="ni">🛠</span> Méthodes</a>
+<a href="index.html#deroules"><span class="ni">🧭</span> Déroulés</a>
+<a href="corriges.html"><span class="ni">✅</span> Corrigés</a>
+<a aria-current="page" class="active" href="fiche-curvilignes.html"><span class="ni">∮</span> Curvilignes</a>
+<a href="index.html#notions"><span class="ni">💡</span> Notions</a>
+<a href="index.html#formules"><span class="ni">📘</span> Formules</a>
+<a href="index.html#express"><span class="ni">⚡</span> Express</a>
+<a href="index.html#exos"><span class="ni">🎯</span> Exos</a>
+<a href="index.html#boite"><span class="ni">🧰</span> À côté</a>
+<a href="index.html#quiz"><span class="ni">🧠</span> Quiz</a>
+<a href="index.html#planning"><span class="ni">📅</span> Planning</a>
+</nav>
+<button aria-label="Changer de thème" class="theme-btn" id="themeBtn" title="Thème clair / sombre">
+<svg fill="none" id="thIcon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</button>
+<button aria-expanded="false" aria-label="Menu" class="burger" id="burger"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+</div>
+</div>
+<main>
+<div class="hero hero-sm">
+<div class="hero-grid"></div>
+<div class="hero-in">
+<div>
+<span class="eyebrow">∮ Fiche · Analyse 3 · Chapitre 5</span>
+<h1>Intégrales <em>curvilignes</em>.</h1>
+<p class="lead">Ce qu'il faut savoir du chapitre 5 (et de la partie « potentiels » du chapitre 2), uniquement avec les définitions et les méthodes du cours. Ensuite, six exemples rédigés comme sur une copie, puis l'ordre dans lequel faire les exercices de la feuille.</p>
+<div class="hero-meta">
+<div><div class="n">3</div><div class="l">Méthodes</div></div>
+<div><div class="n">6</div><div class="l">Exemples rédigés</div></div>
+<div><div class="n">4</div><div class="l">Exos de la feuille</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="wrap">
+<div class="prose" style="margin:0 auto;padding:28px 0 60px">
+
+<div class="box"><div class="bt">Sommaire</div>
+<p><a href="#savoir">1 · Ce qu'il faut savoir</a> · <a href="#methode">2 · La méthode du cours</a> · <a href="#exemples">3 · Exemples</a> · <a href="#exos">4 · Quels exos faire</a></p></div>
+
+<h3 id="savoir">Ce qu'il faut savoir</h3>
+
+<h4>1. Chemin et courbe orientée</h4>
+<div class="box def"><div class="bt">Définition · chemin</div>
+<p>Un <strong>chemin</strong> est une application \(c\colon[a,b]\to\mathbb{R}^n\) de classe \(C^1\) par morceaux. Son <strong>origine</strong> est \(c(a)\), son <strong>extrémité</strong> \(c(b)\). La courbe \(C=c([a,b])\) est alors <strong>orientée</strong> : on la parcourt de \(c(a)\) vers \(c(b)\).</p>
+<ul>
+<li>\(C\) est <strong>fermée</strong> si \(c(a)=c(b)\).</li>
+<li>Une courbe fermée du plan est <strong>orientée positivement</strong> si on la parcourt dans le sens trigonométrique.</li>
+<li>Vecteur dérivé : \(c'(t)=\big(x_1'(t),\dots,x_n'(t)\big)\), de norme \(\|c'(t)\|=\sqrt{x_1'(t)^2+\dots+x_n'(t)^2}\).</li>
+</ul></div>
+
+<div class="box def"><div class="bt">Les trois opérations sur les chemins</div>
+<p><strong>Orientation opposée.</strong> \(c^-(t)=c(a+b-t)\), \(t\in[a,b]\) : même courbe, parcourue dans l'autre sens. On la note \(C^-\).<br/>
+<em>Exemple du cours</em> : demi-cercle \(c(t)=(\cos t,\sin t)\), \(t\in[0,\pi]\), de \((1,0)\) à \((-1,0)\). Alors \(c^-(t)=c(\pi-t)=(-\cos t,\sin t)\), de \((-1,0)\) à \((1,0)\).</p>
+<p><strong>Juxtaposition.</strong> Si \(c_1\colon[a,b]\to\mathbb{R}^n\) et \(c_2\colon[c,d]\to\mathbb{R}^n\) vérifient \(c_1(b)=c_2(c)\) (le second part là où le premier s'arrête) :</p>
+<div class="mq">\[c_1\vee c_2(t)=\begin{cases}c_1(t) &amp; t\in[a,b]\\ c_2(t-b+c) &amp; t\in[b,\,b+d-c]\end{cases}\]</div>
+<p><em>Exemple du cours</em> : le demi-cercle \(c_1\) puis le segment \(c_2(t)=(t-1,0)\), \(t\in[0,2]\), qui ramène de \((-1,0)\) à \((1,0)\). Sur \([\pi,\pi+2]\) : \(c_1\vee c_2(t)=(t-\pi-1,\,0)\). La courbe obtenue est fermée.</p>
+<p><strong>Changement de paramétrisation.</strong> \(c_2=c_1\circ\varphi\) avec \(\varphi\) bijective, croissante, \(C^1\) par morceaux. Exemple : \(\varphi(t)=\pi t\) transforme \(t\in[0,1]\) en \([0,\pi]\), donc \(c_2(t)=(\cos\pi t,\sin\pi t)\) décrit le même demi-cercle dans le même sens.</p>
+</div>
+
+<h4>2. Définition de l'intégrale curviligne</h4>
+<div class="box thm"><div class="bt">Définition 5.2.1</div>
+<p>Soit \(F\) un champ de vecteurs continu sur la courbe \(C\) paramétrée par \(c\colon[a,b]\to\mathbb{R}^n\) :</p>
+<div class="mq">\[\int_C F\cdot ds=\int_a^b F\big(c(t)\big)\cdot c'(t)\,dt\]</div>
+<p>(produit scalaire entre le champ <em>pris sur la courbe</em> et le vecteur dérivé).</p></div>
+
+<div class="box def"><div class="bt">Écriture avec dx, dy, dz</div>
+<p>Dans \(\mathbb{R}^2\), avec \(F=(P,Q)\) et \(c(t)=(x(t),y(t))\) :</p>
+<div class="mq">\[\int_C P\,dx+Q\,dy=\int_a^b\Big[P\big(x(t),y(t)\big)\,x'(t)+Q\big(x(t),y(t)\big)\,y'(t)\Big]dt\]</div>
+<p>Dans \(\mathbb{R}^3\), avec \(F=(P,Q,R)\) : on ajoute \(R\big(c(t)\big)\,z'(t)\). Concrètement : on remplace \(x,y,z\) par leurs expressions en \(t\), et \(dx\) par \(x'(t)\,dt\), \(dy\) par \(y'(t)\,dt\), \(dz\) par \(z'(t)\,dt\).</p></div>
+
+<div class="box thm"><div class="bt">Proposition 5.2.1 · propriétés</div>
+<ol>
+<li>L'intégrale <strong>ne dépend pas de la paramétrisation</strong> choisie (pour un changement croissant) : seule compte la courbe et son sens.</li>
+<li>Elle est <strong>linéaire</strong> : \(\int_C(\alpha F+\beta G)\cdot ds=\alpha\int_C F\cdot ds+\beta\int_C G\cdot ds\).</li>
+<li><strong>Changer de sens change le signe</strong> : \(\displaystyle\int_{C^-}F\cdot ds=-\int_C F\cdot ds\).</li>
+<li><strong>Juxtaposition</strong> : \(\displaystyle\int_{C_1\vee C_2}F\cdot ds=\int_{C_1}F\cdot ds+\int_{C_2}F\cdot ds\).</li>
+</ol>
+<p>Conséquence pratique de 1 et 4 : pour une courbe faite de plusieurs morceaux (segments, arcs), on paramètre <strong>chaque morceau séparément</strong>, avec le paramétrage le plus simple, et on additionne.</p></div>
+
+<h4>3. Théorème de Green-Riemann</h4>
+<div class="box thm"><div class="bt">Théorème · Green-Riemann</div>
+<p>Soit \(\Delta\) un domaine <strong>fermé borné</strong> du plan, de <strong>type 1 ou 2</strong>, dont le bord \(\partial\Delta\) est <strong>orienté positivement</strong> (sens trigonométrique), et \(P,Q\) de classe \(C^1\) sur \(\Delta\). Alors :</p>
+<div class="mq">\[\oint_{\partial\Delta}P\,dx+Q\,dy=\iint_\Delta\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dx\,dy\]</div></div>
+<div class="box warn"><div class="bt">Les conditions à vérifier sur la copie</div>
+<ul>
+<li>La courbe est <strong>fermée</strong> et c'est le bord d'un domaine \(\Delta\) de type 1 ou 2 (disque, rectangle, triangle, domaine entre deux courbes…).</li>
+<li>\(P\) et \(Q\) sont \(C^1\) <strong>sur tout</strong> \(\Delta\), intérieur compris. Une fraction qui s'annule au dénominateur dans \(\Delta\) (par exemple \(\frac1{x^2+y^2}\) avec \(O\in\Delta\)) interdit Green-Riemann.</li>
+<li>Le bord est parcouru dans le <strong>sens trigonométrique</strong>. S'il est parcouru dans l'autre sens, on applique Green à \(C^-\) puis on change le signe (propriété 3).</li>
+</ul></div>
+<div class="box ex"><div class="bt">Cas particulier · aire d'un domaine</div>
+<p>Avec \(P=0\), \(Q=x\) : \(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=1\), donc \(\displaystyle\text{Aire}(\Delta)=\iint_\Delta dx\,dy=\oint_{\partial\Delta}x\,dy\). Le cours l'applique à l'ellipse (exemple 4 plus bas).</p></div>
+
+<h4>4. Champ qui dérive d'un potentiel</h4>
+<div class="box def"><div class="bt">Rappels du chapitre 2</div>
+<ul>
+<li><strong>Déf. 2.1.7</strong> : \(F\) dérive d'un potentiel s'il existe \(f\) telle que \(F=\overrightarrow{\text{grad}}\,f\), c'est-à-dire \(P=\frac{\partial f}{\partial x}\), \(Q=\frac{\partial f}{\partial y}\) (et \(R=\frac{\partial f}{\partial z}\)).</li>
+<li><strong>Prop. 2.1.3</strong> : si \(F\) dérive d'un potentiel, alors \(\overrightarrow{\text{rot}}\,F=\vec 0\).</li>
+<li><strong>Ouvert étoilé</strong> : il existe un point \(A\) tel que pour tout \(M\) de l'ouvert, le segment \([AM]\) reste dans l'ouvert. Étoilés : \(\mathbb{R}^2\), \(\mathbb{R}^3\), un disque, le quart de plan \(x\gt 0,\ y\gt 0\). <strong>Pas étoilés</strong> : \(\mathbb{R}^2\setminus\{O\}\), la couronne \(1\lt OM\lt 2\).</li>
+<li><strong>Prop. 2.1.4</strong> : sur un ouvert <strong>étoilé</strong>, \(F\) dérive d'un potentiel \(\iff\overrightarrow{\text{rot}}\,F=\vec 0\). Dans le plan, \(\overrightarrow{\text{rot}}\,F=\vec 0\) se réduit à \(\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}\).</li>
+</ul></div>
+<div class="box thm"><div class="bt">Théorème · circulation d'un gradient</div>
+<p>Si \(F=\overrightarrow{\text{grad}}\,f\) sur un ouvert contenant \(C\), alors</p>
+<div class="mq">\[\int_C F\cdot ds=f\big(c(b)\big)-f\big(c(a)\big)\]</div>
+<p>Le résultat ne dépend que des extrémités, pas du chemin suivi. En particulier, sur une courbe <strong>fermée</strong>, \(\displaystyle\oint_C F\cdot ds=0\).</p></div>
+
+<h3 id="methode">La méthode du cours</h3>
+<div class="box method"><div class="bt">Face à \(\int_C F\cdot ds\) : dans quel ordre ?</div>
+<ol>
+<li><strong>Lire l'énoncé</strong> : la courbe est-elle fermée ? Dans quel sens est-elle parcourue ? Est-elle faite de plusieurs morceaux ?</li>
+<li><strong>Le champ dérive-t-il d'un potentiel ?</strong> Calculer \(\overrightarrow{\text{rot}}\,F\) (dans le plan : comparer \(\frac{\partial Q}{\partial x}\) et \(\frac{\partial P}{\partial y}\)). S'il est nul sur un ouvert étoilé qui contient la courbe : chercher \(f\), puis \(f(\text{extrémité})-f(\text{origine})\). Courbe fermée : le résultat vaut 0.</li>
+<li><strong>Courbe fermée du plan, bord d'un domaine de type 1 ou 2, \(P,Q\) de classe \(C^1\) sur ce domaine</strong> : Green-Riemann, en vérifiant le sens de parcours.</li>
+<li><strong>Sinon (ou si l'énoncé l'impose)</strong> : la définition. Paramétrer chaque morceau \(c(t)\), calculer \(c'(t)\), remplacer, intégrer, additionner les morceaux.</li>
+</ol>
+<p>Si l'énoncé dit « en paramétrant » ou « directement », c'est l'étape 4 qui est demandée, même si une autre méthode marcherait.</p></div>
+
+<div class="box method"><div class="bt">Trouver le potentiel f (méthode du cours)</div>
+<ol>
+<li>Intégrer \(P\) par rapport à \(x\) : \(f(x,y)=\int P\,dx+g(y)\), la « constante » \(g\) dépend des autres variables.</li>
+<li>Dériver ce résultat par rapport à \(y\) et l'égaler à \(Q\) : on obtient \(g'(y)\), donc \(g\).</li>
+<li>En dimension 3 : même chose avec \(h(z)\) et \(R\).</li>
+<li>Vérifier que \(\overrightarrow{\text{grad}}\,f=F\).</li>
+</ol></div>
+
+<div class="box"><div class="bt">Paramétrages à connaître</div>
+<ul>
+<li>Segment de \(A\) à \(B\) : \(c(t)=A+t\,(B-A)\), \(t\in[0,1]\).</li>
+<li>Cercle de centre \((x_0,y_0)\), de rayon \(R\), sens trigonométrique : \(c(t)=(x_0+R\cos t,\ y_0+R\sin t)\), \(t\in[0,2\pi]\).</li>
+<li>Ellipse \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) : \(c(t)=(a\cos t,\ b\sin t)\), \(t\in[0,2\pi]\).</li>
+<li>Graphe \(y=g(x)\), \(x\) allant de \(x_0\) à \(x_1\) : \(c(t)=(t,\ g(t))\), \(t\in[x_0,x_1]\). Si on doit le parcourir de \(x_1\) vers \(x_0\), prendre \(C^-\) (signe moins).</li>
+<li>Pour un cercle donné par une équation (\(x^2+y^2-2y=0\)…), compléter le carré pour trouver centre et rayon.</li>
+</ul></div>
+
+<h3 id="exemples">Exemples (méthodes du cours uniquement)</h3>
+
+<h4>Exemple 1 · Définition, sur un arc de parabole</h4>
+<div class="box ex"><div class="bt">Énoncé</div>
+<p>Calculer \(I=\displaystyle\int_C xy\,dx+(x+y)\,dy\) où \(C\) est l'arc \(y=x^2\) parcouru de \((0,0)\) à \((1,1)\).</p></div>
+<ol>
+<li><strong>Paramétrage</strong> (graphe) : \(c(t)=(t,t^2)\), \(t\in[0,1]\), qui va bien de \((0,0)\) à \((1,1)\). Donc \(x'(t)=1\), \(y'(t)=2t\).</li>
+<li><strong>On remplace</strong> : \(P(c(t))=t\cdot t^2=t^3\) et \(Q(c(t))=t+t^2\).</li>
+<li><strong>Définition</strong> :
+<div class="mq">\[I=\int_0^1\big[t^3\cdot1+(t+t^2)\cdot2t\big]dt=\int_0^1\left(3t^3+2t^2\right)dt=\frac34+\frac23=\frac{17}{12}\]</div></li>
+</ol>
+<p>Ici \(\frac{\partial Q}{\partial x}=1\neq\frac{\partial P}{\partial y}=x\) : pas de potentiel, et la courbe n'est pas fermée, donc pas de Green. La définition est la seule méthode.</p>
+
+<h4>Exemple 2 · Juxtaposition et orientation opposée (courbe du cours)</h4>
+<figure style="margin:14px 0;text-align:center">
+<svg viewBox="0 0 260 150" width="260" role="img" aria-label="Demi-cercle supérieur de (1,0) à (-1,0) puis segment de (-1,0) à (1,0)">
+<line x1="20" y1="120" x2="240" y2="120" stroke="currentColor" opacity=".35"/>
+<line x1="130" y1="10" x2="130" y2="140" stroke="currentColor" opacity=".35"/>
+<path d="M210 120 A80 80 0 0 0 50 120" fill="none" stroke="#4b3e8f" stroke-width="2.5"/>
+<line x1="50" y1="120" x2="210" y2="120" stroke="#c68432" stroke-width="2.5"/>
+<path d="M126 40 l8 -6 v12z" fill="#4b3e8f"/>
+<path d="M134 120 l-8 -5 v10z" fill="#c68432"/>
+<text x="212" y="136" font-size="12" fill="currentColor">(1,0)</text>
+<text x="18" y="136" font-size="12" fill="currentColor">(−1,0)</text>
+<text x="168" y="40" font-size="13" fill="#4b3e8f">C₁</text>
+<text x="96" y="114" font-size="13" fill="#c68432">C₂</text>
+</svg>
+</figure>
+<div class="box ex"><div class="bt">Énoncé</div>
+<p>Soit \(F=(-y,x)\). Calculer \(\displaystyle\int_{C_1\vee C_2}F\cdot ds\) où \(C_1\) est le demi-cercle \(c_1(t)=(\cos t,\sin t)\), \(t\in[0,\pi]\), et \(C_2\) le segment de \((-1,0)\) à \((1,0)\). En déduire \(\int_{C_1^-}F\cdot ds\).</p></div>
+<ol>
+<li><strong>Raccord</strong> : \(c_1(\pi)=(-1,0)\) est bien l'origine du segment, la juxtaposition est permise.</li>
+<li><strong>Sur \(C_1\)</strong> : \(c_1'(t)=(-\sin t,\cos t)\) et \(F(c_1(t))=(-\sin t,\cos t)\).
+<div class="mq">\[\int_{C_1}F\cdot ds=\int_0^\pi\left(\sin^2t+\cos^2t\right)dt=\pi\]</div></li>
+<li><strong>Sur \(C_2\)</strong> : comme dans le cours, \(c(t)=(t-\pi-1,\,0)\), \(t\in[\pi,\pi+2]\). On a \(y=0\) et \(y'=0\), donc \(F\cdot c'=-0\cdot1+x\cdot0=0\) et \(\int_{C_2}F\cdot ds=0\).</li>
+<li><strong>Propriété 4</strong> : \(\displaystyle\int_{C_1\vee C_2}F\cdot ds=\pi+0=\pi\).</li>
+<li><strong>Propriété 3</strong> : \(\displaystyle\int_{C_1^-}F\cdot ds=-\pi\). (Vérification avec \(c_1^-(t)=(-\cos t,\sin t)\) : \(F\cdot c'=-\sin^2t-\cos^2t=-1\), intégrale \(-\pi\).)</li>
+</ol>
+<p><em>Contrôle par Green</em> : \(C_1\vee C_2\) est le bord du demi-disque supérieur, parcouru dans le sens trigonométrique. \(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=1-(-1)=2\), donc \(\iint 2\,dx\,dy=2\times\frac\pi2=\pi\). Même résultat.</p>
+
+<h4>Exemple 3 · Green-Riemann sur le disque (exemple du cours)</h4>
+<div class="box ex"><div class="bt">Énoncé</div>
+<p>\(\Delta\) est le disque unité, \(F=(y^2,x)\). Calculer \(\displaystyle\oint_{\partial\Delta}y^2\,dx+x\,dy\), le bord étant orienté positivement.</p></div>
+<ol>
+<li><strong>Conditions</strong> : \(\partial\Delta\) est le cercle unité, fermé, sens trigonométrique ; le disque est de type 1 et 2 ; \(P=y^2\) et \(Q=x\) sont \(C^1\) sur \(\mathbb{R}^2\).</li>
+<li><strong>Intégrande</strong> : \(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=1-2y\).</li>
+<li><strong>Intégrale double</strong> en polaires : \(\displaystyle\iint_\Delta(1-2y)\,dx\,dy=\iint_\Delta dx\,dy-2\int_0^{2\pi}\!\!\int_0^1 r\sin\theta\cdot r\,dr\,d\theta=\pi-2\cdot\frac13\cdot0=\pi\).</li>
+</ol>
+<p><em>Contrôle par la définition</em> avec \(c(t)=(\cos t,\sin t)\) : \(\int_0^{2\pi}\left(-\sin^3t+\cos^2t\right)dt=0+\pi=\pi\).</p>
+
+<h4>Exemple 4 · Aire de l'ellipse (exemple du cours)</h4>
+<div class="box ex"><div class="bt">Énoncé</div>
+<p>Calculer l'aire du domaine limité par l'ellipse \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\).</p></div>
+<ol>
+<li><strong>Green avec \(P=0\), \(Q=x\)</strong> : \(\text{Aire}=\displaystyle\oint_{\partial\Delta}x\,dy\).</li>
+<li><strong>Paramétrage du bord</strong>, sens trigonométrique : \(c(t)=(a\cos t,b\sin t)\), \(t\in[0,2\pi]\), \(y'(t)=b\cos t\).</li>
+<li><strong>Calcul</strong> :
+<div class="mq">\[\text{Aire}=\int_0^{2\pi}a\cos t\cdot b\cos t\,dt=ab\int_0^{2\pi}\cos^2t\,dt=\pi ab\]</div></li>
+</ol>
+<p>Avec \(a=b=R\), on retrouve l'aire du disque \(\pi R^2\).</p>
+
+<h4>Exemple 5 · Potentiel dans le plan (exemple du cours)</h4>
+<div class="box ex"><div class="bt">Énoncé</div>
+<p>Calculer \(\displaystyle\int_C 2xe^{-y}\,dx+\left(2y-x^2e^{-y}\right)dy\) le long d'une courbe \(C\) allant de \((1,0)\) à \((2,1)\).</p></div>
+<ol>
+<li><strong>Test</strong> : \(\frac{\partial P}{\partial y}=-2xe^{-y}\) et \(\frac{\partial Q}{\partial x}=-2xe^{-y}\). Égaux sur \(\mathbb{R}^2\), qui est étoilé : \(F\) dérive d'un potentiel (Prop. 2.1.4).</li>
+<li><strong>Recherche de \(f\)</strong> : \(f=\int 2xe^{-y}\,dx=x^2e^{-y}+g(y)\). Puis \(\frac{\partial f}{\partial y}=-x^2e^{-y}+g'(y)=2y-x^2e^{-y}\), donc \(g'(y)=2y\), \(g(y)=y^2\). Ainsi \(f(x,y)=x^2e^{-y}+y^2\).</li>
+<li><strong>Théorème</strong> :
+<div class="mq">\[\int_C F\cdot ds=f(2,1)-f(1,0)=\left(\frac4e+1\right)-1=\frac4e\]</div></li>
+</ol>
+<p>Le chemin n'est même pas donné : c'est le signe qu'il faut penser au potentiel. (Contrôle sur le segment \(c(t)=(1+t,t)\), \(t\in[0,1]\) : on trouve bien \(\frac4e\).)</p>
+
+<h4>Exemple 6 · Potentiel dans l'espace (exemple du chapitre 2)</h4>
+<div class="box ex"><div class="bt">Énoncé</div>
+<p>\(F=\left(y^2\cos x,\ 2y\sin x+e^{2z},\ 2ye^{2z}\right)\). Calculer la circulation de \(F\) de \(O=(0,0,0)\) à \(B=\left(\frac\pi2,1,0\right)\).</p></div>
+<ol>
+<li><strong>Rotationnel</strong> : \(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}=2e^{2z}-2e^{2z}=0\), \(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}=0-0=0\), \(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=2y\cos x-2y\cos x=0\). \(\mathbb{R}^3\) étant étoilé, \(F\) dérive d'un potentiel.</li>
+<li><strong>Potentiel</strong> : \(f=\int y^2\cos x\,dx=y^2\sin x+g(y,z)\) ; \(\frac{\partial f}{\partial y}=2y\sin x+\frac{\partial g}{\partial y}=2y\sin x+e^{2z}\) donne \(g=ye^{2z}+h(z)\) ; \(\frac{\partial f}{\partial z}=2ye^{2z}+h'(z)=2ye^{2z}\) donne \(h'=0\). Avec \(f(0,0,0)=0\) : \(f=y^2\sin x+ye^{2z}\).</li>
+<li><strong>Théorème</strong> : \(\displaystyle\int_C F\cdot ds=f(B)-f(O)=(1+1)-0=2\), quel que soit le chemin de \(O\) à \(B\).</li>
+</ol>
+
+<div class="box warn"><div class="bt">Pièges fréquents</div>
+<ul>
+<li>Oublier \(c'(t)\) : on intègre \(F(c(t))\cdot c'(t)\), pas \(F(c(t))\).</li>
+<li>Mauvais sens de parcours : vérifier que \(c(a)\) est bien le point de départ annoncé, sinon signe moins.</li>
+<li>Appliquer Green à une courbe non fermée, ou avec un champ non défini en un point du domaine (dénominateur \(x^2+y^2\) et \(O\) à l'intérieur).</li>
+<li>Conclure « potentiel » avec \(\overrightarrow{\text{rot}}\,F=\vec0\) sur un ouvert <strong>non étoilé</strong> (\(\mathbb{R}^2\setminus\{O\}\)) : la Prop. 2.1.4 ne s'applique pas.</li>
+</ul></div>
+
+<h3 id="exos">Quels exos faire pour s'entraîner</h3>
+<p>Tous sont sur la <strong>feuille d'exercices Analyse 3, page 12</strong> (« Intégrales curvilignes »), et corrigés sur le site. Faites-les dans cet ordre, en cherchant au moins 10 minutes avant d'ouvrir le corrigé.</p>
+<div class="box method"><div class="bt">Parcours conseillé</div>
+<ol>
+<li><strong>Ex 1 (les trois chemins)</strong> : définition pure en dimension 3, on se fait la main sur « remplacer, dériver, intégrer ». Contrôle : le champ \((x,y^2,z^3)\) dérive du potentiel \(f=\frac{x^2}2+\frac{y^3}3+\frac{z^4}4\), donc chaque résultat vaut \(f(\text{extrémité})-f(\text{origine})\). → <a href="corriges.html#cur-1">corrigé Ex 1</a></li>
+<li><strong>Ex 4.1 et 4.2</strong> : cercle complet, puis cercle paramétré par \(\pi t\) (changement de paramétrisation, propriété 1). → <a href="corriges.html#cur-4">corrigé Ex 4</a></li>
+<li><strong>Ex 2</strong> : demi-cercle supérieur dans le sens direct, comme l'exemple 2. → <a href="corriges.html#cur-2">corrigé Ex 2</a></li>
+<li><strong>Ex 4.3 et 4.4</strong> : courbes en plusieurs morceaux (deux arcs de parabole, trois segments), donc <strong>juxtaposition</strong> et attention au sens de chaque morceau. → <a href="corriges.html#cur-4">corrigé Ex 4</a></li>
+<li><strong>Ex 3 a, b, e</strong> : <strong>Green-Riemann</strong>. Pour b et e, compléter le carré pour reconnaître les cercles ; en e, le domaine est l'intersection de deux disques. Refaites a par la définition pour vérifier. → <a href="corriges.html#cur-3">corrigé Ex 3</a></li>
+<li><strong>Ex 3 c</strong> : demi-ellipse parcourue dans le <strong>sens indirect</strong> et courbe non fermée : paramétrer et gérer le signe (propriété 3).</li>
+<li><strong>Ex 3 d</strong> (le plus piégeux) : le carré entoure \(O\), où le champ n'est pas défini. Green-Riemann est <strong>interdit</strong> : on paramètre les quatre côtés et on additionne.</li>
+</ol></div>
+<div class="box ex corr-link"><div class="bt">Pour aller plus loin</div>
+<p>Le <a href="index.html#ch5">chapitre 5 du site</a> reprend ce cours. Attention : il contient aussi des compléments qui <strong>ne sont pas dans votre cours</strong> (intégrale \(\int f\,ds\) d'un champ scalaire, « forme fermée / exacte », « simplement connexe », forme angle). Ils ne sont pas nécessaires pour les exercices ci-dessus.</p></div>
+
+</div>
+</div>
+</main>
+<div class="foot">
+<div class="wrap">
+<span>Champs &amp; Intégrales · Fiche intégrales curvilignes · 2026-2027</span>
+<span><a href="index.html">← Retour au cours</a></span>
+</div>
+</div>
+<a aria-label="Revenir en haut de la page" class="cx-top" href="#">↑</a>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="js/maths.js"></script>
+</body>
+</html>
