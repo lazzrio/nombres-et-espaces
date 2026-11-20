@@ -17,7 +17,7 @@
   var MOON = '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>';
   function curTheme() {
     if (root.getAttribute("data-theme")) return root.getAttribute("data-theme");
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "light";
   }
   function paintIcon() { if (thIcon) thIcon.innerHTML = curTheme() === "dark" ? SUN : MOON; }
   try { var st = localStorage.getItem(LS_THEME); if (st) root.setAttribute("data-theme", st); } catch (e) {}

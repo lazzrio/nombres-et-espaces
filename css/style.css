@@ -1,6 +1,7 @@
 /* --- base reset --- */
 *,*::before,*::after{box-sizing:border-box}
-html{color-scheme:light dark}
+html{color-scheme:light}
+html[data-theme="dark"]{color-scheme:dark}
 img{max-width:100%}
 [hidden]{display:none!important}
 
@@ -15,14 +16,6 @@ img{max-width:100%}
   --f-body:'Inter',system-ui,sans-serif;
   --f-mono:'JetBrains Mono',ui-monospace,monospace;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0e1128; --surface:#171734; --surface2:#12132c; --ink:#e8e6f5; --muted:#928dae;
-  --accent:#a99bff; --accent-soft:#1e1a3f; --accent2:#eab26a; --amber-soft:#2b2416;
-  --line:#2a2851; --line2:#1e1c40;
-  --good:#5ec281; --good-soft:#153822; --bad:#e77070; --bad-soft:#33161a; --warn:#eab26a;
-  --ring:#a99bff;
-  --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 30px rgba(0,0,0,.4);
-}}
 :root[data-theme="dark"]{
   --bg:#0e1128; --surface:#171734; --surface2:#12132c; --ink:#e8e6f5; --muted:#928dae;
   --accent:#a99bff; --accent-soft:#1e1a3f; --accent2:#eab26a; --amber-soft:#2b2416;
