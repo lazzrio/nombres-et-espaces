@@ -691,3 +691,41 @@ a.card:hover{text-decoration:none}
 .rr b.lab{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-right:6px}
 .retenir .katex{font-size:1em}
 @media print{.cx-know,.rr{break-inside:avoid}}
+
+/* schémas de la fiche curvilignes */
+.cl-fig{margin:16px auto;max-width:460px;background:var(--surface2);border:1px solid var(--line2);border-radius:10px;padding:10px;color:var(--ink)}
+.cl-fig svg{display:block;width:100%;height:auto}
+.cl-fig figcaption{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:center;margin-top:8px;line-height:1.55}
+.cl-fig figcaption b{color:var(--ink);font-weight:600}
+.cl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;align-items:start;margin:16px 0}
+.cl-grid .cl-fig{margin:0;max-width:none}
+.cl-fig text{font-family:var(--f-body);font-size:14px;fill:var(--ink)}
+.cl-fig .it{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:15.5px}
+.cl-fig .big{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:20px}
+.cl-fig .sb{font-size:10px}
+.cl-fig .ta{fill:var(--accent)}
+.cl-fig .tb{fill:var(--warn)}
+.cl-fig .tm{fill:var(--muted);font-size:13px}
+.cl-fig .tr{fill:var(--bad)}
+.cl-fig .halo{paint-order:stroke;stroke:var(--surface2);stroke-width:4px;stroke-linejoin:round}
+.cl-fig .ax{stroke:var(--muted);stroke-width:1.3;fill:none}
+.cl-fig .thin{stroke:var(--ink);stroke-width:1.5;fill:none}
+.cl-fig .thinb{stroke:var(--accent2);stroke-width:1.8;fill:none}
+.cl-fig .faint{opacity:.5}
+.cl-fig .dsh{stroke-dasharray:5 4}
+.cl-fig .cv{stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cl-fig .cv2{stroke:var(--accent2);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cl-fig .cvthick{stroke:var(--accent);stroke-width:5;fill:none;stroke-linecap:round}
+.cl-fig .veca{stroke:var(--accent);stroke-width:2.4;fill:none}
+.cl-fig .vecb{stroke:var(--accent2);stroke-width:2.4;fill:none}
+.cl-fig .bad2{stroke:var(--bad);stroke-width:2.2;fill:none}
+.cl-fig .dom{fill:var(--accent-soft);stroke:none}
+.cl-fig .pt{fill:var(--ink)}
+.cl-fig .ptb{fill:var(--accent)}
+.cl-fig .ptc{fill:var(--accent2)}
+.cl-fig .mk-a{fill:var(--accent)}
+.cl-fig .mk-b{fill:var(--accent2)}
+.cl-fig .mk-i{fill:var(--ink)}
+.cl-fig .mk-r{fill:var(--bad)}
+.cl-fig .mk-m{fill:var(--muted)}
+#controle + p + .tbl-wrap td:first-child{white-space:nowrap}
